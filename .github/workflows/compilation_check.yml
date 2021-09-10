@@ -1,0 +1,19 @@
+name: Compile test
+
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Install toolchain
+      run: |
+        wget "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2"
+        tar xvf gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2
+        echo "$PWD/gcc-arm-none-eabi-9-2019-q4-major/bin" >> $GITHUB_PATH
+       
+    - name: Build the application
+      run: make -C firmware BOARD=m4a-mb
