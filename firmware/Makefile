@@ -1,5 +1,5 @@
-APPLICATION = nt-db-mesh
-BOARD ?= nt-db
+APPLICATION = m4a-mesh
+BOARD ?= m4a-mb
 
 # Current path
 APPBASE ?= $(CURDIR)
