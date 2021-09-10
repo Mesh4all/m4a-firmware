@@ -1,0 +1,1 @@
+USEMODULE_INCLUDES += $(APPBASE)/external_drivers/epd_bw_spi/include
