@@ -1,5 +1,5 @@
-/* Copyright 2021 luisan00 <luisan00@hotmail.com>
- *
+/* 
+ * Copyright (c) 2021 Mesh4all <mesh4all.org> 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,12 +14,10 @@
  */
 
 /**
- * @{
- * @file
  * @brief       Main firmware file
  *
  * @author      luisan00 <luisan00@hotmail.com>
- * @}
+ * 
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -43,7 +41,7 @@ static shell_command_t shell_extended_commands[] = {
 
 int main(void)
 {
-    LOG_INFO("~~ Welcome to NT radio ~~\n");
+    LOG_INFO("~~ Welcome to Mesh4all ~~\n");
    
 
     /* Start shell */
