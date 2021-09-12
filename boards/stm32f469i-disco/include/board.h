@@ -23,7 +23,12 @@ extern "C" {
 
 /**
  * @name Macros for controlling the on-board LEDs.
- * @{
+ * 
+ * LD1 PG6 Green
+ * LD2 PD4 Orange
+ * LD3 PD5 Red
+ * LD4 PK3 Blue
+ * 
  */
 #define LED0_PIN            GPIO_PIN(PORT_J, 13)
 #define LED1_PIN            GPIO_PIN(PORT_J, 5)
