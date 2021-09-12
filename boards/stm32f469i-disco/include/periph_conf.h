@@ -44,15 +44,34 @@ extern "C"
 {
 #endif
 
-    /**
+/*
+ * USB OTG FS is available on the Micro-AB connector named as CN13
+ * with the next pinout:
+ * 
+ * 1 VBUS (PA9) 
+ * 2 D- (PORT_A, 11) 
+ * 3 D+ (PORT_A, 12)
+ * 4 ID (PORT_A, 10)
+ * 5 GND
+ * 
+ * Virtual COM port is available on the ST-LINK/V2-1 USB Mini-B connector
+ * named as CN1
+ * 
+ * 
+ * UART6_Tx: PORT_G, 14
+ * UART6_Rx: PORT_G, 9
+ * 
+ */
+
+/**
  * @name    UART configuration
- * @{
+ * 
  */
     static const uart_conf_t uart_config[] = {
         {.dev = USART1,
          .rcc_mask = RCC_APB2ENR_USART1EN,
-         .rx_pin = GPIO_PIN(PORT_A, 10),
-         .tx_pin = GPIO_PIN(PORT_A, 9),
+         .rx_pin = GPIO_PIN(PORT_B, 10),
+         .tx_pin = GPIO_PIN(PORT_B, 11),
          .rx_af = GPIO_AF7,
          .tx_af = GPIO_AF7,
          .bus = APB2,
@@ -67,7 +86,6 @@ extern "C"
 #define UART_0_DMA_ISR (isr_dma1_stream4)
 
 #define UART_NUMOF ARRAY_SIZE(uart_config)
-
 
 #ifdef __cplusplus
 }

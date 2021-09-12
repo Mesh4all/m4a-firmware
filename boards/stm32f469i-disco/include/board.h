@@ -22,28 +22,29 @@ extern "C" {
 #endif
 
 /**
- * @name Macros for controlling the on-board LEDs.
+ * @name    LEDs definitions and handlers.
  * 
- * LD1 PG6 Green
- * LD2 PD4 Orange
- * LD3 PD5 Red
- * LD4 PK3 Blue
+ * @brief   Four on-board LEDs are availoable as follows
+ *          - LD0 PORT_G, 6 Green
+ *          - LD1 PORT_D, 4 Orange
+ *          - LD2 PORT_D, 5 Red
+ *          - LD3 PORT_K, 3 Blue
  * 
  */
-#define LED0_PIN            GPIO_PIN(PORT_J, 13)
-#define LED1_PIN            GPIO_PIN(PORT_J, 5)
-#define LED2_PIN            GPIO_PIN(PORT_A, 12)
-#define LED3_PIN            GPIO_PIN(PORT_D, 4)
+#define LED0_PIN            GPIO_PIN(PORT_G, 6)
+#define LED1_PIN            GPIO_PIN(PORT_D, 4)
+#define LED2_PIN            GPIO_PIN(PORT_D, 5)
+#define LED3_PIN            GPIO_PIN(PORT_K, 3)
 //
-#define LED0_PORT           GPIOJ
-#define LED1_PORT           GPIOJ
-#define LED2_PORT           GPIOA
-#define LED3_PORT           GPIOD
+#define LED0_PORT           GPIOG
+#define LED1_PORT           GPIOD
+#define LED2_PORT           GPIOD
+#define LED3_PORT           GPIOK
 //
-#define LED0_MASK           (1 << 13)
-#define LED1_MASK           (1 << 5)
-#define LED2_MASK           (1 << 12)
-#define LED3_MASK           (1 << 4)
+#define LED0_MASK           (1 << 6)
+#define LED1_MASK           (1 << 4)
+#define LED2_MASK           (1 << 5)
+#define LED3_MASK           (1 << 3)
 //
 #define LED0_ON             (LED0_PORT->BSRR = LED0_MASK)
 #define LED0_OFF            (LED0_PORT->BSRR = (LED0_MASK << 16))
@@ -64,6 +65,11 @@ extern "C" {
 
 /**
  * @name User button
+ * 
+ * @brief The blue button B2 located bottom side is available to be used as a digital input or as
+ * alternate function Wake-up. When the button is depressed the logic state is 1, otherwise the
+ * logic state is 0.
+ * 
  */
 #define BTN0_PIN            GPIO_PIN(PORT_A, 0)
 #define BTN0_MODE           GPIO_IN
