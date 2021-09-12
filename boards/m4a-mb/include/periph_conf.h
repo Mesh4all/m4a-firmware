@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Mesh For All <mesh4all.org>
+ * Copyright (C) 2021 Mesh4all <mesh4all.org>
  *
  * This file is is licensed under the Apache License, Version 2.0,
  * you may not use this file except in compliance with the License.
