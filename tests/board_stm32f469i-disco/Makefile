@@ -13,7 +13,15 @@ EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
 DEVHELP ?= 1
 QUIET ?= 1
 USEMODULE += xtimer
+USEMODULE += ps
+USEMODULE += shell
+USEMODULE += shell_commands
 
+USEMODULE += saul_default
+
+# Disable warnings when a parameter is not used
+CFLAGS += -Wno-unused-parameter
+CFLAGS += -Wno-unused-variable
 # Set log level:
 # LOG_NONE:    Lowest log level, will output nothing
 # LOG_ERROR;   Error log level, will print only critical, non-recoverable errors like hardware initialization failures

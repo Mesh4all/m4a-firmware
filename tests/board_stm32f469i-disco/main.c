@@ -10,28 +10,32 @@
  * @author      luisan00 <luisan00@hotmail.com>
  */
 #include <stdio.h>
+
 #include "xtimer.h"
+#include "shell.h"
+#include "shell_commands.h"
+#include "msg.h"
+#include "log.h"
+
+int dummy_cmd(int argc, char **argv){
+    LED0_TOGGLE;
+    xtimer_msleep(1000);
+    LED0_TOGGLE;
+    return 0;
+
+}
+
+static shell_command_t shell_extended_commands[] = {
+    {"dummy_cmd", "dummy cmd descrption", dummy_cmd},
+    {NULL, NULL, NULL}};
 
 int main(void)
 {
     printf("~~ Welcome to Mesh4all ~~\n");
-    while (1)
-    {
-        xtimer_msleep(1000);
-        LED0_OFF;
-        LED3_OFF;
-        xtimer_msleep(50);
-        LED0_ON;
-        xtimer_msleep(100);
-        LED3_ON;
-        xtimer_msleep(1000);
-        LED1_OFF;
-        LED2_OFF;
-        xtimer_msleep(50);
-        LED1_ON;
-        xtimer_msleep(100);
-        LED2_ON;
-    }
+    /* Start shell */
+    
+    char line_buf[SHELL_DEFAULT_BUFSIZE];
 
+    shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
     return 0;
 }

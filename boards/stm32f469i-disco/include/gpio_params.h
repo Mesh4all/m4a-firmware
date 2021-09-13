@@ -18,41 +18,35 @@
 #include "saul/periph.h"
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-
-/**
+    /**
  * @brief    GPIO pin configuration
  */
-static const  saul_gpio_params_t saul_gpio_params[] =
-{
-    {
-        .name = "LD1",
-        .pin = LED0_PIN,
-        .mode = GPIO_OUT
-    },
-    {
-        .name = "LD2",
-        .pin = LED1_PIN,
-        .mode = GPIO_OUT
-    },
-    {
-        .name = "LD3",
-        .pin = LED2_PIN,
-        .mode = GPIO_OUT
-    },
-    {
-        .name = "LD4",
-        .pin = LED3_PIN,
-        .mode = GPIO_OUT
-    },
-    {
-        .name = "BTN USER",
-        .pin  = BTN0_PIN,
-        .mode = BTN0_MODE
-    },
-};
+    static const saul_gpio_params_t saul_gpio_params[] =
+        {
+            {.name = "LED1",
+             .pin = LED0_PIN,
+             .mode = GPIO_OUT,
+             .flags = SAUL_GPIO_INIT_SET},
+            {.name = "LED2",
+             .pin = LED1_PIN,
+             .mode = GPIO_OUT,
+             .flags = SAUL_GPIO_INIT_SET},
+            {.name = "LED3",
+             .pin = LED2_PIN,
+             .mode = GPIO_OUT,
+             .flags = SAUL_GPIO_INIT_SET},
+            {.name = "LED4",
+             .pin = LED3_PIN,
+             .mode = GPIO_OUT,
+             .flags = SAUL_GPIO_INIT_SET},
+            {.name = "BTN USER",
+             .pin = BTN0_PIN,
+             .mode = BTN0_MODE},
+    };
 
 #ifdef __cplusplus
 }

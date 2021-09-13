@@ -44,7 +44,7 @@ extern "C"
 {
 #endif
 
-/*
+      /*
  * USB OTG FS is available on the Micro-AB connector named as CN13
  * with the next pinout:
  * 
@@ -55,34 +55,36 @@ extern "C"
  * 5 GND
  * 
  * Virtual COM port is available on the ST-LINK/V2-1 USB Mini-B connector
- * named as CN1
- * 
- * 
- * UART6_Tx: PORT_G, 14
- * UART6_Rx: PORT_G, 9
- * 
+ * named as CN1:
+ * UART3_Tx: PORT_B, 10
+ * UART3_Rx: PORT_B, 11
+ * af: AF7
+ * bus: APB1
+ * rcc_mask: RCC_APB1ENR_USART3EN
+ * irqn: USART3_IRQn
+ * dma: ? // 4
  */
 
-/**
- * @name    UART configuration
- * 
- */
-    static const uart_conf_t uart_config[] = {
-        {.dev = USART1,
-         .rcc_mask = RCC_APB2ENR_USART1EN,
-         .rx_pin = GPIO_PIN(PORT_B, 10),
-         .tx_pin = GPIO_PIN(PORT_B, 11),
-         .rx_af = GPIO_AF7,
-         .tx_af = GPIO_AF7,
-         .bus = APB2,
-         .irqn = USART1_IRQn,
+      /**
+        * @name    UART configuration
+        * 
+        */
+      static const uart_conf_t uart_config[] = {
+          {.dev = USART3,
+           .rcc_mask = RCC_APB1ENR_USART3EN,
+           .rx_pin = GPIO_PIN(PORT_B, 11),
+           .tx_pin = GPIO_PIN(PORT_B, 10),
+           .rx_af = GPIO_AF7,
+           .tx_af = GPIO_AF7,
+           .bus = APB1,
+           .irqn = USART3_IRQn,
 #ifdef UART_USE_DMA
-         .dma_stream = 4,
-         .dma_chan = 4
+           .dma_stream = 4,
+           .dma_chan = 4
 #endif
-        }};
+          }};
 
-#define UART_0_ISR (isr_usart1)
+#define UART_0_ISR (isr_usart3)
 #define UART_0_DMA_ISR (isr_dma1_stream4)
 
 #define UART_NUMOF ARRAY_SIZE(uart_config)

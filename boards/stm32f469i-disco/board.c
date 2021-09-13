@@ -27,15 +27,10 @@ void board_init(void)
 
     /* Initialize the on-board LEDs */
     gpio_init(LED0_PIN, GPIO_OUT);
-    LED0_OFF;
 
     gpio_init(LED1_PIN, GPIO_OUT);
-    LED1_OFF;
 
     gpio_init(LED2_PIN, GPIO_OUT);
-    LED2_OFF;
 
     gpio_init(LED3_PIN, GPIO_OUT);
-    LED3_OFF;
-    
 }
