@@ -1,5 +1,5 @@
 APPLICATION = driver_epd_bw_spi
-BOARD ?= nt-db
+BOARD ?= m4a-mb
 
 APPBASE ?= $(CURDIR)
 
