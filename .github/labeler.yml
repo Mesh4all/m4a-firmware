@@ -9,9 +9,6 @@
 "Area: CI":
   - ".github/**/*.yml"
 
-"Area: core":
-  - "core/**/*"
-
 "Area: firmware":
   - "firmware/**/*"
 
