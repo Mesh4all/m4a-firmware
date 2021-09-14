@@ -1,0 +1,50 @@
+"Area: boards":
+  - "boards/**/*"
+
+"Area: build system":
+  - "Makefile.*"
+  - "makefiles/**/*"
+  - "**/*.mk"
+
+"Area: CI":
+  - ".github/**/*.yml"
+
+"Area: core":
+  - "core/**/*"
+
+"Area: firmware":
+  - "firmware/**/*"
+
+"Area: doc":
+  - "doc/**/*"
+  - "**/*.md"
+  - "**/*.txt"
+
+"Area: drivers":
+  - "drivers/**/*"
+
+"Area: examples":
+  - "examples/**/*"
+
+"Area: Kconfig":
+  - "dist/tools/kconfiglib/**/*"
+  - "makefiles/kconfig.mk"
+  - "kconfigs/*"
+  - "**/Kconfig"
+
+"Area: sys":
+  - "sys/**/*"
+  - "firmware/sys/**/*"
+
+"Area: tests":
+  - "tests/**/*"
+  - "makefiles/tests/**/*"
+
+"Area: tools":
+  - "dist/tools/**/*"
+
+"Platform: m4a-mb":
+  - "boards/m4a-mb/**/*"
+  
+"Platform: native":
+ - "boards/native/**/*"
