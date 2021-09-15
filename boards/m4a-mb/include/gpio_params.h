@@ -8,9 +8,7 @@
 
 /**
  * @ingroup   boards_m4a-mb
- * @{
- *
- * @file
+
  * @brief     Board specific configuration of direct mapped GPIOs
  *
  * @author    luisan00 <luisan00@hotmail.com>
