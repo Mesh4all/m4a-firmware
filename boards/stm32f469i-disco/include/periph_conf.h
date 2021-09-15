@@ -22,12 +22,12 @@
  *      The 32.768 kHz crystal X3 is the clock source for the embedded RTC.
  */
 
-/* This board provides an LSE */
+/* This board provides a LSE */
 #ifndef CONFIG_BOARD_HAS_LSE
 #define CONFIG_BOARD_HAS_LSE 1
 #endif
 
-/* This board provides an HSE */
+/* This board provides a HSE */
 #ifndef CONFIG_BOARD_HAS_HSE
 #define CONFIG_BOARD_HAS_HSE 1
 #endif
@@ -44,50 +44,47 @@ extern "C"
 {
 #endif
 
-      /*
- * USB OTG FS is available on the Micro-AB connector named as CN13
- * with the next pinout:
- * 
- * 1 VBUS (PA9) 
- * 2 D- (PORT_A, 11) 
- * 3 D+ (PORT_A, 12)
- * 4 ID (PORT_A, 10)
- * 5 GND
- * 
- * Virtual COM port is available on the ST-LINK/V2-1 USB Mini-B connector
- * named as CN1:
- * UART3_Tx: PORT_B, 10
- * UART3_Rx: PORT_B, 11
- * af: AF7
- * bus: APB1
- * rcc_mask: RCC_APB1ENR_USART3EN
- * irqn: USART3_IRQn
- * dma: ? // 4
- */
-
-      /**
-        * @name    UART configuration
-        * 
-        */
-      static const uart_conf_t uart_config[] = {
-          {.dev = USART3,
-           .rcc_mask = RCC_APB1ENR_USART3EN,
-           .rx_pin = GPIO_PIN(PORT_B, 11),
-           .tx_pin = GPIO_PIN(PORT_B, 10),
-           .rx_af = GPIO_AF7,
-           .tx_af = GPIO_AF7,
-           .bus = APB1,
-           .irqn = USART3_IRQn,
-#ifdef UART_USE_DMA
-           .dma_stream = 4,
-           .dma_chan = 4
+  /**
+    * @name    UART configuration
+    * 
+    */
+  static const uart_conf_t uart_config[] = {
+      // CN1, VCP
+      {.dev = USART3,
+       .rcc_mask = RCC_APB1ENR_USART3EN,
+       .rx_pin = GPIO_PIN(PORT_B, 11),
+       .tx_pin = GPIO_PIN(PORT_B, 10),
+       .rx_af = GPIO_AF7,
+       .tx_af = GPIO_AF7,
+       .bus = APB1,
+       .irqn = USART3_IRQn,
+#ifdef MODULE_PERIPH_DMA
+       .dma_stream = DMA_STREAM_UNDEF,
+       .dma_chan = UINT8_MAX
 #endif
-          }};
+      },
+      // CN12 P6(tx), P8(rx) and the Arduino CN7 connector, on D1(tx) and D0(rx) pins
+      {.dev = USART6,
+       .rcc_mask = RCC_APB2ENR_USART6EN,
+       .rx_pin = GPIO_PIN(PORT_G, 9),
+       .tx_pin = GPIO_PIN(PORT_G, 14),
+       .rx_af = GPIO_AF8,
+       .tx_af = GPIO_AF8,
+       .bus = APB2,
+       .irqn = USART6_IRQn,
+#ifdef MODULE_PERIPH_DMA
+       .dma_stream = DMA_STREAM_UNDEF,
+       .dma_chan = UINT8_MAX
+#endif
+      }};
 
 #define UART_0_ISR (isr_usart3)
-#define UART_0_DMA_ISR (isr_dma1_stream4)
+#define UART_1_ISR (isr_usart6)
 
 #define UART_NUMOF ARRAY_SIZE(uart_config)
+
+
+
 
 #ifdef __cplusplus
 }

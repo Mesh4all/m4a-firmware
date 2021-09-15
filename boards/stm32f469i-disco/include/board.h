@@ -64,8 +64,6 @@ extern "C" {
 
 
 /**
- * @name User button
- * 
  * @brief The blue button B2 located bottom side is available to be used as a digital input or as
  * alternate function Wake-up. When the button is depressed the logic state is 1, otherwise the
  * logic state is 0.
@@ -73,7 +71,6 @@ extern "C" {
  */
 #define BTN0_PIN            GPIO_PIN(PORT_A, 0)
 #define BTN0_MODE           GPIO_IN
-/** @} */
 
 /**
  * @brief Initialize board specific hardware, including clock, LEDs and std-IO
