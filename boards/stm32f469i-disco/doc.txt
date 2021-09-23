@@ -1,0 +1,5 @@
+@defgroup        boards_stm32f469i-disco STM32F469I-DISCO
+@ingroup         boards
+@brief           Mesh4All STM32F469I-DISCO <stm32f469i-disco>
+
+## Overview

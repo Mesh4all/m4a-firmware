@@ -18,7 +18,6 @@ USEPKG += u8g2
 FEATURES_REQUIRED += periph_gpio 
 FEATURES_REQUIRED += periph_i2c
 
-
 # set default device parameters in case they are undefined
 TEST_OUTPUT ?= 4
 
@@ -34,7 +33,6 @@ TEST_PIN_RESET ?= GPIO_UNDEF
 # SSD1306 128x32
 TEST_DISPLAY ?= u8g2_Setup_ssd1306_i2c_128x32_univision_1
 
-FEATURES_REQUIRED += periph_gpio periph_i2c
 
 CFLAGS += -DTEST_I2C=$(TEST_I2C)
 

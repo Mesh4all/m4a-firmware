@@ -1,4 +1,3 @@
-**
 @defgroup        boards_m4a-mb M4A-MB
 @ingroup         boards
 @brief           Mesh4All multi-band <m4a-mb>
