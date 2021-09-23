@@ -1,4 +1,7 @@
+# App name.
 APPLICATION = simple_test
+
+# default board
 BOARD ?= stm32f469i-disco
 
 # Current path
@@ -10,14 +13,14 @@ RIOTBASE ?= $(CURDIR)/../../RIOT
 # Custom boards "MUST BE" into "boards" folder, it's code **strongly** hardware dependent
 EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
 
-DEVHELP ?= 1
-QUIET ?= 1
-USEMODULE += xtimer
 USEMODULE += ps
 USEMODULE += shell
 USEMODULE += shell_commands
-
+USEMODULE += xtimer
 USEMODULE += saul_default
+
+DEVHELP ?= 1
+QUIET ?= 1
 
 # Disable warnings when a parameter is not used
 CFLAGS += -Wno-unused-parameter

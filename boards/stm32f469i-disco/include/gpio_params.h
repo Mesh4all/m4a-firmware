@@ -9,6 +9,7 @@
 /**
  * @brief     Board specific configuration of direct mapped GPIOs
  *
+ * @author      luisan00 <luisan00@hotmail.com>
  */
 
 #ifndef GPIO_PARAMS_H

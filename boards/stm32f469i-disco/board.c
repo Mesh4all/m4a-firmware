@@ -10,7 +10,8 @@
  *
  * @brief       Board specific implementations for the STM32F469I-DISCO board
  *
- * @author      Vincent Dupont <vincent@otakeys.com>
+ * @author      luisan00 <luisan00@hotmail.com>
+ * 
  *
  * @}
  */

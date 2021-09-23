@@ -8,6 +8,8 @@
 
 /**
  * @brief       Board specific definitions for the STM32F469I-DISCO board
+ * 
+ * @author      luisan00 <luisan00@hotmail.com>
  *
  */
 
