@@ -13,7 +13,7 @@ we hope we can make this a little easier, but in the meantime you must to follow
 
 ### Required dependencies and enviroment
 
-[ ] TODO
+- [ ] TODO
 
 ### Clone the source code
 
@@ -37,7 +37,7 @@ Assuming your device is a `m4a-mb` from Meshall, then execute
 make
 ```
 For other supported devices it's necessary to specify the device's name with the `BOARD` variable.
-As example, `BOARD=change_this_by_your_board`:
+As example, `BOARD=your_dev_name`:
 
 ```sh
 make BOARD=your_dev_name
