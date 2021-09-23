@@ -14,21 +14,21 @@
 
 void board_init(void)
 {
-    /* initialize the on-board Orange D0 LED */
+    // initialize the on-board Orange D0 LED
     gpio_init(LED0_PIN, GPIO_OUT);
     LED0_OFF;
 
-    /* initialize the on-board Green D1 LED */
+    // initialize the on-board Green D1 LED
     gpio_init(LED1_PIN, GPIO_OUT);
     gpio_clear(LED1_PIN);
 
-    /* initialize the on-board Yellow D2 LED */
+    // initialize the on-board Yellow D2 LED
     gpio_init(LED2_PIN, GPIO_OUT);
     gpio_clear(LED2_PIN);
 
-    /* initialize the on-board user-button */
+    // initialize the on-board user-button
     gpio_init(BTN0_PIN, BTN0_MODE);
 
-    /* initialize the CPU */
+    // initialize the CPU
     cpu_init();
 }

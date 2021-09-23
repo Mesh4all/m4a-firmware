@@ -8,15 +8,17 @@
 
 /**
  * @ingroup         boards_m4a-mb
+ * 
  * @brief           Peripheral MCU configuration for m4a_mb
+ * 
  * @author          luisan00 <luisan00@hotmail.com>
+ * 
  */
 
 #ifndef PERIPH_CONF_H
 #define PERIPH_CONF_H
 
 #include <stdint.h>
-
 #include "cpu.h"
 #include "periph_cpu.h"
 
@@ -169,7 +171,6 @@ extern "C"
  * 
  */
 #if PWM_0_EN
-    /* PWM0 channels */
     static const pwm_conf_chan_t pwm_chan0_config[] = {
         {GPIO_PIN(PA, 12), GPIO_MUX_E, 0},
         {GPIO_PIN(PA, 13), GPIO_MUX_E, 1},
@@ -182,7 +183,6 @@ extern "C"
  * 
  */
 #if PWM_1_EN
-    /* PWM1 channels */
     static const pwm_conf_chan_t pwm_chan1_config[] = {
         {GPIO_PIN(PB, 12), GPIO_MUX_E, 0},
         {GPIO_PIN(PB, 13), GPIO_MUX_E, 1},
@@ -195,7 +195,6 @@ extern "C"
  * 
  */
 #if PWM_2_EN
-    /* PWM2 channels */
     static const pwm_conf_chan_t pwm_chan2_config[] = {
         /* GPIO pin, MUX value, TCC channel */
         {GPIO_PIN(PB, 02), GPIO_MUX_E, 0},

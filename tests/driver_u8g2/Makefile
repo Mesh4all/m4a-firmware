@@ -1,5 +1,5 @@
 APPLICATION = u8g2_test
-BOARD ?= nt-db
+BOARD ?= m4a-mb
 
 # Current path
 APPBASE ?= $(CURDIR)
