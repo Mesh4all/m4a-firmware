@@ -76,9 +76,7 @@ Yes, now you have a basic stuff working on your desktop but the code is in a ear
  
   http://www.apache.org/licenses/LICENSE-2.0
 
-  or in the root folder of this repository
-
-  https://github.com/Mesh4all/m4a-firmware/LICENSE
+  or in the [LICENSE](LICENSE) file, in the root folder of this repository.
 
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
