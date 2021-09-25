@@ -13,7 +13,6 @@ Description (as detailed as possible) of your contribution.
 - you can give more information about how to test your changes
 -->
 
-
 ### Testing procedure
 
 <!--
@@ -22,7 +21,6 @@ How should your contribution be tested? provide at least the following steps:
 - Expected output on success or error
 -->
 
-
 ### Issues/PRs references
 
 <!--
@@ -30,9 +28,7 @@ Use keywords with the link to the issue you want to resolve, this way some actio
 - If the PR fix an issue: Close, Closes, Fix, Fixes or Resolve
 - If the PR is related to another one or issue: see, see also
 - If another PR need to be merged before this one: Depend on or Depends on
-
 Examples: 
-  Fixes #135, see also #135, depends on #135, etc
-
+Fixes #135, see also #135, depends on #135, etc
 See more about this feature: https://help.github.com/articles/closing-issues-using-keywords/.
 -->
