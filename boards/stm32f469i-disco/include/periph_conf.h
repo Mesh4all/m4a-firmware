@@ -71,7 +71,6 @@ extern "C"
             .dma_chan = UINT8_MAX
 #endif
            },
-           // Alternate Function 8 (AF8)
            // On CN12 connector:        TX -> (PORT_C, 6),   RX -> (PORT_C, 7)
            // On Arduino CN7 connector: TX -> D1(PORT_G, 14),RX -> D0(PORT_G, 9)
            {.dev = USART6,
@@ -92,6 +91,29 @@ extern "C"
 #define UART_1_ISR (isr_usart6)
 
 #define UART_NUMOF ARRAY_SIZE(uart_config)
+
+/**
+ * @name I2C configuration
+ * @{
+ */
+static const i2c_conf_t i2c_config[] = {
+    // CN11: i2c1, SDA (PB9), SCL (PB8)
+    {
+        .dev            = I2C1,
+        .speed          = I2C_SPEED_NORMAL,
+        .scl_pin        = GPIO_PIN(PORT_B, 8),
+        .sda_pin        = GPIO_PIN(PORT_B, 9),
+        .scl_af         = GPIO_AF4,
+        .sda_af         = GPIO_AF4,
+        .bus            = APB1,
+        .rcc_mask       = RCC_APB1ENR_I2C1EN,
+        .clk            = CLOCK_APB1,
+        .irqn           = I2C1_EV_IRQn,
+    }
+};
+
+#define I2C_0_ISR           isr_i2c1_ev
+#define I2C_NUMOF           ARRAY_SIZE(i2c_config)
 
 #ifdef __cplusplus
 }
