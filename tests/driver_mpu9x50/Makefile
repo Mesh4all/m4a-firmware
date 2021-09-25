@@ -16,10 +16,7 @@ QUIET ?= 1
 USEMODULE += xtimer
 USEMODULE += shell
 USEMODULE += shell_commands
-#USEMODULE += mpu9150
+USEMODULE += mpu9150
 USEMODULE += saul_default
-FEATURES_REQUIRED += periph_gpio
-#FEATURES_REQUIRED += periph_i2c
-
 
 include $(RIOTBASE)/Makefile.include

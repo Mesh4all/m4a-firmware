@@ -110,12 +110,12 @@ extern "C"
             .clk = CLOCK_APB1,
             .irqn = I2C1_EV_IRQn,
         },
-        // i2c2 controls the audio DAC(addr: 0x94), Max. speed 100 KHz
+        // i2c2 controls the audio DAC-SAI(addr: 0x94), Max. speed 100 KHz
         {
             .dev = I2C2,
             .speed = I2C_SPEED_NORMAL,
-            .scl_pin = GPIO_PIN(PORT_B, 10),
-            .sda_pin = GPIO_PIN(PORT_B, 11),
+            .scl_pin = GPIO_PIN(PORT_H, 4),
+            .sda_pin = GPIO_PIN(PORT_H, 5),
             .scl_af = GPIO_AF4,
             .sda_af = GPIO_AF4,
             .bus = APB1,
