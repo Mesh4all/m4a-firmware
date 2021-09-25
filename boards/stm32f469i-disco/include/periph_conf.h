@@ -53,7 +53,7 @@ extern "C"
 #endif
 
        /**
-        * @name    UART configuration
+        * @brief    UART configuration
         * 
         */
        static const uart_conf_t uart_config[] = {
@@ -93,11 +93,11 @@ extern "C"
 #define UART_NUMOF ARRAY_SIZE(uart_config)
 
 /**
- * @name I2C configuration
- * @{
+ * @brief   I2C configuration
+ * 
  */
 static const i2c_conf_t i2c_config[] = {
-    // CN11: i2c1, SDA (PB9), SCL (PB8)
+    // i2c1 is available on CN11: SDA(PORT_B, 9), SCL(PORT_B, 8)
     {
         .dev            = I2C1,
         .speed          = I2C_SPEED_NORMAL,
@@ -109,6 +109,18 @@ static const i2c_conf_t i2c_config[] = {
         .rcc_mask       = RCC_APB1ENR_I2C1EN,
         .clk            = CLOCK_APB1,
         .irqn           = I2C1_EV_IRQn,
+    },
+    // i2c2 controls the audio DAC(addr: 0x94), Max. speed 100 KHz
+    {
+        .dev            = I2C2,
+        .speed          = I2C_SPEED_NORMAL,
+        .scl_pin        = GPIO_PIN(PORT_B, 10),
+        .sda_pin        = GPIO_PIN(PORT_B, 11),
+        .scl_af         = GPIO_AF4,
+        .sda_af         = GPIO_AF4,
+        .bus            = RCC_APB1ENR_I2C2EN,
+        .clk            = CLOCK_APB1,
+        .irqn           = I2C2_EV_IRQn
     }
 };
 
