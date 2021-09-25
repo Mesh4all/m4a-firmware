@@ -52,80 +52,82 @@ extern "C"
 {
 #endif
 
-       /**
+    /**
         * @brief    UART configuration
         * 
         */
-       static const uart_conf_t uart_config[] = {
-           // CN1 connector, Virtual Com Port
-           {.dev = USART3,
-            .rcc_mask = RCC_APB1ENR_USART3EN,
-            .rx_pin = GPIO_PIN(PORT_B, 11),
-            .tx_pin = GPIO_PIN(PORT_B, 10),
-            .rx_af = GPIO_AF7,
-            .tx_af = GPIO_AF7,
-            .bus = APB1,
-            .irqn = USART3_IRQn,
+    static const uart_conf_t uart_config[] = {
+        // CN1 connector, Virtual Com Port
+        {.dev = USART3,
+         .rcc_mask = RCC_APB1ENR_USART3EN,
+         .rx_pin = GPIO_PIN(PORT_B, 11),
+         .tx_pin = GPIO_PIN(PORT_B, 10),
+         .rx_af = GPIO_AF7,
+         .tx_af = GPIO_AF7,
+         .bus = APB1,
+         .irqn = USART3_IRQn,
 #ifdef MODULE_PERIPH_DMA
-            .dma_stream = DMA_STREAM_UNDEF,
-            .dma_chan = UINT8_MAX
+         .dma_stream = DMA_STREAM_UNDEF,
+         .dma_chan = UINT8_MAX
 #endif
-           },
-           // On CN12 connector:        TX -> (PORT_C, 6),   RX -> (PORT_C, 7)
-           // On Arduino CN7 connector: TX -> D1(PORT_G, 14),RX -> D0(PORT_G, 9)
-           {.dev = USART6,
-            .rcc_mask = RCC_APB2ENR_USART6EN,
-            .rx_pin = GPIO_PIN(PORT_C, 7),
-            .tx_pin = GPIO_PIN(PORT_C, 6),
-            .rx_af = GPIO_AF8,
-            .tx_af = GPIO_AF8,
-            .bus = APB2,
-            .irqn = USART6_IRQn,
+        },
+        // On CN12 connector:        TX -> (PORT_C, 6),   RX -> (PORT_C, 7)
+        // On Arduino CN7 connector: TX -> D1(PORT_G, 14),RX -> D0(PORT_G, 9)
+        {.dev = USART6,
+         .rcc_mask = RCC_APB2ENR_USART6EN,
+         .rx_pin = GPIO_PIN(PORT_C, 7),
+         .tx_pin = GPIO_PIN(PORT_C, 6),
+         .rx_af = GPIO_AF8,
+         .tx_af = GPIO_AF8,
+         .bus = APB2,
+         .irqn = USART6_IRQn,
 #ifdef MODULE_PERIPH_DMA
-            .dma_stream = DMA_STREAM_UNDEF,
-            .dma_chan = UINT8_MAX
+         .dma_stream = DMA_STREAM_UNDEF,
+         .dma_chan = UINT8_MAX
 #endif
-           }};
+        }};
 
 #define UART_0_ISR (isr_usart3)
 #define UART_1_ISR (isr_usart6)
 
 #define UART_NUMOF ARRAY_SIZE(uart_config)
 
-/**
- * @brief   I2C configuration
- * 
- */
-static const i2c_conf_t i2c_config[] = {
-    // i2c1 is available on CN11: SDA(PORT_B, 9), SCL(PORT_B, 8)
-    {
-        .dev            = I2C1,
-        .speed          = I2C_SPEED_NORMAL,
-        .scl_pin        = GPIO_PIN(PORT_B, 8),
-        .sda_pin        = GPIO_PIN(PORT_B, 9),
-        .scl_af         = GPIO_AF4,
-        .sda_af         = GPIO_AF4,
-        .bus            = APB1,
-        .rcc_mask       = RCC_APB1ENR_I2C1EN,
-        .clk            = CLOCK_APB1,
-        .irqn           = I2C1_EV_IRQn,
-    },
-    // i2c2 controls the audio DAC(addr: 0x94), Max. speed 100 KHz
-    {
-        .dev            = I2C2,
-        .speed          = I2C_SPEED_NORMAL,
-        .scl_pin        = GPIO_PIN(PORT_B, 10),
-        .sda_pin        = GPIO_PIN(PORT_B, 11),
-        .scl_af         = GPIO_AF4,
-        .sda_af         = GPIO_AF4,
-        .bus            = RCC_APB1ENR_I2C2EN,
-        .clk            = CLOCK_APB1,
-        .irqn           = I2C2_EV_IRQn
-    }
-};
+    /**
+     * @brief   I2C configuration
+     * 
+     */
+    static const i2c_conf_t i2c_config[] = {
+        // i2c1 is available on CN11: SDA(PORT_B, 9), SCL(PORT_B, 8)
+        {
+            .dev = I2C1,
+            .speed = I2C_SPEED_NORMAL,
+            .scl_pin = GPIO_PIN(PORT_B, 8),
+            .sda_pin = GPIO_PIN(PORT_B, 9),
+            .scl_af = GPIO_AF4,
+            .sda_af = GPIO_AF4,
+            .bus = APB1,
+            .rcc_mask = RCC_APB1ENR_I2C1EN,
+            .clk = CLOCK_APB1,
+            .irqn = I2C1_EV_IRQn,
+        },
+        // i2c2 controls the audio DAC(addr: 0x94), Max. speed 100 KHz
+        {
+            .dev = I2C2,
+            .speed = I2C_SPEED_NORMAL,
+            .scl_pin = GPIO_PIN(PORT_B, 10),
+            .sda_pin = GPIO_PIN(PORT_B, 11),
+            .scl_af = GPIO_AF4,
+            .sda_af = GPIO_AF4,
+            .bus = APB1,
+            .rcc_mask = RCC_APB1ENR_I2C2EN,
+            .clk = CLOCK_APB1,
+            .irqn = I2C2_EV_IRQn,
+        }};
 
-#define I2C_0_ISR           isr_i2c1_ev
-#define I2C_NUMOF           ARRAY_SIZE(i2c_config)
+#define I2C_0_ISR isr_i2c1_ev
+#define I2C_1_ISR isr_i2c2_ev
+
+#define I2C_NUMOF ARRAY_SIZE(i2c_config)
 
 #ifdef __cplusplus
 }

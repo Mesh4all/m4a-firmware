@@ -13,8 +13,8 @@ ifneq (,$(filter tests_driver_%,$(APPLICATION)))
 endif
 
 BOARD ?= m4a-mb
-RIOTBASE ?= $(CURDIR)/../RIOT
-QUIET ?= 1
 
-# DEVELHELP enabled by default for all tests, set 0 to disable
+RIOTBASE ?= $(CURDIR)/../RIOT
+
+QUIET ?= 1
 DEVELHELP ?= 1
