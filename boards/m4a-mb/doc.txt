@@ -95,7 +95,7 @@ BOARD=m4a-mb make term
 
 ## Supported Toolchains
 
-For using the Turpial-MB board we strongly recommend the usage of the
+For using the M4A-MB board we strongly recommend the usage of the
 [GNU Tools for ARM Embedded Processors](https://launchpad.net/gcc-arm-embedded)
 toolchain.
 
