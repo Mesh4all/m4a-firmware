@@ -24,82 +24,61 @@
 #include "shell.h"
 #include "shell_commands.h"
 #include "msg.h"
-#include "thread.h"
+#include "periph/i2c.h"
 #include "log.h"
 
-char *status_to_str(thread_status_t status)
-{
-    switch (status)
-    {
-    case 0:
-        return "STATUS_STOPPED";
-        break;
-    case 3:
-        return "STATUS_MUTEX_BLOCKED";
-        break;
+// i2c touch panel
+// bus   i2c1
+// addr  0x54
+// --
+#define TOUCH_DEV I2C_DEV(0)
+// i2c audio codec
+// bus   i2c2
+// addr  0x94
+// speed Max. 100 KHz
+#define SOUND_DEV I2C_DEV(1)
+#define SOUND_ADDR 0x94
+#define SND_CHIPID 0x01
 
-    default:
-        return "STATUS_UNKNOW";
-        break;
+int screen_control_init(int argc, char **argv)
+{
+    i2c_init(TOUCH_DEV);
+    int res = i2c_acquire(TOUCH_DEV);
+    if (res != 0)
+    {
+        printf("Can't acquire the given i2c\n");
+        return -1;
     }
+
+    return 0;
 }
 
-char blink_thread[THREAD_STACKSIZE_MAIN];
-kernel_pid_t blinker_pid = KERNEL_PID_UNDEF;
-
-bool is_blinking = false;
-
-void *blinker(void *arg)
+int init_sound_control(void)
 {
-    (void)arg;
-
-    while (is_blinking)
-    {
-        LED0_ON;
-        xtimer_msleep(500);
-        LED0_OFF;
-        xtimer_msleep(500);
-    }
-
-    return NULL;
+    return 0;
 }
 
-int blink(int argc, char **argv)
+int sound_control(int argc, char **argv)
 {
-
-    if (argc != 2)
+    int res = i2c_acquire(SOUND_DEV);
+    if (i2c_acquire(SOUND_DEV) < 0)
     {
-        puts("Usage:\n");
-        puts("\tblink [start|stop]");
-        return 1;
+        puts("can't acquire i2c");
+        return res;
     }
-
-    if (strcmp(argv[1], "start") == 0 && is_blinking == false)
+    uint8_t chip_id;
+    res = i2c_read_reg(SOUND_DEV, SOUND_ADDR, 0x10, &chip_id, 0);
+    if (res != 0)
     {
-        is_blinking = true;
-        blinker_pid = thread_create(blink_thread, sizeof(blink_thread),
-                                    THREAD_PRIORITY_MAIN - 1, THREAD_CREATE_STACKTEST,
-                                    blinker, NULL, "blinker");
-        printf("Blink status: %d\n", thread_get(blinker_pid)->status);
-        return 0;
+        puts("cant read the chip id");
+        return res;
     }
-
-    if (strcmp(argv[1], "stop") == 0 && is_blinking == true)
-    {
-        is_blinking = false;
-        thread_get(blinker_pid)->pid = KERNEL_PID_UNDEF;
-        printf("Blink status: %d\n", thread_get(blinker_pid)->status);
-        return 0;
-    }
-
-    printf("blinking running with PID: %d\n", blinker_pid);
-    printf("Blink status: %d\n", thread_get(blinker_pid)->status);
-    printf("is_blinking: %d\n", is_blinking);
-    return 1;
+    printf("CHIPID; %c\n", chip_id);
+    return 0;
 }
 
 static shell_command_t shell_extended_commands[] = {
-    {"blink", "dummy cmd descrption", blink},
+    {"touch_id", "return chip id", sound_control},
     {NULL, NULL, NULL}};
 
 int main(void)

@@ -13,11 +13,12 @@ RIOTBASE ?= $(CURDIR)/../../RIOT
 # Custom boards "MUST BE" into "boards" folder, it's code **strongly** hardware dependent
 EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
 
-USEMODULE += ps
+USEMODULE += xtimer
 USEMODULE += shell
 USEMODULE += shell_commands
-USEMODULE += xtimer
 USEMODULE += saul_default
+
+FEATURES_REQUIRED += periph_i2c
 
 DEVHELP ?= 1
 QUIET ?= 1

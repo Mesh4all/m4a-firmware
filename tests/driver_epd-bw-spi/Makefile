@@ -1,10 +1,8 @@
-APPLICATION = driver_epd_bw_spi
+APPLICATION = test_driver_epd_bw_spi
 BOARD ?= m4a-mb
 
 APPBASE ?= $(CURDIR)
-
 RIOTBASE ?= $(CURDIR)/../../RIOT
-
 EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
 
 DEVHELP ?= 1
