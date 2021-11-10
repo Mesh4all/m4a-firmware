@@ -19,3 +19,5 @@ clean:
 
 menuconfig:
 	- $(MAKE_CMD) -C firmware menuconfig
+
+-include makefiles/tests.inc.mk
