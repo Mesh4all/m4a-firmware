@@ -1,3 +1,11 @@
+<p align="center">
+    <a href="https://mesh4all.org">
+        <img height="300px" src="doc/media/m4a-logo.png">
+    </a>
+</p>
+
+<h1 align="center">M4ag Firmware</h1>
+
 [![Compile test](https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml/badge.svg)](https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml)
 
 # m4a-firmware
