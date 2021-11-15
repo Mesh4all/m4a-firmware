@@ -1,0 +1,36 @@
+name: static-tests
+
+on:
+  push:
+    branches:
+      - "*"
+    tags:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+jobs:
+  static-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup code tools
+        run: |
+          sudo add-apt-repository ppa:npalix/coccinelle
+          sudo apt update
+          sudo apt install codespell cppcheck vera++ flake8 uncrustify pcregrep shellcheck doxygen coccinelle
+
+      - name: Setup git
+        run: |
+          if [ -n "${{ github.base_ref }}" ]; then
+            git fetch origin ${{ github.base_ref }}:${{ github.base_ref }} --no-tags
+          else
+            git config diff.renameLimit 16384
+          fi
+          git config apply.whitespace nowarn
+
+      - name: Run static-tests
+        run: make static-test
