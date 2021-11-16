@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<h1 align="center">M4ag Firmware</h1>
+<h1 align="center">M4a Firmware</h1>
 
 [![Compile test](https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml/badge.svg)](https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml)
 
