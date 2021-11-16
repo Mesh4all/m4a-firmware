@@ -8,7 +8,7 @@ you to make sure that your modifications are compliant with our coding conventio
 
 <!--
 Description (as detailed as possible) of your contribution.
-- describe the part/s of RIOT is (are) involved
+- describe the part/s of the code is (are) involved
 - if it's a bug fix, describe the bug that it solves and how it is solved
 - you can give more information about how to test your changes
 -->
