@@ -6,28 +6,28 @@ about: Create a report to help us improve
 
 #### Description
 <!--
-Example: Cannot build the application for samr21-xpro board.
+Tell us what the bug is about.
+Example: Cannot compile for m4a-mb board.
 -->
 
 #### Steps to reproduce the issue
 <!--
 Try to describe as precisely as possible how to reproduce the bug,
-you can also describe your hardware configuration, setup, etc
+describing your hardware configuration, OS, or any custom setup also can help.
 -->
 
 #### Expected results
 <!--
-describe what should happen
+Describe what should happen
 -->
 
 #### Actual results
 <!--
-describe what actually happens
-
+Describe what actually happens
 -->
 
 #### Versions
 <!--
-Operating system: Mac OSX, Linux, Vagrant VM
+Operating system: Mac OSX, Linux, etc
 Build environment: GCC, CLang versions, etc
 -->
