@@ -69,7 +69,7 @@ Similarly, if you want to generate a [feature request](https://github.com/Mesh4a
 
 <h2 id="titlecc"> Contributing Code </h2>
 
---- 
+---
 
 if you think that your work will be a growth for the project, integrate in the repository m4ag-firmware, we recommend:
 
