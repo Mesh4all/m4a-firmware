@@ -32,7 +32,7 @@ To start with m4ag-firmware, we need to clone the repository:
 ```sh
     git clone git@github.com:Mesh4all/m4a-firmware.git
 ```
-#### Via HTTPS: 
+#### Via HTTPS:
 ```sh
     git clone https://github.com/Mesh4all/m4a-firmware.git
 ```
@@ -52,8 +52,7 @@ Enter to the m4ag-firmware directory
 update your submodules
 ```sh
     git submodule update --init --recursive
-``` 
-
+```
 
 <h2 id="titlebrfr">  Bug Reports and Feature Request </h2>
 
@@ -72,7 +71,7 @@ Similarly, if you want to generate a [feature request](https://github.com/Mesh4a
 
 --- 
 
-if you think that your work will be a growth for the project, integrate in the repository m4ag-firmware, we recommend: 
+if you think that your work will be a growth for the project, integrate in the repository m4ag-firmware, we recommend:
 
 1. Fork the m4ag-firmware git repository.
 2. Create your contribution branch.
