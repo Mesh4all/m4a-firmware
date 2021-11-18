@@ -15,7 +15,7 @@
 
 /**
  * @brief       Board specific definitions for the STM32F469I-DISCO board
- * 
+ *
  * @author      luisan00 <luisan00@hotmail.com>
  *
  */
@@ -71,7 +71,6 @@ extern "C" {
 #define LED3_OFF            (LED3_PORT->BSRR = (LED3_MASK << 16))
 #define LED3_TOGGLE         (LED3_PORT->ODR  ^= LED3_MASK)
 
-
 /**
  * @brief The blue button B2 located bottom side is available to be used as a digital input or as
  * alternate function Wake-up. When the button is depressed the logic state is 1, otherwise the
@@ -90,4 +89,5 @@ void board_init(void);
 #ifdef __cplusplus
 }
 #endif // __cplusplus
+
 #endif /* BOARD_H */
