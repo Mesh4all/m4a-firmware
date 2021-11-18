@@ -57,6 +57,5 @@ extern "C"
 
 #ifdef __cplusplus
 }
-#endif // __cplusplus
-
+#endif
 #endif /* GPIO_PARAMS_H */

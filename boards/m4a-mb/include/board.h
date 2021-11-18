@@ -114,6 +114,5 @@ extern "C"
 
 #ifdef __cplusplus
 }
-#endif // __cplusplus
-
+#endif
 #endif /* BOARD_H */
