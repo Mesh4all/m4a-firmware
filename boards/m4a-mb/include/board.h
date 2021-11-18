@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright (c) 2021 Mesh4all <mesh4all.org>
- 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ extern "C"
 
 /**
  * @brief    xtimer configuration
- * 
+ *
  */
 #define XTIMER_DEV TIMER_DEV(1)
 #define XTIMER_CHAN (0)
@@ -51,14 +51,14 @@ extern "C"
 
 /**
  * @brief   LED-D0 (orange) definition
- * 
+ *
  */
 #define LED0_PIN GPIO_PIN(PB, 30)
 #define LED0_MASK (1 << 30)
 
 /**
  * @brief   LED-D0 handler
- * 
+ *
  */
 #define LED0_ON (LED_PORT.OUTCLR.reg = LED0_MASK)
 #define LED0_OFF (LED_PORT.OUTSET.reg = LED0_MASK)
@@ -66,14 +66,14 @@ extern "C"
 
 /**
  * @brief   LED-D1 (green) definition
- * 
+ *
  */
 #define LED1_PIN GPIO_PIN(PB, 7)
 #define LED1_MASK (1 << 7)
 
 /**
  * @brief   LED-D1 handler
- * 
+ *
  */
 #define LED1_ON (LED_PORT.OUTCLR.reg = LED1_MASK)
 #define LED1_OFF (LED_PORT.OUTSET.reg = LED1_MASK)
@@ -81,13 +81,13 @@ extern "C"
 
 /**
  * @brief   LED-D2 (yellow) definition
- * 
+ *
  */
 #define LED2_PIN GPIO_PIN(PB, 6)
 #define LED2_MASK (1 << 6)
 /**
  * @brief   LED-D2 handler
- * 
+ *
  */
 #define LED2_ON (LED_PORT.OUTCLR.reg = LED2_MASK)
 #define LED2_OFF (LED_PORT.OUTSET.reg = LED2_MASK)
@@ -95,7 +95,7 @@ extern "C"
 
 /**
  * @brief   SW0 (Button) pin definition
- * 
+ *
  */
 #define BTN0_PORT PORT->Group[PA]
 #define BTN0_PIN GPIO_PIN(PA, 15)
@@ -116,4 +116,4 @@ extern "C"
 }
 #endif // __cplusplus
 
-#endif // BOARD_H
+#endif /* BOARD_H */

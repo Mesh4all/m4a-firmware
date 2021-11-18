@@ -1,6 +1,5 @@
-/* 
+/*
  * Copyright (c) 2021 Mesh4all <mesh4all.org>
- 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,13 +32,13 @@ extern "C" {
 
 /**
  * @name    LEDs definitions and handlers.
- * 
+ *
  * @brief   Four on-board LEDs are availoable as follows
  *          - LD0 PORT_G, 6 Green
  *          - LD1 PORT_D, 4 Orange
  *          - LD2 PORT_D, 5 Red
  *          - LD3 PORT_K, 3 Blue
- * 
+ *
  */
 #define LED0_PIN            GPIO_PIN(PORT_G, 6)
 #define LED1_PIN            GPIO_PIN(PORT_D, 4)
@@ -77,17 +76,18 @@ extern "C" {
  * @brief The blue button B2 located bottom side is available to be used as a digital input or as
  * alternate function Wake-up. When the button is depressed the logic state is 1, otherwise the
  * logic state is 0.
- * 
+ *
  */
 #define BTN0_PIN            GPIO_PIN(PORT_A, 0)
 #define BTN0_MODE           GPIO_IN
 
 /**
  * @brief Initialize board specific hardware, including clock, LEDs and std-IO
+ *
  */
 void board_init(void);
 
 #ifdef __cplusplus
 }
 #endif // __cplusplus
-#endif // BOARD_H
+#endif /* BOARD_H */

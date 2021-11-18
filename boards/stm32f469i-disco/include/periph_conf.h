@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright (c) 2021 Mesh4all <mesh4all.org>
- 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,18 +17,11 @@
 /**
  * @brief       Peripheral MCU configuration for the STM32F769I-DISCO board
  * @author      luisan00 <luisan00@hotmail.com>
+ *
  */
 
 #ifndef PERIPH_CONF_H
 #define PERIPH_CONF_H
-
-/*
- *  HSE lock:
- *      By default the HSE clock source of the STM32F469NIH6 is the 8 MHz crystal X2.
- * 
- *  LSE clock:
- *      The 32.768 kHz crystal X3 is the clock source for the embedded RTC.
- */
 
 /* This board provides a LSE */
 #ifndef CONFIG_BOARD_HAS_LSE
@@ -54,7 +47,7 @@ extern "C"
 
        /**
         * @name    UART configuration
-        * 
+        *
         */
        static const uart_conf_t uart_config[] = {
            // CN1 connector, Virtual Com Port
@@ -96,4 +89,4 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif // __cplusplus
-#endif // PERIPH_CONF_H
+#endif /* PERIPH_CONF_H */
