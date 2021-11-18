@@ -1,4 +1,4 @@
-# Contributing to Mesh4all 
+# Contributing to Mesh4all
 
 Welcome to contribute to Mesh4all, all ideas are welcome, feel free to share your requirements, comments, bugs or problems.
 Remember that the main idea is to connect everyone and everything around us.
