@@ -66,9 +66,9 @@ int main(void)
     puts("Initializing to I2C.");
 
     TEST_DISPLAY(&u8g2, U8G2_R0, u8x8_byte_hw_i2c_riotos, u8x8_gpio_and_delay_riotos);
-    // u8g2_Setup_ssd1306_i2c_128x64_noname_1(&u8g2,\
-    //                                        U8G2_R0,\
-    //                                        u8x8_byte_hw_i2c_riotos,\
+    // u8g2_Setup_ssd1306_i2c_128x64_noname_1(&u8g2,
+    //                                        U8G2_R0,
+    //                                        u8x8_byte_hw_i2c_riotos,
     //                                        u8x8_gpio_and_delay_riotos)
 
     u8x8_riotos_t user_data =
@@ -117,6 +117,5 @@ int main(void)
         /* sleep a little */
         xtimer_sleep(2);
     }
-
     return 0;
 }
