@@ -11,8 +11,6 @@
  * @ingroup     drivers_actuators
  * @brief       Device driver for black/white e-ink/e-paper SPI displays.
  *
- * TODO
- *
  * @{
  * @file
  * @brief       Generic black/white e-paper/e-ink display SPI driver.

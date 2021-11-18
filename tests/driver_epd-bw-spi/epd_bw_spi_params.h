@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright (c) 2021 Mesh4all <mesh4all.org>
- 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,7 +28,7 @@
 
 /**
  * @brief Board is Mesh4all-MB.
- * 
+ *
  */
 #ifdef BOARD_M4A_MB
 #define EPD_BW_SPI_PARAM_SPI SPI_DEV(1)        /* select SPÎ device */
@@ -40,7 +40,7 @@
 
 /**
  * @brief Board is STM32F469i-Discovery Kit.
- * 
+ *
  */
 #ifdef BOARD_STM32F469I_DISCO
 #define EPD_BW_SPI_PARAM_SPI             /* select SPÎ device */
@@ -52,4 +52,4 @@
 
 #include_next "epd_bw_spi_params.h"
 
-#endif // EPD_BW_SPI_PARAMS_H
+#endif /* EPD_BW_SPI_PARAMS_H */
