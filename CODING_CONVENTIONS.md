@@ -304,10 +304,10 @@ Solution for string formatting errors:
 
 * When printing an `unsigned char/uint8_t`
     * Use `%u` because `newlib-nano` does not support `%hu/PRIu8`
-    
+
 * When printing an `uint32_t`
     * Use `PRIu32` print format
-     
+
 * When printing `64bit` variables
     * It is not correctly supported by `newlib-nano`, use `fmt` module for these in this case.
 
