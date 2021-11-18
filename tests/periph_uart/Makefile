@@ -1,4 +1,4 @@
-APPLICATION = test_periph_uart
+# APPLICATION = test_periph_uart
 BOARD ?= stm32f469i-disco
 
 # Current path

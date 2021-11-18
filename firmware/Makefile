@@ -11,7 +11,7 @@ RIOTBASE ?= $(CURDIR)/../RIOT
 EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../boards
 
 # If We need custom actions, routines, etc **SHOULD BE** included in the "core" folder
-# 	and "MUST BE" code hardware independant
+# 	and "MUST BE" code hardware independent
 # EXTERNAL_MODULE_DIRS += $(CURDIR)/../core
 
 DEVHELP ?= 1

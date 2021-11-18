@@ -7,7 +7,7 @@ date_nanoseconds = $(shell python -c 'import time; print(int(time.time() * 10000
 
 EXPORTED_VARIABLES = MY_VARIABLE CURRENT_TIME
 MY_VARIABLE = my_variable
-# Defered evaluation to the test
+# Deferred evaluation to the test
 CURRENT_TIME = $(call date_nanoseconds)
 
 $(call target-export-variables,test-exported-variables,$(EXPORTED_VARIABLES))

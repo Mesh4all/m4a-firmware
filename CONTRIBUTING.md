@@ -18,7 +18,7 @@ Check all the following sections according to the requirement you need.
 if you are starting to work with mesh4all, you can read our documentation, and you will know all supported boards, and resources.
 
 First Steps:
-1. Clonning
+1. Cloning
 2. Update submodules.
 
 <br>
@@ -26,7 +26,7 @@ To start with m4ag-firmware, we need to clone the repository:
 
 <br>
 
-### 1. Clonning
+### 1. Cloning
 
 #### Via SSH:
 ```sh
