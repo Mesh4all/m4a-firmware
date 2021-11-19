@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2016 Bas Stottelaar <basstottelaar@gmail.com>
  *
@@ -63,15 +62,15 @@ int main(void)
     uint32_t screen = 0;
     u8g2_t u8g2;
 
-
-
-
     /* initialize to I2C */
     puts("Initializing to I2C.");
 
     TEST_DISPLAY(&u8g2, U8G2_R0, u8x8_byte_hw_i2c_riotos, u8x8_gpio_and_delay_riotos);
-    //u8g2_Setup_ssd1306_i2c_128x64_noname_1(&u8g2, U8G2_R0, u8x8_byte_hw_i2c_riotos, u8x8_gpio_and_delay_riotos)
-    
+    // u8g2_Setup_ssd1306_i2c_128x64_noname_1(&u8g2,
+    //                                        U8G2_R0,
+    //                                        u8x8_byte_hw_i2c_riotos,
+    //                                        u8x8_gpio_and_delay_riotos)
+
     u8x8_riotos_t user_data =
     {
         .device_index = 0,
@@ -82,7 +81,6 @@ int main(void)
 
     u8g2_SetUserPtr(&u8g2, &user_data);
     u8g2_SetI2CAddress(&u8g2, TEST_ADDR);
-
 
     /* initialize the display */
     puts("Initializing display.");
@@ -113,15 +111,11 @@ int main(void)
             }
         } while (u8g2_NextPage(&u8g2));
 
-
-
-
         /* show screen in next iteration */
         screen = (screen + 1) % 3;
 
         /* sleep a little */
         xtimer_sleep(2);
     }
-
     return 0;
 }

@@ -1,5 +1,5 @@
 # App name.
-APPLICATION = simple_test
+#APPLICATION = simple_test
 
 # default board
 BOARD ?= stm32f469i-disco

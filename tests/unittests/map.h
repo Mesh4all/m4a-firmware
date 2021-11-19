@@ -55,5 +55,4 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-
 #endif /* MAP_H */

@@ -1,4 +1,4 @@
-APPLICATION = u8g2_test
+# APPLICATION = u8g2_test
 BOARD ?= m4a-mb
 
 # Current path

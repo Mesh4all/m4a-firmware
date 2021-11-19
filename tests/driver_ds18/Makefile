@@ -1,4 +1,4 @@
-APPLICATION = test_driver_ds18
+# APPLICATION = test_driver_ds18
 BOARD ?= m4a-mb
 
 # Current path

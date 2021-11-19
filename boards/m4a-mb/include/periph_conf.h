@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright (c) 2021 Mesh4all <mesh4all.org>
- 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,11 +16,11 @@
 
 /**
  * @ingroup         boards_m4a-mb
- * 
+ *
  * @brief           Peripheral MCU configuration for m4a_mb
- * 
+ *
  * @author          luisan00 <luisan00@hotmail.com>
- * 
+ *
  */
 
 #ifndef PERIPH_CONF_H
@@ -99,15 +99,11 @@ extern "C"
 #define TIMER_0_ISR isr_tc3
 #define TIMER_1_ISR isr_tc4
 
-/**
- * @brief 
- * 
- */
 #define TIMER_NUMOF ARRAY_SIZE(timer_config)
 
     /**
      * @brief UART configuration
-     * 
+     *
      */
     static const uart_conf_t uart_config[] = {
         {
@@ -159,15 +155,15 @@ extern "C"
 
 /**
  * @brief Number of available UART ports
- * 
+ *
  */
 #define UART_NUMOF ARRAY_SIZE(uart_config)
 
 /**
- * @brief   PWM configuration. 
- *          By default the first one is active (1) 
+ * @brief   PWM configuration.
+ *          By default the first one is active (1)
  *          and the other two, can be assigned to 0 (Disabled).
- * 
+ *
  */
 #define PWM_0_EN 1
 #define PWM_1_EN 0
@@ -176,7 +172,7 @@ extern "C"
 /**
  * @brief   PWM0 configuration if it's enabled
  *          Default 1 enabled
- * 
+ *
  */
 #if PWM_0_EN
     static const pwm_conf_chan_t pwm_chan0_config[] = {
@@ -188,7 +184,7 @@ extern "C"
 /**
  * @brief   PWM 1 configuration if it's enabled
  *          Default 0 disabled
- * 
+ *
  */
 #if PWM_1_EN
     static const pwm_conf_chan_t pwm_chan1_config[] = {
@@ -200,7 +196,7 @@ extern "C"
 /**
  * @brief   PWM2 configuration if it's enabled
  *          Default 0 disabled
- * 
+ *
  */
 #if PWM_2_EN
     static const pwm_conf_chan_t pwm_chan2_config[] = {
@@ -212,7 +208,7 @@ extern "C"
 
     /**
      * @brief PWM device configuration
-     * 
+     *
      */
     static const pwm_conf_t pwm_config[] = {
 #if PWM_0_EN
@@ -228,13 +224,13 @@ extern "C"
 
 /**
  * @brief Number of PWM devices available
- * 
+ *
  */
 #define PWM_NUMOF ARRAY_SIZE(pwm_config)
 
     /**
      * @brief SPI configuration
-     * 
+     *
      */
     static const spi_conf_t spi_config[] = {
         {
@@ -302,8 +298,8 @@ extern "C"
          .flags = I2C_FLAG_NONE}};
 
 /**
- * @brief Number of I2C devices availble
- * 
+ * @brief Number of I2C devices available
+ *
  */
 #define I2C_NUMOF ARRAY_SIZE(i2c_config)
 
@@ -333,8 +329,8 @@ extern "C"
         {GPIO_PIN(PA, 3), ADC_INPUTCTRL_MUXPOS_PIN1}};
 
 /**
- * @brief Number of ADC channels available 
- * 
+ * @brief Number of ADC channels available
+ *
  */
 #define ADC_NUMOF ARRAY_SIZE(adc_channels)
 
@@ -346,13 +342,13 @@ extern "C"
 
 /**
  * @brief Use VCC as reference voltage for the DAC
- * 
+ *
  */
 #define DAC_VREF DAC_CTRLB_REFSEL_AVCC
 
     /**
      * @brief USB peripheral configuration
-     * 
+     *
      */
     static const sam0_common_usb_config_t sam_usbdev_config[] = {
         {
@@ -367,4 +363,4 @@ extern "C"
 }
 #endif // __cplusplus
 
-#endif // PERIPH_CONF_H
+#endif /* PERIPH_CONF_H */

@@ -1,6 +1,6 @@
-/* 
+/*
  * Copyright (c) 2021 Mesh4all <mesh4all.org>
- 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,6 @@
  * @brief       Board specific implementations for the STM32F469I-DISCO board
  *
  * @author      luisan00 <luisan00@hotmail.com>
- * 
  *
  * @}
  */

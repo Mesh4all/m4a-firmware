@@ -1,4 +1,4 @@
-APPLICATION = driver_epd_bw_spi
+# APPLICATION = driver_epd_bw_spi
 BOARD ?= m4a-mb
 
 APPBASE ?= $(CURDIR)

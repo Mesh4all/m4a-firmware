@@ -1,4 +1,4 @@
-# Contributing to Mesh4all 
+# Contributing to Mesh4all
 
 Welcome to contribute to Mesh4all, all ideas are welcome, feel free to share your requirements, comments, bugs or problems.
 Remember that the main idea is to connect everyone and everything around us.
@@ -18,7 +18,7 @@ Check all the following sections according to the requirement you need.
 if you are starting to work with mesh4all, you can read our documentation, and you will know all supported boards, and resources.
 
 First Steps:
-1. Clonning
+1. Cloning
 2. Update submodules.
 
 <br>
@@ -26,13 +26,13 @@ To start with m4ag-firmware, we need to clone the repository:
 
 <br>
 
-### 1. Clonning
+### 1. Cloning
 
 #### Via SSH:
 ```sh
     git clone git@github.com:Mesh4all/m4a-firmware.git
 ```
-#### Via HTTPS: 
+#### Via HTTPS:
 ```sh
     git clone https://github.com/Mesh4all/m4a-firmware.git
 ```
@@ -52,8 +52,7 @@ Enter to the m4ag-firmware directory
 update your submodules
 ```sh
     git submodule update --init --recursive
-``` 
-
+```
 
 <h2 id="titlebrfr">  Bug Reports and Feature Request </h2>
 
@@ -70,9 +69,9 @@ Similarly, if you want to generate a [feature request](https://github.com/Mesh4a
 
 <h2 id="titlecc"> Contributing Code </h2>
 
---- 
+---
 
-if you think that your work will be a growth for the project, integrate in the repository m4ag-firmware, we recommend: 
+if you think that your work will be a growth for the project, integrate in the repository m4ag-firmware, we recommend:
 
 1. Fork the m4ag-firmware git repository.
 2. Create your contribution branch.

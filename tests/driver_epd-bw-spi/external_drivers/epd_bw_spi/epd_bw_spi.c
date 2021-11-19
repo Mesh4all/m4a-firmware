@@ -23,7 +23,7 @@
 #include "epd_bw_spi_params.h"
 #include "epd_bw_spi_internal.h"
 
-#define ENABLE_DEBUG (0)
+#define ENABLE_DEBUG 0
 #include "debug.h"
 
 void epd_bw_spi_cmd_start(epd_bw_spi_params_t *p, uint8_t cmd, bool cont)
