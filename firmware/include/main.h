@@ -15,40 +15,25 @@
  */
 
 /**
+ * @ingroup     firmware
+ * @{
+ * @file        main.h
  * @brief       Main firmware file
  *
  * @copyright   Copyright (c) 2021 Mesh for all
  * @author      luisan00 <luisan00@hotmail.com>
  *
  */
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#ifndef MAIN_H
+#define MAIN_H
 
-#include "shell.h"
-#include "shell_commands.h"
-#include "msg.h"
-
-#include "log.h"
-
-int dummy_cmd(int argc, char **argv)
+#ifdef __cplusplus
+extern "C"
 {
+#endif
 
-    return 0;
+#ifdef __cplusplus
 }
-
-static shell_command_t shell_extended_commands[] = {
-    {"dummy_cmd", "dummy cmd descrption", dummy_cmd},
-    {NULL, NULL, NULL}};
-
-int main(void)
-{
-    LOG_INFO("~~ Welcome to Mesh4all ~~\n");
-
-    /* Start shell */
-    char line_buf[SHELL_DEFAULT_BUFSIZE];
-
-    shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
-
-    return 0;
-}
+#endif
+#endif /* MAIN_H */
+/** @} */

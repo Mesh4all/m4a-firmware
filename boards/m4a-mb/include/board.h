@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
- * @ingroup     boards_m4a_mb
+ * @ingroup     boards
  * @{
- *
- * @file
+ * @file        board.h
  * @brief       Board specific definitions for the M4A-MB
- *
+ * @copyright   Copyright (c) 2021 Mesh for all
  * @author      luisan00 <luisan00@hotmail.com>
  */
 
@@ -154,7 +152,7 @@ void board_init(void);
 
 #ifdef __cplusplus
 }
-#endif /*__cplusplus */
+#endif
 
 #endif /* BOARD_H */
 /** @} */
