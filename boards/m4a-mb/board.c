@@ -38,6 +38,5 @@ void board_init(void)
     // initialize the on-board user-button
     gpio_init(BTN0_PIN, BTN0_MODE);
 
-    // initialize the CPU
     cpu_init();
 }
