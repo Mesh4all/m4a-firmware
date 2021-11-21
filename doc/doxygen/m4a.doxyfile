@@ -32,7 +32,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           =
+PROJECT_NAME           = "Project name"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -44,14 +44,14 @@ PROJECT_NUMBER         =
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "m4a"
+PROJECT_BRIEF          = "Put here a short description"
 
 # With the PROJECT_LOGO tag one can specify an logo or icon that is included in
 # the documentation. The maximum height of the logo should not exceed 55 pixels
 # and the maximum width should not exceed 200 pixels. Doxygen will copy the logo
 # to the output directory.
 
-PROJECT_LOGO           = src/m4-logo.svg
+PROJECT_LOGO           = src/media/m4a-logo.svg
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
@@ -1077,7 +1077,7 @@ HTML_STYLESHEET        =
 # list). For an example see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  = src/css/m4.css
+HTML_EXTRA_STYLESHEET  = src/css/m4a.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1090,7 +1090,7 @@ HTML_EXTRA_STYLESHEET  = src/css/m4.css
 HTML_EXTRA_FILES       = src/css/bootstrap.css \
                          src/css/fonts.css \
                          src/css/jquery.smartmenus.bootstrap.css \
-                         src/css/m4.css \
+                         src/css/m4a.css \
                          src/favicon.png \
                          src/fonts/glyphicons-halflings-regular.eot \
                          src/fonts/glyphicons-halflings-regular.svg \
@@ -1110,7 +1110,7 @@ HTML_EXTRA_FILES       = src/css/bootstrap.css \
                          src/js/jquery.smartmenus.bootstrap.min.js \
                          src/js/jquery-ui.min.js \
                          src/js/menu.js \
-                         src/js/m4-doxy.js
+                         src/js/m4a-doxy.js
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the stylesheet and background images according to
