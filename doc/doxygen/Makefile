@@ -16,5 +16,14 @@ doc: html
 html: src/css/m4a.css
 	( cat m4a.doxyfile ; echo "GENERATE_HTML = yes" ) | doxygen -
 
+ifneq (,$(LESSC))
+src/css/m4a.css: src/css/m4a.less src/css/variables.less
+	@$(LESSC) $< $@
+
+src/css/variables.less: src/config.json
+	@grep "^\s*\"@" $< | sed -e 's/^\s*"//g' -e 's/":\s*"/: /g' \
+	  -e 's/",\?$$/;/g' -e 's/\\"/"/g' > $@
+endif
+
 clean:
 	-@rm -rf latex html doxygen_objdb_*.tmp doxygen_entrydb_*.tmp
