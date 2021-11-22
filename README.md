@@ -19,7 +19,7 @@
 
 
 <p align= "justify"> The firmware for connect everyone and everything around the world.
-Expand all your wireless network limits and join to the big mesh.</p> 
+Expand all your wireless network limits and join to the big mesh.</p>
 
 <p align= "justify">m4a-firmware is a software implemented in hardware able to provide enroute data between devices. The principal proposite is create only a wide wireless network.
 m4a-firmware is based under <a href="https://github.com/RIOT-OS/RIOT"> RIOT OS</a> and we follow some of its design principles: energy-efficiency and modularity. We implemented our network vision approach and expanded capabilities to join some devices to networks.</p>
@@ -39,12 +39,12 @@ Enjoy your firmware following these steps:
 
  - <details close style=>
     <summary>
-        Compile 
+    Compile
     </summary>
     for mesh boards
 
     ```sh
-        make    
+        make
     ```
 
     for other supported devices
@@ -58,7 +58,7 @@ Enjoy your firmware following these steps:
     <summary>
         Flashing
     </summary>
-    
+
     ```sh
         make flash
     ```
@@ -78,13 +78,13 @@ Enjoy your firmware following these steps:
 
 <p align= "justify">Enjoy your firmware and if you have some failure or bugs please present <a href= 'https://github.com/Mesh4all/m4a-firmware/issues'> issue </a> and we'll be working in resolve it. Remember check if another user had the same issue.
 
-For more information follow us in [twitter](https://twitter.com/mesh4all) and join to us and our [discord](https://discord.gg/DPUnkb7P) channel 
+For more information follow us in [twitter](https://twitter.com/mesh4all) and join to us and our [discord](https://discord.gg/DPUnkb7P) channel
 ## License
 
  <p align= "justify">Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</p>
 
  You may obtain a copy of the License at
- 
+
   http://www.apache.org/licenses/LICENSE-2.0
 
   or in the [LICENSE](LICENSE) file, in the root folder of this repository.
@@ -99,9 +99,8 @@ Copyright (c) 2021 Mesh4all <mesh4all.org>
 
 <br>
 
-<p align="center"> 
+<p align="center">
     <a href='#'>Documentation</a> |
-    <a href='#'> Discord </a> | 
+    <a href='#'> Discord </a> |
     <a href='#'>Installation</a>
 </p>
-

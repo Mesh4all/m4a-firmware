@@ -16,7 +16,7 @@ USEMODULE += xtimer
 EXTERNAL_MODULE_DIRS += external_drivers
 
 
-test-clean: 
+test-clean:
 	- cd bin && rm -rf *
 
 include $(RIOTBASE)/Makefile.include
