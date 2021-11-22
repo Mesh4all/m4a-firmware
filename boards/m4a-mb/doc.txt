@@ -1,7 +1,10 @@
-@defgroup        boards_m4a-mb M4A-MB
-@ingroup         boards
-@brief           Mesh4All multi-band  board
+/*
 
+ @defgroup    boards_m4
+ @ingroup     boards
+ @{
+ @brief       Mesh4All multi-band  board
+ 
 ## Overview
 
 The [M4A-MB]() is a complete communications system and mesh ready.
@@ -99,4 +102,4 @@ For using the M4A-MB board we strongly recommend the usage of the
 [GNU Tools for ARM Embedded Processors](https://launchpad.net/gcc-arm-embedded)
 toolchain.
 
-*/
+@}*/

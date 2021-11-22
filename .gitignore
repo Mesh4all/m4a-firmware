@@ -5,6 +5,7 @@
 doc/_build
 doc/api
 doc/doxyoutput
+doc/doxygen/html
 # build folders
 build/
 bin/

@@ -15,30 +15,25 @@
  */
 
 /**
+ * @ingroup     firmware
+ * @{
+ * @file        main.h
+ * @brief       Main firmware file
  *
- * @brief       Board specific implementations for the STM32F469I-DISCO board
- *
+ * @copyright   Copyright (c) 2021 Mesh for all
  * @author      luisan00 <luisan00@hotmail.com>
  *
- * @}
  */
+#ifndef MAIN_H
+#define MAIN_H
 
-#include "board.h"
-#include "periph/gpio.h"
-
-#include <stdio.h>
-
-void board_init(void)
+#ifdef __cplusplus
+extern "C"
 {
-    /* Initialize the CPU */
-    cpu_init();
+#endif
 
-    /* Initialize the on-board LEDs */
-    gpio_init(LED0_PIN, GPIO_OUT);
-
-    gpio_init(LED1_PIN, GPIO_OUT);
-
-    gpio_init(LED2_PIN, GPIO_OUT);
-
-    gpio_init(LED3_PIN, GPIO_OUT);
+#ifdef __cplusplus
 }
+#endif
+#endif /* MAIN_H */
+/** @} */

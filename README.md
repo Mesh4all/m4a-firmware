@@ -102,6 +102,6 @@ Copyright (c) 2021 Mesh4all <mesh4all.org>
 <p align="center"> 
     <a href='#'>Documentation</a> |
     <a href='#'> Discord </a> | 
-    <a href='#'>Instalation</a> 
+    <a href='#'>Installation</a>
 </p>
 

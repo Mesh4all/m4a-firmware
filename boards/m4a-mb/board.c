@@ -14,8 +14,12 @@
  */
 
 /**
+ * @file board.c
+ *
  * @ingroup         boards_m4a_mb
  * @brief           Board specific implementations for M4A-MB
+ *
+ * @copyright       Copyright (c) 2021 Mesh for All
  * @author          luisan00 <luis@hotmail.com>
  */
 #include "board.h"
@@ -38,6 +42,5 @@ void board_init(void)
     // initialize the on-board user-button
     gpio_init(BTN0_PIN, BTN0_MODE);
 
-    // initialize the CPU
     cpu_init();
 }
