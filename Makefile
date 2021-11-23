@@ -5,9 +5,6 @@ else
 	MAKE_CMD := make
 endif
 
-doc:
-	- $(MAKE_CMD) -C doc/doxygen
-
 all:
 	- $(MAKE_CMD) -C firmware
 
