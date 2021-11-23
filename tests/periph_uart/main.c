@@ -41,7 +41,7 @@
 #define MAX_SENTENCE_SIZE 128
 
 #define MAIN_QUEUE_SIZE (8)
-static msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
+msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
 
 size_t count = 0;
 char uart_buff[MAX_SENTENCE_SIZE] = {0};

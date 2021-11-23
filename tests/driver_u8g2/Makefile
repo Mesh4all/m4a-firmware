@@ -15,7 +15,7 @@ QUIET ?= 1
 
 USEMODULE += xtimer
 USEPKG += u8g2
-FEATURES_REQUIRED += periph_gpio 
+FEATURES_REQUIRED += periph_gpio
 FEATURES_REQUIRED += periph_i2c
 
 # set default device parameters in case they are undefined

@@ -21,6 +21,10 @@
 #ifndef EPD_BW_SPI_PARAMS_H
 #define EPD_BW_SPI_PARAMS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define EPD_BW_SPI_DISPLAY_X (200)
 #define EPD_BW_SPI_DISPLAY_Y (200)
 
@@ -51,5 +55,9 @@
 #endif
 
 #include_next "epd_bw_spi_params.h"
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* EPD_BW_SPI_PARAMS_H */
