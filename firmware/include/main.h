@@ -15,7 +15,6 @@
  */
 
 /**
- * @ingroup     firmware
  * @{
  * @file        main.h
  * @brief       Main firmware file

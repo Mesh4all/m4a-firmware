@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 /**
- * @ingroup     boards
+ * @ingroup     boards_m4a-mb
  * @{
  * @file        board.h
  * @brief       Board specific definitions for the M4A-MB

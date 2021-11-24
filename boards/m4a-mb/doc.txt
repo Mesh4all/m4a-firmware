@@ -1,15 +1,15 @@
 /*
 
- @defgroup    boards_m4
- @ingroup     boards
+ @defgroup    boards_m4a-mb
+ @ingroup     boards_m4a-mb
  @{
  @brief       Mesh4All multi-band  board
- 
+
 ## Overview
 
 The [M4A-MB]() is a complete communications system and mesh ready.
-It's developed to run the latest firmwares from Mesh-For(4)-All 
-and it's based in the Microchip SAMD21 MCU using the dual band 
+It's developed to run the latest firmwares from Mesh-For(4)-All
+and it's based in the Microchip SAMD21 MCU using the dual band
 AT86RF215 RF module.
 
 ## Hardware

@@ -1,3 +1,3 @@
 # Using external modules
 
-## epd-bw-spi 
+## epd-bw-spi
