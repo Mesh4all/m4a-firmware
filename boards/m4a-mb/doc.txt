@@ -1,7 +1,7 @@
 /*
 
- @defgroup    boards_m4
- @ingroup     boards
+ @defgroup    boards_m4a-mb
+ @ingroup     boards_m4a-mb
  @{
  @brief       Mesh4All multi-band  board
 
