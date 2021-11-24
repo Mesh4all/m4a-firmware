@@ -19,7 +19,6 @@
  * @file        board.h
  * @brief       Board specific definitions for the M4A-MB
  * @copyright   Copyright (c) 2021 Mesh for all
- * @author      luisan00 <luisan00@hotmail.com>
  */
 
 #ifndef BOARD_H
