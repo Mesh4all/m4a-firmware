@@ -1,9 +1,0 @@
-/boards/*\*/include/board\.h:[0-9]+: warning: Member BTN0_MODE \(macro definition\) of file board\.h is not documented\.
-/boards/*\*/include/board\.h:[0-9]+: warning: Member BTN0_PIN \(macro definition\) of file board\.h is not documented\.
-/boards/*\*/include/board\.h:[0-9]+: warning: Member BTN1_MODE \(macro definition\) of file board\.h is not documented\.
-/boards/*\*/include/board\.h:[0-9]+: warning: Member BTN1_PIN \(macro definition\) of file board\.h is not documented\.
-/boards/*\-clicker/include/board\.h:[0-9]+: warning: Member LED1_MASK \(macro definition\) of file board\.h is not documented\.
-/boards/*\-clicker/include/board\.h:[0-9]+: warning: Member LED1_OFF \(macro definition\) of file board\.h is not documented\.
-/boards/*\-clicker/include/board\.h:[0-9]+: warning: Member LED1_ON \(macro definition\) of file board\.h is not documented\.
-/boards/*\-clicker/include/board\.h:[0-9]+: warning: Member LED1_PIN \(macro definition\) of file board\.h is not documented\.
-/boards/*\-clicker/include/board\.h:[0-9]+: warning: Member LED1_TOGGLE \(macro definition\) of file board\.h is not documented\.

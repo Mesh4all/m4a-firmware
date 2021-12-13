@@ -1,6 +1,0 @@
-[submodule "RIOT"]
-	path = RIOT
-	url = git@github.com:Mesh4all/RIOT.git
-[submodule "boards"]
-	path = boards
-	url = git@github.com:Mesh4all/boards.git
