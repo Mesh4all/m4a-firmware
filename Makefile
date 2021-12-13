@@ -20,4 +20,7 @@ clean:
 menuconfig:
 	- $(MAKE_CMD) -C firmware menuconfig
 
+docs:
+	cd doc/doxygen && make
+
 -include makefiles/tests.inc.mk

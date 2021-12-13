@@ -1,6 +1,8 @@
 # VSCode files and folders
 .vscode
 *.code-workspace
+# RIOT folder
+RIOT
 # some doc folders
 doc/_build
 doc/api
