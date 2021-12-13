@@ -4,6 +4,6 @@
 # What goes here?
 Specific documentation for our reference firmware ; m4a-firmware
 
+Add more: specific documentation for the m4a-firmware
 
-Add more: specific documentaion for the m4a-firmware
 */
