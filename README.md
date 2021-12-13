@@ -10,7 +10,7 @@
         <img src="https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml/badge.svg">
     </a>
     <a href="https://mesh4all.github.io/m4a-firmware/">
-        <img src="https://img.shields.io/github/workflow/status/Mesh4all/m4a-firmware/buid-docs/main?color=%23ff4411&label=documentation">
+       <img src="https://img.shields.io/github/workflow/status/Mesh4all/m4a-firmware/build-docs/main?label=documentation&color=%23ff4411">
     </a>
     <a href="http://www.apache.org/licenses/LICENSE-2.0">
         <img src="https://img.shields.io/badge/license-Apache_License_2.0-blue">
@@ -101,7 +101,7 @@ Copyright (c) 2021 Mesh4all <mesh4all.org>
 <br>
 
 <p align="center">
-    <a href='#'>Documentation</a> |
-    <a href='#'> Discord </a> |
-    <a href='#'>Installation</a>
+    <a href="https://mesh4all.github.io/m4a-firmware">Documentation</a> |
+    <a href="#"> Discord </a> |
+    <a href="#">Installation</a>
 </p>
