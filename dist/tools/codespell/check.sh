@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : "${BASE:=$(cd $(dirname $0)/../../../; pwd)}"
-cd $BASE
+cd $BASE || exit;
 
 : "${TOOLS:=${BASE}/dist/tools}"
 
@@ -10,7 +10,7 @@ CODESPELL_OPT=" -c"
 CODESPELL_OPT+=" -q 2"
 CODESPELL_OPT+=" --check-hidden"
 CODESPELL_OPT+=" --ignore-words ${TOOLS}/codespell/ignored_words.txt"
-CODESPELL_OPT+=" --skip=RIOT,dist,.git,doc/doxygen/html,js,m4a.doxyfile"
+CODESPELL_OPT+=" --skip=RIOT,dist,.git,css,html,js,m4a.doxyfile"
 ERRORS=$(${CODESPELL_CMD} ${CODESPELL_OPT})
 
 if [ -n "${ERRORS}" ]
