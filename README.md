@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://mesh4all.org">
-        <img height="300px" src="doc/media/m4a-logo.png">
+        <img height="300px" src="https://raw.githubusercontent.com/Mesh4all/m4a-firmware/main/doc/media/m4a-logo.png">
     </a>
 </p>
 
