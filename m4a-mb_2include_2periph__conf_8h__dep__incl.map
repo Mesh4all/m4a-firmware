@@ -1,0 +1,5 @@
+<map id="boards/m4a&#45;mb/include/periph_conf.h" name="boards/m4a&#45;mb/include/periph_conf.h">
+<area shape="rect" id="node1" title="Peripheral MCU configuration for m4a_mb board." alt="" coords="5,5,216,52"/>
+<area shape="rect" id="node2" href="$m4a-mb_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;MB." alt="" coords="5,100,216,147"/>
+<area shape="rect" id="node3" href="$m4a-mb_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="5,195,216,241"/>
+</map>
