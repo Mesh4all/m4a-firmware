@@ -1,0 +1,9 @@
+/**
+@defgroup m4a-firmware  Reference firmware
+
+# What goes here?
+Specific documentation for our reference firmware ; m4a-firmware
+
+
+Add more: specific documentaion for the m4a-firmware
+*/
