@@ -8,14 +8,12 @@
 <div align="center">
     <a href="https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml">
         <img src="https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml/badge.svg">
-        </img>
     </a>
-    <a href="https://mesh4all.github.io/boards/">
+    <a href="https://mesh4all.github.io/m4a-firmware/">
         <img src="https://img.shields.io/github/workflow/status/Mesh4all/m4a-firmware/buid-docs/main?color=%23ff4411&label=documentation">
     </a>
     <a href="http://www.apache.org/licenses/LICENSE-2.0">
         <img src="https://img.shields.io/badge/license-Apache_License_2.0-blue">
-        </img>
     </a>
 </div>
 <br>
