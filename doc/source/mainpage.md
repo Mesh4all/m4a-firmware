@@ -1,4 +1,5 @@
-M4A-FIRMWARE Documentation                                                  {#mainpage}
-==================
+## m4a reference firmware {#m4a_firmware_mainpage}
 
-[TOC]
+@tableofcontents
+
+### Getting started
