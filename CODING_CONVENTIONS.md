@@ -259,7 +259,7 @@ An examplary doxygen documentation in a header file can look like this.
 
 ```
 /*
- * Copyright (C) 2014 Peter Schmerzl <peter@schmerzl-os.org>
+ * Copyright (C) 2014 your_name yourlastname <youremailadrr@mail.com>
  *
  * This file is subject to the terms and conditions of the GNU Lesser General
  * Public License v2.1. See the file LICENSE in the top level directory for more
@@ -267,7 +267,7 @@ An examplary doxygen documentation in a header file can look like this.
  */
 
 /**
- * @ingroup     foobar
+ * @ingroup     examples
  * @{
  *
  * @file
@@ -275,7 +275,7 @@ An examplary doxygen documentation in a header file can look like this.
  *
  * More detailed information about the file and the functionality implemented.
  *
- * @author      Peter Schmerzl <peter@schmerzl-os.org>
+ * @author      your_name yourlastname <youremailadrr@mail.com> or yourGitHubUsername<youremailadrr@mail.com>
  *
  */
 
