@@ -275,7 +275,7 @@ An examplary doxygen documentation in a header file can look like this.
  *
  * More detailed information about the file and the functionality implemented.
  *
- * @author      your_name yourlastname <youremailadrr@mail.com> or yourGitHubUsername<youremailadrr@mail.com>
+ * @author      your_name  <your_email_address@mail.com>
  *
  */
 
