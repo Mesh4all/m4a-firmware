@@ -259,11 +259,13 @@ An examplary doxygen documentation in a header file can look like this.
 
 ```
 /*
- * Copyright (C) 2014 Peter Schmerzl <peter@schmerzl-os.org>
+ * Copyright (C) Copyright_year your_name your_last_name <your_email_address@mail.com>
  *
- * This file is subject to the terms and conditions of the GNU Lesser General
- * Public License v2.1. See the file LICENSE in the top level directory for more
- * details.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
  */
 
 /**
@@ -275,7 +277,7 @@ An examplary doxygen documentation in a header file can look like this.
  *
  * More detailed information about the file and the functionality implemented.
  *
- * @author      Peter Schmerzl <peter@schmerzl-os.org>
+ * @author      your_name  <your_email_address@mail.com>
  *
  */
 
@@ -342,3 +344,5 @@ not a string literal`.
      * (reason: cppcheck is being really silly. this is certainly not a
      * null-pointer dereference */
 ```
+ <p align="center">Welcome to <a href="https://github.com/Mesh4all/m4a-firmware">Mesh4all</a>.
+ <br> It's time to join everyone to the big mesh.<p>

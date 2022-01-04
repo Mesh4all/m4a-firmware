@@ -15,8 +15,9 @@
  */
 
 /**
+ * @ingroup     m4a-firmware
  * @{
- * @file        main.h
+ * @file
  * @brief       Main firmware file
  *
  * @copyright   Copyright (c) 2021 Mesh for all
