@@ -22,13 +22,7 @@ USEMODULE += printf_float
 DEVHELP ?= 1
 QUIET ?= 1
 
-# Custom modules
-# Note: this code is hardware independent but "COULD BE" configurable for a
-# target board
-# EXTERNAL_MODULE_DIRS += external_drivers
-
 # Disable warnings when a parameter is not used
-
 
 # Set log level:
 # LOG_NONE:    Lowest log level, will output nothing
