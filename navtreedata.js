@@ -24,6 +24,11 @@ var NAVTREE =
 [
   [ "Mesh4all", "index.html", [
     [ "m4a reference firmware", "index.html", null ],
+    [ "Esp32-wroom examples", "md_examples_esp32-wroom-32_test_ds18b20_README.html", [
+      [ "First", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md31", null ],
+      [ "Second", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md32", null ],
+      [ "Last steps", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md33", null ]
+    ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],

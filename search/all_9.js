@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['reference_20firmware_62',['Reference firmware',['../group__m4a-firmware.html',1,'']]],
-  ['rfctl1_5fpin_63',['RFCTL1_PIN',['../m4a-24g_2include_2board_8h.html#a2364f376947112a08b6c534235a8f4fa',1,'board.h']]],
-  ['rfctl2_5fpin_64',['RFCTL2_PIN',['../m4a-24g_2include_2board_8h.html#a834d0ca9dc3c0d7e24ba2848ff6ddc1c',1,'board.h']]],
-  ['rfctl_5fantenna_5fdefault_65',['RFCTL_ANTENNA_DEFAULT',['../m4a-24g_2include_2board_8h.html#a8374c2ca3f70167aff3c6148a5e4ae62',1,'board.h']]],
-  ['rtt_5ffrequency_66',['RTT_FREQUENCY',['../m4a-24g_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h']]],
-  ['rtt_5fmin_5foffset_67',['RTT_MIN_OFFSET',['../m4a-24g_2include_2periph__conf_8h.html#ad34d7bc806339ce586e8a942913cdb6f',1,'periph_conf.h']]]
+  ['periph_5fconf_2eh_55',['periph_conf.h',['../m4a-24g_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2periph__conf_8h.html',1,'(Global Namespace)']]],
+  ['pwm_5f0_5fen_56',['PWM_0_EN',['../m4a-24g_2include_2periph__conf_8h.html#ac0ac477af727daf8ed4f4157f37b4395',1,'PWM_0_EN():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ac0ac477af727daf8ed4f4157f37b4395',1,'PWM_0_EN():&#160;periph_conf.h']]],
+  ['pwm_5f1_5fen_57',['PWM_1_EN',['../m4a-24g_2include_2periph__conf_8h.html#ab720cc8e2711232b8886c44d58fcb416',1,'PWM_1_EN():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ab720cc8e2711232b8886c44d58fcb416',1,'PWM_1_EN():&#160;periph_conf.h']]],
+  ['pwm_5f2_5fen_58',['PWM_2_EN',['../m4a-mb_2include_2periph__conf_8h.html#a8cbf32f51ddaf21fe06b4bbe964095d4',1,'periph_conf.h']]],
+  ['pwm_5fchan0_5fconfig_59',['pwm_chan0_config',['../m4a-24g_2include_2periph__conf_8h.html#ae505bf70258c000e0dd0f0ca6377db10',1,'pwm_chan0_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ae505bf70258c000e0dd0f0ca6377db10',1,'pwm_chan0_config():&#160;periph_conf.h']]],
+  ['pwm_5fchan1_5fconfig_60',['pwm_chan1_config',['../m4a-24g_2include_2periph__conf_8h.html#a7ffca7e3ae7a2b23130a9398fa5b3a68',1,'periph_conf.h']]],
+  ['pwm_5fconfig_61',['pwm_config',['../m4a-24g_2include_2periph__conf_8h.html#a5177e7e865ac2ae63f7d56c8b3078707',1,'pwm_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a5177e7e865ac2ae63f7d56c8b3078707',1,'pwm_config():&#160;periph_conf.h']]],
+  ['pwm_5fnumof_62',['PWM_NUMOF',['../m4a-24g_2include_2periph__conf_8h.html#a44adbd579bb180f3cfe8ec78932eb7a1',1,'PWM_NUMOF():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a44adbd579bb180f3cfe8ec78932eb7a1',1,'PWM_NUMOF():&#160;periph_conf.h']]]
 ];
