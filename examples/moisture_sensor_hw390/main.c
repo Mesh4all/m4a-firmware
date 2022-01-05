@@ -17,6 +17,7 @@
 /**
  * @file
  * @brief moisture sensor test
+ * @author xkevin190 <kevinvelasco190@gmail.com>
  */
 
 #include "periph/adc.h"

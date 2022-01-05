@@ -10,7 +10,6 @@ RIOTBASE ?= $(CURDIR)/../../RIOT
 USEMODULE += saul_default
 USEMODULE += shell
 USEMODULE += shell_commands
-USEMODULE += xtimer
 FEATURES_REQUIRED = periph_adc
 USEMODULE += ztimer
 USEMODULE += ztimer_msec
@@ -29,8 +28,7 @@ QUIET ?= 1
 # EXTERNAL_MODULE_DIRS += external_drivers
 
 # Disable warnings when a parameter is not used
-CFLAGS += -Wno-unused-parameter
-CFLAGS += -Wno-unused-variable
+
 
 # Set log level:
 # LOG_NONE:    Lowest log level, will output nothing
