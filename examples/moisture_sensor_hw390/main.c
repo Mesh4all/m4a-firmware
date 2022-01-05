@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Mesh4all <mesh4all.org>
+ * Copyright (c) 2022 Mesh4all <mesh4all.org>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,7 @@
 
 /**
  * @file
- * @brief
- * @copyright Copyright (c) 2021
+ * @brief moisture sensor test
  */
 
 #include "periph/adc.h"
@@ -27,7 +26,6 @@
 #define DELAY_MS        5000U
 
 int main (void) {
-
     if (adc_init(0) < 0) {
         printf("Initialization of ADC_LINE failed\n");
     } else {
@@ -41,11 +39,10 @@ int main (void) {
                 int min = 356;
                 int max = 901;
                 int cal = max - min;
-                double finished = ((sample - min) * 100 / cal) ;
+                double finished = ((sample - min) * 100 / cal);
                 int moisture = 100 - finished;
-                if(moisture <= 100 && moisture >= 0 ){
+                if (moisture <= 100 && moisture >= 0 ){
                     printf("the moisture  sensor is percent %i \n",  moisture);
-
                 } else if (moisture < 0) {
                     printf("the moisture sensor is %i percent \n", 0);
                 } else if (moisture > 100) {
