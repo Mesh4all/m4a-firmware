@@ -29,8 +29,15 @@ var NAVTREE =
       [ "Second", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md32", null ],
       [ "Last steps", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md33", null ]
     ] ],
+    [ "External led example", "md_examples_external_led_README.html", [
+      [ "How to test it", "md_examples_external_led_README.html#autotoc_md35", null ]
+    ] ],
     [ "readme", "md_examples_moisture_sensor_hw390_readme.html", null ],
+    [ "Uart example", "md_examples_TPM_UART_APP_README.html", null ],
     [ "Modules", "modules.html", "modules" ],
+    [ "Data Structures", "annotated.html", [
+      [ "Data Structures", "annotated.html", "annotated_dup" ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
@@ -45,7 +52,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"dir_6c8313236d9db5b969ca7d150fe527de.html"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
