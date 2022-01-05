@@ -259,7 +259,7 @@ An examplary doxygen documentation in a header file can look like this.
 
 ```
 /*
- * Copyright (C) Copyright_year your_name your_last_name <your_email_address@mail.com>
+ * Copyright (C) 2021 Mesh4all <contact@mesh4all.org>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
