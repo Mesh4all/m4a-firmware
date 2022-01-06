@@ -42,9 +42,9 @@
 
 "Platform: m4a-mb":
   - "boards/m4a-mb/**/*"
-
-"Platform: stm32":
-  - "boards/stm32f469i-disco/**/*"
+  
+"Platform: m4a-24g":
+  - "boards/m4a-24g/**/*"
 
 "Platform: native":
  - "boards/native/**/*"
