@@ -1,0 +1,46 @@
+/**
+ @defgroup    boards_m4a-mb Mesh4All multi-band board
+ @ingroup     boards
+ @brief       Mesh4All multi-band  board
+
+ # Overview
+
+The [M4A-MB]() is a complete communications system and mesh ready.
+It's developed to run the latest firmwares from Mesh-For(4)-All
+and it's based in the Microchip SAMD21 MCU using the dual band
+AT86RF215 RF module.
+
+## Hardware
+
+![M4A-MB]()
+
+### Brain: SAMD21
+
+| MCU               | ATSAMD21J18A                      |
+|:----------------- |:----------------------------------|
+| Family            | ARM Cortex-M0+                    |
+| Vendor            | Microchip                         |
+| RAM               | 32KiB                             |
+| Flash             | 256KiB                            |
+| Frequency         | up to 48MHz                       |
+| FPU               | no                                |
+| Timers            | 5 (16-bit)                        |
+| ADCs              | 1x 12-bit (20 channels)           |
+| UARTs             | max 6 (shared with SPI and I2C)   |
+| SPIs              | max 6 (see UARDs)                 |
+| I2Cs              | max 6 (see UARTs)                 |
+| USB               | yes                               |
+| Vcc               | 1.62V - 3.63V                     |
+| Datasheet         | [Datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf) |
+| Reference Manual  | [Reference Manual](http://www.atmel.com/Images/Atmel-42220-SAMD21-Xplained-Pro_User-Guide.pdf)               |
+
+### RF: Sub-GHz + 2.4 GHz
+
+|                    | AT86RF215                    |
+|--------------------|------------------------------|
+| Vendor             | Microchip                    |
+|                    |                              |
+| Datasheet          | [Datasheet](https://)        |
+| Reference Manual   | [Reference Manual](https://) |
+
+*/

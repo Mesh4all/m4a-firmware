@@ -1,0 +1,35 @@
+/**
+ @defgroup    boards_m4a-24g Mesh4All 2.4 GHz band board
+ @ingroup     boards
+ @brief       Mesh4All 2.4 GHz  board
+
+ # Overview
+
+The [M4A-24G]() is a complete communications system and mesh ready.
+It's developed to run the latest firmwares from Mesh-For(4)-All using the 2.4 GHz band.
+
+## Hardware
+
+![M4A-24G]()
+
+### Brain: SAMR21
+
+| MCU               | ATSAMR21       |
+|:----------------- |:---------------|
+| Family            | ARM Cortex-M0+ |
+| Vendor            | Microchip      |
+| RAM               |                |
+| Flash             |                |
+| Frequency         | up to 48MHz    |
+| FPU               | no             |
+| Timers            |                |
+| ADCs              |                |
+| UARTs             |                |
+| SPIs              |                |
+| I2Cs              |                |
+| USB               | yes            |
+| Vcc               | 1.62V - 3.63V  |
+| Datasheet         | [Datasheet]()        |
+| Reference Manual  | [Reference Manual]() |
+
+*/
