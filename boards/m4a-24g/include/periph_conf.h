@@ -348,7 +348,7 @@ static const i2c_conf_t i2c_config[] = {
  * @name    Number of I2C devices defined, default is 1
  * @{
  */
-#define I2C_NUMOF          ARRAY_SIZE(i2c_config)   /*!< 1 I2C peripheral is availble */
+#define I2C_NUMOF          ARRAY_SIZE(i2c_config)   /*!< 1 I2C peripheral is available */
 /** @} */
 
 /**
