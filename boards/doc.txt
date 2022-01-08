@@ -1,0 +1,34 @@
+/**
+@defgroup boards Supported Boards
+
+# What goes here?
+
+All those boards supported by Mesh4all and not defined in RIOT-OS
+
+## Board requirements
+
+The goal of this repo is not to list general purpose dev boards or a dev-kit, however the goal is
+ to accommodate those boards with a specific purpose, such as:
+
+- Environmental monitoring and metering systems
+- Data communication
+- Data storage and distribution
+- Action/Reaction systems
+
+### Environmental monitoring
+
+Systems collecting eviromental data such as gases, temperature, pressure, moisture, etc or metering systems designed to measure any kind of data such as distance, weight, volume, positioning, etc.
+
+### Data communications
+
+Systems capable of transmitting and receiving data in any way, radio, wire, optical, etc. not defined in RIOT-OS
+
+### Data storage and distribution
+
+Data storage systems and those intended for their distribution in any way, synchronously or asynchronously.
+
+### Action/Reaction systems
+
+Systems with a certain degree of autonomy, capable of collecting data and reacting based on that data, in loop or loop with bypass option.
+
+*/
