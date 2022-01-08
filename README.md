@@ -25,9 +25,9 @@ Expand all your wireless network limits and join to the big mesh.</p>
 <p align= "justify">m4a-firmware is a software implemented in hardware able to provide enroute data between devices. The principal proposite is create only a wide wireless network.
 m4a-firmware is based under <a href="https://github.com/RIOT-OS/RIOT"> RIOT OS</a> and we follow some of its design principles: energy-efficiency and modularity. We implemented our network vision approach and expanded capabilities to join some devices to networks.</p>
 
-## FEATURES
+## Features
 
-m4a-firmware provides these principals features:
+**m4a-firmware** provides these principals features:
 
 - IPv6
 - CoAp
@@ -77,12 +77,31 @@ Enjoy your firmware following these steps:
     make term
 ```
 
-<p align= "justify">Enjoy your firmware and if you have some failure or bugs please present <a href= 'https://github.com/Mesh4all/m4a-firmware/issues'> issue </a> and we'll be working in resolve it. Remember check if another user had the same issue.
+## Support
 
-For more information follow us in [twitter](https://twitter.com/mesh4all) and join to us and our [discord](https://discord.gg/DPUnkb7P) channel
+We invite you to read our [code of conduct](CODE_OF_CONDUCT.md) but you probably won't read it, we know, it's very long and life is short but we summarice it in two short sentences:
+- Respect the opinion of others
+- Be polite and nice to other people
+
+### Getting help
+
+If you need help, you can contact us via [twitter](https://twitter.com/mesh4all) or [discord](https://discord.gg/DPUnkb7P)
+
+### Issue tracker
+
+If you find some bug or would you like to propose new features please open a issue:
+
+https://github.com/Mesh4all/m4a-firmware/issues
+
+Make sure it doesn't already exist, you can use the built-in search engine for that.
+
+### Developers
+
+New code or code fixing is always welcome, pull requests are open to everyone, we just ask that your contribution fits our [coding conventions](CODING_CONVENTIONS.md)
+
 ## License
 
- <p align= "justify">Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.</p>
+ Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License
 
  You may obtain a copy of the License at
 
@@ -90,15 +109,13 @@ For more information follow us in [twitter](https://twitter.com/mesh4all) and jo
 
   or in the [LICENSE](LICENSE) file, in the root folder of this repository.
 
-<p align= "justify">Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</p>
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 See the License for the specific language governing permissions and limitations under the License.
 
 Copyright (c) 2021 Mesh4all <mesh4all.org>
 
-<p align= "justify">Licensed under the Apache License Version 2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
-
-<br>
+Licensed under the Apache License Version 2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 <p align="center">
     <a href="https://mesh4all.github.io/m4a-firmware">Documentation</a> |
