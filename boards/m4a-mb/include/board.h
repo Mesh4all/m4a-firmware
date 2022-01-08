@@ -46,7 +46,7 @@ extern "C"
  * @name   LED D0 (orange) definition and handler
  * @{
  */
-#define LED0_PIN GPIO_PIN(PB, 30)                       /*!< LED0 is routed to pin PB30 in the MCU */
+#define LED0_PIN GPIO_PIN(PB, 30)                       /*!< LED0, routed to pin PB30 to the MCU */
 #define LED0_MASK (1 << 30)                             /*!< --- */
 #define LED0_ON (LED_PORT.OUTCLR.reg = LED0_MASK)       /*!< Power On LED0 */
 #define LED0_OFF (LED_PORT.OUTSET.reg = LED0_MASK)      /*!< Power Off LED0 */
@@ -68,7 +68,7 @@ extern "C"
  * @name   LED-D2 (yellow) definition and handler
  * @{
  */
-#define LED2_PIN GPIO_PIN(PB, 6)                        /*!< LED2 is routed to pin PB6 in the MCU */
+#define LED2_PIN GPIO_PIN(PB, 6)                        /*!< LED2, routed to pin PB6 in the MCU */
 #define LED2_MASK (1 << 6)                              /*!<  --- */
 #define LED2_ON (LED_PORT.OUTCLR.reg = LED2_MASK)       /*!< Power On LED2 */
 #define LED2_OFF (LED_PORT.OUTSET.reg = LED2_MASK)      /*!< Power Off LED2 */
@@ -80,8 +80,8 @@ extern "C"
  * @{
  */
 #define BTN0_PORT PORT->Group[PA]                       /*!< --- */
-#define BTN0_PIN GPIO_PIN(PA, 15)                       /*!< --- */
-#define BTN0_MODE GPIO_IN_PU                            /*!< --- */
+#define BTN0_PIN GPIO_PIN(PA, 15)                       /*!< Routed to PIN PA,15 */
+#define BTN0_MODE GPIO_IN_PU                            /*!< Mode Pull UP, as input */
 /** @} */
 
 /**
