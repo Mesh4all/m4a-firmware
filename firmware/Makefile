@@ -51,6 +51,8 @@ USEMODULE += netstats_rpl
 # Note: this code is hardware independent but "COULD BE" configurable for a
 #	target board
 # EXTERNAL_MODULE_DIRS += external_drivers
+USEMODULE += ds18_sensor
+EXTERNAL_MODULE_DIRS += peripherals
 
 CFLAGS += -DCONFIG_GNRC_RPL_DEFAULT_NETIF=6
 #
