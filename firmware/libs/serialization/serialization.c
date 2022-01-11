@@ -47,7 +47,7 @@ int cbor_decode_message (uint8_t* buffer, sensor_data* data, size_t length)
     cbor_value_get_uint64(&moisture_in, &moist);
 
     memcpy(&data->temperature, &temp, sizeof(int16_t));
-    memcpy(&data->mositure, &moist, sizeof(int));
+    memcpy(&data->soil_moisture, &moist, sizeof(int));
 
     return 0;
 }
@@ -62,7 +62,7 @@ int cbor_enconde_message (sensor_data* data, uint8_t* output, size_t* len_output
     cbor_encoder_create_map(&encoder, &map_encoder, 2);
 
     cbor_encode_text_stringz(&map_encoder, "moisture");
-    cbor_encode_int(&map_encoder, data->mositure);
+    cbor_encode_int(&map_encoder, data->soil_moisture);
 
     cbor_encode_text_stringz(&map_encoder, "temp");
     cbor_encode_int(&map_encoder, data->temperature);

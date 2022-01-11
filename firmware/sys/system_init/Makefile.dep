@@ -1,0 +1,2 @@
+USEMODULE += slipdev
+USEMODULE += slipdev_l2addr

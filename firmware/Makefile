@@ -31,12 +31,7 @@ USEMODULE += auto_init_gnrc_netif
 USEMODULE += gnrc_icmpv6_error
 # Specify the mandatory networking modules for IPv6 and UDP
 USEMODULE += gnrc_ipv6_router_default
-USEMODULE += gnrc_udp
-# Add a routing protocol
-USEMODULE += gnrc_rpl
-USEMODULE += auto_init_gnrc_rpl
-# Optional , p2p over rpl
-USEMODULE += gnrc_rpl_p2p
+
 # This application dumps received packets to STDIO using the pktdump module
 USEMODULE += gnrc_pktdump
 # Additional networking modules that can be dropped if not needed
@@ -52,21 +47,21 @@ USEMODULE += netstats_rpl
 #	target board
 
 USEMODULE += ds18_sensor
+USEMODULE += moisture_sensor
 EXTERNAL_MODULE_DIRS += peripherals
 
 USEMODULE += udp_m4a
+USEMODULE += serialization
 EXTERNAL_MODULE_DIRS += libs
 
-CFLAGS += -DCONFIG_GNRC_RPL_DEFAULT_NETIF=6
-#
-CFLAGS += -DCONFIG_GNRC_IPV6_NIB_NUMOF=50
-CFLAGS += -DCONFIG_GNRC_IPV6_NIB_OFFL_NUMOF=50
-#
-CFLAGS += -DCONFIG_GNRC_IPV6_NIB_DEFAULT_ROUTER_NUMOF=2
+FEATURES_REQUIRED = periph_adc
 
-# Disable warnings when a parameter is not used
-CFLAGS += -Wno-unused-parameter
-CFLAGS += -Wno-unused-variable
+USEMODULE += system_init
+EXTERNAL_MODULE_DIRS += sys
+
+# Use UART_DEV(1) for slipdev as a default, baudrate by default is 115200
+SLIP_UART ?= 1
+CFLAGS += "-DSLIPDEV_PARAM_UART=UART_DEV($(SLIP_UART))"
 
 # Set log level:
 # LOG_NONE:    Lowest log level, will output nothing

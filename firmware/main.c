@@ -28,23 +28,20 @@
 #include "shell.h"
 #include "shell_commands.h"
 #include "msg.h"
+#include "system_init.h"
 
 #include "log.h"
 #include "board.h"
 
-int dummy_cmd(int argc, char **argv)
-{
-    return 0;
-}
 
 static shell_command_t shell_extended_commands[] = {
-    {"dummy_cmd", "dummy cmd descrption", dummy_cmd},
     {NULL, NULL, NULL}};
 
 int main(void)
 {
     LOG_INFO("~~ Welcome to Mesh4all ~~\n");
 
+    init_initial_params();
     /* Start shell */
     char line_buf[SHELL_DEFAULT_BUFSIZE];
 

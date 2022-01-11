@@ -22,8 +22,13 @@ int init_moisture (void)
 int get_moisture_value(int* output)
 {
     int sample = adc_sample(0, RES);
+    printf("ADC_LINE: SAMPLE %i \n", sample);
     if (sample < 0) {
+         *output = -1;
         printf("ADC_LINE: selected resolution not applicable\n");
+        return -1;
+    } else if (sample == 0) {
+        *output = -1;
         return -1;
     } else if (sample > 0) {
         int min = DEFAULT_MIN;
