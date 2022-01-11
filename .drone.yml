@@ -17,9 +17,6 @@ steps:
       - make -C firmware BOARD=m4a-mb
 
 trigger:
-  branch:
-    - master
   event:
+    - push
     - pull_request
-  action:
-    - labeled
