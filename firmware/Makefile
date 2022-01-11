@@ -50,7 +50,7 @@ USEMODULE += netstats_rpl
 # Custom modules
 # Note: this code is hardware independent but "COULD BE" configurable for a
 #	target board
-# EXTERNAL_MODULE_DIRS += external_drivers
+
 
 CFLAGS += -DCONFIG_GNRC_RPL_DEFAULT_NETIF=6
 #
