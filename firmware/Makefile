@@ -50,7 +50,7 @@ USEMODULE += netstats_rpl
 # Custom modules
 # Note: this code is hardware independent but "COULD BE" configurable for a
 #	target board
-# EXTERNAL_MODULE_DIRS += external_drivers
+
 USEMODULE += ds18_sensor
 EXTERNAL_MODULE_DIRS += peripherals
 

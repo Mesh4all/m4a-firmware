@@ -15,3 +15,8 @@ steps:
     commands:
       - git submodule update --init --recursive
       - make -C firmware BOARD=m4a-mb
+
+trigger:
+  event:
+    - push
+    - pull_request

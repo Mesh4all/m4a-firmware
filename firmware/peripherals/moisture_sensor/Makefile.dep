@@ -1,0 +1,2 @@
+USEMODULE += random
+# Set a different prng than the default prng_tinymt32
