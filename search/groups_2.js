@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['supported_20boards_192',['Supported Boards',['../group__boards.html',1,'']]]
+  ['reference_20firmware_253',['Reference firmware',['../group__m4a-firmware.html',1,'']]]
 ];

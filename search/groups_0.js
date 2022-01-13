@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['mesh4all_202_2e4_20ghz_20band_20board_189',['Mesh4All 2.4 GHz band board',['../group__boards__m4a-24g.html',1,'']]],
-  ['mesh4all_20multi_2dband_20board_190',['Mesh4All multi-band board',['../group__boards__m4a-mb.html',1,'']]]
+  ['boards_5fm4a_2dwrover_250',['Boards_m4a-wrover',['../group__boards__m4a-wrover.html',1,'']]]
 ];

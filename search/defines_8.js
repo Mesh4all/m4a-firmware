@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['rfctl1_5fpin_173',['RFCTL1_PIN',['../m4a-24g_2include_2board_8h.html#a2364f376947112a08b6c534235a8f4fa',1,'board.h']]],
-  ['rfctl2_5fpin_174',['RFCTL2_PIN',['../m4a-24g_2include_2board_8h.html#a834d0ca9dc3c0d7e24ba2848ff6ddc1c',1,'board.h']]],
-  ['rfctl_5fantenna_5fdefault_175',['RFCTL_ANTENNA_DEFAULT',['../m4a-24g_2include_2board_8h.html#a8374c2ca3f70167aff3c6148a5e4ae62',1,'board.h']]],
-  ['rtt_5ffrequency_176',['RTT_FREQUENCY',['../m4a-24g_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h']]],
-  ['rtt_5fmin_5foffset_177',['RTT_MIN_OFFSET',['../m4a-24g_2include_2periph__conf_8h.html#ad34d7bc806339ce586e8a942913cdb6f',1,'periph_conf.h']]]
+  ['pwm0_5fgpios_214',['PWM0_GPIOS',['../m4a-wrover_2include_2periph__conf_8h.html#a6d98f0e073d8b7dee809df091e612d0e',1,'periph_conf.h']]],
+  ['pwm1_5fgpios_215',['PWM1_GPIOS',['../m4a-wrover_2include_2periph__conf_8h.html#ad313547a91faf4f9aa5e57e188accb7d',1,'periph_conf.h']]],
+  ['pwm_5f0_5fen_216',['PWM_0_EN',['../m4a-24g_2include_2periph__conf_8h.html#ac0ac477af727daf8ed4f4157f37b4395',1,'PWM_0_EN():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ac0ac477af727daf8ed4f4157f37b4395',1,'PWM_0_EN():&#160;periph_conf.h']]],
+  ['pwm_5f1_5fen_217',['PWM_1_EN',['../m4a-24g_2include_2periph__conf_8h.html#ab720cc8e2711232b8886c44d58fcb416',1,'PWM_1_EN():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ab720cc8e2711232b8886c44d58fcb416',1,'PWM_1_EN():&#160;periph_conf.h']]],
+  ['pwm_5f2_5fen_218',['PWM_2_EN',['../m4a-mb_2include_2periph__conf_8h.html#a8cbf32f51ddaf21fe06b4bbe964095d4',1,'periph_conf.h']]],
+  ['pwm_5fnumof_219',['PWM_NUMOF',['../m4a-24g_2include_2periph__conf_8h.html#a44adbd579bb180f3cfe8ec78932eb7a1',1,'PWM_NUMOF():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a44adbd579bb180f3cfe8ec78932eb7a1',1,'PWM_NUMOF():&#160;periph_conf.h']]]
 ];
