@@ -30,10 +30,10 @@
 #include "msg.h"
 
 #include "log.h"
+#include "board.h"
 
 int dummy_cmd(int argc, char **argv)
 {
-
     return 0;
 }
 

@@ -16,6 +16,12 @@ steps:
       - git submodule update --init --recursive
       - make -C firmware BOARD=m4a-mb
 
+  - name: build-m4a-wrover
+    image: luisan00/m4abuild-base:latest
+    privileged: true
+    commands:
+      - git submodule update --init --recursive
+
 trigger:
   event:
     - push

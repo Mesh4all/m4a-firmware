@@ -1,0 +1,33 @@
+/**
+ @defgroup    boards_m4a-wrover
+ @ingroup     boards
+ @brief       Mesh4All 2.4 GHz  board
+
+* The Espressif ESP-WROVER-KIT is a development board that uses the
+ * ESP32-WROVER module which includes a built-in 4 MByte SPI RAM. Most
+ * important features of the board are
+ *
+ * - Micro-SD card interface
+ * - OV7670 camera interface
+ * - 3.2" SPI LCD panel
+ * - RGB LED
+ *
+ * Furthermore, many GPIOs are broken out for extension. The USB bridge
+ * based on FDI FT2232HL provides a JTAG interface for debugging through
+ * the USB interface.
+ *
+ * When the camera module is connected, add
+ * ```
+ * USEMODULE += esp32_wrover_kit_camera
+ * ```
+ * to the makefile of the application to use the according default board
+ * configuration.
+ *
+ * For detailed information about the configuration of ESP32 boards, see
+ * section ref esp32_peripherals "Common Peripherals".
+ *
+ * @note
+ * Most definitions can be overridden by an ref esp32_application_specific_configurations
+ * "application-specific board configuration".
+ *
+*/
