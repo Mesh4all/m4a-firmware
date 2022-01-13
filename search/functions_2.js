@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['init_5fmoisture_144',['init_moisture',['../moisture__sensor_8h.html#a5aecb8c061d0c67614d8a0805b627dca',1,'moisture_sensor.h']]],
-  ['init_5ftemperature_5fsensor_145',['init_temperature_sensor',['../ds18__sensor_8h.html#afd1968312478887124a3678bed0d1cab',1,'ds18_sensor.h']]]
+  ['get_5fmoisture_5fvalue_152',['get_moisture_value',['../moisture__sensor_8h.html#ad3991965f75a3260bf8365f71d7a43ca',1,'moisture_sensor.h']]],
+  ['get_5ftemperature_5fvalue_153',['get_temperature_value',['../ds18__sensor_8h.html#a2221ee0e3051d5d6ce49d845b8f181f8',1,'ds18_sensor.h']]]
 ];

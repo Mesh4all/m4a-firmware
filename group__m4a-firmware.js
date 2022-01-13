@@ -6,6 +6,7 @@ var group__m4a_firmware =
     [ "Go to the example folder", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md29", null ],
     [ "Compile your code and flash it", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md30", null ],
     [ "main.h", "firmware_2include_2main_8h.html", null ],
+    [ "serialization.h", "serialization_8h.html", null ],
     [ "ds18_sensor.h", "ds18__sensor_8h.html", null ],
     [ "moisture_sensor.h", "moisture__sensor_8h.html", null ]
 ];

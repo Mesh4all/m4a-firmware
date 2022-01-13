@@ -36,7 +36,11 @@ var NAVTREE =
     [ "Uart example", "md_examples_TPM_UART_APP_README.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
-      [ "Data Structures", "annotated.html", "annotated_dup" ]
+      [ "Data Structures", "annotated.html", "annotated_dup" ],
+      [ "Data Fields", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
@@ -53,7 +57,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structudpf__payload.html#a1d26e9807f72f00a3c12a4850ffdc448"
+"structcJSON.html#a4b21817d0fd2919901abadac73214e7f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
