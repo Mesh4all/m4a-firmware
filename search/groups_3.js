@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['supported_20boards_276',['Supported Boards',['../group__boards.html',1,'']]]
+  ['supported_20boards_279',['Supported Boards',['../group__boards.html',1,'']]]
 ];

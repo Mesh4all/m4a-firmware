@@ -109,36 +109,36 @@ $(document).ready(function(){initNavTree('md_examples_esp32-wroom-32_test_ds18b2
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2 align="center">ds18b20 </h2>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Getting Started:</h2>
 <p>Follow the next steps:</p>
 <p><br  />
 </p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 Build this example in your breadboard</h2>
 <p><br  />
 </p>
 <p><img src="../../../doc/media/examples/esp32-wroom/ds18b20/ds18b20_example.png" alt="" align="center" class="inline"/></p>
 <p><br  />
 </p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 Go to the example folder</h2>
 <div class="fragment"><div class="line">cd examples/esp-wroom32/test_ds18b20</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md30"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md37"></a>
 Compile your code and flash it</h2>
 <div class="fragment"><div class="line">make flash term</div>
 </div><!-- fragment --><p>Check your code to understand functionalities</p>
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1><a class="anchor" id="autotoc_md38"></a>
 First</h1>
 <p>Define a ds18 sensor </p><div class="fragment"><div class="line">ds18_t sensor</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md32"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md39"></a>
 Second</h1>
 <p>Define ds18 params </p><div class="fragment"><div class="line">ds18_params_t dev ={</div>
 <div class="line">     .pin = sensor_pin,</div>
 <div class="line">     .out_mode = sensor_mode_out <span class="comment">// OUT_OPRN_DRAIN_PULL UP</span></div>
 <div class="line">     .in_mode = sensor_mode_in</div>
 <div class="line"> }</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md33"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md40"></a>
 Last steps</h1>
 <p>Initialize the device </p><div class="fragment"><div class="line">ds18_init(&amp;dev,&amp;dev_params); <span class="comment">// Set the params to your sensor</span></div>
 </div><!-- fragment --><p>Check the temperature </p><div class="fragment"><div class="line">ds18_get_temperature(&amp;dev,&amp;var_temperature); <span class="comment">// var_temperature has to defined previously as int16_t variable</span></div>
@@ -150,7 +150,7 @@ Last steps</h1>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jan 14 2022 18:12:08 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Fri Jan 14 2022 20:20:36 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

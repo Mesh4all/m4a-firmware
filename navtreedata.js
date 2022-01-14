@@ -24,13 +24,17 @@ var NAVTREE =
 [
   [ "Mesh4all", "index.html", [
     [ "m4a reference firmware", "index.html", null ],
+    [ "m4a-wroom examples", "md_examples_esp32-wroom-32_slipdev_README.html", [
+      [ "First", "md_examples_esp32-wroom-32_slipdev_README.html#autotoc_md31", null ],
+      [ "Second", "md_examples_esp32-wroom-32_slipdev_README.html#autotoc_md32", null ]
+    ] ],
     [ "Esp32-wroom examples", "md_examples_esp32-wroom-32_test_ds18b20_README.html", [
-      [ "First", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md31", null ],
-      [ "Second", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md32", null ],
-      [ "Last steps", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md33", null ]
+      [ "First", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md38", null ],
+      [ "Second", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md39", null ],
+      [ "Last steps", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md40", null ]
     ] ],
     [ "External led example", "md_examples_external_led_README.html", [
-      [ "How to test it", "md_examples_external_led_README.html#autotoc_md35", null ]
+      [ "How to test it", "md_examples_external_led_README.html#autotoc_md42", null ]
     ] ],
     [ "readme", "md_examples_moisture_sensor_hw390_readme.html", null ],
     [ "Uart example", "md_examples_TPM_UART_APP_README.html", null ],
@@ -57,7 +61,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structcJSON.html#a401b274c2da358dac5c23ab8b2c71f85"
+"moisture__sensor_8h.html#ad3991965f75a3260bf8365f71d7a43ca"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
