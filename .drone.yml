@@ -22,6 +22,12 @@ steps:
     commands:
       - git submodule update --init --recursive
 
+  - name: build-m4a-wroom
+    image: luisan00/m4abuild-base:latest
+    privileged: true
+    commands:
+      - git submodule update --init --recursive
+
 trigger:
   event:
     - push
