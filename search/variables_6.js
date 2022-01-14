@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uart_5fconfig_167',['uart_config',['../m4a-24g_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5',1,'uart_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5',1,'uart_config():&#160;periph_conf.h']]]
+  ['temperature_175',['temperature',['../structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5',1,'sensor_data']]],
+  ['timer_5fconfig_176',['timer_config',['../m4a-24g_2include_2periph__conf_8h.html#a8b28b4c69f45b3c82837e7f5269f00a9',1,'timer_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a8b28b4c69f45b3c82837e7f5269f00a9',1,'timer_config():&#160;periph_conf.h']]]
 ];

@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['clock_5fcoreclock_185',['CLOCK_CORECLOCK',['../m4a-24g_2include_2periph__conf_8h.html#afc465f12242e68f6c3695caa3ba0a169',1,'CLOCK_CORECLOCK():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#afc465f12242e68f6c3695caa3ba0a169',1,'CLOCK_CORECLOCK():&#160;periph_conf.h']]],
-  ['clock_5fpll_5fdiv_186',['CLOCK_PLL_DIV',['../m4a-24g_2include_2periph__conf_8h.html#ad7c20feb5ba29cd3c6479fa74db3bbb0',1,'CLOCK_PLL_DIV():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ad7c20feb5ba29cd3c6479fa74db3bbb0',1,'CLOCK_PLL_DIV():&#160;periph_conf.h']]],
-  ['clock_5fpll_5fmul_187',['CLOCK_PLL_MUL',['../m4a-24g_2include_2periph__conf_8h.html#a902a38d6dfe9bc80271132ace0d1ca69',1,'CLOCK_PLL_MUL():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a902a38d6dfe9bc80271132ace0d1ca69',1,'CLOCK_PLL_MUL():&#160;periph_conf.h']]],
-  ['clock_5fuse_5fpll_188',['CLOCK_USE_PLL',['../m4a-24g_2include_2periph__conf_8h.html#a8dc6f59497ff407016c464fb10f9ece8',1,'CLOCK_USE_PLL():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a8dc6f59497ff407016c464fb10f9ece8',1,'CLOCK_USE_PLL():&#160;periph_conf.h']]],
-  ['clock_5fuse_5fxosc32_5fdfll_189',['CLOCK_USE_XOSC32_DFLL',['../m4a-24g_2include_2periph__conf_8h.html#a4d657908106c0cfbfc9c140c6d605902',1,'CLOCK_USE_XOSC32_DFLL():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a4d657908106c0cfbfc9c140c6d605902',1,'CLOCK_USE_XOSC32_DFLL():&#160;periph_conf.h']]],
-  ['config_5fztimer_5fusec_5fdev_190',['CONFIG_ZTIMER_USEC_DEV',['../m4a-24g_2include_2board_8h.html#a2378d153069150591eb7fa2082f573d9',1,'board.h']]],
-  ['config_5fztimer_5fusec_5fmin_191',['CONFIG_ZTIMER_USEC_MIN',['../m4a-24g_2include_2board_8h.html#a0da89da11cd4268db8298bae9fbe1d85',1,'board.h']]],
-  ['config_5fztimer_5fusec_5ftype_192',['CONFIG_ZTIMER_USEC_TYPE',['../m4a-24g_2include_2board_8h.html#ae3245610b3181dbfab13ae3e5fae7e37',1,'board.h']]],
-  ['cpuid_193',['CPUID',['../m4a-wrover_2include_2board_8h.html#a7cac76255daff1f7a2748ba05dfc86f3',1,'board.h']]]
+  ['clock_5fcoreclock_195',['CLOCK_CORECLOCK',['../m4a-24g_2include_2periph__conf_8h.html#afc465f12242e68f6c3695caa3ba0a169',1,'CLOCK_CORECLOCK():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#afc465f12242e68f6c3695caa3ba0a169',1,'CLOCK_CORECLOCK():&#160;periph_conf.h']]],
+  ['clock_5fpll_5fdiv_196',['CLOCK_PLL_DIV',['../m4a-24g_2include_2periph__conf_8h.html#ad7c20feb5ba29cd3c6479fa74db3bbb0',1,'CLOCK_PLL_DIV():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ad7c20feb5ba29cd3c6479fa74db3bbb0',1,'CLOCK_PLL_DIV():&#160;periph_conf.h']]],
+  ['clock_5fpll_5fmul_197',['CLOCK_PLL_MUL',['../m4a-24g_2include_2periph__conf_8h.html#a902a38d6dfe9bc80271132ace0d1ca69',1,'CLOCK_PLL_MUL():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a902a38d6dfe9bc80271132ace0d1ca69',1,'CLOCK_PLL_MUL():&#160;periph_conf.h']]],
+  ['clock_5fuse_5fpll_198',['CLOCK_USE_PLL',['../m4a-24g_2include_2periph__conf_8h.html#a8dc6f59497ff407016c464fb10f9ece8',1,'CLOCK_USE_PLL():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a8dc6f59497ff407016c464fb10f9ece8',1,'CLOCK_USE_PLL():&#160;periph_conf.h']]],
+  ['clock_5fuse_5fxosc32_5fdfll_199',['CLOCK_USE_XOSC32_DFLL',['../m4a-24g_2include_2periph__conf_8h.html#a4d657908106c0cfbfc9c140c6d605902',1,'CLOCK_USE_XOSC32_DFLL():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a4d657908106c0cfbfc9c140c6d605902',1,'CLOCK_USE_XOSC32_DFLL():&#160;periph_conf.h']]],
+  ['config_5fztimer_5fusec_5fdev_200',['CONFIG_ZTIMER_USEC_DEV',['../m4a-24g_2include_2board_8h.html#a2378d153069150591eb7fa2082f573d9',1,'board.h']]],
+  ['config_5fztimer_5fusec_5fmin_201',['CONFIG_ZTIMER_USEC_MIN',['../m4a-24g_2include_2board_8h.html#a0da89da11cd4268db8298bae9fbe1d85',1,'board.h']]],
+  ['config_5fztimer_5fusec_5ftype_202',['CONFIG_ZTIMER_USEC_TYPE',['../m4a-24g_2include_2board_8h.html#ae3245610b3181dbfab13ae3e5fae7e37',1,'board.h']]],
+  ['cpuid_203',['CPUID',['../m4a-wrover_2include_2board_8h.html#a7cac76255daff1f7a2748ba05dfc86f3',1,'board.h']]]
 ];
