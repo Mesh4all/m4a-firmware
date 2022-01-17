@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['cjson_150',['cJSON',['../structcJSON.html',1,'']]],
-  ['cjson_5fhooks_151',['cJSON_Hooks',['../structcJSON__Hooks.html',1,'']]]
+  ['available_5fsensors_5ft_156',['available_sensors_t',['../structavailable__sensors__t.html',1,'']]]
 ];

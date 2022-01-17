@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['temperature_185',['temperature',['../structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5',1,'sensor_data']]],
-  ['timer_5fconfig_186',['timer_config',['../m4a-24g_2include_2periph__conf_8h.html#a8b28b4c69f45b3c82837e7f5269f00a9',1,'timer_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a8b28b4c69f45b3c82837e7f5269f00a9',1,'timer_config():&#160;periph_conf.h']]]
+  ['sam_5fusbdev_5fconfig_193',['sam_usbdev_config',['../m4a-24g_2include_2periph__conf_8h.html#a57b47076d6e87497ff2901208cb484dc',1,'sam_usbdev_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a57b47076d6e87497ff2901208cb484dc',1,'sam_usbdev_config():&#160;periph_conf.h']]],
+  ['saul_5fgpio_5fparams_194',['saul_gpio_params',['../m4a-24g_2include_2gpio__params_8h.html#a5442106fb6a31a0cc477a93d79701765',1,'saul_gpio_params():&#160;gpio_params.h'],['../m4a-mb_2include_2gpio__params_8h.html#a5442106fb6a31a0cc477a93d79701765',1,'saul_gpio_params():&#160;gpio_params.h'],['../m4a-wroom_2include_2gpio__params_8h.html#a5442106fb6a31a0cc477a93d79701765',1,'saul_gpio_params():&#160;gpio_params.h'],['../m4a-wrover_2include_2gpio__params_8h.html#a5442106fb6a31a0cc477a93d79701765',1,'saul_gpio_params():&#160;gpio_params.h']]],
+  ['soil_5fmoisture_195',['soil_moisture',['../structsensor__data.html#afe48aa5064277cfa7ce264a226ab854b',1,'sensor_data']]],
+  ['spi_5fconfig_196',['spi_config',['../m4a-24g_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c',1,'spi_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c',1,'spi_config():&#160;periph_conf.h']]]
 ];
