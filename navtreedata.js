@@ -61,7 +61,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"moisture__sensor_8h.html#ad3991965f75a3260bf8365f71d7a43ca"
+"m4a-wrover_2include_2periph__conf_8h.html#a16ce69be83444ff939653090fb7fa151"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
