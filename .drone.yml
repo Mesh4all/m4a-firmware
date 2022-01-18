@@ -4,27 +4,27 @@ type: docker
 
 steps:
   - name: build-m4a-24g
-    image: luisan00/m4abuild-base:dev
+    image: luisan00/m4abuild-base:latest
     commands:
       - git submodule update --init --recursive
       - make -C firmware BOARD=m4a-24g
 
   - name: build-m4a-mb
-    image: luisan00/m4abuild-base:dev
+    image: luisan00/m4abuild-base:latest
     privileged: true
     commands:
       - git submodule update --init --recursive
       - make -C firmware BOARD=m4a-mb
 
   - name: build-m4a-wrover
-    image: luisan00/m4abuild-base:dev
+    image: luisan00/m4abuild-base:latest
     privileged: true
     commands:
       - git submodule update --init --recursive
       - make -C firmware BOARD=m4a-wrover
 
   - name: build-m4a-wroom
-    image: luisan00/m4abuild-base:dev
+    image: luisan00/m4abuild-base:latest
     privileged: true
     commands:
       - git submodule update --init --recursive
