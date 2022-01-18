@@ -33,6 +33,8 @@
 #include "log.h"
 #include "board.h"
 
+#define MAIN_QUEUE_SIZE     (8)
+msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
 
 static shell_command_t shell_extended_commands[] = {
     {NULL, NULL, NULL}};
@@ -43,6 +45,7 @@ int main(void)
 
     init_initial_params();
     /* Start shell */
+    msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
     char line_buf[SHELL_DEFAULT_BUFSIZE];
 
     shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);

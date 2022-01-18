@@ -25,7 +25,6 @@ USEMODULE += ps
 
 # Include packages that pull up and auto-init the link layer.
 # NOTE: 6LoWPAN will be included if IEEE802.15.4 devices are present
-USEMODULE += netdev_default
 USEMODULE += auto_init_gnrc_netif
 # Activate ICMPv6 error messages
 USEMODULE += gnrc_icmpv6_error
@@ -61,7 +60,11 @@ EXTERNAL_MODULE_DIRS += sys
 
 # Use UART_DEV(1) for slipdev as a default, baudrate by default is 115200
 SLIP_UART ?= 1
-CFLAGS += "-DSLIPDEV_PARAM_UART=UART_DEV($(SLIP_UART))"
+SLIP_BAUDRATE ?= 115200
+CFLAGS += -DSLIP_UART="UART_DEV($(SLIP_UART))"
+CFLAGS += -DSLIP_BAUDRATE=$(SLIP_BAUDRATE)
+
+CFLAGS += -I$(CURDIR)/sys/system_init/include
 
 # Set log level:
 # LOG_NONE:    Lowest log level, will output nothing
