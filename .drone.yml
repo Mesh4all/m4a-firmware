@@ -21,12 +21,14 @@ steps:
     privileged: true
     commands:
       - git submodule update --init --recursive
+      - make -C firmware BOARD=m4a-wrover
 
   - name: build-m4a-wroom
     image: luisan00/m4abuild-base:latest
     privileged: true
     commands:
       - git submodule update --init --recursive
+      - make -C firmware BOARD=m4a-wroom
 
 trigger:
   event:
