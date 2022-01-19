@@ -64,7 +64,6 @@ static uint32_t btn_cnt = 1;
 static screen_dev_t s_screen;
 lv_obj_t * table;
 
-
 void receive_callback(char* message);
 
 int dummy_cmd(int argc, char **argv)
@@ -87,29 +86,28 @@ int xinit_sta (void)
         }
     };
 
-    if(esp_wifi_set_mode(WIFI_MODE_STA) < 0) {
+    if (esp_wifi_set_mode(WIFI_MODE_STA) < 0) {
         printf("Error: setting sta mode \n");
         return -1;
     }
 
-    if(esp_wifi_set_config(WIFI_IF_STA, &wifi_config) < 0) {
+    if (esp_wifi_set_config(WIFI_IF_STA, &wifi_config) < 0) {
         printf("Error: setting config \n");
         return -1;
     }
     return 0;
 }
 
-
 int set_global_ipv6 (void)
 {
     gnrc_netif_t *wifi_iface = gnrc_netif_get_by_pid(ESP_STA_IFACE);
-    if(wifi_iface == NULL) {
+    if (wifi_iface == NULL) {
         printf("Error: ESP32 WiFi STA interface doesn't exists.\n");
         return -1;
     }
 
     ipv6_addr_t addr;
-    if(ipv6_addr_from_str(&addr, "2001:db8:1::2") == NULL){
+    if (ipv6_addr_from_str(&addr, "2001:db8:1::2") == NULL){
         printf("Error: Invalid IPv6 global address\n");
         return -1;
     }
@@ -127,7 +125,7 @@ int set_global_ipv6 (void)
 
 void receive_callback(char* message)
 {
-    printf("receive %s \n",message);
+    printf("receive %s \n", message);
     cJSON* req_root = cJSON_Parse(message);
     cJSON* bitcoin = cJSON_GetObjectItemCaseSensitive(req_root, "bitcoin");
     cJSON* eth = cJSON_GetObjectItemCaseSensitive(req_root, "eth");
@@ -135,7 +133,7 @@ void receive_callback(char* message)
     const char* eth_char =  eth->valuestring;
 
     // printf("value bitcoin %c \n" , *bitcoin_char);
-    if(table != NULL){
+    if (table != NULL){
         printf("inside here \n");
         lv_table_set_cell_value(table, 1, 1, bitcoin_char);
         lv_table_set_cell_value(table, 2, 1, eth_char);
@@ -145,13 +143,12 @@ void receive_callback(char* message)
     cJSON_Delete(req_root);
 }
 
-
 void screen (void)
 {
     lv_style_init(&style_box);
     lv_style_set_value_align(&style_box, LV_STATE_DEFAULT, LV_ALIGN_OUT_TOP_LEFT);
-    lv_style_set_value_ofs_y(&style_box,LV_STATE_DEFAULT,-LV_DPX(15));
-    lv_style_set_margin_top(&style_box,LV_STATE_DEFAULT,LV_DPX(5));
+    lv_style_set_value_ofs_y(&style_box, LV_STATE_DEFAULT, -LV_DPX(15));
+    lv_style_set_margin_top(&style_box, LV_STATE_DEFAULT, LV_DPX(5));
 
     win = lv_win_create(lv_disp_get_scr_act(NULL), NULL);
     lv_win_set_title(win, "Crypto challenge");
@@ -175,7 +172,6 @@ void screen (void)
     lv_table_set_cell_type(table, 0, 0, 2);
     lv_table_set_cell_type(table, 0, 1, 2);
 
-
     /*Fill the first column*/
     lv_table_set_cell_value(table, 0, 0, "Name");
     lv_table_set_cell_value(table, 1, 0, "BTC");
@@ -185,7 +181,6 @@ void screen (void)
     lv_table_set_cell_value(table, 0, 1, "Price");
     lv_table_set_cell_value(table, 1, 1, "$57000");
     lv_table_set_cell_value(table, 2, 1, "$4500");
-
 
     lv_table_ext_t * ext = lv_obj_get_ext_attr(table);
     ext->row_h[0] = 20;
@@ -198,7 +193,7 @@ int scree_init(void)
     s_screen.display = (disp_dev_t *)&s_disp_dev;
     s_screen.display->driver = &ili9341_disp_dev_driver;
 
-   if(ili9341_init(&s_disp_dev, &ili9341_params[0]) < 0 ){
+   if (ili9341_init(&s_disp_dev, &ili9341_params[0]) < 0 ){
        printf("Error: ili9341\n");
    }
 
@@ -216,15 +211,14 @@ int main(void)
     /* Start shell */
 
     printf("init STA wifi\n");
-    if(init_sta() < 0){
+    if (init_sta() < 0){
         printf("Error: init_sta was failed\n");
     };
 
     LOG_INFO("[APP] Free memory: %d bytes", esp_get_free_heap_size());
 
-
     printf("setting global ipv6\n");
-    if(set_global_ipv6() < 0){
+    if (set_global_ipv6() < 0){
         printf("Error: could not  set global address\n");
     }
     ztimer_sleep(ZTIMER_MSEC, 5 * MS_PER_SEC);
@@ -233,17 +227,16 @@ int main(void)
     payload.port = port;
     payload.callback = &receive_callback;
 
-    if(udp_server(2, &payload) < 0){
+    if (udp_server(2, &payload) < 0){
         printf("Error: udp server couldn't started\n\n");
     }
 
-    if(scree_init() < 0){
+    if (scree_init() < 0){
         printf("Error: screen not inicializated");
     }
 
     char line_buf[SHELL_DEFAULT_BUFSIZE];
     shell_run(shell_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
-
 
     return 0;
 }

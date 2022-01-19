@@ -131,7 +131,7 @@ static void gps_rx_cb(void *arg, uint8_t c){
 
 int main (void)
 {
-    if(uart_init(UART_BLE, GPS_BAUDRATE, gps_rx_cb, NULL) < 0){
+    if (uart_init(UART_BLE, GPS_BAUDRATE, gps_rx_cb, NULL) < 0){
         printf("ERROR uart \n");
     } else {
         printf("Success: Initialized UART_DEV(%i) at BAUD %"PRIu32"\n", UART_BLE, GPS_BAUDRATE);

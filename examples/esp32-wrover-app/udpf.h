@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2021 Mesh4all <mesh4all.org>
  *
@@ -33,18 +32,13 @@ extern "C"
 {
 #endif
 
-typedef struct
-{
+typedef struct {
    char* port;
    void (*callback) (char*);
-
 } udpf_payload;
-
 
 int udp_server(int argc, udpf_payload* argv);
 int udp_send(int argc, char **argv);
-
-
 
 #ifdef __cplusplus
 }

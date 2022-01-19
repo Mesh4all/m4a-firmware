@@ -1,3 +1,26 @@
+/*
+ * Copyright (c) 2021 Mesh4all <mesh4all.org>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @brief       Main example file
+ *
+ * @author      xkevin190 <kevinvelasco190@gmail.com>
+ *
+ */
+
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -5,7 +28,6 @@
 #include "net/sock/udp.h"
 #include "net/ipv6/addr.h"
 #include "thread.h"
-
 
 #include "udpf.h"
 
@@ -24,14 +46,13 @@ void *_udp_serverf(void *args)
     sock_udp_ep_t server = { .port = atoi(castPayload->port), .family = AF_INET6 };
     msg_init_queue(server_msg_queue, SERVER_MSG_QUEUE_SIZE);
 
-    if(sock_udp_create(&sock, &server, NULL, 0) < 0) {
+    if (sock_udp_create(&sock, &server, NULL, 0) < 0) {
         return NULL;
     }
 
-
     server_running = true;
     printf("Success: started UDP server on port %u\n", server.port);
-    while(1) {
+    while (1) {
         int res;
         if ((res = sock_udp_recv(&sock, server_buffer,
                                  sizeof(server_buffer) - 1, SOCK_NO_TIMEOUT,
@@ -61,7 +82,6 @@ int udp_send(int argc, char **argv)
         return -1;
     }
 
-
     if (ipv6_addr_from_str((ipv6_addr_t *)&remote.addr, argv[1]) == NULL) {
         puts("Error: unable to parse destination address");
         return 1;
@@ -72,7 +92,7 @@ int udp_send(int argc, char **argv)
         remote.netif = (uint16_t)netif->pid;
     }
     remote.port = atoi(argv[2]);
-    if((res = sock_udp_send(NULL, argv[3], strlen(argv[3]), &remote)) < 0) {
+    if ((res = sock_udp_send(NULL, argv[3], strlen(argv[3]), &remote)) < 0) {
         puts("could not send");
     }
     else {

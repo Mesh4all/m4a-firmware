@@ -35,7 +35,6 @@ static char server_stack[THREAD_STACKSIZE_DEFAULT];
 
 #define INTERVAL (1U * US_PER_SEC)
 
-
 int dummy_cmd(int argc, char **argv)
 {
 
@@ -47,16 +46,15 @@ static const shell_command_t shell_commands[] = {
     { NULL, NULL, NULL }
 };
 
-
 int main (void)
 {
     gpio_init(23, GPIO_OUT);
     int init = 0;
     xtimer_ticks32_t last_wakeup = xtimer_now();
-    while(1) {
+    while (1) {
         xtimer_periodic_wakeup(&last_wakeup, INTERVAL);
         printf("executed");
-        if(init == 0){
+        if (init == 0){
             gpio_write(23, 1);
             init = 1;
         } else {
