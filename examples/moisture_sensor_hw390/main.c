@@ -15,9 +15,12 @@
  */
 
 /**
+ * @ingroup     moisture_sensor
+ *
  * @file
- * @brief moisture sensor test
- * @author xkevin190 <kevinvelasco190@gmail.com>
+ * @brief       Moisture sensor test
+ * @author      xkevin190 <kevinvelasco190@gmail.com>
+ * @author      eduazocar <eduardo@turpialdev.com>
  */
 
 #include "periph/adc.h"

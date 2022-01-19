@@ -1,5 +1,5 @@
-APPLICATION = test_esp32
-BOARD ?= esp32-wrover-kit
+APPLICATION = tpm_uart_app
+BOARD ?= m4a-wrover
 
 # Current path
 APPBASE ?= $(CURDIR)

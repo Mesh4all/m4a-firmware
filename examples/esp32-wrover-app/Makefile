@@ -1,5 +1,5 @@
-APPLICATION = m4a-mesh
-BOARD ?= m4a-mb
+APPLICATION = esp32-wrover-app
+BOARD ?= esp32-wrover-kit
 
 # Current path
 APPBASE ?= $(CURDIR)
@@ -9,7 +9,7 @@ RIOTBASE ?= $(CURDIR)/../../RIOT
 
 # Custom boards "MUST BE" into "boards" folder, it's code **strongly** hardware dependent
 
-
+EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
 # If We need custom actions, routines, etc **SHOULD BE** included in the "core" folder
 # 	and "MUST BE" code hardware independent
 # EXTERNAL_MODULE_DIRS += $(CURDIR)/../core

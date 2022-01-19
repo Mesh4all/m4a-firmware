@@ -1,0 +1,62 @@
+/*
+ * Copyright (C) 2022 Mesh4all <mesh4all.org>
+ *
+ * This file is subject to the terms and conditions of the GNU Lesser
+ * General Public License v2.1. See the file LICENSE in the top level
+ * directory for more details.
+ */
+
+/**
+ * @defgroup    external-led External-led blink
+ * @ingroup     examples
+ * @brief       This is a external led blink example to known about gpio/periph.h
+ * @author      xkevin190 <kevinvelasco190@gmail.com>
+
+\section led External Led Blink
+
+## Table of Contents {#external_led_blink_toc}
+
+1. [Hardware](#external_led_blink_hardware)
+2. [Getting Started](#external_led_blink_basic)
+3. [Flashing the Device](#external_led_blink_flashing)
+
+## Hardware {#external_led_blink_hardware}
+
+This section shows, which pin is used in this example.
+
+<center>
+Function        | GPIOs  | Remarks |
+:---------------|:-------|:--------|
+LED_PIN | GPIO23 | Pin to blink control of led |
+
+</center>
+## Getting Started {#external_led_blink_basic}
+
+To understand how to make a gpio_pin use digital Output. Import the periph/gpio.h library.
+You could use two functions to set digital output 1 or 0.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.c}
+gpio_write(gpio, digital_state);
+/*
+ * gpio : refers to a digital pin that could be act with two states HIGH and LOW
+ * digital_state: this could be 1 (HIGH) or 0 (LOW).
+ */
+gpio_toggle(gpio);
+/*
+ * gpio: refers to digital pin
+ *
+ */
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The difference between both functions it's that gpio_write does the change manually, instead gpio_toggle()
+changes the value of current state. (means if is HIGH, when applied this function will be set to LOW).
+
+another aspect to be take into account is add the xtimer and ztimer headers files, to use temporizers in our code.
+
+## Flashing {#external_led_blink_flashing}
+
+If you want to upload the example to your board, needs to compile first, additional to this you could initialize the terminal and watch the results
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make -C examples/esp32-wroom-32/external_led flash term
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[Back to table of contents](#external_led_blink_toc)
+ */

@@ -1,0 +1,64 @@
+/*
+ * Copyright (C) 2022 Mesh4all <mesh4all.org>
+ *
+ * This file is subject to the terms and conditions of the GNU Lesser
+ * General Public License v2.1. See the file LICENSE in the top level
+ * directory for more details.
+ */
+
+/**
+ * @defgroup    moisture_sensor  Analog capacitive moisture sensor
+ * @ingroup     examples
+ * @brief       Example dedicated to use the analog soil moisture sensor
+ * @author      xkevin190 <kevinvelasco190@gmail.com>
+
+\section Moisture Sensor
+
+## Table of Contents {#ssoil_moisture_toc}
+
+1. [Hardware](#ssoil_moisture_hardware)
+2. [Basic and Default configuration](#ssoil_moisture_basic_conf)
+3. [Flashing the Device](#ssoil_moisture_flashing)
+
+## Hardware {#ssoil_moisture_hardware}
+
+This section shows, which pin is used to receive the sensor data.
+
+<center>
+Function        | GPIOs  | Remarks |
+:---------------|:-------|:--------|
+Analog Sensor Data Input| GPIO0| This is data pin to receive the reads.
+
+</center>
+
+## Basics to start {#ssoil_moisture_basic_conf}
+
+First, needs to initialize de ADC_channel to be used.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.c}
+adc_init(analog_channel) /*initialize an adc_pin*/
+/*
+* if returns 0 it's ok
+* else failed ADC_mode in that pin
+*/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+take some reads from analog peripherals, for this, you'll need to known your ADC_Channels in your
+development board. also needs to know what is the resolution of bits that could be read in the analog channel.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.c}
+adc_sample(adc_channel, resolution)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are two values to knows limits of max (dry) and min (wet).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.c}
+int min = 356;
+int max = 901;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## Flashing {#ssoil_moisture_flashing}
+
+If you want to upload the example to your board, needs to compile first, additional to this you could initialize the terminal and watch the results
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make -C examples/moisture_sensor_hw390 flash term
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[Back to table of contents](#ssoil_moisture_toc)
+ */

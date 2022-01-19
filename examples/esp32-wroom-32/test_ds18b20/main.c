@@ -10,7 +10,7 @@
  */
 
 /**
- * @ingroup     examples/esp32-wroom
+ * @ingroup     ds18b20
  *
  * @file
  * @brief       This is a example to understand how tu works the ds18b20
@@ -21,16 +21,10 @@
 
 #include <stdio.h>
 #include "xtimer.h"
-#include "ds18.h"
+#include "ds18b20.h"
 #include "periph/gpio.h"
 
 int16_t temp;
-ds18_t therm1;
-static ds18_params_t therm1_params = {
-    .pin = GPIO14,
-    .out_mode = GPIO_OD_PU,
-    .in_mode = GPIO_IN
-};
 
 int main(void)
 {

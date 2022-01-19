@@ -15,6 +15,7 @@
  */
 
 /**
+ * @ingroup     wrover-app
  * @{
  * @file        udpf.h
  * @brief       Main firmware file
@@ -31,13 +32,23 @@
 extern "C"
 {
 #endif
-
+/**
+ * @brief  udp transmitted data
+ *
+ */
 typedef struct {
    char* port;
    void (*callback) (char*);
 } udpf_payload;
 
+/**
+ * @brief  start udp server under a thread
+ */
 int udp_server(int argc, udpf_payload* argv);
+
+/**
+ * @brief  udp send data using a string inserted in the shell
+ */
 int udp_send(int argc, char **argv);
 
 #ifdef __cplusplus

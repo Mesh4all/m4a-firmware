@@ -1,0 +1,7 @@
+/**
+@defgroup examples Mesh4all Examples
+
+## This is example-doc
+
+All about the Mesh4all examples.
+ */

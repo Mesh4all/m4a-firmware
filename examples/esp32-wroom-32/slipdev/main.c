@@ -10,10 +10,11 @@
  */
 
 /**
- * @ingroup     examples_esp32-wroom
+ * @ingroup     slipdev
  *
  * @file
- * @brief       a basic demo how works the slipdev
+ * @{
+ * @brief       A basic demo how works the slipdev
  *
  * @author      Eduardo Azócar <eduardo@turpialdev.com>
  *
@@ -33,3 +34,4 @@ int main(void)
     char line_buf[SHELL_DEFAULT_BUFSIZE];
     shell_run(NULL, line_buf, SHELL_DEFAULT_BUFSIZE);
 }
+/**@}*/

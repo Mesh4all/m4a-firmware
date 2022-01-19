@@ -15,9 +15,12 @@
  */
 
 /**
+ * @ingroup     examples_esp32-wrover
+ *
  * @file
- * @brief
- * @copyright Copyright (c) 2021
+ * @brief       this is an example of external_led_blink
+ * @author      xkevin190 <kevinvelasco190@gmail.com>
+ * @author      eduazocar <eduardo@turpialdev.com>
  */
 
 #include <stdio.h>
@@ -37,7 +40,6 @@ static char server_stack[THREAD_STACKSIZE_DEFAULT];
 
 int dummy_cmd(int argc, char **argv)
 {
-
     return 0;
 }
 

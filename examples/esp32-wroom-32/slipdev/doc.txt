@@ -1,0 +1,77 @@
+/*
+ * Copyright (C) 2022 Mesh4all <mesh4all.org>
+ *
+ * This file is subject to the terms and conditions of the GNU Lesser
+ * General Public License v2.1. See the file LICENSE in the top level
+ * directory for more details.
+ */
+
+/**
+ @defgroup    slipdev Slipdev
+ @ingroup     examples
+ @brief       Slipdev example to use with m4a-wroom board
+
+\section slipdev
+
+## Table of Contents {#m4a_slipdev_toc}
+
+1. [Hardware](#m4a_slipdev_hardware)
+2. [Basic and Default configuration](#m4a_slipdev_basic_conf)
+3. [Flashing the Device](#m4a_slipdev_flashing)
+
+## Hardware {#m4a_slipdev_hardware}
+
+This section shows, which pins are used to make a bridge of communication to the SLIP protocol.
+using only an UART
+
+<center>
+Function        | GPIOs  | Remarks |
+:---------------|:-------|:--------|
+UART_DEV(2):RxD | GPIO16  | Slipdev_UART_RXD Serial communication |
+UART_DEV(2):TxD | GPIO17  | Slipdev_UART TXD Serial communication |
+
+</center>
+
+Take others params before to compiling.It could be define previously some Slipdev params, like is the UART
+to use and its baudrate.
+
+## Basic and Default configuration {#m4a_slipdev_basic_conf}
+
+To start with slipdev it's necessary do some changes in the makefile document, for example: take three main modules.
+first needs auto_init_gnrc_netif, this module let initialize the interface taking all variables in slipdev_params.h
+second, it's necessary make a mention to itś using a slip Device and that it's necessary take a link local address,
+cause this, apply the slipdev_l2addr module, to define an eui-64 address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.Makefile}
+#necessary modules
+USEMODULE += auto_init_gnrc_netif
+USEMODULE += slipdev
+USEMODULE += slipdev_l2addr
+
+#slipdev_params
+SLIP_UART ?= 2
+SLIP_BAUDRATE ?= 115200
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Add some icmpv6 modules and netstats to take a view of packets transfer using ping.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.Makefile}
+#Additional modules
+USEMODULE += gnrc_icmpv6_error
+USEMODULE += gnrc_ipv6
+USEMODULE += gnrc_icmpv6_echo
+USEMODULE += netstats_l2
+USEMODULE += netstats_ipv6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[Back to table of contents](#m4a_slipdev_toc)
+
+## Flashing {#m4a_slipdev_flashing}
+
+If you want to upload the example to your board, needs to compile first, additional to this you could initialize the terminal to
+open directly the shell and make a ping or check de interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make -C examples/esp32-wroom-32/slipdev flash term
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[Back to table of contents](#m4a_slipdev_toc)
+ */
