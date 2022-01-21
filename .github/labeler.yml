@@ -29,6 +29,9 @@
   - "kconfigs/*"
   - "**/Kconfig"
 
+"Area: wifi-subsys":
+  - "wifi-subsys/**/*"
+
 "Area: sys":
   - "sys/**/*"
   - "firmware/sys/**/*"
