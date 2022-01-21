@@ -38,6 +38,7 @@ var NAVTREE =
     ] ],
     [ "readme", "md_examples_moisture_sensor_hw390_readme.html", null ],
     [ "Uart example", "md_examples_TPM_UART_APP_README.html", null ],
+    [ "WiFi subsystem", "md_wifi-subsys_README.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -61,7 +62,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"m4a-wrover_2include_2periph__conf_8h.html"
+"m4a-wrover_2include_2gpio__params_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
