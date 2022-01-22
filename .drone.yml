@@ -4,7 +4,7 @@ type: docker
 
 steps:
   - name: build
-    image: luisan00/m4abuild-base:dev
+    image: espressif/idf:release-v4.3
     commands:
       - git submodule update --init --recursive
       - cd wifi-subsys && idf.py build
