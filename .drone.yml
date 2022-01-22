@@ -3,8 +3,8 @@ kind: pipeline
 type: docker
 
 steps:
-  - name: clone
-    image: alpine/git
+  - name: clone-project
+    image: ubuntu:latest
     commands:
       - git submodule update --init --recursive
 
