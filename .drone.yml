@@ -3,11 +3,11 @@ kind: pipeline
 type: docker
 
 steps:
-  - name: build
-    image: espressif/idf:release-v4.3
+  - name: clone
+    #image: espressif/idf:release-v4.3
+    image: alpine/git
     commands:
       - git submodule update --init --recursive
-      - cd wifi-subsys && idf.py build
 
 trigger:
   event:
