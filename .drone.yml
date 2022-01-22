@@ -7,8 +7,7 @@ steps:
     image: luisan00/m4abuild-base:dev
     commands:
       - git submodule update --init --recursive
-      - cd wifi-subsys
-      - idf.py build
+      - make -C firmware 
 
 trigger:
   event:
