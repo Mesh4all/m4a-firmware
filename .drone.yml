@@ -4,7 +4,6 @@ type: docker
 
 steps:
   - name: clone
-    #image: espressif/idf:release-v4.3
     image: alpine/git
     commands:
       - git submodule update --init --recursive
