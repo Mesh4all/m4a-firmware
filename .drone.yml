@@ -2,7 +2,6 @@
 kind: pipeline
 type: docker
 name: m4a-24g
-
 steps:
   - name: build
     image: luisan00/m4abuild-base:latest
@@ -19,13 +18,44 @@ trigger:
 kind: pipeline
 type: docker
 name: m4a-mb
-
 steps:
-  - name: build-m4a-mb
+  - name: build
     image: luisan00/m4abuild-base:latest
     commands:
       - git submodule update --init --recursive
       - make -C firmware BOARD=m4a-mb
+
+trigger:
+  event:
+    - push
+    - pull_request
+
+---
+kind: pipeline
+type: docker
+name: m4a-wrover
+steps:
+  - name: build
+    image: luisan00/m4abuild-base:latest
+    commands:
+      - git submodule update --init --recursive
+      - make -C firmware BOARD=m4a-wrover
+
+trigger:
+  event:
+    - push
+    - pull_request
+
+---
+kind: pipeline
+type: docker
+name: m4a-wroom
+steps:
+  - name: build
+    image: luisan00/m4abuild-base:latest
+    commands:
+      - git submodule update --init --recursive
+      - make -C firmware BOARD=m4a-wroom
 
 trigger:
   event:
