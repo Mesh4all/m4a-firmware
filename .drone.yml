@@ -1,9 +1,10 @@
 ---
 kind: pipeline
 type: docker
+name: m4a-24g
 
 steps:
-  - name: build-m4a-24g
+  - name: build
     image: luisan00/m4abuild-base:latest
     commands:
       - git submodule update --init --recursive
@@ -17,6 +18,7 @@ trigger:
 ---
 kind: pipeline
 type: docker
+name: m4a-mb
 
 steps:
   - name: build-m4a-mb
