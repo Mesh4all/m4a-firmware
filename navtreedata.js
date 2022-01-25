@@ -24,20 +24,6 @@ var NAVTREE =
 [
   [ "Mesh4all", "index.html", [
     [ "m4a reference firmware", "index.html", null ],
-    [ "m4a-wroom examples", "md_examples_esp32-wroom-32_slipdev_README.html", [
-      [ "First", "md_examples_esp32-wroom-32_slipdev_README.html#autotoc_md31", null ],
-      [ "Second", "md_examples_esp32-wroom-32_slipdev_README.html#autotoc_md32", null ]
-    ] ],
-    [ "Esp32-wroom examples", "md_examples_esp32-wroom-32_test_ds18b20_README.html", [
-      [ "First", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md38", null ],
-      [ "Second", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md39", null ],
-      [ "Last steps", "md_examples_esp32-wroom-32_test_ds18b20_README.html#autotoc_md40", null ]
-    ] ],
-    [ "External led example", "md_examples_external_led_README.html", [
-      [ "How to test it", "md_examples_external_led_README.html#autotoc_md42", null ]
-    ] ],
-    [ "readme", "md_examples_moisture_sensor_hw390_readme.html", null ],
-    [ "Uart example", "md_examples_TPM_UART_APP_README.html", null ],
     [ "WiFi subsystem", "md_wifi-subsys_README.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
@@ -50,7 +36,7 @@ var NAVTREE =
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
-        [ "All", "globals.html", null ],
+        [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
@@ -62,7 +48,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"m4a-wrover_2include_2board_8h.html#af6f84078113b55354d20585131b386f7"
+"m4a-mb_2include_2periph__conf_8h.html#a902a38d6dfe9bc80271132ace0d1ca69"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

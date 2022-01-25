@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['supported_20boards_307',['Supported Boards',['../group__boards.html',1,'']]]
+  ['external_2dled_20blink_321',['External-led blink',['../group__external-led.html',1,'']]]
 ];

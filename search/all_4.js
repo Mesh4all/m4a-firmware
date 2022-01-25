@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['esp32_2dwroom_20examples_48',['Esp32-wroom examples',['../md_examples_esp32-wroom-32_test_ds18b20_README.html',1,'']]],
-  ['external_20led_20example_49',['External led example',['../md_examples_external_led_README.html',1,'']]]
+  ['external_2dled_20blink_51',['External-led blink',['../group__external-led.html',1,'']]]
 ];

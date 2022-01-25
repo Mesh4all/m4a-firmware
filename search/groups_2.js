@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reference_20firmware_306',['Reference firmware',['../group__m4a-firmware.html',1,'']]]
+  ['ds18b20_320',['Ds18b20',['../group__ds18b20.html',1,'']]]
 ];
