@@ -1,4 +1,6 @@
-## Uart example
+@ingroup tmp_uart
+
+### Uart example
 
 this is an uart example for this example i used esp32-wrover-kit and one bluetooth device hc-06
 
@@ -13,4 +15,6 @@ to send messages through uart to the bluetooth device write `send message` since
 
 to compile this example:
 
-`make -C examples/TPM_UART_APP  BOARD=your_board  PORT=/dev/your_port flash term`
+```sh
+make -C examples/tpm_uart  BOARD=your_board  PORT=/dev/your_port flash term
+```

@@ -15,11 +15,14 @@
  */
 
 /**
- * @brief       Main example file
+ * @ingroup     examples_esp32-wrover
  *
+ * @file
+ * @brief       A example app of ESP32-wrover
  * @author      xkevin190 <kevinvelasco190@gmail.com>
- *
+ * @author      eduazocar <eduardo@turpialdev.com>
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -77,7 +80,7 @@ static const shell_command_t shell_commands[] = {
     { NULL, NULL, NULL }
 };
 
-int xinit_sta (void)
+int init_sta (void)
 {
     wifi_config_t wifi_config = {
         .sta = {

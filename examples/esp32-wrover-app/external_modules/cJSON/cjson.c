@@ -53,7 +53,7 @@
 #pragma GCC visibility pop
 #endif
 
-#include "cJSON.h"
+#include "cjson.h"
 
 /* define our own boolean type */
 #ifdef true
@@ -1323,7 +1323,7 @@ static cJSON_bool parse_value(cJSON * const item, parse_buffer * const input_buf
 
     /* parse the different types of values */
     /* null */
-    if (can_read(input_buffer, 4) &&  \\
+    if (can_read(input_buffer, 4) &&  \
     (strncmp((const char*)buffer_at_offset(input_buffer), "null", 4) == 0))
     {
         item->type = cJSON_NULL;

@@ -7,7 +7,7 @@
  */
 
 /**
- * @ingroup examples_esp32-wroom
+ * @ingroup slipdev
  * @{
  *
  * @file
@@ -25,10 +25,14 @@
 extern "C" {
 #endif
 
+/**
+ * @brief  Struct of basic params of slip device.
+ */
+
 static slipdev_params_t slipdev_params[] = {
     {
-        .uart = SLIP_UART,
-        .baudrate = SLIP_BAUDRATE,
+        .uart = SLIP_UART,               /*!< Slip uart param */
+        .baudrate = SLIP_BAUDRATE,        /*!< Slip uart baudrate param*/
     },
 };
 

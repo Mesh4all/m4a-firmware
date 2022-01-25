@@ -1,0 +1,48 @@
+/*
+ * Copyright (C) 2022 Mesh4all <mesh4all.org>
+ *
+ * This file is subject to the terms and conditions of the GNU Lesser
+ * General Public License v2.1. See the file LICENSE in the top level
+ * directory for more details.
+ */
+
+/**
+ * @defgroup    tmp_uart Uart
+ * @ingroup     examples
+ * @brief       Use the UART peripherals to connect and start Serial communication
+ * @author      xkevin190 <kevinvelasco190@gmail.com>
+
+\section m4a Tmp-UART
+
+## Table of Contents {#tmp_uart_toc}
+
+1. [Hardware](#tmp_uart_hardware)
+2. [Basic and Default configuration](#tmp_uart_basic_conf)
+3. [Flashing the Device](#tmp_uart_flashing)
+
+## Hardware {#tmp_uart_hardware}
+
+This section shows, which pin are used to connect with UART device. in this case to hc-06 to share the UART with
+bluetooth connections.
+
+<center>
+Function        | GPIOs  | Remarks |
+:---------------|:-------|:--------|
+UART_DEV(1)_TXD| GPIO21 | Serial transmitter data port |
+UART_DEV(1)_RXD| GPIO22 | Serial receiver data port |
+</center>
+
+## Basics {#tmp_uart_basic_conf}
+
+When you are running this example, open your terminal and put "send message" until your shell.
+Follow the instructions AT to configure you bluetooth in your m4a-wrover board and start the communications.
+
+## Flashing {#tmp_uart_flashing}
+
+If you want to upload the example to your board, needs to compile first, additional to this you could initialize the terminal and watch the results
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make -C examples/tmp_uart flash term
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[Back to table of contents](#tmp_uart_toc)
+ */

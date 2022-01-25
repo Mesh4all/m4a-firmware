@@ -1,0 +1,46 @@
+/*
+ * Copyright (C) 2022 Mesh4all <mesh4all.org>
+ *
+ * This file is subject to the terms and conditions of the GNU Lesser
+ * General Public License v2.1. See the file LICENSE in the top level
+ * directory for more details.
+ */
+
+/**
+ * @defgroup    wrover-app M4a-wrover-app
+ * @ingroup     examples
+ * @brief       This is an app of esp32-wrover using a ILI_Screen and Wifi_STA configuration to get values of Bitcoin and Ethereum
+ * @author      xkevin190 <kevinvelasco190@gmail.com>
+
+\section M4a-wrover-app
+
+This example contains an interaction of a udp server on a m4a-wrover board.
+Sending requests and getting responses to know the values of two cryptocurrencies (Bitcoin and Ethereum).
+
+## Table of Contents {#m4a-wrover_app_toc}
+
+1. [Hardware](#m4a-wrover_app_hardware)
+2. [Flashing the Device](#m4a-wrover_app_flashing)
+
+## Hardware {#m4a-wrover_app_hardware}
+
+This section shows, which pins are used to manage the ILI_Screen control.
+
+<center>
+Function        | GPIOs  | Remarks |
+:---------------|:-------|:--------|
+LCD_MISO |  GPIO25 | |
+LCD_MOSI |  GPIO23 | |
+ILI9341_PARAM_CS  | GPIO22 | |
+ILI9341_PARAM_DCX | GPIO21 | |
+SPI_SCK |   GPIO19  | |
+ILI9341_PARAM_RST | GPIO18 | |
+</center>
+
+If you want to upload the example to your board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make -C examples/esp32-wrover-app flash term
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[Back to table of contents](#m4a-wrover_app_toc)
+ */

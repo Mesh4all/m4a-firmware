@@ -1,11 +1,12 @@
-APPLICATION = test_esp32
-BOARD ?= esp32-wrover-kit
+APPLICATION = moisture_sensor_test
+BOARD ?= m4a-wrover
 
 # Current path
 APPBASE ?= $(CURDIR)
 
 # RIOT-OS's base path
 RIOTBASE ?= $(CURDIR)/../../RIOT
+EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
 
 USEMODULE += saul_default
 USEMODULE += shell

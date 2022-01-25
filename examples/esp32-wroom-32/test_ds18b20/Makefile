@@ -2,11 +2,11 @@
 APPLICATION = ds18b20_example
 
 # If no BOARD is found in the environment, use this default:
-BOARD ?= esp32-wroom-32
+BOARD ?= m4a-wroom
 
 # This has to be the absolute path to the RIOT base directory:
 RIOTBASE ?= $(CURDIR)/../../../RIOT
-
+EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../../boards
 # we want to use SAUL:
 USEMODULE += saul_default
 # include the shell:

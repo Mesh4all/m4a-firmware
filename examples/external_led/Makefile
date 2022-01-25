@@ -1,5 +1,5 @@
-APPLICATION = test_esp32
-BOARD ?= esp32-wrover-kit
+APPLICATION = external_led
+BOARD ?= m4a-wrover
 
 # Current path
 APPBASE ?= $(CURDIR)
@@ -8,7 +8,7 @@ APPBASE ?= $(CURDIR)
 RIOTBASE ?= $(CURDIR)../../RIOT
 
 # Custom boards "MUST BE" into "boards" folder, it's code **strongly** hardware dependent
-
+EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
 
 USEMODULE += saul_default
 USEMODULE += shell

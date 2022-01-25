@@ -1,4 +1,7 @@
-# Esp32-wroom examples
+
+@ingroup ds18b20
+@brief ds18b20 sensor readme example
+ <h2>m4a-wroom examples  </h2>
 
 <h2 align=center> ds18b20 </h2>
 
@@ -30,12 +33,12 @@ make flash term
 
 Check your code to understand functionalities
 
-## First
+### First
 Define a ds18 sensor
 ```c
 ds18_t sensor
 ```
-## Second
+### Second
 Define ds18 params
 ```c
 ds18_params_t dev ={
@@ -44,7 +47,7 @@ ds18_params_t dev ={
      .in_mode = sensor_mode_in
  }
 ```
-## Last steps
+### Last steps
 Initialize the device
 ```c
 ds18_init(&dev,&dev_params); // Set the params to your sensor

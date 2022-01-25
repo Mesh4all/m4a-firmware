@@ -15,9 +15,12 @@
  */
 
 /**
+ * @ingroup     tmp_uart
+ *
  * @file
  * @brief       this is an example of uart
  * @author      xkevin190 <kevinvelasco190@gmail.com>
+ * @author      eduazocar <eduardo@turpialdev.com>
  */
 
 #include <stdio.h>

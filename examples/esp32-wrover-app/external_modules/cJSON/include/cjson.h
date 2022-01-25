@@ -121,7 +121,7 @@ typedef struct cJSON
     or is in the list of subitems of an object. */
     char *string;
 } cJSON;
-
+/* cJSON_Hooks */
 typedef struct cJSON_Hooks
 {
       /* malloc/free are CDECL on Windows regardless of the default calling
