@@ -15,8 +15,26 @@
  */
 
 /**
- * @brief       Dummy file , Part of NVS component
+ * @brief       Main firmware file
  *
  * @copyright   Copyright (c) 2022 Mesh for all
  * @author      luisan00 <luisan00@hotmail.com>
+ *
  */
+#include <stdio.h>
+#include "sdkconfig.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_system.h"
+
+#include "storage.h"
+
+void app_main(void)
+{
+    for (int i = 10; i >= 0; i--) {
+        printf("Restarting in %d seconds...\n", i);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    }
+    printf("Restarting now.\n");
+    esp_restart();
+}
