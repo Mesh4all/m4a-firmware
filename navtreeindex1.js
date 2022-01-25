@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"m4a-wrover_2include_2board_8h.html#af6f84078113b55354d20585131b386f7":[9,0,0,3,0,0,7],
+"m4a-wrover_2include_2board_8h_source.html":[9,0,0,3,0,0],
+"m4a-wrover_2include_2gpio__params_8h.html":[9,0,0,3,0,1],
+"m4a-wrover_2include_2gpio__params_8h.html#a5442106fb6a31a0cc477a93d79701765":[9,0,0,3,0,1,0],
 "m4a-wrover_2include_2gpio__params_8h_source.html":[9,0,0,3,0,1],
 "m4a-wrover_2include_2periph__conf_8h.html":[9,0,0,3,0,2],
 "m4a-wrover_2include_2periph__conf_8h.html#a0370de2a226ec75dd11d53d0915a7754":[9,0,0,3,0,2,4],
@@ -57,6 +61,7 @@ var NAVTREEINDEX1 =
 "slipdev__params_8h.html":[9,0,1,0,0,0],
 "slipdev__params_8h.html#a632e2c0273de70d7111734c24ddd2ae9":[9,0,1,0,0,0,0],
 "slipdev__params_8h_source.html":[9,0,1,0,0,0],
+"storage_8h_source.html":[9,0,3,0,0,0,0],
 "structavailable__sensors__t.html":[8,0,0],
 "structavailable__sensors__t.html#a31a0020452dd389c6c6700ebeeb4c4dc":[8,0,0,1],
 "structavailable__sensors__t.html#a8f613d74e9755d40cc96d71dd85213c5":[8,0,0,0],

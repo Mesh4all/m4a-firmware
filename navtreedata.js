@@ -62,7 +62,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"m4a-wrover_2include_2gpio__params_8h_source.html"
+"m4a-wrover_2include_2board_8h.html#af6f84078113b55354d20585131b386f7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
