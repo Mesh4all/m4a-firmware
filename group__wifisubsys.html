@@ -111,9 +111,508 @@ $(document).ready(function(){initNavTree('group__wifisubsys.html',''); initResiz
 
 <p>WiFi Subsystem running on esp32 MCUs.  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="memitem:gac11b41176ff2264389de71ba0d22834f"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gac11b41176ff2264389de71ba0d22834f">wifi_init</a> ()</td></tr>
+<tr class="memdesc:gac11b41176ff2264389de71ba0d22834f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wifi module.  <a href="group__wifisubsys.html#gac11b41176ff2264389de71ba0d22834f">More...</a><br /></td></tr>
+<tr class="separator:gac11b41176ff2264389de71ba0d22834f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31d0fb01150610898c219b4830b5cf06"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga31d0fb01150610898c219b4830b5cf06">is_sta</a> ()</td></tr>
+<tr class="memdesc:ga31d0fb01150610898c219b4830b5cf06"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function verifies if the wifi is in sta mode  <a href="group__wifisubsys.html#ga31d0fb01150610898c219b4830b5cf06">More...</a><br /></td></tr>
+<tr class="separator:ga31d0fb01150610898c219b4830b5cf06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a891ceb4adebb3393f4cee34eda50da"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga8a891ceb4adebb3393f4cee34eda50da">is_ap</a> ()</td></tr>
+<tr class="memdesc:ga8a891ceb4adebb3393f4cee34eda50da"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function verifies if the wifi is in ap mode  <a href="group__wifisubsys.html#ga8a891ceb4adebb3393f4cee34eda50da">More...</a><br /></td></tr>
+<tr class="separator:ga8a891ceb4adebb3393f4cee34eda50da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d1592020577990e6f348d027d0b5a71"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga9d1592020577990e6f348d027d0b5a71">init_ap</a> ()</td></tr>
+<tr class="memdesc:ga9d1592020577990e6f348d027d0b5a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function initializes the AP.  <a href="group__wifisubsys.html#ga9d1592020577990e6f348d027d0b5a71">More...</a><br /></td></tr>
+<tr class="separator:ga9d1592020577990e6f348d027d0b5a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91e3ae3af5d354b31d963366cdec8dae"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga91e3ae3af5d354b31d963366cdec8dae">init_sta</a> ()</td></tr>
+<tr class="memdesc:ga91e3ae3af5d354b31d963366cdec8dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function initializes the STA and it is added ssid and password and start the sta mode.  <a href="group__wifisubsys.html#ga91e3ae3af5d354b31d963366cdec8dae">More...</a><br /></td></tr>
+<tr class="separator:ga91e3ae3af5d354b31d963366cdec8dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd28cdcca6d5d5a2428f7d64187b71bd"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gabd28cdcca6d5d5a2428f7d64187b71bd">set_default_credentials</a> ()</td></tr>
+<tr class="memdesc:gabd28cdcca6d5d5a2428f7d64187b71bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the default credentials ssid and password of AP and STA.  <a href="group__wifisubsys.html#gabd28cdcca6d5d5a2428f7d64187b71bd">More...</a><br /></td></tr>
+<tr class="separator:gabd28cdcca6d5d5a2428f7d64187b71bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ab8de76e36289e4ff378674ea740b51"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga8ab8de76e36289e4ff378674ea740b51">wifi_credentials_are_configured</a> ()</td></tr>
+<tr class="memdesc:ga8ab8de76e36289e4ff378674ea740b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">verify if the wifi ssid and password is configured in the storage  <a href="group__wifisubsys.html#ga8ab8de76e36289e4ff378674ea740b51">More...</a><br /></td></tr>
+<tr class="separator:ga8ab8de76e36289e4ff378674ea740b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab082e69aad213e186f3b7040af24e0cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gab082e69aad213e186f3b7040af24e0cd">WIFI_ENABLE_STA</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gab082e69aad213e186f3b7040af24e0cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">defaults params for wifi  <a href="group__wifisubsys.html#gab082e69aad213e186f3b7040af24e0cd">More...</a><br /></td></tr>
+<tr class="separator:gab082e69aad213e186f3b7040af24e0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae67209bc9d0bf8c8215c3ffe96ce3227"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gae67209bc9d0bf8c8215c3ffe96ce3227">WIFI_ENABLE_AP</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:gae67209bc9d0bf8c8215c3ffe96ce3227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaea527320a2691e0cff3367b252351a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gaaea527320a2691e0cff3367b252351a2">AP_CHANNEL</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:gaaea527320a2691e0cff3367b252351a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadcea9492790f8f69d34e00d812a136ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gadcea9492790f8f69d34e00d812a136ce">AP_MAXCONN</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:gadcea9492790f8f69d34e00d812a136ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90ff11f1de95f8ff56ee484107929342"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga90ff11f1de95f8ff56ee484107929342">AP_AUTHMODE</a>&#160;&#160;&#160;WIFI_AUTH_WPA_WPA2_PSK</td></tr>
+<tr class="separator:ga90ff11f1de95f8ff56ee484107929342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83f4f17913aeec0f27093a2dfbcb2434"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga83f4f17913aeec0f27093a2dfbcb2434">STA_WIFI_SSID</a>&#160;&#160;&#160;&quot;m4a-wifi&quot;</td></tr>
+<tr class="separator:ga83f4f17913aeec0f27093a2dfbcb2434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63d0948b4d988c10935ac791cea47952"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga63d0948b4d988c10935ac791cea47952">STA_WIFI_PASSWORD</a>&#160;&#160;&#160;&quot;m4a-default&quot;</td></tr>
+<tr class="separator:ga63d0948b4d988c10935ac791cea47952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64d71b646354ad94ee7e10c560f0d1fa"><td class="memItemLeft" align="right" valign="top"><a id="ga64d71b646354ad94ee7e10c560f0d1fa"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ESP_MAXIMUM_RETRY</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:ga64d71b646354ad94ee7e10c560f0d1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8788b3254f36ef3994b2d8d74b359699"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga8788b3254f36ef3994b2d8d74b359699">AP_WIFI_SSID</a>&#160;&#160;&#160;&quot;m4a_AP&quot;</td></tr>
+<tr class="separator:ga8788b3254f36ef3994b2d8d74b359699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09dcb09823cb002cec3fa7fd7117bc87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga09dcb09823cb002cec3fa7fd7117bc87">AP_WIFI_PASSWORD</a>&#160;&#160;&#160;&quot;m4a-default&quot;</td></tr>
+<tr class="separator:ga09dcb09823cb002cec3fa7fd7117bc87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4f10a69a7a0880930f90fe353033192"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gaa4f10a69a7a0880930f90fe353033192">NVS_APP_NAMESPACE</a>&#160;&#160;&#160;&quot;m4a-firmware&quot;</td></tr>
+<tr class="separator:gaa4f10a69a7a0880930f90fe353033192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ae7fbfc9dd87ebe369ac9a491756b1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga3ae7fbfc9dd87ebe369ac9a491756b1b">NVS_IS_CONFIGURED_KEY</a>&#160;&#160;&#160;&quot;is_configured&quot;</td></tr>
+<tr class="separator:ga3ae7fbfc9dd87ebe369ac9a491756b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61150e18fae2b02442d6060284d3a68c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga61150e18fae2b02442d6060284d3a68c">USER_STA_NAME_KEY</a>&#160;&#160;&#160;&quot;username_sta&quot;</td></tr>
+<tr class="separator:ga61150e18fae2b02442d6060284d3a68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9ad8e5743b9a2d5ed25c145c6f4057e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#ga9ad8e5743b9a2d5ed25c145c6f4057e7">USER_STA_PASSWORD_KEY</a>&#160;&#160;&#160;&quot;password_sta&quot;</td></tr>
+<tr class="separator:ga9ad8e5743b9a2d5ed25c145c6f4057e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabace6d670bda3e1d68e26b403e3f4afb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gabace6d670bda3e1d68e26b403e3f4afb">USER_AP_PASSWORD_KEY</a>&#160;&#160;&#160;&quot;password_ap&quot;</td></tr>
+<tr class="separator:gabace6d670bda3e1d68e26b403e3f4afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf6ec90ece99abf139dbb6899bbe204ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gaf6ec90ece99abf139dbb6899bbe204ee">USER_AP_NAME_KEY</a>&#160;&#160;&#160;&quot;username_ap&quot;</td></tr>
+<tr class="separator:gaf6ec90ece99abf139dbb6899bbe204ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7030536a5c5dd8f4632840201cdac39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gac7030536a5c5dd8f4632840201cdac39">MAX_USER_NAME_LENGTH</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:gac7030536a5c5dd8f4632840201cdac39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac97b06fcce537114e012dda6926efcd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifisubsys.html#gac97b06fcce537114e012dda6926efcd5">MAX_USER_PASSWORD_LENGTH</a>&#160;&#160;&#160;64</td></tr>
+<tr class="separator:gac97b06fcce537114e012dda6926efcd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>WiFi Subsystem running on esp32 MCUs. </p>
 <h1><a class="anchor" id="autotoc_md42"></a>
 WiFi Subsystem</h1>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga90ff11f1de95f8ff56ee484107929342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga90ff11f1de95f8ff56ee484107929342">&#9670;&nbsp;</a></span>AP_AUTHMODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AP_AUTHMODE&#160;&#160;&#160;WIFI_AUTH_WPA_WPA2_PSK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>AP Authentication mode </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00036">36</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="gaaea527320a2691e0cff3367b252351a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaea527320a2691e0cff3367b252351a2">&#9670;&nbsp;</a></span>AP_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AP_CHANNEL&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>AP Channel </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00034">34</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="gadcea9492790f8f69d34e00d812a136ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadcea9492790f8f69d34e00d812a136ce">&#9670;&nbsp;</a></span>AP_MAXCONN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AP_MAXCONN&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>AP Maximum connections </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00035">35</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ga09dcb09823cb002cec3fa7fd7117bc87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga09dcb09823cb002cec3fa7fd7117bc87">&#9670;&nbsp;</a></span>AP_WIFI_PASSWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AP_WIFI_PASSWORD&#160;&#160;&#160;&quot;m4a-default&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>default AP password </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00041">41</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ga8788b3254f36ef3994b2d8d74b359699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8788b3254f36ef3994b2d8d74b359699">&#9670;&nbsp;</a></span>AP_WIFI_SSID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AP_WIFI_SSID&#160;&#160;&#160;&quot;m4a_AP&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>default AP ssid </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00040">40</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="gac7030536a5c5dd8f4632840201cdac39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7030536a5c5dd8f4632840201cdac39">&#9670;&nbsp;</a></span>MAX_USER_NAME_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_USER_NAME_LENGTH&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>length of thr username </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00049">49</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="gac97b06fcce537114e012dda6926efcd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac97b06fcce537114e012dda6926efcd5">&#9670;&nbsp;</a></span>MAX_USER_PASSWORD_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_USER_PASSWORD_LENGTH&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>max length of password for user </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00050">50</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa4f10a69a7a0880930f90fe353033192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4f10a69a7a0880930f90fe353033192">&#9670;&nbsp;</a></span>NVS_APP_NAMESPACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NVS_APP_NAMESPACE&#160;&#160;&#160;&quot;m4a-firmware&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>NVS application namespace </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00043">43</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3ae7fbfc9dd87ebe369ac9a491756b1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ae7fbfc9dd87ebe369ac9a491756b1b">&#9670;&nbsp;</a></span>NVS_IS_CONFIGURED_KEY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NVS_IS_CONFIGURED_KEY&#160;&#160;&#160;&quot;is_configured&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Is wifi configured? </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00044">44</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ga63d0948b4d988c10935ac791cea47952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63d0948b4d988c10935ac791cea47952">&#9670;&nbsp;</a></span>STA_WIFI_PASSWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STA_WIFI_PASSWORD&#160;&#160;&#160;&quot;m4a-default&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>default STA password </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00038">38</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ga83f4f17913aeec0f27093a2dfbcb2434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83f4f17913aeec0f27093a2dfbcb2434">&#9670;&nbsp;</a></span>STA_WIFI_SSID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STA_WIFI_SSID&#160;&#160;&#160;&quot;m4a-wifi&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>default STA ssid </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00037">37</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf6ec90ece99abf139dbb6899bbe204ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf6ec90ece99abf139dbb6899bbe204ee">&#9670;&nbsp;</a></span>USER_AP_NAME_KEY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USER_AP_NAME_KEY&#160;&#160;&#160;&quot;username_ap&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>user_password ap key for nvs </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00048">48</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="gabace6d670bda3e1d68e26b403e3f4afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabace6d670bda3e1d68e26b403e3f4afb">&#9670;&nbsp;</a></span>USER_AP_PASSWORD_KEY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USER_AP_PASSWORD_KEY&#160;&#160;&#160;&quot;password_ap&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>user_name ap key for nvs </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00047">47</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ga61150e18fae2b02442d6060284d3a68c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga61150e18fae2b02442d6060284d3a68c">&#9670;&nbsp;</a></span>USER_STA_NAME_KEY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USER_STA_NAME_KEY&#160;&#160;&#160;&quot;username_sta&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>user_name sta key for nvs </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00045">45</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9ad8e5743b9a2d5ed25c145c6f4057e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9ad8e5743b9a2d5ed25c145c6f4057e7">&#9670;&nbsp;</a></span>USER_STA_PASSWORD_KEY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USER_STA_PASSWORD_KEY&#160;&#160;&#160;&quot;password_sta&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>user_password sta key for nvs </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00046">46</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="gae67209bc9d0bf8c8215c3ffe96ce3227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae67209bc9d0bf8c8215c3ffe96ce3227">&#9670;&nbsp;</a></span>WIFI_ENABLE_AP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WIFI_ENABLE_AP&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Is enable the AP wifi? </p>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00033">33</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="gab082e69aad213e186f3b7040af24e0cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab082e69aad213e186f3b7040af24e0cd">&#9670;&nbsp;</a></span>WIFI_ENABLE_STA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WIFI_ENABLE_STA&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>defaults params for wifi </p>
+<dl class="section author"><dt>Author</dt><dd>xkevin190 <a href="#" onclick="location.href='mai'+'lto:'+'kev'+'in'+'vel'+'as'+'co1'+'93'+'@gm'+'ai'+'l.c'+'om'; return false;">kevin<span style="display: none;">.nosp@m.</span>vela<span style="display: none;">.nosp@m.</span>sco19<span style="display: none;">.nosp@m.</span>3@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a> Is enable the sta wifi? </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="default__params_8h_source.html#l00032">32</a> of file <a class="el" href="default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga9d1592020577990e6f348d027d0b5a71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9d1592020577990e6f348d027d0b5a71">&#9670;&nbsp;</a></span>init_ap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t init_ap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>this function initializes the AP. </p>
+<p>in this function is added wifi ssid and password and start the ap mode.</p>
+<dl class="section return"><dt>Returns</dt><dd>esp_err_t ESP_OK: succeed, ESP_(others): fail </dd></dl>
+
+</div>
+</div>
+<a id="ga91e3ae3af5d354b31d963366cdec8dae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga91e3ae3af5d354b31d963366cdec8dae">&#9670;&nbsp;</a></span>init_sta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t init_sta </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>this function initializes the STA and it is added ssid and password and start the sta mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>esp_err_t ESP_OK: succeed, ESP_(others): fail </dd></dl>
+
+</div>
+</div>
+<a id="ga8a891ceb4adebb3393f4cee34eda50da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8a891ceb4adebb3393f4cee34eda50da">&#9670;&nbsp;</a></span>is_ap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_ap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>this function verifies if the wifi is in ap mode </p>
+<dl class="section return"><dt>Returns</dt><dd>esp_err_t ESP_OK: succeed, ESP_(others): fail </dd></dl>
+
+</div>
+</div>
+<a id="ga31d0fb01150610898c219b4830b5cf06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga31d0fb01150610898c219b4830b5cf06">&#9670;&nbsp;</a></span>is_sta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_sta </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>this function verifies if the wifi is in sta mode </p>
+<dl class="section return"><dt>Returns</dt><dd>esp_err_t ESP_OK: succeed, ESP_(others): fail </dd></dl>
+
+</div>
+</div>
+<a id="gabd28cdcca6d5d5a2428f7d64187b71bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd28cdcca6d5d5a2428f7d64187b71bd">&#9670;&nbsp;</a></span>set_default_credentials()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t set_default_credentials </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the default credentials ssid and password of AP and STA. </p>
+<dl class="section return"><dt>Returns</dt><dd>esp_err_t ESP_OK: succeed, ESP_(others): fail </dd></dl>
+
+</div>
+</div>
+<a id="ga8ab8de76e36289e4ff378674ea740b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ab8de76e36289e4ff378674ea740b51">&#9670;&nbsp;</a></span>wifi_credentials_are_configured()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t wifi_credentials_are_configured </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>verify if the wifi ssid and password is configured in the storage </p>
+<dl class="section return"><dt>Returns</dt><dd>1 when the wifi module is configured 0 when the wifi is not configured </dd></dl>
+
+</div>
+</div>
+<a id="gac11b41176ff2264389de71ba0d22834f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac11b41176ff2264389de71ba0d22834f">&#9670;&nbsp;</a></span>wifi_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t wifi_init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wifi module. </p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 Mesh for all </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>xkevin190 <a href="#" onclick="location.href='mai'+'lto:'+'kev'+'in'+'vel'+'as'+'co1'+'93'+'@gm'+'ai'+'l.c'+'om'; return false;">kevin<span style="display: none;">.nosp@m.</span>vela<span style="display: none;">.nosp@m.</span>sco19<span style="display: none;">.nosp@m.</span>3@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a></dd></dl>
+<p>this is main function of the Wifi module, this starting the esp_netif the handler for the wifi events and verify if will be start the ap or sta.</p>
+<dl class="section return"><dt>Returns</dt><dd>esp_err_t ESP_OK: succeed, ESP_(others): fail </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
@@ -121,7 +620,7 @@ WiFi Subsystem</h1>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jan 25 2022 23:19:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Fri Jan 28 2022 01:42:35 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
