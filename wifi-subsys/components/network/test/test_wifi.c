@@ -14,9 +14,14 @@
  * limitations under the License.
  */
 
-/**
- * @brief       Dummy file , Part of Network component
- *
- * @copyright   Copyright (c) 2022 Mesh for all
- * @author      luisan00 <luisan00@hotmail.com>
- */
+#include "unity.h"
+#include "wifi.h"
+
+TEST_CASE("Wi-Fi initialize", "[network]")
+{
+    esp_err_t err;
+
+    err = wifi_init();
+
+    if (err != ESP_OK) TEST_FAIL();
+}
