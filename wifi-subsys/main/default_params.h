@@ -29,25 +29,67 @@ extern "C"
 {
 #endif
 
-#define WIFI_ENABLE_STA 1                 /*!< Is enable the sta wifi? */
-#define WIFI_ENABLE_AP 1                   /*!< Is enable the AP wifi? */
-#define AP_CHANNEL 6                       /*!< AP Channel */
-#define AP_MAXCONN 4                       /*!< AP Maximum connections */
-#define AP_AUTHMODE WIFI_AUTH_WPA_WPA2_PSK /*!< AP Authentication mode */
-#define STA_WIFI_SSID "m4a-wifi"           /*!< default STA ssid */
-#define STA_WIFI_PASSWORD "m4a-default"    /*!< default STA password */
-#define ESP_MAXIMUM_RETRY 5
-#define AP_WIFI_SSID "m4a_AP"           /*!< default AP ssid */
-#define AP_WIFI_PASSWORD "m4a-default"    /*!< default AP password */
+/**
+ * @brief Simple solution to use custom settings "almost" safely.
+ */
+#define USE_DEV_CONFIG 0
 
-#define NVS_APP_NAMESPACE "m4a-firmware"           /*!< NVS application namespace */
-#define NVS_IS_CONFIGURED_KEY "is_configured"       /*!< Is wifi configured? */
-#define USER_STA_NAME_KEY "username_sta"      /*!< user_name sta key for nvs */
-#define USER_STA_PASSWORD_KEY "password_sta"  /*!< user_password sta key for nvs */
-#define USER_AP_PASSWORD_KEY "password_ap"    /*!< user_name ap key for nvs */
-#define USER_AP_NAME_KEY "username_ap"        /*!< user_password ap key for nvs */
-#define MAX_USER_NAME_LENGTH 32       /*!< length of thr username */
-#define MAX_USER_PASSWORD_LENGTH 64   /*!< max length of password for user */
+/**
+ * @brief If it's #1 (true) then **dev-config.h** will be used.
+ */
+#if (USE_DEV_CONFIG == 1)
+#include "dev-config.h"
+#else
+
+/**
+ * @name Factory values for the access point mode
+ * @{
+ */
+#define WAP                             /*!< NVS namespace for AP settings*/
+#define WAP_CHAN 6                      /*!< Default AP channel */
+#define WAP_SSID "m4a-ap"               /*!< Default AP SSID */
+#define WAP_PASS "change-me"            /*!< Default AP password*/
+#define WAP_AUTH WIFI_AUTH_WPA_WPA2_PSK /*!< Default AP Authentication mode */
+#define WAP_MAXCON 4                    /*!< Max.connections for the AP */
+#define WAP_ENABLED 1                   /*!< Access Point mode is enabled */
+/** @} */
+
+/**
+ * @name Factory values for the station mode
+ * @{
+ */
+#define WSTA                            /*!< NVS namespace for WiFi station mode settings */
+#define WSTA_SSID "m4a-ap"              /*!< Default SSID for the station mode */
+#define WSTA_PASS "change-me"           /*!< Default password for station */
+#define WSTA_RETRIES 5                  /*!< Max. num of retries */
+#define WSTA_ENABLED 1                  /*!< Station mode is enabled */
+/** @} */
+
+/**
+ * @name Factory values for other wifi settings 
+ * @{
+ */
+#define WIFI
+#define WIFI_MODE
+/** @} */
+
+/**
+ * @name Factory values for NVS settings
+ * @{
+ */
+#define NVS
+#define NVS_IS_INIT 0
+/** @} */
+#endif
+
+/**
+ * @name literal to string and string to literal macro helpers
+ * @{
+ */
+#define literal_to_str(literal) #literal                /*!< Transform literal to string */
+#define nvs_key_to_name(...) literal_to_str(__VA_ARGS_) /*!< A nonsense for the nvs component */
+#define at_cmd_to_name(...) literal_to_str(__VA_ARGS__) /*!< Another one for the uart(at) component*/
+    /** @} */
 
 #ifdef __cplusplus
 }

@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 /**
+ * @ingroup storage
+ * @{
  * @brief   Non Volatile Storage
- *
  * @author  luisan00 <luisan00@hotmail.com>
  */
 #ifndef STORAGE_H
@@ -49,7 +50,7 @@ extern "C"
     esp_err_t nvs_set_uint8(const char *namespace, const char *key, uint8_t value);
 
     /**
-     * @brief store a c string in the NVS using the given namespace
+     * @brief Store a c string in the NVS using the given namespace and key
      *
      * @param [in] namespace
      * @param [in] key
@@ -59,7 +60,7 @@ extern "C"
     esp_err_t nvs_set_string(const char *namespace, const char *key, const char *value);
 
     /**
-     * @brief get the value with key [key] from the NVS using the given namespace
+     * @brief Get the value as uint8_t with key [key] from the NVS using the given namespace
      *
      * @param [in] namespace
      * @param [in] key
@@ -68,9 +69,20 @@ extern "C"
      */
     esp_err_t nvs_get_uint8(const char *namespace, const char *key, uint8_t *value);
 
+    /**
+     * @brief Get the value as c string with key [key] from the NVS using the given namespace
+     *
+     * @param [in] namespace
+     * @param [in] key
+     * @param [out] buffer
+     * @param [out] length
+     * @return esp_err_t
+     */
     esp_err_t nvs_get_string(const char *namespace, const char *key, char *buffer, size_t *length);
 
 #ifdef __cplusplus
 }
 #endif
+
 #endif /* STORAGE_H */
+/** @} */
