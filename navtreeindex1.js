@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"m4a-mb_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230":[4,0,0,1,0,2,27],
 "m4a-mb_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c":[4,0,0,1,0,2,33],
 "m4a-mb_2include_2periph__conf_8h.html#a8b28b4c69f45b3c82837e7f5269f00a9":[4,0,0,1,0,2,34],
 "m4a-mb_2include_2periph__conf_8h.html#a8cbf32f51ddaf21fe06b4bbe964095d4":[4,0,0,1,0,2,16],

@@ -56,8 +56,8 @@ var NAVTREEINDEX0 =
 "firmware_2include_2main_8h_source.html":[4,0,2,0,0],
 "functions.html":[3,1,0],
 "functions_vars.html":[3,1,1],
-"globals.html":[4,1,0],
 "globals.html":[4,1,0,0],
+"globals.html":[4,1,0],
 "globals_b.html":[4,1,0,1],
 "globals_c.html":[4,1,0,2],
 "globals_d.html":[4,1,0,3],
@@ -79,6 +79,7 @@ var NAVTREEINDEX0 =
 "group__boards__m4a-mb.html":[2,2,3],
 "group__boards__m4a-wroom.html":[2,2,0],
 "group__boards__m4a-wrover.html":[2,2,1],
+"group__components.html":[2,3,0],
 "group__ds18b20.html":[2,0,2],
 "group__ds18b20.html#autotoc_md31":[6,0],
 "group__ds18b20.html#autotoc_md31":[0,0],
@@ -95,9 +96,9 @@ var NAVTREEINDEX0 =
 "group__ds18b20.html#autotoc_md35":[0,4],
 "group__ds18b20.html#autotoc_md35":[6,4],
 "group__ds18b20.html#autotoc_md35":[4],
+"group__ds18b20.html#autotoc_md36":[5],
 "group__ds18b20.html#autotoc_md36":[0,5],
 "group__ds18b20.html#autotoc_md36":[6,5],
-"group__ds18b20.html#autotoc_md36":[5],
 "group__ds18b20.html#autotoc_md37":[6],
 "group__ds18b20.html#autotoc_md37":[6,6],
 "group__ds18b20.html#autotoc_md37":[0,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "m4a-mb_2include_2periph__conf_8h.html#a5afd9690184542986af3376d1dd88957":[4,0,0,1,0,2,11],
 "m4a-mb_2include_2periph__conf_8h.html#a6e2f66f5b6f5c835dd11f9766c4ed897":[4,0,0,1,0,2,23],
 "m4a-mb_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb":[4,0,0,1,0,2,24],
-"m4a-mb_2include_2periph__conf_8h.html#a79a0008b0054fba5551f1a2f515cd21f":[4,0,0,1,0,2,4],
-"m4a-mb_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230":[4,0,0,1,0,2,27]
+"m4a-mb_2include_2periph__conf_8h.html#a79a0008b0054fba5551f1a2f515cd21f":[4,0,0,1,0,2,4]
 };
