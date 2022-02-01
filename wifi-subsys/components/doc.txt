@@ -1,0 +1,4 @@
+/**
+ * @defgroup components
+ * @ingroup wifi-subsys
+ */
