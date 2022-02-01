@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['reference_20firmware_328',['Reference firmware',['../group__m4a-firmware.html',1,'']]]
+  ['supported_20boards_328',['Supported Boards',['../group__boards.html',1,'']]],
+  ['slipdev_329',['Slipdev',['../group__slipdev.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['components_321',['Components',['../group__components.html',1,'']]]
+  ['ds18b20_321',['Ds18b20',['../group__ds18b20.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var group__wifi_subsys =
 [
-    [ "Components", "group__components.html", null ]
+    [ "Wify-subsys_components", "group__wify-subsys__components.html", null ]
 ];
