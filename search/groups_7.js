@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uart_330',['Uart',['../group__tmp__uart.html',1,'']]]
+  ['supported_20boards_340',['Supported Boards',['../group__boards.html',1,'']]],
+  ['slipdev_341',['Slipdev',['../group__slipdev.html',1,'']]]
 ];

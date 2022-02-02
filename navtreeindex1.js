@@ -1,5 +1,11 @@
 var NAVTREEINDEX1 =
 {
+"m4a-mb_2include_2periph__conf_8h.html#a5177e7e865ac2ae63f7d56c8b3078707":[4,0,0,1,0,2,31],
+"m4a-mb_2include_2periph__conf_8h.html#a57b47076d6e87497ff2901208cb484dc":[4,0,0,1,0,2,32],
+"m4a-mb_2include_2periph__conf_8h.html#a5afd9690184542986af3376d1dd88957":[4,0,0,1,0,2,11],
+"m4a-mb_2include_2periph__conf_8h.html#a6e2f66f5b6f5c835dd11f9766c4ed897":[4,0,0,1,0,2,23],
+"m4a-mb_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb":[4,0,0,1,0,2,24],
+"m4a-mb_2include_2periph__conf_8h.html#a79a0008b0054fba5551f1a2f515cd21f":[4,0,0,1,0,2,4],
 "m4a-mb_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230":[4,0,0,1,0,2,27],
 "m4a-mb_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c":[4,0,0,1,0,2,33],
 "m4a-mb_2include_2periph__conf_8h.html#a8b28b4c69f45b3c82837e7f5269f00a9":[4,0,0,1,0,2,34],

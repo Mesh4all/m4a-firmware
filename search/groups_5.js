@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reference_20firmware_327',['Reference firmware',['../group__m4a-firmware.html',1,'']]]
+  ['nvs_20routines_20for_20the_20wifi_20subsystem_338',['NVS routines for the WiFi subsystem',['../group__storage.html',1,'']]]
 ];
