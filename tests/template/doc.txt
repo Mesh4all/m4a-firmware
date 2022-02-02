@@ -1,0 +1,77 @@
+/*
+ * Copyright (c) 2022 Mesh4all <mesh4all.org>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @defgroup    test_template Test template
+ * @ingroup     test_group
+ * @brief       A simple guide to build a test from a Template
+
+# Test Template
+
+## Hardware Reference (Inputs/Outputs) {#m4a_test_template_hardware}
+
+<center>
+Function        |   board   |GPIOs   |
+:---------------|:----------|:-------|
+ Define the functionality or propose of an GPIO that you used in the test.| board used in this test | GPIOn -> n refers to num of Gpio referred |
+
+</center>
+
+## Record your own params and header files{#m4a_test_template_basic_conf}
+if you are creating a test, you need to record all your data types defined for you, all structs and macros,
+also you should describes with a short resume all the functions that was used in your main code. Always you should
+put all these elements in a folder "include" and inside itself a header file named test_name_params, or refer to
+a functionality that you wish. This Template has depends_params.h to see the basics elements in these files.
+
+## Explain some procedures in your code
+
+Using some concepts of Mesh 4 all codes, it's easier knows about a code, for example in this code, it
+can observe the function uart_init() to start under a thread a infinite loop where keep the device listen by port
+and receiving all data bits, that are transferred by another device via UART.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.c}
+int cmd_gps(int argc, char **argv)              // This is a cmd to set the UART_receive mode ii ON or OFF //
+{
+    if (argc != 2)
+    {
+        printf("Usage: \nuart start|stop\n");
+        return -1;
+    }
+
+    if (strcmp("start", argv[1]) == 0)              //Starts the receive mode//
+    {
+        return uart_init(GPS_UART, GPS_BAUDRATE, gps_rx_cb, NULL);
+    }
+    if (strcmp("stop", argv[1]) == 0)           //Turn off the Uart to stop listen by the port
+    {
+        uart_poweroff(GPS_UART);
+        return 0;
+    }
+    printf("Usage: \nuart start|stop\n");
+    return -1;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## How to do the test{#m4a_test_template_flashing}
+
+This sections must to be all the steps to reproduce the test. if is required add some modules
+in the makefile or define that type of board was used.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make -C test/name_of_test flash term
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[Back to table of contents](#m4a_test_template_toc)
+ */
