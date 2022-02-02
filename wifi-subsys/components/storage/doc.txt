@@ -1,0 +1,10 @@
+/**
+@defgroup storage   NVS routines for the WiFi subsystem
+@ingroup wifi-subsys_components
+@brief Basic routines for handle the NVS
+
+# Overview
+
+Basic routines for handle the NVS and in particular for storing or getting c string and uint8_t data types.
+
+*/
