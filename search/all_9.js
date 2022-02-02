@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['nvs_5fget_5fstring_100',['nvs_get_string',['../group__storage.html#gad9acfc7695a5d67f4b995f244c169c03',1,'storage.h']]],
-  ['nvs_5fget_5fuint8_101',['nvs_get_uint8',['../group__storage.html#ga058d322184274aefd0dd9285e4516f76',1,'storage.h']]],
-  ['nvs_5finit_102',['nvs_init',['../group__storage.html#gab03b911dd4296933c03792401419e762',1,'storage.h']]],
-  ['nvs_5fset_5fstring_103',['nvs_set_string',['../group__storage.html#gacc1e5ee27d1df131eb765a4b35f7d926',1,'storage.h']]],
-  ['nvs_5fset_5fuint8_104',['nvs_set_uint8',['../group__storage.html#gabe8255d291f1ac4a4ebb2c032e1c886c',1,'storage.h']]],
-  ['nvs_20routines_20for_20the_20wifi_20subsystem_105',['NVS routines for the WiFi subsystem',['../group__storage.html',1,'']]]
+  ['mesh4all_202_2e4_20ghz_20band_20board_93',['Mesh4All 2.4 GHz band board',['../group__boards__m4a-24g.html',1,'']]],
+  ['mesh4all_20multi_2dband_20board_94',['Mesh4All multi-band board',['../group__boards__m4a-mb.html',1,'']]],
+  ['mesh4all_20examples_95',['Mesh4all Examples',['../group__examples.html',1,'']]],
+  ['m4a_20reference_20firmware_96',['m4a reference firmware',['../index.html',1,'']]],
+  ['main_2eh_97',['main.h',['../examples_2esp32-wrover-app_2include_2main_8h.html',1,'(Global Namespace)'],['../firmware_2include_2main_8h.html',1,'(Global Namespace)']]],
+  ['moisture_5fsensor_2eh_98',['moisture_sensor.h',['../moisture__sensor_8h.html',1,'']]],
+  ['moisture_5fsensor_5fis_5favailable_99',['moisture_sensor_is_available',['../structavailable__sensors__t.html#a31a0020452dd389c6c6700ebeeb4c4dc',1,'available_sensors_t']]],
+  ['ms_5fhw360_5fpin_100',['MS_HW360_PIN',['../m4a-wroom_2include_2board_8h.html#a6dfbc94c211502fed434f0b56a890c23',1,'MS_HW360_PIN():&#160;board.h'],['../m4a-wrover_2include_2board_8h.html#a6dfbc94c211502fed434f0b56a890c23',1,'MS_HW360_PIN():&#160;board.h']]],
+  ['m4a_2dwrover_2dapp_101',['M4a-wrover-app',['../group__wrover-app.html',1,'']]]
 ];

@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['sam_5fusbdev_5fconfig_245',['sam_usbdev_config',['../m4a-24g_2include_2periph__conf_8h.html#a57b47076d6e87497ff2901208cb484dc',1,'sam_usbdev_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a57b47076d6e87497ff2901208cb484dc',1,'sam_usbdev_config():&#160;periph_conf.h']]],
-  ['saul_5fgpio_5fparams_246',['saul_gpio_params',['../m4a-24g_2include_2gpio__params_8h.html#a5442106fb6a31a0cc477a93d79701765',1,'saul_gpio_params():&#160;gpio_params.h'],['../m4a-mb_2include_2gpio__params_8h.html#a5442106fb6a31a0cc477a93d79701765',1,'saul_gpio_params():&#160;gpio_params.h'],['../m4a-wroom_2include_2gpio__params_8h.html#a5442106fb6a31a0cc477a93d79701765',1,'saul_gpio_params():&#160;gpio_params.h'],['../m4a-wrover_2include_2gpio__params_8h.html#a5442106fb6a31a0cc477a93d79701765',1,'saul_gpio_params():&#160;gpio_params.h']]],
-  ['slipdev_5fparams_247',['slipdev_params',['../slipdev__params_8h.html#a632e2c0273de70d7111734c24ddd2ae9',1,'slipdev_params.h']]],
-  ['soil_5fmoisture_248',['soil_moisture',['../structsensor__data.html#afe48aa5064277cfa7ce264a226ab854b',1,'sensor_data']]],
-  ['spi_5fconfig_249',['spi_config',['../m4a-24g_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c',1,'spi_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c',1,'spi_config():&#160;periph_conf.h']]]
+  ['port_246',['port',['../structudpf__payload.html#affa3c13ab73a302444522fb005af395f',1,'udpf_payload']]],
+  ['pwm_5fchan0_5fconfig_247',['pwm_chan0_config',['../m4a-24g_2include_2periph__conf_8h.html#ae505bf70258c000e0dd0f0ca6377db10',1,'pwm_chan0_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ae505bf70258c000e0dd0f0ca6377db10',1,'pwm_chan0_config():&#160;periph_conf.h']]],
+  ['pwm_5fchan1_5fconfig_248',['pwm_chan1_config',['../m4a-24g_2include_2periph__conf_8h.html#a7ffca7e3ae7a2b23130a9398fa5b3a68',1,'periph_conf.h']]],
+  ['pwm_5fconfig_249',['pwm_config',['../m4a-24g_2include_2periph__conf_8h.html#a5177e7e865ac2ae63f7d56c8b3078707',1,'pwm_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a5177e7e865ac2ae63f7d56c8b3078707',1,'pwm_config():&#160;periph_conf.h']]]
 ];

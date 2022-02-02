@@ -1,22 +1,14 @@
 var searchData=
 [
-  ['unit_2dtesting_164',['Unit-testing',['../md_tests_README.html',1,'']]],
-  ['uart_165',['Uart',['../group__tmp__uart.html',1,'']]],
-  ['uart0_5frxd_166',['UART0_RXD',['../m4a-wroom_2include_2periph__conf_8h.html#a28fc91fb6e973e5f0be9e44e5edd5449',1,'UART0_RXD():&#160;periph_conf.h'],['../m4a-wrover_2include_2periph__conf_8h.html#a28fc91fb6e973e5f0be9e44e5edd5449',1,'UART0_RXD():&#160;periph_conf.h']]],
-  ['uart0_5ftxd_167',['UART0_TXD',['../m4a-wroom_2include_2periph__conf_8h.html#add71a59fa12734b27043cabf5546d176',1,'UART0_TXD():&#160;periph_conf.h'],['../m4a-wrover_2include_2periph__conf_8h.html#add71a59fa12734b27043cabf5546d176',1,'UART0_TXD():&#160;periph_conf.h']]],
-  ['uart1_5frxd_168',['UART1_RXD',['../m4a-wroom_2include_2periph__conf_8h.html#a8963af7923ea1a1c11a44af29177b00c',1,'UART1_RXD():&#160;periph_conf.h'],['../m4a-wrover_2include_2periph__conf_8h.html#a8963af7923ea1a1c11a44af29177b00c',1,'UART1_RXD():&#160;periph_conf.h']]],
-  ['uart1_5ftxd_169',['UART1_TXD',['../m4a-wroom_2include_2periph__conf_8h.html#a46601053c8918ea8226da88610977ef2',1,'UART1_TXD():&#160;periph_conf.h'],['../m4a-wrover_2include_2periph__conf_8h.html#a46601053c8918ea8226da88610977ef2',1,'UART1_TXD():&#160;periph_conf.h']]],
-  ['uart2_5frxd_170',['UART2_RXD',['../m4a-wroom_2include_2periph__conf_8h.html#ab2899c3cfa568796f67d26504bbd7ec3',1,'periph_conf.h']]],
-  ['uart2_5ftxd_171',['UART2_TXD',['../m4a-wroom_2include_2periph__conf_8h.html#a65e351dbd67e40369b51f81f413772bf',1,'periph_conf.h']]],
-  ['uart_5f0_5fisr_172',['UART_0_ISR',['../m4a-24g_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb',1,'UART_0_ISR():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb',1,'UART_0_ISR():&#160;periph_conf.h']]],
-  ['uart_5f1_5fisr_173',['UART_1_ISR',['../m4a-24g_2include_2periph__conf_8h.html#af9358264b5cbce69dddad098a8600aae',1,'UART_1_ISR():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#af9358264b5cbce69dddad098a8600aae',1,'UART_1_ISR():&#160;periph_conf.h']]],
-  ['uart_5f2_5fisr_174',['UART_2_ISR',['../m4a-mb_2include_2periph__conf_8h.html#afdfcd079b784102f3ceb94a04d9c9250',1,'periph_conf.h']]],
-  ['uart_5fconfig_175',['uart_config',['../m4a-24g_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5',1,'uart_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5',1,'uart_config():&#160;periph_conf.h']]],
-  ['uart_5fnumof_176',['UART_NUMOF',['../m4a-24g_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230',1,'UART_NUMOF():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230',1,'UART_NUMOF():&#160;periph_conf.h']]],
-  ['udp_5fm4a_2eh_177',['udp_m4a.h',['../udp__m4a_8h.html',1,'']]],
-  ['udp_5fsend_178',['udp_send',['../udpf_8h.html#a1516055126f26528fe1b9dd43d146fa5',1,'udp_send(int argc, char **argv):&#160;udpf.h'],['../udp__m4a_8h.html#aa3493cbef904175c2868a533394fbca8',1,'udp_send(int *port, char *address, uint8_t *message, size_t *payload_len):&#160;udp_m4a.h']]],
-  ['udp_5fserver_179',['udp_server',['../udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0',1,'udp_server(int argc, udpf_payload *argv):&#160;udpf.h'],['../udp__m4a_8h.html#a3e54c501a23f62be7f12c4905cf06343',1,'udp_server(udpf_payload *argv):&#160;udp_m4a.h']]],
-  ['udpf_2eh_180',['udpf.h',['../udpf_8h.html',1,'']]],
-  ['udpf_5fpayload_181',['udpf_payload',['../structudpf__payload.html',1,'']]],
-  ['use_5fdev_5fconfig_182',['USE_DEV_CONFIG',['../group__wifi-subsys.html#ga8e493bff2a09a1207b527071e4cff06e',1,'default_params.h']]]
+  ['temperature_155',['temperature',['../structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5',1,'sensor_data']]],
+  ['test_5ffunction_156',['test_function',['../depends__params_8h.html#a2f3b6a4d4225afe5bc4e0b2a827ba507',1,'depends_params.h']]],
+  ['test_157',['Test',['../group__test__group.html',1,'']]],
+  ['test_20template_158',['Test template',['../group__test__template.html',1,'']]],
+  ['therm1_159',['therm1',['../ds18b20_8h.html#ae588c89ce277ed7848cde0dd75621936',1,'ds18b20.h']]],
+  ['therm1_5fparams_160',['therm1_params',['../ds18b20_8h.html#af4d7584270a766039a939d057e84a0d7',1,'ds18b20.h']]],
+  ['timer_5f0_5fisr_161',['TIMER_0_ISR',['../m4a-24g_2include_2periph__conf_8h.html#a4c490d334538c05373718609ca5fe2d4',1,'TIMER_0_ISR():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a4c490d334538c05373718609ca5fe2d4',1,'TIMER_0_ISR():&#160;periph_conf.h']]],
+  ['timer_5f0_5fmax_5fvalue_162',['TIMER_0_MAX_VALUE',['../m4a-24g_2include_2periph__conf_8h.html#ab43cbb6f07f99fddc0e0f6a710160654',1,'TIMER_0_MAX_VALUE():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ab43cbb6f07f99fddc0e0f6a710160654',1,'TIMER_0_MAX_VALUE():&#160;periph_conf.h']]],
+  ['timer_5f1_5fisr_163',['TIMER_1_ISR',['../m4a-24g_2include_2periph__conf_8h.html#ab1f8037bcb60d4669f508c471f92bc17',1,'TIMER_1_ISR():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ab1f8037bcb60d4669f508c471f92bc17',1,'TIMER_1_ISR():&#160;periph_conf.h']]],
+  ['timer_5fconfig_164',['timer_config',['../m4a-24g_2include_2periph__conf_8h.html#a8b28b4c69f45b3c82837e7f5269f00a9',1,'timer_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a8b28b4c69f45b3c82837e7f5269f00a9',1,'timer_config():&#160;periph_conf.h']]],
+  ['timer_5fnumof_165',['TIMER_NUMOF',['../m4a-24g_2include_2periph__conf_8h.html#a6e2f66f5b6f5c835dd11f9766c4ed897',1,'TIMER_NUMOF():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a6e2f66f5b6f5c835dd11f9766c4ed897',1,'TIMER_NUMOF():&#160;periph_conf.h']]]
 ];
