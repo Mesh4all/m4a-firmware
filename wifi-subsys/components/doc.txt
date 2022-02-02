@@ -1,4 +1,4 @@
-/*
+/**
  * @defgroup wify-subsys_components
  * @ingroup wifi-subsys
  */
