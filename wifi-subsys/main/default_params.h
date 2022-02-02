@@ -16,7 +16,7 @@
 
 /**
  * @brief   defaults params for wifi
- * @ingroup     wifisubsys
+ * @ingroup     wifi-subsys
  * @{
  * @author  xkevin190 <kevinvelasco193@gmail.com>
  */
@@ -66,7 +66,7 @@ extern "C"
 /** @} */
 
 /**
- * @name Factory values for other wifi settings 
+ * @name Factory values for other wifi settings
  * @{
  */
 #define WIFI

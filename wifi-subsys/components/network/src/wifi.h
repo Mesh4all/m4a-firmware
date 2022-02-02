@@ -17,7 +17,7 @@
 /**
  *
  * @brief       Wifi module
- * @ingroup     wifisubsys
+ * @ingroup     wifi-subsys_components
  * @{
  * @copyright   Copyright (c) 2021 Mesh for all
  * @author      xkevin190 <kevinvelasco193@gmail.com>
