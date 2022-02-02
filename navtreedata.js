@@ -24,6 +24,7 @@ var NAVTREE =
 [
   [ "Mesh4all", "index.html", [
     [ "m4a reference firmware", "index.html", null ],
+    [ "Unit-testing", "md_tests_README.html", null ],
     [ "WiFi subsystem", "md_wifi-subsys_README.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
@@ -48,7 +49,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"m4a-mb_2include_2periph__conf_8h.html"
+"m4a-mb_2include_2board_8h.html#acd16785845ce7004334b91a98707f8eb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
