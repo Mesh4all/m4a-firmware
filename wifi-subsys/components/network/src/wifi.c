@@ -165,7 +165,7 @@ uint8_t wifi_credentials_are_configured()
 {
     uint8_t is_configured = 0;
 
-    esp_err_t err = nvs_get_uint8(nvs_key_to_name(NVS), NVS_IS_INIT, &is_configured);
+    esp_err_t err = nvs_get_uint8(stringlify(NVS), NVS_IS_INIT, &is_configured);
 
     if (err != ESP_OK)
     {
@@ -178,25 +178,25 @@ uint8_t wifi_credentials_are_configured()
 
 esp_err_t set_default_credentials(void)
 {
-    esp_err_t err = nvs_set_string(nvs_key_to_name(WAP), nvs_key_to_name(WAP_SSID), WAP_SSID);
+    esp_err_t err = nvs_set_string(stringlify(WAP), stringlify(WAP_SSID), WAP_SSID);
     if (err != ESP_OK)
     {
         ESP_LOGE(TAG, "Error: to setting AP SSID to the nvs");
     }
 
-    err = nvs_set_string(nvs_key_to_name(WAP), nvs_key_to_name(WAP_PASS), WAP_PASS);
+    err = nvs_set_string(stringlify(WAP), stringlify(WAP_PASS), WAP_PASS);
     if (err != ESP_OK)
     {
         ESP_LOGE(TAG, "Error: to setting AP Password to the nvs");
     }
 
-    err = nvs_set_string(nvs_key_to_name(WSTA), nvs_key_to_name(WSTA_SSID), WSTA_SSID);
+    err = nvs_set_string(stringlify(WSTA), stringlify(WSTA_SSID), WSTA_SSID);
     if (err != ESP_OK)
     {
         ESP_LOGE(TAG, "Error: to settin STA password to the nvs");
     }
 
-    err = nvs_set_string(nvs_key_to_name(WSTA), nvs_key_to_name(WSTA_PASS), WSTA_PASS);
+    err = nvs_set_string(stringlify(WSTA), stringlify(WSTA_PASS), WSTA_PASS);
     if (err != ESP_OK)
     {
         ESP_LOGE(TAG, "Error: to setting STA password to the nvs");
@@ -205,12 +205,12 @@ esp_err_t set_default_credentials(void)
     * (reason: <your reason why you think this is a false positive>) */
     if (err != ESP_OK)
     {
-        nvs_set_uint8(nvs_key_to_name(NVS), nvs_key_to_name(NVS_IS_INIT), 0);
+        nvs_set_uint8(stringlify(NVS), stringlify(NVS_IS_INIT), 0);
         return err;
     }
     else
     {
-        nvs_set_uint8(nvs_key_to_name(NVS), nvs_key_to_name(NVS_IS_INIT), 1);
+        nvs_set_uint8(stringlify(NVS), stringlify(NVS_IS_INIT), 1);
         return ESP_OK;
     }
 
