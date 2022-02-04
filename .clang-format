@@ -1,7 +1,6 @@
 ---
 # We'll use defaults from the LLVM style, but with 4 columns indentation.
-BasedOnStyle: LLVM
-IndentWidth: 4
+BasedOnStyle: llvm
 ---
 Language:        Cpp
 #BasedOnStyle:  LLVM
@@ -86,7 +85,7 @@ IncludeIsMainSourceRegex: ''
 IndentCaseLabels: false
 IndentGotoLabels: true
 IndentPPDirectives: None
-IndentWidth:     2
+IndentWidth: 4
 IndentWrappedFunctionNames: false
 JavaScriptQuotes: Leave
 JavaScriptWrapImports: true
@@ -130,7 +129,7 @@ SpacesInCStyleCastParentheses: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
 SpaceBeforeSquareBrackets: false
-Standard:        Latest
+Standard:        Cpp11
 StatementMacros:
   - Q_UNUSED
   - QT_REQUIRE_VERSION
