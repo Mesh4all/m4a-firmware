@@ -89,6 +89,115 @@ esp_err_t set_default_credentials();
  */
 uint8_t wifi_credentials_are_configured();
 
+/**
+ * @brief change the ssid of the sta and restart the wifi module
+ *
+ * @param sta_ssid [in] new ssid
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t change_wifi_sta_ssid(char* sta_ssid);
+
+/**
+ * @brief change the ssid of the AP and restart the wifi module
+ *         also save new ssid in the nvs
+ *
+ * @param sta_ssid [in] new AP ssid
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t change_wifi_ap_ssid(char* ap_ssid);
+
+/**
+ * @brief change the password of the AP and restart the wifi module
+ *        also save new password in the nvs
+ *
+ * @param sta_ssid [in] new AP password
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t change_wifi_ap_pass(char* pass_ap);
+
+/**
+ * @brief change the password of the STA and restart the wifi module
+ *        also save new password in the nvs
+ *
+ * @param pass_sta [in] new sta password
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t change_wifi_sta_pass(char* pass_sta);
+
+/**
+ * @brief restart the wifi module
+ *
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t wifi_restart();
+
+/**
+ * @brief turn off the WIFI module
+ *
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t wifi_off();
+
+/**
+ * @brief is used when the default parameters still not save in storage,
+ *        this verify that wifi mode is enabled in the default params and
+ *         will return the mode.
+ *
+ * @return int
+ */
+int identify_enabled_interface();
+
+/**
+ * @brief this function set the wifi mode and execute the connection,
+ *         it find the wifi mode in the nvs and it verify if already saved
+ *         the mode in the nvs. If the nvs return error or the wifi_mode is
+ *         equal to WIFI_MODE_NULL will take the defaults params for give
+ *         warranty to the user that wifi init correctly this is very important
+ *         because if something failed  the wifi  will  stop.
+ *
+ */
+esp_err_t set_wifi_mode();
+
+/**
+ * @brief change type of auth in ap wifi
+ *
+ * @param auth [in]
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t change_ap_auth (uint8_t auth);
+
+/**
+ * @brief set new mode in the nvs and start the wifi again.
+ *
+ * @param mode [in]
+ * @return esp_err_t
+ */
+esp_err_t change_wifi_mode(int mode);
+
+/**
+ * @brief restore WiFi parameters to their original state
+ *
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t wifi_restore_default();
+
+/**
+ * @brief select the channel of wifi ap is recommended see the doc
+ * of idf for the channels every channel have a different frequency
+ *
+ * @param channel [in]
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t select_wifi_channel(uint8_t channel);
+
+/**
+ * @brief Set the ap max number of connections
+ *
+ * @param max_connection [in]  max connectios
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t set_ap_max_connection (uint8_t max_connection);
+
 #ifdef __cplusplus
 }
 #endif

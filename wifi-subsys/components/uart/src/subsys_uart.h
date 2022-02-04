@@ -104,6 +104,15 @@ int sendData();
  */
 esp_err_t setting_uart();
 
+/**
+ * @brief  this function parse the AT message is used for get the key and value of at request
+ *
+ * @param at_comant this is the message to parser
+ * @param output    this variable content the key and value
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t parse_at_message(uint8_t* at_comant, at_request_t* output);
+
 #ifdef __cplusplus
 }
 #endif
