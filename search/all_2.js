@@ -1,8 +1,8 @@
 var searchData=
 [
   ['callback_28',['callback',['../structudpf__payload.html#a2916837a0671960a87998d6b615d17ee',1,'udpf_payload']]],
-  ['cbor_5fdecode_5fmessage_29',['cbor_decode_message',['../serialization_8h.html#a2aa958140eda2473bea4a6a04b927ac0',1,'serialization.h']]],
-  ['cbor_5fenconde_5fmessage_30',['cbor_enconde_message',['../serialization_8h.html#a66ba11ef6fbd93716343388aacf9dabd',1,'serialization.h']]],
+  ['cbor_5fdecode_5fmessage_29',['cbor_decode_message',['../firmware_2libs_2serialization_2include_2serialization_8h.html#a2aa958140eda2473bea4a6a04b927ac0',1,'serialization.h']]],
+  ['cbor_5fenconde_5fmessage_30',['cbor_enconde_message',['../firmware_2libs_2serialization_2include_2serialization_8h.html#a66ba11ef6fbd93716343388aacf9dabd',1,'serialization.h']]],
   ['clock_5fcoreclock_31',['CLOCK_CORECLOCK',['../m4a-24g_2include_2periph__conf_8h.html#afc465f12242e68f6c3695caa3ba0a169',1,'CLOCK_CORECLOCK():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#afc465f12242e68f6c3695caa3ba0a169',1,'CLOCK_CORECLOCK():&#160;periph_conf.h']]],
   ['clock_5fpll_5fdiv_32',['CLOCK_PLL_DIV',['../m4a-24g_2include_2periph__conf_8h.html#ad7c20feb5ba29cd3c6479fa74db3bbb0',1,'CLOCK_PLL_DIV():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ad7c20feb5ba29cd3c6479fa74db3bbb0',1,'CLOCK_PLL_DIV():&#160;periph_conf.h']]],
   ['clock_5fpll_5fmul_33',['CLOCK_PLL_MUL',['../m4a-24g_2include_2periph__conf_8h.html#a902a38d6dfe9bc80271132ace0d1ca69',1,'CLOCK_PLL_MUL():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a902a38d6dfe9bc80271132ace0d1ca69',1,'CLOCK_PLL_MUL():&#160;periph_conf.h']]],

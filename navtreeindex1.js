@@ -1,5 +1,11 @@
 var NAVTREEINDEX1 =
 {
+"m4a-mb_2include_2board_8h.html#a9a61388c9e491aec2e44cc03956bb299":[5,0,0,1,0,0,6],
+"m4a-mb_2include_2board_8h.html#aab5c3eca54046333af52593b9e360270":[5,0,0,1,0,0,5],
+"m4a-mb_2include_2board_8h.html#aadd4c7ae0cd4e9bbb17f7055dd51fe08":[5,0,0,1,0,0,14],
+"m4a-mb_2include_2board_8h.html#ab444639ac7bb9c4c50f19ded5dda9201":[5,0,0,1,0,0,2],
+"m4a-mb_2include_2board_8h.html#ab55f588eb2c5177d3f7806e60d379fba":[5,0,0,1,0,0,19],
+"m4a-mb_2include_2board_8h.html#abfabde35a3e8b7ab50146a5e223bfead":[5,0,0,1,0,0,7],
 "m4a-mb_2include_2board_8h.html#ac6468b1df4dfabcca0bb142044d6f976":[5,0,0,1,0,0,18],
 "m4a-mb_2include_2board_8h.html#ac92d64d839a69c4e2219b01bb6fe7b44":[5,0,0,1,0,0,1],
 "m4a-mb_2include_2board_8h.html#acd16785845ce7004334b91a98707f8eb":[5,0,0,1,0,0,21],
@@ -138,10 +144,6 @@ var NAVTREEINDEX1 =
 "moisture__sensor_8h.html#ad3991965f75a3260bf8365f71d7a43ca":[5,0,2,2,1,0,0,0],
 "moisture__sensor_8h_source.html":[5,0,2,2,1,0,0],
 "pages.html":[],
-"serialization_8h.html":[5,0,2,1,0,0,0],
-"serialization_8h.html#a2aa958140eda2473bea4a6a04b927ac0":[5,0,2,1,0,0,0,1],
-"serialization_8h.html#a66ba11ef6fbd93716343388aacf9dabd":[5,0,2,1,0,0,0,2],
-"serialization_8h_source.html":[5,0,2,1,0,0,0],
 "slipdev__params_8h.html":[5,0,1,0,0,0],
 "slipdev__params_8h.html#a632e2c0273de70d7111734c24ddd2ae9":[5,0,1,0,0,0,0],
 "slipdev__params_8h_source.html":[5,0,1,0,0,0],
@@ -161,7 +163,7 @@ var NAVTREEINDEX1 =
 "structudpf__payload.html":[4,0,4],
 "structudpf__payload.html#a2916837a0671960a87998d6b615d17ee":[4,0,4,0],
 "structudpf__payload.html#affa3c13ab73a302444522fb005af395f":[4,0,4,1],
-"subsys__uart_8h_source.html":[5,0,4,0,2,0,0],
+"subsys__uart_8h_source.html":[5,0,4,0,3,0,0],
 "system__init_8h.html":[5,0,2,3,0,0,0],
 "system__init_8h.html#a260b5f5c0bbf70deb8aef6e6c5006122":[5,0,2,3,0,0,0,1],
 "system__init_8h.html#aa774b615bac7b8a859ff5c671841781e":[5,0,2,3,0,0,0,2],
@@ -174,5 +176,6 @@ var NAVTREEINDEX1 =
 "udpf_8h.html#a1516055126f26528fe1b9dd43d146fa5":[5,0,1,1,1,1],
 "udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0":[5,0,1,1,1,2],
 "udpf_8h_source.html":[5,0,1,1,1],
+"wifi-subsys_2components_2tools_2src_2serialization_8h_source.html":[5,0,4,0,2,0,0],
 "wifi_8h_source.html":[5,0,4,0,0,0,0]
 };
