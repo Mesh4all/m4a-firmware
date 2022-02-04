@@ -86,10 +86,9 @@ extern "C"
  * @name literal to string and string to literal macro helpers
  * @{
  */
-#define literal_to_str(literal) #literal                /*!< Transform literal to string */
-#define nvs_key_to_name(...) literal_to_str(__VA_ARGS_) /*!< A nonsense for the nvs component */
-#define at_cmd_to_name(...) literal_to_str(__VA_ARGS__) /*!< Another one for the uart(at) component*/
-    /** @} */
+#define stringlify(...) #__VA_ARGS__
+/** @} */
+
 
 #ifdef __cplusplus
 }
