@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nvs_20routines_20for_20the_20wifi_20subsystem_372',['NVS routines for the WiFi subsystem',['../group__storage.html',1,'']]]
+  ['nvs_20routines_20for_20the_20wifi_20subsystem_398',['NVS routines for the WiFi subsystem',['../group__storage.html',1,'']]]
 ];
