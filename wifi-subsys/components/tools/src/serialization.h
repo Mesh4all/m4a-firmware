@@ -30,14 +30,13 @@
 #define SERIALIZATION_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /**
  * @brief method to encode data
  * @param[in] key  Make a name to an element of map.
- * @param[in] value Encode a value that belongs to [key named element]
+ * @param[in] value Encode a value int64 that belongs to [key named element]
  * @param[out] cbor_coded Buffer of coded message in cbor, \
  *                             this contains all elements that will be saved
  * @param[out] len buffer size.
@@ -47,7 +46,28 @@ extern "C"
  *
  */
 
-esp_err_t encode(char* key, int64_t value, uint8_t* cbor_coded, size_t *len);
+esp_err_t encode(char *key, int64_t value, uint8_t *cbor_coded, size_t *len);
+
+/**
+ * @brief method to encode data
+ * @param[in] key  Make a name to an element of map.
+ * @param[in] value Encode a value uint8_t or uint8* that belongs to [key named element]
+ * @param[out] cbor_coded Buffer of coded message in cbor, \
+ *                             this contains all elements that will be saved
+ * @param[out] len buffer size.
+ *
+ * Format of element to be Encoded:
+ * { "key_named" : 1523 };
+ * TO understand could see these groups of bytes as string.
+ *
+ * { "key_name" : "a5f/s*"}
+ *
+ * @note: Take careful to don't send any char or string under uint8_t and uint8_t* types
+ * this function could be take like an array of bytes.
+ *
+ */
+
+esp_err_t encode_uint8(char *key, uint8_t *value, uint8_t *cbor_coded, size_t *len);
 
 /**
  * @brief method to decode data
@@ -57,7 +77,7 @@ esp_err_t encode(char* key, int64_t value, uint8_t* cbor_coded, size_t *len);
  * @param[out] value Value referred of map element [key_named]
  */
 
-esp_err_t decode(uint8_t* buf, char* key, int64_t* value, size_t len);
+esp_err_t decode(uint8_t *buf, char *key, void *value, size_t len);
 
 #ifdef __cplusplus
 }
