@@ -1,3 +1,5 @@
 sdkconfig
 sdkconfig.old
 dev-config.h
+managed_components/
+dependencies.lock

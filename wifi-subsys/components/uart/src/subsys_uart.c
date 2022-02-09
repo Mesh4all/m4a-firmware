@@ -5,8 +5,8 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "subsys_uart.h"
+#include "wifi.h"
 
-static const char *TAG = "subsys_uart";
 static const int RX_BUF_SIZE = 1024;
 
 #define ARRAY_SIZE  11
@@ -65,8 +65,12 @@ int sendData(const char* logName, char* data)
 
 esp_err_t parse_at_message(uint8_t* at_comant, at_request_t* output)
 {
-    char* commands = (char*)at_comant;
-    char *key = strtok(commands, "+");
+    // find for a better solutions
+    size_t at_size =  strlen((char*)at_comant) +1;
+    char commands[at_size];
+    memcpy(commands, at_comant, at_size);
+    const char plus[2] = "+";
+    char *key = strtok(commands, plus);
     char firts_step[100];
     char* key_value = NULL;
     char* value = NULL;
@@ -100,9 +104,9 @@ esp_err_t parse_at_message(uint8_t* at_comant, at_request_t* output)
 
     /* cppcheck-suppress nullPointerRedundantCheck
     * (reason: <is necessary verify that this data is not null>) */
-    memcpy(&output->key, key_value, strlen(key_value) +1);
+    memcpy(output->key, key_value, strlen(key_value) +1);
     if (value != NULL) {
-        memcpy(&output->value, value, strlen(value) + 1);
+        memcpy(output->value, value, strlen(value) + 1);
     }
 
     if(key_value == NULL && value == NULL ){
@@ -129,11 +133,14 @@ int at_cmd_to_name (char* key)
 
 void at_handler(uint8_t* at_comant)
 {
-    char* commands = (char*)at_comant;
     at_request_t payload;
+    int wifi_mode = 0;
+    uint8_t channel = 0;
+    uint8_t max_connection = 0;
+    uint8_t auth = 0;
+    payload.key = (char*) malloc(32);
+    payload.value = (char*) malloc(32);
 
-    payload.key = malloc(32);
-    payload.value = malloc(32);
     parse_at_message(at_comant, &payload);
 
     enum at_keys_n at_key = at_cmd_to_name(payload.key);
@@ -141,43 +148,46 @@ void at_handler(uint8_t* at_comant)
     switch (at_key)
     {
     case (NVS_RST):
-        printf("nvs rst \n");
+        wifi_restore_default();
         break;
     case (WIFI_OFF):
-        printf("wifi off \n");
+        wifi_off();
         break;
     case (WAP_SSID):
-        printf("wifi_wap_ssid \n");
+        change_wifi_ap_ssid(payload.value);
         break;
     case (WAP_PASS):
-        printf("wifi_wap_pass \n");
-         break;
+        change_wifi_ap_pass(payload.value);
+        break;
     case (WAP_CHAN):
-        printf("wifi_wap_ch \n");
+        channel= atoi(payload.value);
+        select_wifi_channel(channel);
          break;
     case (WAP_AUTH):
-        printf("wifi_wap_auth \n");
+        auth = atoi(payload.value);
+        change_ap_auth(auth);
         break;
     case (WIFI_ON):
-        printf("wifi_on \n");
+        wifi_init();
         break;
     case (WIFI_MODE):
-        printf("wifi_mode \n");
+        wifi_mode = atoi(payload.value);
+        change_wifi_mode(wifi_mode);
         break;
     case (WIFI_RST):
-        printf("wifi_rst \n");
+        wifi_restart();
         break;
     case (WSTA_SSID):
-        printf("wifi_wsta_ssid \n");
+        change_wifi_sta_pass(payload.value);
         break;
     case (WSTA_PASS):
-        printf("wifi_wsta_pass \n");
+        change_wifi_sta_pass(payload.value);
         break;
     default:
-        printf("unhandler event %i \n", at_key);
+        ESP_LOGE(__func__,"unhandler event %i \n", at_key);
         break;
     }
-    ESP_LOGI(TAG, "KEY: '%s' ", payload.key);
+    ESP_LOGI(__func__, "KEY: '%s' ", payload.key);
 
     free(payload.key);
     free(payload.value);
@@ -187,7 +197,7 @@ void at_handler(uint8_t* at_comant)
 void received_sensor_data (uint8_t* values)
 {
     char* message = (char*)values;
-    ESP_LOGI(TAG, "Read sensor data: '%s' ", message);
+    ESP_LOGI(__func__, "Read sensor data: '%s' ", message);
 }
 
 void tx_send_loop(void *arg)
@@ -208,7 +218,7 @@ void tx_send_loop(void *arg)
 
 void rx_receive(void *arg)
 {
-    esp_log_level_set(TAG, ESP_LOG_INFO);
+    esp_log_level_set(__func__, ESP_LOG_INFO);
     uint8_t* data = (uint8_t*) malloc(RX_BUF_SIZE+1);
     while (1) {
         const int rxBytes = uart_read_bytes(UART_NUM_1, data, RX_BUF_SIZE, 1000 / portTICK_RATE_MS);
@@ -219,7 +229,7 @@ void rx_receive(void *arg)
             } else {
                 received_sensor_data(data);
             }
-            ESP_LOG_BUFFER_HEXDUMP(TAG, data, rxBytes, ESP_LOG_INFO);
+            ESP_LOG_BUFFER_HEXDUMP(__func__, data, rxBytes, ESP_LOG_INFO);
         }
     }
     free(data);
