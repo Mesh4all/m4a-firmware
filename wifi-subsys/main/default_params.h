@@ -32,7 +32,7 @@ extern "C"
 /**
  * @brief Simple solution to use custom settings "almost" safely.
  */
-#define USE_DEV_CONFIG 0
+#define USE_DEV_CONFIG 1
 
 /**
  * @brief If it's #1 (true) then **dev-config.h** will be used.
@@ -71,6 +71,7 @@ extern "C"
  */
 #define WIFI
 #define WIFI_MODE
+#define DEFAULT_SERVER_TO_PING  "www.google.com"
 /** @} */
 
 /**
