@@ -29,12 +29,17 @@ TEST_CASE("set default credentials", "[network]")
 
 TEST_CASE("Wi-Fi initialize", "[network]")
 {
+    int8_t is_connected = -1;
     esp_err_t err;
-
     err = wifi_init();
 
-    if (err != ESP_OK) TEST_FAIL();
-
+    if (err != ESP_OK) {
+        TEST_FAIL();
+    }
+    err = wifi_start(&is_connected);
+    if (err != ESP_OK) {
+        TEST_FAIL();
+    }
 }
 
 TEST_CASE("change ssid ap", "[network]")
@@ -68,7 +73,7 @@ TEST_CASE("change password ap", "[network]")
 {
     const char* test_sta = "Pirulin0312";
     esp_err_t err = change_wifi_sta_pass(test_sta);
-    if(err != ESP_OK){
+    if(err != ESP_OK) {
         TEST_FAIL();
     }
 }
