@@ -105,8 +105,8 @@ var NAVTREEINDEX0 =
 "group__ds18b20.html#autotoc_md33":[6,2],
 "group__ds18b20.html#autotoc_md33":[0,2],
 "group__ds18b20.html#autotoc_md34":[0,3],
-"group__ds18b20.html#autotoc_md34":[3],
 "group__ds18b20.html#autotoc_md34":[6,3],
+"group__ds18b20.html#autotoc_md34":[3],
 "group__ds18b20.html#autotoc_md35":[0,4],
 "group__ds18b20.html#autotoc_md35":[4],
 "group__ds18b20.html#autotoc_md35":[6,4],
@@ -182,6 +182,7 @@ var NAVTREEINDEX0 =
 "group__wifi-subsys__components.html#gae6668eba3f175628aac7bd5248bee4d1":[3,4,0,8],
 "group__wifi-subsys__components.html#gaefe0381809807f7142fb53f5e6ddbd0f":[3,4,0,14],
 "group__wrover-app.html":[3,0,4],
+"icmp__ping_8h_source.html":[5,0,4,0,0,0,0],
 "index.html":[],
 "index.html":[0],
 "index.html#autotoc_md25":[0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "m4a-24g_2include_2periph__conf_8h.html#ad7c20feb5ba29cd3c6479fa74db3bbb0":[5,0,0,0,0,2,6],
 "m4a-24g_2include_2periph__conf_8h.html#ae505bf70258c000e0dd0f0ca6377db10":[5,0,0,0,0,2,27],
 "m4a-24g_2include_2periph__conf_8h.html#af9358264b5cbce69dddad098a8600aae":[5,0,0,0,0,2,23],
-"m4a-24g_2include_2periph__conf_8h.html#afc465f12242e68f6c3695caa3ba0a169":[5,0,0,0,0,2,5],
-"m4a-24g_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99":[5,0,0,0,0,2,15]
+"m4a-24g_2include_2periph__conf_8h.html#afc465f12242e68f6c3695caa3ba0a169":[5,0,0,0,0,2,5]
 };
