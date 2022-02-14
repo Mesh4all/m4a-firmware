@@ -174,11 +174,14 @@ $(document).ready(function(){initNavTree('wifi_8h_source.html',''); initResizabl
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;esp_err_t <a class="code" href="group__wifi-subsys__components.html#ga6fb2514844e644b2be3ec4dc01b8051d">set_ap_max_connection</a> (uint8_t max_connection);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* WIFI_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;esp_err_t wifi_start(int8_t *is_connected);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;int8_t wifi_bit_event (<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* WIFI_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="agroup__wifi-subsys__components_html_ga91e3ae3af5d354b31d963366cdec8dae"><div class="ttname"><a href="group__wifi-subsys__components.html#ga91e3ae3af5d354b31d963366cdec8dae">init_sta</a></div><div class="ttdeci">esp_err_t init_sta()</div><div class="ttdoc">this function initializes the STA and it is added ssid and password and start the sta mode.</div></div>
@@ -207,7 +210,7 @@ $(document).ready(function(){initNavTree('wifi_8h_source.html',''); initResizabl
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_85a68ebc75fc8908ce83c354e01f2058.html">network</a></li><li class="navelem"><a class="el" href="dir_6727e4c06c6c6b12ee97fa165353ec03.html">src</a></li><li class="navelem"><b>wifi.h</b></li>
-    <li class="footer">Generated on Mon Feb 14 2022 21:45:07 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Feb 14 2022 22:34:09 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
