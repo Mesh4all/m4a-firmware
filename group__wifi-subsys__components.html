@@ -116,6 +116,12 @@ Modules</h2></td></tr>
 <tr class="memitem:group__storage"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__storage.html">NVS routines for the WiFi subsystem</a></td></tr>
 <tr class="memdesc:group__storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic routines for handle the NVS. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d274b4f24915a4804e94fec6608f2c8"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">init_sntp</a> (void)</td></tr>
+<tr class="memdesc:ga6d274b4f24915a4804e94fec6608f2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">sntp (Simple Network Time Protocol)  <a href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">More...</a><br /></td></tr>
+<tr class="separator:ga6d274b4f24915a4804e94fec6608f2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04f213a6c27a92721cd13b243123563e"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#ga04f213a6c27a92721cd13b243123563e">get_time_sntp</a> (time_t *curr_time, struct tm *curr_timeinfo, char *time_format)</td></tr>
+<tr class="memdesc:ga04f213a6c27a92721cd13b243123563e"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function sync with a server sntp to get a current time and date, this format is returned in milliseconds (time posix)  <a href="group__wifi-subsys__components.html#ga04f213a6c27a92721cd13b243123563e">More...</a><br /></td></tr>
+<tr class="separator:ga04f213a6c27a92721cd13b243123563e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac11b41176ff2264389de71ba0d22834f"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#gac11b41176ff2264389de71ba0d22834f">wifi_init</a> ()</td></tr>
 <tr class="memdesc:gac11b41176ff2264389de71ba0d22834f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wifi module.  <a href="group__wifi-subsys__components.html#gac11b41176ff2264389de71ba0d22834f">More...</a><br /></td></tr>
 <tr class="separator:gac11b41176ff2264389de71ba0d22834f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -341,6 +347,50 @@ Modules</h2></td></tr>
 
 </div>
 </div>
+<a id="ga04f213a6c27a92721cd13b243123563e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04f213a6c27a92721cd13b243123563e">&#9670;&nbsp;</a></span>get_time_sntp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t get_time_sntp </td>
+          <td>(</td>
+          <td class="paramtype">time_t *&#160;</td>
+          <td class="paramname"><em>curr_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct tm *&#160;</td>
+          <td class="paramname"><em>curr_timeinfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>time_format</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>this function sync with a server sntp to get a current time and date, this format is returned in milliseconds (time posix) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">curr_time*</td><td>This is a pointer param to manage the time, this take a time_t var and manage if was set in the system. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">curr_timeinfo*</td><td>pointer structure to detailed info of the time_t var, in this case curr_time* </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time_format</td><td>This is en input to specific the time format to use UTC </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gae6668eba3f175628aac7bd5248bee4d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae6668eba3f175628aac7bd5248bee4d1">&#9670;&nbsp;</a></span>identify_enabled_interface()</h2>
 
@@ -379,6 +429,28 @@ Modules</h2></td></tr>
 <p>this function initializes the AP. </p>
 <p>in this function is added wifi ssid and password and start the ap mode.</p>
 <dl class="section return"><dt>Returns</dt><dd>esp_err_t ESP_OK: succeed, ESP_(others): fail </dd></dl>
+
+</div>
+</div>
+<a id="ga6d274b4f24915a4804e94fec6608f2c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d274b4f24915a4804e94fec6608f2c8">&#9670;&nbsp;</a></span>init_sntp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t init_sntp </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>sntp (Simple Network Time Protocol) </p>
+<dl class="section author"><dt>Author</dt><dd>eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'+'tu'+'rpi'+'al'+'dev'+'.c'+'om'; return false;">eduar<span style="display: none;">.nosp@m.</span>do@t<span style="display: none;">.nosp@m.</span>urpia<span style="display: none;">.nosp@m.</span>ldev<span style="display: none;">.nosp@m.</span>.com</a></dd></dl>
+<p>This is a main function to initialize the sntp server (This will not be taken, only have to be applied inside of the function <a class="el" href="group__wifi-subsys__components.html#ga04f213a6c27a92721cd13b243123563e" title="this function sync with a server sntp to get a current time and date, this format is returned in mill...">get_time_sntp()</a>) </p>
 
 </div>
 </div>
@@ -646,7 +718,7 @@ Modules</h2></td></tr>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Feb 9 2022 19:31:55 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Feb 14 2022 15:07:38 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

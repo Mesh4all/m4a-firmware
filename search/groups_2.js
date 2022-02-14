@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ds18b20_392',['Ds18b20',['../group__ds18b20.html',1,'']]]
+  ['ds18b20_396',['Ds18b20',['../group__ds18b20.html',1,'']]]
 ];

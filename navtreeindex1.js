@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"m4a-24g_2include_2periph__conf_8h_source.html":[5,0,0,0,0,2],
+"m4a-mb_2include_2board_8h.html":[5,0,0,1,0,0],
 "m4a-mb_2include_2board_8h.html#a1e48dc02333bfc2e6ad3e5bd466eecd4":[5,0,0,1,0,0,9],
 "m4a-mb_2include_2board_8h.html#a267fdbba1d750146b73da35c1731fd17":[5,0,0,1,0,0,16],
 "m4a-mb_2include_2board_8h.html#a318aa17e5d40e2132d2c7f6269ce7f51":[5,0,0,1,0,0,15],
@@ -157,6 +159,7 @@ var NAVTREEINDEX1 =
 "moisture__sensor_8h.html#ad3991965f75a3260bf8365f71d7a43ca":[5,0,2,2,1,0,0,0],
 "moisture__sensor_8h_source.html":[5,0,2,2,1,0,0],
 "pages.html":[],
+"protocol__sntp_8h_source.html":[5,0,4,0,0,0,0],
 "slipdev__params_8h.html":[5,0,1,0,0,0],
 "slipdev__params_8h.html#a632e2c0273de70d7111734c24ddd2ae9":[5,0,1,0,0,0,0],
 "slipdev__params_8h_source.html":[5,0,1,0,0,0],
@@ -190,5 +193,5 @@ var NAVTREEINDEX1 =
 "udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0":[5,0,1,1,1,2],
 "udpf_8h_source.html":[5,0,1,1,1],
 "wifi-subsys_2components_2tools_2src_2serialization_8h_source.html":[5,0,4,0,2,0,0],
-"wifi_8h_source.html":[5,0,4,0,0,0,0]
+"wifi_8h_source.html":[5,0,4,0,0,0,1]
 };
