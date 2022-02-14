@@ -198,6 +198,9 @@ esp_err_t select_wifi_channel(uint8_t channel);
  */
 esp_err_t set_ap_max_connection (uint8_t max_connection);
 
+esp_err_t wifi_start(int8_t *is_connected);
+int8_t wifi_bit_event (void);
+
 #ifdef __cplusplus
 }
 #endif

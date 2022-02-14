@@ -27,49 +27,81 @@
 #include "esp_err.h"
 #include "esp_event.h"
 #include "esp_system.h"
+#include "freertos/event_groups.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 #include "wifi.h"
 #include "storage.h"
 #include "default_params.h"
 
-static int s_retry_num = 0;
+int s_retry_num = 0;
+EventGroupHandle_t s_wifi_event_group;
+uint8_t first_boot = 0;
+esp_event_handler_instance_t instance_any_id;
+esp_event_handler_instance_t instance_got_ip;
+#define WIFI_CONNECTED_BIT BIT0
+#define WIFI_FAIL_BIT      BIT1
 
 static void event_handler(void *arg, esp_event_base_t event_base,
                           int32_t event_id, void *event_data)
 {
     //  STA EVENTS
-    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START)
-    {
-        esp_wifi_connect();
-    }
-    else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED)
-    {
+    switch (event_id) {
+    case WIFI_EVENT_STA_START:
+         esp_wifi_connect();
+        break;
+    case WIFI_EVENT_STA_DISCONNECTED: {
         if (s_retry_num < WSTA_RETRIES)
         {
             esp_wifi_connect();
             s_retry_num++;
             ESP_LOGI(__func__, "retry to connect to the AP");
         }
-        ESP_LOGI(__func__, "connect to the AP fail");
+        else {
+            xEventGroupSetBits(s_wifi_event_group, WIFI_FAIL_BIT);
+        }
+        break;
     }
-    else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP)
-    {
+    case IP_EVENT_STA_GOT_IP: {
         ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
         ESP_LOGI(__func__, "got ip:" IPSTR, IP2STR(&event->ip_info.ip));
+        xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
         s_retry_num = 0;
+        break;
     }
-
-    // AP_EVENTS
-    if (event_id == WIFI_EVENT_AP_STACONNECTED)
-    {
+    case WIFI_EVENT_AP_STACONNECTED: {
         wifi_event_ap_staconnected_t *event = (wifi_event_ap_staconnected_t *)event_data;
         ESP_LOGI(__func__, "station " MACSTR " join, AID=%d",
                  MAC2STR(event->mac), event->aid);
+        break;
     }
-    else if (event_id == WIFI_EVENT_AP_STADISCONNECTED)
-    {
+    case WIFI_EVENT_AP_STADISCONNECTED: {
         wifi_event_ap_stadisconnected_t *event = (wifi_event_ap_stadisconnected_t *)event_data;
         ESP_LOGI(__func__, "station " MACSTR " leave, AID=%d", MAC2STR(event->mac), event->aid);
+        break;
     }
+
+    default:
+        ESP_LOGI(__func__, "unhandler event");
+        break;
+    }
+}
+
+int8_t wifi_bit_event (void)
+{
+    EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
+            WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
+            pdFALSE,
+            pdFALSE,
+            portMAX_DELAY);
+
+    if (bits & WIFI_CONNECTED_BIT) {
+        return 1;
+    } else if (bits & WIFI_FAIL_BIT) {
+        return -1;
+    }
+
+    return -1;
 }
 
 esp_err_t init_sta(void)
@@ -104,10 +136,37 @@ esp_err_t init_sta(void)
         return err;
     }
 
-    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &sta_config));
-    ESP_ERROR_CHECK(esp_wifi_start());
+    ESP_LOGI(__func__, "ssid %s and password %s",  sta_config.sta.ssid, sta_config.sta.password);
+    err = esp_wifi_set_config(WIFI_IF_STA, &sta_config);
+    if (err != ESP_OK) {
+        ESP_LOGE(__func__, "Error setting wifi mode %s", esp_err_to_name(err));
+        return err;
+    }
 
     return ESP_OK;
+}
+
+esp_err_t wifi_start (int8_t *is_connected)
+{
+    esp_err_t err = esp_wifi_start();
+    if (err) {
+        ESP_LOGE(__func__,"Error starting wifi %s", esp_err_to_name(err));
+        return err;
+    }
+
+#if WSTA_ENABLED && WAP_ENABLED
+    int8_t bit_result = wifi_bit_event();
+    if (is_connected != NULL) {
+        *is_connected = bit_result;
+    }
+    return ESP_OK;
+#elif WSTA_ENABLED
+    int8_t bit_result = wifi_bit_event();
+    if (is_connected != NULL) {
+        *is_connected = bit_result;
+    }
+    return ESP_OK;
+#endif
 }
 
 int is_sta()
@@ -366,6 +425,9 @@ esp_err_t wifi_off(void)
                 esp_err_to_name(err));
        return err;
    }
+   esp_event_handler_instance_unregister(IP_EVENT, IP_EVENT_STA_GOT_IP, instance_got_ip);
+   esp_event_handler_instance_unregister(WIFI_EVENT, ESP_EVENT_ANY_ID, instance_any_id);
+   vEventGroupDelete(s_wifi_event_group);
    return ESP_OK;
 }
 
@@ -379,12 +441,23 @@ esp_err_t wifi_restart(void)
                 esp_err_to_name(err));
         return err;
     }
-    err = wifi_on();
-    if(err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to start the wifi %s",
+    else {
+       err = set_wifi_mode();
+       if (err != ESP_OK) {
+            ESP_LOGE(__func__,
+                "Error: to the init the wifi %s",
                 esp_err_to_name(err));
-        return err;
+           return err;
+       }
+       else {
+           err = wifi_start(NULL);
+           if (err != ESP_OK) {
+                ESP_LOGE(__func__,
+                "Error: to the start wifi %s",
+                esp_err_to_name(err));
+                return err;
+           }
+        }
     }
     return ESP_OK;
 }
@@ -392,6 +465,7 @@ esp_err_t wifi_restart(void)
 esp_err_t change_wifi_sta_ssid (char* sta_ssid)
 {
     esp_err_t err;
+    s_retry_num = 0;
     err = nvs_set_string(stringlify(WSTA), stringlify(WSTA_SSID), sta_ssid);
     if (err != ESP_OK) {
         ESP_LOGE(__func__,
@@ -399,13 +473,12 @@ esp_err_t change_wifi_sta_ssid (char* sta_ssid)
                 esp_err_to_name(err));
     }
     else {
-        err = init_sta();
-        if (err != ESP_OK) {
-            ESP_LOGE(__func__,
-                "Error: to the init the wifi %s",
-                esp_err_to_name(err));
-           return err;
-        }
+       err = wifi_restart();
+       if(err != ESP_OK) {
+        ESP_LOGE(__func__,
+                    "Error: to the restart wifi module %s",
+                    esp_err_to_name(err));
+       }
     }
     return ESP_OK;
 }
@@ -442,12 +515,11 @@ esp_err_t change_wifi_ap_pass (char* ap_password)
                 esp_err_to_name(err));
     }
     else {
-       err = init_ap();
-       if (err != ESP_OK) {
-            ESP_LOGE(__func__,
-                "Error: to the init the wifi %s",
-                esp_err_to_name(err));
-           return err;
+       err = wifi_restart();
+       if(err != ESP_OK) {
+        ESP_LOGE(__func__,
+                    "Error: to the restart wifi module %s",
+                    esp_err_to_name(err));
        }
     }
     return ESP_OK;
@@ -492,13 +564,14 @@ esp_err_t select_wifi_channel (uint8_t channel)
                 esp_err_to_name(err));
         return err;
     }
-
-    err = set_wifi_mode();
-    if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to the init the wifi %s",
-                esp_err_to_name(err));
-        return err;
+    else {
+       err = wifi_restart();
+       if(err != ESP_OK) {
+            ESP_LOGE(__func__,
+                        "Error: to the restart wifi module %s",
+                        esp_err_to_name(err));
+            return err;
+       }
     }
 
     return ESP_OK;
@@ -520,12 +593,14 @@ esp_err_t set_ap_max_connection (uint8_t max_connection)
                 esp_err_to_name(err));
         return err;
     }
-    err = set_wifi_mode();
-    if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to the init the wifi %s",
-                esp_err_to_name(err));
-        return err;
+    else {
+       err = wifi_restart();
+       if(err != ESP_OK) {
+            ESP_LOGE(__func__,
+                        "Error: to the restart wifi module %s",
+                        esp_err_to_name(err));
+            return err;
+       }
     }
 
     return ESP_OK;
@@ -544,13 +619,14 @@ esp_err_t change_ap_auth (uint8_t auth)
                 "Error: to setting AP auth to the nvs %s",
                 esp_err_to_name(err));
     }
-
-    err = set_wifi_mode();
-    if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to the init the wifi %s",
-                esp_err_to_name(err));
-        return err;
+    else {
+       err = wifi_restart();
+       if(err != ESP_OK) {
+            ESP_LOGE(__func__,
+                        "Error: to the restart wifi module %s",
+                        esp_err_to_name(err));
+            return err;
+       }
     }
 
     return ESP_OK;
@@ -584,10 +660,24 @@ esp_err_t change_wifi_mode(int mode)
    return ESP_OK;
 }
 
+
 esp_err_t set_wifi_mode ()
 {
+    s_wifi_event_group = xEventGroupCreate();
     int mode = 0;
     esp_err_t err = nvs_get_uint8(stringlify(WIFI), stringlify(WIFI_MODE), &mode);
+
+    esp_event_handler_instance_register(WIFI_EVENT,
+                                        ESP_EVENT_ANY_ID,
+                                        &event_handler,
+                                        NULL,
+                                        &instance_any_id);
+
+    esp_event_handler_instance_register(IP_EVENT,
+                                       IP_EVENT_STA_GOT_IP,
+                                       &event_handler,
+                                       NULL,
+                                       &instance_got_ip);
 
     if(err != ESP_OK && mode == WIFI_MODE_NULL) {
 
@@ -595,6 +685,7 @@ esp_err_t set_wifi_mode ()
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_APSTA));
     ESP_ERROR_CHECK(init_sta());
     ESP_ERROR_CHECK(init_ap());
+
     return ESP_OK;
 
 #elif WAP_ENABLED
@@ -654,44 +745,40 @@ esp_err_t wifi_restore_default()
 
 esp_err_t wifi_init(void)
 {
+    esp_err_t err;
     ESP_LOGI(__func__, "Starting the WiFi module");
 
-    if (nvs_init() != ESP_OK)
-    {
-        ESP_LOGE(__func__, "Starting the [N]on [V]olarile [S]torage");
+    if (!first_boot) {
+
+        if (nvs_init() != ESP_OK)
+        {
+            ESP_LOGE(__func__, "Starting the [N]on [V]olarile [S]torage");
+        }
+
+        err = esp_netif_init();
+        if(err != ESP_OK){
+            ESP_LOGE(__func__, "Error netif init %s", esp_err_to_name(err));
+        }
+        err = esp_event_loop_create_default();
+        if(err != ESP_OK){
+            ESP_LOGE(__func__, "Error to the create default event loop %s", esp_err_to_name(err));
+        }
+        esp_netif_create_default_wifi_sta();
+        esp_netif_create_default_wifi_ap();
+
+        wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+
+        esp_wifi_init(&cfg);
+
+        int is_configured = wifi_credentials_are_configured();
+
+        if (!is_configured) {
+            set_default_credentials();
+        }
     }
 
-    ESP_ERROR_CHECK(esp_netif_init());
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
-    esp_netif_create_default_wifi_sta();
-    esp_netif_create_default_wifi_ap();
 
-    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-
-    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
-
-    esp_event_handler_instance_t instance_any_id;
-    esp_event_handler_instance_t instance_got_ip;
-
-    ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,
-                                                        ESP_EVENT_ANY_ID,
-                                                        &event_handler,
-                                                        NULL,
-                                                        &instance_any_id));
-
-    ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT,
-                                                        IP_EVENT_STA_GOT_IP,
-                                                        &event_handler,
-                                                        NULL,
-                                                        &instance_got_ip));
-
-    int is_configured = wifi_credentials_are_configured();
-
-    if (!is_configured) {
-        set_default_credentials();
-    }
-
-   esp_err_t err = set_wifi_mode();
+    err = set_wifi_mode();
     if(err != ESP_OK) {
         ESP_LOGE(__func__,
                 "Error: to the init the wifi %s",
@@ -699,5 +786,6 @@ esp_err_t wifi_init(void)
         return err;
     }
 
-   return ESP_OK;
+    first_boot = 1;
+    return ESP_OK;
 }
