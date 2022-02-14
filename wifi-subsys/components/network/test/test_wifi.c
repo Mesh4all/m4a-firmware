@@ -17,6 +17,7 @@
 #include "unity.h"
 #include "wifi.h"
 #include "storage.h"
+#include "icmp_ping.h"
 
 TEST_CASE("set default credentials", "[network]")
 {
