@@ -24,39 +24,33 @@
  */
 
 #include <stdio.h>
+
 #include "board.h"
-#include "shell.h"
 #include "ili9341.h"
 #include "ili9341_params.h"
-#include "timex.h"
-#include "ztimer.h"
-#include "board.h"
 #include "periph/gpio.h"
+#include "shell.h"
+#include "timex.h"
 #include "xtimer.h"
+#include "ztimer.h"
 
 static char server_stack[THREAD_STACKSIZE_DEFAULT];
 
 #define INTERVAL (1U * US_PER_SEC)
 
-int dummy_cmd(int argc, char **argv)
-{
-    return 0;
-}
+int dummy_cmd(int argc, char **argv) { return 0; }
 
-static const shell_command_t shell_commands[] = {
-    { "udp", "send udp packets", dummy_cmd },
-    { NULL, NULL, NULL }
-};
+static const shell_command_t shell_commands[] = {{"udp", "send udp packets", dummy_cmd},
+                                                 {NULL, NULL, NULL}};
 
-int main (void)
-{
+int main(void) {
     gpio_init(23, GPIO_OUT);
     int init = 0;
     xtimer_ticks32_t last_wakeup = xtimer_now();
     while (1) {
         xtimer_periodic_wakeup(&last_wakeup, INTERVAL);
         printf("executed");
-        if (init == 0){
+        if (init == 0) {
             gpio_write(23, 1);
             init = 1;
         } else {

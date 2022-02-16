@@ -56,4 +56,4 @@ CFLAGS += -Wno-unused-variable
 # LOG_ALL;     print everything
 CFLAGS += -DLOG_LEVEL=LOG_ALL
 
-include $(RIOTBASE)/Makefile.include
+include $(RIOTBASE)/Makefile.Include
