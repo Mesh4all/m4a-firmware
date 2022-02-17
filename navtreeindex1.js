@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"m4a-24g_2include_2periph__conf_8h.html#ab43cbb6f07f99fddc0e0f6a710160654":[5,0,0,0,0,2,19],
+"m4a-24g_2include_2periph__conf_8h.html#ab720cc8e2711232b8886c44d58fcb416":[5,0,0,0,0,2,13],
 "m4a-24g_2include_2periph__conf_8h.html#ab94948d940d2301dca517f9dd2f22589":[5,0,0,0,0,2,1],
 "m4a-24g_2include_2periph__conf_8h.html#abce62e16a6e3b3205801fed93c51692d":[5,0,0,0,0,2,11],
 "m4a-24g_2include_2periph__conf_8h.html#ac0ac477af727daf8ed4f4157f37b4395":[5,0,0,0,0,2,12],
@@ -170,11 +172,11 @@ var NAVTREEINDEX1 =
 "moisture__sensor_8h.html#ad3991965f75a3260bf8365f71d7a43ca":[5,0,2,2,1,0,0,0],
 "moisture__sensor_8h_source.html":[5,0,2,2,1,0,0],
 "pages.html":[],
-"protocol__sntp_8h_source.html":[5,0,4,0,0,0,2],
+"protocol__sntp_8h_source.html":[5,0,4,0,1,0,2],
 "slipdev__params_8h.html":[5,0,1,0,0,0],
 "slipdev__params_8h.html#a632e2c0273de70d7111734c24ddd2ae9":[5,0,1,0,0,0,0],
 "slipdev__params_8h_source.html":[5,0,1,0,0,0],
-"storage_8h_source.html":[5,0,4,0,1,0,0],
+"storage_8h_source.html":[5,0,4,0,2,0,0],
 "structat__request__t.html":[4,0,0],
 "structat__request__t.html#a800eee200c88df1b9867f7da6c0a0bee":[4,0,0,1],
 "structat__request__t.html#aa2759fa32e946cf1cf2d81d4033356a7":[4,0,0,0],
@@ -199,7 +201,7 @@ var NAVTREEINDEX1 =
 "structudpf__payload.html":[4,0,6],
 "structudpf__payload.html#a2916837a0671960a87998d6b615d17ee":[4,0,6,0],
 "structudpf__payload.html#affa3c13ab73a302444522fb005af395f":[4,0,6,1],
-"subsys__uart_8h_source.html":[5,0,4,0,3,0,0],
+"subsys__uart_8h_source.html":[5,0,4,0,4,0,0],
 "system__init_8h.html":[5,0,2,3,0,0,0],
 "system__init_8h.html#a260b5f5c0bbf70deb8aef6e6c5006122":[5,0,2,3,0,0,0,1],
 "system__init_8h.html#aa774b615bac7b8a859ff5c671841781e":[5,0,2,3,0,0,0,2],
@@ -212,6 +214,6 @@ var NAVTREEINDEX1 =
 "udpf_8h.html#a1516055126f26528fe1b9dd43d146fa5":[5,0,1,1,1,1],
 "udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0":[5,0,1,1,1,2],
 "udpf_8h_source.html":[5,0,1,1,1],
-"wifi-subsys_2components_2tools_2src_2serialization_8h_source.html":[5,0,4,0,2,0,0],
-"wifi_8h_source.html":[5,0,4,0,0,0,3]
+"wifi-subsys_2components_2tools_2src_2serialization_8h_source.html":[5,0,4,0,3,0,0],
+"wifi_8h_source.html":[5,0,4,0,0,0,0]
 };

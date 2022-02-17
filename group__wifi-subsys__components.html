@@ -123,12 +123,6 @@ Files</h2></td></tr>
 <tr class="memitem:httpsclient_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html">httpsclient.h</a></td></tr>
 <tr class="memdesc:httpsclient_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure a https client to make a request. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6d274b4f24915a4804e94fec6608f2c8"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">init_sntp</a> (void)</td></tr>
-<tr class="memdesc:ga6d274b4f24915a4804e94fec6608f2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">sntp (Simple Network Time Protocol)  <a href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">More...</a><br /></td></tr>
-<tr class="separator:ga6d274b4f24915a4804e94fec6608f2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga04f213a6c27a92721cd13b243123563e"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#ga04f213a6c27a92721cd13b243123563e">get_time_sntp</a> (time_t *curr_time, struct tm *curr_timeinfo, char *time_format)</td></tr>
-<tr class="memdesc:ga04f213a6c27a92721cd13b243123563e"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function sync with a server sntp to get a current time and date, this format is returned in milliseconds (time posix)  <a href="group__wifi-subsys__components.html#ga04f213a6c27a92721cd13b243123563e">More...</a><br /></td></tr>
-<tr class="separator:ga04f213a6c27a92721cd13b243123563e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac11b41176ff2264389de71ba0d22834f"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#gac11b41176ff2264389de71ba0d22834f">wifi_init</a> ()</td></tr>
 <tr class="memdesc:gac11b41176ff2264389de71ba0d22834f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wifi module.  <a href="group__wifi-subsys__components.html#gac11b41176ff2264389de71ba0d22834f">More...</a><br /></td></tr>
 <tr class="separator:gac11b41176ff2264389de71ba0d22834f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,6 +189,12 @@ esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><b>wifi_start</b> (
 <tr class="memitem:ga0f1d3a76020083d4ec351087dff3b1b9"><td class="memItemLeft" align="right" valign="top"><a id="ga0f1d3a76020083d4ec351087dff3b1b9"></a>
 int8_t&#160;</td><td class="memItemRight" valign="bottom"><b>wifi_bit_event</b> (void)</td></tr>
 <tr class="separator:ga0f1d3a76020083d4ec351087dff3b1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d274b4f24915a4804e94fec6608f2c8"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">init_sntp</a> (void)</td></tr>
+<tr class="memdesc:ga6d274b4f24915a4804e94fec6608f2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">sntp (Simple Network Time Protocol)  <a href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">More...</a><br /></td></tr>
+<tr class="separator:ga6d274b4f24915a4804e94fec6608f2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04f213a6c27a92721cd13b243123563e"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#ga04f213a6c27a92721cd13b243123563e">get_time_sntp</a> (time_t *curr_time, struct tm *curr_timeinfo, char *time_format)</td></tr>
+<tr class="memdesc:ga04f213a6c27a92721cd13b243123563e"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function sync with a server sntp to get a current time and date, this format is returned in milliseconds (time posix)  <a href="group__wifi-subsys__components.html#ga04f213a6c27a92721cd13b243123563e">More...</a><br /></td></tr>
+<tr class="separator:ga04f213a6c27a92721cd13b243123563e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
@@ -731,7 +731,7 @@ int8_t&#160;</td><td class="memItemRight" valign="bottom"><b>wifi_bit_event</b> 
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Feb 17 2022 13:55:01 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Thu Feb 17 2022 14:22:37 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
