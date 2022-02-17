@@ -95,7 +95,7 @@ esp_err_t initialize_ping()
     struct addrinfo *res = NULL;
     memset(&hint, 0, sizeof(hint));
     memset(&target_addr, 0, sizeof(target_addr));
-    int result = getaddrinfo(DEFAULT_SERVER_TO_PING, NULL, &hint, &res);
+    int result = getaddrinfo(SERVER_TO_PING, NULL, &hint, &res);
     if((result != 0) || (res == NULL)) {
         is_connected = FAIL_BIT;
         is_configured = FAIL_BIT;

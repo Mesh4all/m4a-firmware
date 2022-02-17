@@ -59,8 +59,8 @@ extern "C"
  * @{
  */
 #define WSTA                            /*!< NVS namespace for WiFi station mode settings */
-#define WSTA_SSID "Chicho"              /*!< Default SSID for the station mode */
-#define WSTA_PASS "Pirulin0312"           /*!< Default password for station */
+#define WSTA_SSID "m4a-sta"              /*!< Default SSID for the station mode */
+#define WSTA_PASS "change-me"           /*!< Default password for station */
 #define WSTA_RETRIES 5                  /*!< Max. num of retries */
 #define WSTA_ENABLED 1                  /*!< Station mode is enabled */
 /** @} */
@@ -70,9 +70,19 @@ extern "C"
  * @{
  */
 #define WIFI
+#define WIFI_ENABLED 1
 #define WIFI_MODE
-#define DEFAULT_SERVER_TO_PING  "www.google.com"
 /** @} */
+
+/**
+ * @name internet connection settings
+ * @{
+ */
+#define I_CONNECTION
+#define SERVER_TO_PING  "www.google.com"
+#define TIME_TO_PING 60000
+/** @} */
+
 
 /**
  * @name Factory values for NVS settings

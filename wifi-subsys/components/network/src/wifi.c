@@ -749,12 +749,6 @@ esp_err_t wifi_init(void)
     ESP_LOGI(__func__, "Starting the WiFi module");
 
     if (!first_boot) {
-
-        if (nvs_init() != ESP_OK)
-        {
-            ESP_LOGE(__func__, "Starting the [N]on [V]olarile [S]torage");
-        }
-
         err = esp_netif_init();
         if(err != ESP_OK){
             ESP_LOGE(__func__, "Error netif init %s", esp_err_to_name(err));
