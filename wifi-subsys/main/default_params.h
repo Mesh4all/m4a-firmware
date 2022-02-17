@@ -57,15 +57,15 @@ extern "C" {
  * @name Factory values for the station mode
  * @{
  */
-#define WSTA                            /*!< NVS namespace for WiFi station mode settings */
-#define WSTA_SSID "m4a-sta"             /*!< Default SSID for the station mode */
-#define WSTA_PASS "change-me"           /*!< Default password for station */
-#define WSTA_RETRIES 5                  /*!< Max. num of retries */
-#define WSTA_ENABLED 1                  /*!< Station mode is enabled */
+#define WSTA                  /*!< NVS namespace for WiFi station mode settings */
+#define WSTA_SSID "m4a-sta"   /*!< Default SSID for the station mode */
+#define WSTA_PASS "change-me" /*!< Default password for station */
+#define WSTA_RETRIES 5        /*!< Max. num of retries */
+#define WSTA_ENABLED 1        /*!< Station mode is enabled */
 /** @} */
 
 /**
- * @name Factory values for other wifi settings
+ * @name Factory values for other wifi settings in icmp
  * @{
  */
 #define WIFI
@@ -74,14 +74,14 @@ extern "C" {
 /** @} */
 
 /**
- * @name internet connection settings
  * @{
  */
-#define I_CONNECTION
-#define SERVER_TO_PING "www.google.com"
-#define TIME_TO_PING 60000
+#define PING
+#define PING_TO "www.google.com"
+#define PING_INT 5000       /* Milliseconds between each ping procedure*/
+#define PING_RET 3          /* A “ping” session contains count procedures*/
+#define PING_TIMEOUT 600000 /* Repeat task when timeout finishes*/
 /** @} */
-
 /**
  * @name Factory values for NVS settings
  * @{

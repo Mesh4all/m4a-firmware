@@ -28,8 +28,7 @@
 #include "esp_wifi.h"
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 /**
  * @brief this is a callback will return the current status
@@ -46,23 +45,23 @@ typedef void (*callback_t)(int8_t);
 esp_err_t enable_ping(void);
 
 /**
- * @brief this function manually sends the ping
+ * @brief  this function manually sends the ping
  *
  * @return 1 when is connected
  *         0 when is not connected
  */
-void manual_ping(callback_t* callback);
+void manual_ping(callback_t *callback);
 
 /**
- * @brief get connection status
+ * @brief  get connection status
  *
  * @return 1 when is connected
  *         0 when is not connected
  */
-uint8_t get_current_status (void);
+uint8_t get_current_status(void);
 
 /**
- * @brief this function initializes the ping session
+ * @brief  this function initializes the ping session
  *
  * @return esp_err_t
  */
