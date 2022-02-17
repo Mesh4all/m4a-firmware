@@ -1,14 +1,9 @@
 var searchData=
 [
-  ['reference_20firmware_128',['Reference firmware',['../group__m4a-firmware.html',1,'']]],
-  ['readme_129',['README',['../group__slipdev.html',1,'']]],
-  ['readme_130',['README',['../group__ds18b20.html',1,'']]],
-  ['readme_131',['README',['../group__external-led.html',1,'']]],
-  ['readme_132',['readme',['../group__moisture__sensor.html',1,'']]],
-  ['readme_133',['README',['../group__tmp__uart.html',1,'']]],
-  ['rfctl1_5fpin_134',['RFCTL1_PIN',['../m4a-24g_2include_2board_8h.html#a2364f376947112a08b6c534235a8f4fa',1,'board.h']]],
-  ['rfctl2_5fpin_135',['RFCTL2_PIN',['../m4a-24g_2include_2board_8h.html#a834d0ca9dc3c0d7e24ba2848ff6ddc1c',1,'board.h']]],
-  ['rfctl_5fantenna_5fdefault_136',['RFCTL_ANTENNA_DEFAULT',['../m4a-24g_2include_2board_8h.html#a8374c2ca3f70167aff3c6148a5e4ae62',1,'board.h']]],
-  ['rtt_5ffrequency_137',['RTT_FREQUENCY',['../m4a-24g_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h']]],
-  ['rtt_5fmin_5foffset_138',['RTT_MIN_OFFSET',['../m4a-24g_2include_2periph__conf_8h.html#ad34d7bc806339ce586e8a942913cdb6f',1,'periph_conf.h']]]
+  ['nvs_5fget_5fstring_116',['nvs_get_string',['../group__storage.html#gad9acfc7695a5d67f4b995f244c169c03',1,'storage.h']]],
+  ['nvs_5fget_5fuint8_117',['nvs_get_uint8',['../group__storage.html#ga058d322184274aefd0dd9285e4516f76',1,'storage.h']]],
+  ['nvs_5finit_118',['nvs_init',['../group__storage.html#gab03b911dd4296933c03792401419e762',1,'storage.h']]],
+  ['nvs_5fset_5fstring_119',['nvs_set_string',['../group__storage.html#gacc1e5ee27d1df131eb765a4b35f7d926',1,'storage.h']]],
+  ['nvs_5fset_5fuint8_120',['nvs_set_uint8',['../group__storage.html#gabe8255d291f1ac4a4ebb2c032e1c886c',1,'storage.h']]],
+  ['nvs_20routines_20for_20the_20wifi_20subsystem_121',['NVS routines for the WiFi subsystem',['../group__storage.html',1,'']]]
 ];

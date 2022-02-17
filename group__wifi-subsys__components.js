@@ -1,6 +1,7 @@
 var group__wifi_subsys__components =
 [
     [ "NVS routines for the WiFi subsystem", "group__storage.html", "group__storage" ],
+    [ "httpsclient.h", "httpsclient_8h.html", null ],
     [ "change_ap_auth", "group__wifi-subsys__components.html#ga139ed802ea1b1d4829e52a58eb6151d9", null ],
     [ "change_wifi_ap_pass", "group__wifi-subsys__components.html#ga87ca0865aa7362da50d8b98960ba4f0b", null ],
     [ "change_wifi_ap_ssid", "group__wifi-subsys__components.html#ga6d7dd436b407951b1f3c622785e93460", null ],

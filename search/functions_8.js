@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['udp_5fsend_263',['udp_send',['../udpf_8h.html#a1516055126f26528fe1b9dd43d146fa5',1,'udp_send(int argc, char **argv):&#160;udpf.h'],['../udp__m4a_8h.html#aa3493cbef904175c2868a533394fbca8',1,'udp_send(int *port, char *address, uint8_t *message, size_t *payload_len):&#160;udp_m4a.h']]],
-  ['udp_5fserver_264',['udp_server',['../udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0',1,'udp_server(int argc, udpf_payload *argv):&#160;udpf.h'],['../udp__m4a_8h.html#a3e54c501a23f62be7f12c4905cf06343',1,'udp_server(udpf_payload *argv):&#160;udp_m4a.h']]]
+  ['select_5fwifi_5fchannel_268',['select_wifi_channel',['../group__wifi-subsys__components.html#gaefe0381809807f7142fb53f5e6ddbd0f',1,'wifi.h']]],
+  ['set_5fap_5fmax_5fconnection_269',['set_ap_max_connection',['../group__wifi-subsys__components.html#ga6fb2514844e644b2be3ec4dc01b8051d',1,'wifi.h']]],
+  ['set_5fdefault_5fcredentials_270',['set_default_credentials',['../group__wifi-subsys__components.html#gabd28cdcca6d5d5a2428f7d64187b71bd',1,'wifi.h']]],
+  ['set_5fwifi_5fmode_271',['set_wifi_mode',['../group__wifi-subsys__components.html#ga62dd61f1998b38a9290d07e1fd1f4736',1,'wifi.h']]],
+  ['set_5fwired_5fipv6_272',['set_wired_ipv6',['../system__init_8h.html#aa774b615bac7b8a859ff5c671841781e',1,'system_init.h']]]
 ];

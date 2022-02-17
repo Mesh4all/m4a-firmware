@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_2eh_220',['main.h',['../examples_2esp32-wrover-app_2include_2main_8h.html',1,'(Global Namespace)'],['../firmware_2include_2main_8h.html',1,'(Global Namespace)']]],
-  ['moisture_5fsensor_2eh_221',['moisture_sensor.h',['../moisture__sensor_8h.html',1,'']]]
+  ['httpsclient_2eh_228',['httpsclient.h',['../httpsclient_8h.html',1,'']]]
 ];

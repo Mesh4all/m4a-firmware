@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sensor_5fdata_212',['sensor_data',['../structsensor__data.html',1,'']]],
-  ['some_5fstruct_5fvar_213',['some_struct_var',['../structsome__struct__var.html',1,'']]]
+  ['http_5frequest_5ft_218',['http_request_t',['../structhttp__request__t.html',1,'']]],
+  ['http_5fresponse_5ft_219',['http_response_t',['../structhttp__response__t.html',1,'']]]
 ];
