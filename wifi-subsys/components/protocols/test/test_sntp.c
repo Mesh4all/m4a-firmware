@@ -25,18 +25,31 @@
 #include "storage.h"
 #include "unity.h"
 #include "wifi.h"
+
 bool wifi_initialized;
 
-TEST_CASE("Get and set time by sntp", "[network][protocols][sntp]") {
+void save_time(void) {
+    time_t saved_time;
+    time(&saved_time);
+    ESP_LOGI(__func__, "Time saved in NVS\nPosix:%ld", saved_time);
+}
+
+TEST_CASE("Get and set time by sntp", "[protocols]") {
     esp_err_t err;
+    err = nvs_init();
+    if (err != ESP_OK) {
+        ESP_LOGE(__func__, "Reason: %s, No: %d, Line:%d, in file: %s", esp_err_to_name(err), err,
+                 __LINE__, __FILE__);
+    }
     if (!wifi_initialized) {
-        wifi_init();
+        err = wifi_init();
+        if (err != ESP_OK) {
+            ESP_LOGE(__func__, "Reason: %s, No: %d, Line:%d, in file: %s", esp_err_to_name(err),
+                     err, __LINE__, __FILE__);
+        }
         wifi_initialized = true;
     }
-    time_t now;
-    struct tm now_info;
-    char *format_time = "UTC+4";
-    err = get_time_sntp(&now, &now_info, format_time);
+    err = sntp_start(&save_time);
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "Reason: %s, No %d, Line: %d, File: %s", esp_err_to_name(err), err,
                  __LINE__, __FILE__);

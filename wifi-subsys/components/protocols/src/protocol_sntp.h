@@ -35,21 +35,27 @@ extern "C" {
 #endif
 
 /**
- * @brief This is a main function to initialize the sntp server (This will not be taken, only have
+ * @brief Define a callback to every time function
+ */
+
+typedef void (*callback_time_t)(void);
+
+/**
+ * @brief This is a function to initialize the sntp server (This will not be taken, only have
  * to be applied inside of the function get_time_sntp())
  */
 esp_err_t init_sntp(void);
 
 /**
- * @brief this function sync with a server sntp to get a current time and date, this format is
- * returned in milliseconds (time posix)
- * @param [inout] curr_time* This is a pointer param to manage the time, this take a time_t var and
- * manage if was set in the system.
- * @param [inout] curr_timeinfo* pointer structure to detailed info of the time_t var, in this case
- * curr_time*
- * @param [in] time_format This is en input to specific the time format to use UTC
+ * @brief main function that is working as task, this provides a sync with the sntp server
+ * Receives a callback as param:
+ * @param[in] params is a callback to provide a save_time or print current time
+ *
  */
-esp_err_t get_time_sntp(time_t *curr_time, struct tm *curr_timeinfo, char *time_format);
+
+void get_time_sntp(void *params);
+
+esp_err_t sntp_start(callback_time_t callback_sntp);
 
 #ifdef __cplusplus
 }
