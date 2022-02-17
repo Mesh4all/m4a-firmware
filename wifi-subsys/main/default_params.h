@@ -32,7 +32,7 @@ extern "C"
 /**
  * @brief Simple solution to use custom settings "almost" safely.
  */
-#define USE_DEV_CONFIG 1
+#define USE_DEV_CONFIG 0
 
 /**
  * @brief If it's #1 (true) then **dev-config.h** will be used.
@@ -59,8 +59,8 @@ extern "C"
  * @{
  */
 #define WSTA                            /*!< NVS namespace for WiFi station mode settings */
-#define WSTA_SSID "m4a-ap"              /*!< Default SSID for the station mode */
-#define WSTA_PASS "change-me"           /*!< Default password for station */
+#define WSTA_SSID "Chicho"              /*!< Default SSID for the station mode */
+#define WSTA_PASS "Pirulin0312"           /*!< Default password for station */
 #define WSTA_RETRIES 5                  /*!< Max. num of retries */
 #define WSTA_ENABLED 1                  /*!< Station mode is enabled */
 /** @} */

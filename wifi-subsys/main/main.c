@@ -21,27 +21,22 @@
  * @author      luisan00 <luisan00@hotmail.com>
  *
  */
+#include "esp_system.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/event_groups.h"
+#include "freertos/task.h"
+#include "httpsclient.h"
+#include "nvs_flash.h"
+#include "sdkconfig.h"
+#include "wifi.h"
+#include <esp_log.h>
 #include <stdio.h>
 #include <string.h>
-#include "sdkconfig.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "esp_system.h"
-#include <esp_log.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "freertos/event_groups.h"
-#include "nvs_flash.h"
-#include "wifi.h"
+static const char *TAG = "m4a-wifi-subsys";
 
-static const char* TAG = "m4a-wifi-subsys";
+void app_main(void) {
 
+  wifi_init();
 
-void app_main(void)
-{
-
-    printf("Init main m4a-subsys.\n");
-
-    wifi_init();
-
+  printf("Init main m4a-subsys.\n");
 }

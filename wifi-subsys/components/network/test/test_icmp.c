@@ -41,14 +41,14 @@ TEST_CASE("setting ping session", "[network]")
    }
 }
 
-void callback(uint8_t is_connected)
+void icmp_callback(uint8_t is_connected)
 {
     printf("nuevos parametros %d \n", is_connected);
 }
 
 TEST_CASE("send manual ping", "[network]")
 {
-   manual_ping(callback);
+   manual_ping(icmp_callback);
 //    if (is_connected == 0) {
 //        TEST_FAIL();
 //    }
