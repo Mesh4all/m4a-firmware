@@ -118,12 +118,18 @@ $(document).ready(function(){initNavTree('group__storage.html',''); initResizabl
 <tr class="memitem:gabe8255d291f1ac4a4ebb2c032e1c886c"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__storage.html#gabe8255d291f1ac4a4ebb2c032e1c886c">nvs_set_uint8</a> (const char *namespace, const char *key, uint8_t value)</td></tr>
 <tr class="memdesc:gabe8255d291f1ac4a4ebb2c032e1c886c"><td class="mdescLeft">&#160;</td><td class="mdescRight">store a key/value pair in the NVS using the given namespace  <a href="group__storage.html#gabe8255d291f1ac4a4ebb2c032e1c886c">More...</a><br /></td></tr>
 <tr class="separator:gabe8255d291f1ac4a4ebb2c032e1c886c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89b77bc562e8639b91af8246c8f3748b"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__storage.html#ga89b77bc562e8639b91af8246c8f3748b">nvs_set_uint32</a> (const char *namespace, const char *key, uint32_t value)</td></tr>
+<tr class="memdesc:ga89b77bc562e8639b91af8246c8f3748b"><td class="mdescLeft">&#160;</td><td class="mdescRight">store a key/value pair in the NVS using the given namespace  <a href="group__storage.html#ga89b77bc562e8639b91af8246c8f3748b">More...</a><br /></td></tr>
+<tr class="separator:ga89b77bc562e8639b91af8246c8f3748b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacc1e5ee27d1df131eb765a4b35f7d926"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__storage.html#gacc1e5ee27d1df131eb765a4b35f7d926">nvs_set_string</a> (const char *namespace, const char *key, const char *value)</td></tr>
 <tr class="memdesc:gacc1e5ee27d1df131eb765a4b35f7d926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store a c string in the NVS using the given namespace and key.  <a href="group__storage.html#gacc1e5ee27d1df131eb765a4b35f7d926">More...</a><br /></td></tr>
 <tr class="separator:gacc1e5ee27d1df131eb765a4b35f7d926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga058d322184274aefd0dd9285e4516f76"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__storage.html#ga058d322184274aefd0dd9285e4516f76">nvs_get_uint8</a> (const char *namespace, const char *key, uint8_t *value)</td></tr>
 <tr class="memdesc:ga058d322184274aefd0dd9285e4516f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value as uint8_t with key [key] from the NVS using the given namespace.  <a href="group__storage.html#ga058d322184274aefd0dd9285e4516f76">More...</a><br /></td></tr>
 <tr class="separator:ga058d322184274aefd0dd9285e4516f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga450b450cae2b20e4c099164f4bb53464"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__storage.html#ga450b450cae2b20e4c099164f4bb53464">nvs_get_uint32</a> (const char *namespace, const char *key, uint32_t *value)</td></tr>
+<tr class="memdesc:ga450b450cae2b20e4c099164f4bb53464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value as uint32_t with key [key] from the NVS using the given namespace.  <a href="group__storage.html#ga450b450cae2b20e4c099164f4bb53464">More...</a><br /></td></tr>
+<tr class="separator:ga450b450cae2b20e4c099164f4bb53464"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad9acfc7695a5d67f4b995f244c169c03"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__storage.html#gad9acfc7695a5d67f4b995f244c169c03">nvs_get_string</a> (const char *namespace, const char *key, char *buffer, size_t *length)</td></tr>
 <tr class="memdesc:gad9acfc7695a5d67f4b995f244c169c03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value as c string with key [key] from the NVS using the given namespace.  <a href="group__storage.html#gad9acfc7695a5d67f4b995f244c169c03">More...</a><br /></td></tr>
 <tr class="separator:gad9acfc7695a5d67f4b995f244c169c03"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,6 +189,51 @@ Overview</h1>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>esp_err_t </dd></dl>
+
+</div>
+</div>
+<a id="ga450b450cae2b20e4c099164f4bb53464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga450b450cae2b20e4c099164f4bb53464">&#9670;&nbsp;</a></span>nvs_get_uint32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t nvs_get_uint32 </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>namespace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the value as uint32_t with key [key] from the NVS using the given namespace. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">namespace</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>pointer to the uint32_t value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>esp_err_t ESP_OK: succeed, ESP_(others): fail </dd></dl>
 
 </div>
 </div>
@@ -299,6 +350,51 @@ Overview</h1>
 
 </div>
 </div>
+<a id="ga89b77bc562e8639b91af8246c8f3748b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga89b77bc562e8639b91af8246c8f3748b">&#9670;&nbsp;</a></span>nvs_set_uint32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t nvs_set_uint32 </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>namespace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>store a key/value pair in the NVS using the given namespace </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">namespace</td><td></td></tr>
+    <tr><td class="paramname">key</td><td></td></tr>
+    <tr><td class="paramname">value</td><td>uint32_t value to store </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>esp_err_t ESP_OK: succeed, ESP_(others): fail </dd></dl>
+
+</div>
+</div>
 <a id="gabe8255d291f1ac4a4ebb2c032e1c886c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gabe8255d291f1ac4a4ebb2c032e1c886c">&#9670;&nbsp;</a></span>nvs_set_uint8()</h2>
 
@@ -336,7 +432,7 @@ Overview</h1>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">namespace</td><td></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td></td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>uint8_t value to store </td></tr>
   </table>
   </dd>
 </dl>
@@ -351,7 +447,7 @@ Overview</h1>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Feb 17 2022 14:22:37 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Thu Feb 17 2022 22:18:32 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
