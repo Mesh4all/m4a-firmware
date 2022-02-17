@@ -131,7 +131,7 @@ var NAVTREEINDEX0 =
 "group__external-led.html#md_examples_external_led_README":[3,0,3,0],
 "group__m4a-firmware.html":[3,1],
 "group__moisture__sensor.html":[3,0,1],
-"group__moisture__sensor.html#md_examples_moisture_sensor_hw390_readme":[3,0,1,0],
+"group__moisture__sensor.html#md_examples_moisture_sensor_hw390_README":[3,0,1,0],
 "group__slipdev.html":[3,0,5],
 "group__slipdev.html#autotoc_md27":[12,0],
 "group__slipdev.html#autotoc_md27":[0,0],
