@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['response_5fcallback_5ft_308',['response_callback_t',['../httpsclient_8h.html#a87468ed0049e5ba4f653de7b00c3304c',1,'httpsclient.h']]]
+  ['callback_5ftime_5ft_309',['callback_time_t',['../group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3',1,'protocol_sntp.h']]]
 ];

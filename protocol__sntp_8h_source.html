@@ -135,26 +135,31 @@ $(document).ready(function(){initNavTree('protocol__sntp_8h_source.html',''); in
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;esp_err_t <a class="code" href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">init_sntp</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">   41</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a>)(void);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;esp_err_t <a class="code" href="group__wifi-subsys__components.html#ga04f213a6c27a92721cd13b243123563e">get_time_sntp</a>(time_t *curr_time, <span class="keyword">struct</span> tm *curr_timeinfo, <span class="keywordtype">char</span> *time_format);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PROTOCOL_SNTP_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;esp_err_t <a class="code" href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">init_sntp</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__wifi-subsys__components.html#gabc2f86dcd641a25da830f55cf4b3a7d4">get_time_sntp</a>(<span class="keywordtype">void</span> *params);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;esp_err_t sntp_start(<a class="code" href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a> callback_sntp);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PROTOCOL_SNTP_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="agroup__wifi-subsys__components_html_ga04f213a6c27a92721cd13b243123563e"><div class="ttname"><a href="group__wifi-subsys__components.html#ga04f213a6c27a92721cd13b243123563e">get_time_sntp</a></div><div class="ttdeci">esp_err_t get_time_sntp(time_t *curr_time, struct tm *curr_timeinfo, char *time_format)</div><div class="ttdoc">this function sync with a server sntp to get a current time and date, this format is returned in mill...</div></div>
-<div class="ttc" id="agroup__wifi-subsys__components_html_ga6d274b4f24915a4804e94fec6608f2c8"><div class="ttname"><a href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">init_sntp</a></div><div class="ttdeci">esp_err_t init_sntp(void)</div><div class="ttdoc">sntp (Simple Network Time Protocol)</div></div>
+<div class="ttc" id="agroup__wifi-subsys__components_html_gaf196cd141f388f8ac0f7796b5bec30a3"><div class="ttname"><a href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a></div><div class="ttdeci">void(* callback_time_t)(void)</div><div class="ttdoc">sntp (Simple Network Time Protocol)</div><div class="ttdef"><b>Definition:</b> <a href="protocol__sntp_8h_source.html#l00041">protocol_sntp.h:41</a></div></div>
+<div class="ttc" id="agroup__wifi-subsys__components_html_gabc2f86dcd641a25da830f55cf4b3a7d4"><div class="ttname"><a href="group__wifi-subsys__components.html#gabc2f86dcd641a25da830f55cf4b3a7d4">get_time_sntp</a></div><div class="ttdeci">void get_time_sntp(void *params)</div><div class="ttdoc">main function that is working as task, this provides a sync with the sntp server Receives a callback ...</div></div>
+<div class="ttc" id="agroup__wifi-subsys__components_html_ga6d274b4f24915a4804e94fec6608f2c8"><div class="ttname"><a href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">init_sntp</a></div><div class="ttdeci">esp_err_t init_sntp(void)</div><div class="ttdoc">This is a function to initialize the sntp server (This will not be taken, only have to be applied ins...</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_f2832d707f281a7c7b3c53d7da0afbb9.html">protocols</a></li><li class="navelem"><a class="el" href="dir_bfb441d127ce7d6b75efc9892433d2fb.html">src</a></li><li class="navelem"><b>protocol_sntp.h</b></li>
-    <li class="footer">Generated on Fri Feb 18 2022 15:31:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Feb 21 2022 15:00:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
