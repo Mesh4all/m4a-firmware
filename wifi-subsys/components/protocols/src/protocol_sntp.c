@@ -23,6 +23,7 @@
 #include <sys/time.h>
 #include <time.h>
 
+#include "default_params.h"
 #include "esp_attr.h"
 #include "esp_event.h"
 #include "esp_log.h"
@@ -33,6 +34,7 @@
 #include "freertos/event_groups.h"
 #include "freertos/task.h"
 #include "protocol_sntp.h"
+#include "storage.h"
 
 esp_err_t init_sntp() {
     ESP_LOGI(__func__, "Initializing SNTP");
@@ -42,40 +44,27 @@ esp_err_t init_sntp() {
     return ESP_OK;
 }
 
-esp_err_t get_time_sntp(time_t *curr_time, struct tm *curr_timeinfo, char *time_format) {
-    char strftime_buf[64];
-    esp_err_t err;
-    if (curr_timeinfo->tm_year < (2016 - 1900)) {
-        err = init_sntp();
-        if (err != ESP_OK) {
-            ESP_LOGE(__func__, "Failed to init the sntp protocol");
-            return err;
-        }
-        time(curr_time);
-    }
-
+void get_time_sntp(void *params) {
+    callback_time_t callback = (callback_time_t)params;
+    time_t now;
+    const int retry_count = SNTP_MAX_COUNT;
     int retry = 0;
-    const int retry_count = 10;
-    while (sntp_get_sync_status() == SNTP_SYNC_STATUS_RESET && ++retry < retry_count) {
+    while (sntp_get_sync_status() != SNTP_SYNC_STATUS_COMPLETED && ++retry <= retry_count) {
         ESP_LOGI(__func__, "getting current time: (%d/%d)", retry, retry_count);
         vTaskDelay(2000 / portTICK_PERIOD_MS);
-        time(curr_time);
-        localtime_r(curr_time, curr_timeinfo);
-        if (retry == retry_count - 1) {
+        time(&now);
+        if (retry == retry_count) {
             ESP_LOGE(__func__, "Failed to sync with ntp server");
-            sntp_stop();
-            return ESP_FAIL;
         }
     }
-
-    setenv("TZ", time_format, 1);
-    tzset();
-    localtime_r(curr_time, curr_timeinfo);
-    strftime(strftime_buf, sizeof(strftime_buf), "%c", curr_timeinfo);
-    ESP_LOGI(__func__, "The current date/time of %s is: %s\nTime posix: %lld ms", time_format,
-             strftime_buf, (long long)*curr_time);
-
+    callback();
     // SNTP has to be off to avoid an system error when is called again //
     sntp_stop();
-    return ESP_OK;
+    vTaskDelete(NULL);
+}
+
+esp_err_t sntp_start(callback_time_t callback_sntp) {
+    esp_err_t err = init_sntp();
+    xTaskCreate(&get_time_sntp, "Sntp_task", 1024 * 2, callback_sntp, 1, NULL);
+    return err;
 }

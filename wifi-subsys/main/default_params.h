@@ -25,8 +25,7 @@
 #define DEFAULT_PARAMS_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /**
@@ -59,7 +58,7 @@ extern "C"
  * @{
  */
 #define WSTA                            /*!< NVS namespace for WiFi station mode settings */
-#define WSTA_SSID "m4a-sta"              /*!< Default SSID for the station mode */
+#define WSTA_SSID "m4a-sta"             /*!< Default SSID for the station mode */
 #define WSTA_PASS "change-me"           /*!< Default password for station */
 #define WSTA_RETRIES 5                  /*!< Max. num of retries */
 #define WSTA_ENABLED 1                  /*!< Station mode is enabled */
@@ -79,10 +78,9 @@ extern "C"
  * @{
  */
 #define I_CONNECTION
-#define SERVER_TO_PING  "www.google.com"
+#define SERVER_TO_PING "www.google.com"
 #define TIME_TO_PING 60000
 /** @} */
-
 
 /**
  * @name Factory values for NVS settings
@@ -91,6 +89,17 @@ extern "C"
 #define NVS
 #define NVS_IS_INIT 0
 /** @} */
+
+/**
+ * @name SNTP values
+ * @{
+ */
+
+#define SNTP_MAX_COUNT 10
+#define SNTP_TIME_FORMAT "UTC+0"
+
+/** @} */
+
 #endif
 
 /**
@@ -99,7 +108,6 @@ extern "C"
  */
 #define stringlify(...) #__VA_ARGS__
 /** @} */
-
 
 #ifdef __cplusplus
 }
