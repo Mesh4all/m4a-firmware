@@ -60,6 +60,8 @@ TEST_CASE("Wi-Fi initialize", "[network]") {
     if (err != ESP_OK) {
         TEST_FAIL();
     };
+
+    wifi_start(NULL);
 }
 
 TEST_CASE("setting ping session", "[network]") {
