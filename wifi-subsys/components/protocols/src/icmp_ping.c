@@ -21,8 +21,7 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include "icmp_ping.h"
-#include "default_params.h"
+
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
@@ -34,8 +33,10 @@
 #include "lwip/sys.h"
 #include "ping/ping.h"
 #include "ping/ping_sock.h"
-#include "storage.h"
 
+#include "default_params.h"
+#include "icmp_ping.h"
+#include "storage.h"
 
 #define CONNECTED_BIT 1
 #define FAIL_BIT 0
@@ -173,12 +174,9 @@ void ping_task(void *arg) {
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "error to get ping time the cause is %s", esp_err_to_name(err));
     } else {
-        EventBits_t bits = xEventGroupWaitBits(s_icmp_event_group,
-            CONNECTED_BIT | FAIL_BIT,
-            pdFALSE,
-            pdFALSE,
-            portMAX_DELAY);
-        
+        EventBits_t bits = xEventGroupWaitBits(s_icmp_event_group, CONNECTED_BIT | FAIL_BIT,
+                                               pdFALSE, pdFALSE, portMAX_DELAY);
+
         callback(is_connected);
         vTaskDelete(manual_ping_task);
         vEventGroupDelete(s_icmp_event_group);
