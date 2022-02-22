@@ -21,8 +21,7 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include "icmp_ping.h"
-#include "default_params.h"
+
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
@@ -34,8 +33,10 @@
 #include "lwip/sys.h"
 #include "ping/ping.h"
 #include "ping/ping_sock.h"
-#include "storage.h"
 
+#include "default_params.h"
+#include "icmp_ping.h"
+#include "storage.h"
 
 #define CONNECTED_BIT 1
 #define FAIL_BIT 0
@@ -44,6 +45,7 @@ esp_ping_handle_t ping;
 uint8_t is_connected = FAIL_BIT;
 uint8_t is_configured = FAIL_BIT;
 TaskHandle_t manual_ping_task;
+EventGroupHandle_t s_icmp_event_group;
 
 void check_on_ping_success(esp_ping_handle_t hdl, void *args) {
     uint8_t ttl;
@@ -78,8 +80,10 @@ void check_on_ping_end(esp_ping_handle_t hdl, void *args) {
              (int)received, (int)total_time_ms);
     if (received > 0) {
         is_connected = CONNECTED_BIT;
+        xEventGroupSetBits(s_icmp_event_group, CONNECTED_BIT);
     } else {
         is_connected = FAIL_BIT;
+        xEventGroupSetBits(s_icmp_event_group, FAIL_BIT);
     }
 }
 
@@ -161,6 +165,7 @@ void send_ping(void *arg) {
 uint8_t get_current_status(void) { return is_connected; }
 
 void ping_task(void *arg) {
+    s_icmp_event_group = xEventGroupCreate();
     uint32_t milliseconds = 0;
     callback_t callback = (callback_t *)arg;
     esp_ping_start(ping);
@@ -168,11 +173,13 @@ void ping_task(void *arg) {
                                    &milliseconds); // Milliseconds between each ping procedure
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "error to get ping time the cause is %s", esp_err_to_name(err));
-
     } else {
-        vTaskDelay(milliseconds * 3 / portTICK_PERIOD_MS);
+        xEventGroupWaitBits(s_icmp_event_group, CONNECTED_BIT | FAIL_BIT,
+                                               pdFALSE, pdFALSE, portMAX_DELAY);
+
         callback(is_connected);
         vTaskDelete(manual_ping_task);
+        vEventGroupDelete(s_icmp_event_group);
     }
 }
 
