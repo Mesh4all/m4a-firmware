@@ -21,150 +21,126 @@
  * @author      luisan00 <luisan00@hotmail.com>
  *
  */
-#include "esp_system.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/event_groups.h"
-#include "freertos/task.h"
-#include "httpsclient.h"
-#include "nvs_flash.h"
-#include "sdkconfig.h"
-#include "wifi.h"
-#include <esp_log.h>
+
 #include <stdio.h>
 #include <string.h>
-#include "sdkconfig.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
+
+#include "esp_log.h"
 #include "esp_system.h"
-#include <esp_log.h>
 #include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
 #include "freertos/event_groups.h"
-#include "storage.h"
-#include "wifi.h"
-#include "subsys_uart.h"
-#include "icmp_ping.h"
+#include "freertos/task.h"
+#include "nvs_flash.h"
 #include "protocol_sntp.h"
+#include "sdkconfig.h"
+
+#include "httpsclient.h"
+#include "icmp_ping.h"
+#include "storage.h"
+#include "subsys_uart.h"
+#include "wifi.h"
 #include "default_params.h"
 
+esp_err_t set_default_values(void) {
 
-esp_err_t set_default_values(void)
-{
     esp_err_t err = nvs_set_string(stringlify(WAP), stringlify(WAP_SSID), WAP_SSID);
     if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to setting AP SSID to the nvs %s",
-                esp_err_to_name(err));
+        ESP_LOGE(__func__, "Error: to setting AP SSID to the nvs %s", esp_err_to_name(err));
     }
 
     err = nvs_set_string(stringlify(WAP), stringlify(WAP_PASS), WAP_PASS);
     if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to setting AP Password to the nvs %s",
-                esp_err_to_name(err));
+        ESP_LOGE(__func__, "Error: to setting AP Password to the nvs %s", esp_err_to_name(err));
     }
 
     err = nvs_set_string(stringlify(WSTA), stringlify(WSTA_SSID), WSTA_SSID);
     if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to setting STA ssid to the nvs %s",
-                esp_err_to_name(err));
+        ESP_LOGE(__func__, "Error: to setting STA ssid to the nvs %s", esp_err_to_name(err));
     }
 
     err = nvs_set_string(stringlify(WSTA), stringlify(WSTA_PASS), WSTA_PASS);
     if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to setting STA password to the nvs %s",
-                esp_err_to_name(err));
+        ESP_LOGE(__func__, "Error: to setting STA password to the nvs %s", esp_err_to_name(err));
     }
 
     err = nvs_set_uint8(stringlify(WAP), stringlify(WAP_CHAN), WAP_CHAN);
     if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to setting WAP channel to the nvs %s",
-                esp_err_to_name(err));
+        ESP_LOGE(__func__, "Error: to setting WAP channel to the nvs %s", esp_err_to_name(err));
     }
 
     err = nvs_set_uint8(stringlify(WAP), stringlify(WAP_MAXCON), WAP_MAXCON);
     if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to setting AP max connections to the nvs %s",
-                esp_err_to_name(err));
+        ESP_LOGE(__func__, "Error: to setting AP max connections to the nvs %s",
+                 esp_err_to_name(err));
     }
 
-    err = nvs_set_uint8(stringlify(WAP), stringlify(WAP_AUTH),WAP_AUTH);
+    err = nvs_set_uint8(stringlify(WAP), stringlify(WAP_AUTH), WAP_AUTH);
     if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to setting AP auth to the nvs %s",
-                esp_err_to_name(err));
+        ESP_LOGE(__func__, "Error: to setting AP auth to the nvs %s", esp_err_to_name(err));
     }
-    err = nvs_set_uint8(stringlify(WIFI),
-                        stringlify(WIFI_MODE),
-                        identify_enabled_interface());
+    err = nvs_set_uint8(stringlify(WIFI), stringlify(WIFI_MODE), identify_enabled_interface());
     if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to setting WIFI mode to the nvs %s",
-                esp_err_to_name(err));
+        ESP_LOGE(__func__, "Error: to setting WIFI mode to the nvs %s", esp_err_to_name(err));
     }
 
-    err = nvs_set_string(stringlify(I_CONECTION),
-                        stringlify(SERVER_TO_PING),
-                        SERVER_TO_PING);
+    err = nvs_set_string(stringlify(PING), stringlify(PING_TO), PING_TO);
     if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to server address to the nvs %s",
-                esp_err_to_name(err));
+        ESP_LOGE(__func__, "Error: setting ping address to the nvs %s", esp_err_to_name(err));
     }
-
-
-    err = nvs_set_uint8(stringlify(INTERNET_CONECTION),
-                        stringlify(TIME_TO_PING),
-                        TIME_TO_PING);
+    err = nvs_set_uint32(stringlify(PING), stringlify(PING_INT), PING_INT);
     if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to server address to the nvs %s",
-                esp_err_to_name(err));
+        ESP_LOGE(__func__, "Error: setting ping interval to the nvs %s", esp_err_to_name(err));
+    }
+    err = nvs_set_uint8(stringlify(PING), stringlify(PING_RET), PING_RET);
+    if (err != ESP_OK) {
+        ESP_LOGE(__func__, "Error: setting ping retries to the nvs %s", esp_err_to_name(err));
+    }
+    err = nvs_set_uint32(stringlify(PING), stringlify(PING_TIMEOUT), PING_TIMEOUT);
+    if (err != ESP_OK) {
+        ESP_LOGE(__func__, "Error: setting ping timeout to the nvs %s", esp_err_to_name(err));
     }
 
-    return err;
+    return ESP_OK;
 }
 
-void icmp_callback(uint8_t internet_connected)
-{
-    if (internet_connected) {
-        time_t now;
-        struct tm now_info;
-        char *format_time = "UTC";
-        esp_err_t err;
-        init_sntp();
-
-        err = get_time_sntp(&now, &now_info, format_time);
+void save_time(void) {
+    time_t saved_time;
+    time(&saved_time);
+    if (saved_time =! 0){
+        esp_err_t err = nvs_set_uint32(stringlify(SNTP), stringlify(FIRTS_BOOT), saved_time);
         if (err != ESP_OK) {
-            ESP_LOGE(__func__,
-                    "Error to get time to sntp Reason: %s",
-                    esp_err_to_name(err));
+            ESP_LOGE(__func__, "Error: setting ping timeout to the nvs %s", esp_err_to_name(err));
         }
-
-        ESP_LOGI(__func__, "the time is %ld", (long)now);
     } else {
-        ESP_LOGE(__func__,"Error: MCU is not connected to internet");
+        ESP_LOGE(__func__, "error to the init sntp sync");
     }
 }
 
-void app_main(void)
-{
+void icmp_callback(uint8_t internet_connected) {
+    if (internet_connected) {
+        esp_err_t err = sntp_start(&save_time);
+        if (err != ESP_OK) {
+            ESP_LOGE(__func__, "error to the init sntp sync");
+        }
+    } else {
+        ESP_LOGE(__func__, "Error: MCU is not connected to internet");
+    }
+}
+
+void app_main(void) {
+
     int8_t sta_connected = -1;
     ESP_LOGI(__func__, "starting wifi-subsys");
     esp_err_t err;
 
     err = nvs_init();
-    if(err != ESP_OK) {
-        ESP_LOGE(__func__,"error to init the nvs");
+    if (err != ESP_OK) {
+        ESP_LOGE(__func__, "error to init the nvs");
     }
 
     err = set_default_values();
-    if(err != ESP_OK) {
-        ESP_LOGE(__func__,"error to set default values to the nvs");
+    if (err != ESP_OK) {
+        ESP_LOGE(__func__, "error to set default values to the nvs");
     }
 
     err = init_uart();
@@ -184,9 +160,9 @@ void app_main(void)
     }
 
     if (sta_connected) {
-       ESP_LOGI(__func__,"verifying internet connection");
-       initialize_ping();
-       manual_ping(&icmp_callback);
+        ESP_LOGI(__func__, "verifying internet connection");
+        initialize_ping();
+        manual_ping(&icmp_callback);
     }
 #endif
 }
