@@ -95,9 +95,10 @@ extern "C" {
  * @{
  */
 
+#define SNTP
 #define SNTP_MAX_COUNT 10
 #define SNTP_TIME_FORMAT "UTC+0"
-
+#define FIRTS_BOOT
 /** @} */
 
 #endif
