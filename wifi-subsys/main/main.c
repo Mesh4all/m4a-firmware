@@ -107,48 +107,48 @@ esp_err_t set_default_values(void)
                 esp_err_to_name(err));
     }
 
-    err = nvs_set_string(stringlify(I_CONECTION),
-                        stringlify(SERVER_TO_PING),
-                        SERVER_TO_PING);
-    if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to server address to the nvs %s",
-                esp_err_to_name(err));
-    }
+    // err = nvs_set_string(stringlify(I_CONECTION),
+    //                     stringlify(SERVER_TO_PING),
+    //                     SERVER_TO_PING);
+    // if (err != ESP_OK) {
+    //     ESP_LOGE(__func__,
+    //             "Error: to server address to the nvs %s",
+    //             esp_err_to_name(err));
+    // }
 
 
-    err = nvs_set_uint8(stringlify(INTERNET_CONECTION),
-                        stringlify(TIME_TO_PING),
-                        TIME_TO_PING);
-    if (err != ESP_OK) {
-        ESP_LOGE(__func__,
-                "Error: to server address to the nvs %s",
-                esp_err_to_name(err));
-    }
+    // err = nvs_set_uint8(stringlify(INTERNET_CONECTION),
+    //                     stringlify(TIME_TO_PING),
+    //                     TIME_TO_PING);
+    // if (err != ESP_OK) {
+    //     ESP_LOGE(__func__,
+    //             "Error: to server address to the nvs %s",
+    //             esp_err_to_name(err));
+    // }
 
     return err;
 }
 
 void icmp_callback(uint8_t internet_connected)
 {
-    if (internet_connected) {
-        time_t now;
-        struct tm now_info;
-        char *format_time = "UTC";
-        esp_err_t err;
-        init_sntp();
+    // if (internet_connected) {
+    //     time_t now;
+    //     struct tm now_info;
+    //     char *format_time = "UTC";
+    //     esp_err_t err;
+    //     init_sntp();
 
-        err = get_time_sntp(&now, &now_info, format_time);
-        if (err != ESP_OK) {
-            ESP_LOGE(__func__,
-                    "Error to get time to sntp Reason: %s",
-                    esp_err_to_name(err));
-        }
+    //     err = get_time_sntp(&now, &now_info, format_time);
+    //     if (err != ESP_OK) {
+    //         ESP_LOGE(__func__,
+    //                 "Error to get time to sntp Reason: %s",
+    //                 esp_err_to_name(err));
+    //     }
 
-        ESP_LOGI(__func__, "the time is %ld", (long)now);
-    } else {
-        ESP_LOGE(__func__,"Error: MCU is not connected to internet");
-    }
+    //     ESP_LOGI(__func__, "the time is %ld", (long)now);
+    // } else {
+    //     ESP_LOGE(__func__,"Error: MCU is not connected to internet");
+    // }
 }
 
 void app_main(void)
