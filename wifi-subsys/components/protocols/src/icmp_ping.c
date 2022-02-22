@@ -174,7 +174,7 @@ void ping_task(void *arg) {
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "error to get ping time the cause is %s", esp_err_to_name(err));
     } else {
-        EventBits_t bits = xEventGroupWaitBits(s_icmp_event_group, CONNECTED_BIT | FAIL_BIT,
+        xEventGroupWaitBits(s_icmp_event_group, CONNECTED_BIT | FAIL_BIT,
                                                pdFALSE, pdFALSE, portMAX_DELAY);
 
         callback(is_connected);
