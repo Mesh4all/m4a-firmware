@@ -106,7 +106,7 @@ esp_err_t set_default_values(void) {
 void save_time(void) {
     time_t saved_time;
     time(&saved_time);
-    if (saved_time =! 0){
+    if (saved_time != 0){
         esp_err_t err = nvs_set_uint32(stringlify(SNTP), stringlify(FIRTS_BOOT), saved_time);
         if (err != ESP_OK) {
             ESP_LOGE(__func__, "Error: setting ping timeout to the nvs %s", esp_err_to_name(err));
