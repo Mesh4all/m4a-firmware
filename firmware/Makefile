@@ -1,5 +1,5 @@
 APPLICATION = m4a-mesh
-BOARD ?= m4a-mb
+BOARD ?= m4a-24g
 
 # Current path
 APPBASE ?= $(CURDIR)
