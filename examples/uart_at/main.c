@@ -1,12 +1,34 @@
+/*
+ * Copyright (c) 2022 Mesh4all <mesh4all.org>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @brief   UART_AT
+ *
+ * @author  eduazocar <eduardo@turpialdev.com>
+ */
+
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "board.h"
 
+#include "msg.h"
 #include "shell.h"
 #include "thread.h"
-#include "msg.h"
 
 #include "periph/uart.h"
 #include "xtimer.h"
@@ -22,18 +44,8 @@ msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
 size_t count = 0;
 char uart_buff[MAX_SENTENCE_SIZE] = {0};
 char *commands_at[] = {
-    "AT+WAP_SSID=",
-    "AT+WAP_PASS=",
-    "AT+WSTA_SSID=",
-    "AT+WSTA_PASS=",
-    "AT+WIFI_OFF",
-    "AT+WIFI_ON",
-    "AT+NVS_RST",
-    "AT+WIFI_MODE=",
-    "AT+WAP_CHAN=",
-    "AT_WAP_AUTH=",
-    "AT+WIFI_RST"
-};
+    "AT+WAP_SSID=", "AT+WAP_PASS=",  "AT+WSTA_SSID=", "AT+WSTA_PASS=", "AT+WIFI_OFF", "AT+WIFI_ON",
+    "AT+NVS_RST",   "AT+WIFI_MODE=", "AT+WAP_CHAN=",  "AT_WAP_AUTH=",  "AT+WIFI_RST"};
 
 static void at_uart_rx_cb(void *arg, uint8_t c) {
     if (c != 10) {
@@ -49,60 +61,57 @@ static void at_uart_rx_cb(void *arg, uint8_t c) {
 void send_at(char *at_command, char *param_at) {
     char strbuf[64];
     strcpy(strbuf, at_command);
-    uart_poweron(AT_UART);
-    if (strcmp(param_at, NULL) == 0) {
-        uart_write(AT_UART, (uint8_t *)strbuf, sizeof(strbuf));
+    if (strcmp(param_at, "_EMPTY_") == 0) {
+        uart_write(AT_UART, (uint8_t *)strbuf, strlen(strbuf) + 1);
     } else {
         strcat(strbuf, param_at);
-        uart_write(AT_UART, (uint8_t *)strbuf, sizeof(strbuf));
+        uart_write(AT_UART, (uint8_t *)strbuf, strlen(strbuf) + 1);
     }
     uart_poweroff(AT_UART);
 }
 
 int cmd_uart_at(int argc, char **argv) {
-
-    if (argc != 2) {
+    uart_init(AT_UART, AT_UART_BAUDRATE, at_uart_rx_cb, NULL);
+    if (argc < 2) {
         printf("Usage: \n--help\n");
         return -1;
     }
 
     else if (strcmp("on", argv[1]) == 0) {
+        send_at(commands_at[5], "_EMPTY_");
 
     } else if (strcmp("off", argv[1]) == 0) {
-        /* Manda el AT para apagar el wifi */
+        send_at(commands_at[4], "_EMPTY_");
         uart_poweroff(AT_UART);
         return 0;
+    }
 
-    } else if (strcmp("ap", argv[1]) == 0) /* Configuracion en modo AP */
-    {
-        if (argc != 3) {
+    /* Settings of mode AP */
+    if (strcmp("ap", argv[1]) == 0) {
+        if (argc < 3) {
             printf("\nWifi ap settings:\n\tssid\n\tpswd\n\tauth\n\tchannel\n");
             return 0;
 
         } else if (strcmp(argv[2], "ssid") == 0) {
-            if (argc != 4) {
+            if (argc < 4) {
                 printf("\nPlease enter your SSID name to Wifi mode ap settings\n*Remember use "
                        "least of 32 characters*\n");
                 return 0;
-
-            } else if (strcmp(argv[3], NULL) != 0) {
-                /*Envia por Uart el comando at con argv[3] unido al string at correspondiente*/
+            } else if (strcmp(argv[3], "_EMPTY_") != 0) {
+                send_at(commands_at[2], argv[3]);
             }
-
         } else if (strcmp(argv[2], "pswd") == 0) {
-            if (argc != 4) {
+            if (argc < 4) {
                 printf("\nPlease enter your password to Wifi mode ap settings\n");
                 return 0;
-            } else if (strcmp(argv[3], NULL) != 0) {
-                /*Envia por Uart el comando at con argv[3] unido al string at correspondiente*/
+            } else if (strcmp(argv[3], "") != 0) {
             }
 
         } else if (strcmp(argv[2], "auth") == 0) {
             if (argc != 4) {
                 printf("\nDefine the authentication mode to Wifi mode ap settings\n");
                 return 0;
-            } else if (strcmp(argv[3], NULL) != 0) {
-                /*Envia por Uart el comando at con argv[3] unido al string at correspondiente*/
+            } else if (strcmp(argv[3], "_EMPTY_") != 0) {
             }
 
         } else if (strcmp(argv[2], "channel") == 0) {
@@ -110,45 +119,42 @@ int cmd_uart_at(int argc, char **argv) {
                 printf("\nChoose the channel <1 ... 7> to Wifi mode ap settings\n");
                 return 0;
 
-            } else if (strcmp(argv[3], NULL) != 0) {
-                /*Envia por Uart el comando at con argv[3] unido al string at correspondiente*/
+            } else if (strcmp(argv[3], "_EMPTY_") != 0) {
             }
         }
         return 0;
-    } else if (strcmp("sta", argv[1]) == 0) { /* Configuracion del modo STA */
-        if (argc != 3) {
+    }
+
+    /* Settings of STA mode */
+    else if (strcmp("sta", argv[1]) == 0) {
+        if (argc < 3) {
             printf("\nWifi ap settings:\n\tssid\n\tpswd\n\tauth\n\tchannel\n");
             return 0;
         } else if (strcmp(argv[2], "ssid") == 0) {
-            if (argc != 4) {
+            if (argc < 4) {
                 printf("\nPlease enter your SSID name to Wifi mode ap settings\n*Remember use "
                        "least of 32 characters*\n");
                 return 0;
-            } else if (strcmp(argv[3], NULL) != 0) {
-                /*Envia por Uart el comando at con argv[3] unido al string at correspondiente*/
+            } else if (strcmp(argv[3], "_EMPTY_") != 0) {
             }
         } else if (strcmp(argv[2], "pswd") == 0) {
-            if (argc != 4) {
+            if (argc < 4) {
                 printf("\nPlease enter your password to Wifi mode ap settings\n");
                 return 0;
-            } else if (strcmp(argv[3], NULL) != 0) {
-                /*Envia por Uart el comando at con argv[3] unido al string at correspondiente*/
+            } else if (strcmp(argv[3], "_EMPTY_") != 0) {
+
                 return 0;
             }
         }
     } else if (strcmp("mode", argv[1]) == 0) {
         if (argc != 3) {
-            /*Error falta de comando */
         }
-        /* Manda el AT para iniciar el wifi */
-        return uart_init(AT_UART, AT_UART_BAUDRATE, at_uart_rx_cb, NULL);
     }
-    printf("Usage: \nuart start|stop\n");
     return -1;
 }
 
-static const shell_command_t shell_commands[] = {
-    {"wifi", "start or stop reading the GPS uart port", cmd_uart_at}, {NULL, NULL, NULL}};
+static const shell_command_t shell_commands[] = {{"wifi", "Wifi settings", cmd_uart_at},
+                                                 {NULL, NULL, NULL}};
 
 int main(void) {
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
