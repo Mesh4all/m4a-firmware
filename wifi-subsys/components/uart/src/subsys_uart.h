@@ -28,31 +28,12 @@
 #include "esp_err.h"
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 /**
  * @brief this struct content the key and value of the AT request
  *
  */
-typedef struct {
-    char *value; /*!< AT value */
-    char *key;   /*!< AT key */
-} at_request_t;
-
-enum at_keys_n {
-    NVS_RST = 0,  /*!< Restore the subsystem to factory settings */
-    WIFI_OFF,     /*!< Turn off the WiFi interface */
-    WAP_SSID,     /*!< Set the AP SSID */
-    WAP_PASS,     /*!< Set the AP password */
-    WAP_CHAN,     /*!< Sets the AP channel */
-    WAP_AUTH,     /*!< Sets the authentication type */
-    WIFI_ON,      /*!< Turn on the WiFi interface */
-    WIFI_MODE,    /*!< Sets the WiFi mode to None / AP / STA / AP+STA */
-    WIFI_RST,     /*!< Restore the subsystem to factory settings */
-    WSTA_SSID,    /*!< Set the STA SSID */
-    WSTA_PASS,    /*!< Set the STA password */
-};
 
 /**
  * @brief this function initialize the uart
@@ -81,7 +62,7 @@ void tx_send_loop();
  *
  *  @param values [in] sensor values
  */
-void received_sensor_data(uint8_t* values);
+void received_sensor_data(uint8_t *values);
 
 /**
  * @brief this function is a handler where will be identified AT commands
@@ -89,13 +70,7 @@ void received_sensor_data(uint8_t* values);
  *
  * @param at_comant [in] AT comands
  */
-void at_handler(uint8_t* at_comant);
-/**
- * @brief this function send the bytes through uart tx
- *
- * @return int  will be returned  the number of bytes sent
- */
-int sendData();
+int sendData(const char *logName, char *data);
 
 /**
  * @brief in this function is added  the gpios
@@ -103,15 +78,6 @@ int sendData();
  *
  */
 esp_err_t setting_uart();
-
-/**
- * @brief  this function parse the AT message is used for get the key and value of at request
- *
- * @param at_comant this is the message to parser
- * @param output    this variable content the key and value
- * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
- */
-esp_err_t parse_at_message(uint8_t* at_comant, at_request_t* output);
 
 #ifdef __cplusplus
 }
