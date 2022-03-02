@@ -17,7 +17,6 @@
 #include "unity.h"
 #include "wifi.h"
 #include "storage.h"
-#include "icmp_ping.h"
 
 TEST_CASE("set default credentials", "[network]")
 {
@@ -98,6 +97,47 @@ TEST_CASE("change max_connections", "[network]")
 TEST_CASE("change auth ap", "[network]")
 {
     esp_err_t err = change_ap_auth(WIFI_AUTH_WPA2_PSK);
+    if(err != ESP_OK) {
+        TEST_FAIL();
+    }
+}
+
+TEST_CASE("change STA mode", "[network]")
+{
+    esp_err_t err = change_wifi_mode(1);
+    if(err != ESP_OK) {
+        TEST_FAIL();
+    }
+}
+
+TEST_CASE("change AP mode", "[network]")
+{
+    esp_err_t err = change_wifi_mode(1);
+    if(err != ESP_OK) {
+        TEST_FAIL();
+    }
+}
+
+TEST_CASE("change APSTA mode", "[network]")
+{
+    esp_err_t err = change_wifi_mode(1);
+    if(err != ESP_OK) {
+        TEST_FAIL();
+    }
+}
+
+TEST_CASE("WIFI OFF", "[network]")
+{
+    esp_err_t err = wifi_off();
+    if(err != ESP_OK) {
+        TEST_FAIL();
+    }
+}
+
+TEST_CASE("WIFI ON", "[network]")
+{
+    esp_err_t err = wifi_init();
+    wifi_start(NULL);
     if(err != ESP_OK) {
         TEST_FAIL();
     }
