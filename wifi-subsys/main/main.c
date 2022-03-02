@@ -41,6 +41,19 @@
 #include "wifi.h"
 #include "default_params.h"
 
+uint8_t default_values_are_configured() {
+    uint8_t is_configured = 0;
+
+    esp_err_t err = nvs_get_uint8(stringlify(NVS), stringlify(NVS_IS_INIT), &is_configured);
+
+    if (err != ESP_OK) {
+        ESP_LOGE(__func__, "seems that default values is not configured yet");
+        return 0;
+    }
+
+    return is_configured;
+}
+
 esp_err_t set_default_values(void) {
 
     esp_err_t err = nvs_set_string(stringlify(WAP), stringlify(WAP_SSID), WAP_SSID);
@@ -100,6 +113,17 @@ esp_err_t set_default_values(void) {
         ESP_LOGE(__func__, "Error: setting ping timeout to the nvs %s", esp_err_to_name(err));
     }
 
+    /* cppcheck-suppress duplicateCondition
+    * (reason: <is necessary because all function executed before,
+    needed response ESP_OK for save the nvs configuration in true>) */
+    if (err != ESP_OK) {
+        nvs_set_uint8(stringlify(NVS), stringlify(NVS_IS_INIT), 0);
+        return err;
+    } else {
+        nvs_set_uint8(stringlify(NVS), stringlify(NVS_IS_INIT), 1);
+        return ESP_OK;
+    }
+
     return ESP_OK;
 }
 
@@ -138,10 +162,22 @@ void app_main(void) {
         ESP_LOGE(__func__, "error to init the nvs");
     }
 
+    uint8_t is_configured = default_values_are_configured();
+
+    if (is_configured == 0) {
+        err = set_default_values();
+        if (err != ESP_OK) {
+            ESP_LOGE(__func__, "error to set default values to the nvs");
+        }
+    }
+
+#if FORCE_DEFAULT
     err = set_default_values();
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "error to set default values to the nvs");
     }
+#endif
+
 
     err = init_uart();
     if (err != ESP_OK) {
