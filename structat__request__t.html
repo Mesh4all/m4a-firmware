@@ -110,11 +110,6 @@ $(document).ready(function(){initNavTree('structat__request__t.html',''); initRe
 <div class="title">at_request_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>uart module  
- <a href="structat__request__t.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="subsys__uart_8h_source.html">subsys_uart.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -122,15 +117,32 @@ Data Fields</h2></td></tr>
 <tr class="separator:a800eee200c88df1b9867f7da6c0a0bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2759fa32e946cf1cf2d81d4033356a7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structat__request__t.html#aa2759fa32e946cf1cf2d81d4033356a7">key</a></td></tr>
 <tr class="separator:aa2759fa32e946cf1cf2d81d4033356a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a597b608cbdbca637842862b4b39a0b10"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structat__request__t.html#a597b608cbdbca637842862b4b39a0b10">action</a> [2]</td></tr>
+<tr class="separator:a597b608cbdbca637842862b4b39a0b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4515ec9f9852889561c6d320b07516a5"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structat__request__t.html#a4515ec9f9852889561c6d320b07516a5">read_or_write</a> [2]</td></tr>
+<tr class="separator:a4515ec9f9852889561c6d320b07516a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>uart module </p>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 Mesh for all </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>xkevin190 <a href="#" onclick="location.href='mai'+'lto:'+'kev'+'in'+'vel'+'as'+'co1'+'93'+'@gm'+'ai'+'l.c'+'om'; return false;">kevin<span style="display: none;">.nosp@m.</span>vela<span style="display: none;">.nosp@m.</span>sco19<span style="display: none;">.nosp@m.</span>3@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a></dd></dl>
-<p>this struct content the key and value of the AT request </p>
-
-<p class="definition">Definition at line <a class="el" href="subsys__uart_8h_source.html#l00038">38</a> of file <a class="el" href="subsys__uart_8h_source.html">subsys_uart.h</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="at__handler_8h_source.html#l00038">38</a> of file <a class="el" href="at__handler_8h_source.html">at_handler.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="a597b608cbdbca637842862b4b39a0b10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a597b608cbdbca637842862b4b39a0b10">&#9670;&nbsp;</a></span>action</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char at_request_t::action[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>AT action </p>
+
+<p class="definition">Definition at line <a class="el" href="at__handler_8h_source.html#l00041">41</a> of file <a class="el" href="at__handler_8h_source.html">at_handler.h</a>.</p>
+
+</div>
+</div>
 <a id="aa2759fa32e946cf1cf2d81d4033356a7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa2759fa32e946cf1cf2d81d4033356a7">&#9670;&nbsp;</a></span>key</h2>
 
@@ -144,7 +156,24 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>AT key </p>
 
-<p class="definition">Definition at line <a class="el" href="subsys__uart_8h_source.html#l00040">40</a> of file <a class="el" href="subsys__uart_8h_source.html">subsys_uart.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="at__handler_8h_source.html#l00040">40</a> of file <a class="el" href="at__handler_8h_source.html">at_handler.h</a>.</p>
+
+</div>
+</div>
+<a id="a4515ec9f9852889561c6d320b07516a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4515ec9f9852889561c6d320b07516a5">&#9670;&nbsp;</a></span>read_or_write</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char at_request_t::read_or_write[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>AT type </p>
+
+<p class="definition">Definition at line <a class="el" href="at__handler_8h_source.html#l00042">42</a> of file <a class="el" href="at__handler_8h_source.html">at_handler.h</a>.</p>
 
 </div>
 </div>
@@ -161,12 +190,12 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>AT value </p>
 
-<p class="definition">Definition at line <a class="el" href="subsys__uart_8h_source.html#l00039">39</a> of file <a class="el" href="subsys__uart_8h_source.html">subsys_uart.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="at__handler_8h_source.html#l00039">39</a> of file <a class="el" href="at__handler_8h_source.html">at_handler.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>wifi-subsys/components/uart/src/<a class="el" href="subsys__uart_8h_source.html">subsys_uart.h</a></li>
+<li>wifi-subsys/components/uart/src/<a class="el" href="at__handler_8h_source.html">at_handler.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -176,7 +205,7 @@ Data Fields</h2></td></tr>
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structat__request__t.html">at_request_t</a></li>
-    <li class="footer">Generated on Wed Mar 2 2022 13:40:32 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Thu Mar 3 2022 16:50:21 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['value_306',['value',['../structat__request__t.html#a800eee200c88df1b9867f7da6c0a0bee',1,'at_request_t']]],
-  ['var1_307',['var1',['../structsome__struct__var.html#a41acfabcd0c9353b8dd139b162d69ef4',1,'some_struct_var']]],
-  ['var2_308',['var2',['../structsome__struct__var.html#a62ca43ef4c688405ff4c04e25fd794e8',1,'some_struct_var']]]
+  ['uart_5fconfig_311',['uart_config',['../m4a-24g_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5',1,'uart_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5',1,'uart_config():&#160;periph_conf.h']]]
 ];
