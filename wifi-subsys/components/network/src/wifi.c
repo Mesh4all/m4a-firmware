@@ -329,7 +329,13 @@ esp_err_t set_default_credentials(void) {
 }
 
 esp_err_t wifi_on(void) {
-    esp_err_t err = wifi_init();
+    esp_err_t err = esp_wifi_restore();
+      if (err != ESP_OK) {
+        ESP_LOGE(__func__, "Error: to the init wifi %s", esp_err_to_name(err));
+        return err;
+    }
+
+    err = set_wifi_mode();
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "Error: to the init wifi %s", esp_err_to_name(err));
         return err;

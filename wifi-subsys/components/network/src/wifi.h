@@ -139,6 +139,13 @@ esp_err_t wifi_restart();
 esp_err_t wifi_off();
 
 /**
+ * @brief turn on the WIFI module
+ *
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t wifi_on();
+
+/**
  * @brief is used when the default parameters still not save in storage,
  *        this verify that wifi mode is enabled in the default params and
  *         will return the mode.
