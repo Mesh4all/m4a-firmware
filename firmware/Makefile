@@ -52,6 +52,7 @@ EXTERNAL_MODULE_DIRS += peripherals
 
 USEMODULE += udp_m4a
 USEMODULE += serialization
+USEMODULE += at_commands_uart
 EXTERNAL_MODULE_DIRS += libs
 
 FEATURES_REQUIRED = periph_adc
