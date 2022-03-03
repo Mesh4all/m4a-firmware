@@ -88,6 +88,7 @@ extern "C" {
  */
 #define NVS
 #define NVS_IS_INIT 0
+#define FORCE_DEFAULT 0
 /** @} */
 
 /**
