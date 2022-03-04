@@ -29,8 +29,7 @@
 #include "esp_wifi.h"
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /**
@@ -95,7 +94,7 @@ uint8_t wifi_credentials_are_configured();
  * @param sta_ssid [in] new ssid
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
-esp_err_t change_wifi_sta_ssid(char* sta_ssid);
+esp_err_t change_wifi_sta_ssid(char *sta_ssid);
 
 /**
  * @brief change the ssid of the AP and restart the wifi module
@@ -104,7 +103,7 @@ esp_err_t change_wifi_sta_ssid(char* sta_ssid);
  * @param sta_ssid [in] new AP ssid
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
-esp_err_t change_wifi_ap_ssid(char* ap_ssid);
+esp_err_t change_wifi_ap_ssid(char *ap_ssid);
 
 /**
  * @brief change the password of the AP and restart the wifi module
@@ -113,7 +112,7 @@ esp_err_t change_wifi_ap_ssid(char* ap_ssid);
  * @param sta_ssid [in] new AP password
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
-esp_err_t change_wifi_ap_pass(char* pass_ap);
+esp_err_t change_wifi_ap_pass(char *pass_ap);
 
 /**
  * @brief change the password of the STA and restart the wifi module
@@ -122,7 +121,7 @@ esp_err_t change_wifi_ap_pass(char* pass_ap);
  * @param pass_sta [in] new sta password
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
-esp_err_t change_wifi_sta_pass(char* pass_sta);
+esp_err_t change_wifi_sta_pass(char *pass_sta);
 
 /**
  * @brief restart the wifi module
@@ -171,7 +170,7 @@ esp_err_t set_wifi_mode();
  * @param auth [in]
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
-esp_err_t change_ap_auth (uint8_t auth);
+esp_err_t change_ap_auth(uint8_t auth);
 
 /**
  * @brief set new mode in the nvs and start the wifi again.
@@ -203,10 +202,31 @@ esp_err_t select_wifi_channel(uint8_t channel);
  * @param max_connection [in]  max connectios
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
-esp_err_t set_ap_max_connection (uint8_t max_connection);
+esp_err_t set_ap_max_connection(uint8_t max_connection);
 
+/**
+ * @brief this function is executed once the wifi initialization functions were executed, this
+ * function its function is to initiate the wifi connection
+ *
+ * @param [in] is_connected
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
 esp_err_t wifi_start(int8_t *is_connected);
-int8_t wifi_bit_event (void);
+
+/**
+ * @brief this function is used to answer once mode it executes a connection
+ *
+ * @return 1 successful connection
+ *         0 it don't connect
+ */
+int8_t wifi_bit_event(void);
+
+/**
+ * @brief function used when wifi will totally stopped
+ *
+ * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
+ */
+esp_err_t wifi_turn_off();
 
 #ifdef __cplusplus
 }

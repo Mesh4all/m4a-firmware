@@ -101,7 +101,6 @@ void rx_receive(void *arg) {
                 if (data[0] == 0x41 && data[1] == 0x54) {
                     at_handler(data);
                 } else {
-                    sendData(__func__, "\r\n400\r\n");
                     ESP_LOGI(__func__, "the command must init with AT");
                 }
             } else {
