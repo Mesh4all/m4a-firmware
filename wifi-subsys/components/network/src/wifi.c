@@ -39,6 +39,7 @@
 int s_retry_num = 0;
 EventGroupHandle_t s_wifi_event_group;
 uint8_t first_boot = 0;
+uint8_t is_wifi_on = 0;
 esp_event_handler_instance_t instance_any_id;
 esp_event_handler_instance_t instance_got_ip;
 #define WIFI_CONNECTED_BIT BIT0
@@ -136,20 +137,24 @@ esp_err_t wifi_start(int8_t *is_connected) {
         ESP_LOGE(__func__, "Error starting wifi %s", esp_err_to_name(err));
         return err;
     }
-
-#if WSTA_ENABLED && WAP_ENABLED
-    int8_t bit_result = wifi_bit_event();
-    if (is_connected != NULL) {
-        *is_connected = bit_result;
+    uint8_t mode = 0;
+    err = nvs_get_uint8(stringlify(WIFI), stringlify(WIFI_MODE), &mode);
+    if (err != ESP_OK) {
+        ESP_LOGE(__func__, "error to get max_connections the cause is %s", esp_err_to_name(err));
+        return err;
+    }
+    if (mode == 1 || mode == 3) {
+        int8_t bit_result = wifi_bit_event();
+        if (is_connected != NULL) {
+            *is_connected = bit_result;
+        }
+        return ESP_OK;
+    } else if (mode == 2) {
+        return ESP_OK;
+    } else {
+        return ESP_FAIL;
     }
     return ESP_OK;
-#elif WSTA_ENABLED
-    int8_t bit_result = wifi_bit_event();
-    if (is_connected != NULL) {
-        *is_connected = bit_result;
-    }
-    return ESP_OK;
-#endif
 }
 
 int is_sta() {
@@ -234,12 +239,6 @@ esp_err_t init_ap(void) {
     err = esp_wifi_set_config(WIFI_IF_AP, &wifi_config);
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "error to the set wifi mode the cause is %s", esp_err_to_name(err));
-        return err;
-    }
-    err = esp_wifi_start();
-
-    if (err != ESP_OK) {
-        ESP_LOGE(__func__, "error to start the wifi, the cause is %s", esp_err_to_name(err));
         return err;
     }
 
@@ -330,7 +329,7 @@ esp_err_t set_default_credentials(void) {
 
 esp_err_t wifi_on(void) {
     esp_err_t err = esp_wifi_restore();
-      if (err != ESP_OK) {
+    if (err != ESP_OK) {
         ESP_LOGE(__func__, "Error: to the init wifi %s", esp_err_to_name(err));
         return err;
     }
@@ -345,11 +344,16 @@ esp_err_t wifi_on(void) {
         ESP_LOGE(__func__, "Error starting wifi %s", esp_err_to_name(err));
         return err;
     }
-
+    is_wifi_on = 1;
     return ESP_OK;
 }
 
 esp_err_t wifi_off(void) {
+
+    if (is_wifi_on == 0) {
+        return ESP_FAIL;
+    }
+
     esp_err_t err = esp_wifi_stop();
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "Error: to  the turn off the wifi %s", esp_err_to_name(err));
@@ -358,11 +362,27 @@ esp_err_t wifi_off(void) {
     esp_event_handler_instance_unregister(IP_EVENT, IP_EVENT_STA_GOT_IP, instance_got_ip);
     esp_event_handler_instance_unregister(WIFI_EVENT, ESP_EVENT_ANY_ID, instance_any_id);
     vEventGroupDelete(s_wifi_event_group);
+
+    return ESP_OK;
+}
+
+esp_err_t wifi_turn_off() {
+    esp_err_t err = wifi_off();
+    if (err != ESP_OK) {
+        ESP_LOGE(__func__, "Error: to the turn off the wifi %s", esp_err_to_name(err));
+        return err;
+    }
+    is_wifi_on = 0;
     return ESP_OK;
 }
 
 esp_err_t wifi_restart(void) {
     esp_err_t err;
+
+    if (is_wifi_on == 0) {
+        return ESP_FAIL;
+    }
+
     err = wifi_off();
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "Error: to the turn off the wifi %s", esp_err_to_name(err));
@@ -576,7 +596,6 @@ esp_err_t set_wifi_mode() {
             ESP_ERROR_CHECK(init_ap());
         }
     }
-
     return ESP_OK;
 }
 
@@ -631,5 +650,6 @@ esp_err_t wifi_init(void) {
     }
 
     first_boot = 1;
+    is_wifi_on = 1;
     return ESP_OK;
 }

@@ -117,7 +117,7 @@ void action_request(enum at_keys_n at_key, at_request_t *payload) {
         err = wifi_restore_default();
         break;
     case (WIFI_OFF):
-        err = wifi_off();
+        err = wifi_turn_off();
         break;
     case (WIFI_ON):
         err = wifi_on();
