@@ -1,3 +1,24 @@
+/*
+ * Copyright (c) 2022 Mesh4all <mesh4all.org>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @brief  Uart handler
+ *
+ * @author xkevin190 <kevinvelasco193@gmail.com>
+ */
 #include <string.h>
 
 #include "subsys_uart.h"
@@ -94,6 +115,9 @@ void rx_receive(void *arg) {
             if (strcmp((char *)data, stringlify(ATH)) == 0) {
                 ESP_LOGI(__func__, "starting at mode");
                 at_mode = 1;
+            } else if ((strcmp((char *)data, stringlify(AT)) == 0) && at_mode == 1) {
+                ESP_LOGI(__func__, "ESP has connection");
+                sendData(__func__, "\r\nok\r\n");
             } else if (strcmp((char *)data, stringlify(ATHO)) == 0) {
                 ESP_LOGI(__func__, "leaving of at mode");
                 at_mode = 0;
