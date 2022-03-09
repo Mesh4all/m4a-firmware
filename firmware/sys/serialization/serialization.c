@@ -1,11 +1,31 @@
-#include "serialization.h"
+/*
+ * Copyright (c) 2022 Mesh4all <mesh4all.org>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @brief  serialization implementation for this it will be used tinycbor
+ *
+ * @author  xkevin190 <kevinvelasco190@gmail.com>
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "serialization.h"
 #include "cbor.h"
 
-int cbor_decode_message (uint8_t* buffer, sensor_data* data, size_t length)
-{
+int cbor_decode_message(uint8_t *buffer, sensor_data *data, size_t length) {
     CborParser parser;
     CborValue it;
     CborValue moisture_in;
@@ -23,27 +43,24 @@ int cbor_decode_message (uint8_t* buffer, sensor_data* data, size_t length)
         return -1;
     }
 
-    if(cbor_value_map_find_value(&it, "moisture", &moisture_in) != CborNoError){
+    if (cbor_value_map_find_value(&it, "moisture", &moisture_in) != CborNoError) {
         printf("error in find moisture");
         return -1;
-    };
+    }
 
-    if (!cbor_value_is_valid(&moisture_in) &&
-        !cbor_value_is_integer(&moisture_in)) {
+    if (!cbor_value_is_valid(&moisture_in) && !cbor_value_is_integer(&moisture_in)) {
         printf("fail moisture \n");
         return -1;
     }
 
     cbor_value_map_find_value(&it, "temp", &temp_in);
 
-    if (!cbor_value_is_valid(&temp_in) &&
-        !cbor_value_is_integer(&temp_in)) {
+    if (!cbor_value_is_valid(&temp_in) && !cbor_value_is_integer(&temp_in)) {
         printf("fail temp \n");
         return -1;
     }
 
-    /* Copy byte string */
-    cbor_value_get_uint64(&temp_in, &temp);
+    cbor_value_get_uint64(&temp_in, &temp); // Copy byte string
     cbor_value_get_uint64(&moisture_in, &moist);
 
     memcpy(&data->temperature, &temp, sizeof(int16_t));
@@ -52,8 +69,7 @@ int cbor_decode_message (uint8_t* buffer, sensor_data* data, size_t length)
     return 0;
 }
 
-int cbor_enconde_message (sensor_data* data, uint8_t* output, size_t* len_output)
-{
+int cbor_enconde_message(sensor_data *data, uint8_t *output, size_t *len_output) {
     uint8_t buffer[100];
     CborEncoder encoder;
     cbor_encoder_init(&encoder, buffer, sizeof(buffer), 0);

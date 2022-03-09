@@ -50,13 +50,11 @@ USEMODULE += ds18_sensor
 USEMODULE += moisture_sensor
 EXTERNAL_MODULE_DIRS += peripherals
 
+FEATURES_REQUIRED = periph_adc
+
 USEMODULE += udp_m4a
 USEMODULE += serialization
 USEMODULE += at_commands_uart
-EXTERNAL_MODULE_DIRS += libs
-
-FEATURES_REQUIRED = periph_adc
-
 USEMODULE += system_init
 EXTERNAL_MODULE_DIRS += sys
 
