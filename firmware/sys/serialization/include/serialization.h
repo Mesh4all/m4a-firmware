@@ -30,8 +30,7 @@
 #include <stdio.h>
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /**
@@ -39,10 +38,9 @@ extern "C"
  *
  */
 typedef struct {
-    int16_t temperature;   /*!< temperature value */
-    int soil_moisture;          /*!< moisture value */
+    int16_t temperature; /*!< temperature value */
+    int soil_moisture;   /*!< moisture value */
 } sensor_data;
-
 
 /**
  * @brief  This function decode message to arrive since udp
@@ -52,7 +50,7 @@ typedef struct {
  * @return  0 Satisfactory result
  *         -1 Failed result
  */
-int cbor_decode_message(uint8_t* buffer, sensor_data* data, size_t length);
+int cbor_decode_message(uint8_t *buffer, sensor_data *data, size_t length);
 
 /**
  * @brief  This function decode message before to send in udp client
@@ -62,7 +60,7 @@ int cbor_decode_message(uint8_t* buffer, sensor_data* data, size_t length);
  * @return  0 Satisfactory result
  *         -1 Failed result
  */
-int cbor_enconde_message(sensor_data* data, uint8_t* output, size_t* len_output);
+int cbor_enconde_message(sensor_data *data, uint8_t *output, size_t *len_output);
 
 #ifdef __cplusplus
 }

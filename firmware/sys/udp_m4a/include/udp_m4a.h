@@ -26,19 +26,17 @@
 #define UDP_M4A_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /**
  * @brief this is a struct  used for init udp server
  */
-typedef struct
-{
-   char* port;                                   /*!< port where will listen udp server */
-   void (*callback) (uint8_t*, size_t len);      /*!< this is a callback this function will
-                                                      be executed when arrive new values
-                                                 */
+typedef struct {
+    char *port;                              /*!< port where will listen udp server */
+    void (*callback)(uint8_t *, size_t len); /*!< this is a callback this function will
+                                                  be executed when arrive new values
+                                             */
 } udpf_payload;
 
 /**
@@ -48,7 +46,7 @@ typedef struct
  * @return  0 Satisfactory result
  *         -1 Failed result
  */
-int udp_server(udpf_payload* argv);
+int udp_server(udpf_payload *argv);
 
 /**
  * @brief this function is used for send the sensors values
@@ -59,7 +57,7 @@ int udp_server(udpf_payload* argv);
  * @param payload_len [int]     size of the message
  * @return int
  */
-int udp_send(int* port, char* address, uint8_t* message, size_t* payload_len);
+int udp_send(int *port, char *address, uint8_t *message, size_t *payload_len);
 
 #ifdef __cplusplus
 }
