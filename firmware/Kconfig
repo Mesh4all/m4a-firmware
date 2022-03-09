@@ -1,0 +1,4 @@
+menu "m4a-firmware configuration"
+rsource "peripherals/Kconfig"
+rsource "sys/Kconfig"
+endmenu
