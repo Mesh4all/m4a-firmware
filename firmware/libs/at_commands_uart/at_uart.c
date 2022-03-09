@@ -69,6 +69,7 @@ at_list_t at_list[] = {
     {"wifi_rst", "", "AT&WIFI_RST", 0, 1},
     {"ath", "", "ATH", 0, 0},
     {"ath0", "", "ATH0", 0, 0},
+    {"at", "", "AT", 0, 1},
     {NULL, NULL, NULL, 0, 0},
 };
 
@@ -84,21 +85,23 @@ void *buff_handler(void *arg) {
     (void)arg;
     msg_t msg;
     msg_t msg_queue[QUEUE_SIZE];
+    char byte;
     msg_init_queue(msg_queue, QUEUE_SIZE);
     while (1) {
         msg_receive(&msg);
-        char character;
         printf("RX: ");
-        do {
-            character = (int)ringbuffer_get_one(&(uart_buffer.rx_buf));
-            uart_buffer.count -= 1;
-            if (character >= ' ' && character <= '~') {
-                printf("%c", character);
-            } else {
-                printf("x%02x", (unsigned char)character);
-            }
-        } while (uart_buffer.count > 0 && character != 0);
-        memset(uart_buffer.rx_mem, 0, UART_BUFSIZE); // clean residual buffer
+        if (ringbuffer_empty(&(uart_buffer.rx_buf)) == 0) {
+            do {
+                byte = (int)ringbuffer_get_one(&(uart_buffer.rx_buf));
+                uart_buffer.count -= 1;
+                if (byte >= ' ' && byte <= '~') {
+                    printf("%c", byte);
+                } else {
+                    printf("x%02x", (unsigned char)byte);
+                }
+            } while (uart_buffer.count > 0 && byte != 0);
+            memset(uart_buffer.rx_mem, 0, UART_BUFSIZE); // clean residual buffer
+        }
     }
     return NULL; // this should never be reached
 }
