@@ -1,0 +1,10 @@
+menu "ds18 for soil"
+# Set if the ds18 for soil is connectd
+config DS18_SOIL_CONNECTED
+    bool "Set if it's connected"
+    default y
+# Set the GPIO where it's connected
+config DS18_SOIL_GPIO
+    int "GPIO where the ds18 is attached"
+    default 0
+endmenu
