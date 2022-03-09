@@ -1,9 +1,9 @@
 var group__m4a_firmware =
 [
     [ "main.h", "firmware_2include_2main_8h.html", null ],
-    [ "at_uart.h", "at__uart_8h.html", null ],
-    [ "serialization.h", "firmware_2libs_2serialization_2include_2serialization_8h.html", null ],
     [ "ds18_sensor.h", "ds18__sensor_8h.html", null ],
     [ "moisture_sensor.h", "moisture__sensor_8h.html", null ],
+    [ "at_uart.h", "at__uart_8h.html", null ],
+    [ "serialization.h", "firmware_2sys_2serialization_2include_2serialization_8h.html", null ],
     [ "system_init.h", "system__init_8h.html", null ]
 ];

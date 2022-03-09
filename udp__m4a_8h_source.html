@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: firmware/libs/udp_m4a/include/udp_m4a.h Source File</title>
+    <title>Mesh4all: firmware/sys/udp_m4a/include/udp_m4a.h Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -128,24 +128,22 @@ $(document).ready(function(){initNavTree('udp__m4a_8h_source.html',''); initResi
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define UDP_M4A_H</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   <span class="keywordtype">char</span>* port;                                   </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;   void (*callback) (uint8_t*, <span class="keywordtype">size_t</span> len);      </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <a class="code" href="structudpf__payload.html">udpf_payload</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">int</span> <a class="code" href="udp__m4a_8h.html#a3e54c501a23f62be7f12c4905cf06343">udp_server</a>(<a class="code" href="structudpf__payload.html">udpf_payload</a>* argv);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">int</span> <a class="code" href="udp__m4a_8h.html#aa3493cbef904175c2868a533394fbca8">udp_send</a>(<span class="keywordtype">int</span>* port, <span class="keywordtype">char</span>* address, uint8_t* message, <span class="keywordtype">size_t</span>* payload_len);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UDP_M4A_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">char</span> *port;                              </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    void (*callback)(uint8_t *, <span class="keywordtype">size_t</span> len); </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;} <a class="code" href="structudpf__payload.html">udpf_payload</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">int</span> <a class="code" href="udp__m4a_8h.html#a3e54c501a23f62be7f12c4905cf06343">udp_server</a>(<a class="code" href="structudpf__payload.html">udpf_payload</a> *argv);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">int</span> <a class="code" href="udp__m4a_8h.html#aa3493cbef904175c2868a533394fbca8">udp_send</a>(<span class="keywordtype">int</span> *port, <span class="keywordtype">char</span> *address, uint8_t *message, <span class="keywordtype">size_t</span> *payload_len);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UDP_M4A_H */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="audp__m4a_8h_html_aa3493cbef904175c2868a533394fbca8"><div class="ttname"><a href="udp__m4a_8h.html#aa3493cbef904175c2868a533394fbca8">udp_send</a></div><div class="ttdeci">int udp_send(int *port, char *address, uint8_t *message, size_t *payload_len)</div><div class="ttdoc">this function is used for send the sensors values</div></div>
@@ -156,8 +154,8 @@ $(document).ready(function(){initNavTree('udp__m4a_8h_source.html',''); initResi
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_143310b10844d45d10f826c3594eb4ea.html">libs</a></li><li class="navelem"><a class="el" href="dir_cd696b6c5f8c144b492925ef265f0c9b.html">udp_m4a</a></li><li class="navelem"><a class="el" href="dir_847a4cd49c95d150d1d7e4f5b8d4771a.html">include</a></li><li class="navelem"><a class="el" href="udp__m4a_8h.html">udp_m4a.h</a></li>
-    <li class="footer">Generated on Wed Mar 9 2022 18:38:50 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_38d8769b7982536a1592307dd4ec982e.html">sys</a></li><li class="navelem"><a class="el" href="dir_f3db8da1467cffd70fdec3e4a91fdf03.html">udp_m4a</a></li><li class="navelem"><a class="el" href="dir_c0232b582e66b1b11b358274a558b6bd.html">include</a></li><li class="navelem"><a class="el" href="udp__m4a_8h.html">udp_m4a.h</a></li>
+    <li class="footer">Generated on Wed Mar 9 2022 19:14:02 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: firmware/libs/serialization/include/serialization.h Source File</title>
+    <title>Mesh4all: firmware/sys/serialization/include/serialization.h Source File</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('firmware_2libs_2serialization_2include_2serialization_8h_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('firmware_2sys_2serialization_2include_2serialization_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('firmware_2libs_2serialization_2include
 <div class="title">serialization.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="firmware_2libs_2serialization_2include_2serialization_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="firmware_2sys_2serialization_2include_2serialization_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2022 Mesh4all &lt;mesh4all.org&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -130,39 +130,37 @@ $(document).ready(function(){initNavTree('firmware_2libs_2serialization_2include
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structsensor__data.html">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5">   42</a></span>&#160;    int16_t <a class="code" href="structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5">temperature</a>;   </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structsensor__data.html#afe48aa5064277cfa7ce264a226ab854b">   43</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structsensor__data.html#afe48aa5064277cfa7ce264a226ab854b">soil_moisture</a>;          </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <a class="code" href="structsensor__data.html">sensor_data</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2libs_2serialization_2include_2serialization_8h.html#a2aa958140eda2473bea4a6a04b927ac0">cbor_decode_message</a>(uint8_t* buffer, <a class="code" href="structsensor__data.html">sensor_data</a>* data, <span class="keywordtype">size_t</span> length);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2libs_2serialization_2include_2serialization_8h.html#a66ba11ef6fbd93716343388aacf9dabd">cbor_enconde_message</a>(<a class="code" href="structsensor__data.html">sensor_data</a>* data, uint8_t* output, <span class="keywordtype">size_t</span>* len_output);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SERIALIZATION_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structsensor__data.html">   40</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5">   41</a></span>&#160;    int16_t <a class="code" href="structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5">temperature</a>; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structsensor__data.html#afe48aa5064277cfa7ce264a226ab854b">   42</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structsensor__data.html#afe48aa5064277cfa7ce264a226ab854b">soil_moisture</a>;   </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <a class="code" href="structsensor__data.html">sensor_data</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2serialization_2include_2serialization_8h.html#a2aa958140eda2473bea4a6a04b927ac0">cbor_decode_message</a>(uint8_t *buffer, <a class="code" href="structsensor__data.html">sensor_data</a> *data, <span class="keywordtype">size_t</span> length);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2serialization_2include_2serialization_8h.html#a66ba11ef6fbd93716343388aacf9dabd">cbor_enconde_message</a>(<a class="code" href="structsensor__data.html">sensor_data</a> *data, uint8_t *output, <span class="keywordtype">size_t</span> *len_output);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SERIALIZATION_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructsensor__data_html"><div class="ttname"><a href="structsensor__data.html">sensor_data</a></div><div class="ttdoc">this is an struct used for save the data of the sensor.</div><div class="ttdef"><b>Definition:</b> <a href="firmware_2libs_2serialization_2include_2serialization_8h_source.html#l00041">serialization.h:41</a></div></div>
-<div class="ttc" id="astructsensor__data_html_a7b6559ad24e08993bcdb8d89b02d02b5"><div class="ttname"><a href="structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5">sensor_data::temperature</a></div><div class="ttdeci">int16_t temperature</div><div class="ttdef"><b>Definition:</b> <a href="firmware_2libs_2serialization_2include_2serialization_8h_source.html#l00042">serialization.h:42</a></div></div>
-<div class="ttc" id="afirmware_2libs_2serialization_2include_2serialization_8h_html_a66ba11ef6fbd93716343388aacf9dabd"><div class="ttname"><a href="firmware_2libs_2serialization_2include_2serialization_8h.html#a66ba11ef6fbd93716343388aacf9dabd">cbor_enconde_message</a></div><div class="ttdeci">int cbor_enconde_message(sensor_data *data, uint8_t *output, size_t *len_output)</div><div class="ttdoc">This function decode message before to send in udp client.</div></div>
-<div class="ttc" id="astructsensor__data_html_afe48aa5064277cfa7ce264a226ab854b"><div class="ttname"><a href="structsensor__data.html#afe48aa5064277cfa7ce264a226ab854b">sensor_data::soil_moisture</a></div><div class="ttdeci">int soil_moisture</div><div class="ttdef"><b>Definition:</b> <a href="firmware_2libs_2serialization_2include_2serialization_8h_source.html#l00043">serialization.h:43</a></div></div>
-<div class="ttc" id="afirmware_2libs_2serialization_2include_2serialization_8h_html_a2aa958140eda2473bea4a6a04b927ac0"><div class="ttname"><a href="firmware_2libs_2serialization_2include_2serialization_8h.html#a2aa958140eda2473bea4a6a04b927ac0">cbor_decode_message</a></div><div class="ttdeci">int cbor_decode_message(uint8_t *buffer, sensor_data *data, size_t length)</div><div class="ttdoc">This function decode message to arrive since udp.</div></div>
+<div class="ttc" id="afirmware_2sys_2serialization_2include_2serialization_8h_html_a2aa958140eda2473bea4a6a04b927ac0"><div class="ttname"><a href="firmware_2sys_2serialization_2include_2serialization_8h.html#a2aa958140eda2473bea4a6a04b927ac0">cbor_decode_message</a></div><div class="ttdeci">int cbor_decode_message(uint8_t *buffer, sensor_data *data, size_t length)</div><div class="ttdoc">This function decode message to arrive since udp.</div></div>
+<div class="ttc" id="astructsensor__data_html"><div class="ttname"><a href="structsensor__data.html">sensor_data</a></div><div class="ttdoc">this is an struct used for save the data of the sensor.</div><div class="ttdef"><b>Definition:</b> <a href="firmware_2sys_2serialization_2include_2serialization_8h_source.html#l00040">serialization.h:40</a></div></div>
+<div class="ttc" id="astructsensor__data_html_a7b6559ad24e08993bcdb8d89b02d02b5"><div class="ttname"><a href="structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5">sensor_data::temperature</a></div><div class="ttdeci">int16_t temperature</div><div class="ttdef"><b>Definition:</b> <a href="firmware_2sys_2serialization_2include_2serialization_8h_source.html#l00041">serialization.h:41</a></div></div>
+<div class="ttc" id="astructsensor__data_html_afe48aa5064277cfa7ce264a226ab854b"><div class="ttname"><a href="structsensor__data.html#afe48aa5064277cfa7ce264a226ab854b">sensor_data::soil_moisture</a></div><div class="ttdeci">int soil_moisture</div><div class="ttdef"><b>Definition:</b> <a href="firmware_2sys_2serialization_2include_2serialization_8h_source.html#l00042">serialization.h:42</a></div></div>
+<div class="ttc" id="afirmware_2sys_2serialization_2include_2serialization_8h_html_a66ba11ef6fbd93716343388aacf9dabd"><div class="ttname"><a href="firmware_2sys_2serialization_2include_2serialization_8h.html#a66ba11ef6fbd93716343388aacf9dabd">cbor_enconde_message</a></div><div class="ttdeci">int cbor_enconde_message(sensor_data *data, uint8_t *output, size_t *len_output)</div><div class="ttdoc">This function decode message before to send in udp client.</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_143310b10844d45d10f826c3594eb4ea.html">libs</a></li><li class="navelem"><a class="el" href="dir_6dbd80820c16be6efed41df78799f0d9.html">serialization</a></li><li class="navelem"><a class="el" href="dir_d3c7cf2a10946766128fe438953cb370.html">include</a></li><li class="navelem"><a class="el" href="firmware_2libs_2serialization_2include_2serialization_8h.html">serialization.h</a></li>
-    <li class="footer">Generated on Wed Mar 9 2022 18:38:50 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_38d8769b7982536a1592307dd4ec982e.html">sys</a></li><li class="navelem"><a class="el" href="dir_bda79e4367ee96b38d88fe77dfd73e41.html">serialization</a></li><li class="navelem"><a class="el" href="dir_095eccb8ae3c4cd64ad7e379bcffbc6e.html">include</a></li><li class="navelem"><a class="el" href="firmware_2sys_2serialization_2include_2serialization_8h.html">serialization.h</a></li>
+    <li class="footer">Generated on Wed Mar 9 2022 19:14:02 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

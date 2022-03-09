@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"m4a-24g_2include_2board_8h.html#a2378d153069150591eb7fa2082f573d9":[5,0,0,0,0,0,21],
 "m4a-24g_2include_2board_8h.html#a3fc522fda449d6edde717d6a857429cf":[5,0,0,0,0,0,27],
 "m4a-24g_2include_2board_8h.html#a555f5ce4ea27f15da0ed318fd79704ee":[5,0,0,0,0,0,14],
 "m4a-24g_2include_2board_8h.html#a5e48bb301c732e044b08f336fb851d5e":[5,0,0,0,0,0,34],
@@ -213,10 +212,10 @@ var NAVTREEINDEX1 =
 "md_tests_README.html":[1],
 "md_wifi-subsys_README.html":[2],
 "modules.html":[3],
-"moisture__sensor_8h.html":[5,0,2,2,1,0,0],
-"moisture__sensor_8h.html#a5aecb8c061d0c67614d8a0805b627dca":[5,0,2,2,1,0,0,1],
-"moisture__sensor_8h.html#ad3991965f75a3260bf8365f71d7a43ca":[5,0,2,2,1,0,0,0],
-"moisture__sensor_8h_source.html":[5,0,2,2,1,0,0],
+"moisture__sensor_8h.html":[5,0,2,1,1,0,0],
+"moisture__sensor_8h.html#a5aecb8c061d0c67614d8a0805b627dca":[5,0,2,1,1,0,0,1],
+"moisture__sensor_8h.html#ad3991965f75a3260bf8365f71d7a43ca":[5,0,2,1,1,0,0,0],
+"moisture__sensor_8h_source.html":[5,0,2,1,1,0,0],
 "pages.html":[],
 "protocol__sntp_8h_source.html":[5,0,4,0,1,0,2],
 "slipdev__params_8h.html":[5,0,1,0,0,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "structsensor__data.html":[4,0,5],
 "structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5":[4,0,5,1],
 "structsensor__data.html#afe48aa5064277cfa7ce264a226ab854b":[4,0,5,0],
-"structsome__struct__var.html":[4,0,6]
+"structsome__struct__var.html":[4,0,6],
+"structsome__struct__var.html#a41acfabcd0c9353b8dd139b162d69ef4":[4,0,6,0]
 };
