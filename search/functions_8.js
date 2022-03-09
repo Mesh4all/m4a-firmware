@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['select_5fwifi_5fchannel_291',['select_wifi_channel',['../group__wifi-subsys__components.html#gaefe0381809807f7142fb53f5e6ddbd0f',1,'wifi.h']]],
-  ['set_5fap_5fmax_5fconnection_292',['set_ap_max_connection',['../group__wifi-subsys__components.html#ga6fb2514844e644b2be3ec4dc01b8051d',1,'wifi.h']]],
-  ['set_5fdefault_5fcredentials_293',['set_default_credentials',['../group__wifi-subsys__components.html#gabd28cdcca6d5d5a2428f7d64187b71bd',1,'wifi.h']]],
-  ['set_5fwifi_5fmode_294',['set_wifi_mode',['../group__wifi-subsys__components.html#ga62dd61f1998b38a9290d07e1fd1f4736',1,'wifi.h']]],
-  ['set_5fwired_5fipv6_295',['set_wired_ipv6',['../system__init_8h.html#aa774b615bac7b8a859ff5c671841781e',1,'system_init.h']]]
+  ['nvs_5fget_5fstring_316',['nvs_get_string',['../group__storage.html#gad9acfc7695a5d67f4b995f244c169c03',1,'storage.h']]],
+  ['nvs_5fget_5fuint32_317',['nvs_get_uint32',['../group__storage.html#ga450b450cae2b20e4c099164f4bb53464',1,'storage.h']]],
+  ['nvs_5fget_5fuint8_318',['nvs_get_uint8',['../group__storage.html#ga058d322184274aefd0dd9285e4516f76',1,'storage.h']]],
+  ['nvs_5finit_319',['nvs_init',['../group__storage.html#gab03b911dd4296933c03792401419e762',1,'storage.h']]],
+  ['nvs_5fset_5fstring_320',['nvs_set_string',['../group__storage.html#gacc1e5ee27d1df131eb765a4b35f7d926',1,'storage.h']]],
+  ['nvs_5fset_5fuint32_321',['nvs_set_uint32',['../group__storage.html#ga89b77bc562e8639b91af8246c8f3748b',1,'storage.h']]],
+  ['nvs_5fset_5fuint8_322',['nvs_set_uint8',['../group__storage.html#gabe8255d291f1ac4a4ebb2c032e1c886c',1,'storage.h']]]
 ];

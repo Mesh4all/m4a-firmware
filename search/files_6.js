@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['serialization_2eh_253',['serialization.h',['../firmware_2libs_2serialization_2include_2serialization_8h.html',1,'']]],
-  ['slipdev_5fparams_2eh_254',['slipdev_params.h',['../slipdev__params_8h.html',1,'']]],
-  ['system_5finit_2eh_255',['system_init.h',['../system__init_8h.html',1,'']]]
+  ['periph_5fconf_2eh_280',['periph_conf.h',['../m4a-24g_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../m4a-wroom_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../m4a-wrover_2include_2periph__conf_8h.html',1,'(Global Namespace)']]]
 ];
