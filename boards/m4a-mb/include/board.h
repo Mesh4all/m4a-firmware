@@ -21,11 +21,22 @@
 #include "cpu.h"
 #include "periph_conf.h"
 #include "periph_cpu.h"
+#include "periph/cpuid.h"
+#include "uniqueid.h"
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
+
+/**
+  * @brief  Get the CPU unique ID of this platform
+  * This function gets base cpu address using cpuid_get
+  *
+  * @param  id  pointer to char array with CPUID_LEN size.
+  *
+  */
+#define CPUID(id)  cpuid_get(id);
 
 /**
  * @name   xTimer configuration

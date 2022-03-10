@@ -1,3 +1,24 @@
+/*
+ * Copyright (c) 2022 Mesh4all <mesh4all.org>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @brief   this file init all peripherals and necessary dependencies for his correct work.
+ *
+ * @author  xkevin190 <kevinvelasco190@gmail.com>
+ */
 #include "stdio.h"
 #include "ds18_sensor.h"
 #include "moisture_sensor.h"
@@ -18,24 +39,24 @@
 #endif
 
 #ifdef DS18B20_PIN
-#define DS18_PIN  DS18B20_PIN
+#define DS18_PIN DS18B20_PIN
 #else
-#define DS18_PIN  0  /* REMOVE THIS SOON. is recommended add DS18B20 PIN since the settings of your board,
-                         this variable is for avoid compilations error in other boards. */
+#define DS18_PIN                                                                                   \
+    0 /* REMOVE THIS SOON. is recommended add DS18B20 PIN since the settings of your board,        \
+          this variable is for avoid compilations error in other boards. */
 #endif
 
-#define SERVER_BUFFER_SIZE      (100)
+#define SERVER_BUFFER_SIZE (100)
 
 uint8_t buffer[SERVER_BUFFER_SIZE];
 
 char get_sensor_event[THREAD_STACKSIZE_DEFAULT];
 
-void *init_loop (void *args)
-{
+void *init_loop(void *args) {
     int port = 3000;
     char address[30] = "::1";
     sensor_data payload;
-    available_sensors_t* available_periperals = (available_sensors_t*)args;
+    available_sensors_t *available_periperals = (available_sensors_t *)args;
     while (1) {
         if (available_periperals->moisture_sensor_is_available != 0) {
             if (get_moisture_value(&payload.soil_moisture) < 0) {
@@ -52,44 +73,40 @@ void *init_loop (void *args)
 
         if (available_periperals->ds18_is_available != 0 ||
             available_periperals->moisture_sensor_is_available != 0) {
-             printf("the soil_moisture is %i and temperature is %i \n",
-                            payload.soil_moisture, payload.temperature);
-             size_t len_cbor = sizeof(sensor_data);
-             if (cbor_enconde_message(&payload, buffer, &len_cbor) < 0) {
-                 printf("error to encode payload with cbor");
-             }
-             else {
+            printf("the soil_moisture is %i and temperature is %i \n", payload.soil_moisture,
+                   payload.temperature);
+            size_t len_cbor = sizeof(sensor_data);
+            if (cbor_enconde_message(&payload, buffer, &len_cbor) < 0) {
+                printf("error to encode payload with cbor");
+            } else {
                 udp_send(&port, address, buffer, &len_cbor);
-             }
+            }
         }
         xtimer_sleep(60);
     }
 }
 
-int set_wired_ipv6 (void)
-{
-    uint8_t mac[6] = {0x42, 0x55, 0xbb, 0xfe, 0x17, 0x2 };
-    #ifdef CPU_ESP32
+int set_wired_ipv6(void) {
+    uint8_t mac[6] = {0x42, 0x55, 0xbb, 0xfe, 0x17, 0x2};
+#ifdef CPU_ESP32
     if (esp_base_mac_addr_get(mac) < 0) {
         printf("error with the mac \n");
         return -1;
     }
-    #endif
+#endif
 
     gnrc_netif_t *wifi_iface = gnrc_netif_get_by_pid(SLIP_IFACE);
-    if ( wifi_iface == NULL) {
+    if (wifi_iface == NULL) {
         printf("Error: ESP32 WiFi STA interface doesn't exists.\n");
         return -1;
     }
 
     ipv6_addr_t addr = {
-        .u8 = { 0xff, 0x02, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,mac[2], mac[3], mac[4], mac[5]}
-    };
+        .u8 = {0xff, 0x02, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, mac[2], mac[3], mac[4], mac[5]}};
 
     /* Add node IPv6 global address */
-    if (gnrc_netif_ipv6_addr_add(wifi_iface, &addr,
-                                 64,
-                                 GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID) < 0) {
+    if (gnrc_netif_ipv6_addr_add(wifi_iface, &addr, 64, GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID) <
+        0) {
         printf("Error: Couldn't add IPv6 global address\n");
         return -1;
     }
@@ -97,11 +114,10 @@ int set_wired_ipv6 (void)
     return 0;
 }
 
-int init_initial_params (void)
-{
+int init_initial_params(void) {
     int16_t temp = 0;
     int soil_moisture = 0;
-    available_sensors_t available ={
+    available_sensors_t available = {
         .ds18_is_available = 1,
         .moisture_sensor_is_available = 1,
     };
@@ -134,7 +150,8 @@ int init_initial_params (void)
     }
 
     if (thread_create(get_sensor_event, sizeof(get_sensor_event), THREAD_PRIORITY_MAIN - 1,
-                    THREAD_CREATE_STACKTEST, *init_loop, &available, "Sensors event") <= KERNEL_PID_UNDEF ) {
+                      THREAD_CREATE_STACKTEST, *init_loop, &available,
+                      "Sensors event") <= KERNEL_PID_UNDEF) {
         printf("peripherals event loop could not init \n");
         return -1;
     }

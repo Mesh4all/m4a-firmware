@@ -19,8 +19,12 @@
 
 #ifndef BOARD_H
 #define BOARD_H
-
 #include <stdint.h>
+#include "cpu.h"
+#include "periph_conf.h"
+#include "periph_cpu.h"
+#include "periph/cpuid.h"
+#include "uniqueid.h"
 
 /**
  * @name    Button pin definitions
@@ -76,6 +80,14 @@
 /* include common board definitions as last step */
 #include "board_common.h"
 
+/**
+  * @brief  Get the CPU unique ID of this platform
+  * This function gets base cpu address using cpuid_get
+  *
+  * @param  id  pointer to char array with CPUID_LEN size.
+  *
+  */
+#define CPUID(id)  cpuid_get(id);
 #ifdef __cplusplus
 extern "C" {
 #endif

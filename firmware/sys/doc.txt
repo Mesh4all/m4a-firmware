@@ -1,0 +1,11 @@
+/**
+@defgroup sys
+
+# What goes here?
+Specific documentation for our reference sys;
+In the next module you can find:
+
+# network
+In this module you can get cpuid address in format IPV6.
+
+*/

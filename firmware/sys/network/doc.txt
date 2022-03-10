@@ -1,0 +1,7 @@
+/**
+ @defgroup    network
+ @ingroup     sys
+
+# What goes here?
+Specific documentation for our reference network;
+*/
