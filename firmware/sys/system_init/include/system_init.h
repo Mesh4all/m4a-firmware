@@ -20,7 +20,7 @@
  * @file
  * @brief      this file init all peripherals and necessary dependencies for his correct work.
  *
- * @author      xkevin190 <kevinvelasco190@gmail.com>
+ * @author     xkevin190 <kevinvelasco190@gmail.com>
  *
  */
 #ifndef SYSTEM_INIT_H
