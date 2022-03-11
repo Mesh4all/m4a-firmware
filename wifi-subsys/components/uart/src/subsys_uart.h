@@ -18,7 +18,6 @@
  *
  * @brief       uart module
  *
- * @copyright   Copyright (c) 2021 Mesh for all
  * @author      xkevin190 <kevinvelasco193@gmail.com>
  *
  */

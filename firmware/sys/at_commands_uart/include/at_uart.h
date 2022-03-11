@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 /**
- * @brief       AT COMMAND HANDLER
+ * @ingroup     m4a-firmware
+ * @{
+ * @file
+ * @brief       AT command handler
  *
  * @author      RocioRojas <rociorojas391@gmail.com>
  *
@@ -56,6 +59,7 @@ extern "C" {
     WIFI_RST,      /*!< RESET WIFI */
     ATH,           /*!< START AT */
     ATH0,          /*!< FINISH AT */
+    AT,            /*!< AT CHECK*/
     MAX_AT,        /*!< MAX AT COMMANDS */
 };
 /**

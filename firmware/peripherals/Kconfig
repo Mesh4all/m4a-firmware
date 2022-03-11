@@ -1,0 +1,4 @@
+menu "Peripherals"
+rsource "ds18_sensor/Kconfig"
+rsource "moisture_sensor/Kconfig"
+endmenu
