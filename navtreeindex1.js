@@ -1,5 +1,17 @@
 var NAVTREEINDEX1 =
 {
+"httpsclient_8h_source.html":[5,0,4,0,1,0,0],
+"icmp__ping_8h_source.html":[5,0,4,0,1,0,1],
+"index.html":[],
+"index.html":[0],
+"index.html#autotoc_md25":[0],
+"m4a-24g_2include_2board_8h.html":[5,0,0,0,0,0],
+"m4a-24g_2include_2board_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba4b6858ed945b6f53ed54233eae52e95b":[5,0,0,0,0,0,35],
+"m4a-24g_2include_2board_8h.html#a06fc87d81c62e9abb8790b6e5713c55baff881ea099f99d8f1c19adb02a51e7a3":[5,0,0,0,0,0,36],
+"m4a-24g_2include_2board_8h.html#a0da89da11cd4268db8298bae9fbe1d85":[5,0,0,0,0,0,22],
+"m4a-24g_2include_2board_8h.html#a1e48dc02333bfc2e6ad3e5bd466eecd4":[5,0,0,0,0,0,26],
+"m4a-24g_2include_2board_8h.html#a2364f376947112a08b6c534235a8f4fa":[5,0,0,0,0,0,30],
+"m4a-24g_2include_2board_8h.html#a2378d153069150591eb7fa2082f573d9":[5,0,0,0,0,0,21],
 "m4a-24g_2include_2board_8h.html#a3fc522fda449d6edde717d6a857429cf":[5,0,0,0,0,0,27],
 "m4a-24g_2include_2board_8h.html#a555f5ce4ea27f15da0ed318fd79704ee":[5,0,0,0,0,0,14],
 "m4a-24g_2include_2board_8h.html#a5e48bb301c732e044b08f336fb851d5e":[5,0,0,0,0,0,34],
@@ -221,7 +233,6 @@ var NAVTREEINDEX1 =
 "slipdev__params_8h.html":[5,0,1,0,0,0],
 "slipdev__params_8h.html#a632e2c0273de70d7111734c24ddd2ae9":[5,0,1,0,0,0,0],
 "slipdev__params_8h_source.html":[5,0,1,0,0,0],
-"storage_8h_source.html":[5,0,4,0,2,0,0],
 "structat__list__t.html":[4,0,0],
 "structat__list__t.html#a3693aaf27c25d0ac59fe58d4ed6af3be":[4,0,0,2],
 "structat__list__t.html#a414c845304cc923aa1adf6601b9e0b2b":[4,0,0,3],
@@ -238,16 +249,5 @@ var NAVTREEINDEX1 =
 "structavailable__sensors__t.html#a8f613d74e9755d40cc96d71dd85213c5":[4,0,2,0],
 "structhttp__request__t.html":[4,0,3],
 "structhttp__request__t.html#a7fefa3ee0e4eeadc81726ff076bded96":[4,0,3,3],
-"structhttp__request__t.html#ac890b2253f17bbbe698cab1aa0c18ecb":[4,0,3,1],
-"structhttp__request__t.html#adf8e2dd4010ba498cffd3bb9c7fd1bab":[4,0,3,2],
-"structhttp__request__t.html#ae588222819f30f56bd2ecdcfb09eb4cc":[4,0,3,0],
-"structhttp__response__t.html":[4,0,4],
-"structhttp__response__t.html#a9e143e46e6c656e4498ae8bc45add071":[4,0,4,1],
-"structhttp__response__t.html#ac4e6ffafc7bd328ed43fb2b959731ff4":[4,0,4,2],
-"structhttp__response__t.html#ae5365297015c6a53f7527721adbf4e1e":[4,0,4,0],
-"structsensor__data.html":[4,0,5],
-"structsensor__data.html#a7b6559ad24e08993bcdb8d89b02d02b5":[4,0,5,1],
-"structsensor__data.html#afe48aa5064277cfa7ce264a226ab854b":[4,0,5,0],
-"structsome__struct__var.html":[4,0,6],
-"structsome__struct__var.html#a41acfabcd0c9353b8dd139b162d69ef4":[4,0,6,0]
+"structhttp__request__t.html#ac890b2253f17bbbe698cab1aa0c18ecb":[4,0,3,1]
 };

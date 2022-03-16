@@ -6,8 +6,17 @@ var searchData=
   ['m4a_20reference_20firmware_132',['m4a reference firmware',['../index.html',1,'']]],
   ['main_2eh_133',['main.h',['../examples_2esp32-wrover-app_2include_2main_8h.html',1,'(Global Namespace)'],['../firmware_2include_2main_8h.html',1,'(Global Namespace)']]],
   ['max_5fat_134',['MAX_AT',['../at__uart_8h.html#af14de5236b2168340b04ef3db3829217af7e982cd2945353cd5b40df35c862caf',1,'at_uart.h']]],
-  ['moisture_5fsensor_2eh_135',['moisture_sensor.h',['../moisture__sensor_8h.html',1,'']]],
-  ['moisture_5fsensor_5fis_5favailable_136',['moisture_sensor_is_available',['../structavailable__sensors__t.html#a31a0020452dd389c6c6700ebeeb4c4dc',1,'available_sensors_t']]],
-  ['ms_5fhw360_5fpin_137',['MS_HW360_PIN',['../m4a-wroom_2include_2board_8h.html#a6dfbc94c211502fed434f0b56a890c23',1,'MS_HW360_PIN():&#160;board.h'],['../m4a-wrover_2include_2board_8h.html#a6dfbc94c211502fed434f0b56a890c23',1,'MS_HW360_PIN():&#160;board.h']]],
-  ['m4a_2dwrover_2dapp_138',['M4a-wrover-app',['../group__wrover-app.html',1,'']]]
+  ['max_5fsize_5fstorage_135',['MAX_SIZE_STORAGE',['../group__m4a-firmware.html#gaf6ba1f9f4063e60617dab3349aaba7c9',1,'storage.h']]],
+  ['moisture_5fsensor_2eh_136',['moisture_sensor.h',['../moisture__sensor_8h.html',1,'']]],
+  ['moisture_5fsensor_5fis_5favailable_137',['moisture_sensor_is_available',['../structavailable__sensors__t.html#a31a0020452dd389c6c6700ebeeb4c4dc',1,'available_sensors_t']]],
+  ['ms_5fhw360_5fpin_138',['MS_HW360_PIN',['../m4a-wroom_2include_2board_8h.html#a6dfbc94c211502fed434f0b56a890c23',1,'MS_HW360_PIN():&#160;board.h'],['../m4a-wrover_2include_2board_8h.html#a6dfbc94c211502fed434f0b56a890c23',1,'MS_HW360_PIN():&#160;board.h']]],
+  ['mtd_5ferase_5fflashpage_139',['mtd_erase_flashpage',['../group__m4a-firmware.html#gac112225f440598e3c1a8297fa3909366',1,'storage.h']]],
+  ['mtd_5fget_5fstring_5flen_140',['mtd_get_string_len',['../group__m4a-firmware.html#gaec3e7e482208da868fc19270db0b0f21',1,'storage.h']]],
+  ['mtd_5fread_5fstring_141',['mtd_read_string',['../group__m4a-firmware.html#ga649b3998bcdac66d32fb29962da6822b',1,'storage.h']]],
+  ['mtd_5fread_5fu8_142',['mtd_read_u8',['../group__m4a-firmware.html#ga9e74c490990fc259d0bd449c8e9f097a',1,'storage.h']]],
+  ['mtd_5fsave_143',['mtd_save',['../group__m4a-firmware.html#gae4d6ee70023524b0324b3fd3a4e9f701',1,'storage.h']]],
+  ['mtd_5fstart_144',['mtd_start',['../group__m4a-firmware.html#ga6aa5dd4e1cac5278e5133b6a6bd76d5e',1,'storage.h']]],
+  ['mtd_5fwrite_5fstring_145',['mtd_write_string',['../group__m4a-firmware.html#ga5cbab32f90d7b8179b7c4182e87135f7',1,'storage.h']]],
+  ['mtd_5fwrite_5fuint8_146',['mtd_write_uint8',['../group__m4a-firmware.html#gabc92c4881252e20efaf2b73591a73649',1,'storage.h']]],
+  ['m4a_2dwrover_2dapp_147',['M4a-wrover-app',['../group__wrover-app.html',1,'']]]
 ];
