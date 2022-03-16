@@ -56,6 +56,7 @@ USEMODULE += udp_m4a
 USEMODULE += serialization
 USEMODULE += at_commands_uart
 USEMODULE += system_init
+USEMODULE += storage
 EXTERNAL_MODULE_DIRS += sys
 
 # Use UART_DEV(1) for slipdev as a default, baudrate by default is 115200
