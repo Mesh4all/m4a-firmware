@@ -17,8 +17,12 @@
 
 #ifndef BOARD_H
 #define BOARD_H
-
 #include <stdint.h>
+#include "cpu.h"
+#include "periph_conf.h"
+#include "periph_cpu.h"
+#include "periph/cpuid.h"
+#include "uniqueid.h"
 
 /**
  * @name    LED (on-board) configuration
@@ -89,18 +93,13 @@
 #include "board_common.h"
 
 /**
-  * @brief  Read base MAC address of the interface.
+  * @brief  Get the CPU unique ID of this platform
+  * This function gets base cpu address using cpuid_get
   *
-  * This function first get base MAC address using esp_base_mac_addr_get
-  * or reads base MAC address from BLK0 of EFUSE. Then set the MAC address
-  * of the interface including wifi station, wifi softap, bluetooth and ethernet.
+  * @param  id  pointer to char array with CPUID_LEN size.
   *
-  * @param  mac  MAC address of the interface, length: 6 bytes.
-  * @param  type  type of MAC address, 0:wifi station, 1:wifi softap, 2:bluetooth, 3:ethernet.
-  *
-  * @return ESP_OK on success
   */
-#define CPUID   esp_read_mac(uint8_t mac, int type);
+#define CPUID(id)  cpuid_get(id);
 
 #ifdef __cplusplus
 extern "C" {

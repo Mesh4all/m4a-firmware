@@ -1,0 +1,6 @@
+menu "network"
+    comment "Header using in unique cpuid address"
+    config HEADER_ADDRESS_ID
+        string "IPV6 HEADER"
+        default "2001:db8:"
+endmenu
