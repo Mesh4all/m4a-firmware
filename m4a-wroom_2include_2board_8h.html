@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('m4a-wroom_2include_2board_8h.html','')
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">board.h File Reference<div class="ingroups"><a class="el" href="group__boards.html">Supported Boards</a> &raquo; <a class="el" href="group__boards__m4a-wroom.html">Boards_m4a-wroom</a></div></div>  </div>
@@ -114,13 +115,18 @@ $(document).ready(function(){initNavTree('m4a-wroom_2include_2board_8h.html','')
 <p>Board specific definitions for m4a-wroom board.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;cpu.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="m4a-wroom_2include_2periph__conf_8h_source.html">periph_conf.h</a>&quot;</code><br />
+<code>#include &quot;periph_cpu.h&quot;</code><br />
+<code>#include &quot;periph/cpuid.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="uniqueid_8h_source.html">uniqueid.h</a>&quot;</code><br />
 <code>#include &quot;board_common.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="m4a-wroom_2include_2board_8h__incl.svg" width="286" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="m4a-wroom_2include_2board_8h__incl.svg" width="816" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -134,6 +140,12 @@ $(document).ready(function(){initNavTree('m4a-wroom_2include_2board_8h.html','')
 </div>
 <p><a href="m4a-wroom_2include_2board_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a5cbb30009266fcb97959001bd91f9a8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="m4a-wroom_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e">CPUID</a>(id)&#160;&#160;&#160;cpuid_get(id);</td></tr>
+<tr class="memdesc:a5cbb30009266fcb97959001bd91f9a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the CPU unique ID of this platform This function gets base cpu address using cpuid_get.  <a href="m4a-wroom_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e">More...</a><br /></td></tr>
+<tr class="separator:a5cbb30009266fcb97959001bd91f9a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a41a81eeaf788e33d8bb29f939730ecec"><td class="memItemLeft" align="right" valign="top"><a id="a41a81eeaf788e33d8bb29f939730ecec"></a>
@@ -189,7 +201,7 @@ Eduardo Azócar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'
 </div><div class="memdoc">
 <p>Default interrupt flank definition for the button </p>
 
-<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00034">34</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00038">38</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
 
 </div>
 </div>
@@ -206,7 +218,7 @@ Eduardo Azócar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'
 </div><div class="memdoc">
 <p>Default button mode </p>
 
-<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00031">31</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00035">35</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
 
 </div>
 </div>
@@ -223,7 +235,7 @@ Eduardo Azócar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'
 </div><div class="memdoc">
 <p>Default button pin definition </p>
 
-<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00030">30</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00034">34</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
 
 </div>
 </div>
@@ -240,7 +252,35 @@ Eduardo Azócar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'
 </div><div class="memdoc">
 <p>Compatibility with previous versions </p>
 
-<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00037">37</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00041">41</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+<a id="a5cbb30009266fcb97959001bd91f9a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cbb30009266fcb97959001bd91f9a8e">&#9670;&nbsp;</a></span>CPUID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CPUID</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">id</td><td>)</td>
+          <td>&#160;&#160;&#160;cpuid_get(id);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the CPU unique ID of this platform This function gets base cpu address using cpuid_get. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>pointer to char array with CPUID_LEN size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00090">90</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
 
 </div>
 </div>
@@ -257,7 +297,7 @@ Eduardo Azócar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'
 </div><div class="memdoc">
 <p>DS18 pin mode_input </p>
 
-<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00059">59</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00063">63</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
 
 </div>
 </div>
@@ -274,7 +314,7 @@ Eduardo Azócar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'
 </div><div class="memdoc">
 <p>DS18 pin mode_out </p>
 
-<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00055">55</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00059">59</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
 
 </div>
 </div>
@@ -293,7 +333,7 @@ Eduardo Azócar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'
 <p>Default DS18B20 GPIO pin definition to get ds18 required params. </p>
 <p>DS18 pin definition </p>
 
-<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00051">51</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00055">55</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
 
 </div>
 </div>
@@ -312,7 +352,7 @@ Eduardo Azócar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'
 <p>Default Soil Moisture Analog Sensor GPIO pin definition. </p>
 <p>Default GPIO pin definition </p>
 
-<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00073">73</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="m4a-wroom_2include_2board_8h_source.html#l00077">77</a> of file <a class="el" href="m4a-wroom_2include_2board_8h_source.html">board.h</a>.</p>
 
 </div>
 </div>
@@ -324,7 +364,7 @@ Eduardo Azócar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_5d116609a4b7e30534a4a497e7279266.html">m4a-wroom</a></li><li class="navelem"><a class="el" href="dir_f9d47a5855db3eded99fafd85acec377.html">include</a></li><li class="navelem"><a class="el" href="m4a-wroom_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Mar 16 2022 16:07:01 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Mar 16 2022 21:16:53 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

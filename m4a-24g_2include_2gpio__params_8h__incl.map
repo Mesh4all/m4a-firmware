@@ -1,9 +1,13 @@
 <map id="boards/m4a&#45;24g/include/gpio_params.h" name="boards/m4a&#45;24g/include/gpio_params.h">
-<area shape="rect" id="node1" title="Board specific configuration of direct mapped GPIOs." alt="" coords="98,5,313,52"/>
-<area shape="rect" id="node2" href="$m4a-24g_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;24G board." alt="" coords="100,100,183,129"/>
-<area shape="rect" id="node7" title=" " alt="" coords="207,100,332,129"/>
+<area shape="rect" id="node1" title="Board specific configuration of direct mapped GPIOs." alt="" coords="222,5,437,52"/>
+<area shape="rect" id="node2" href="$m4a-24g_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;24G board." alt="" coords="224,100,307,129"/>
+<area shape="rect" id="node11" title=" " alt="" coords="331,100,456,129"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,255,72,284"/>
-<area shape="rect" id="node4" href="$m4a-24g_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the m4a&#45;24g board." alt="" coords="77,177,206,207"/>
+<area shape="rect" id="node4" href="$m4a-24g_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the m4a&#45;24g board." alt="" coords="93,177,222,207"/>
 <area shape="rect" id="node6" title=" " alt="" coords="203,255,328,284"/>
+<area shape="rect" id="node7" title=" " alt="" coords="352,255,488,284"/>
+<area shape="rect" id="node8" href="$uniqueid_8h.html" title="cpuid address" alt="" coords="415,177,521,207"/>
 <area shape="rect" id="node5" title=" " alt="" coords="97,255,178,284"/>
+<area shape="rect" id="node9" title=" " alt="" coords="512,255,595,284"/>
+<area shape="rect" id="node10" title=" " alt="" coords="619,255,760,284"/>
 </map>

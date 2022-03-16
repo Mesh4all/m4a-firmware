@@ -21,5 +21,6 @@ var searchData=
   ['config_5fztimer_5fusec_5fmin_58',['CONFIG_ZTIMER_USEC_MIN',['../m4a-24g_2include_2board_8h.html#a0da89da11cd4268db8298bae9fbe1d85',1,'board.h']]],
   ['config_5fztimer_5fusec_5ftype_59',['CONFIG_ZTIMER_USEC_TYPE',['../m4a-24g_2include_2board_8h.html#ae3245610b3181dbfab13ae3e5fae7e37',1,'board.h']]],
   ['count_60',['count',['../structuart__buffer__t.html#abdb51e4948378c00a9b35bd27b6c5a56',1,'uart_buffer_t']]],
-  ['cpuid_61',['CPUID',['../m4a-wrover_2include_2board_8h.html#a7cac76255daff1f7a2748ba05dfc86f3',1,'board.h']]]
+  ['cpuid_61',['CPUID',['../m4a-24g_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'CPUID():&#160;board.h'],['../m4a-mb_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'CPUID():&#160;board.h'],['../m4a-wroom_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'CPUID():&#160;board.h'],['../m4a-wrover_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'CPUID():&#160;board.h']]],
+  ['cpuid_5fto_5fipv6_62',['cpuid_to_ipv6',['../uniqueid_8h.html#a1da8b6b696da46c667eb229d7c5a94df',1,'uniqueid.h']]]
 ];

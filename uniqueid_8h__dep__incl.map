@@ -1,0 +1,11 @@
+<map id="firmware/sys/network/include/uniqueid.h" name="firmware/sys/network/include/uniqueid.h">
+<area shape="rect" id="node1" title="cpuid address" alt="" coords="503,5,696,52"/>
+<area shape="rect" id="node2" href="$m4a-24g_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;24G board." alt="" coords="5,100,220,147"/>
+<area shape="rect" id="node4" href="$m4a-mb_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;MB." alt="" coords="245,100,455,147"/>
+<area shape="rect" id="node6" href="$m4a-wroom_2include_2board_8h.html" title="Board specific definitions for m4a&#45;wroom board." alt="" coords="479,100,719,147"/>
+<area shape="rect" id="node8" href="$m4a-wrover_2include_2board_8h.html" title="Board specific definitions for Espressif ESP&#45;WROVER&#45;KIT V3." alt="" coords="743,100,983,147"/>
+<area shape="rect" id="node3" href="$m4a-24g_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="5,195,220,241"/>
+<area shape="rect" id="node5" href="$m4a-mb_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="245,195,455,241"/>
+<area shape="rect" id="node7" href="$m4a-wroom_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="479,195,719,241"/>
+<area shape="rect" id="node9" href="$m4a-wrover_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="743,195,983,241"/>
+</map>

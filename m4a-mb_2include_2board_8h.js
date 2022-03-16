@@ -7,6 +7,7 @@ var m4a_mb_2include_2board_8h =
     [ "BTN0_MODE", "m4a-mb_2include_2board_8h.html#a904884feea8e03c30c9a85ca6d7a8e5c", null ],
     [ "BTN0_PIN", "m4a-mb_2include_2board_8h.html#aab5c3eca54046333af52593b9e360270", null ],
     [ "BTN0_PORT", "m4a-mb_2include_2board_8h.html#a9a61388c9e491aec2e44cc03956bb299", null ],
+    [ "CPUID", "m4a-mb_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e", null ],
     [ "LED0_MASK", "m4a-mb_2include_2board_8h.html#abfabde35a3e8b7ab50146a5e223bfead", null ],
     [ "LED0_OFF", "m4a-mb_2include_2board_8h.html#aef2e39b9fd343d0e437fac0463f3e02d", null ],
     [ "LED0_ON", "m4a-mb_2include_2board_8h.html#a1e48dc02333bfc2e6ad3e5bd466eecd4", null ],
