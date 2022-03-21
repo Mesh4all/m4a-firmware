@@ -14,23 +14,62 @@
  * limitations under the License.
  */
 /**
- * @brief  cpuid address
+ * @brief This function get ipv6 address (mode: static (default), random, manual)
  *
  * @author  RocioRojas <rociorojas391@gmail.com>
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "uniqueid.h"
+#include "random.h"
+#include "xtimer.h"
 
-void cpuid_to_ipv6(ipv6_addr_t *addr) {
+void subnet_to_ipv6(ipv6_addr_t *addr) {
 
+#ifdef CONFIG_MODE_STATIC
+    ipv6_addr_t header = {
+        .u8 = {0},
+    };
     char addr_cpu[CPUID_LEN] = {0};
     CPUID(addr_cpu);
+    ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
+    memcpy((char *)addr->u8, (char *)header.u8, 4);
+    strncat((char *)addr->u8, addr_cpu, 4);
+
+#endif
+
+#ifdef CONFIG_MODE_RANDOM
     ipv6_addr_t header = {
         .u8 = {0},
     };
     ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
     memcpy((char *)addr->u8, (char *)header.u8, 4);
-    strncat((char *)addr->u8, addr_cpu, 4);
+    union random_buff random_number;
+    #ifdef  CONFIG_SEED_XTIMER
+    int seed = _xtimer_now(); // This not cryptographically secure (default)
+    #else
+    int seed = 0; // TO DO: this is a example, here put a seed cryptographically secure
+    #endif
+    random_init(seed);
+    random_number.u32 = random_uint32();
+    (void)random_number.u32;
+    strncat((char *)addr->u8, (char *)random_number.u8, 4);
+
+#endif
+
+#ifdef CONFIG_MODE_MANUAL
+    ipv6_addr_t header = {
+        .u8 = {0},
+    };
+    ipv6_addr_t subnet = {
+        .u8 = {0},
+    };
+    ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
+    ipv6_addr_from_str(&subnet, CONFIG_SUBNET_ADDRESS_ID);
+    memcpy((char *)addr->u8, (char *)header.u8, 4);
+    memcpy((char *)addr->u8 + 4, (char *)subnet.u8, 4);
+
+#endif
 }
