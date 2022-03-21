@@ -28,6 +28,7 @@ var searchData=
   ['spi1_5fsck_212',['SPI1_SCK',['../m4a-wroom_2include_2periph__conf_8h.html#a241b59557c3e3c91418162ed4d682aaa',1,'SPI1_SCK():&#160;periph_conf.h'],['../m4a-wrover_2include_2periph__conf_8h.html#a241b59557c3e3c91418162ed4d682aaa',1,'SPI1_SCK():&#160;periph_conf.h']]],
   ['spi_5fconfig_213',['spi_config',['../m4a-24g_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c',1,'spi_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c',1,'spi_config():&#160;periph_conf.h']]],
   ['spi_5fnumof_214',['SPI_NUMOF',['../m4a-24g_2include_2periph__conf_8h.html#ab35a2b79568128efef74adf1ba1910a8',1,'SPI_NUMOF():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ab35a2b79568128efef74adf1ba1910a8',1,'SPI_NUMOF():&#160;periph_conf.h']]],
-  ['sys_215',['Sys',['../group__sys.html',1,'']]],
-  ['system_5finit_2eh_216',['system_init.h',['../system__init_8h.html',1,'']]]
+  ['subnet_5fto_5fipv6_215',['subnet_to_ipv6',['../uniqueid_8h.html#aa9cca7607c3704ae2651e221d1ab1fc3',1,'uniqueid.h']]],
+  ['sys_216',['Sys',['../group__sys.html',1,'']]],
+  ['system_5finit_2eh_217',['system_init.h',['../system__init_8h.html',1,'']]]
 ];

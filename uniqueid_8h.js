@@ -1,4 +1,5 @@
 var uniqueid_8h =
 [
-    [ "cpuid_to_ipv6", "uniqueid_8h.html#a1da8b6b696da46c667eb229d7c5a94df", null ]
+    [ "random_buff", "unionrandom__buff.html", "unionrandom__buff" ],
+    [ "subnet_to_ipv6", "uniqueid_8h.html#aa9cca7607c3704ae2651e221d1ab1fc3", null ]
 ];
