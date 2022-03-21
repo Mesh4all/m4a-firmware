@@ -17,7 +17,7 @@
  * @ingroup     network
  * @{
  * @file
- * @brief       cpuid address
+ * @brief       IPV6 address
  *
  * @author      RocioRojas <rociorojas391@gmail.com>
  *
@@ -32,12 +32,19 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 /**
- * @brief This function get ipv6 address
+ * @brief  union to get 32 bit random number and convert to a byte array.
+ */
+
+union random_buff {
+    uint8_t u8[4];
+    uint32_t u32;
+};
+/**
+ * @brief This function get ipv6 address (mode: static (default), random, manual)
  * @param [out] addr Address in ipv6 format
  */
-void cpuid_to_ipv6(ipv6_addr_t *addr);
+void subnet_to_ipv6(ipv6_addr_t *addr);
 
 #ifdef __cplusplus
 }
