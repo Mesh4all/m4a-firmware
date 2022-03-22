@@ -26,12 +26,10 @@
 #include "shell.h"
 #include "shell_commands.h"
 #include "msg.h"
-#include "system_init.h"
 
 #include "log.h"
 #include "board.h"
 #include "mtd.h"
-#include "mtd_flashpage.h"
 #include "storage.h"
 
 static mtd_dev_t _dev = MTD_FLASHPAGE_INIT_VAL(8);

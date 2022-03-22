@@ -28,7 +28,6 @@
 #include "shell.h"
 #include "shell_commands.h"
 #include "msg.h"
-#include "system_init.h"
 
 #include "log.h"
 #include "board.h"
@@ -41,7 +40,6 @@ int main(void)
 {
     LOG_INFO("~~ Welcome to Mesh4all ~~\n");
 
-    init_initial_params();
     /* Start shell */
     char line_buf[SHELL_DEFAULT_BUFSIZE];
 

@@ -28,11 +28,18 @@
 #define STORAGE_H
 
 #include <stdio.h>
+#include "mtd_flashpage.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+#define    LAST_PAGE 1
+
+/**
+ * @brief this is the number of pages that we can write
+ */
+#define LAST_AVAILABLE_PAGE (FLASHPAGE_NUMOF - LAST_PAGE)
 #define MAX_SIZE_STORAGE 16 /*!< max size to save in the page */
 
 /**
