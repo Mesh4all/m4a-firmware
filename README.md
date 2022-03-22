@@ -38,7 +38,7 @@ Enjoy your firmware following these steps:
 
 - [Clone the Repository and update the submodules.](https://github.com/Mesh4all/m4a-firmware/blob/main/CONTRIBUTING.md#titlegs)
 
- - <details close style=>
+-
     <summary>
     Compile
     </summary>
@@ -53,9 +53,7 @@ Enjoy your firmware following these steps:
     ```sh
         make BOARD=your_dev_name
     ```
-    </details>
-
-- <details close>
+-
     <summary>
         Flashing
     </summary>
@@ -69,8 +67,6 @@ Enjoy your firmware following these steps:
         make BOARD=your_dev_name flash
 
     ```
-    </details>
-
 - Open terminal and look what's happening.
 
 ```sh
@@ -113,12 +109,12 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 See the License for the specific language governing permissions and limitations under the License.
 
-Copyright (c) 2021 Mesh4all <mesh4all.org>
+Copyright (c) 2022 Mesh4all <mesh4all.org>
 
 Licensed under the Apache License Version 2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 <p align="center">
     <a href="https://mesh4all.github.io/m4a-firmware">Documentation</a> |
-    <a href="#"> Discord </a> |
-    <a href="#">Installation</a>
+    <a href="https://t.me/mesh4all"> Telegram </a>|
+    <a href="https://twitter.com/mesh4all"> Twitter </a>
 </p>
