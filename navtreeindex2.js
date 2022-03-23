@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"structat__request__t.html#a597b608cbdbca637842862b4b39a0b10":[4,0,1,0],
+"structat__request__t.html#a800eee200c88df1b9867f7da6c0a0bee":[4,0,1,3],
 "structat__request__t.html#aa2759fa32e946cf1cf2d81d4033356a7":[4,0,1,1],
 "structavailable__sensors__t.html":[4,0,2],
 "structavailable__sensors__t.html#a31a0020452dd389c6c6700ebeeb4c4dc":[4,0,2,1],

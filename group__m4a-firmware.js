@@ -6,6 +6,8 @@ var group__m4a_firmware =
     [ "at_uart.h", "at__uart_8h.html", null ],
     [ "serialization.h", "firmware_2sys_2serialization_2include_2serialization_8h.html", null ],
     [ "system_init.h", "system__init_8h.html", null ],
+    [ "LAST_AVAILABLE_PAGE", "group__m4a-firmware.html#ga1f6aa012a967f33fb5ec3cdeae1c6e22", null ],
+    [ "LAST_PAGE", "group__m4a-firmware.html#gad544c6ec6b9e6fcc00d7ed3a57036085", null ],
     [ "MAX_SIZE_STORAGE", "group__m4a-firmware.html#gaf6ba1f9f4063e60617dab3349aaba7c9", null ],
     [ "mtd_erase_flashpage", "group__m4a-firmware.html#gac112225f440598e3c1a8297fa3909366", null ],
     [ "mtd_get_string_len", "group__m4a-firmware.html#gaec3e7e482208da868fc19270db0b0f21", null ],

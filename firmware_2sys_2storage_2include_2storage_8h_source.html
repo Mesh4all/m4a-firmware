@@ -128,33 +128,37 @@ $(document).ready(function(){initNavTree('firmware_2sys_2storage_2include_2stora
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define STORAGE_H</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="group__m4a-firmware.html#gaf6ba1f9f4063e60617dab3349aaba7c9">   36</a></span>&#160;<span class="preprocessor">#define MAX_SIZE_STORAGE 16 </span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">int mtd_start(void);</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#gae4d6ee70023524b0324b3fd3a4e9f701">mtd_save</a>(uint32_t key, <span class="keywordtype">void</span> *value);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#ga649b3998bcdac66d32fb29962da6822b">mtd_read_string</a>(uint32_t key, <span class="keywordtype">char</span> *output, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#ga9e74c490990fc259d0bd449c8e9f097a">mtd_read_u8</a>(uint32_t key, uint8_t *output);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#gac112225f440598e3c1a8297fa3909366">mtd_erase_flashpage</a>(uint32_t key);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#ga5cbab32f90d7b8179b7c4182e87135f7">mtd_write_string</a>(uint32_t key, <span class="keywordtype">char</span> *value);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#gabc92c4881252e20efaf2b73591a73649">mtd_write_uint8</a>(uint32_t key, uint8_t *value);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#gaec3e7e482208da868fc19270db0b0f21">mtd_get_string_len</a>(uint32_t key);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* STORAGE_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;mtd_flashpage.h&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="group__m4a-firmware.html#gad544c6ec6b9e6fcc00d7ed3a57036085">   37</a></span>&#160;<span class="preprocessor">#define    LAST_PAGE 1</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="group__m4a-firmware.html#ga1f6aa012a967f33fb5ec3cdeae1c6e22">   42</a></span>&#160;<span class="preprocessor">#define LAST_AVAILABLE_PAGE (FLASHPAGE_NUMOF - LAST_PAGE)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="group__m4a-firmware.html#gaf6ba1f9f4063e60617dab3349aaba7c9">   43</a></span>&#160;<span class="preprocessor">#define MAX_SIZE_STORAGE 16 </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">int mtd_start(void);</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#gae4d6ee70023524b0324b3fd3a4e9f701">mtd_save</a>(uint32_t key, <span class="keywordtype">void</span> *value);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#ga649b3998bcdac66d32fb29962da6822b">mtd_read_string</a>(uint32_t key, <span class="keywordtype">char</span> *output, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#ga9e74c490990fc259d0bd449c8e9f097a">mtd_read_u8</a>(uint32_t key, uint8_t *output);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#gac112225f440598e3c1a8297fa3909366">mtd_erase_flashpage</a>(uint32_t key);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#ga5cbab32f90d7b8179b7c4182e87135f7">mtd_write_string</a>(uint32_t key, <span class="keywordtype">char</span> *value);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#gabc92c4881252e20efaf2b73591a73649">mtd_write_uint8</a>(uint32_t key, uint8_t *value);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__m4a-firmware.html#gaec3e7e482208da868fc19270db0b0f21">mtd_get_string_len</a>(uint32_t key);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* STORAGE_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="agroup__m4a-firmware_html_gaec3e7e482208da868fc19270db0b0f21"><div class="ttname"><a href="group__m4a-firmware.html#gaec3e7e482208da868fc19270db0b0f21">mtd_get_string_len</a></div><div class="ttdeci">int mtd_get_string_len(uint32_t key)</div><div class="ttdoc">function used for get the length of strings</div></div>
@@ -170,7 +174,7 @@ $(document).ready(function(){initNavTree('firmware_2sys_2storage_2include_2stora
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_38d8769b7982536a1592307dd4ec982e.html">sys</a></li><li class="navelem"><a class="el" href="dir_043460d05e9e7dca5d95591e249199d5.html">storage</a></li><li class="navelem"><a class="el" href="dir_f0a8256c4133cdb78380b910bfbaa910.html">include</a></li><li class="navelem"><b>storage.h</b></li>
-    <li class="footer">Generated on Tue Mar 22 2022 20:25:58 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Mar 23 2022 16:24:33 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
