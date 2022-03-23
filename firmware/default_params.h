@@ -24,7 +24,7 @@
 #ifndef DEFAULT_PARAMS_H
 #define DEFAULT_PARAMS_H
 
-#include "mtd_flashpage.h"
+#include "storage.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,11 +34,6 @@ extern "C" {
  * @name storage address this address will be the storage keys
  * @{
  */
-
-/**
- * @brief this is the number of pages that we can write
- */
-#define LAST_AVAILABLE_PAGE (FLASHPAGE_NUMOF - 1)
 
 /**
  * @brief first address of the page this name is optional must be change in the future
