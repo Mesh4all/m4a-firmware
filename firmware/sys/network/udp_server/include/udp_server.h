@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Mesh4all <mesh4all.org>
+ * Copyright (c) 2022 Mesh4all <mesh4all.org>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@
  *
  */
 
-#ifndef UDP_M4A_H
-#define UDP_M4A_H
+#ifndef UDP_SERVER_H
+#define UDP_SERVER_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -48,18 +48,9 @@ typedef struct {
  */
 int udp_server(udpf_payload *argv);
 
-/**
- * @brief this function is used for send the sensors values
- *
- * @param port  [in]            port to which the message will be sent
- * @param address [int]         address to which the message will be sent
- * @param message [int]         in this parameter the sensor data will be sent
- * @param payload_len [int]     size of the message
- * @return int
- */
-int udp_send(int *port, char *address, uint8_t *message, size_t *payload_len);
+void *_udp_serverf(void *args);
 
 #ifdef __cplusplus
 }
 #endif
-#endif /* UDP_M4A_H */
+#endif /* UDP_SERVER_H */

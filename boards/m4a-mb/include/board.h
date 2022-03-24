@@ -22,7 +22,6 @@
 #include "periph_conf.h"
 #include "periph_cpu.h"
 #include "periph/cpuid.h"
-#include "uniqueid.h"
 
 #ifdef __cplusplus
 extern "C"

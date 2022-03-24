@@ -1,0 +1,2 @@
+USEMODULE += gnrc_sock_udp
+USEMODULE += gnrc_udp
