@@ -1,4 +1,3 @@
-
 ifneq (,$(filter storage,$(USEMODULE)))
   DIRS += storage
 endif

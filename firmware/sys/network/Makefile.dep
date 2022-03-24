@@ -1,2 +1,6 @@
-USEMODULE += random
-USEMODULE += xtimer
+ifneq (,$(filter uniqueid,$(USEMODULE)))
+USEMODULE += netdev_default
+USEMODULE += auto_init_gnrc_netif
+USEMODULE += gnrc_ipv6_default
+USEMODULE += ipv6_addr
+endif
