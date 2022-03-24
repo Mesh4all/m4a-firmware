@@ -26,6 +26,5 @@ var searchData=
   ['at_5fuart_2eh_24',['at_uart.h',['../at__uart_8h.html',1,'']]],
   ['ath_25',['ATH',['../at__uart_8h.html#af14de5236b2168340b04ef3db3829217a1ddbb366badfd3927bfcbfa67f3820a7',1,'at_uart.h']]],
   ['ath0_26',['ATH0',['../at__uart_8h.html#af14de5236b2168340b04ef3db3829217aff3ae73482bfa26a356b1b0d73a49223',1,'at_uart.h']]],
-  ['available_5fsensors_5ft_27',['available_sensors_t',['../structavailable__sensors__t.html',1,'']]],
-  ['analog_20capacitive_20moisture_20sensor_28',['Analog capacitive moisture sensor',['../group__moisture__sensor.html',1,'']]]
+  ['analog_20capacitive_20moisture_20sensor_27',['Analog capacitive moisture sensor',['../group__moisture__sensor.html',1,'']]]
 ];
