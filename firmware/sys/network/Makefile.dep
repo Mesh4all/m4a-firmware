@@ -1,6 +1,15 @@
-ifneq (,$(filter uniqueid,$(USEMODULE)))
+ifneq (,$(filter uniqueid, $(USEMODULE)))
 USEMODULE += netdev_default
 USEMODULE += auto_init_gnrc_netif
 USEMODULE += gnrc_ipv6_default
 USEMODULE += ipv6_addr
+endif
+
+ifneq (,$(filter udp_server, $(USEMODULE)))
+USEMODULE += gnrc_sock_udp
+endif
+
+ifneq (,$(filter udp_client, $(USEMODULE)))
+USEMODULE += gnrc_sock_udp
+USEMODULE += gnrc_udp
 endif

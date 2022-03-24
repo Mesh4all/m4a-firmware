@@ -30,6 +30,8 @@ USEMODULE += ps
 USEMODULE += storage
 USEMODULE += network
 USEMODULE += uniqueid
+USEMODULE += udp_server
+USEMODULE += udp_client
 EXTERNAL_MODULE_DIRS += sys
 
 # Use UART_DEV(1) for slipdev as a default, baudrate by default is 115200
