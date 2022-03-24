@@ -17,6 +17,7 @@ QUIET ?= 1
 RIOTBASE ?= $(CURDIR)/../../RIOT
 EXTERNAL_BOARD_DIRS ?=  $(CURDIR)/../../boards
 EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/sys
+EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/peripherals
 
 # DEVELHELP enabled by default for all tests, set 0 to disable
 DEVELHELP ?= 1
