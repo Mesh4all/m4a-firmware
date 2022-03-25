@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Mesh4all <mesh4all.org>
+ * Copyright (c) 2022 Mesh4all <mesh4all.org>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,36 +17,17 @@
 /**
  * @{
  * @file        udp_m4a.h
- * @brief       udp libs
+ * @brief       udp client lib used to send the sensor values
  * @author      xkevin190 <kevinvelasco190@gmail.com.com>
  *
  */
 
-#ifndef UDP_M4A_H
-#define UDP_M4A_H
+#ifndef UDP_CLIENT_H
+#define UDP_CLIENT_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-/**
- * @brief this is a struct  used for init udp server
- */
-typedef struct {
-    char *port;                              /*!< port where will listen udp server */
-    void (*callback)(uint8_t *, size_t len); /*!< this is a callback this function will
-                                                  be executed when arrive new values
-                                             */
-} udpf_payload;
-
-/**
- * @brief  udp server function this function is used for init udp server
- *
- * @param argv [in] this param will content  the callback and port where will listen el server
- * @return  0 Satisfactory result
- *         -1 Failed result
- */
-int udp_server(udpf_payload *argv);
 
 /**
  * @brief this function is used for send the sensors values
@@ -62,4 +43,4 @@ int udp_send(int *port, char *address, uint8_t *message, size_t *payload_len);
 #ifdef __cplusplus
 }
 #endif
-#endif /* UDP_M4A_H */
+#endif /* UDP_CLIENT_H */
