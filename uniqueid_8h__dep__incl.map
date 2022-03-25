@@ -1,5 +1,5 @@
-<map id="firmware/sys/network/include/uniqueid.h" name="firmware/sys/network/include/uniqueid.h">
-<area shape="rect" id="node1" title="IPV6 address." alt="" coords="503,5,696,52"/>
+<map id="firmware/sys/uniqueid/include/uniqueid.h" name="firmware/sys/uniqueid/include/uniqueid.h">
+<area shape="rect" id="node1" title="IPV6 address." alt="" coords="501,5,697,52"/>
 <area shape="rect" id="node2" href="$m4a-24g_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;24G board." alt="" coords="5,100,220,147"/>
 <area shape="rect" id="node4" href="$m4a-mb_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;MB." alt="" coords="245,100,455,147"/>
 <area shape="rect" id="node6" href="$m4a-wroom_2include_2board_8h.html" title="Board specific definitions for m4a&#45;wroom board." alt="" coords="479,100,719,147"/>

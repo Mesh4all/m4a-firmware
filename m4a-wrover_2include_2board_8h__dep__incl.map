@@ -1,11 +1,11 @@
 <map id="boards/m4a&#45;wrover/include/board.h" name="boards/m4a&#45;wrover/include/board.h">
-<area shape="rect" id="node1" title="Board specific definitions for Espressif ESP&#45;WROVER&#45;KIT V3." alt="" coords="247,5,487,52"/>
+<area shape="rect" id="node1" title="Board specific definitions for Espressif ESP&#45;WROVER&#45;KIT V3." alt="" coords="248,5,488,52"/>
 <area shape="rect" id="node2" href="$m4a-wrover_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="5,100,245,147"/>
-<area shape="rect" id="node3" href="$uniqueid_8h.html" title="IPV6 address." alt="" coords="270,100,463,147"/>
-<area shape="rect" id="node4" href="$m4a-24g_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;24G board." alt="" coords="22,195,237,241"/>
-<area shape="rect" id="node6" href="$m4a-mb_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;MB." alt="" coords="261,195,472,241"/>
-<area shape="rect" id="node8" href="$m4a-wroom_2include_2board_8h.html" title="Board specific definitions for m4a&#45;wroom board." alt="" coords="496,195,736,241"/>
-<area shape="rect" id="node5" href="$m4a-24g_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="22,289,237,336"/>
-<area shape="rect" id="node7" href="$m4a-mb_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="261,289,472,336"/>
-<area shape="rect" id="node9" href="$m4a-wroom_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="496,289,736,336"/>
+<area shape="rect" id="node3" href="$uniqueid_8h.html" title="IPV6 address." alt="" coords="270,100,466,147"/>
+<area shape="rect" id="node4" href="$m4a-24g_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;24G board." alt="" coords="23,195,238,241"/>
+<area shape="rect" id="node6" href="$m4a-mb_2include_2board_8h.html" title="Board specific definitions for the M4A&#45;MB." alt="" coords="263,195,473,241"/>
+<area shape="rect" id="node8" href="$m4a-wroom_2include_2board_8h.html" title="Board specific definitions for m4a&#45;wroom board." alt="" coords="497,195,737,241"/>
+<area shape="rect" id="node5" href="$m4a-24g_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="23,289,238,336"/>
+<area shape="rect" id="node7" href="$m4a-mb_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="263,289,473,336"/>
+<area shape="rect" id="node9" href="$m4a-wroom_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="497,289,737,336"/>
 </map>
