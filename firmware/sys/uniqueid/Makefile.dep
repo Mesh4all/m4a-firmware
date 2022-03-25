@@ -1,2 +1,3 @@
 USEMODULE += random
 USEMODULE += xtimer
+USEMODULE += ipv6_addr
