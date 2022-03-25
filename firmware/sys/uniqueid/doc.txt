@@ -1,0 +1,7 @@
+/**
+@defgroup uniqueid
+@ingroup     sys
+
+# What goes here?
+Specific documentation for our reference uniqueid;
+*/

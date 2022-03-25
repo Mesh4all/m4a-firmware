@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 /**
- * @ingroup     network
+ * @ingroup     uniqueid
  * @{
  * @file
  * @brief       IPV6 address
