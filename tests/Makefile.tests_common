@@ -11,16 +11,20 @@ ifneq (,$(wildcard $(CURDIR)/tests*/.))
 endif
 
 ifneq (,$(filter tests_driver_%,$(APPLICATION)))
-  BOARD ?= m4a-mb
+  BOARD ?= m4a-24g
 endif
 
-BOARD ?= m4a-mb
+BOARD ?= m4a-24g
 QUIET ?= 1
 RIOTBASE ?= $(CURDIR)/../../RIOT
-EXTERNAL_BOARD_DIRS ?=  $(CURDIR)/../../boards
-EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/sys
+EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
 EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/peripherals
 EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/network
+EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/sys
+
+SLIP_UART ?= 1
+CFLAGS += "-DSLIPDEV_PARAM_UART=UART_DEV($(SLIP_UART))"
+
 
 # DEVELHELP enabled by default for all tests, set 0 to disable
 DEVELHELP ?= 1
