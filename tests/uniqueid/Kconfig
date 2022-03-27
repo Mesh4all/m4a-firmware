@@ -1,0 +1,42 @@
+menu "uniqueid"
+
+config SELECT_HEADER_IPV6
+    bool "Edit IPV6 Header"
+    default n
+
+menu "Change default IPV6 header"
+visible if SELECT_HEADER_IPV6
+#comment "Header using in unique cpuid address"
+
+    config HEADER_ADDRESS_ID
+        string "IPV6 HEADER"
+        default "2001:db8:"
+
+endmenu # Change default IPV6 header
+
+menu "Subnet"
+    choice IPV6_MODE
+        prompt "Select IPV6 Subnet mode"
+        config MODE_STATIC
+            bool "STATIC"
+
+        config MODE_RANDOM
+            bool "RANDOM"
+
+        config MODE_MANUAL
+            bool "MANUAL"
+
+    endchoice
+
+    config SUBNET_ADDRESS_ID
+    string "IPV6 SUBNET"
+    default "1111:2222"
+    depends on MODE_MANUAL
+
+    config SEED_XTIMER
+    bool "Using xtimer to seed"
+    default  y
+    depends on MODE_RANDOM
+
+endmenu # Prefix
+endmenu
