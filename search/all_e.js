@@ -16,6 +16,6 @@ var searchData=
   ['rtt_5ffrequency_177',['RTT_FREQUENCY',['../m4a-24g_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h']]],
   ['rtt_5fmin_5foffset_178',['RTT_MIN_OFFSET',['../m4a-24g_2include_2periph__conf_8h.html#ad34d7bc806339ce586e8a942913cdb6f',1,'periph_conf.h']]],
   ['rx_5fbuf_179',['rx_buf',['../structuart__buffer__t.html#a16a7a829699460b12ff2f7636d422f24',1,'uart_buffer_t']]],
-  ['rx_5fcb_180',['rx_cb',['../at__uart_8h.html#aff569acfc7324ba08009bd60ba737871',1,'at_uart.h']]],
+  ['rx_5fcb_180',['rx_cb',['../at__client_8h.html#aff569acfc7324ba08009bd60ba737871',1,'at_client.h']]],
   ['rx_5fmem_181',['rx_mem',['../structuart__buffer__t.html#af936a4e99939fc5e90dde6c7d45c482f',1,'uart_buffer_t']]]
 ];

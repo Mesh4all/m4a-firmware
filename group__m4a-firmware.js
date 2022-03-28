@@ -3,7 +3,7 @@ var group__m4a_firmware =
     [ "main.h", "firmware_2include_2main_8h.html", null ],
     [ "ds18_sensor.h", "ds18__sensor_8h.html", null ],
     [ "moisture_sensor.h", "moisture__sensor_8h.html", null ],
-    [ "at_uart.h", "at__uart_8h.html", null ],
+    [ "at_client.h", "at__client_8h.html", null ],
     [ "serialization.h", "firmware_2sys_2serialization_2include_2serialization_8h.html", null ],
     [ "LAST_AVAILABLE_PAGE", "group__m4a-firmware.html#ga1f6aa012a967f33fb5ec3cdeae1c6e22", null ],
     [ "LAST_PAGE", "group__m4a-firmware.html#gad544c6ec6b9e6fcc00d7ed3a57036085", null ],
