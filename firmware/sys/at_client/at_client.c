@@ -23,7 +23,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "at_uart.h"
+#include "at_client.h"
 #include "board.h"
 #include "msg.h"
 #include "periph/uart.h"

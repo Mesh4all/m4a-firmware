@@ -22,8 +22,8 @@
  * @author      RocioRojas <rociorojas391@gmail.com>
  *
  */
-#ifndef AT_UART_H
-#define AT_UART_H
+#ifndef AT_CLIENT_H
+#define AT_CLIENT_H
 
 #define SHELL_BUFSIZE (128U)
 #define UART_BUFSIZE (256U)
@@ -120,5 +120,5 @@ int config_at(void);
 #ifdef __cplusplus
 }
 #endif
-#endif /* AT_UART_H */
+#endif /* AT_CLIENT_H */
 /** @} */
