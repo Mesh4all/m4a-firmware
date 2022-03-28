@@ -54,7 +54,7 @@ void get_time_sntp(void *params) {
     xSemaphoreTake(esp_sntp_mutex, portMAX_DELAY);
     while (sntp_get_sync_status() != SNTP_SYNC_STATUS_COMPLETED && ++retry <= SNTP_MAX_COUNT) {
         ESP_LOGI(__func__, "getting current time: (%d/%d)", retry, SNTP_MAX_COUNT);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
         time(&now);
         if (retry == SNTP_MAX_COUNT) {
             ESP_LOGE(__func__, "Failed to sync with ntp server");
