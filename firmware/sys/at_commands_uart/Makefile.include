@@ -1,2 +1,0 @@
-USEMODULE_INCLUDES_at_commands_uart := $(LAST_MAKEFILEDIR)/include
-USEMODULE_INCLUDES += $(USEMODULE_INCLUDES_at_commands_uart)
