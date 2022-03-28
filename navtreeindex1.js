@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"httpsclient_8h.html#a16e493bcc98c74ce4f6ee27cb676c5e5":[5,0,4,0,1,0,0,2],
 "httpsclient_8h.html#a7332032cd2bf659b9f8c18d303d2b67b":[5,0,4,0,1,0,0,3],
 "httpsclient_8h.html#a74e0632580d541aaf7250a0806bb2963":[5,0,4,0,1,0,0,6],
 "httpsclient_8h.html#a87468ed0049e5ba4f653de7b00c3304c":[5,0,4,0,1,0,0,4],
@@ -231,10 +232,10 @@ var NAVTREEINDEX1 =
 "md_tests_README.html":[1],
 "md_wifi-subsys_README.html":[2],
 "modules.html":[3],
-"moisture__sensor_8h.html":[5,0,2,1,1,0,0],
-"moisture__sensor_8h.html#a5aecb8c061d0c67614d8a0805b627dca":[5,0,2,1,1,0,0,1],
-"moisture__sensor_8h.html#ad3991965f75a3260bf8365f71d7a43ca":[5,0,2,1,1,0,0,0],
-"moisture__sensor_8h_source.html":[5,0,2,1,1,0,0],
+"moisture__sensor_8h.html":[5,0,2,2,1,0,0],
+"moisture__sensor_8h.html#a5aecb8c061d0c67614d8a0805b627dca":[5,0,2,2,1,0,0,1],
+"moisture__sensor_8h.html#ad3991965f75a3260bf8365f71d7a43ca":[5,0,2,2,1,0,0,0],
+"moisture__sensor_8h_source.html":[5,0,2,2,1,0,0],
 "pages.html":[],
 "protocol__sntp_8h_source.html":[5,0,4,0,1,0,2],
 "slipdev__params_8h.html":[5,0,1,0,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "structat__list__t.html#aeea44175d0ded884ef0db1393097bbbe":[4,0,0,0],
 "structat__request__t.html":[4,0,1],
 "structat__request__t.html#a4515ec9f9852889561c6d320b07516a5":[4,0,1,2],
-"structat__request__t.html#a597b608cbdbca637842862b4b39a0b10":[4,0,1,0],
-"structat__request__t.html#a800eee200c88df1b9867f7da6c0a0bee":[4,0,1,3]
+"structat__request__t.html#a597b608cbdbca637842862b4b39a0b10":[4,0,1,0]
 };
