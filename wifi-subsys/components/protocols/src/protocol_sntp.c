@@ -50,13 +50,13 @@ esp_err_t init_sntp() {
 void get_time_sntp(void *params) {
     callback_time_t callback = (callback_time_t)params;
     time_t now;
-    const int retry_count = SNTP_MAX_COUNT;
     int retry = 0;
     xSemaphoreTake(esp_sntp_mutex, portMAX_DELAY);
-    while (sntp_get_sync_status() != SNTP_SYNC_STATUS_COMPLETED && ++retry <= retry_count) {
-        ESP_LOGI(__func__, "getting current time: (%d/%d)", retry, retry_count);
+    while (sntp_get_sync_status() != SNTP_SYNC_STATUS_COMPLETED && ++retry <= SNTP_MAX_COUNT) {
+        ESP_LOGI(__func__, "getting current time: (%d/%d)", retry, SNTP_MAX_COUNT);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
         time(&now);
-        if (retry == retry_count) {
+        if (retry == SNTP_MAX_COUNT) {
             ESP_LOGE(__func__, "Failed to sync with ntp server");
         }
     }
