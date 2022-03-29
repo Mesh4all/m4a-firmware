@@ -48,13 +48,9 @@ void *_udp_serverf(void *args) {
     server_running = true;
     printf("Success: started UDP server on port %u\n", server.port);
     while (1) {
-        int res;
-        if ((res = sock_udp_recv(&sock, server_buffer, sizeof(server_buffer) - 1, SOCK_NO_TIMEOUT,
-                                 NULL)) < 0) {
-            puts("Error while receiving");
-        } else if (res == 0) {
-            puts("No data received");
-        } else {
+        int res =
+            sock_udp_recv(&sock, server_buffer, sizeof(server_buffer) - 1, SOCK_NO_TIMEOUT, NULL);
+        if (res > 0) {
             castPayload->callback(server_buffer, res);
         }
     }
