@@ -32,9 +32,12 @@
 #include "esp_system.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
+#include <freertos/semphr.h>
 #include "freertos/task.h"
 #include "protocol_sntp.h"
 #include "storage.h"
+
+SemaphoreHandle_t esp_sntp_mutex = NULL;
 
 esp_err_t init_sntp() {
     ESP_LOGI(__func__, "Initializing SNTP");
@@ -47,16 +50,17 @@ esp_err_t init_sntp() {
 void get_time_sntp(void *params) {
     callback_time_t callback = (callback_time_t)params;
     time_t now;
-    const int retry_count = SNTP_MAX_COUNT;
     int retry = 0;
-    while (sntp_get_sync_status() != SNTP_SYNC_STATUS_COMPLETED && ++retry <= retry_count) {
-        ESP_LOGI(__func__, "getting current time: (%d/%d)", retry, retry_count);
-        vTaskDelay(2000 / portTICK_PERIOD_MS);
+    xSemaphoreTake(esp_sntp_mutex, portMAX_DELAY);
+    while (sntp_get_sync_status() != SNTP_SYNC_STATUS_COMPLETED && ++retry <= SNTP_MAX_COUNT) {
+        ESP_LOGI(__func__, "getting current time: (%d/%d)", retry, SNTP_MAX_COUNT);
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
         time(&now);
-        if (retry == retry_count) {
+        if (retry == SNTP_MAX_COUNT) {
             ESP_LOGE(__func__, "Failed to sync with ntp server");
         }
     }
+    xSemaphoreGive(esp_sntp_mutex);
     callback();
     // SNTP has to be off to avoid an system error when is called again //
     sntp_stop();
@@ -64,6 +68,7 @@ void get_time_sntp(void *params) {
 }
 
 esp_err_t sntp_start(callback_time_t callback_sntp) {
+    esp_sntp_mutex = xSemaphoreCreateMutex();
     esp_err_t err = init_sntp();
     xTaskCreate(&get_time_sntp, "Sntp_task", 1024 * 2, callback_sntp, 1, NULL);
     return err;
