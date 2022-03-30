@@ -17,7 +17,7 @@
 /**
  *
  * @brief       Wifi module
- * @ingroup     wifi-subsys_components
+ * @ingroup     wifi_component
  * @{
  * @copyright   Copyright (c) 2021 Mesh for all
  * @author      xkevin190 <kevinvelasco193@gmail.com>
@@ -94,25 +94,25 @@ uint8_t wifi_credentials_are_configured();
  * @param sta_ssid [in] new ssid
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
-esp_err_t change_wifi_sta_ssid(char *sta_ssid);
+esp_err_t change_wifi_sta_ssid(const char *sta_ssid);
 
 /**
  * @brief change the ssid of the AP and restart the wifi module
  *         also save new ssid in the nvs
  *
- * @param sta_ssid [in] new AP ssid
+ * @param ap_ssid [in] new AP ssid
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
-esp_err_t change_wifi_ap_ssid(char *ap_ssid);
+esp_err_t change_wifi_ap_ssid(const char *ap_ssid);
 
 /**
  * @brief change the password of the AP and restart the wifi module
  *        also save new password in the nvs
  *
- * @param sta_ssid [in] new AP password
+ * @param pass_ap [in] new AP password
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
-esp_err_t change_wifi_ap_pass(char *pass_ap);
+esp_err_t change_wifi_ap_pass(const char *pass_ap);
 
 /**
  * @brief change the password of the STA and restart the wifi module
@@ -121,7 +121,7 @@ esp_err_t change_wifi_ap_pass(char *pass_ap);
  * @param pass_sta [in] new sta password
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
-esp_err_t change_wifi_sta_pass(char *pass_sta);
+esp_err_t change_wifi_sta_pass(const char *pass_sta);
 
 /**
  * @brief restart the wifi module
