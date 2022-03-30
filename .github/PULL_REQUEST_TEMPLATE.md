@@ -1,23 +1,25 @@
 <!--
 We cares a lot about code quality.
 Therefore, before describing what your contribution is about, we would like
-you to make sure that your modifications are compliant with our coding conventions
+you to make sure that your modifications are compliant with our coding conventions.
+Also keep in mind that your contribution must be understandable to others so DOCUMENTATION is VERY IMPORTANT.
 -->
 
 ### Contribution description
 
 <!--
 Description (as detailed as possible) of your contribution.
-- describe the part/s of the code is (are) involved
+- Describe the part/s of the code is (are) involved
 - if it's a bug fix, describe the bug that it solves and how it is solved
-- you can give more information about how to test your changes
+- you can give more information about how to test your changes.
+- IMPORTANT! Document your contribution.
 -->
 
 
 ### Testing procedure
 
 <!--
-How should your contribution be tested? provide at least the following steps:
+### How should your contribution be tested? provide at least the following steps:
 - which test, example or piece of code need to be compiled
 - Expected output on success or error
 -->
