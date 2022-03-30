@@ -3,5 +3,14 @@
 @ingroup     sys
 
 # What goes here?
-Specific documentation for our reference uniqueid;
+You have 3 options to get the unique ipv6 address, which can be edited in the config menu:
+
+1) Static: It is make with the cpu id and it is the same between reboots,
+unique for each device.
+2) Random: A random address that is generated with the same fixed header
+as the first option.
+3) Custom: This option allows you to edit both the header and the default
+address is "1111:2222".
+
+Note: The default header is "2001:db8".
 */
