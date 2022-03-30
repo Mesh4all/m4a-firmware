@@ -124,51 +124,49 @@ $(document).ready(function(){initNavTree('m4a-wroom_2include_2board_8h_source.ht
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="m4a-wroom_2include_2periph__conf_8h.html">periph_conf.h</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;periph_cpu.h&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;periph/cpuid.h&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uniqueid_8h.html">uniqueid.h</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#aab5c3eca54046333af52593b9e360270">   34</a></span>&#160;<span class="preprocessor">#define BTN0_PIN        GPIO0   </span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a904884feea8e03c30c9a85ca6d7a8e5c">   35</a></span>&#160;<span class="preprocessor">#define BTN0_MODE       GPIO_IN </span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef BTN0_INT_FLANK</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#af2a29f7e278ad28c7f67ab4f7696be3f">   38</a></span>&#160;<span class="preprocessor">#define BTN0_INT_FLANK  GPIO_FALLING    </span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#ab828a29f5ffd34bb2aad742b836291cf">   41</a></span>&#160;<span class="preprocessor">#define BUTTON0_PIN     BTN0_PIN        </span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#ifndef DS18B20_PIN</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a3f855075d38022018e7f7e076d1f1e6d">   55</a></span>&#160;<span class="preprocessor">#define DS18B20_PIN         GPIO14          </span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#ifndef DS18B20_MODE_OUT</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a7dd7a14a08b4c4bebc5f517c29703713">   59</a></span>&#160;<span class="preprocessor">#define DS18B20_MODE_OUT    GPIO_OD_PU      </span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#ifndef DS18B20_MODE_IN</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a9a8ab77a8863cb61f43ef6e03fcceb2e">   63</a></span>&#160;<span class="preprocessor">#define DS18B20_MODE_IN    GPIO_IN         </span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a6dfbc94c211502fed434f0b56a890c23">   77</a></span>&#160;<span class="preprocessor">#define MS_HW360_PIN        GPIO12  </span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor"></span><span class="comment">/* include common board definitions as last step */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#include &quot;board_common.h&quot;</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e">   90</a></span>&#160;<span class="preprocessor">#define CPUID(id)  cpuid_get(id);</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a41a81eeaf788e33d8bb29f939730ecec">   98</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="m4a-24g_2include_2board_8h.html#a916f2adc2080b4fe88034086d107a8dc">board_init</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">/* there is nothing special to initialize on this board */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    board_init_common();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;} <span class="comment">/* end extern &quot;C&quot; */</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BOARD_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#aab5c3eca54046333af52593b9e360270">   33</a></span>&#160;<span class="preprocessor">#define BTN0_PIN        GPIO0   </span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a904884feea8e03c30c9a85ca6d7a8e5c">   34</a></span>&#160;<span class="preprocessor">#define BTN0_MODE       GPIO_IN </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifndef BTN0_INT_FLANK</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#af2a29f7e278ad28c7f67ab4f7696be3f">   37</a></span>&#160;<span class="preprocessor">#define BTN0_INT_FLANK  GPIO_FALLING    </span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#ab828a29f5ffd34bb2aad742b836291cf">   40</a></span>&#160;<span class="preprocessor">#define BUTTON0_PIN     BTN0_PIN        </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#ifndef DS18B20_PIN</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a3f855075d38022018e7f7e076d1f1e6d">   54</a></span>&#160;<span class="preprocessor">#define DS18B20_PIN         GPIO14          </span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#ifndef DS18B20_MODE_OUT</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a7dd7a14a08b4c4bebc5f517c29703713">   58</a></span>&#160;<span class="preprocessor">#define DS18B20_MODE_OUT    GPIO_OD_PU      </span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#ifndef DS18B20_MODE_IN</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a9a8ab77a8863cb61f43ef6e03fcceb2e">   62</a></span>&#160;<span class="preprocessor">#define DS18B20_MODE_IN    GPIO_IN         </span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a6dfbc94c211502fed434f0b56a890c23">   76</a></span>&#160;<span class="preprocessor">#define MS_HW360_PIN        GPIO12  </span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span><span class="comment">/* include common board definitions as last step */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#include &quot;board_common.h&quot;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e">   89</a></span>&#160;<span class="preprocessor">#define CPUID(id)  cpuid_get(id);</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="m4a-wroom_2include_2board_8h.html#a41a81eeaf788e33d8bb29f939730ecec">   97</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="m4a-24g_2include_2board_8h.html#a916f2adc2080b4fe88034086d107a8dc">board_init</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">/* there is nothing special to initialize on this board */</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    board_init_common();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;} <span class="comment">/* end extern &quot;C&quot; */</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BOARD_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="am4a-24g_2include_2board_8h_html_a916f2adc2080b4fe88034086d107a8dc"><div class="ttname"><a href="m4a-24g_2include_2board_8h.html#a916f2adc2080b4fe88034086d107a8dc">board_init</a></div><div class="ttdeci">void board_init(void)</div><div class="ttdoc">Initialize board specific hardware, including clock, LEDs and std-IO.</div></div>
-<div class="ttc" id="auniqueid_8h_html"><div class="ttname"><a href="uniqueid_8h.html">uniqueid.h</a></div><div class="ttdoc">IPV6 address.</div></div>
 <div class="ttc" id="am4a-wroom_2include_2periph__conf_8h_html"><div class="ttname"><a href="m4a-wroom_2include_2periph__conf_8h.html">periph_conf.h</a></div><div class="ttdoc">Peripheral MCU configuration for generic m4a-wroom board.</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
@@ -176,7 +174,7 @@ $(document).ready(function(){initNavTree('m4a-wroom_2include_2board_8h_source.ht
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_5d116609a4b7e30534a4a497e7279266.html">m4a-wroom</a></li><li class="navelem"><a class="el" href="dir_f9d47a5855db3eded99fafd85acec377.html">include</a></li><li class="navelem"><a class="el" href="m4a-wroom_2include_2board_8h.html">board.h</a></li>
-    <li class="footer">Generated on Wed Mar 30 2022 11:59:42 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Mar 30 2022 13:44:52 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

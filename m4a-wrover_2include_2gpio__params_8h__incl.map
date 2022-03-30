@@ -1,15 +1,12 @@
 <map id="boards/m4a&#45;wrover/include/gpio_params.h" name="boards/m4a&#45;wrover/include/gpio_params.h">
-<area shape="rect" id="node1" title="Board specific configuration of direct mapped GPIOs." alt="" coords="323,5,563,52"/>
-<area shape="rect" id="node2" href="$m4a-wrover_2include_2board_8h.html" title="Board specific definitions for Espressif ESP&#45;WROVER&#45;KIT V3." alt="" coords="338,100,421,129"/>
-<area shape="rect" id="node13" title=" " alt="" coords="445,100,570,129"/>
+<area shape="rect" id="node1" title="Board specific configuration of direct mapped GPIOs." alt="" coords="247,5,487,52"/>
+<area shape="rect" id="node2" href="$m4a-wrover_2include_2board_8h.html" title="Board specific definitions for Espressif ESP&#45;WROVER&#45;KIT V3." alt="" coords="262,100,345,129"/>
+<area shape="rect" id="node10" title=" " alt="" coords="369,100,494,129"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,255,87,284"/>
 <area shape="rect" id="node4" title=" " alt="" coords="71,177,138,207"/>
 <area shape="rect" id="node5" href="$m4a-wrover_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for Espressif ESP&#45;WROVER&#45;KIT V3." alt="" coords="163,177,292,207"/>
 <area shape="rect" id="node7" title=" " alt="" coords="317,177,442,207"/>
-<area shape="rect" id="node8" title=" " alt="" coords="390,255,526,284"/>
-<area shape="rect" id="node9" href="$uniqueid_8h.html" title="IPV6 address." alt="" coords="517,177,623,207"/>
-<area shape="rect" id="node12" title=" " alt="" coords="647,177,810,207"/>
+<area shape="rect" id="node8" title=" " alt="" coords="466,177,602,207"/>
+<area shape="rect" id="node9" title=" " alt="" coords="626,177,789,207"/>
 <area shape="rect" id="node6" title=" " alt="" coords="122,255,333,284"/>
-<area shape="rect" id="node10" title=" " alt="" coords="550,255,633,284"/>
-<area shape="rect" id="node11" title=" " alt="" coords="657,255,798,284"/>
 </map>
