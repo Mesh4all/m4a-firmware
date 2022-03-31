@@ -1,0 +1,27 @@
+var group__wifi__component =
+[
+    [ "change_ap_auth", "group__wifi__component.html#ga139ed802ea1b1d4829e52a58eb6151d9", null ],
+    [ "change_wifi_ap_pass", "group__wifi__component.html#gaac36c5c31cdad68652482d0c459be0b3", null ],
+    [ "change_wifi_ap_ssid", "group__wifi__component.html#ga860349d9134884ccf3da18cd3f529384", null ],
+    [ "change_wifi_mode", "group__wifi__component.html#ga74a201f88597a59e4c3b42210febad34", null ],
+    [ "change_wifi_sta_pass", "group__wifi__component.html#gaac9d24862fd2dc9b1b744500d0e42621", null ],
+    [ "change_wifi_sta_ssid", "group__wifi__component.html#ga57185cea2eafd10769f6e9c2601ad10c", null ],
+    [ "identify_enabled_interface", "group__wifi__component.html#gae6668eba3f175628aac7bd5248bee4d1", null ],
+    [ "init_ap", "group__wifi__component.html#ga9d1592020577990e6f348d027d0b5a71", null ],
+    [ "init_sta", "group__wifi__component.html#ga91e3ae3af5d354b31d963366cdec8dae", null ],
+    [ "is_ap", "group__wifi__component.html#ga8a891ceb4adebb3393f4cee34eda50da", null ],
+    [ "is_sta", "group__wifi__component.html#ga31d0fb01150610898c219b4830b5cf06", null ],
+    [ "select_wifi_channel", "group__wifi__component.html#gaefe0381809807f7142fb53f5e6ddbd0f", null ],
+    [ "set_ap_max_connection", "group__wifi__component.html#ga6fb2514844e644b2be3ec4dc01b8051d", null ],
+    [ "set_default_credentials", "group__wifi__component.html#gabd28cdcca6d5d5a2428f7d64187b71bd", null ],
+    [ "set_wifi_mode", "group__wifi__component.html#ga62dd61f1998b38a9290d07e1fd1f4736", null ],
+    [ "wifi_bit_event", "group__wifi__component.html#ga0f1d3a76020083d4ec351087dff3b1b9", null ],
+    [ "wifi_credentials_are_configured", "group__wifi__component.html#ga8ab8de76e36289e4ff378674ea740b51", null ],
+    [ "wifi_init", "group__wifi__component.html#gac11b41176ff2264389de71ba0d22834f", null ],
+    [ "wifi_off", "group__wifi__component.html#gac2dafad7d7cd262c5a50ad17f85f761f", null ],
+    [ "wifi_on", "group__wifi__component.html#ga1894da45456a14c348667e8a44373583", null ],
+    [ "wifi_restart", "group__wifi__component.html#ga3ed63af70f933fc84a48a117e8b18a2b", null ],
+    [ "wifi_restore_default", "group__wifi__component.html#ga3f8d68538fee1a7197fef3e2950c13b5", null ],
+    [ "wifi_start", "group__wifi__component.html#gafab24559d560983b1896f2e7c86a0bc4", null ],
+    [ "wifi_turn_off", "group__wifi__component.html#gacc9a30b823bcc893ad530f60da57deea", null ]
+];

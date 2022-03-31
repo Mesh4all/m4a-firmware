@@ -52,8 +52,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__wrover-app.html",
-"structat__request__t.html#a4515ec9f9852889561c6d320b07516a5"
+"group__wifi__component.html#gafab24559d560983b1896f2e7c86a0bc4",
+"structat__request__t.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
