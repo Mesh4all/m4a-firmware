@@ -7,7 +7,7 @@
   - "**/*.mk"
 
 "Area: CI":
-  - ".github/**/*.yml"
+  - ".github/**/*"
 
 "Area: firmware":
   - "firmware/**/*"
@@ -16,6 +16,7 @@
   - "doc/**/*"
   - "**/*.md"
   - "**/*.txt"
+  - ".github/**/*.md"
 
 "Area: drivers":
   - "drivers/**/*"
