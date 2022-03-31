@@ -18,17 +18,15 @@
 #include "wifi.h"
 #include "storage.h"
 
-TEST_CASE("set default credentials", "[network]")
-{
+TEST_CASE("set default credentials", "[network]") {
     nvs_init();
     esp_err_t err = set_default_credentials();
-    if(err != ESP_OK){
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("Wi-Fi initialize", "[network]")
-{
+TEST_CASE("Wi-Fi initialize", "[network]") {
     int8_t is_connected = -1;
     esp_err_t err;
     err = wifi_init();
@@ -42,103 +40,91 @@ TEST_CASE("Wi-Fi initialize", "[network]")
     }
 }
 
-TEST_CASE("change ssid ap", "[network]")
-{
-    const char* test_ap = "test-ssid";
+TEST_CASE("change ssid ap", "[network]") {
+    const char *test_ap = "test-ssid";
     esp_err_t err = change_wifi_ap_ssid(test_ap);
-    if(err != ESP_OK){
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("change password ap", "[network]")
-{
-    const char* test_ap = "default_password";
+TEST_CASE("change password ap", "[network]") {
+    const char *test_ap = "default_password";
     esp_err_t err = change_wifi_ap_pass(test_ap);
-    if(err != ESP_OK){
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("change ssid sta", "[network]")
-{
-    const char* test_sta = "Chicho";
+TEST_CASE("change ssid sta", "[network]") {
+    const char *test_sta = "Chicho";
     esp_err_t err = change_wifi_sta_ssid(test_sta);
-    if(err != ESP_OK){
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("change password ap", "[network]")
-{
-    const char* test_sta = "Pirulin0312";
+TEST_CASE("change password ap", "[network]") {
+    const char *test_sta = "Pirulin0312";
     esp_err_t err = change_wifi_sta_pass(test_sta);
-    if(err != ESP_OK) {
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("change channel", "[network]")
-{
+TEST_CASE("change channel", "[network]") {
     esp_err_t err = select_wifi_channel(3);
-    if(err != ESP_OK) {
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("change max_connections", "[network]")
-{
+TEST_CASE("change max_connections", "[network]") {
     esp_err_t err = set_ap_max_connection(2);
-    if(err != ESP_OK) {
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("change auth ap", "[network]")
-{
+TEST_CASE("change auth ap", "[network]") {
     esp_err_t err = change_ap_auth(WIFI_AUTH_WPA2_PSK);
-    if(err != ESP_OK) {
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("change STA mode", "[network]")
-{
+TEST_CASE("change STA mode", "[network]") {
     esp_err_t err = change_wifi_mode(1);
-    if(err != ESP_OK) {
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("change AP mode", "[network]")
-{
-    esp_err_t err = change_wifi_mode(1);
-    if(err != ESP_OK) {
+TEST_CASE("change AP mode", "[network]") {
+    esp_err_t err = change_wifi_mode(2);
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("change APSTA mode", "[network]")
-{
-    esp_err_t err = change_wifi_mode(1);
-    if(err != ESP_OK) {
+TEST_CASE("change APSTA mode", "[network]") {
+    esp_err_t err = change_wifi_mode(3);
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("WIFI OFF", "[network]")
-{
+TEST_CASE("WIFI OFF", "[network]") {
     esp_err_t err = wifi_off();
-    if(err != ESP_OK) {
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }
 
-TEST_CASE("WIFI ON", "[network]")
-{
+TEST_CASE("WIFI ON", "[network]") {
     esp_err_t err = wifi_init();
     wifi_start(NULL);
-    if(err != ESP_OK) {
+    if (err != ESP_OK) {
         TEST_FAIL();
     }
 }

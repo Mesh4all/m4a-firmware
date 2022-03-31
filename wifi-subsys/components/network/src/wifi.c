@@ -106,14 +106,15 @@ esp_err_t init_sta(void) {
     size_t ssid_len = 0;
     size_t password_len = 0;
 
-    err = nvs_get_string(stringlify(WSTA), stringlify(WSTA_SSID), &sta_config.sta.ssid, &ssid_len);
+    err = nvs_get_string(stringlify(WSTA), stringlify(WSTA_SSID), (char *)&sta_config.sta.ssid,
+                         &ssid_len);
 
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "Error to the get sta password (%s)", esp_err_to_name(err));
         return err;
     }
 
-    err = nvs_get_string(stringlify(WSTA), stringlify(WSTA_PASS), &sta_config.sta.password,
+    err = nvs_get_string(stringlify(WSTA), stringlify(WSTA_PASS), (char *)&sta_config.sta.password,
                          &password_len);
 
     if (err != ESP_OK) {
@@ -195,14 +196,15 @@ esp_err_t init_ap(void) {
 
     memset(&wifi_config, 0, sizeof(wifi_config_t));
 
-    err = nvs_get_string(stringlify(WAP), stringlify(WAP_SSID), &wifi_config.ap.ssid, &ssid_len);
+    err = nvs_get_string(stringlify(WAP), stringlify(WAP_SSID), (char *)&wifi_config.ap.ssid,
+                         &ssid_len);
 
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "error to get WAP SSID the cause is %s", esp_err_to_name(err));
         return err;
     }
 
-    err = nvs_get_string(stringlify(WAP), stringlify(WAP_PASS), &wifi_config.sta.password,
+    err = nvs_get_string(stringlify(WAP), stringlify(WAP_PASS), (char *)&wifi_config.sta.password,
                          &password_len);
 
     if (err != ESP_OK) {
@@ -210,7 +212,8 @@ esp_err_t init_ap(void) {
         return err;
     }
 
-    err = nvs_get_uint8(stringlify(WAP), stringlify(WAP_MAXCON), &wifi_config.ap.max_connection);
+    err = nvs_get_uint8(stringlify(WAP), stringlify(WAP_MAXCON),
+                        (uint8_t *)&wifi_config.ap.max_connection);
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "error to get max_connections the cause is %s", esp_err_to_name(err));
 
@@ -228,7 +231,8 @@ esp_err_t init_ap(void) {
     if (password_len == 0) {
         wifi_config.ap.authmode = WIFI_AUTH_OPEN;
     } else {
-        err = nvs_get_uint8(stringlify(WAP), stringlify(WAP_AUTH), &wifi_config.ap.authmode);
+        err = nvs_get_uint8(stringlify(WAP), stringlify(WAP_AUTH),
+                            (uint8_t *)&wifi_config.ap.authmode);
 
         if (err != ESP_OK) {
             ESP_LOGE(__func__, "error to get ap auth mode the cause is %s", esp_err_to_name(err));
@@ -403,7 +407,7 @@ esp_err_t wifi_restart(void) {
     return ESP_OK;
 }
 
-esp_err_t change_wifi_sta_ssid(char *sta_ssid) {
+esp_err_t change_wifi_sta_ssid(const char *sta_ssid) {
     esp_err_t err;
     s_retry_num = 0;
     err = nvs_set_string(stringlify(WSTA), stringlify(WSTA_SSID), sta_ssid);
@@ -418,7 +422,7 @@ esp_err_t change_wifi_sta_ssid(char *sta_ssid) {
     return ESP_OK;
 }
 
-esp_err_t change_wifi_ap_ssid(char *ap_ssid) {
+esp_err_t change_wifi_ap_ssid(const char *ap_ssid) {
     esp_err_t err;
     err = nvs_set_string(stringlify(WAP), stringlify(WAP_SSID), ap_ssid);
     if (err != ESP_OK) {
@@ -432,7 +436,7 @@ esp_err_t change_wifi_ap_ssid(char *ap_ssid) {
     return ESP_OK;
 }
 
-esp_err_t change_wifi_ap_pass(char *ap_password) {
+esp_err_t change_wifi_ap_pass(const char *ap_password) {
     esp_err_t err;
     ESP_LOGE(__func__, "esp_set_string %s", ap_password);
     err = nvs_set_string(stringlify(WAP), stringlify(WAP_PASS), ap_password);
@@ -447,7 +451,7 @@ esp_err_t change_wifi_ap_pass(char *ap_password) {
     return ESP_OK;
 }
 
-esp_err_t change_wifi_sta_pass(char *sta_password) {
+esp_err_t change_wifi_sta_pass(const char *sta_password) {
     esp_err_t err;
     ESP_LOGE(__func__, "password %s", sta_password);
     err = nvs_set_string(stringlify(WSTA), stringlify(WSTA_PASS), sta_password);
@@ -489,7 +493,7 @@ esp_err_t set_ap_max_connection(uint8_t max_connection) {
         return ESP_FAIL;
     }
 
-    esp_err_t err = nvs_set_uint8(stringlify(WAP), stringlify(WAP_MAXCON), &max_connection);
+    esp_err_t err = nvs_set_uint8(stringlify(WAP), stringlify(WAP_MAXCON), max_connection);
     if (err != ESP_OK) {
 
         ESP_LOGE(__func__, "Error: to setting AP max connections to the nvs %s",
@@ -549,7 +553,7 @@ esp_err_t change_wifi_mode(int mode) {
 
 esp_err_t set_wifi_mode() {
     s_wifi_event_group = xEventGroupCreate();
-    int mode = 0;
+    uint8_t mode = 0;
     esp_err_t err = nvs_get_uint8(stringlify(WIFI), stringlify(WIFI_MODE), &mode);
 
     esp_event_handler_instance_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL,
