@@ -1,0 +1,30 @@
+/**
+@defgroup ds18_test Ds18 sensor test module
+@ingroup     test_group
+@{
+
+
+## Test DS18 sensor
+
+Here unit tests are performed on the ds18_sensor module.
+To perform a successful test you must connect the ds18 temperature sensor to your board.
+
+you must also add the gpio where your board will be connected in the test init function in the main.c file
+
+```c
+void test_init_ds18(void) {
+     int err = init_temperature_sensor(your_gpio);
+
+     TEST_ASSERT_EQUAL_INT(0, error);
+}
+```
+
+To test the code in automatic mode:
+
+```c
+make flash test
+```
+
+@}
+
+ */
