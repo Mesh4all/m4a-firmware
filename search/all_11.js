@@ -14,11 +14,12 @@ var searchData=
   ['uart_5fbuffer_5ft_235',['uart_buffer_t',['../structuart__buffer__t.html',1,'']]],
   ['uart_5fconfig_236',['uart_config',['../m4a-24g_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5',1,'uart_config():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5',1,'uart_config():&#160;periph_conf.h']]],
   ['uart_5fnumof_237',['UART_NUMOF',['../m4a-24g_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230',1,'UART_NUMOF():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230',1,'UART_NUMOF():&#160;periph_conf.h']]],
-  ['udp_5fsend_238',['udp_send',['../udpf_8h.html#a1516055126f26528fe1b9dd43d146fa5',1,'udpf.h']]],
-  ['udp_5fserver_239',['udp_server',['../udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0',1,'udpf.h']]],
-  ['udpf_2eh_240',['udpf.h',['../udpf_8h.html',1,'']]],
-  ['udpf_5fpayload_241',['udpf_payload',['../structudpf__payload.html',1,'']]],
-  ['uniqueid_242',['Uniqueid',['../group__uniqueid.html',1,'']]],
-  ['uniqueid_2eh_243',['uniqueid.h',['../uniqueid_8h.html',1,'']]],
-  ['use_5fdev_5fconfig_244',['USE_DEV_CONFIG',['../group__wifi-subsys.html#ga8e493bff2a09a1207b527071e4cff06e',1,'default_params.h']]]
+  ['udp_20client_20test_238',['UDP client test',['../group__udp__client__test.html',1,'']]],
+  ['udp_5fsend_239',['udp_send',['../udpf_8h.html#a1516055126f26528fe1b9dd43d146fa5',1,'udpf.h']]],
+  ['udp_5fserver_240',['udp_server',['../udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0',1,'udpf.h']]],
+  ['udpf_2eh_241',['udpf.h',['../udpf_8h.html',1,'']]],
+  ['udpf_5fpayload_242',['udpf_payload',['../structudpf__payload.html',1,'']]],
+  ['uniqueid_243',['Uniqueid',['../group__uniqueid.html',1,'']]],
+  ['uniqueid_2eh_244',['uniqueid.h',['../uniqueid_8h.html',1,'']]],
+  ['use_5fdev_5fconfig_245',['USE_DEV_CONFIG',['../group__wifi-subsys.html#ga8e493bff2a09a1207b527071e4cff06e',1,'default_params.h']]]
 ];
