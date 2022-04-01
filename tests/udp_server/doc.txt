@@ -1,0 +1,26 @@
+/**
+@defgroup udp_server_test UDP server test
+@ingroup     test_group
+@{
+
+## Test documentation
+
+Here are the unit tests for the UDP server module,
+in which a udp server is started and through a client messages are sent every 2 seconds,
+when the messages are received on the server it is verified if the correct message arrived
+
+To test the code in automatic mode:
+
+```c
+make flash test
+
+```
+
+To test the code in interactive mode:"
+
+```c
+make flash term
+
+```
+@}
+*/
