@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"structat__list__t.html#a465fbb985ea922846539241520bb58cf":[4,0,0,4],
 "structat__list__t.html#aeea44175d0ded884ef0db1393097bbbe":[4,0,0,0],
 "structat__request__t.html":[4,0,1],
 "structat__request__t.html#a4515ec9f9852889561c6d320b07516a5":[4,0,1,2],
