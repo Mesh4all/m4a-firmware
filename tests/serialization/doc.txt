@@ -15,7 +15,7 @@ make flash test
 
 ```
 
-To test the code in interactive mode:"
+To test the code in interactive mode:
 
 ```c
 make flash term
