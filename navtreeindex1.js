@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"group__wifi__component.html#gac2dafad7d7cd262c5a50ad17f85f761f":[3,5,0,1,18],
 "group__wifi__component.html#gacc9a30b823bcc893ad530f60da57deea":[3,5,0,1,23],
 "group__wifi__component.html#gae6668eba3f175628aac7bd5248bee4d1":[3,5,0,1,6],
 "group__wifi__component.html#gaefe0381809807f7142fb53f5e6ddbd0f":[3,5,0,1,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "slipdev__params_8h.html#a632e2c0273de70d7111734c24ddd2ae9":[5,0,1,0,0,0,0],
 "slipdev__params_8h_source.html":[5,0,1,0,0,0],
 "structat__list__t.html":[4,0,0],
-"structat__list__t.html#a3693aaf27c25d0ac59fe58d4ed6af3be":[4,0,0,2],
-"structat__list__t.html#a414c845304cc923aa1adf6601b9e0b2b":[4,0,0,3]
+"structat__list__t.html#a3693aaf27c25d0ac59fe58d4ed6af3be":[4,0,0,2]
 };
