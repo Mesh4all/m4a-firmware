@@ -15,10 +15,12 @@
  */
 
 /**
- *
- * @brief       uart module
- *
+ * @ingroup    wifi_subsys_uart
+ * @brief      Uart module
+ * @{
+ * @file
  * @author      xkevin190 <kevinvelasco193@gmail.com>
+ *
  *
  */
 #ifndef SUBSYS_UART_H
@@ -29,10 +31,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-/**
- * @brief this struct content the key and value of the AT request
- *
- */
 
 /**
  * @brief this function initialize the uart
@@ -55,6 +53,7 @@ void rx_receive();
  *
  */
 void tx_send_loop();
+
 /**
  * @brief this function is executed when rx_receive function identify
  *  that the datos arrived were sensors values.
@@ -64,10 +63,10 @@ void tx_send_loop();
 void received_sensor_data(uint8_t *values);
 
 /**
- * @brief this function is a handler where will be identified AT commands
- * and it will executed  the functions for controlled  the wifi.
+ * @brief this function is used to send data through uart
  *
- * @param at_comant [in] AT comands
+ * @param logName [in] logName
+ * @param data [in] data
  */
 int sendData(const char *logName, char *data);
 
@@ -82,3 +81,4 @@ esp_err_t setting_uart();
 }
 #endif
 #endif /* SUBSYS_UART_H */
+/* @} */

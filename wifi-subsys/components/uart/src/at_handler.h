@@ -15,9 +15,10 @@
  */
 
 /**
- * @ingroup    wifi-subsys_components
+ * @ingroup    wifi_subsys_uart
+ * @brief   AT handler
  * @{
- * @brief   uart module
+ * @file
  * @author  xkevin190 <kevinvelasco193@gmail.com>
  */
 
@@ -32,18 +33,9 @@ extern "C"
 #endif
 
 /**
- * @name this struct content the key and value of the AT request
+ * @name All AT commands
  * @{
  */
-typedef struct {
-    char *value; /*!< AT value */
-    char *key;   /*!< AT key */
-    char action[2];/*!< AT action */
-    char read_or_write[2]; /*!< AT type */
-} at_request_t;
-/** @} */
-
-
 enum at_keys_n {
     NVS_RST = 0,  /*!< Restore the subsystem to factory settings */
     WIFI_OFF,     /*!< Turn off the WiFi interface */
@@ -59,6 +51,19 @@ enum at_keys_n {
     ATH,          /*!< this will enable at mode */
     ATHO,         /*!< this will disable at mode */
 };
+/** @} */
+
+/**
+ * @name this struct content the key and value of the AT request
+ * @{
+ */
+typedef struct {
+    char *value; /*!< AT value */
+    char *key;   /*!< AT key */
+    char action[2];/*!< AT action */
+    char read_or_write[2]; /*!< AT type */
+} at_request_t;
+/** @} */
 
 /**
  * @brief this function is a handler where will be identified AT commands

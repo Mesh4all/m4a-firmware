@@ -1,6 +1,6 @@
 /**
 @defgroup wifi_component  Wifi routines for the WiFi subsystem
-@ingroup wifi-subsys_components
+@ingroup wifi-subsys
 @brief Basic routines for handle the wifi-settings (modes[AP, STA, APSTA], wifi_configuration
 [ssid, password, channels, max_connections])
 

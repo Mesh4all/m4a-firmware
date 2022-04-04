@@ -15,7 +15,7 @@
  */
 
 /**
- * @ingroup    wifi-subsys_components
+ * @ingroup    wifi-subusys-protocols
  * @{
  * @file
  * @brief      Configure a https client to make a request
@@ -34,8 +34,8 @@
 extern "C" {
 #endif
 
-#define MAX_HTTP_RECV_BUFFER 512
-#define MAX_HTTP_OUTPUT_BUFFER 1024
+#define MAX_HTTP_RECV_BUFFER 512    /*!< maximum size to receive */
+#define MAX_HTTP_OUTPUT_BUFFER 1024 /*!< maximum size to send */
 
 #define HTTPS_CONTENT_JSON "application/json"
 #define HTTPS_CONTENT_CBOR "application/cbor"
@@ -45,9 +45,9 @@ extern "C" {
  *
  */
 typedef struct {
-    int status;                             /*Status of the method */
-    int content_len;                        /*size of output */
-    uint8_t output[MAX_HTTP_OUTPUT_BUFFER]; /*Response buffer */
+    int status;                             /*!< Status of the method */
+    int content_len;                        /*!< size of output */
+    uint8_t output[MAX_HTTP_OUTPUT_BUFFER]; /*!< Response buffer */
 } http_response_t;
 
 /**
@@ -57,16 +57,16 @@ typedef struct {
 typedef void (*response_callback_t)(http_response_t *);
 
 /**
- * @brief Struct to make http request.
- *
+ * @name Struct to make http request.
+ * @{
  */
 typedef struct {
-    int method;         /*Make a method get/post*/
-    char url[200];      /*Url used*/
-    char body[100];     /*body used with method post*/
-    char *content_type; /*Content type field of http request*/
-    response_callback_t callback;
+    int method;                   /*!< Make a method get/post */
+    char url[200];                /*!< Url used */
+    char body[100];               /*!< body used with method post */
+    response_callback_t callback; /*!< callback executed when the serve response */
 } http_request_t;
+/** @}  */
 
 /**
  * @brief Event handler of request.
@@ -88,4 +88,4 @@ void http_client(http_request_t *http_request);
 }
 #endif
 #endif /* HTTPSCLIENT_H */
-/** @} */
+       /** @} */

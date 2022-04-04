@@ -1,0 +1,15 @@
+/**
+@defgroup  wifi-subusys-protocols Protocols routines
+@ingroup wifi-subsys
+@brief this module content all protocols used for wifi- subsys
+
+# Overview
+
+In this module are all the protocols used by wifi-subys, the protocols used are:
+
+1) icmp: this is used to check if esp32 is connected.
+
+2) http_client: the http client will be used to send the data that arrives from the peripherals to the server.
+
+3) sntp: this protocol is used to synchronize the time on the esp32
+*/
