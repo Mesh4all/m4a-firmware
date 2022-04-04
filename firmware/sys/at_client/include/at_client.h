@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 /**
- * @ingroup     m4a-firmware
+ * @ingroup     at_client
  * @{
  * @file
  * @brief       AT command handler

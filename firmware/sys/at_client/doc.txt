@@ -1,0 +1,39 @@
+/**
+@defgroup at_client
+@ingroup     sys
+
+# What goes here?
+
+You have at command handler, which can be send with the shell, the following list has the command options:
+
+### Shell commands
+
+| SHELL COMMANDS                       | NEED ARGUMENT?| DESCRIPTION|
+|:----------------------------------- |:--------------|:-------------|
+| at wap_ssid "<AP SSID>"             |     Yes       | Set AP SSID|
+| at get_wap_ssid                     |     No        | Get AP SSID|
+| at wap_pass "<AP Password>"         |     Yes       | Set AP Password|
+| at get_wap_pass                     |     No        | Get AP Password|
+| at wsta_ssid "<STA SSID>"           |     Yes       | Set Station SSID|
+| at get_wsta_ssid                    |     No        | Get Station SSID|
+| at wsta_pass "<STA Password>"       |     Yes       | Set Station Passsword|
+| at get_wsta_pass                    |     No        | Get Station Password|
+| at wifi_off                         |     No        | Turn wifi off|
+| at wifi_on                          |     No        | Turn wifi on|
+| at nvs_rst                          |     No        | Reset NVS|
+| at wifi_mode "<0 / 1 / 2 / 3>"      |     Yes       | Set wifi mode|
+| at get_wifi_mode                    |     No        | Get wifi mode|
+| at wap_chan "<Number>"              |     Yes       | Set AP channel|
+| at get_wap_chan                     |     No        | Get AP channel|
+| at wap_auth "<Number as AUTH_TYPE>" |     Yes       | Set AP auth type|
+| at get_wap_auth                     |     No        | Get AP auth type|
+| at wifi_rst                         |     No        | Reset wifi|
+| at ath                              |     No        | Allows start communication with ESP|
+| at ath0                             |     No        | Stop communication with ESP|
+| at at                               |     No        | Check a right communication with ESP|
+| at help                             |     No        | Show the at command |
+
+Need to send "at ath" to start the communication with esp if you send any other command before, you won't
+receive an answer. To stop the communication, send "at ath0".
+
+*/
