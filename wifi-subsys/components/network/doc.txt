@@ -1,0 +1,16 @@
+/**
+@defgroup wifi_component  Wifi routines for the WiFi subsystem
+@ingroup wifi-subsys_components
+@brief Basic routines for handle the wifi-settings (modes[AP, STA, APSTA], wifi_configuration
+[ssid, password, channels, max_connections])
+
+# Overview
+
+Basic routines for handle the wifi system, This will let know the current status of wifi component
+and manipulate its different operating modes, AP, STA and APSTA. These functions provides to the
+Real time handling and easier control of the wifi settings.
+
+@note: When Wifi component is initialized by first time, (first boot), the system will be load all wifi_params
+provides by default_params.h
+
+*/

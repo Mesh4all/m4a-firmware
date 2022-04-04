@@ -6,4 +6,4 @@
 This is a record of all the tests, carried out for the different peripherals,
 boards and even connection modules, both network and other communication protocols.
 We can observe some tests of LCD screens, different drivers for some types of sensors, among other functionalities
- */
+*/

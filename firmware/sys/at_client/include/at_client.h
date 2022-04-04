@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 /**
- * @ingroup     m4a-firmware
+ * @ingroup     at_client
  * @{
  * @file
  * @brief       AT command handler
@@ -38,7 +38,7 @@ extern "C" {
  * @brief this is an enum used to define at commands.
  *
  */
- enum AT_COUNT {
+enum AT_COUNT {
     WAP_SSID = 0,  /*!< AP SSID*/
     GET_WAP_SSID,  /*!< GET AP SSID*/
     WAP_PASS,      /*!< AP PASSWORD*/
