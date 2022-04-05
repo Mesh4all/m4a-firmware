@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['uart_539',['Uart',['../group__tmp__uart.html',1,'']]],
-  ['udp_20client_20test_540',['UDP client test',['../group__udp__client__test.html',1,'']]],
-  ['udp_20server_20test_541',['UDP server test',['../group__udp__server__test.html',1,'']]],
-  ['uniqueid_542',['Uniqueid',['../group__uniqueid.html',1,'']]]
+  ['test_600',['Test',['../group__test__group.html',1,'']]],
+  ['test_20template_601',['Test template',['../group__test__template.html',1,'']]],
+  ['tools_602',['Tools',['../group__wifi-subsys-tools.html',1,'']]]
 ];

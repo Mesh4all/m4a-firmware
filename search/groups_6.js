@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reference_20firmware_532',['Reference firmware',['../group__m4a-firmware.html',1,'']]]
+  ['protocols_20routines_594',['Protocols routines',['../group__wifi-subusys-protocols.html',1,'']]]
 ];

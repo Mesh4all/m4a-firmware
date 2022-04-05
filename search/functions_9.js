@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['nvs_5fget_5fstring_338',['nvs_get_string',['../group__storage.html#gad9acfc7695a5d67f4b995f244c169c03',1,'storage.h']]],
-  ['nvs_5fget_5fuint32_339',['nvs_get_uint32',['../group__storage.html#ga450b450cae2b20e4c099164f4bb53464',1,'storage.h']]],
-  ['nvs_5fget_5fuint8_340',['nvs_get_uint8',['../group__storage.html#ga058d322184274aefd0dd9285e4516f76',1,'storage.h']]],
-  ['nvs_5finit_341',['nvs_init',['../group__storage.html#gab03b911dd4296933c03792401419e762',1,'storage.h']]],
-  ['nvs_5fset_5fstring_342',['nvs_set_string',['../group__storage.html#gacc1e5ee27d1df131eb765a4b35f7d926',1,'storage.h']]],
-  ['nvs_5fset_5fuint32_343',['nvs_set_uint32',['../group__storage.html#ga89b77bc562e8639b91af8246c8f3748b',1,'storage.h']]],
-  ['nvs_5fset_5fuint8_344',['nvs_set_uint8',['../group__storage.html#gabe8255d291f1ac4a4ebb2c032e1c886c',1,'storage.h']]]
+  ['manual_5fping_374',['manual_ping',['../icmp__ping_8h.html#a76f07ccdc9030ec537eb65ec032e46cf',1,'icmp_ping.h']]],
+  ['mtd_5ferase_5fflashpage_375',['mtd_erase_flashpage',['../group__m4a-firmware.html#gac112225f440598e3c1a8297fa3909366',1,'storage.h']]],
+  ['mtd_5fget_5fstring_5flen_376',['mtd_get_string_len',['../group__m4a-firmware.html#gaec3e7e482208da868fc19270db0b0f21',1,'storage.h']]],
+  ['mtd_5fread_5fstring_377',['mtd_read_string',['../group__m4a-firmware.html#ga649b3998bcdac66d32fb29962da6822b',1,'storage.h']]],
+  ['mtd_5fread_5fu8_378',['mtd_read_u8',['../group__m4a-firmware.html#ga9e74c490990fc259d0bd449c8e9f097a',1,'storage.h']]],
+  ['mtd_5fsave_379',['mtd_save',['../group__m4a-firmware.html#gae4d6ee70023524b0324b3fd3a4e9f701',1,'storage.h']]],
+  ['mtd_5fstart_380',['mtd_start',['../group__m4a-firmware.html#ga6aa5dd4e1cac5278e5133b6a6bd76d5e',1,'storage.h']]],
+  ['mtd_5fwrite_5fstring_381',['mtd_write_string',['../group__m4a-firmware.html#ga5cbab32f90d7b8179b7c4182e87135f7',1,'storage.h']]],
+  ['mtd_5fwrite_5fuint8_382',['mtd_write_uint8',['../group__m4a-firmware.html#gabc92c4881252e20efaf2b73591a73649',1,'storage.h']]]
 ];

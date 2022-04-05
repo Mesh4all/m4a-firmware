@@ -118,21 +118,70 @@ $(document).ready(function(){initNavTree('structhttp__response__t.html',''); ini
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ac4e6ffafc7bd328ed43fb2b959731ff4"><td class="memItemLeft" align="right" valign="top"><a id="ac4e6ffafc7bd328ed43fb2b959731ff4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>status</b></td></tr>
+<tr class="memitem:ac4e6ffafc7bd328ed43fb2b959731ff4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhttp__response__t.html#ac4e6ffafc7bd328ed43fb2b959731ff4">status</a></td></tr>
 <tr class="separator:ac4e6ffafc7bd328ed43fb2b959731ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5365297015c6a53f7527721adbf4e1e"><td class="memItemLeft" align="right" valign="top"><a id="ae5365297015c6a53f7527721adbf4e1e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>content_len</b></td></tr>
+<tr class="memitem:ae5365297015c6a53f7527721adbf4e1e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhttp__response__t.html#ae5365297015c6a53f7527721adbf4e1e">content_len</a></td></tr>
 <tr class="separator:ae5365297015c6a53f7527721adbf4e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e143e46e6c656e4498ae8bc45add071"><td class="memItemLeft" align="right" valign="top"><a id="a9e143e46e6c656e4498ae8bc45add071"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>output</b> [MAX_HTTP_OUTPUT_BUFFER]</td></tr>
+<tr class="memitem:a9e143e46e6c656e4498ae8bc45add071"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhttp__response__t.html#a9e143e46e6c656e4498ae8bc45add071">output</a> [<a class="el" href="httpsclient_8h.html#a16e493bcc98c74ce4f6ee27cb676c5e5">MAX_HTTP_OUTPUT_BUFFER</a>]</td></tr>
 <tr class="separator:a9e143e46e6c656e4498ae8bc45add071"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Struct to save status, content_len, output. </p>
 
 <p class="definition">Definition at line <a class="el" href="httpsclient_8h_source.html#l00047">47</a> of file <a class="el" href="httpsclient_8h_source.html">httpsclient.h</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="ae5365297015c6a53f7527721adbf4e1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5365297015c6a53f7527721adbf4e1e">&#9670;&nbsp;</a></span>content_len</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int http_response_t::content_len</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>size of output </p>
+
+<p class="definition">Definition at line <a class="el" href="httpsclient_8h_source.html#l00049">49</a> of file <a class="el" href="httpsclient_8h_source.html">httpsclient.h</a>.</p>
+
+</div>
+</div>
+<a id="a9e143e46e6c656e4498ae8bc45add071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e143e46e6c656e4498ae8bc45add071">&#9670;&nbsp;</a></span>output</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t http_response_t::output[<a class="el" href="httpsclient_8h.html#a16e493bcc98c74ce4f6ee27cb676c5e5">MAX_HTTP_OUTPUT_BUFFER</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Response buffer </p>
+
+<p class="definition">Definition at line <a class="el" href="httpsclient_8h_source.html#l00050">50</a> of file <a class="el" href="httpsclient_8h_source.html">httpsclient.h</a>.</p>
+
+</div>
+</div>
+<a id="ac4e6ffafc7bd328ed43fb2b959731ff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4e6ffafc7bd328ed43fb2b959731ff4">&#9670;&nbsp;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int http_response_t::status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Status of the method </p>
+
+<p class="definition">Definition at line <a class="el" href="httpsclient_8h_source.html#l00048">48</a> of file <a class="el" href="httpsclient_8h_source.html">httpsclient.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>wifi-subsys/components/protocols/src/<a class="el" href="httpsclient_8h_source.html">httpsclient.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -143,7 +192,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>output</b> [MAX_HT
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="structhttp__response__t.html">http_response_t</a></li>
-    <li class="footer">Generated on Tue Apr 5 2022 15:42:28 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue Apr 5 2022 16:18:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

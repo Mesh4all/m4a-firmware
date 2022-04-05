@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: Wifi-subsys_components</title>
+    <title>Mesh4all: wifi-subsys/components/protocols/src/protocol_sntp.h File Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('group__wifi-subsys__components.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('protocol__sntp_8h.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -104,67 +104,49 @@ $(document).ready(function(){initNavTree('group__wifi-subsys__components.html','
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#groups">Modules</a> &#124;
-<a href="#files">Files</a>  </div>
   <div class="headertitle">
-<div class="title">Wifi-subsys_components<div class="ingroups"><a class="el" href="group__wifi-subsys.html">WiFi Subsystem</a></div></div>  </div>
+<div class="title">protocol_sntp.h File Reference<div class="ingroups"><a class="el" href="group__wifi-subsys.html">WiFi Subsystem</a> &raquo; <a class="el" href="group__wifi-subusys-protocols.html">Protocols routines</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>sntp (Simple Network Time Protocol)  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;esp_err.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for protocol_sntp.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="protocol__sntp_8h__incl.svg" width="223" height="152"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="protocol__sntp_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:group__storage"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__storage.html">NVS routines for the WiFi subsystem</a></td></tr>
-<tr class="memdesc:group__storage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic routines for handle the NVS. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:group__wifi__component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi__component.html">Wifi routines for the WiFi subsystem</a></td></tr>
-<tr class="memdesc:group__wifi__component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic routines for handle the wifi-settings (modes[AP, STA, APSTA], wifi_configuration [ssid, password, channels, max_connections]) <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:httpsclient_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html">httpsclient.h</a></td></tr>
-<tr class="memdesc:httpsclient_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure a https client to make a request. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf196cd141f388f8ac0f7796b5bec30a3"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a>) (void)</td></tr>
-<tr class="memdesc:gaf196cd141f388f8ac0f7796b5bec30a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">sntp (Simple Network Time Protocol)  <a href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">More...</a><br /></td></tr>
-<tr class="separator:gaf196cd141f388f8ac0f7796b5bec30a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6d274b4f24915a4804e94fec6608f2c8"><td class="memItemLeft" align="right" valign="top"><a id="ga6d274b4f24915a4804e94fec6608f2c8"></a>
-esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">init_sntp</a> (void)</td></tr>
-<tr class="memdesc:ga6d274b4f24915a4804e94fec6608f2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a function to initialize the sntp server (This will not be taken, only have to be applied inside of the function <a class="el" href="group__wifi-subsys__components.html#gabc2f86dcd641a25da830f55cf4b3a7d4" title="main function that is working as task, this provides a sync with the sntp server Receives a callback ...">get_time_sntp()</a>) <br /></td></tr>
-<tr class="separator:ga6d274b4f24915a4804e94fec6608f2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabc2f86dcd641a25da830f55cf4b3a7d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wifi-subsys__components.html#gabc2f86dcd641a25da830f55cf4b3a7d4">get_time_sntp</a> (void *params)</td></tr>
-<tr class="memdesc:gabc2f86dcd641a25da830f55cf4b3a7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">main function that is working as task, this provides a sync with the sntp server Receives a callback as param:  <a href="group__wifi-subsys__components.html#gabc2f86dcd641a25da830f55cf4b3a7d4">More...</a><br /></td></tr>
-<tr class="separator:gabc2f86dcd641a25da830f55cf4b3a7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac27e89590a236e8f2b654813b055a830"><td class="memItemLeft" align="right" valign="top"><a id="gac27e89590a236e8f2b654813b055a830"></a>
-esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><b>sntp_start</b> (<a class="el" href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a> callback_sntp)</td></tr>
-<tr class="separator:gac27e89590a236e8f2b654813b055a830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af196cd141f388f8ac0f7796b5bec30a3"><td class="memItemLeft" align="right" valign="top"><a id="af196cd141f388f8ac0f7796b5bec30a3"></a>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a>) (void)</td></tr>
+<tr class="memdesc:af196cd141f388f8ac0f7796b5bec30a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a callback to every time function. <br /></td></tr>
+<tr class="separator:af196cd141f388f8ac0f7796b5bec30a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d274b4f24915a4804e94fec6608f2c8"><td class="memItemLeft" align="right" valign="top"><a id="a6d274b4f24915a4804e94fec6608f2c8"></a>
+esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protocol__sntp_8h.html#a6d274b4f24915a4804e94fec6608f2c8">init_sntp</a> (void)</td></tr>
+<tr class="memdesc:a6d274b4f24915a4804e94fec6608f2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a function to initialize the sntp server (This will not be taken, only have to be applied inside of the function <a class="el" href="protocol__sntp_8h.html#abc2f86dcd641a25da830f55cf4b3a7d4" title="main function that is working as task, this provides a sync with the sntp server Receives a callback ...">get_time_sntp()</a>) <br /></td></tr>
+<tr class="separator:a6d274b4f24915a4804e94fec6608f2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc2f86dcd641a25da830f55cf4b3a7d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="protocol__sntp_8h.html#abc2f86dcd641a25da830f55cf4b3a7d4">get_time_sntp</a> (void *params)</td></tr>
+<tr class="memdesc:abc2f86dcd641a25da830f55cf4b3a7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">main function that is working as task, this provides a sync with the sntp server Receives a callback as param:  <a href="protocol__sntp_8h.html#abc2f86dcd641a25da830f55cf4b3a7d4">More...</a><br /></td></tr>
+<tr class="separator:abc2f86dcd641a25da830f55cf4b3a7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27e89590a236e8f2b654813b055a830"><td class="memItemLeft" align="right" valign="top"><a id="ac27e89590a236e8f2b654813b055a830"></a>
+esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><b>sntp_start</b> (<a class="el" href="protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a> callback_sntp)</td></tr>
+<tr class="separator:ac27e89590a236e8f2b654813b055a830"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="gaf196cd141f388f8ac0f7796b5bec30a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf196cd141f388f8ac0f7796b5bec30a3">&#9670;&nbsp;</a></span>callback_time_t</h2>
+<div class="textblock"><p>sntp (Simple Network Time Protocol) </p>
+<dl class="section author"><dt>Author</dt><dd>eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'+'tu'+'rpi'+'al'+'dev'+'.c'+'om'; return false;">eduar<span style="display: none;">.nosp@m.</span>do@t<span style="display: none;">.nosp@m.</span>urpia<span style="display: none;">.nosp@m.</span>ldev<span style="display: none;">.nosp@m.</span>.com</a> </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef void(* callback_time_t) (void)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>sntp (Simple Network Time Protocol) </p>
-<dl class="section author"><dt>Author</dt><dd>eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'+'tu'+'rpi'+'al'+'dev'+'.c'+'om'; return false;">eduar<span style="display: none;">.nosp@m.</span>do@t<span style="display: none;">.nosp@m.</span>urpia<span style="display: none;">.nosp@m.</span>ldev<span style="display: none;">.nosp@m.</span>.com</a></dd></dl>
-<p>Define a callback to every time function </p>
-
-<p class="definition">Definition at line <a class="el" href="protocol__sntp_8h_source.html#l00041">41</a> of file <a class="el" href="protocol__sntp_8h_source.html">protocol_sntp.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="gabc2f86dcd641a25da830f55cf4b3a7d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabc2f86dcd641a25da830f55cf4b3a7d4">&#9670;&nbsp;</a></span>get_time_sntp()</h2>
+<p class="definition">Definition in file <a class="el" href="protocol__sntp_8h_source.html">protocol_sntp.h</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="abc2f86dcd641a25da830f55cf4b3a7d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc2f86dcd641a25da830f55cf4b3a7d4">&#9670;&nbsp;</a></span>get_time_sntp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,7 +178,8 @@ esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><b>sntp_start</b> (
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Apr 5 2022 15:42:28 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_f2832d707f281a7c7b3c53d7da0afbb9.html">protocols</a></li><li class="navelem"><a class="el" href="dir_bfb441d127ce7d6b75efc9892433d2fb.html">src</a></li><li class="navelem"><a class="el" href="protocol__sntp_8h.html">protocol_sntp.h</a></li>
+    <li class="footer">Generated on Tue Apr 5 2022 16:18:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

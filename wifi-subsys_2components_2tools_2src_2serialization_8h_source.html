@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('wifi-subsys_2components_2tools_2src_2s
 <div class="title">serialization.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="wifi-subsys_2components_2tools_2src_2serialization_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2022 Mesh4all &lt;mesh4all.org&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -133,11 +133,11 @@ $(document).ready(function(){initNavTree('wifi-subsys_2components_2tools_2src_2s
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;esp_err_t encode(<span class="keywordtype">char</span> *key, int64_t value, uint8_t *cbor_coded, <span class="keywordtype">size_t</span> *len);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;esp_err_t <a class="code" href="wifi-subsys_2components_2tools_2src_2serialization_8h.html#a29a18176e787fefa3e10c9e5e450bc35">encode</a>(<span class="keywordtype">char</span> *key, int64_t value, uint8_t *cbor_coded, <span class="keywordtype">size_t</span> *len);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;esp_err_t encode_uint8(<span class="keywordtype">char</span> *key, uint8_t *value, uint8_t *cbor_coded, <span class="keywordtype">size_t</span> *len);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;esp_err_t <a class="code" href="wifi-subsys_2components_2tools_2src_2serialization_8h.html#a0602d09628085314adc92e24ff0366d8">encode_uint8</a>(<span class="keywordtype">char</span> *key, uint8_t *value, uint8_t *cbor_coded, <span class="keywordtype">size_t</span> *len);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;esp_err_t decode(uint8_t *buf, <span class="keywordtype">char</span> *key, <span class="keywordtype">void</span> *value, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;esp_err_t <a class="code" href="wifi-subsys_2components_2tools_2src_2serialization_8h.html#a215fee02f2007eaca65d58b7011d8437">decode</a>(uint8_t *buf, <span class="keywordtype">char</span> *key, <span class="keywordtype">void</span> *value, <span class="keywordtype">size_t</span> len);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
@@ -147,13 +147,16 @@ $(document).ready(function(){initNavTree('wifi-subsys_2components_2tools_2src_2s
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="awifi-subsys_2components_2tools_2src_2serialization_8h_html_a215fee02f2007eaca65d58b7011d8437"><div class="ttname"><a href="wifi-subsys_2components_2tools_2src_2serialization_8h.html#a215fee02f2007eaca65d58b7011d8437">decode</a></div><div class="ttdeci">esp_err_t decode(uint8_t *buf, char *key, void *value, size_t len)</div><div class="ttdoc">method to decode data</div></div>
+<div class="ttc" id="awifi-subsys_2components_2tools_2src_2serialization_8h_html_a0602d09628085314adc92e24ff0366d8"><div class="ttname"><a href="wifi-subsys_2components_2tools_2src_2serialization_8h.html#a0602d09628085314adc92e24ff0366d8">encode_uint8</a></div><div class="ttdeci">esp_err_t encode_uint8(char *key, uint8_t *value, uint8_t *cbor_coded, size_t *len)</div><div class="ttdoc">method to encode data</div></div>
+<div class="ttc" id="awifi-subsys_2components_2tools_2src_2serialization_8h_html_a29a18176e787fefa3e10c9e5e450bc35"><div class="ttname"><a href="wifi-subsys_2components_2tools_2src_2serialization_8h.html#a29a18176e787fefa3e10c9e5e450bc35">encode</a></div><div class="ttdeci">esp_err_t encode(char *key, int64_t value, uint8_t *cbor_coded, size_t *len)</div><div class="ttdoc">method to encode data</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_6fe208c6d07ac7398463fc69e9cef020.html">tools</a></li><li class="navelem"><a class="el" href="dir_0aad0256dd75298853f14bf49aed9a9a.html">src</a></li><li class="navelem"><b>serialization.h</b></li>
-    <li class="footer">Generated on Tue Apr 5 2022 15:42:28 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_6fe208c6d07ac7398463fc69e9cef020.html">tools</a></li><li class="navelem"><a class="el" href="dir_0aad0256dd75298853f14bf49aed9a9a.html">src</a></li><li class="navelem"><a class="el" href="wifi-subsys_2components_2tools_2src_2serialization_8h.html">serialization.h</a></li>
+    <li class="footer">Generated on Tue Apr 5 2022 16:18:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

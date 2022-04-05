@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('icmp__ping_8h_source.html',''); initRe
 <div class="title">icmp_ping.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="icmp__ping_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2022 Mesh4all &lt;mesh4all.org&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -133,15 +133,15 @@ $(document).ready(function(){initNavTree('icmp__ping_8h_source.html',''); initRe
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">typedef</span> void (*callback_t)(int8_t);</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="icmp__ping_8h.html#a96087bd4900bab9e8769bcd284886b3a">   37</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="icmp__ping_8h.html#a96087bd4900bab9e8769bcd284886b3a">callback_t</a>)(int8_t);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;esp_err_t enable_ping(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;esp_err_t <a class="code" href="icmp__ping_8h.html#a74609db5c81189ad962853b57300deb5">enable_ping</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> manual_ping(callback_t *callback);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="icmp__ping_8h.html#a76f07ccdc9030ec537eb65ec032e46cf">manual_ping</a>(<a class="code" href="icmp__ping_8h.html#a96087bd4900bab9e8769bcd284886b3a">callback_t</a> *callback);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;uint8_t get_current_status(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;uint8_t <a class="code" href="icmp__ping_8h.html#ab32deea442a4c46fd2c5916da9ceeace">get_current_status</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;esp_err_t initialize_ping(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;esp_err_t <a class="code" href="icmp__ping_8h.html#a5e5574be20dfe9066f242b1d47968e1f">initialize_ping</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
@@ -150,13 +150,18 @@ $(document).ready(function(){initNavTree('icmp__ping_8h_source.html',''); initRe
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aicmp__ping_8h_html_a5e5574be20dfe9066f242b1d47968e1f"><div class="ttname"><a href="icmp__ping_8h.html#a5e5574be20dfe9066f242b1d47968e1f">initialize_ping</a></div><div class="ttdeci">esp_err_t initialize_ping(void)</div><div class="ttdoc">this function initializes the ping session</div></div>
+<div class="ttc" id="aicmp__ping_8h_html_a74609db5c81189ad962853b57300deb5"><div class="ttname"><a href="icmp__ping_8h.html#a74609db5c81189ad962853b57300deb5">enable_ping</a></div><div class="ttdeci">esp_err_t enable_ping(void)</div><div class="ttdoc">init wifi and start a new task where send a ping every 60 seconds</div></div>
+<div class="ttc" id="aicmp__ping_8h_html_a76f07ccdc9030ec537eb65ec032e46cf"><div class="ttname"><a href="icmp__ping_8h.html#a76f07ccdc9030ec537eb65ec032e46cf">manual_ping</a></div><div class="ttdeci">void manual_ping(callback_t *callback)</div><div class="ttdoc">this function manually sends the ping</div></div>
+<div class="ttc" id="aicmp__ping_8h_html_ab32deea442a4c46fd2c5916da9ceeace"><div class="ttname"><a href="icmp__ping_8h.html#ab32deea442a4c46fd2c5916da9ceeace">get_current_status</a></div><div class="ttdeci">uint8_t get_current_status(void)</div><div class="ttdoc">get connection status</div></div>
+<div class="ttc" id="aicmp__ping_8h_html_a96087bd4900bab9e8769bcd284886b3a"><div class="ttname"><a href="icmp__ping_8h.html#a96087bd4900bab9e8769bcd284886b3a">callback_t</a></div><div class="ttdeci">void(* callback_t)(int8_t)</div><div class="ttdoc">this is a callback will return the current status</div><div class="ttdef"><b>Definition:</b> <a href="icmp__ping_8h_source.html#l00037">icmp_ping.h:37</a></div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_f2832d707f281a7c7b3c53d7da0afbb9.html">protocols</a></li><li class="navelem"><a class="el" href="dir_bfb441d127ce7d6b75efc9892433d2fb.html">src</a></li><li class="navelem"><b>icmp_ping.h</b></li>
-    <li class="footer">Generated on Tue Apr 5 2022 15:42:28 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_f2832d707f281a7c7b3c53d7da0afbb9.html">protocols</a></li><li class="navelem"><a class="el" href="dir_bfb441d127ce7d6b75efc9892433d2fb.html">src</a></li><li class="navelem"><a class="el" href="icmp__ping_8h.html">icmp_ping.h</a></li>
+    <li class="footer">Generated on Tue Apr 5 2022 16:18:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

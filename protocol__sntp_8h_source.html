@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('protocol__sntp_8h_source.html',''); in
 <div class="title">protocol_sntp.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="protocol__sntp_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2022 Mesh4all &lt;mesh4all.org&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -124,24 +124,24 @@ $(document).ready(function(){initNavTree('protocol__sntp_8h_source.html',''); in
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * limitations under the License.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef PROTOCOL_SNTP_H</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define PROTOCOL_SNTP_H</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;esp_err.h&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">   41</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a>)(void);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef PROTOCOL_SNTP_H</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define PROTOCOL_SNTP_H</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;esp_err.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3">   41</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a>)(void);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;esp_err_t <a class="code" href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">init_sntp</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;esp_err_t <a class="code" href="protocol__sntp_8h.html#a6d274b4f24915a4804e94fec6608f2c8">init_sntp</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__wifi-subsys__components.html#gabc2f86dcd641a25da830f55cf4b3a7d4">get_time_sntp</a>(<span class="keywordtype">void</span> *params);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="protocol__sntp_8h.html#abc2f86dcd641a25da830f55cf4b3a7d4">get_time_sntp</a>(<span class="keywordtype">void</span> *params);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;esp_err_t sntp_start(<a class="code" href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a> callback_sntp);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;esp_err_t sntp_start(<a class="code" href="protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a> callback_sntp);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
@@ -150,16 +150,16 @@ $(document).ready(function(){initNavTree('protocol__sntp_8h_source.html',''); in
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="agroup__wifi-subsys__components_html_gaf196cd141f388f8ac0f7796b5bec30a3"><div class="ttname"><a href="group__wifi-subsys__components.html#gaf196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a></div><div class="ttdeci">void(* callback_time_t)(void)</div><div class="ttdoc">sntp (Simple Network Time Protocol)</div><div class="ttdef"><b>Definition:</b> <a href="protocol__sntp_8h_source.html#l00041">protocol_sntp.h:41</a></div></div>
-<div class="ttc" id="agroup__wifi-subsys__components_html_gabc2f86dcd641a25da830f55cf4b3a7d4"><div class="ttname"><a href="group__wifi-subsys__components.html#gabc2f86dcd641a25da830f55cf4b3a7d4">get_time_sntp</a></div><div class="ttdeci">void get_time_sntp(void *params)</div><div class="ttdoc">main function that is working as task, this provides a sync with the sntp server Receives a callback ...</div></div>
-<div class="ttc" id="agroup__wifi-subsys__components_html_ga6d274b4f24915a4804e94fec6608f2c8"><div class="ttname"><a href="group__wifi-subsys__components.html#ga6d274b4f24915a4804e94fec6608f2c8">init_sntp</a></div><div class="ttdeci">esp_err_t init_sntp(void)</div><div class="ttdoc">This is a function to initialize the sntp server (This will not be taken, only have to be applied ins...</div></div>
+<div class="ttc" id="aprotocol__sntp_8h_html_a6d274b4f24915a4804e94fec6608f2c8"><div class="ttname"><a href="protocol__sntp_8h.html#a6d274b4f24915a4804e94fec6608f2c8">init_sntp</a></div><div class="ttdeci">esp_err_t init_sntp(void)</div><div class="ttdoc">This is a function to initialize the sntp server (This will not be taken, only have to be applied ins...</div></div>
+<div class="ttc" id="aprotocol__sntp_8h_html_af196cd141f388f8ac0f7796b5bec30a3"><div class="ttname"><a href="protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a></div><div class="ttdeci">void(* callback_time_t)(void)</div><div class="ttdoc">Define a callback to every time function.</div><div class="ttdef"><b>Definition:</b> <a href="protocol__sntp_8h_source.html#l00041">protocol_sntp.h:41</a></div></div>
+<div class="ttc" id="aprotocol__sntp_8h_html_abc2f86dcd641a25da830f55cf4b3a7d4"><div class="ttname"><a href="protocol__sntp_8h.html#abc2f86dcd641a25da830f55cf4b3a7d4">get_time_sntp</a></div><div class="ttdeci">void get_time_sntp(void *params)</div><div class="ttdoc">main function that is working as task, this provides a sync with the sntp server Receives a callback ...</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_f2832d707f281a7c7b3c53d7da0afbb9.html">protocols</a></li><li class="navelem"><a class="el" href="dir_bfb441d127ce7d6b75efc9892433d2fb.html">src</a></li><li class="navelem"><b>protocol_sntp.h</b></li>
-    <li class="footer">Generated on Tue Apr 5 2022 15:42:28 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_f2832d707f281a7c7b3c53d7da0afbb9.html">protocols</a></li><li class="navelem"><a class="el" href="dir_bfb441d127ce7d6b75efc9892433d2fb.html">src</a></li><li class="navelem"><a class="el" href="protocol__sntp_8h.html">protocol_sntp.h</a></li>
+    <li class="footer">Generated on Tue Apr 5 2022 16:18:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('subsys__uart_8h_source.html',''); init
 <div class="title">subsys_uart.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="subsys__uart_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2022 Mesh4all &lt;mesh4all.org&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -124,39 +124,47 @@ $(document).ready(function(){initNavTree('subsys__uart_8h_source.html',''); init
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * limitations under the License.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifndef SUBSYS_UART_H</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define SUBSYS_UART_H</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;esp_err.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef SUBSYS_UART_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define SUBSYS_UART_H</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;esp_err_t init_uart();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> rx_receive();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> tx_send_loop();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> received_sensor_data(uint8_t *values);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">int</span> sendData(<span class="keyword">const</span> <span class="keywordtype">char</span> *logName, <span class="keywordtype">char</span> *data);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;esp_err_t setting_uart();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SUBSYS_UART_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;esp_err.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;esp_err_t <a class="code" href="subsys__uart_8h.html#aebe5ee521298dc5519a1b3615f73e2ab">init_uart</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="subsys__uart_8h.html#a7b4bff45259776e9b407e01bf9b3b5d9">rx_receive</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="subsys__uart_8h.html#a7a41e001b98cba8e3a6b462ec148c9f7">tx_send_loop</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">void</span> <a class="code" href="subsys__uart_8h.html#a317af498a62e61accf7454ebd2c2afd9">received_sensor_data</a>(uint8_t *values);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">int</span> <a class="code" href="subsys__uart_8h.html#a40ed809024ea5c2aacb9acdcfb2121d6">sendData</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *logName, <span class="keywordtype">char</span> *data);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;esp_err_t <a class="code" href="subsys__uart_8h.html#aaca37d2afd44c1bc35a7a173d07c1439">setting_uart</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SUBSYS_UART_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">/* @} */</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="asubsys__uart_8h_html_aaca37d2afd44c1bc35a7a173d07c1439"><div class="ttname"><a href="subsys__uart_8h.html#aaca37d2afd44c1bc35a7a173d07c1439">setting_uart</a></div><div class="ttdeci">esp_err_t setting_uart()</div><div class="ttdoc">in this function is added the gpios the baudrate and set all the uart settings</div></div>
+<div class="ttc" id="asubsys__uart_8h_html_a317af498a62e61accf7454ebd2c2afd9"><div class="ttname"><a href="subsys__uart_8h.html#a317af498a62e61accf7454ebd2c2afd9">received_sensor_data</a></div><div class="ttdeci">void received_sensor_data(uint8_t *values)</div><div class="ttdoc">this function is executed when rx_receive function identify that the datos arrived were sensors value...</div></div>
+<div class="ttc" id="asubsys__uart_8h_html_a7b4bff45259776e9b407e01bf9b3b5d9"><div class="ttname"><a href="subsys__uart_8h.html#a7b4bff45259776e9b407e01bf9b3b5d9">rx_receive</a></div><div class="ttdeci">void rx_receive()</div><div class="ttdoc">this function is executed when arrived a new mensajes a through uart rx, here identify if is an AT co...</div></div>
+<div class="ttc" id="asubsys__uart_8h_html_a7a41e001b98cba8e3a6b462ec148c9f7"><div class="ttname"><a href="subsys__uart_8h.html#a7a41e001b98cba8e3a6b462ec148c9f7">tx_send_loop</a></div><div class="ttdeci">void tx_send_loop()</div><div class="ttdoc">is one loop for send messages every 2 seconds this function was created for send AT commands for test...</div></div>
+<div class="ttc" id="asubsys__uart_8h_html_a40ed809024ea5c2aacb9acdcfb2121d6"><div class="ttname"><a href="subsys__uart_8h.html#a40ed809024ea5c2aacb9acdcfb2121d6">sendData</a></div><div class="ttdeci">int sendData(const char *logName, char *data)</div><div class="ttdoc">this function is used to send data through uart</div></div>
+<div class="ttc" id="asubsys__uart_8h_html_aebe5ee521298dc5519a1b3615f73e2ab"><div class="ttname"><a href="subsys__uart_8h.html#aebe5ee521298dc5519a1b3615f73e2ab">init_uart</a></div><div class="ttdeci">esp_err_t init_uart()</div><div class="ttdoc">this function initialize the uart and init the event loop where will be received messages.</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_13fe6cbf094a1946279e10e71677420d.html">uart</a></li><li class="navelem"><a class="el" href="dir_b26aee319041e22e7e6c7d215a035d6e.html">src</a></li><li class="navelem"><b>subsys_uart.h</b></li>
-    <li class="footer">Generated on Tue Apr 5 2022 15:42:28 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_13fe6cbf094a1946279e10e71677420d.html">uart</a></li><li class="navelem"><a class="el" href="dir_b26aee319041e22e7e6c7d215a035d6e.html">src</a></li><li class="navelem"><a class="el" href="subsys__uart_8h.html">subsys_uart.h</a></li>
+    <li class="footer">Generated on Tue Apr 5 2022 16:18:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

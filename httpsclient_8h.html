@@ -105,9 +105,10 @@ $(document).ready(function(){initNavTree('httpsclient_8h.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">httpsclient.h File Reference<div class="ingroups"><a class="el" href="group__wifi-subsys.html">WiFi Subsystem</a> &raquo; <a class="el" href="group__wifi-subsys__components.html">Wifi-subsys_components</a></div></div>  </div>
+<div class="title">httpsclient.h File Reference<div class="ingroups"><a class="el" href="group__wifi-subsys.html">WiFi Subsystem</a> &raquo; <a class="el" href="group__wifi-subusys-protocols.html">Protocols routines</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -132,13 +133,19 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to save status, content_len, output.  <a href="structhttp__response__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhttp__request__t.html">http_request_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to make http request.  <a href="structhttp__request__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7332032cd2bf659b9f8c18d303d2b67b"><td class="memItemLeft" align="right" valign="top"><a id="a7332032cd2bf659b9f8c18d303d2b67b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_HTTP_RECV_BUFFER</b>&#160;&#160;&#160;512</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae7c4f5057d30a650919c74c7f9e7d67c"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#ae7c4f5057d30a650919c74c7f9e7d67c">_http_event_handler</a> (esp_http_client_event_t *evt)</td></tr>
+<tr class="memdesc:ae7c4f5057d30a650919c74c7f9e7d67c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event handler of request.  <a href="httpsclient_8h.html#ae7c4f5057d30a650919c74c7f9e7d67c">More...</a><br /></td></tr>
+<tr class="separator:ae7c4f5057d30a650919c74c7f9e7d67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74e0632580d541aaf7250a0806bb2963"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a74e0632580d541aaf7250a0806bb2963">http_client</a> (<a class="el" href="structhttp__request__t.html">http_request_t</a> *http_request)</td></tr>
+<tr class="memdesc:a74e0632580d541aaf7250a0806bb2963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes https get/post request Note: To create certificate in console: openssl s_client -showcerts -connect [URL]:443 &lt;/dev/null.  <a href="httpsclient_8h.html#a74e0632580d541aaf7250a0806bb2963">More...</a><br /></td></tr>
+<tr class="separator:a74e0632580d541aaf7250a0806bb2963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7332032cd2bf659b9f8c18d303d2b67b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a7332032cd2bf659b9f8c18d303d2b67b">MAX_HTTP_RECV_BUFFER</a>&#160;&#160;&#160;512</td></tr>
 <tr class="separator:a7332032cd2bf659b9f8c18d303d2b67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16e493bcc98c74ce4f6ee27cb676c5e5"><td class="memItemLeft" align="right" valign="top"><a id="a16e493bcc98c74ce4f6ee27cb676c5e5"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_HTTP_OUTPUT_BUFFER</b>&#160;&#160;&#160;1024</td></tr>
+<tr class="memitem:a16e493bcc98c74ce4f6ee27cb676c5e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a16e493bcc98c74ce4f6ee27cb676c5e5">MAX_HTTP_OUTPUT_BUFFER</a>&#160;&#160;&#160;1024</td></tr>
 <tr class="separator:a16e493bcc98c74ce4f6ee27cb676c5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1759ca6a9bd7b00efc8f7ed0a561c34"><td class="memItemLeft" align="right" valign="top"><a id="ad1759ca6a9bd7b00efc8f7ed0a561c34"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>HTTPS_CONTENT_JSON</b>&#160;&#160;&#160;&quot;application/json&quot;</td></tr>
@@ -149,12 +156,6 @@ Data Structures</h2></td></tr>
 <tr class="memitem:a87468ed0049e5ba4f653de7b00c3304c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a87468ed0049e5ba4f653de7b00c3304c">response_callback_t</a>) (<a class="el" href="structhttp__response__t.html">http_response_t</a> *)</td></tr>
 <tr class="memdesc:a87468ed0049e5ba4f653de7b00c3304c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for response_callback_t.  <a href="httpsclient_8h.html#a87468ed0049e5ba4f653de7b00c3304c">More...</a><br /></td></tr>
 <tr class="separator:a87468ed0049e5ba4f653de7b00c3304c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7c4f5057d30a650919c74c7f9e7d67c"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#ae7c4f5057d30a650919c74c7f9e7d67c">_http_event_handler</a> (esp_http_client_event_t *evt)</td></tr>
-<tr class="memdesc:ae7c4f5057d30a650919c74c7f9e7d67c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event handler of request.  <a href="httpsclient_8h.html#ae7c4f5057d30a650919c74c7f9e7d67c">More...</a><br /></td></tr>
-<tr class="separator:ae7c4f5057d30a650919c74c7f9e7d67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74e0632580d541aaf7250a0806bb2963"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a74e0632580d541aaf7250a0806bb2963">http_client</a> (<a class="el" href="structhttp__request__t.html">http_request_t</a> *http_request)</td></tr>
-<tr class="memdesc:a74e0632580d541aaf7250a0806bb2963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes https get/post request Note: To create certificate in console: openssl s_client -showcerts -connect [URL]:443 &lt;/dev/null.  <a href="httpsclient_8h.html#a74e0632580d541aaf7250a0806bb2963">More...</a><br /></td></tr>
-<tr class="separator:a74e0632580d541aaf7250a0806bb2963"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Configure a https client to make a request. </p>
@@ -163,7 +164,42 @@ Data Structures</h2></td></tr>
 eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+'@gm'+'ai'+'l.c'+'om'; return false;">eduaz<span style="display: none;">.nosp@m.</span>ocar<span style="display: none;">.nosp@m.</span>v@gma<span style="display: none;">.nosp@m.</span>il.c<span style="display: none;">.nosp@m.</span>om</a> </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="httpsclient_8h_source.html">httpsclient.h</a>.</p>
-</div><h2 class="groupheader">Typedef Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a16e493bcc98c74ce4f6ee27cb676c5e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e493bcc98c74ce4f6ee27cb676c5e5">&#9670;&nbsp;</a></span>MAX_HTTP_OUTPUT_BUFFER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_HTTP_OUTPUT_BUFFER&#160;&#160;&#160;1024</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>maximum size to send </p>
+
+<p class="definition">Definition at line <a class="el" href="httpsclient_8h_source.html#l00038">38</a> of file <a class="el" href="httpsclient_8h_source.html">httpsclient.h</a>.</p>
+
+</div>
+</div>
+<a id="a7332032cd2bf659b9f8c18d303d2b67b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7332032cd2bf659b9f8c18d303d2b67b">&#9670;&nbsp;</a></span>MAX_HTTP_RECV_BUFFER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_HTTP_RECV_BUFFER&#160;&#160;&#160;512</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>maximum size to receive </p>
+
+<p class="definition">Definition at line <a class="el" href="httpsclient_8h_source.html#l00037">37</a> of file <a class="el" href="httpsclient_8h_source.html">httpsclient.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
 <a id="a87468ed0049e5ba4f653de7b00c3304c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a87468ed0049e5ba4f653de7b00c3304c">&#9670;&nbsp;</a></span>response_callback_t</h2>
 
@@ -244,7 +280,7 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_f2832d707f281a7c7b3c53d7da0afbb9.html">protocols</a></li><li class="navelem"><a class="el" href="dir_bfb441d127ce7d6b75efc9892433d2fb.html">src</a></li><li class="navelem"><a class="el" href="httpsclient_8h.html">httpsclient.h</a></li>
-    <li class="footer">Generated on Tue Apr 5 2022 15:42:28 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue Apr 5 2022 16:18:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

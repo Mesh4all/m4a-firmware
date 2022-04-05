@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['mtd_5ferase_5fflashpage_330',['mtd_erase_flashpage',['../group__m4a-firmware.html#gac112225f440598e3c1a8297fa3909366',1,'storage.h']]],
-  ['mtd_5fget_5fstring_5flen_331',['mtd_get_string_len',['../group__m4a-firmware.html#gaec3e7e482208da868fc19270db0b0f21',1,'storage.h']]],
-  ['mtd_5fread_5fstring_332',['mtd_read_string',['../group__m4a-firmware.html#ga649b3998bcdac66d32fb29962da6822b',1,'storage.h']]],
-  ['mtd_5fread_5fu8_333',['mtd_read_u8',['../group__m4a-firmware.html#ga9e74c490990fc259d0bd449c8e9f097a',1,'storage.h']]],
-  ['mtd_5fsave_334',['mtd_save',['../group__m4a-firmware.html#gae4d6ee70023524b0324b3fd3a4e9f701',1,'storage.h']]],
-  ['mtd_5fstart_335',['mtd_start',['../group__m4a-firmware.html#ga6aa5dd4e1cac5278e5133b6a6bd76d5e',1,'storage.h']]],
-  ['mtd_5fwrite_5fstring_336',['mtd_write_string',['../group__m4a-firmware.html#ga5cbab32f90d7b8179b7c4182e87135f7',1,'storage.h']]],
-  ['mtd_5fwrite_5fuint8_337',['mtd_write_uint8',['../group__m4a-firmware.html#gabc92c4881252e20efaf2b73591a73649',1,'storage.h']]]
+  ['identify_5fenabled_5finterface_364',['identify_enabled_interface',['../group__wifi__component.html#gae6668eba3f175628aac7bd5248bee4d1',1,'wifi.h']]],
+  ['init_5fap_365',['init_ap',['../group__wifi__component.html#ga9d1592020577990e6f348d027d0b5a71',1,'wifi.h']]],
+  ['init_5fmoisture_366',['init_moisture',['../moisture__sensor_8h.html#a5aecb8c061d0c67614d8a0805b627dca',1,'moisture_sensor.h']]],
+  ['init_5fsntp_367',['init_sntp',['../protocol__sntp_8h.html#a6d274b4f24915a4804e94fec6608f2c8',1,'protocol_sntp.h']]],
+  ['init_5fsta_368',['init_sta',['../group__wifi__component.html#ga91e3ae3af5d354b31d963366cdec8dae',1,'wifi.h']]],
+  ['init_5ftemperature_5fsensor_369',['init_temperature_sensor',['../ds18__sensor_8h.html#afd1968312478887124a3678bed0d1cab',1,'ds18_sensor.h']]],
+  ['init_5fuart_370',['init_uart',['../subsys__uart_8h.html#aebe5ee521298dc5519a1b3615f73e2ab',1,'subsys_uart.h']]],
+  ['initialize_5fping_371',['initialize_ping',['../icmp__ping_8h.html#a5e5574be20dfe9066f242b1d47968e1f',1,'icmp_ping.h']]],
+  ['is_5fap_372',['is_ap',['../group__wifi__component.html#ga8a891ceb4adebb3393f4cee34eda50da',1,'wifi.h']]],
+  ['is_5fsta_373',['is_sta',['../group__wifi__component.html#ga31d0fb01150610898c219b4830b5cf06',1,'wifi.h']]]
 ];
