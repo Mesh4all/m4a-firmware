@@ -16,7 +16,7 @@ var group__examples =
       [ "How to test it", "group__external-led.html#autotoc_md39", null ],
       [ "Uart example", "group__tmp__uart.html#autotoc_md40", null ]
     ] ],
-    [ "Analog capacitive moisture sensor", "group__moisture__sensor.html", "group__moisture__sensor" ],
+    [ "Analog capacitive moisture sensor", "group__moisture__sensor__example.html", null ],
     [ "Ds18b20", "group__ds18b20.html", "group__ds18b20" ],
     [ "External-led blink", "group__external-led.html", "group__external-led" ],
     [ "M4a-wrover-app", "group__wrover-app.html", "group__wrover-app" ],

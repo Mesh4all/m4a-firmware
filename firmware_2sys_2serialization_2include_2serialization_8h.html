@@ -107,11 +107,11 @@ $(document).ready(function(){initNavTree('firmware_2sys_2serialization_2include_
   <div class="summary">
 <a href="#nested-classes">Data Structures</a>  </div>
   <div class="headertitle">
-<div class="title">serialization.h File Reference<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a></div></div>  </div>
+<div class="title">serialization.h File Reference<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__sys.html">Sys</a> &raquo; <a class="el" href="group__serialization.html">Serialization</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>serialization implementation for this it will be used tinycbor  
+<p>Serialization implementation for this will use tinycbor.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -128,18 +128,17 @@ $(document).ready(function(){initNavTree('firmware_2sys_2serialization_2include_
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsensor__data.html">sensor_data</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is an struct used for save the data of the sensor.  <a href="structsensor__data.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an struct used to save the sensor data.  <a href="structsensor__data.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2aa958140eda2473bea4a6a04b927ac0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2serialization_2include_2serialization_8h.html#a2aa958140eda2473bea4a6a04b927ac0">cbor_decode_message</a> (uint8_t *buffer, <a class="el" href="structsensor__data.html">sensor_data</a> *data, size_t length)</td></tr>
-<tr class="memdesc:a2aa958140eda2473bea4a6a04b927ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function decode message to arrive since udp.  <a href="firmware_2sys_2serialization_2include_2serialization_8h.html#a2aa958140eda2473bea4a6a04b927ac0">More...</a><br /></td></tr>
+<tr class="memdesc:a2aa958140eda2473bea4a6a04b927ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function decodes the arriving message from udp.  <a href="firmware_2sys_2serialization_2include_2serialization_8h.html#a2aa958140eda2473bea4a6a04b927ac0">More...</a><br /></td></tr>
 <tr class="separator:a2aa958140eda2473bea4a6a04b927ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66ba11ef6fbd93716343388aacf9dabd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2serialization_2include_2serialization_8h.html#a66ba11ef6fbd93716343388aacf9dabd">cbor_enconde_message</a> (<a class="el" href="structsensor__data.html">sensor_data</a> *data, uint8_t *output, size_t *len_output)</td></tr>
-<tr class="memdesc:a66ba11ef6fbd93716343388aacf9dabd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function decode message before to send in udp client.  <a href="firmware_2sys_2serialization_2include_2serialization_8h.html#a66ba11ef6fbd93716343388aacf9dabd">More...</a><br /></td></tr>
+<tr class="memdesc:a66ba11ef6fbd93716343388aacf9dabd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function decodes a message before sending it to udp client.  <a href="firmware_2sys_2serialization_2include_2serialization_8h.html#a66ba11ef6fbd93716343388aacf9dabd">More...</a><br /></td></tr>
 <tr class="separator:a66ba11ef6fbd93716343388aacf9dabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>serialization implementation for this it will be used tinycbor </p>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 Mesh for all </dd></dl>
+<div class="textblock"><p>Serialization implementation for this will use tinycbor. </p>
 <dl class="section author"><dt>Author</dt><dd>xkevin190 <a href="#" onclick="location.href='mai'+'lto:'+'kev'+'in'+'vel'+'as'+'co1'+'90'+'@gm'+'ai'+'l.c'+'om'; return false;">kevin<span style="display: none;">.nosp@m.</span>vela<span style="display: none;">.nosp@m.</span>sco19<span style="display: none;">.nosp@m.</span>0@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a> </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="firmware_2sys_2serialization_2include_2serialization_8h_source.html">serialization.h</a>.</p>
@@ -176,7 +175,7 @@ Data Structures</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This function decode message to arrive since udp. </p>
+<p>This function decodes the arriving message from udp. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>data codified </td></tr>
@@ -221,12 +220,12 @@ Data Structures</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This function decode message before to send in udp client. </p>
+<p>This function decodes a message before sending it to udp client. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>sensors values </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>sensors values </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>output of the codified data </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>length of the data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len_output</td><td>length of the data </td></tr>
   </table>
   </dd>
 </dl>
@@ -242,7 +241,7 @@ Data Structures</h2></td></tr>
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_38d8769b7982536a1592307dd4ec982e.html">sys</a></li><li class="navelem"><a class="el" href="dir_bda79e4367ee96b38d88fe77dfd73e41.html">serialization</a></li><li class="navelem"><a class="el" href="dir_095eccb8ae3c4cd64ad7e379bcffbc6e.html">include</a></li><li class="navelem"><a class="el" href="firmware_2sys_2serialization_2include_2serialization_8h.html">serialization.h</a></li>
-    <li class="footer">Generated on Tue Apr 5 2022 16:18:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue Apr 5 2022 16:58:54 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

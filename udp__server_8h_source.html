@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('udp__server_8h_source.html',''); initR
 <div class="title">udp_server.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="udp__server_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2022 Mesh4all &lt;mesh4all.org&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -124,37 +124,39 @@ $(document).ready(function(){initNavTree('udp__server_8h_source.html',''); initR
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * limitations under the License.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef UDP_SERVER_H</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define UDP_SERVER_H</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">char</span> *port;                              </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    void (*callback)(uint8_t *message, <span class="keywordtype">size_t</span> len); </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef UDP_SERVER_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define UDP_SERVER_H</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">char</span> *port;                                     </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    void (*callback)(uint8_t *message, <span class="keywordtype">size_t</span> len); </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;} <a class="code" href="structudpf__payload.html">udpf_payload</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">int</span> <a class="code" href="udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0">udp_server</a>(<a class="code" href="structudpf__payload.html">udpf_payload</a> *argv);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">int</span> <a class="code" href="udp__server_8h.html#a3e54c501a23f62be7f12c4905cf06343">udp_server</a>(<a class="code" href="structudpf__payload.html">udpf_payload</a> *argv);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> *_udp_serverf(<span class="keywordtype">void</span> *args);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UDP_SERVER_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> *<a class="code" href="udp__server_8h.html#a2860ecf7c6cfc426a578ac98e7c7aa1b">_udp_serverf</a>(<span class="keywordtype">void</span> *args);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UDP_SERVER_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructudpf__payload_html"><div class="ttname"><a href="structudpf__payload.html">udpf_payload</a></div><div class="ttdoc">udp transmitted data</div><div class="ttdef"><b>Definition:</b> <a href="udpf_8h_source.html#l00039">udpf.h:39</a></div></div>
-<div class="ttc" id="audpf_8h_html_ade251db86aba3ace7dae3f7fc39c63b0"><div class="ttname"><a href="udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0">udp_server</a></div><div class="ttdeci">int udp_server(int argc, udpf_payload *argv)</div><div class="ttdoc">start udp server under a thread</div></div>
+<div class="ttc" id="audp__server_8h_html_a2860ecf7c6cfc426a578ac98e7c7aa1b"><div class="ttname"><a href="udp__server_8h.html#a2860ecf7c6cfc426a578ac98e7c7aa1b">_udp_serverf</a></div><div class="ttdeci">void * _udp_serverf(void *args)</div><div class="ttdoc">This function function is used to set the callback function to the udp server thread.</div></div>
+<div class="ttc" id="audp__server_8h_html_a3e54c501a23f62be7f12c4905cf06343"><div class="ttname"><a href="udp__server_8h.html#a3e54c501a23f62be7f12c4905cf06343">udp_server</a></div><div class="ttdeci">int udp_server(udpf_payload *argv)</div><div class="ttdoc">udp server function this function is used for init udp server</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_3a9eb1a94fd97c6435eac16fc680a420.html">udp_server</a></li><li class="navelem"><a class="el" href="dir_c3efe5b63a9e1b06e3e3617cef8178e9.html">include</a></li><li class="navelem"><b>udp_server.h</b></li>
-    <li class="footer">Generated on Tue Apr 5 2022 16:18:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_3a9eb1a94fd97c6435eac16fc680a420.html">udp_server</a></li><li class="navelem"><a class="el" href="dir_c3efe5b63a9e1b06e3e3617cef8178e9.html">include</a></li><li class="navelem"><a class="el" href="udp__server_8h.html">udp_server.h</a></li>
+    <li class="footer">Generated on Tue Apr 5 2022 16:58:54 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

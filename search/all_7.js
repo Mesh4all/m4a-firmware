@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['http_5fclient_101',['http_client',['../httpsclient_8h.html#a74e0632580d541aaf7250a0806bb2963',1,'httpsclient.h']]],
-  ['http_5frequest_5ft_102',['http_request_t',['../structhttp__request__t.html',1,'']]],
-  ['http_5fresponse_5ft_103',['http_response_t',['../structhttp__response__t.html',1,'']]],
-  ['httpsclient_2eh_104',['httpsclient.h',['../httpsclient_8h.html',1,'']]]
+  ['http_5fclient_103',['http_client',['../httpsclient_8h.html#a74e0632580d541aaf7250a0806bb2963',1,'httpsclient.h']]],
+  ['http_5frequest_5ft_104',['http_request_t',['../structhttp__request__t.html',1,'']]],
+  ['http_5fresponse_5ft_105',['http_response_t',['../structhttp__response__t.html',1,'']]],
+  ['httpsclient_2eh_106',['httpsclient.h',['../httpsclient_8h.html',1,'']]]
 ];

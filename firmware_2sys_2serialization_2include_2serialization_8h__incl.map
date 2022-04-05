@@ -1,4 +1,4 @@
 <map id="firmware/sys/serialization/include/serialization.h" name="firmware/sys/serialization/include/serialization.h">
-<area shape="rect" id="node1" title="serialization implementation for this it will be used tinycbor" alt="" coords="5,5,228,52"/>
+<area shape="rect" id="node1" title="Serialization implementation for this will use tinycbor." alt="" coords="5,5,228,52"/>
 <area shape="rect" id="node2" title=" " alt="" coords="79,100,154,129"/>
 </map>

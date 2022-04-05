@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['udp_5fsend_403',['udp_send',['../udpf_8h.html#a1516055126f26528fe1b9dd43d146fa5',1,'udpf.h']]],
-  ['udp_5fserver_404',['udp_server',['../udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0',1,'udpf.h']]]
+  ['udp_5fsend_420',['udp_send',['../udpf_8h.html#a1516055126f26528fe1b9dd43d146fa5',1,'udp_send(int argc, char **argv):&#160;udpf.h'],['../udp__client_8h.html#aa3493cbef904175c2868a533394fbca8',1,'udp_send(int *port, char *address, uint8_t *message, size_t *payload_len):&#160;udp_client.h']]],
+  ['udp_5fserver_421',['udp_server',['../udpf_8h.html#ade251db86aba3ace7dae3f7fc39c63b0',1,'udp_server(int argc, udpf_payload *argv):&#160;udpf.h'],['../udp__server_8h.html#a3e54c501a23f62be7f12c4905cf06343',1,'udp_server(udpf_payload *argv):&#160;udp_server.h']]]
 ];

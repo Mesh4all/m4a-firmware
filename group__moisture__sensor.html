@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: Analog capacitive moisture sensor</title>
+    <title>Mesh4all: Moisture sensor</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -104,47 +104,24 @@ $(document).ready(function(){initNavTree('group__moisture__sensor.html',''); ini
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#files">Files</a>  </div>
   <div class="headertitle">
-<div class="title">Analog capacitive moisture sensor<div class="ingroups"><a class="el" href="group__examples.html">Mesh4all Examples</a></div></div>  </div>
+<div class="title">Moisture sensor<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__peripherals.html">Peripherals</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Example dedicated to use the analog soil moisture sensor.  
-<a href="#details">More...</a></p>
-<p>Example dedicated to use the analog soil moisture sensor. </p>
-<dl class="section author"><dt>Author</dt><dd>xkevin190 <a href="#" onclick="location.href='mai'+'lto:'+'kev'+'in'+'vel'+'as'+'co1'+'90'+'@gm'+'ai'+'l.c'+'om'; return false;">kevin<span style="display: none;">.nosp@m.</span>vela<span style="display: none;">.nosp@m.</span>sco19<span style="display: none;">.nosp@m.</span>0@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a></dd></dl>
-<h1><a class="anchor" id="Moisture"></a>
-Sensor</h1>
-<h2><a class="anchor" id="ssoil_moisture_toc"></a>
-Table of Contents</h2>
-<ol type="1">
-<li><a href="#ssoil_moisture_hardware">Hardware</a></li>
-<li><a href="#ssoil_moisture_basic_conf">Basic and Default configuration</a></li>
-<li><a href="#ssoil_moisture_flashing">Flashing the Device</a></li>
-</ol>
-<h2><a class="anchor" id="ssoil_moisture_hardware"></a>
-Hardware</h2>
-<p>This section shows, which pin is used to receive the sensor data.</p>
-<center> <table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Function </th><th class="markdownTableHeadLeft">GPIOs </th><th class="markdownTableHeadLeft">Remarks  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">Analog Sensor Data Input </td><td class="markdownTableBodyLeft">GPIO0 </td><td class="markdownTableBodyLeft">This is data pin to receive the reads.  </td></tr>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:moisture__sensor_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moisture__sensor_8h.html">moisture_sensor.h</a></td></tr>
+<tr class="memdesc:moisture__sensor_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a module created for hw390 moisture sensor. This is an adc device, for the correct functioning of this module you have to use 3.3V and 10bits resolution. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</center><center></center><h2><a class="anchor" id="ssoil_moisture_basic_conf"></a>
-Basics to start</h2>
-<p>First, needs to initialize de ADC_channel to be used. </p><div class="fragment"><div class="line">adc_init(analog_channel) <span class="comment">/*initialize an adc_pin*/</span></div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment">  if returns 0 it&#39;s ok</span></div>
-<div class="line"><span class="comment">  else failed ADC_mode in that pin</span></div>
-<div class="line"><span class="comment">*/</span></div>
-</div><!-- fragment --><p>take some reads from analog peripherals, for this, you'll need to known your ADC_Channels in your development board. also needs to know what is the resolution of bits that could be read in the analog channel. </p><div class="fragment"><div class="line">adc_sample(adc_channel, resolution)</div>
-</div><!-- fragment --><p>There are two values to knows limits of max (dry) and min (wet). </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> min = 356;</div>
-<div class="line"><span class="keywordtype">int</span> max = 901;</div>
-</div><!-- fragment --><h2><a class="anchor" id="ssoil_moisture_flashing"></a>
-Flashing</h2>
-<p>If you want to upload the example to your board, needs to compile first, additional to this you could initialize the terminal and watch the results </p><div class="fragment"><div class="line">make -C examples/moisture_sensor_hw390 flash term</div>
-</div><!-- fragment --><p><a href="#ssoil_moisture_toc">Back to table of contents</a> </p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h3><a class="anchor" id="autotoc_md54"></a>
+What goes here?</h3>
+<p>This module gets the data of the moisture sensor.</p>
+<p>Note: This is an adc device, for the correct functioning of this module you have to use 3.3V and 10bits resolution. </p>
 
 
 <h3><a id="md_examples_moisture_sensor_hw390_README"></a>README</h3><div class="textblock"></div></div><!-- contents -->
@@ -154,7 +131,7 @@ Flashing</h2>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Apr 5 2022 16:18:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue Apr 5 2022 16:58:54 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
