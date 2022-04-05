@@ -7,7 +7,7 @@
  */
 
 /**
- * @defgroup    moisture_sensor  Analog capacitive moisture sensor
+ * @defgroup    moisture_sensor_example  Analog capacitive moisture sensor
  * @ingroup     examples
  * @brief       Example dedicated to use the analog soil moisture sensor
  * @author      xkevin190 <kevinvelasco190@gmail.com>

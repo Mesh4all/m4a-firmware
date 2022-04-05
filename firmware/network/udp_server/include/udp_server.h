@@ -15,9 +15,10 @@
  */
 
 /**
+ * @ingroup     udp_server
  * @{
- * @file        udp_m4a.h
- * @brief       udp libs
+ * @file
+ * @brief       udp server lib used to get the sensor values
  * @author      xkevin190 <kevinvelasco190@gmail.com.com>
  *
  */
@@ -30,27 +31,31 @@ extern "C" {
 #endif
 
 /**
- * @brief this is a struct  used for init udp server
+ * @brief this is a struct used to init udp server
  */
 typedef struct {
-    char *port;                              /*!< port where will listen udp server */
+    char *port;                                     /*!< port where will listen udp server */
     void (*callback)(uint8_t *message, size_t len); /*!< this is a callback this function will
-                                                  be executed when arrive new values
-                                             */
+                                                    be executed when arrive new values */
 } udpf_payload;
 
 /**
  * @brief  udp server function this function is used for init udp server
  *
- * @param argv [in] this param will content  the callback and port where will listen el server
+ * @param argv [in] this param will content the callback and port where will listen the server
  * @return  0 Satisfactory result
  *         -1 Failed result
  */
 int udp_server(udpf_payload *argv);
 
+/**
+ * @brief This function function is used to set the callback function to the udp server thread
+ * @param args [in] UDP payload pointer
+ */
 void *_udp_serverf(void *args);
 
 #ifdef __cplusplus
 }
 #endif
 #endif /* UDP_SERVER_H */
+/** @} */

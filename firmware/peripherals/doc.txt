@@ -1,0 +1,17 @@
+/**
+@defgroup peripherals Peripherals
+@ingroup  m4a-firmware
+
+### What goes here?
+Specific documentation for our reference peripherals;
+In the next module you can find:
+
+### ds18_sensor
+
+Module to get temperature data.
+
+### moisture_sensor
+
+Module to get moisture data.
+
+*/

@@ -1,0 +1,17 @@
+/**
+@defgroup network Network module
+@ingroup  m4a-firmware
+
+### What goes here?
+Specific documentation for our reference network;
+In the next module you can find:
+
+### udp_client
+
+In this module is used to send the sensors values.
+
+### udp_server
+
+In this module is used to get the sensor values.
+
+*/

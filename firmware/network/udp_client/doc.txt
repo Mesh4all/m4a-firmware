@@ -1,0 +1,10 @@
+/**
+@defgroup udp_client Udp Client
+@ingroup  network
+
+### What goes here?
+
+This module is used to set an udp client. The function ``` udp_send ``` is used to send the sensors values specifying port,
+address to which the message will be sent, the message (parameter) and the size of the message.
+
+*/

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 /**
- * @brief This function get ipv6 address (mode: static (default), random, manual)
+ * @brief This function gets ipv6 address (mode: static (default), random, manual)
  *
  * @author  RocioRojas <rociorojas391@gmail.com>
  */
@@ -48,9 +48,9 @@ void subnet_to_ipv6(ipv6_addr_t *addr) {
     memcpy((char *)addr->u8, (char *)header.u8, 4);
     union random_buff random_number;
     #ifdef  CONFIG_SEED_XTIMER
-    int seed = _xtimer_now(); // This not cryptographically secure (default)
+    int seed = _xtimer_now(); // TO DO: This is not cryptographically secure (default)
     #else
-    int seed = 0; // TO DO: this is a example, here put a seed cryptographically secure
+    int seed = 0; // TO DO: this is an example, here put a seed cryptographically secure
     #endif
     random_init(seed);
     random_number.u32 = random_uint32();

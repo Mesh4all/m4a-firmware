@@ -1,0 +1,10 @@
+/**
+@defgroup udp_server Udp server
+@ingroup  network
+
+### What goes here?
+
+This module is used to set an udp server. The function ``` udp_server ``` is used to init the server,
+containing the callback function to handle requests.
+
+*/

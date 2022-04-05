@@ -15,8 +15,9 @@
  */
 
 /**
+ * @ingroup     udp_client
  * @{
- * @file        udp_m4a.h
+ * @file
  * @brief       udp client lib used to send the sensor values
  * @author      xkevin190 <kevinvelasco190@gmail.com.com>
  *
@@ -30,7 +31,7 @@ extern "C" {
 #endif
 
 /**
- * @brief this function is used for send the sensors values
+ * @brief this function is used to send the sensors values
  *
  * @param port  [in]            port to which the message will be sent
  * @param address [int]         address to which the message will be sent
@@ -44,3 +45,4 @@ int udp_send(int *port, char *address, uint8_t *message, size_t *payload_len);
 }
 #endif
 #endif /* UDP_CLIENT_H */
+/** @} */

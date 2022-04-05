@@ -1,0 +1,11 @@
+/**
+@defgroup ds18_sensor Ds18 sensor
+@ingroup  peripherals
+
+### What goes here?
+
+This module is used to get the data of the temperature sensor. The function
+``` init_temperature_sensor ```initialize the sensor and the function
+``` get_temperature_value ``` gets the values.
+
+*/

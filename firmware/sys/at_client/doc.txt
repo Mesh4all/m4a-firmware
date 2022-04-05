@@ -1,8 +1,8 @@
 /**
-@defgroup at_client
+@defgroup at_client  At client
 @ingroup     sys
 
-# What goes here?
+### What goes here?
 
 You have at command handler, which can be send with the shell, the following list has the command options:
 
