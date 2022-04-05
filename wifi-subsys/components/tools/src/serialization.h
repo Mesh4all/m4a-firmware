@@ -15,10 +15,10 @@
  */
 
 /**
- *
+ * @ingroup wifi-subsys-tools
  * @{
  * @brief       Cbor encoder and decoder functions to manipulate a group of data.
- *
+ * @file
  * @author      xkevin190 <kevinvelasco190@gmail.com>
  * @author      eduazocar <eduardo@turpialdev.com>
  *

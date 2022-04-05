@@ -1,6 +1,6 @@
 /**
 @defgroup storage   NVS routines for the WiFi subsystem
-@ingroup wifi-subsys_components
+@ingroup wifi-subsys
 @brief Basic routines for handle the NVS
 
 # Overview

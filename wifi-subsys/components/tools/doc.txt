@@ -1,0 +1,8 @@
+/**
+@defgroup wifi-subsys-tools  Tools
+@ingroup wifi-subsys
+@brief module created to contain the reusable functions in wifi-subsys
+
+# Overview
+ In this module all the reusable functions in wifi subsys will be allocated, at this moment we only have the serialization functions.
+*/

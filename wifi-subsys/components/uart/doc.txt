@@ -1,0 +1,9 @@
+/**
+  @defgroup wifi_subsys_uart  Wifi-subsys Uart Module
+  @ingroup wifi-subsys
+  @brief Basic implementation of uart functions for wifi subsys
+
+   # Overview
+    Basic routines for handle the uart, here you can send and receive data through uart.
+    In this module also you can send AT COMMANDS and to handle of the board settings.
+ */

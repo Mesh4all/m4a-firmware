@@ -16,8 +16,9 @@
 
 /**
  *
- * @ingroup     wifi-subsys_components
+ * @ingroup    wifi-subusys-protocols
  * @{
+ * @file
  * @brief       sntp (Simple Network Time Protocol)
  * @author      eduazocar <eduardo@turpialdev.com>
  *
@@ -37,7 +38,6 @@ extern "C" {
 /**
  * @brief Define a callback to every time function
  */
-
 typedef void (*callback_time_t)(void);
 
 /**

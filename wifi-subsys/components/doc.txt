@@ -1,4 +1,0 @@
-/**
- * @defgroup wifi-subsys_components
- * @ingroup wifi-subsys
- */
