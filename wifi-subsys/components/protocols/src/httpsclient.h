@@ -20,6 +20,7 @@
  * @file
  * @brief      Configure a https client to make a request
  * @author     RocioRojas <Rociorojas391@gmail.com>
+ * @author     eduazocar <eduazocarv@gmail.com>
  *
  */
 
@@ -36,31 +37,35 @@ extern "C" {
 #define MAX_HTTP_RECV_BUFFER 512
 #define MAX_HTTP_OUTPUT_BUFFER 1024
 
+#define HTTPS_CONTENT_JSON "application/json"
+#define HTTPS_CONTENT_CBOR "application/cbor"
+
 /**
  * @brief Struct to save status, content_len, output.
  *
  */
 typedef struct {
-    int status;                               /*Status of the method */
-    int content_len;                          /*size of output */
-    uint8_t output[MAX_HTTP_OUTPUT_BUFFER];   /*Response buffer */
+    int status;                             /*Status of the method */
+    int content_len;                        /*size of output */
+    uint8_t output[MAX_HTTP_OUTPUT_BUFFER]; /*Response buffer */
 } http_response_t;
 
 /**
  * @brief Type alias for response_callback_t
  *
  */
-typedef void (*response_callback_t)(http_response_t*);
+typedef void (*response_callback_t)(http_response_t *);
 
 /**
  * @brief Struct to make http request.
  *
  */
 typedef struct {
-   int method;                    /*Make a method get/post*/
-   char url[200];                 /*Url used*/
-   char body[100];                /*body used with method post*/
-   response_callback_t callback;
+    int method;         /*Make a method get/post*/
+    char url[200];      /*Url used*/
+    char body[100];     /*body used with method post*/
+    char *content_type; /*Content type field of http request*/
+    response_callback_t callback;
 } http_request_t;
 
 /**
@@ -78,7 +83,7 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt);
  *
  * @param http_request [in]   Struct to make http request.
  */
-void http_client(http_request_t* http_request);
+void http_client(http_request_t *http_request);
 #ifdef __cplusplus
 }
 #endif

@@ -20,58 +20,62 @@
 #include "esp_log.h"
 #include "httpsclient.h"
 
-void callback (http_response_t* response)
-{
-     ESP_LOGI(__func__, "executed callback the response: %d !!! %s",
-      response->status, response->output);
+uint8_t wifi_initialized = 0;
+
+void callback(http_response_t *response) {
+    ESP_LOGI(__func__, "executed callback the response: %d !!! %s", response->status,
+             response->output);
 }
 
-TEST_CASE("https get request", "[network]") {
+TEST_CASE("https get request", "[protocols]") {
     esp_err_t err = nvs_init();
-    if (err == ESP_OK){
+    if (err == ESP_OK) {
         ESP_LOGI(__func__, "Setting NVS");
     }
-    err =  set_default_credentials();
-    if (err == ESP_OK){
+    err = set_default_credentials();
+    if (err == ESP_OK) {
         ESP_LOGI(__func__, "Setting default credentials");
     }
-    err = wifi_init();
-    if (err == ESP_OK){
-        ESP_LOGI(__func__, "Setting wifi");
+    if (!wifi_initialized) {
+        err = wifi_init();
+        wifi_initialized = 1;
+        if (err == ESP_OK) {
+            ESP_LOGI(__func__, "Setting wifi");
+        }
     }
-
     wifi_start(NULL);
     http_request_t request;
     request.method = HTTP_METHOD_GET;
+    request.content_type = HTTPS_CONTENT_JSON;
     memcpy(request.url, "https://cloud.mesh4all.org/?a=1&b=2&c=3",
-    sizeof("https://cloud.mesh4all.org/?a=1&b=2&c=3"));
+           sizeof("https://cloud.mesh4all.org/?a=1&b=2&c=3"));
     request.callback = &callback;
     http_client(&request);
-    vTaskDelay(15000 / portTICK_PERIOD_MS);
 }
 
-TEST_CASE("https post request", "[network]") {
+TEST_CASE("https post request", "[protocols]") {
     esp_err_t err = nvs_init();
-    if (err == ESP_OK){
+    if (err == ESP_OK) {
         ESP_LOGI(__func__, "Setting NVS");
     }
-    err =  set_default_credentials();
-    if (err == ESP_OK){
+    err = set_default_credentials();
+    if (err == ESP_OK) {
         ESP_LOGI(__func__, "Setting default credentials");
     }
-    err = wifi_init();
-    if (err == ESP_OK){
-
-        ESP_LOGI(__func__, "Setting wifi");
+    if (!wifi_initialized) {
+        err = wifi_init();
+        wifi_initialized = 1;
+        if (err == ESP_OK) {
+            ESP_LOGI(__func__, "Setting wifi");
+        }
     }
-
     wifi_start(NULL);
-    vTaskDelay(15000 / portTICK_PERIOD_MS);
     http_request_t request;
     request.method = HTTP_METHOD_POST;
     memcpy(request.url, "https://cloud.mesh4all.org", sizeof("https://cloud.mesh4all.org"));
-    memcpy(request.body, "{\"nombre\":\"valor,\"}", sizeof("{\"nombre\":\"valor,\"}"));
+    memcpy(request.body, "{\"name\":\"value\"}", sizeof("{\"name\":\"value\"}"));
+    request.content_type = HTTPS_CONTENT_JSON;
     request.callback = &callback;
     http_client(&request);
-    vTaskDelay(15000 / portTICK_PERIOD_MS);
+    vTaskDelay(50 / portTICK_PERIOD_MS);
 }
