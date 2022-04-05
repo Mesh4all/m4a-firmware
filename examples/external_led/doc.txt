@@ -27,7 +27,7 @@ This section shows, which pin is used in this example.
 <center>
 Function        | GPIOs  | Remarks |
 :---------------|:-------|:--------|
-LED_PIN | GPIO23 | Pin to blink control of led |
+LED_PIN | GPIO(PA , 19)| Pin to blink control of led |
 
 </center>
 ## Getting Started {#external_led_blink_basic}

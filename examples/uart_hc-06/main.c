@@ -27,9 +27,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <stdint.h>
-#include <stdio.h>
 
 #include "board.h"
 #include "shell.h"
@@ -42,16 +40,16 @@
 #include "periph/adc.h"
 #include "log.h"
 
-#define POWEROFF_DELAY      (250U * US_PER_MS)
-#define RES             ADC_RES_10BIT
-#define DELAY_MS        5000U
+#define POWEROFF_DELAY (250U * US_PER_MS)
+#define RES ADC_RES_10BIT
+#define DELAY_MS 5000U
 
 #define UART_BLE UART_DEV(1)
 
-#define GPS_BAUDRATE 9600
+#define UART_BAUDRATE 9600
 #define MAX_SENTENCE_SIZE 128
 #define MAIN_QUEUE_SIZE (8)
-#define UART_BUFSIZE        (128U)
+#define UART_BUFSIZE (128U)
 msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
 
 size_t count = 0;
@@ -63,81 +61,70 @@ typedef struct {
 } uart_ctx_t;
 static uart_ctx_t ctx[UART_NUMOF];
 
-int dummy_cmd(int argc, char **argv)
-{
-    return 0;
-}
-
 void init_adc(void) {
-   if (adc_init(0) < 0) {
+    if (adc_init(0) < 0) {
         printf("Initialization of ADC_LINE failed\n");
     } else {
         printf("Successfully initialized ADC_LINE\n");
     }
     while (1) {
-            int sample = adc_sample(0, RES);
-            double voltage = ((sample * 1100)/1024)/10;
-            if (sample < 0) {
-                printf("ADC_LINE: selected resolution not applicable\n");
-            } else {
-                LOG_INFO("sample %i \n", sample);
-                LOG_INFO("voltage %i \n", (int)voltage);
-            }
+        int sample = adc_sample(0, RES);
+        double voltage = ((sample * 1100) / 1024) / 10;
+        if (sample < 0) {
+            printf("ADC_LINE: selected resolution not applicable\n");
+        } else {
+            LOG_INFO("sample %i \n", sample);
+            LOG_INFO("voltage %i \n", (int)voltage);
+        }
         ztimer_sleep(ZTIMER_MSEC, DELAY_MS);
     }
 }
 
-int init_at_mode (int argc, char **argv){
+int init_at_mode(int argc, char **argv) {
     const char test_string[] = "AT";
-    uart_write(UART_BLE, (uint8_t*)test_string, sizeof(test_string));
+    uart_write(UART_BLE, (uint8_t *)test_string, sizeof(test_string));
     return 0;
 }
 
-int send_uart_reset (int argc, char **argv) {
+int send_uart_reset(int argc, char **argv) {
     const char test_string[] = "AT+RESET";
-    uart_write(UART_BLE, (uint8_t*)test_string, sizeof(test_string));
+    uart_write(UART_BLE, (uint8_t *)test_string, sizeof(test_string));
     return 0;
 }
 
-int send_uart_message (int argc, char **argv) {
-    uart_write(UART_BLE, (uint8_t*)argv[1], strlen((char*)argv[1]));
+int send_uart_message(int argc, char **argv) {
+    uart_write(UART_BLE, (uint8_t *)argv[1], strlen((char *)argv[1]));
     return 0;
 }
 
-int send_uart_password (int argc, char **argv) {
-    uart_write(UART_BLE, (uint8_t*)argv[1], strlen((char*)argv[1]));
+int send_uart_password(int argc, char **argv) {
+    uart_write(UART_BLE, (uint8_t *)argv[1], strlen((char *)argv[1]));
     return 0;
 }
 
 static const shell_command_t shell_commands[] = {
-    { "udp", "send udp packets", dummy_cmd },
     {"send", "send packets since uart", send_uart_message},
     {"init", "init at mode", init_at_mode},
     {"reset", "reset hc-06", send_uart_reset},
     {"password", "add password", send_uart_password},
-    { NULL, NULL, NULL }
-};
+    {NULL, NULL, NULL}};
 
-static void gps_rx_cb(void *arg, uint8_t c){
-   if (c != 10)
-    {
+static void uart_rx_cb(void *arg, uint8_t c) {
+    if (c != 10) {
         uart_buff[count] = (char)c;
         count += 1;
-    }
-    else
-    {
+    } else {
         printf("%s\n", (char *)uart_buff);
         memset(uart_buff, 0, sizeof(uart_buff));
         count = 0;
     }
 }
 
-int main (void)
-{
-    if (uart_init(UART_BLE, GPS_BAUDRATE, gps_rx_cb, NULL) < 0){
+int main(void) {
+    if (uart_init(UART_BLE, UART_BAUDRATE, uart_rx_cb, NULL) < 0) {
         printf("ERROR uart \n");
     } else {
-        printf("Success: Initialized UART_DEV(%i) at BAUD %"PRIu32"\n", UART_BLE, GPS_BAUDRATE);
+        printf("Success: Initialized UART_DEV(%i) at BAUD %i\n", UART_BLE, UART_BAUDRATE);
     }
     init_adc();
     char line_buf[SHELL_DEFAULT_BUFSIZE];

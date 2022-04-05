@@ -26,22 +26,13 @@ This section shows, which pin is used to receive the sensor data.
 <center>
 Function        | GPIOs  | Remarks |
 :---------------|:-------|:--------|
-DS18B20_PIN | GPIO14 | This is data pin to receive the reads.
+DS18B20_PIN | GPIO_PIN(PA, 5)| This is data pin to receive the reads.
 
 </center>
 
 You could change the ds18b20 params to get another gpio controller.
 
 ## Basic and Default configuration {#m4a_ds18b20_basic_conf}
-
-For make some changes to ds18_params, you need to change the following structure in ds18b20.h file.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.c}
-static ds18_params_t therm1_params = {
-    .pin = GPIO14,               /*< Assign the ds18b20 pin */
-    .out_mode = GPIO_OD_PU,      /*< ds18b20 pin mode_out */
-    .in_mode = GPIO_IN           /*< ds18b20 pin mode_in */
-};
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## Flashing {#m4a_ds18b20_flashing}
 

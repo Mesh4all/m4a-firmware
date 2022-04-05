@@ -1,14 +1,6 @@
-APPLICATION = tpm_uart_app
-BOARD ?= m4a-wrover
+APPLICATION = uart_HC-06
 
-# Current path
-APPBASE ?= $(CURDIR)
-
-# RIOT-OS's base path
-RIOTBASE ?= $(CURDIR)/../../RIOT
-
-# Custom boards "MUST BE" into "boards" folder, it's code **strongly** hardware dependent
-EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
+include ../Makefile.common
 
 USEMODULE += saul_default
 USEMODULE += shell

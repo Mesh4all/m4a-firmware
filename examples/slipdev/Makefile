@@ -1,10 +1,6 @@
 APPLICATION = slipdev_example
-BOARD ?= m4a-wroom
-# Current path
-APPBASE ?= $(CURDIR)
 
-# RIOT-OS's base path
-RIOTBASE ?= $(CURDIR)/../../../RIOT
+include ../Makefile.common
 
 # Custom boards "MUST BE" into "boards" folder, it's code **strongly** hardware dependent
 
@@ -29,7 +25,7 @@ USEMODULE += gnrc_icmpv6_error
 
 DEVHELP ?= 1
 QUIET ?= 1
-EXTERNAL_BOARD_DIRS += ../../../boards
+
 # Disable warnings when a parameter is not used
 # CFLAGS += -Wno-unused-parameter
 # CFLAGS += -Wno-unused-variable
