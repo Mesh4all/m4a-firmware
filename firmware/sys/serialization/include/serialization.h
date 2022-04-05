@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
- * @ingroup     m4a-firmware
+ * @ingroup     serialization
  * @{
  * @file
- * @brief       serialization implementation for this it will be used tinycbor
+ * @brief       Serialization implementation for this will use tinycbor
  *
- * @copyright   Copyright (c) 2021 Mesh for all
  * @author      xkevin190 <kevinvelasco190@gmail.com>
  *
  */
@@ -34,7 +32,7 @@ extern "C" {
 #endif
 
 /**
- * @brief this is an struct used for save the data of the sensor.
+ * @brief This is an struct used to save the sensor data.
  *
  */
 typedef struct {
@@ -43,7 +41,7 @@ typedef struct {
 } sensor_data;
 
 /**
- * @brief  This function decode message to arrive since udp
+ * @brief  This function decodes the arriving message from udp
  * @param [in]   buffer  data codified
  * @param [out]  data    output of the decodified data
  * @param [in]   length  length of the data
@@ -53,10 +51,10 @@ typedef struct {
 int cbor_decode_message(uint8_t *buffer, sensor_data *data, size_t length);
 
 /**
- * @brief  This function decode message before to send in udp client
- * @param [in]   buffer  sensors values
- * @param [out]  output    output of the codified data
- * @param [in]   length  length of the data
+ * @brief  This function decodes a message before sending it to udp client
+ * @param [in]   data  sensors values
+ * @param [out]  output  output of the codified data
+ * @param [in]   len_output  length of the data
  * @return  0 Satisfactory result
  *         -1 Failed result
  */

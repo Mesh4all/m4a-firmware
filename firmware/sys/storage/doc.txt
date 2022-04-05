@@ -1,0 +1,10 @@
+/**
+@defgroup    storage_module Storage
+@ingroup     sys
+
+# What goes here?
+
+This module saves data in the flash memory.
+
+Note: the data could not be greater than 64 bytes. Data formats allowed are string and uint8.
+*/

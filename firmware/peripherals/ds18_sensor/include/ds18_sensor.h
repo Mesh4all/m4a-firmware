@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
- * @ingroup     m4a-firmware
+ * @ingroup     ds18_sensor
  * @{
  * @file
- * @brief       moisture sensor file
+ * @brief       temperature sensor module
  *
- * @copyright   Copyright (c) 2021 Mesh for all
  * @author      xkevin190 <kevinvelasco190@gmail.com>
  *
  */
@@ -44,7 +42,7 @@ int init_temperature_sensor(int pin);
  * @brief  Function to get the sensor data
  * @param[out]  output This variable will return the temperature value
  * @return  0 Satisfactory result
- *         -1 Sailed result
+ *         -1 Failed result
  */
 int get_temperature_value(int16_t* output);
 

@@ -25,8 +25,8 @@
 #ifndef AT_CLIENT_H
 #define AT_CLIENT_H
 
-#define SHELL_BUFSIZE (128U)
-#define UART_BUFSIZE (256U)
+#define SHELL_BUFSIZE (128U) /*!< Size of shell buffer*/
+#define UART_BUFSIZE (256U)  /*!< Size of uart buffer*/
 
 #include "ringbuffer.h"
 #include <stdio.h>

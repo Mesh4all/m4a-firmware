@@ -1,11 +1,25 @@
 /**
-@defgroup sys
+@defgroup sys Sys
+@ingroup  m4a-firmware
 
-# What goes here?
+### What goes here?
 Specific documentation for our reference sys;
 In the next module you can find:
 
-# uniqueid
+### uniqueid
+
 In this module you can get cpuid address in format IPV6.
+
+### storage
+
+Serialization implementation for this will use tinycbor.
+
+### serialization
+
+This module handles udp data.
+
+### at_client
+
+AT command handler to communicate with wifi module.
 
 */

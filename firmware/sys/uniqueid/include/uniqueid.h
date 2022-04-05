@@ -37,8 +37,8 @@ extern "C" {
  */
 
 union random_buff {
-    uint8_t u8[4];
-    uint32_t u32;
+    uint8_t u8[4];   /*!< unint8 buff*/
+    uint32_t u32;    /*!< uint32 address*/
 };
 /**
  * @brief This function get ipv6 address (mode: static (default), random, manual)

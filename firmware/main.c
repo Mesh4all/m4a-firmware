@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Mesh4all <mesh4all.org>
+ * Copyright (c) 2022 Mesh4all <mesh4all.org>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 /**
  * @brief       Main firmware file
  *
- * @copyright   Copyright (c) 2021 Mesh for all
  * @author      luisan00 <luisan00@hotmail.com>
  *
  */
@@ -31,7 +30,6 @@
 
 #include "log.h"
 #include "board.h"
-
 
 static shell_command_t shell_extended_commands[] = {
     {NULL, NULL, NULL}};

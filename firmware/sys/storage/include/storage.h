@@ -15,11 +15,11 @@
  */
 
 /**
- * @ingroup     m4a-firmware
+ * @ingroup     storage
  * @{
- * @brief       this is module of storage this module save data in the flash memory
- *              this data could not be greater than 64 bytes, you can save data only like string
- *              and uint8
+ * @brief       This is the storage module where you can save data in the flash memory.
+ *              This data should not be greater than 64 bytes. Data formats allowed are string
+ *              and uint8.
  *
  * @author      xkevin190 <kevinvelasco193@gmail.com>
  *
@@ -37,13 +37,13 @@ extern "C" {
 #define    LAST_PAGE 1
 
 /**
- * @brief this is the number of pages that we can write
+ * @brief This is the number of pages that we can write
  */
 #define LAST_AVAILABLE_PAGE (FLASHPAGE_NUMOF - LAST_PAGE)
 #define MAX_SIZE_STORAGE 16 /*!< max size to save in the page */
 
 /**
- * @brief this function init all need for start to save the data
+ * @brief This function initializes all components needed to start and to save the data
  *
  * @return  0 Satisfactory result
  *          -1 Failed result
@@ -51,10 +51,10 @@ extern "C" {
 int mtd_start(void);
 
 /**
- * @brief this function is executed by mtd write_string and mtd write uint8 internally it is not
- * recommended to use it directly, use the functions mentioned above
+ * @brief This function is executed by mtd write_string and mtd_write_uint8 internally. It is not
+ * recommended to use it directly, use the functions mentioned
  *
- * @param [in] key  this is the address where will be save the data in the memory
+ * @param [in] key  this is the address where will be saved the data in the memory
  * @param [out] value value to save
  * @return  0 Satisfactory result
  *          -1 Failed result
@@ -62,59 +62,61 @@ int mtd_start(void);
 int mtd_save(uint32_t key, void *value);
 
 /**
- * @brief function used to get the strings already saved
+ * @brief Function used to get the strings already saved
  *
- * @param [in] key  this is the address where will be save the data in the memory
- * @param [out] value value to save
+ * @param [in]  key    This is the address where will be saved the data in the memory
+ * @param [in]  len    Length of the data
+ * @param [out] output Output to save
  * @return  0 Satisfactory result
  *          -1 Failed result
  */
 int mtd_read_string(uint32_t key, char *output, size_t len);
 
 /**
- * @brief function used to get the uint8 values already saved
+ * @brief Function used to get the uint8 values already saved
  *
- * @param [in] key  this is the address where will be save the data in the memory
- * @param [out] value value to save
+ * @param [in]  key    This is the address where will be saved the data in the memory
+ * @param [out] output Output to save
  * @return  0 Satisfactory result
  *          -1 Failed result
  */
 int mtd_read_u8(uint32_t key, uint8_t *output);
 
 /**
- * @brief this function deletes the saved data
+ * @brief This function deletes the saved data
  *
- * @param key this is the address where will be removed the data in the memory
+ * @param key This is the address where will be removed the data in the memory
  * @return  0 Satisfactory result
  *          -1 Failed result
  */
 int mtd_erase_flashpage(uint32_t key);
 
 /**
- * @brief function used for write only strings if it are greater than 64 bytes your string will be
+ * @brief This function is used to write only strings.
+ * If they are greater than 64 bytes your string will be
  * cut and will save only 64 bytes
  *
- * @param [in] key  this is the address where will be save the data in the memory
- * @param [out] value value to save
+ * @param [in] key  This is the address where will be saved the data in the memory
+ * @param [out] value Value to save
  * @return  0 Satisfactory result
  *          -1 Failed result
  */
 int mtd_write_string(uint32_t key, char *value);
 
 /**
- * @brief function used for write only uint8_t
+ * @brief Function used to write only uint8_t
  *
- * @param [in] key  this is the address where will be save the data in the memory
- * @param [out] value value to save
+ * @param [in] key  This is the address where will be saved the data in the memory
+ * @param [out] value Value to save
  * @return  0 Satisfactory result
  *          -1 Failed result
  */
 int mtd_write_uint8(uint32_t key, uint8_t *value);
 
 /**
- * @brief function used for get the length of strings
+ * @brief Function used to get the length of strings
  *
- * @param [in] key  this is the address of memory
+ * @param [in] key  This is the address of memory
  *
  */
 int mtd_get_string_len(uint32_t key);

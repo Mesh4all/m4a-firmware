@@ -15,12 +15,13 @@
  */
 
 /**
- * @ingroup     m4a-firmware
+ * @ingroup     moisture_sensor
  * @{
  * @file
- * @brief       moisture sensor file
+ * @brief       This is a module created for hw390 moisture sensor. This is an adc device,
+ *              for the correct functioning of this module you have
+ *              to use 3.3V and 10bits resolution.
  *
- * @copyright   Copyright (c) 2021 Mesh for all
  * @author      xkevin190 <kevinvelasco190@gmail.com>
  *
  */
@@ -31,20 +32,15 @@
 extern "C"
 {
 #endif
-/**
- * this a module created for hw390 moisture sensor this is an adc device,
- * for the correct func oof this module you will be use 3.3v and one resolution of 10bits
- *
- */
 
 /**
- * @brief  this function initializes the moisture sensor
+ * @brief  This function initializes the moisture sensor
  * @return  0 satisfactory result
  *         -1 failed result
  */
 int init_moisture(void);
 /**
- * @brief  function to get the sensor data
+ * @brief  Function to get the sensor data
  * @param[out]  output this variable will return the moisture value
  * @return  0 satisfactory result
  *         -1 failed result
