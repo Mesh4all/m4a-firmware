@@ -13,7 +13,7 @@ var searchData=
   ['wifi_5finit_265',['wifi_init',['../group__wifi__component.html#gac11b41176ff2264389de71ba0d22834f',1,'wifi.h']]],
   ['wifi_5fmode_266',['WIFI_MODE',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a9c56818e9b81fbc8c773341b920fdcde',1,'at_client.h']]],
   ['wifi_5foff_267',['wifi_off',['../group__wifi__component.html#gac2dafad7d7cd262c5a50ad17f85f761f',1,'wifi_off():&#160;wifi.h'],['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a0732dfc3a2d9427347a65206ab71d62f',1,'WIFI_OFF():&#160;at_client.h']]],
-  ['wifi_5fon_268',['wifi_on',['../group__wifi__component.html#ga1894da45456a14c348667e8a44373583',1,'wifi_on():&#160;wifi.h'],['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a7f55865343b0c8b04c6c8a6aa1f0c0a7',1,'WIFI_ON():&#160;at_client.h']]],
+  ['wifi_5fon_268',['WIFI_ON',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a7f55865343b0c8b04c6c8a6aa1f0c0a7',1,'WIFI_ON():&#160;at_client.h'],['../group__wifi__component.html#ga1894da45456a14c348667e8a44373583',1,'wifi_on():&#160;wifi.h']]],
   ['wifi_5frestart_269',['wifi_restart',['../group__wifi__component.html#ga3ed63af70f933fc84a48a117e8b18a2b',1,'wifi.h']]],
   ['wifi_5frestore_5fdefault_270',['wifi_restore_default',['../group__wifi__component.html#ga3f8d68538fee1a7197fef3e2950c13b5',1,'wifi.h']]],
   ['wifi_5frst_271',['WIFI_RST',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a3c2ae3f3168b72730d27d016ec6e2a48',1,'at_client.h']]],
