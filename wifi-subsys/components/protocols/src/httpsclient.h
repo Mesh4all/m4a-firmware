@@ -38,7 +38,6 @@ extern "C" {
 #define MAX_HTTP_OUTPUT_BUFFER 1024 /*!< maximum size to send */
 
 #define HTTPS_CONTENT_JSON "application/json"
-#define HTTPS_CONTENT_CBOR "application/cbor"
 
 /**
  * @brief Struct to save status, content_len, output.
@@ -64,6 +63,7 @@ typedef struct {
     int method;                   /*!< Make a method get/post */
     char url[200];                /*!< Url used */
     char body[100];               /*!< body used with method post */
+    char *content_type; /*Content type field of http request*/
     response_callback_t callback; /*!< callback executed when the serve response */
 } http_request_t;
 /** @}  */
