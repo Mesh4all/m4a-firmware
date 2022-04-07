@@ -24,7 +24,7 @@ USEMODULE+=at_client
 endif
 
 # Modules Radio-IEEE802.15.4
-ifdef CONFIG_IEEE802154
+ifdef CONFIG_IEEE_802154
 USEMODULE += netdev_ieee802154
 USEMODULE += netdev_eth
 USEMODULE += auto_init_gnrc_netif
