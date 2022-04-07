@@ -1,4 +1,5 @@
 menu "Network"
 rsource "udp_server/Kconfig"
 rsource "udp_client/Kconfig"
+rsource "radio/Kconfig"
 endmenu

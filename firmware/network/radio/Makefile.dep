@@ -1,0 +1,22 @@
+USEMODULE += netdev_default
+USEMODULE += gnrc_ipv6_default
+USEMODULE += gnrc_netif_ieee802154
+USEMODULE += auto_init_gnrc_netif
+USEMODULE += uniqueid
+
+#Drivers specifications atmel series
+
+ifneq (,$(filter at86rf212b,$(USEMODULE)))
+    CFLAGS += -DMAX_TX_POWER=11
+    CFLAGS += -DMIN_TX_POWER=-17
+endif
+
+ifneq (,$(filter at86rf231 at86rf232,$(USEMODULE)))
+    CFLAGS += -DMAX_TX_POWER=3
+    CFLAGS += -DMIN_TX_POWER=-17
+endif
+
+ifneq (,$(filter at86rf233,$(USEMODULE)))
+    CFLAGS += -DMAX_TX_POWER=4
+    CFLAGS += -DMIN_TX_POWER=-17
+endif
