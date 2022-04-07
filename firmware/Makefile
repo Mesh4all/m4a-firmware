@@ -18,12 +18,12 @@ EXTERNAL_MODULE_DIRS += sys
 DEVHELP ?= 1
 QUIET ?= 1
 
-# Modules Wifi-subsystem 
+# Modules Wifi-subsystem
 ifdef CONFIG_WIFI_SUBSYSTEM
 USEMODULE+=at_client
 endif
 
-# Modules Radio-IEEE802.15.4 
+# Modules Radio-IEEE802.15.4
 ifdef CONFIG_IEEE802154
 USEMODULE += netdev_ieee802154
 USEMODULE += netdev_eth
