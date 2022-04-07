@@ -1,3 +1,6 @@
 menu "System"
 rsource "uniqueid/Kconfig"
+rsource "serialization/Kconfig"
+rsource "storage/Kconfig"
+rsource "at_client/Kconfig"
 endmenu
