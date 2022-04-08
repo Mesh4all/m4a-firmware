@@ -1,4 +1,4 @@
-menu "uniqueid"
+menu "Uniqueid"
 
 config SELECT_HEADER_IPV6
     bool "Edit IPV6 Header"

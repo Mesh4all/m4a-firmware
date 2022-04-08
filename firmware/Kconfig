@@ -1,4 +1,28 @@
 menu "m4a-firmware configuration"
 rsource "peripherals/Kconfig"
 rsource "sys/Kconfig"
+rsource "network/Kconfig"
+
+menu "PHY settings"
+#comment "PHY settings"
+    config TX_POWER
+    string "TX Power"
+    default "0"
+
+    config RADIO_CHANNEL
+    string "Radio Channel default"
+    default "1"
+
+endmenu #Phy
+
+menu "Interface"
+#comment "Interface wifi and Radio"
+config WIFI_SUBSYSTEM
+    bool "Wifi-Subsytem Interface"
+    default y
+
+config IEEE_802154
+    bool "Radio Interface"
+    default n
+endmenu #interface
 endmenu
