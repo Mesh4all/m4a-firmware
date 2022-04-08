@@ -52,8 +52,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__wifi-subusys-protocols.html",
-"m4a-wrover_2include_2periph__conf_8h.html#a543ec8b3d79c90202e88167a94e41c4a"
+"group__udp__server.html",
+"m4a-wrover_2include_2periph__conf_8h.html#a161081b41465c86e1a771c4194041341"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

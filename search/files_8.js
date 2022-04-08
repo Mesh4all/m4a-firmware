@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['serialization_2eh_346',['serialization.h',['../firmware_2sys_2serialization_2include_2serialization_8h.html',1,'(Global Namespace)'],['../wifi-subsys_2components_2tools_2src_2serialization_8h.html',1,'(Global Namespace)']]],
-  ['slipdev_5fparams_2eh_347',['slipdev_params.h',['../slipdev__params_8h.html',1,'']]],
-  ['subsys_5fuart_2eh_348',['subsys_uart.h',['../subsys__uart_8h.html',1,'']]]
+  ['periph_5fconf_2eh_347',['periph_conf.h',['../m4a-24g_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../m4a-wroom_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../m4a-wrover_2include_2periph__conf_8h.html',1,'(Global Namespace)']]],
+  ['protocol_5fsntp_2eh_348',['protocol_sntp.h',['../protocol__sntp_8h.html',1,'']]]
 ];

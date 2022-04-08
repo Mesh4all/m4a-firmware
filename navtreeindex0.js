@@ -116,6 +116,12 @@ var NAVTREEINDEX0 =
 "ds18b20_8h.html#af39bd92cb91bdc9100278ac811381afb":[5,0,1,0,1,0,1],
 "ds18b20_8h.html#af4d7584270a766039a939d057e84a0d7":[5,0,1,0,1,0,3],
 "ds18b20_8h_source.html":[5,0,1,0,1,0],
+"eui__provider__params_8h.html":[5,0,0,0,0,1],
+"eui__provider__params_8h.html#a338e315fe4b5d0767199ada5206c9492":[5,0,0,0,0,1,1],
+"eui__provider__params_8h.html#a50cd04ad19848f8741a1eace5b853ec0":[5,0,0,0,0,1,0],
+"eui__provider__params_8h.html#a6826591236882aa4e4428d8c4fbd2048":[5,0,0,0,0,1,3],
+"eui__provider__params_8h.html#ab7c0794264ef9ce6290b9ce9dc14279d":[5,0,0,0,0,1,2],
+"eui__provider__params_8h_source.html":[5,0,0,0,0,1],
 "files.html":[5,0],
 "firmware_2default__params_8h_source.html":[5,0,2,3],
 "firmware_2sys_2serialization_2include_2serialization_8h.html":[5,0,2,2,1,0,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX0 =
 "group__tmp__uart.html#autotoc_md40":[13,0],
 "group__tmp__uart.html#md_examples_tmp_uart_README":[3,0,6,0],
 "group__udp__client.html":[3,1,0,0],
-"group__udp__client__test.html":[3,3,3],
-"group__udp__server.html":[3,1,0,1],
-"group__udp__server__test.html":[3,3,4],
-"group__uniqueid.html":[3,1,2,3],
-"group__wifi-subsys-tools.html":[3,4,2],
-"group__wifi-subsys.html":[3,4],
-"group__wifi-subsys.html#ga8e493bff2a09a1207b527071e4cff06e":[3,4,5]
+"group__udp__client__test.html":[3,3,3]
 };

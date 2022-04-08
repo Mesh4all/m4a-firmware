@@ -1,5 +1,11 @@
 var NAVTREEINDEX2 =
 {
+"m4a-wrover_2include_2periph__conf_8h.html#a161081b41465c86e1a771c4194041341":[5,0,0,3,0,2,15],
+"m4a-wrover_2include_2periph__conf_8h.html#a16ce69be83444ff939653090fb7fa151":[5,0,0,3,0,2,10],
+"m4a-wrover_2include_2periph__conf_8h.html#a241b59557c3e3c91418162ed4d682aaa":[5,0,0,3,0,2,16],
+"m4a-wrover_2include_2periph__conf_8h.html#a28fc91fb6e973e5f0be9e44e5edd5449":[5,0,0,3,0,2,17],
+"m4a-wrover_2include_2periph__conf_8h.html#a377e83c8834eecbb7aa5f355da2ae9da":[5,0,0,3,0,2,1],
+"m4a-wrover_2include_2periph__conf_8h.html#a46601053c8918ea8226da88610977ef2":[5,0,0,3,0,2,20],
 "m4a-wrover_2include_2periph__conf_8h.html#a543ec8b3d79c90202e88167a94e41c4a":[5,0,0,3,0,2,8],
 "m4a-wrover_2include_2periph__conf_8h.html#a5b44b397784631135a7c50730f5b8ffb":[5,0,0,3,0,2,7],
 "m4a-wrover_2include_2periph__conf_8h.html#a69f255245dd74fb6785ca39656cf9983":[5,0,0,3,0,2,2],
