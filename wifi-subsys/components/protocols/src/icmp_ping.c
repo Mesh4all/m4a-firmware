@@ -92,17 +92,17 @@ esp_err_t initialize_ping() {
     ip_addr_t target_addr;
     struct addrinfo hint;
     struct addrinfo *res = NULL;
-    char *url;
+    char url[50];
     size_t url_len = 0;
     memset(&hint, 0, sizeof(hint));
     memset(&target_addr, 0, sizeof(target_addr));
-    esp_err_t err = nvs_get_string(stringlify(PING), stringlify(PING_TO), &url, &url_len);
+    esp_err_t err = nvs_get_string(stringlify(PING), stringlify(PING_TO), url, &url_len);
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "error to get url the cause is %s", esp_err_to_name(err));
 
         return err;
     }
-    int result = getaddrinfo(&url, NULL, &hint, &res);
+    int result = getaddrinfo(url, NULL, &hint, &res);
     if ((result != 0) || (res == NULL)) {
         is_connected = FAIL_BIT;
         is_configured = FAIL_BIT;
@@ -115,7 +115,7 @@ esp_err_t initialize_ping() {
         freeaddrinfo(res);
         esp_ping_config_t ping_config = ESP_PING_DEFAULT_CONFIG();
         ping_config.target_addr = target_addr; // target IP address
-        err = nvs_get_uint8(stringlify(PING), stringlify(PING_RET),
+        err = nvs_get_uint32(stringlify(PING), stringlify(PING_RET),
                             &ping_config.count); // ping in infinite mode, esp_ping_stop can stop it
         if (err != ESP_OK) {
             ESP_LOGE(__func__, "error to get ping count the cause is %s", esp_err_to_name(err));
@@ -167,7 +167,7 @@ uint8_t get_current_status(void) { return is_connected; }
 void ping_task(void *arg) {
     s_icmp_event_group = xEventGroupCreate();
     uint32_t milliseconds = 0;
-    callback_t callback = (callback_t *)arg;
+    callback_t callback = (callback_t)arg;
     esp_ping_start(ping);
     esp_err_t err = nvs_get_uint32(stringlify(PING), stringlify(PING_INT),
                                    &milliseconds); // Milliseconds between each ping procedure
@@ -183,7 +183,7 @@ void ping_task(void *arg) {
     }
 }
 
-void manual_ping(callback_t *callback) {
+void manual_ping(callback_t callback) {
     xTaskCreate(ping_task, "manual_ping", 1024 * 2, callback, 4, &manual_ping_task);
 }
 

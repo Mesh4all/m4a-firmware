@@ -32,7 +32,7 @@ esp_err_t set_default_ping_settings(void) {
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "Error: setting ping interval to the nvs %s", esp_err_to_name(err));
     }
-    err = nvs_set_uint8(stringlify(PING), stringlify(PING_RET), PING_RET);
+    err = nvs_set_uint32(stringlify(PING), stringlify(PING_RET), PING_RET);
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "Error: setting ping retries to the nvs %s", esp_err_to_name(err));
     }
@@ -66,7 +66,6 @@ TEST_CASE("Wi-Fi initialize", "[network]") {
 
 TEST_CASE("setting ping session", "[network]") {
     set_default_ping_settings();
-    vTaskDelay(10000 / portTICK_PERIOD_MS);
     initialize_ping();
 }
 

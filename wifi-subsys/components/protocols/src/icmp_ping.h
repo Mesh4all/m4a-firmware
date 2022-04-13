@@ -34,7 +34,7 @@ extern "C" {
  * @brief this is a callback will return the current status
  *
  */
-typedef void (*callback_t)(int8_t);
+typedef void (*callback_t)(uint8_t);
 
 /**
  * @brief init wifi and start a new task
@@ -50,7 +50,7 @@ esp_err_t enable_ping(void);
  * @return 1 when is connected
  *         0 when is not connected
  */
-void manual_ping(callback_t *callback);
+void manual_ping(callback_t callback);
 
 /**
  * @brief  get connection status
