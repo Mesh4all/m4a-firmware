@@ -1,5 +1,0 @@
-<map id="boards/m4a&#45;wrover/include/board.h" name="boards/m4a&#45;wrover/include/board.h">
-<area shape="rect" id="node1" title="Board specific definitions for Espressif ESP&#45;WROVER&#45;KIT V3." alt="" coords="127,5,367,52"/>
-<area shape="rect" id="node2" href="$m4a-wrover_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="5,100,245,147"/>
-<area shape="rect" id="node3" href="$uniqueid_8h.html" title="IPV6 address." alt="" coords="270,100,466,147"/>
-</map>

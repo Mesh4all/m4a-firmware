@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['boards_5fm4a_2dwroom_609',['Boards_m4a-wroom',['../group__boards__m4a-wroom.html',1,'']]],
-  ['boards_5fm4a_2dwrover_610',['Boards_m4a-wrover',['../group__boards__m4a-wrover.html',1,'']]]
+  ['ds18_20sensor_537',['Ds18 sensor',['../group__ds18__sensor.html',1,'']]],
+  ['ds18_20sensor_20test_20module_538',['Ds18 sensor test module',['../group__ds18__test.html',1,'']]],
+  ['ds18b20_539',['Ds18b20',['../group__ds18b20.html',1,'']]]
 ];

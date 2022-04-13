@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['peripherals_622',['Peripherals',['../group__peripherals.html',1,'']]],
-  ['protocols_20routines_623',['Protocols routines',['../group__wifi-subusys-protocols.html',1,'']]]
+  ['reference_20firmware_550',['Reference firmware',['../group__m4a-firmware.html',1,'']]]
 ];
