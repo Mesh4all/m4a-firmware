@@ -104,8 +104,6 @@ $(document).ready(function(){initNavTree('group__ds18b20.html',''); initResizabl
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#files">Files</a>  </div>
   <div class="headertitle">
 <div class="title">Ds18b20<div class="ingroups"><a class="el" href="group__examples.html">Mesh4all Examples</a></div></div>  </div>
 </div><!--header-->
@@ -113,14 +111,6 @@ $(document).ready(function(){initNavTree('group__ds18b20.html',''); initResizabl
 
 <p>ds18b20 sensor example to use with m4a-wroom board  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:ds18b20_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ds18b20_8h.html">ds18b20.h</a></td></tr>
-<tr class="memdesc:ds18b20_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the required params to use the ds18b20 sensor. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>ds18b20 sensor example to use with m4a-wroom board </p>
 <dl class="section author"><dt>Author</dt><dd>Eduardo Azócar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'do@'+'tu'+'rpi'+'al'+'dev'+'.c'+'om'; return false;">eduar<span style="display: none;">.nosp@m.</span>do@t<span style="display: none;">.nosp@m.</span>urpia<span style="display: none;">.nosp@m.</span>ldev<span style="display: none;">.nosp@m.</span>.com</a></dd></dl>
 <h1><a class="anchor" id="ds18b20"></a>
@@ -139,68 +129,23 @@ Hardware</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Function </th><th class="markdownTableHeadLeft">GPIOs </th><th class="markdownTableHeadLeft">Remarks  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">DS18B20_PIN </td><td class="markdownTableBodyLeft">GPIO14 </td><td class="markdownTableBodyLeft">This is data pin to receive the reads.  </td></tr>
+<td class="markdownTableBodyLeft">DS18B20_PIN </td><td class="markdownTableBodyLeft">GPIO_PIN(PA, 5) </td><td class="markdownTableBodyLeft">This is data pin to receive the reads.  </td></tr>
 </table>
 </center><center></center><p>You could change the ds18b20 params to get another gpio controller.</p>
 <h2><a class="anchor" id="m4a_ds18b20_basic_conf"></a>
 Basic and Default configuration</h2>
-<p>For make some changes to ds18_params, you need to change the following structure in <a class="el" href="ds18b20_8h.html" title="This is the required params to use the ds18b20 sensor.">ds18b20.h</a> file. </p><div class="fragment"><div class="line"><span class="keyword">static</span> ds18_params_t <a class="code" href="ds18b20_8h.html#af4d7584270a766039a939d057e84a0d7">therm1_params</a> = {</div>
-<div class="line">    .pin = GPIO14,               <span class="comment">/*&lt; Assign the ds18b20 pin */</span></div>
-<div class="line">    .out_mode = GPIO_OD_PU,      <span class="comment">/*&lt; ds18b20 pin mode_out */</span></div>
-<div class="line">    .in_mode = GPIO_IN           <span class="comment">/*&lt; ds18b20 pin mode_in */</span></div>
-<div class="line">};</div>
-</div><!-- fragment --><h2><a class="anchor" id="m4a_ds18b20_flashing"></a>
+<h2><a class="anchor" id="m4a_ds18b20_flashing"></a>
 Flashing</h2>
 <p>If you want to upload the example to your board, needs to compile first, additional to this you could initialize the terminal and watch the results </p><div class="fragment"><div class="line">make -C examples/esp32-wroom-32/test_ds18b20 flash term</div>
 </div><!-- fragment --><p><a href="#m4a_ds18b20_toc">Back to table of contents</a> </p>
-
-
-<h3><a id="md_examples_esp32-wroom-32_test_ds18b20_README"></a>README</h3><div class="textblock">ds18b20 sensor readme example<h2>m4a-wroom examples </h2>
-<h2 align="center">ds18b20 </h2>
-<h3><a class="anchor" id="autotoc_md31"></a>
-Getting Started:</h3>
-<p>Follow the next steps:</p>
-<p><br  />
-</p>
-<h3><a class="anchor" id="autotoc_md32"></a>
-Build this example in your breadboard</h3>
-<p><br  />
-</p>
-<p><img src="../../../doc/media/examples/esp32-wroom/ds18b20/ds18b20_example.png" alt="" align="center" class="inline"/></p>
-<p><br  />
-</p>
-<h3><a class="anchor" id="autotoc_md33"></a>
-Go to the example folder</h3>
-<div class="fragment"><div class="line">cd examples/esp-wroom32/test_ds18b20</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md34"></a>
-Compile your code and flash it</h3>
-<div class="fragment"><div class="line">make flash term</div>
-</div><!-- fragment --><p>Check your code to understand functionalities</p>
-<h3><a class="anchor" id="autotoc_md35"></a>
-First</h3>
-<p>Define a ds18 sensor </p><div class="fragment"><div class="line">ds18_t sensor</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md36"></a>
-Second</h3>
-<p>Define ds18 params </p><div class="fragment"><div class="line">ds18_params_t dev ={</div>
-<div class="line">     .pin = sensor_pin,</div>
-<div class="line">     .out_mode = sensor_mode_out <span class="comment">// OUT_OPRN_DRAIN_PULL UP</span></div>
-<div class="line">     .in_mode = sensor_mode_in</div>
-<div class="line"> }</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md37"></a>
-Last steps</h3>
-<p>Initialize the device </p><div class="fragment"><div class="line"><a class="code" href="ds18b20_8h.html#af39bd92cb91bdc9100278ac811381afb">ds18_init</a>(&amp;dev,&amp;dev_params); <span class="comment">// Set the params to your sensor</span></div>
-</div><!-- fragment --><p>Check the temperature </p><div class="fragment"><div class="line"><a class="code" href="ds18b20_8h.html#ae29c1b10607c50da0f7b926f523da735">ds18_get_temperature</a>(&amp;dev,&amp;var_temperature); <span class="comment">// var_temperature has to defined previously as int16_t variable</span></div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="ads18b20_8h_html_ae29c1b10607c50da0f7b926f523da735"><div class="ttname"><a href="ds18b20_8h.html#ae29c1b10607c50da0f7b926f523da735">ds18_get_temperature</a></div><div class="ttdeci">int ds18_get_temperature(const ds18_t *dev, int16_t *temperature)</div><div class="ttdoc">convenience function for triggering a conversion and reading the value</div></div>
-<div class="ttc" id="ads18b20_8h_html_af4d7584270a766039a939d057e84a0d7"><div class="ttname"><a href="ds18b20_8h.html#af4d7584270a766039a939d057e84a0d7">therm1_params</a></div><div class="ttdeci">static ds18_params_t therm1_params</div><div class="ttdoc">Struct of basic params of ds18b20.</div><div class="ttdef"><b>Definition:</b> <a href="ds18b20_8h_source.html#l00043">ds18b20.h:43</a></div></div>
-<div class="ttc" id="ads18b20_8h_html_af39bd92cb91bdc9100278ac811381afb"><div class="ttname"><a href="ds18b20_8h.html#af39bd92cb91bdc9100278ac811381afb">ds18_init</a></div><div class="ttdeci">int ds18_init(ds18_t *dev, const ds18_params_t *params)</div><div class="ttdoc">Initialize a ds18 device.</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Apr 13 2022 13:52:19 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Apr 13 2022 15:31:08 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

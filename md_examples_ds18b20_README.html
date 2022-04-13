@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: examples/esp32-wroom-32 Directory Reference</title>
+    <title>Mesh4all: README</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('dir_f59e9fad757cb2a008efe9b32b91bb9f.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_examples_ds18b20_README.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -103,24 +103,42 @@ $(document).ready(function(){initNavTree('dir_f59e9fad757cb2a008efe9b32b91bb9f.h
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">esp32-wroom-32 Directory Reference</div>  </div>
+<div class="title">README </div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="subdirs"></a>
-Directories</h2></td></tr>
-</table>
-</div><!-- contents -->
+<div class="textblock"><h2 align="center">ds18b20 </h2>
+<h3><a class="anchor" id="autotoc_md27"></a>
+Getting Started:</h3>
+<p>Follow the next steps:</p>
+<p><br  />
+</p>
+<h3><a class="anchor" id="autotoc_md28"></a>
+Go to the example folder</h3>
+<div class="fragment"><div class="line">cd examples/esp-wroom32/ds18b20</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md29"></a>
+Compile your code and flash it</h3>
+<div class="fragment"><div class="line">make flash term</div>
+</div><!-- fragment --><p>Check your code to understand functionalities</p>
+<h3><a class="anchor" id="autotoc_md30"></a>
+First</h3>
+<p>init the ds18_pin </p><div class="fragment"><div class="line"><a class="code" href="ds18__sensor_8h.html#afd1968312478887124a3678bed0d1cab">init_temperature_sensor</a>(pin);</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md31"></a>
+Last steps</h3>
+<p>Check the temperature</p>
+<div class="fragment"><div class="line"><a class="code" href="ds18__sensor_8h.html#a2221ee0e3051d5d6ce49d845b8f181f8">get_temperature_value</a>(&amp;var_temperature); <span class="comment">// var_temperature has to defined previously as int16_t variable //</span></div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div class="ttc" id="ads18__sensor_8h_html_a2221ee0e3051d5d6ce49d845b8f181f8"><div class="ttname"><a href="ds18__sensor_8h.html#a2221ee0e3051d5d6ce49d845b8f181f8">get_temperature_value</a></div><div class="ttdeci">int get_temperature_value(int16_t *output)</div><div class="ttdoc">Function to get the sensor data.</div></div>
+<div class="ttc" id="ads18__sensor_8h_html_afd1968312478887124a3678bed0d1cab"><div class="ttname"><a href="ds18__sensor_8h.html#afd1968312478887124a3678bed0d1cab">init_temperature_sensor</a></div><div class="ttdeci">int init_temperature_sensor(int pin)</div><div class="ttdoc">This function initializes the temperature sensor.</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_f59e9fad757cb2a008efe9b32b91bb9f.html">esp32-wroom-32</a></li>
-    <li class="footer">Generated on Wed Apr 13 2022 13:52:19 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Apr 13 2022 15:31:08 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

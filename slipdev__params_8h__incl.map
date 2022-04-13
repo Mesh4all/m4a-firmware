@@ -1,4 +1,4 @@
-<map id="examples/esp32&#45;wroom&#45;32/slipdev/slipdev_params.h" name="examples/esp32&#45;wroom&#45;32/slipdev/slipdev_params.h">
-<area shape="rect" id="node1" title="slip parameters example, used by auto_init_gnrc_netif" alt="" coords="5,5,257,52"/>
-<area shape="rect" id="node2" title=" " alt="" coords="86,100,177,129"/>
+<map id="examples/slipdev/slipdev_params.h" name="examples/slipdev/slipdev_params.h">
+<area shape="rect" id="node1" title="slip parameters example, used by auto_init_gnrc_netif" alt="" coords="5,5,224,52"/>
+<area shape="rect" id="node2" title=" " alt="" coords="69,100,160,129"/>
 </map>

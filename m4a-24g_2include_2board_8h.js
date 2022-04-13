@@ -1,36 +1,7 @@
 var m4a_24g_2include_2board_8h =
 [
-    [ "Getting Started:", "group__ds18b20.html#autotoc_md31", null ],
-    [ "Build this example in your breadboard", "group__ds18b20.html#autotoc_md32", null ],
-    [ "Go to the example folder", "group__ds18b20.html#autotoc_md33", null ],
-    [ "Compile your code and flash it", "group__ds18b20.html#autotoc_md34", null ],
-    [ "First", "group__ds18b20.html#autotoc_md35", null ],
-    [ "Second", "group__ds18b20.html#autotoc_md36", null ],
-    [ "Last steps", "group__ds18b20.html#autotoc_md37", [
-      [ "Getting Started:", "group__ds18b20.html#autotoc_md31", null ],
-      [ "Build this example in your breadboard", "group__ds18b20.html#autotoc_md32", null ],
-      [ "Go to the example folder", "group__ds18b20.html#autotoc_md33", null ],
-      [ "Compile your code and flash it", "group__ds18b20.html#autotoc_md34", null ],
-      [ "First", "group__ds18b20.html#autotoc_md35", null ],
-      [ "Second", "group__ds18b20.html#autotoc_md36", null ],
-      [ "Last steps", "group__ds18b20.html#autotoc_md37", null ]
-    ] ],
-    [ "External led example", "group__external-led.html#autotoc_md38", null ],
-    [ "How to test it", "group__external-led.html#autotoc_md39", [
-      [ "External led example", "group__external-led.html#autotoc_md38", null ],
-      [ "How to test it", "group__external-led.html#autotoc_md39", null ]
-    ] ],
-    [ "Go to the example folder", "group__slipdev.html#autotoc_md27", null ],
-    [ "Compile your code and flash it", "group__slipdev.html#autotoc_md28", null ],
-    [ "First", "group__slipdev.html#autotoc_md29", null ],
-    [ "Second", "group__slipdev.html#autotoc_md30", [
-      [ "Go to the example folder", "group__slipdev.html#autotoc_md27", null ],
-      [ "Compile your code and flash it", "group__slipdev.html#autotoc_md28", null ],
-      [ "First", "group__slipdev.html#autotoc_md29", null ],
-      [ "Second", "group__slipdev.html#autotoc_md30", null ]
-    ] ],
-    [ "Uart example", "group__tmp__uart.html#autotoc_md40", [
-      [ "Uart example", "group__tmp__uart.html#autotoc_md40", null ]
+    [ "Uart example", "group__tmp__uart.html#autotoc_md37", [
+      [ "Uart example", "group__tmp__uart.html#autotoc_md37", null ]
     ] ],
     [ "AT86RF2XX_PARAM_CS", "m4a-24g_2include_2board_8h.html#a555f5ce4ea27f15da0ed318fd79704ee", null ],
     [ "AT86RF2XX_PARAM_INT", "m4a-24g_2include_2board_8h.html#ab47f3ac0a872633fbef6ebe83d52883a", null ],
