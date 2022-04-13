@@ -50,11 +50,5 @@
 "Platform: m4a-mb":
   - "boards/m4a-mb/**/*"
 
-"Platform: m4a-wroom":
-  - "boards/m4a-wroom/**/*"
-
-"Platform: m4a-wrover":
-  - "boards/m4a-wrover/**/*"
-
 "Platform: native":
  - "boards/native/**/*"
