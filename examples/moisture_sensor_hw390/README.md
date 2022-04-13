@@ -1,1 +1,0 @@
-@ingroup moisture_sensor
