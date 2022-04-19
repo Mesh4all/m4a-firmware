@@ -26,9 +26,9 @@ USEMODULE += ps
 # Custom modules
 # Note: this code is hardware independent but "COULD BE" configurable for a
 #	target board
-
 USEMODULE += storage
-USEMODULE += uniqueid
+
+EXTERNAL_MODULE_DIRS += network
 EXTERNAL_MODULE_DIRS += sys
 
 # Use UART_DEV(1) for slipdev as a default, baudrate by default is 115200
