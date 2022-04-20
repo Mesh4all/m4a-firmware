@@ -22,6 +22,7 @@
  */
 #include <stdint.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include "net/gnrc/netif.h"
 #include "net/netif.h"
 #include "net/netdev/ieee802154.h"
@@ -30,10 +31,24 @@
 #include "net/netdev.h"
 #include "radio.h"
 
-static uint8_t radio_devices[] = {
-    NETDEV_AT86RF215,
-    NETDEV_AT86RF2XX,
-};
+static uint8_t radio_devices[] = {NETDEV_AT86RF215, NETDEV_AT86RF2XX, NETDEV_CC2538};
+
+#ifdef CONFIG_MODE_SUB_24GHZ
+int8_t subtract_to_interface = 1;
+#else
+int8_t subtract_to_interface = 0;
+#endif
+
+bool identify_multiple_radio_interface(void) {
+    int8_t index = get_ieee802154_iface() + subtract_to_interface;
+    gnrc_netif_t *iface_mult = gnrc_netif_get_by_pid(index);
+    if (index != -1) {
+        if (gnrc_netif_get_by_type(iface_mult->dev->type, index - 1) != NULL) {
+            return true;
+        }
+    }
+    return false;
+}
 
 int8_t get_ieee802154_iface(void) {
     int max_ifaces = gnrc_netif_numof();
@@ -41,9 +56,12 @@ int8_t get_ieee802154_iface(void) {
         gnrc_netif_t *iface;
         for (uint8_t i = 0; i < ARRAY_SIZE(radio_devices); i++) {
             iface = gnrc_netif_get_by_type(radio_devices[i], NETDEV_INDEX_ANY);
+            if (iface != NULL) {
+                break;
+            }
         }
         if (iface != NULL) {
-            return iface->pid;
+            return iface->pid - subtract_to_interface;
         } else {
             return -1;
         }
@@ -87,7 +105,7 @@ int8_t get_netopt_tx_power(int16_t txpower) {
     res = netif_get_opt(iface, NETOPT_TX_POWER, 0, &txpower, sizeof(txpower));
     if (res >= 0) {
         printf(" TX-Power: %" PRIi16 "dBm \n", txpower);
-    }else {
+    } else {
         return -1;
     }
 
@@ -102,7 +120,7 @@ int8_t get_netopt_channel(int16_t channel) {
     res = netif_get_opt(iface, NETOPT_CHANNEL, 0, &channel, sizeof(channel));
     if (res >= 0) {
         printf(" Channel: %" PRIi16 " \n", channel);
-    }else {
+    } else {
         return -1;
     }
 
@@ -113,9 +131,9 @@ int8_t set_netopt_tx_power(int16_t txpower) {
     int res;
     int index = get_ieee802154_iface();
     netif_t *iface = netif_get_by_id(index);
-    if (txpower < MIN_TX_POWER || txpower > MAX_TX_POWER) {
-        printf("Error: the txPower must be between %d dbm and %d dbm \n",
-        MIN_TX_POWER, MAX_TX_POWER);
+    if (txpower < TX_POWER_MIN || txpower > TX_POWER_MAX) {
+        printf("Error: the txPower must be between %d dbm and %d dbm \n", TX_POWER_MIN,
+               TX_POWER_MAX);
         return -1;
     }
 
@@ -133,10 +151,17 @@ int8_t set_netopt_channel(int16_t channel) {
     int res;
     int index = get_ieee802154_iface();
     netif_t *iface = netif_get_by_id(index);
+#ifdef CONFIG_MODE_SUB_24GHZ
+    if (channel < 0 || channel > 10) {
+        printf("Error: the channels must be between 0 and  10 \n");
+        return -1;
+    }
+#else
     if (channel < 11 || channel > 26) {
         printf("Error: the channels must be between 11 and  26 \n");
         return -1;
     }
+#endif
     res = netif_set_opt(iface, NETOPT_CHANNEL, 0, &channel, sizeof(channel));
     if (res >= 0) {
         printf(" channel: %" PRIi16 " \n", channel);
@@ -183,6 +208,15 @@ int8_t set_awake_interface(void) {
 }
 
 int8_t initial_radio_setup(void) {
+
+    bool is_multy_band = identify_multiple_radio_interface();
+    if (is_multy_band) {
+#ifdef CONFIG_MODE_SUB_24GHZ
+        subtract_to_interface = 1;
+#else
+        subtract_to_interface = 0;
+#endif
+    }
     int err;
     int16_t radio_tx = CONFIG_TX_POWER;
     int16_t radio_channel = CONFIG_RADIO_CHANNEL;

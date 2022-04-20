@@ -37,7 +37,6 @@ static shell_command_t shell_extended_commands[] = {
 int main(void)
 {
     LOG_INFO("~~ Welcome to Mesh4all ~~\n");
-
     /* Start shell */
     char line_buf[SHELL_DEFAULT_BUFSIZE];
 
