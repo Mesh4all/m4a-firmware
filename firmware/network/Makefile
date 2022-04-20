@@ -10,4 +10,8 @@ ifneq (,$(filter radio,$(USEMODULE)))
   DIRS += radio
 endif
 
+ifneq (,$(filter rpl_protocol,$(USEMODULE)))
+  DIRS += rpl_protocol
+endif
+
 include $(RIOTBASE)/Makefile.base

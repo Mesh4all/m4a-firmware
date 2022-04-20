@@ -1,0 +1,5 @@
+
+USEMODULE += gnrc_rpl
+USEMODULE += auto_init_gnrc_rpl
+USEMODULE += radio
+USEMODULE += uniqueid
