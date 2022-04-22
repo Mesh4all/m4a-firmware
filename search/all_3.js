@@ -18,10 +18,11 @@ var searchData=
   ['clock_5fuse_5fxosc32_5fdfll_58',['CLOCK_USE_XOSC32_DFLL',['../m4a-24g_2include_2periph__conf_8h.html#a4d657908106c0cfbfc9c140c6d605902',1,'CLOCK_USE_XOSC32_DFLL():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a4d657908106c0cfbfc9c140c6d605902',1,'CLOCK_USE_XOSC32_DFLL():&#160;periph_conf.h']]],
   ['cmd_5fat_59',['cmd_at',['../at__client_8h.html#a4f6180b0ed5f0c33dc7b5254e3e1d75a',1,'at_client.h']]],
   ['config_5fat_60',['config_at',['../at__client_8h.html#ac0a6042dd96ee2e9f41435d22a75b98e',1,'at_client.h']]],
-  ['config_5fztimer_5fusec_5fdev_61',['CONFIG_ZTIMER_USEC_DEV',['../m4a-24g_2include_2board_8h.html#a2378d153069150591eb7fa2082f573d9',1,'board.h']]],
-  ['config_5fztimer_5fusec_5fmin_62',['CONFIG_ZTIMER_USEC_MIN',['../m4a-24g_2include_2board_8h.html#a0da89da11cd4268db8298bae9fbe1d85',1,'board.h']]],
-  ['config_5fztimer_5fusec_5ftype_63',['CONFIG_ZTIMER_USEC_TYPE',['../m4a-24g_2include_2board_8h.html#ae3245610b3181dbfab13ae3e5fae7e37',1,'board.h']]],
-  ['content_5flen_64',['content_len',['../structhttp__response__t.html#ae5365297015c6a53f7527721adbf4e1e',1,'http_response_t']]],
-  ['count_65',['count',['../structuart__buffer__t.html#abdb51e4948378c00a9b35bd27b6c5a56',1,'uart_buffer_t']]],
-  ['cpuid_66',['CPUID',['../m4a-24g_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'CPUID():&#160;board.h'],['../m4a-mb_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'CPUID():&#160;board.h']]]
+  ['config_5ftx_5fpower_61',['CONFIG_TX_POWER',['../radio__params_8h.html#a79a34e401a947d2d097fcdd656f00219',1,'radio_params.h']]],
+  ['config_5fztimer_5fusec_5fdev_62',['CONFIG_ZTIMER_USEC_DEV',['../m4a-24g_2include_2board_8h.html#a2378d153069150591eb7fa2082f573d9',1,'board.h']]],
+  ['config_5fztimer_5fusec_5fmin_63',['CONFIG_ZTIMER_USEC_MIN',['../m4a-24g_2include_2board_8h.html#a0da89da11cd4268db8298bae9fbe1d85',1,'board.h']]],
+  ['config_5fztimer_5fusec_5ftype_64',['CONFIG_ZTIMER_USEC_TYPE',['../m4a-24g_2include_2board_8h.html#ae3245610b3181dbfab13ae3e5fae7e37',1,'board.h']]],
+  ['content_5flen_65',['content_len',['../structhttp__response__t.html#ae5365297015c6a53f7527721adbf4e1e',1,'http_response_t']]],
+  ['count_66',['count',['../structuart__buffer__t.html#abdb51e4948378c00a9b35bd27b6c5a56',1,'uart_buffer_t']]],
+  ['cpuid_67',['CPUID',['../m4a-24g_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'CPUID():&#160;board.h'],['../m4a-mb_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'CPUID():&#160;board.h']]]
 ];

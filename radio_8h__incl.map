@@ -1,5 +1,7 @@
 <map id="firmware/network/radio/include/radio.h" name="firmware/network/radio/include/radio.h">
-<area shape="rect" id="node1" title="this module content all functions of radio" alt="" coords="20,5,229,52"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,100,108,129"/>
-<area shape="rect" id="node3" title=" " alt="" coords="133,100,255,129"/>
+<area shape="rect" id="node1" title="this module content all functions of radio" alt="" coords="99,5,308,52"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,177,108,207"/>
+<area shape="rect" id="node3" title=" " alt="" coords="299,177,422,207"/>
+<area shape="rect" id="node4" href="$radio__params_8h.html" title="this module content all params to set the radio" alt="" coords="130,100,277,129"/>
+<area shape="rect" id="node5" title=" " alt="" coords="132,177,275,207"/>
 </map>
