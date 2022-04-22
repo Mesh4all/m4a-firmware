@@ -1,11 +1,42 @@
 menu "PHY settings"
+depends on IEEE_802154
 #comment "PHY settings"
+    config MODE_SUB_24GHZ
+    bool "Mode Sub 2.4GHz"
+    default n
+    depends on USEMODULE_AT86RF215 || USEMODULE_CC2538_RF
+
+    #AT86RF215
     config TX_POWER
     int "Default TX Power"
     default 0
+    range -28 3
+    depends on USEMODULE_AT86RF215
+
+    #AT86RF233
+    config TX_POWER
+    int "Default TX Power"
+    default 0
+    range -17  4
+    depends on USEMODULE_AT86RF233
+
+    #CC2538
+    config TX_POWER
+    int "Default TX Power"
+    default 0
+    range -24 7
+    depends on USEMODULE_CC2538_RF
 
     config RADIO_CHANNEL
     int "Default Radio Channel"
     default 11
+    range 11 26
+    depends on !MODE_SUB_24GHZ
+
+    config SUB_RADIO_CHANNEL
+    int "Default Radio Channel Sub 2.4GHz"
+    default 0
+    range 0 10
+    depends on MODE_SUB_24GHZ
 
 endmenu #Phy

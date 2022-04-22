@@ -30,14 +30,7 @@
 
 #include "net/gnrc.h"
 #include "net/netdev.h"
-
-#ifndef MAX_TX_POWER
-#define MAX_TX_POWER (20)
-#endif
-
-#ifndef MIN_TX_POWER
-#define MIN_TX_POWER (-17)
-#endif
+#include "radio_params.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -110,8 +103,14 @@ int8_t set_sleep_interface(void);
  */
 int8_t set_awake_interface(void);
 
+/**
+ * @brief function used to determinate if there is a radio multiband interface
+ * @return bool (True is Multiband, False is Single-Band)
+ */
+bool identify_multiple_radio_interface(void);
+
 #ifdef __cplusplus
 }
 #endif
 #endif /* RADIO_H */
-/**@}*/
+       /**@}*/
