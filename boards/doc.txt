@@ -31,4 +31,42 @@ Data storage systems and those intended for their distribution in any way, synch
 
 Systems with a certain degree of autonomy, capable of collecting data and reacting based on that data, in loop or loop with bypass option.
 
+### Riotboot DFU bootloader
+
+It's a  bootloader that adds USB device firmware upgrade (DFU) support:
+
+- Go to RIOT/bootloaders/riotboot_dfu folder and use the command
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make term flash
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This sets USB port with VID =1209, PID = 7D02.
+
+### Compile firmware
+
+Below are the steps to update the firmware:
+
+- Compile with the following command
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FEATURES_REQUIRED+=riotboot USEMODULE+=usbus_dfu make BOARD=m4a-24g
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+with this you get a .bin file located at <project_folder>/bin
+
+### Firmware upgrade
+
+- Switch to USB port and run the following command in terminal:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dfu-util --device : --alt 0 --download [file.bin]
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Notes:
+- Tested with dfu-util v0.9
+- Find dfu-util info on http://dfu-util.sourceforge.net/
+
 */
