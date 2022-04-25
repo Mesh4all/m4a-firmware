@@ -47,23 +47,24 @@ This sets USB port with VID =1209, PID = 7D02.
 
 Below are the steps to update the firmware:
 
-- Compile with the following command
+Load the Bootloader firmware to the board
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-FEATURES_REQUIRED+=riotboot USEMODULE+=usbus_dfu make BOARD=m4a-24g
+make install-boot
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-with this you get a .bin file located at <project_folder>/bin
-
-### Firmware upgrade
-
-- Switch to USB port and run the following command in terminal:
+- Compile and flash the bootloader with the following command
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-dfu-util --device : --alt 0 --download [file.bin]
+sudo make update
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Every time that you run make update, you are uploading the firmware. Doesn matter
+if you're uploading by first time, the command install your firmware without errors
+
+@note: it's recommended run in sudo su or superuser with privileges to get
+access of the DFU device
 
 ## Notes:
 - Tested with dfu-util v0.9
