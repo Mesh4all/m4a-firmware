@@ -24,10 +24,6 @@ var NAVTREE =
 [
   [ "Mesh4all", "index.html", [
     [ "m4a reference firmware", "index.html", null ],
-    [ "README", "md_examples_ds18b20_README.html", null ],
-    [ "External led example", "md_examples_external_led_README.html", null ],
-    [ "README", "md_examples_moisture_sensor_hw390_README.html", null ],
-    [ "README", "md_examples_slipdev_README.html", null ],
     [ "Unit-testing", "md_tests_README.html", null ],
     [ "WiFi subsystem", "md_wifi-subsys_README.html", null ],
     [ "Modules", "modules.html", "modules" ],
@@ -56,8 +52,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"m4a-24g_2include_2board_8h.html#a1e48dc02333bfc2e6ad3e5bd466eecd4",
-"wifi-subsys_2main_2default__params_8h_source.html"
+"m4a-24g_2include_2board_8h.html#a555f5ce4ea27f15da0ed318fd79704ee"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

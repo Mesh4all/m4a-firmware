@@ -1,8 +1,5 @@
 var m4a_24g_2include_2board_8h =
 [
-    [ "Uart example", "group__tmp__uart.html#autotoc_md41", [
-      [ "Uart example", "group__tmp__uart.html#autotoc_md41", null ]
-    ] ],
     [ "AT86RF2XX_PARAM_CS", "m4a-24g_2include_2board_8h.html#a555f5ce4ea27f15da0ed318fd79704ee", null ],
     [ "AT86RF2XX_PARAM_INT", "m4a-24g_2include_2board_8h.html#ab47f3ac0a872633fbef6ebe83d52883a", null ],
     [ "AT86RF2XX_PARAM_RESET", "m4a-24g_2include_2board_8h.html#ae1083f9546ac5eaf9cd81065ae0ac5c6", null ],
