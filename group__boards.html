@@ -144,7 +144,35 @@ Data storage and distribution</h3>
 <p>Data storage systems and those intended for their distribution in any way, synchronously or asynchronously.</p>
 <h3><a class="anchor" id="autotoc_md5"></a>
 Action/Reaction systems</h3>
-<p>Systems with a certain degree of autonomy, capable of collecting data and reacting based on that data, in loop or loop with bypass option. </p>
+<p>Systems with a certain degree of autonomy, capable of collecting data and reacting based on that data, in loop or loop with bypass option.</p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Riotboot DFU bootloader</h3>
+<p>It's a bootloader that adds USB device firmware upgrade (DFU) support:</p>
+<ul>
+<li>Go to RIOT/bootloaders/riotboot_dfu folder and use the command</li>
+</ul>
+<div class="fragment"><div class="line">make term flash</div>
+</div><!-- fragment --><p>This sets USB port with VID =1209, PID = 7D02.</p>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Compile firmware</h3>
+<p>Below are the steps to update the firmware:</p>
+<ul>
+<li>Compile with the following command</li>
+</ul>
+<div class="fragment"><div class="line">FEATURES_REQUIRED+=riotboot USEMODULE+=usbus_dfu make BOARD=m4a-24g</div>
+</div><!-- fragment --><p>with this you get a .bin file located at &lt;project_folder&gt;/bin</p>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Firmware upgrade</h3>
+<ul>
+<li>Switch to USB port and run the following command in terminal:</li>
+</ul>
+<div class="fragment"><div class="line">dfu-util --device : --alt 0 --download [file.bin]</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+Notes:</h2>
+<ul>
+<li>Tested with dfu-util v0.9</li>
+<li>Find dfu-util info on <a href="http://dfu-util.sourceforge.net/">http://dfu-util.sourceforge.net/</a> </li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
@@ -152,7 +180,7 @@ Action/Reaction systems</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Apr 22 2022 18:02:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Apr 25 2022 17:35:04 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
