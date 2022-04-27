@@ -1,1 +1,10 @@
+PROGRAMMERS_SUPPORTED += dfu-util
+
+# Required elements to Bootloader_mode
+ifeq ($(M4ABOOT), 1)
+	FLASHFILE = $(BINFILE) -checksummed
+	FFLAGS = -d 1209:$(USB_PID),1209:7D02 -a 0 -D $(FLASHFILE)
+	PROGRAMMER = dfu-util
+endif
+
 include $(RIOTMAKE)/boards/sam0.inc.mk
