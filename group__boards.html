@@ -156,18 +156,15 @@ Riotboot DFU bootloader</h3>
 <h3><a class="anchor" id="autotoc_md7"></a>
 Compile firmware</h3>
 <p>Below are the steps to update the firmware:</p>
-<ul>
-<li>Compile with the following command</li>
+<p>Load the Bootloader firmware to the board</p>
+<div class="fragment"><div class="line">make install-boot</div>
+</div><!-- fragment --><ul>
+<li>Compile and flash the bootloader with the following command</li>
 </ul>
-<div class="fragment"><div class="line">FEATURES_REQUIRED+=riotboot USEMODULE+=usbus_dfu make BOARD=m4a-24g</div>
-</div><!-- fragment --><p>with this you get a .bin file located at &lt;project_folder&gt;/bin</p>
-<h3><a class="anchor" id="autotoc_md8"></a>
-Firmware upgrade</h3>
-<ul>
-<li>Switch to USB port and run the following command in terminal:</li>
-</ul>
-<div class="fragment"><div class="line">dfu-util --device : --alt 0 --download [file.bin]</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+<div class="fragment"><div class="line">sudo make update</div>
+</div><!-- fragment --><p>Every time that you run make update, you are uploading the firmware. Doesn matter if you're uploading by first time, the command install your firmware without errors</p>
+<dl class="section note"><dt>Note</dt><dd>: it's recommended run in sudo su or superuser with privileges to get access of the DFU device</dd></dl>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Notes:</h2>
 <ul>
 <li>Tested with dfu-util v0.9</li>
@@ -180,7 +177,7 @@ Notes:</h2>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Apr 25 2022 20:05:31 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Apr 27 2022 21:06:50 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
