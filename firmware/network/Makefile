@@ -14,4 +14,8 @@ ifneq (,$(filter rpl_protocol,$(USEMODULE)))
   DIRS += rpl_protocol
 endif
 
+ifneq (,$(filter border_router,$(USEMODULE)))
+  DIRS += border_router
+endif
+
 include $(RIOTBASE)/Makefile.base
