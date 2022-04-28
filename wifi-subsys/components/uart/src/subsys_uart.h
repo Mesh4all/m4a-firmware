@@ -60,7 +60,7 @@ void tx_send_loop();
  *
  *  @param values [in] sensor values
  */
-void received_sensor_data(uint8_t *values);
+void received_sensor_data(uint8_t *values, size_t len);
 
 /**
  * @brief this function is used to send data through uart

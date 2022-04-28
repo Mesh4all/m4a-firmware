@@ -31,6 +31,8 @@
 #include "at_handler.h"
 #include "wifi.h"
 #include "default_params.h"
+#include "serialization.h"
+#include "httpsclient.h"
 
 static const int RX_BUF_SIZE = 1024;
 static uint8_t at_mode = 0;
@@ -77,6 +79,11 @@ esp_err_t setting_uart(void) {
     return ESP_OK;
 }
 
+void callback(http_response_t *response) {
+    ESP_LOGI(__func__, "executed callback the response: %d !!! %s", response->status,
+             response->output);
+}
+
 int sendData(const char *logName, char *data) {
     const int len = strlen(data);
     printf("before send %s \n", data);
@@ -85,9 +92,22 @@ int sendData(const char *logName, char *data) {
     return txBytes;
 }
 
-void received_sensor_data(uint8_t *values) {
+void received_sensor_data(uint8_t *values, size_t len) {
     char *message = (char *)values;
-    ESP_LOGI(__func__, "Read sensor data: '%s' ", message);
+
+    int val_received = 0;
+    ESP_LOGI(__func__, "Read sensor data: '%s' and len is: %d ", message, len);
+    decode(values, "temp", &val_received, len);
+    ESP_LOGI(__func__, "%d ", val_received);
+
+    http_request_t request;
+    request.method = HTTP_METHOD_POST;
+    request.content_type = HTTPS_CONTENT_CBOR;
+    memcpy(request.url, "https://cloud.mesh4all.org",
+           sizeof("https://cloud.mesh4all.org"));
+    memcpy(request.body, values, len);
+    request.callback = &callback;
+    http_client(&request);
 }
 
 void tx_send_loop(void *arg) {
@@ -128,7 +148,7 @@ void rx_receive(void *arg) {
                     ESP_LOGI(__func__, "the command must init with AT");
                 }
             } else {
-                received_sensor_data(data);
+                received_sensor_data(data, rxBytes);
             }
 
             ESP_LOG_BUFFER_HEXDUMP(__func__, data, rxBytes, ESP_LOG_INFO);
