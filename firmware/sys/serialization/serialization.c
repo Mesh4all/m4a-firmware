@@ -24,12 +24,14 @@
 #include <string.h>
 #include "serialization.h"
 #include "cbor.h"
+#include "board.h"
 
 int cbor_decode_message(uint8_t *buffer, sensor_data *data, size_t length) {
     CborParser parser;
     CborValue it;
     CborValue moisture_in;
     CborValue temp_in;
+    CborValue nodeid_in;
     uint64_t temp;
     uint64_t moist;
 
@@ -53,6 +55,26 @@ int cbor_decode_message(uint8_t *buffer, sensor_data *data, size_t length) {
         return -1;
     }
 
+    ///////////////////////
+
+    if (cbor_value_map_find_value(&it, "node_id", &nodeid_in) != CborNoError) {
+        printf("error in find id");
+        return -1;
+    }
+
+    if (!cbor_value_is_byte_string(&nodeid_in)) {
+        printf("fail id2 \n");
+        return -1;
+    }
+
+    size_t len = 0;
+    cbor_value_calculate_string_length(&nodeid_in, &len);
+    if (len == 0) {
+        return -1;
+    }
+
+    ///////////////////
+
     cbor_value_map_find_value(&it, "temp", &temp_in);
 
     if (!cbor_value_is_valid(&temp_in) && !cbor_value_is_integer(&temp_in)) {
@@ -62,10 +84,10 @@ int cbor_decode_message(uint8_t *buffer, sensor_data *data, size_t length) {
 
     cbor_value_get_uint64(&temp_in, &temp); // Copy byte string
     cbor_value_get_uint64(&moisture_in, &moist);
+    cbor_value_copy_byte_string(&nodeid_in, (uint8_t *)data->id_node, &len, NULL);
 
     memcpy(&data->temperature, &temp, sizeof(int16_t));
     memcpy(&data->soil_moisture, &moist, sizeof(int));
-
     return 0;
 }
 
@@ -75,13 +97,19 @@ int cbor_enconde_message(sensor_data *data, uint8_t *output, size_t *len_output)
     cbor_encoder_init(&encoder, buffer, sizeof(buffer), 0);
 
     CborEncoder map_encoder;
-    cbor_encoder_create_map(&encoder, &map_encoder, 2);
+    cbor_encoder_create_map(&encoder, &map_encoder, 3);
 
     cbor_encode_text_stringz(&map_encoder, "moisture");
     cbor_encode_int(&map_encoder, data->soil_moisture);
 
     cbor_encode_text_stringz(&map_encoder, "temp");
     cbor_encode_int(&map_encoder, data->temperature);
+
+    cbor_encode_text_stringz(&map_encoder, "node_id");
+    int ret = cbor_encode_byte_string(&map_encoder, (uint8_t *)data->id_node, CPUID_LEN);
+    if (ret != CborNoError) {
+        printf("cbor error %d", ret);
+    }
 
     cbor_encoder_close_container(&encoder, &map_encoder);
 
