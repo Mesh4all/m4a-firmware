@@ -1,0 +1,25 @@
+@defgroup border_router_test border router test module
+@ingroup     test_group
+@{
+
+## Test Border Router module
+
+Here the unit tests are carried out on the Border Router module.
+
+To test the code in automatic mode:
+
+```c
+make flash test
+
+```
+
+To test the code in interactive mode:
+
+```c
+make flash term
+
+```
+
+@}
+
+ */
