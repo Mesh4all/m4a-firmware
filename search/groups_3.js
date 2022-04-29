@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['mesh4all_202_2e4_20ghz_20band_20board_561',['Mesh4All 2.4 GHz band board',['../group__boards__m4a-24g.html',1,'']]],
-  ['mesh4all_20multi_2dband_20board_562',['Mesh4All multi-band board',['../group__boards__m4a-mb.html',1,'']]],
-  ['mesh4all_20examples_563',['Mesh4all Examples',['../group__examples.html',1,'']]],
-  ['moisture_20sensor_564',['Moisture sensor',['../group__moisture__sensor.html',1,'']]]
+  ['external_2dled_20blink_576',['External-led blink',['../group__external-led.html',1,'']]]
 ];

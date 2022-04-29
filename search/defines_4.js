@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gen2_5fulp32k_510',['GEN2_ULP32K',['../m4a-24g_2include_2periph__conf_8h.html#ac34b0d5e6437c8411af67230128a7ba0',1,'GEN2_ULP32K():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ac34b0d5e6437c8411af67230128a7ba0',1,'GEN2_ULP32K():&#160;periph_conf.h']]]
+  ['dac_5fclock_523',['DAC_CLOCK',['../m4a-mb_2include_2periph__conf_8h.html#a3146b48b878b99f151de5239d3814793',1,'periph_conf.h']]],
+  ['dac_5fvref_524',['DAC_VREF',['../m4a-mb_2include_2periph__conf_8h.html#a5afd9690184542986af3376d1dd88957',1,'periph_conf.h']]]
 ];

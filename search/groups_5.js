@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['peripherals_567',['Peripherals',['../group__peripherals.html',1,'']]],
-  ['protocols_20routines_568',['Protocols routines',['../group__wifi-subusys-protocols.html',1,'']]]
+  ['network_20module_581',['Network module',['../group__network.html',1,'']]],
+  ['nvs_20routines_20for_20the_20wifi_20subsystem_582',['NVS routines for the WiFi subsystem',['../group__storage.html',1,'']]]
 ];
