@@ -38,6 +38,7 @@ extern "C" {
 #define MAX_HTTP_OUTPUT_BUFFER 1024 /*!< maximum size to send */
 
 #define HTTPS_CONTENT_JSON "application/json"
+#define HTTPS_CONTENT_CBOR "application/cbor"
 
 /**
  * @brief Struct to save status, content_len, output.
