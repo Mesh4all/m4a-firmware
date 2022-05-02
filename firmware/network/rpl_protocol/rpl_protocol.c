@@ -92,7 +92,7 @@ int8_t rpl_setup(void) {
     subnet_to_ipv6(&ipv6);
 
 #ifdef CONFIG_IS_DODAG
-    err = gnrc_rpl_dodag_root(CONFIG_DODAG_INSTACE, &ipv6);
+    err = gnrc_rpl_dodag_root(CONFIG_DODAG_INSTANCE, &ipv6);
     if (err != 0) {
         printf("Error: couldn't init the dodag node .\n");
         return -1;

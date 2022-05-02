@@ -26,14 +26,6 @@ ifneq (,$(filter gnrc_udp,$(USEMODULE)))
     USEMODULE += gnrc_udp
 endif
 
-ifneq (,$(filter gnrc_rpl,$(USEMODULE)))
-    USEMODULE += gnrc_rpl
-endif
-
-ifneq (,$(filter auto_init_gnrc_rpl,$(USEMODULE)))
-    USEMODULE += auto_init_gnrc_rpl
-endif
-
 ifneq (,$(filter gnrc_icmpv6_echo,$(USEMODULE)))
     USEMODULE += gnrc_icmpv6_echo
 endif
@@ -44,4 +36,8 @@ endif
 
 ifneq (,$(filter gnrc_netif_ieee802154,$(USEMODULE)))
     USEMODULE += gnrc_netif_ieee802154
+endif
+
+ifeq (,$(filter rpl_protocol,$(USEMODULE)))
+    USEMODULE +=  rpl_protocol
 endif
