@@ -15,8 +15,9 @@
  */
 
 /**
+ * @ingroup rpl_protocol
  * @{
- * @file        rpl_protocol.h
+ *
  * @brief       this module content all functions of rpl
  * @author      xkevin190 <kevinvelasco193@gmail.com.com>
  *
