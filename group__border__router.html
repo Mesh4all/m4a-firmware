@@ -150,7 +150,28 @@ Address configuration</h3>
 </ul>
 <p>To test. Run from host:</p>
 <div class="fragment"><div class="line">$ ping6 &lt;ipv6_address&gt; -c3</div>
-</div><!-- fragment --> </div><!-- contents -->
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md38"></a>
+Network: added setting of wireless node to border router</h1>
+<p>Within the border_router_add_ipv6_node function, the border router is configured by adding the ipv6 in the wireless</p>
+<p>Note: The Node itself requires no configuration. All configuration happens on The Border Router.</p>
+<ul>
+<li>The first step is add an IPv6 address to the wireless interface of The Border Router.</li>
+<li>The second step to take is to initialize the RPL routing protocol to enable multi-hop networking with the rpl_protocol using the function <code>rpl_init</code>.</li>
+<li>In the next step, the following command added new RPL DODAG <code>gnrc_rpl_dodag_root</code>, with the instance ID = CONFIG_DODAG_INSTANCE.</li>
+</ul>
+<p>Note: With these two actions, RPL is active on The Border Router and should transmit DODAG Information Objects.</p>
+<p>The Node should receive the DODAG Information Objects from The Border Router and should configure an address based on the prefix</p>
+<h2><a class="anchor" id="autotoc_md39"></a>
+Border router diagram</h2>
+<p>This diagram shows the struct connection between the border router and a RPL network.</p>
+<div class="image">
+<img src="border_router_diagram.png" alt="" width="40%"/>
+<div class="caption">
+Border router connection with RPL network </div></div>
+<h3><a class="anchor" id="autotoc_md40"></a>
+How this struct works?</h3>
+<p>The border router is connected to an external network (Host) which is connected to the internet. Through this connection it links the nodes using RPL protocol. </p>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aborder__router_8h_html_a98af7cc0b10f71bb7bb346504a3ee33bacc5669b5cfd491fa253ba42b019bd76a"><div class="ttname"><a href="border__router_8h.html#a98af7cc0b10f71bb7bb346504a3ee33bacc5669b5cfd491fa253ba42b019bd76a">_UNICAST</a></div><div class="ttdeci">@ _UNICAST</div><div class="ttdef"><b>Definition:</b> <a href="border__router_8h_source.html#l00044">border_router.h:44</a></div></div>
 <!-- HTML footer for doxygen 1.9.1-->
@@ -158,7 +179,7 @@ Address configuration</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon May 2 2022 12:10:03 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue May 3 2022 19:08:33 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

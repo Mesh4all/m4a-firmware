@@ -52,7 +52,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"icmp__ping_8h_source.html"
+"httpsclient_8h_source.html",
+"wifi-subsys_2components_2tools_2src_2serialization_8h.html#a215fee02f2007eaca65d58b7011d8437"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
