@@ -58,6 +58,15 @@ enum cast_t {
  */
 int border_router_add_ipv6(int cast_type, ipv6_addr_t *addr);
 
+/**
+ * @brief This function it's set to border router to node.
+ *
+ * @param[in] cast_type cast_type you want to set
+ * @param[in] adrr      ipv6 address
+ * @return int
+ */
+int border_router_add_ipv6_node(int cast_type, ipv6_addr_t *addr);
+
 #ifdef __cplusplus
 }
 #endif

@@ -1,0 +1,10 @@
+/**
+@defgroup border_router_node Border router node
+@ingroup  network
+
+### What goes here?
+
+This module is used to setup the node to be connected to the border router. The Node itself requires no configuration. All configuration happens on The Border Router but
+this module has a different Makefile.dep.
+
+*/

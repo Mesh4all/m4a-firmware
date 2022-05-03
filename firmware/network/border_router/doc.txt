@@ -70,4 +70,32 @@ To test. Run from host:
 $ ping6 <ipv6_address> -c3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# Network: added setting of wireless node to border router
+
+Within the border_router_add_ipv6_node function, the border router is configured
+by adding the ipv6 in the wireless
+
+Note: The Node itself requires no configuration. All configuration happens on The Border Router.
+
+- The first step is add an IPv6 address to the wireless interface of The Border Router.
+
+- The second step to take is to initialize the RPL routing protocol to enable multi-hop networking with the
+rpl_protocol using the function ``` rpl_init ```.
+
+- In the next step, the following command added new RPL DODAG ``` gnrc_rpl_dodag_root ```, with the instance ID = CONFIG_DODAG_INSTANCE.
+
+Note: With these two actions, RPL is active on The Border Router and should transmit DODAG Information Objects.
+
+The Node should receive the DODAG Information Objects from The Border Router and should configure an address based on the prefix
+
+## Border router diagram
+
+This diagram shows the struct connection between the border router and a RPL network.
+
+\image html border_router_diagram.png Border router connection with RPL network width=40%
+
+### How this struct works?
+
+The border router is connected to an external network (Host) which is connected to the internet. Through this connection
+it links the nodes using RPL protocol.
 */

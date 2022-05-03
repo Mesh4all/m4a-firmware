@@ -23,6 +23,7 @@
 #include <errno.h>
 #include "embUnit.h"
 #include "border_router.h"
+#include "rpl_protocol.h"
 
 void test_border_router_add_ipv6(void) {
      ipv6_addr_t address = {
@@ -33,9 +34,19 @@ void test_border_router_add_ipv6(void) {
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
+void test_border_router_add_ipv6_node(void) {
+     ipv6_addr_t address = {
+        .u8 = {0},
+    };
+    ipv6_addr_from_str(&address, "2001:db8:1::2");
+    int err = border_router_add_ipv6_node(_UNICAST,  &address);
+    TEST_ASSERT_EQUAL_INT(0, err);
+}
+
 Test *tests_border_router(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
         new_TestFixture(test_border_router_add_ipv6),
+        new_TestFixture(test_border_router_add_ipv6_node),
     };
 
     EMB_UNIT_TESTCALLER(tests_border_router, NULL, NULL, fixtures);
