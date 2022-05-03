@@ -44,7 +44,7 @@
 #define UART_PORT UART_DEV(1)
 #define ADDRESS_TO_SEND "fe80::204:2519:1801:cad4"
 
- msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
+msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
 char get_sensor_event[THREAD_STACKSIZE_DEFAULT];
 uint8_t buffer[100];
 shell_command_t shell_extended_commands[] = {{NULL, NULL, NULL}};
@@ -54,7 +54,7 @@ void *init_loop(void *args) {
     sensor_data payload;
     uint8_t addr_cpu[CPUID_LEN] = {0};
     CPUID(addr_cpu);
-    memcpy(payload.id_node,  addr_cpu, CPUID_LEN);
+    memcpy(payload.id_node, addr_cpu, CPUID_LEN);
     int port = 3000;
     while (1) {
         if (get_temperature_value(&payload.temperature) < 0) {
@@ -62,7 +62,7 @@ void *init_loop(void *args) {
             printf("Error to the obtain the temperature \n");
         }
         printf("%d,%d °C\n", payload.temperature / 100, payload.temperature % 100);
-         size_t len_cbor = sizeof(sensor_data);
+        size_t len_cbor = sizeof(sensor_data);
         if (cbor_enconde_message(&payload, buffer, &len_cbor) < 0) {
             printf("error to encode payload with cbor");
         } else {
