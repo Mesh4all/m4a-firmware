@@ -1,0 +1,49 @@
+{% if application.type == "test" %}
+include ../Makefile.tests_common
+{% else %}
+# name of the application
+APPLICATION = {{ application.name }}
+
+# If no BOARD is found in the environment, use this default:
+BOARD ?= {{ application.board }}
+
+# This has to be the absolute path to the RIOT base directory:
+{% if application.type is defined %}
+RIOTBASE ?= $(CURDIR)/../..
+{% else %}
+RIOTBASE ?= {{ application.riotbase }}
+{% endif %}
+{% endif %}
+{% if application.modules|length > 0 %}
+
+# required modules
+{% for module in application.modules %}
+USEMODULE += {{ module }}
+{% endfor %}
+{% endif %}
+{% if application.features_required|length > 0 %}
+
+# required features
+{% for feature in application.features_required %}
+FEATURES_REQUIRED += {{ feature }}
+{% endfor %}
+{% endif %}
+{% if application.packages|length > 0 %}
+
+# required packages
+{% for package in application.packages %}
+USEPKG += {{ package }}
+{% endfor %}
+{% endif %}
+
+{% if application.type != "test" %}
+# Comment this out to disable code in RIOT that does safety checking
+# which is not needed in a production environment but helps in the
+# development process:
+DEVELHELP ?= 1
+
+# Change this to 0 show compiler invocation lines by default:
+QUIET ?= 1
+
+{% endif %}
+include $(RIOTBASE)/Makefile.include

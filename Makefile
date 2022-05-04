@@ -32,4 +32,5 @@ update:
 docs:
 	cd doc/doxygen && make
 
+-include makefiles/tools/m4agen.inc.mk
 -include makefiles/tests.inc.mk

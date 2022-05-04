@@ -1,0 +1,35 @@
+{% include "common/header.j2" %}
+
+/**
+ * @ingroup     boards_{{ board.name }}
+ * @{
+ *
+ * @file
+ * @brief       Board specific definitions for the {{ board.displayed_name }}
+ *
+ * @author      {{ global.author_name }} <{{ global.author_email }}>
+ */
+
+#ifndef BOARD_H
+#define BOARD_H
+
+#include "cpu.h"
+#include "periph_conf.h"
+#include "periph_cpu.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Put here board specific definitions:
+ - LEDs/buttons macros,
+ - on-board drivers parameters
+ - xtimer configuration
+ */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* BOARD_H */
+/** @} */
