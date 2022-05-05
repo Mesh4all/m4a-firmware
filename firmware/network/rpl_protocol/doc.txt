@@ -1,0 +1,47 @@
+/**
+@defgroup rpl_protocol RPL protocol module
+@ingroup  network
+
+### What goes here?
+
+In this module you will find the functions to start RPL and add a node dodag (Root)
+or dag (Slave) first RPL is initialized then it is verifies if the node is dodag or dag and
+they are started an ipv6 is added where the dodag will be hosted one Once the dodag is started,
+the DAG RIOT node is in charge of executing the entire routing process.
+
+### How's work RPL protocol
+
+the RPL protocol is quite complex in this document we will try to explain it as simple to understand as possible.
+
+Routing protocol for Low-Power and Lossy Networks (RPL) protocol is a distance vector proactive routing protocol that
+creates a tree-like routing topology called the destination-oriented directed acyclic graph (DODAG), rooted towards one or more nodes called the root node or sink node.
+The directed acyclic graphs (DAGs) are created based on a user-specified specific objective function (OF). The OF defines the method to find the best-optimized route among the number of sensor devices.
+
+To maintain the connection with the nodes there are three types of control messages:
+
+`DIS` Nodes use DIS messages to poll neighboring nodes for nearby DODAGs.
+
+`DAO` is used to propagate  destination information Upward along the DODAG,
+the message is unicast by the child to the selected parent(s).
+
+`DIO` each node transmits DIO messages using the trickle timer. The frequency of DIO messages depends on network stability.
+
+As the generation of these messages incur additional energy consumption, RPL uses the Trickle algorithm to dynamically adjust the transmission
+The DIO message originates from the sink while the DAO originates from the nodes. This trickle timer helps keep track of the messages sent by the
+sink when it tells the nodes “I am the sink”. In RPL the DIO’s are sent out periodically and the time gap is increased after every transmission. This is done with the help of a trickle timer.
+
+
+This graph will show us how RPL works and the control messages.
+
+\image html rpl.png RPL messages width=40%
+
+for more information about the RPL protocol you can check the official documentation of the protocol [here](https://www.rfc-editor.org/rfc/rfc6550.txt)
+
+
+In our investigation we were able to find a lot of RPL documentation that helped us understand the correct functioning of this, among them are:
+
+[RPL: IPv6 Routing Protocol for Low-Power and Lossy Networks] (https://www.rfc-editor.org/rfc/rfc6550.txt)\n
+[Routing protocol for Low-Power and Lossy Networks for heterogeneous traffic network] (https://jwcn-eurasipjournals.springeropen.com/articles/10.1186/s13638-020-1645-4#:~:text=The%20ROEE%20RPL%20protocol%20retrieves,battery%20index%20of%20each%20node.)\n
+[The Trickle Algorithm](https://www.rfc-editor.org/rfc/rfc6206.txt)\n
+[RPL (IPv6 Routing Protocol for LLNs)](https://en.wikipedia.org/wiki/RPL_(IPv6_Routing_Protocol_for_LLNs))
+*/
