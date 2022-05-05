@@ -1,0 +1,4 @@
+m4agen.egg-info/
+*.pyc
+build/
+dist/

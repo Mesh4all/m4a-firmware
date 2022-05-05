@@ -1,0 +1,2 @@
+recursive-include m4agen/templates *.j2
+recursive-include m4agen/data/licenses *.txt
