@@ -15,6 +15,6 @@ var searchData=
   ['get_5fwifi_5fmode_105',['GET_WIFI_MODE',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217ac99c3404291d58786be0ea20d961a976',1,'at_client.h']]],
   ['get_5fwsta_5fpass_106',['GET_WSTA_PASS',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217af0226899deae74826aa531874d90f844',1,'at_client.h']]],
   ['get_5fwsta_5fssid_107',['GET_WSTA_SSID',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a9c1a8da150f697e0e066dad26b508123',1,'at_client.h']]],
-  ['gnrc_5frpl_5fdodag_5froot_108',['gnrc_rpl_dodag_root',['../rpl__protocol_8h.html#a4650598dee4caed930cd020ed7ed05f7',1,'rpl_protocol.h']]],
+  ['gnrc_5frpl_5fdodag_5froot_108',['gnrc_rpl_dodag_root',['../group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7',1,'rpl_protocol.h']]],
   ['gpio_5fparams_2eh_109',['gpio_params.h',['../m4a-24g_2include_2gpio__params_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2gpio__params_8h.html',1,'(Global Namespace)']]]
 ];

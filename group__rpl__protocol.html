@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: firmware/network/rpl_protocol/include/rpl_protocol.h File Reference</title>
+    <title>Mesh4all: RPL protocol module</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('rpl__protocol_8h.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__rpl__protocol.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -105,45 +105,50 @@ $(document).ready(function(){initNavTree('rpl__protocol_8h.html',''); initResiza
 
 <div class="header">
   <div class="headertitle">
-<div class="title">rpl_protocol.h File Reference</div>  </div>
+<div class="title">RPL protocol module<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__network.html">Network module</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>this module content all functions of rpl  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;net/ipv6/addr.h&quot;</code><br />
-</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for rpl_protocol.h:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="rpl__protocol_8h__incl.svg" width="200" height="152"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-</div>
-<p><a href="rpl__protocol_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="memitem:a97d2cb32692837fda8a6668ece2d794b"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl__protocol_8h.html#a97d2cb32692837fda8a6668ece2d794b">rpl_init</a> (kernel_pid_t iface_pid)</td></tr>
-<tr class="memdesc:a97d2cb32692837fda8a6668ece2d794b"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function init rpl protocol  <a href="rpl__protocol_8h.html#a97d2cb32692837fda8a6668ece2d794b">More...</a><br /></td></tr>
-<tr class="separator:a97d2cb32692837fda8a6668ece2d794b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4650598dee4caed930cd020ed7ed05f7"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl__protocol_8h.html#a4650598dee4caed930cd020ed7ed05f7">gnrc_rpl_dodag_root</a> (uint8_t dodag_instance, ipv6_addr_t *root_address)</td></tr>
-<tr class="memdesc:a4650598dee4caed930cd020ed7ed05f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">init the node like a dodag(master node)  <a href="rpl__protocol_8h.html#a4650598dee4caed930cd020ed7ed05f7">More...</a><br /></td></tr>
-<tr class="separator:a4650598dee4caed930cd020ed7ed05f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c3b934c4e36a994805952d347b8d2f6"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl__protocol_8h.html#a1c3b934c4e36a994805952d347b8d2f6">rpl_dodag_remove</a> (uint8_t instance_id)</td></tr>
-<tr class="memdesc:a1c3b934c4e36a994805952d347b8d2f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function remove the dodag instance  <a href="rpl__protocol_8h.html#a1c3b934c4e36a994805952d347b8d2f6">More...</a><br /></td></tr>
-<tr class="separator:a1c3b934c4e36a994805952d347b8d2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2402969d8cef4d6826c92266587e26e4"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rpl__protocol_8h.html#a2402969d8cef4d6826c92266587e26e4">rpl_setup</a> (void)</td></tr>
-<tr class="memdesc:a2402969d8cef4d6826c92266587e26e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function executed all it need for the correct work of rpl  <a href="rpl__protocol_8h.html#a2402969d8cef4d6826c92266587e26e4">More...</a><br /></td></tr>
-<tr class="separator:a2402969d8cef4d6826c92266587e26e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga97d2cb32692837fda8a6668ece2d794b"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl__protocol.html#ga97d2cb32692837fda8a6668ece2d794b">rpl_init</a> (kernel_pid_t iface_pid)</td></tr>
+<tr class="memdesc:ga97d2cb32692837fda8a6668ece2d794b"><td class="mdescLeft">&#160;</td><td class="mdescRight">this module content all functions of rpl  <a href="group__rpl__protocol.html#ga97d2cb32692837fda8a6668ece2d794b">More...</a><br /></td></tr>
+<tr class="separator:ga97d2cb32692837fda8a6668ece2d794b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4650598dee4caed930cd020ed7ed05f7"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7">gnrc_rpl_dodag_root</a> (uint8_t dodag_instance, ipv6_addr_t *root_address)</td></tr>
+<tr class="memdesc:ga4650598dee4caed930cd020ed7ed05f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">init the node like a dodag(master node)  <a href="group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7">More...</a><br /></td></tr>
+<tr class="separator:ga4650598dee4caed930cd020ed7ed05f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c3b934c4e36a994805952d347b8d2f6"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl__protocol.html#ga1c3b934c4e36a994805952d347b8d2f6">rpl_dodag_remove</a> (uint8_t instance_id)</td></tr>
+<tr class="memdesc:ga1c3b934c4e36a994805952d347b8d2f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function remove the dodag instance  <a href="group__rpl__protocol.html#ga1c3b934c4e36a994805952d347b8d2f6">More...</a><br /></td></tr>
+<tr class="separator:ga1c3b934c4e36a994805952d347b8d2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2402969d8cef4d6826c92266587e26e4"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl__protocol.html#ga2402969d8cef4d6826c92266587e26e4">rpl_setup</a> (void)</td></tr>
+<tr class="memdesc:ga2402969d8cef4d6826c92266587e26e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function executed all it need for the correct work of rpl  <a href="group__rpl__protocol.html#ga2402969d8cef4d6826c92266587e26e4">More...</a><br /></td></tr>
+<tr class="separator:ga2402969d8cef4d6826c92266587e26e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>this module content all functions of rpl </p>
-<dl class="section author"><dt>Author</dt><dd>xkevin190 <a href="#" onclick="location.href='mai'+'lto:'+'kev'+'in'+'vel'+'as'+'co1'+'93'+'@gm'+'ai'+'l.c'+'om'+'.co'+'m'; return false;">kevin<span style="display: none;">.nosp@m.</span>vela<span style="display: none;">.nosp@m.</span>sco19<span style="display: none;">.nosp@m.</span>3@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om.c<span style="display: none;">.nosp@m.</span>om</a> </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="rpl__protocol_8h_source.html">rpl_protocol.h</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a4650598dee4caed930cd020ed7ed05f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4650598dee4caed930cd020ed7ed05f7">&#9670;&nbsp;</a></span>gnrc_rpl_dodag_root()</h2>
+<h3><a class="anchor" id="autotoc_md45"></a>
+What goes here?</h3>
+<p>In this module you will find the functions to start RPL and add a node dodag (Root) or dag (Slave) first RPL is initialized then it is verifies if the node is dodag or dag and they are started an ipv6 is added where the dodag will be hosted one Once the dodag is started, the DAG RIOT node is in charge of executing the entire routing process.</p>
+<h3><a class="anchor" id="autotoc_md46"></a>
+How's work RPL protocol</h3>
+<p>the RPL protocol is quite complex in this document we will try to explain it as simple to understand as possible.</p>
+<p>Routing protocol for Low-Power and Lossy Networks (RPL) protocol is a distance vector proactive routing protocol that creates a tree-like routing topology called the destination-oriented directed acyclic graph (DODAG), rooted towards one or more nodes called the root node or sink node. The directed acyclic graphs (DAGs) are created based on a user-specified specific objective function (OF). The OF defines the method to find the best-optimized route among the number of sensor devices.</p>
+<p>To maintain the connection with the nodes there are three types of control messages:</p>
+<p><code>DIS</code> Nodes use DIS messages to poll neighboring nodes for nearby DODAGs.</p>
+<p><code>DAO</code> is used to propagate destination information Upward along the DODAG, the message is unicast by the child to the selected parent(s).</p>
+<p><code>DIO</code> each node transmits DIO messages using the trickle timer. The frequency of DIO messages depends on network stability.</p>
+<p>As the generation of these messages incur additional energy consumption, RPL uses the Trickle algorithm to dynamically adjust the transmission The DIO message originates from the sink while the DAO originates from the nodes. This trickle timer helps keep track of the messages sent by the sink when it tells the nodes “I am the sink”. In RPL the DIO’s are sent out periodically and the time gap is increased after every transmission. This is done with the help of a trickle timer.</p>
+<p>This graph will show us how RPL works and the control messages.</p>
+<div class="image">
+<img src="rpl.png" alt="" width="40%"/>
+<div class="caption">
+RPL messages </div></div>
+<p>for more information about the RPL protocol you can check the official documentation of the protocol <a href="https://www.rfc-editor.org/rfc/rfc6550.txt">here</a></p>
+<p>In our investigation we were able to find a lot of RPL documentation that helped us understand the correct functioning of this, among them are:</p>
+<p><a href="https://www.rfc-editor.org/rfc/rfc6550.txt">RPL: IPv6 Routing Protocol for Low-Power and Lossy Networks</a><br  />
+<a href="https://jwcn-eurasipjournals.springeropen.com/articles/10.1186/s13638-020-1645-4#:~:text=The%20ROEE%20RPL%20protocol%20retrieves,battery%20index%20of%20each%20node.">Routing protocol for Low-Power and Lossy Networks for heterogeneous traffic network</a><br  />
+<a href="https://www.rfc-editor.org/rfc/rfc6206.txt">The Trickle Algorithm</a><br  />
+<a href="https://en.wikipedia.org/wiki/RPL_(IPv6_Routing_Protocol_for_LLNs)">RPL (IPv6 Routing Protocol for LLNs)</a> </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga4650598dee4caed930cd020ed7ed05f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4650598dee4caed930cd020ed7ed05f7">&#9670;&nbsp;</a></span>gnrc_rpl_dodag_root()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,8 +185,8 @@ $(document).ready(function(){initNavTree('rpl__protocol_8h.html',''); initResiza
 
 </div>
 </div>
-<a id="a1c3b934c4e36a994805952d347b8d2f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c3b934c4e36a994805952d347b8d2f6">&#9670;&nbsp;</a></span>rpl_dodag_remove()</h2>
+<a id="ga1c3b934c4e36a994805952d347b8d2f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1c3b934c4e36a994805952d347b8d2f6">&#9670;&nbsp;</a></span>rpl_dodag_remove()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,8 +212,8 @@ $(document).ready(function(){initNavTree('rpl__protocol_8h.html',''); initResiza
 
 </div>
 </div>
-<a id="a97d2cb32692837fda8a6668ece2d794b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97d2cb32692837fda8a6668ece2d794b">&#9670;&nbsp;</a></span>rpl_init()</h2>
+<a id="ga97d2cb32692837fda8a6668ece2d794b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga97d2cb32692837fda8a6668ece2d794b">&#9670;&nbsp;</a></span>rpl_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +228,9 @@ $(document).ready(function(){initNavTree('rpl__protocol_8h.html',''); initResiza
       </table>
 </div><div class="memdoc">
 
-<p>this function init rpl protocol </p>
+<p>this module content all functions of rpl </p>
+<dl class="section author"><dt>Author</dt><dd>xkevin190 <a href="#" onclick="location.href='mai'+'lto:'+'kev'+'in'+'vel'+'as'+'co1'+'93'+'@gm'+'ai'+'l.c'+'om'+'.co'+'m'; return false;">kevin<span style="display: none;">.nosp@m.</span>vela<span style="display: none;">.nosp@m.</span>sco19<span style="display: none;">.nosp@m.</span>3@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om.c<span style="display: none;">.nosp@m.</span>om</a></dd></dl>
+<p>this function init rpl protocol</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">iface_pid</td><td>[in] interface where is the rpl protocol </td></tr>
@@ -234,8 +241,8 @@ $(document).ready(function(){initNavTree('rpl__protocol_8h.html',''); initResiza
 
 </div>
 </div>
-<a id="a2402969d8cef4d6826c92266587e26e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2402969d8cef4d6826c92266587e26e4">&#9670;&nbsp;</a></span>rpl_setup()</h2>
+<a id="ga2402969d8cef4d6826c92266587e26e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2402969d8cef4d6826c92266587e26e4">&#9670;&nbsp;</a></span>rpl_setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,8 +269,7 @@ $(document).ready(function(){initNavTree('rpl__protocol_8h.html',''); initResiza
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_c3e47024a331dd6d4b575c331cc3e901.html">rpl_protocol</a></li><li class="navelem"><a class="el" href="dir_642b100ac9d9a0b842966f4426c07449.html">include</a></li><li class="navelem"><a class="el" href="rpl__protocol_8h.html">rpl_protocol.h</a></li>
-    <li class="footer">Generated on Tue May 3 2022 20:28:04 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Thu May 5 2022 12:39:47 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
