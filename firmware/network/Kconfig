@@ -3,4 +3,5 @@ rsource "udp_server/Kconfig"
 rsource "udp_client/Kconfig"
 rsource "radio/Kconfig"
 rsource "rpl_protocol/Kconfig"
+rsource "chamos/Kconfig"
 endmenu

@@ -1,0 +1,5 @@
+menu "Chamos server"
+    config HEADER_ADDRESS_MULTICAST
+        string "MULTICAST IPV6 HEADER"
+        default "ff02::1"
+endmenu

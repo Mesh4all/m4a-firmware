@@ -1,0 +1,31 @@
+/**
+@defgroup Chamos Chamos
+@ingroup  network
+
+## What goes here?
+
+The module CHAMOS (Communication Handler for Addressing Management | Origin Server) It's used for server-side communication for nib routing table.
+
+### This module contains:
+
+- Turning on UDP socked.
+- Receive the message.
+- Process the message and adding it to NIB.
+- Send the ack and the nack message to the client.
+
+### Frame:
+
+-  First number is the ```type``` which is given by:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    MSG_NIB_ADD = 2, /**< Add entry to NIB */
+    MSG_NIB_DEL = 3, /**< Delete entry from NIB */
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The second value is the sequence number ``` seqno ```.
+
+- The third value is the buffer size.
+
+- From the fourth value is the ipv6 address.
+
+*/

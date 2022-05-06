@@ -26,7 +26,7 @@ ifneq (,$(filter gnrc_udp,$(USEMODULE)))
     USEMODULE += gnrc_udp
 endif
 
-ifneq (,$(filter gnrc_icmpv6_echo,$(USEMODULE)))
+ifeq (,$(filter gnrc_icmpv6_echo,$(USEMODULE)))
     USEMODULE += gnrc_icmpv6_echo
 endif
 
