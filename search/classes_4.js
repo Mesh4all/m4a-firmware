@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['uart_5fbuffer_5ft_315',['uart_buffer_t',['../structuart__buffer__t.html',1,'']]],
-  ['udpf_5fpayload_316',['udpf_payload',['../structudpf__payload.html',1,'']]]
+  ['sensor_5fdata_328',['sensor_data',['../structsensor__data.html',1,'']]],
+  ['some_5fstruct_5fvar_329',['some_struct_var',['../structsome__struct__var.html',1,'']]]
 ];

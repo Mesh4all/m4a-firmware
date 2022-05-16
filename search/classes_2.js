@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['random_5fbuff_312',['random_buff',['../unionrandom__buff.html',1,'']]]
+  ['http_5frequest_5ft_325',['http_request_t',['../structhttp__request__t.html',1,'']]],
+  ['http_5fresponse_5ft_326',['http_response_t',['../structhttp__response__t.html',1,'']]]
 ];

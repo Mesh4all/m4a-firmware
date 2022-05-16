@@ -2,6 +2,7 @@ var group__network =
 [
     [ "Border router", "group__border__router.html", null ],
     [ "Border router node", "group__border__router__node.html", null ],
+    [ "Chamos", "group__Chamos.html", "group__Chamos" ],
     [ "RPL protocol module", "group__rpl__protocol.html", "group__rpl__protocol" ],
     [ "Udp Client", "group__udp__client.html", "group__udp__client" ],
     [ "Udp server", "group__udp__server.html", "group__udp__server" ],

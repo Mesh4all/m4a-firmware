@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['supported_20boards_594',['Supported Boards',['../group__boards.html',1,'']]],
-  ['serialization_595',['Serialization',['../group__serialization.html',1,'']]],
-  ['serialization_20test_20module_596',['Serialization test module',['../group__serialization18__test.html',1,'']]],
-  ['slipdev_597',['Slipdev',['../group__slipdev.html',1,'']]],
-  ['storage_598',['Storage',['../group__storage__module.html',1,'']]],
-  ['sys_599',['Sys',['../group__sys.html',1,'']]]
+  ['reference_20firmware_620',['Reference firmware',['../group__m4a-firmware.html',1,'']]],
+  ['rpl_20protocol_20module_621',['RPL protocol module',['../group__rpl__protocol.html',1,'']]]
 ];
