@@ -105,7 +105,8 @@ $(document).ready(function(){initNavTree('chamos_8h.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">chamos.h File Reference<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__network.html">Network module</a> &raquo; <a class="el" href="group__Chamos.html">Chamos</a></div></div>  </div>
 </div><!--header-->
@@ -132,18 +133,21 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchamos__msg__t.html">chamos_msg_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CHAMOS message.  <a href="structchamos__msg__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b1d1392a8151ff023d9dc2853a17bd5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chamos_8h.html#a8b1d1392a8151ff023d9dc2853a17bd5">chamos_msg_types_t</a> { <a class="el" href="chamos_8h.html#a8b1d1392a8151ff023d9dc2853a17bd5a505d3dca17e2c4b466ddcd406422dc4f">MSG_ACK</a> = 0, 
-<a class="el" href="chamos_8h.html#a8b1d1392a8151ff023d9dc2853a17bd5a672cbf7430c58de84913ec746c44e2f3">MSG_NACK</a> = 1, 
-<a class="el" href="chamos_8h.html#a8b1d1392a8151ff023d9dc2853a17bd5a625439a55777d6a2e3f98815ddbd54b6">MSG_NIB_ADD</a> = 2, 
-<a class="el" href="chamos_8h.html#a8b1d1392a8151ff023d9dc2853a17bd5ad546328b63b3293c1f5a9c1e7705d958">MSG_NIB_DEL</a> = 3
- }</td></tr>
-<tr class="separator:a8b1d1392a8151ff023d9dc2853a17bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
 <tr class="memitem:ae12c6c5a405e7548c3da2902d0f9bbc9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chamos_8h.html#ae12c6c5a405e7548c3da2902d0f9bbc9">server_send_ack</a> (<a class="el" href="structchamos__msg__t.html">chamos_msg_t</a> *msg, sock_udp_ep_t *remote, bool flag_ack_val)</td></tr>
 <tr class="memdesc:ae12c6c5a405e7548c3da2902d0f9bbc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function is used to send ack  <a href="chamos_8h.html#ae12c6c5a405e7548c3da2902d0f9bbc9">More...</a><br /></td></tr>
 <tr class="separator:ae12c6c5a405e7548c3da2902d0f9bbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa68f88d22be14fcc1e0c0120bdc8c162"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chamos_8h.html#aa68f88d22be14fcc1e0c0120bdc8c162">chamos_init</a> (uint16_t port, gnrc_netif_t *netiface)</td></tr>
 <tr class="memdesc:aa68f88d22be14fcc1e0c0120bdc8c162"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function is used to init the module  <a href="chamos_8h.html#aa68f88d22be14fcc1e0c0120bdc8c162">More...</a><br /></td></tr>
 <tr class="separator:aa68f88d22be14fcc1e0c0120bdc8c162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b1d1392a8151ff023d9dc2853a17bd5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chamos_8h.html#a8b1d1392a8151ff023d9dc2853a17bd5">chamos_msg_types_t</a> { <a class="el" href="chamos_8h.html#a8b1d1392a8151ff023d9dc2853a17bd5a505d3dca17e2c4b466ddcd406422dc4f">MSG_ACK</a> = 0, 
+<a class="el" href="chamos_8h.html#a8b1d1392a8151ff023d9dc2853a17bd5a672cbf7430c58de84913ec746c44e2f3">MSG_NACK</a> = 1, 
+<a class="el" href="chamos_8h.html#a8b1d1392a8151ff023d9dc2853a17bd5a625439a55777d6a2e3f98815ddbd54b6">MSG_NIB_ADD</a> = 2, 
+<a class="el" href="chamos_8h.html#a8b1d1392a8151ff023d9dc2853a17bd5ad546328b63b3293c1f5a9c1e7705d958">MSG_NIB_DEL</a> = 3
+ }</td></tr>
+<tr class="separator:a8b1d1392a8151ff023d9dc2853a17bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>CHAMOS Communication Handler for Addressing Management | Origin Server. </p>
@@ -162,6 +166,7 @@ Data Structures</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Types of messages manage in the chamos server </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8b1d1392a8151ff023d9dc2853a17bd5a505d3dca17e2c4b466ddcd406422dc4f"></a>MSG_ACK&#160;</td><td class="fielddoc"><p>Message acknowledged </p>
 </td></tr>
@@ -173,7 +178,7 @@ Data Structures</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="chamos_8h_source.html#l00039">39</a> of file <a class="el" href="chamos_8h_source.html">chamos.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="chamos_8h_source.html#l00041">41</a> of file <a class="el" href="chamos_8h_source.html">chamos.h</a>.</p>
 
 </div>
 </div>
@@ -207,8 +212,8 @@ Data Structures</h2></td></tr>
 <p>this function is used to init the module </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">netiface</td><td>netif </td></tr>
-    <tr><td class="paramname">port</td><td>[in] port </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">netiface</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">port</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -251,9 +256,9 @@ Data Structures</h2></td></tr>
 <p>this function is used to send ack </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">msg</td><td>[in] Frame </td></tr>
-    <tr><td class="paramname">remote</td><td>[in] sock udp </td></tr>
-    <tr><td class="paramname">good_ack</td><td>[in] bool </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>Frame </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">remote</td><td>sock udp </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flag_ack_val</td><td>bool </td></tr>
   </table>
   </dd>
 </dl>
@@ -269,7 +274,7 @@ Data Structures</h2></td></tr>
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_2845bbfbff160f9bfbee8a16c0801999.html">chamos</a></li><li class="navelem"><a class="el" href="dir_7cc7426df7b6c323f6b41bf03fedeca2.html">include</a></li><li class="navelem"><a class="el" href="chamos_8h.html">chamos.h</a></li>
-    <li class="footer">Generated on Mon May 16 2022 20:05:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue May 17 2022 20:58:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

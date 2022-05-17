@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['max_5fhttp_5foutput_5fbuffer_576',['MAX_HTTP_OUTPUT_BUFFER',['../httpsclient_8h.html#a16e493bcc98c74ce4f6ee27cb676c5e5',1,'httpsclient.h']]],
-  ['max_5fhttp_5frecv_5fbuffer_577',['MAX_HTTP_RECV_BUFFER',['../httpsclient_8h.html#a7332032cd2bf659b9f8c18d303d2b67b',1,'httpsclient.h']]]
+  ['i2c_5fnumof_618',['I2C_NUMOF',['../m4a-24g_2include_2periph__conf_8h.html#abce62e16a6e3b3205801fed93c51692d',1,'I2C_NUMOF():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#abce62e16a6e3b3205801fed93c51692d',1,'I2C_NUMOF():&#160;periph_conf.h']]]
 ];

@@ -1,5 +1,6 @@
 var modules =
 [
+    [ "Distribution Tools", "group__dist-tools.html", "group__dist-tools" ],
     [ "Mesh4all Examples", "group__examples.html", "group__examples" ],
     [ "Reference firmware", "group__m4a-firmware.html", "group__m4a-firmware" ],
     [ "Supported Boards", "group__boards.html", "group__boards" ],

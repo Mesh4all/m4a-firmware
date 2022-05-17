@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('rpl__protocol_8h_source.html',''); ini
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;int8_t <a class="code" href="group__rpl__protocol.html#ga97d2cb32692837fda8a6668ece2d794b">rpl_init</a>(kernel_pid_t iface_pid);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;int8_t <a class="code" href="group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7">gnrc_rpl_dodag_root</a>(uint8_t dodag_instance, ipv6_addr_t *root_address);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;int8_t <a class="code" href="group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7">gnrc_rpl_dodag_root</a>(uint8_t dodag_instance, <a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> *root_address);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;int8_t <a class="code" href="group__rpl__protocol.html#ga1c3b934c4e36a994805952d347b8d2f6">rpl_dodag_remove</a>(uint8_t instance_id);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;int8_t <a class="code" href="group__rpl__protocol.html#ga2402969d8cef4d6826c92266587e26e4">rpl_setup</a>(<span class="keywordtype">void</span>);</div>
@@ -144,9 +144,11 @@ $(document).ready(function(){initNavTree('rpl__protocol_8h_source.html',''); ini
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RPL_PROTOCOL_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="agroup__rpl__protocol_html_ga1c3b934c4e36a994805952d347b8d2f6"><div class="ttname"><a href="group__rpl__protocol.html#ga1c3b934c4e36a994805952d347b8d2f6">rpl_dodag_remove</a></div><div class="ttdeci">int8_t rpl_dodag_remove(uint8_t instance_id)</div><div class="ttdoc">this function remove the dodag instance</div></div>
+<div class="ttc" id="aunionipv6__addr__t_html"><div class="ttname"><a href="unionipv6__addr__t.html">ipv6_addr_t</a></div><div class="ttdoc">model of an ipv6 address</div><div class="ttdef"><b>Definition:</b> <a href="chamoc__msg_8h_source.html#l00050">chamoc_msg.h:50</a></div></div>
 <div class="ttc" id="agroup__rpl__protocol_html_ga2402969d8cef4d6826c92266587e26e4"><div class="ttname"><a href="group__rpl__protocol.html#ga2402969d8cef4d6826c92266587e26e4">rpl_setup</a></div><div class="ttdeci">int8_t rpl_setup(void)</div><div class="ttdoc">this function executed all it need for the correct work of rpl</div></div>
 <div class="ttc" id="agroup__rpl__protocol_html_ga97d2cb32692837fda8a6668ece2d794b"><div class="ttname"><a href="group__rpl__protocol.html#ga97d2cb32692837fda8a6668ece2d794b">rpl_init</a></div><div class="ttdeci">int8_t rpl_init(kernel_pid_t iface_pid)</div><div class="ttdoc">this module content all functions of rpl</div></div>
 <div class="ttc" id="agroup__rpl__protocol_html_ga4650598dee4caed930cd020ed7ed05f7"><div class="ttname"><a href="group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7">gnrc_rpl_dodag_root</a></div><div class="ttdeci">int8_t gnrc_rpl_dodag_root(uint8_t dodag_instance, ipv6_addr_t *root_address)</div><div class="ttdoc">init the node like a dodag(master node)</div></div>
@@ -156,7 +158,7 @@ $(document).ready(function(){initNavTree('rpl__protocol_8h_source.html',''); ini
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_c3e47024a331dd6d4b575c331cc3e901.html">rpl_protocol</a></li><li class="navelem"><a class="el" href="dir_642b100ac9d9a0b842966f4426c07449.html">include</a></li><li class="navelem"><b>rpl_protocol.h</b></li>
-    <li class="footer">Generated on Mon May 16 2022 20:05:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue May 17 2022 20:58:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

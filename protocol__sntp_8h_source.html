@@ -141,17 +141,18 @@ $(document).ready(function(){initNavTree('protocol__sntp_8h_source.html',''); in
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="protocol__sntp_8h.html#abc2f86dcd641a25da830f55cf4b3a7d4">get_time_sntp</a>(<span class="keywordtype">void</span> *params);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;esp_err_t sntp_start(<a class="code" href="protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a> callback_sntp);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PROTOCOL_SNTP_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;esp_err_t <a class="code" href="protocol__sntp_8h.html#ac27e89590a236e8f2b654813b055a830">sntp_start</a>(<a class="code" href="protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a> callback_sntp);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PROTOCOL_SNTP_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aprotocol__sntp_8h_html_a6d274b4f24915a4804e94fec6608f2c8"><div class="ttname"><a href="protocol__sntp_8h.html#a6d274b4f24915a4804e94fec6608f2c8">init_sntp</a></div><div class="ttdeci">esp_err_t init_sntp(void)</div><div class="ttdoc">This is a function to initialize the sntp server (This will not be taken, only have to be applied ins...</div></div>
 <div class="ttc" id="aprotocol__sntp_8h_html_af196cd141f388f8ac0f7796b5bec30a3"><div class="ttname"><a href="protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3">callback_time_t</a></div><div class="ttdeci">void(* callback_time_t)(void)</div><div class="ttdoc">Define a callback to every time function.</div><div class="ttdef"><b>Definition:</b> <a href="protocol__sntp_8h_source.html#l00041">protocol_sntp.h:41</a></div></div>
+<div class="ttc" id="aprotocol__sntp_8h_html_ac27e89590a236e8f2b654813b055a830"><div class="ttname"><a href="protocol__sntp_8h.html#ac27e89590a236e8f2b654813b055a830">sntp_start</a></div><div class="ttdeci">esp_err_t sntp_start(callback_time_t callback_sntp)</div><div class="ttdoc">main function that is working as task, this provides a sync with the sntp server Receives a callback ...</div></div>
 <div class="ttc" id="aprotocol__sntp_8h_html_abc2f86dcd641a25da830f55cf4b3a7d4"><div class="ttname"><a href="protocol__sntp_8h.html#abc2f86dcd641a25da830f55cf4b3a7d4">get_time_sntp</a></div><div class="ttdeci">void get_time_sntp(void *params)</div><div class="ttdoc">main function that is working as task, this provides a sync with the sntp server Receives a callback ...</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
@@ -159,7 +160,7 @@ $(document).ready(function(){initNavTree('protocol__sntp_8h_source.html',''); in
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_f2832d707f281a7c7b3c53d7da0afbb9.html">protocols</a></li><li class="navelem"><a class="el" href="dir_bfb441d127ce7d6b75efc9892433d2fb.html">src</a></li><li class="navelem"><a class="el" href="protocol__sntp_8h.html">protocol_sntp.h</a></li>
-    <li class="footer">Generated on Mon May 16 2022 20:05:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue May 17 2022 20:58:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

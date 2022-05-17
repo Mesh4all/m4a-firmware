@@ -104,8 +104,6 @@ $(document).ready(function(){initNavTree('radio__params_8h.html',''); initResiza
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">radio_params.h File Reference<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__network.html">Network module</a></div></div>  </div>
 </div><!--header-->
@@ -135,26 +133,36 @@ $(document).ready(function(){initNavTree('radio__params_8h.html',''); initResiza
 </div>
 <p><a href="radio__params_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ab3fae27eb3832f9eae87a5426dd78857"><td class="memItemLeft" align="right" valign="top"><a id="ab3fae27eb3832f9eae87a5426dd78857"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_SUB_RADIO_CHANNEL</b>&#160;&#160;&#160;(0)</td></tr>
-<tr class="separator:ab3fae27eb3832f9eae87a5426dd78857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79a34e401a947d2d097fcdd656f00219"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="radio__params_8h.html#a79a34e401a947d2d097fcdd656f00219">CONFIG_TX_POWER</a>&#160;&#160;&#160;(0)</td></tr>
-<tr class="memdesc:a79a34e401a947d2d097fcdd656f00219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drivers Params List.  <a href="radio__params_8h.html#a79a34e401a947d2d097fcdd656f00219">More...</a><br /></td></tr>
-<tr class="separator:a79a34e401a947d2d097fcdd656f00219"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe6c6bb129fc275f0d05fec0d5c66b2b"><td class="memItemLeft" align="right" valign="top"><a id="afe6c6bb129fc275f0d05fec0d5c66b2b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_RADIO_CHANNEL</b>&#160;&#160;&#160;(11)</td></tr>
-<tr class="separator:afe6c6bb129fc275f0d05fec0d5c66b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
-Driver_Default_Params</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpd1928f2dc13c1ec816914077bed9ca6f"></a> </p><dl class="section note"><dt>Note</dt><dd>Every param is empty when the device is unknown </dd></dl>
+Driver_Default_Params Tx_power_limits</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp7b05eba3873f4cfbd91ec258b0f49ecc"></a>Drivers Params List</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Driver </th><th class="markdownTableHeadCenter">TX_POWER_MIN (dBm) </th><th class="markdownTableHeadCenter">TX_POWER_MAX (dBm)  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">at86rf215 </td><td class="markdownTableBodyCenter">-28 </td><td class="markdownTableBodyCenter">+3  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">at86rf233 </td><td class="markdownTableBodyCenter">-17 </td><td class="markdownTableBodyCenter">+4  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">cc2538 </td><td class="markdownTableBodyCenter">-24 </td><td class="markdownTableBodyCenter">+7  </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>Every param is empty when the device is unknown </dd></dl>
 </td></tr>
 <tr class="memitem:a091eb86daafadcce09549f3d9827dd9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="radio__params_8h.html#a091eb86daafadcce09549f3d9827dd9d">TX_POWER_MAX</a>&#160;&#160;&#160;(0)</td></tr>
 <tr class="separator:a091eb86daafadcce09549f3d9827dd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafe4e221d22e78a684bd1697a11cf719"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="radio__params_8h.html#aafe4e221d22e78a684bd1697a11cf719">TX_POWER_MIN</a>&#160;&#160;&#160;(0)</td></tr>
 <tr class="separator:aafe4e221d22e78a684bd1697a11cf719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Driver_Default_Params Tx_power</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpedbf18de18f67fa5c221523a82f33817"></a> </p><dl class="section note"><dt>Note</dt><dd>Every param is empty when the device is unknown </dd></dl>
+</td></tr>
+<tr class="memitem:a79a34e401a947d2d097fcdd656f00219"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="radio__params_8h.html#a79a34e401a947d2d097fcdd656f00219">CONFIG_TX_POWER</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="separator:a79a34e401a947d2d097fcdd656f00219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe6c6bb129fc275f0d05fec0d5c66b2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="radio__params_8h.html#afe6c6bb129fc275f0d05fec0d5c66b2b">CONFIG_RADIO_CHANNEL</a>&#160;&#160;&#160;(11)</td></tr>
+<tr class="separator:afe6c6bb129fc275f0d05fec0d5c66b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3fae27eb3832f9eae87a5426dd78857"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="radio__params_8h.html#ab3fae27eb3832f9eae87a5426dd78857">CONFIG_SUB_RADIO_CHANNEL</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="separator:ab3fae27eb3832f9eae87a5426dd78857"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>this module content all params to set the radio </p>
@@ -166,6 +174,40 @@ RocioRojas <a href="#" onclick="location.href='mai'+'lto:'+'roc'+'io'+'roj'+'as'
 
 <p class="definition">Definition in file <a class="el" href="radio__params_8h_source.html">radio_params.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="afe6c6bb129fc275f0d05fec0d5c66b2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe6c6bb129fc275f0d05fec0d5c66b2b">&#9670;&nbsp;</a></span>CONFIG_RADIO_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_RADIO_CHANNEL&#160;&#160;&#160;(11)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Default start radio channel, \ This refers to the 2.4 GHz band </p>
+
+<p class="definition">Definition at line <a class="el" href="radio__params_8h_source.html#l00089">89</a> of file <a class="el" href="radio__params_8h_source.html">radio_params.h</a>.</p>
+
+</div>
+</div>
+<a id="ab3fae27eb3832f9eae87a5426dd78857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fae27eb3832f9eae87a5426dd78857">&#9670;&nbsp;</a></span>CONFIG_SUB_RADIO_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_SUB_RADIO_CHANNEL&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Default start radio channel, \ this refers to under the 2.4 GHz band </p>
+
+<p class="definition">Definition at line <a class="el" href="radio__params_8h_source.html#l00094">94</a> of file <a class="el" href="radio__params_8h_source.html">radio_params.h</a>.</p>
+
+</div>
+</div>
 <a id="a79a34e401a947d2d097fcdd656f00219"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79a34e401a947d2d097fcdd656f00219">&#9670;&nbsp;</a></span>CONFIG_TX_POWER</h2>
 
@@ -177,20 +219,9 @@ RocioRojas <a href="#" onclick="location.href='mai'+'lto:'+'roc'+'io'+'roj'+'as'
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Default system tx power \ when the system starts running </p>
 
-<p>Drivers Params List. </p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Driver </th><th class="markdownTableHeadCenter">TX_POWER_MIN (dBm) </th><th class="markdownTableHeadCenter">TX_POWER_MAX (dBm)  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">at86rf215 </td><td class="markdownTableBodyCenter">-28 </td><td class="markdownTableBodyCenter">+3  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">at86rf233 </td><td class="markdownTableBodyCenter">-17 </td><td class="markdownTableBodyCenter">+4  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">cc2538 </td><td class="markdownTableBodyCenter">-24 </td><td class="markdownTableBodyCenter">+7  </td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="radio__params_8h_source.html#l00065">65</a> of file <a class="el" href="radio__params_8h_source.html">radio_params.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="radio__params_8h_source.html#l00084">84</a> of file <a class="el" href="radio__params_8h_source.html">radio_params.h</a>.</p>
 
 </div>
 </div>
@@ -207,7 +238,7 @@ RocioRojas <a href="#" onclick="location.href='mai'+'lto:'+'roc'+'io'+'roj'+'as'
 </div><div class="memdoc">
 <p>Max Tx_power value from the driver </p>
 
-<p class="definition">Definition at line <a class="el" href="radio__params_8h_source.html#l00078">78</a> of file <a class="el" href="radio__params_8h_source.html">radio_params.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="radio__params_8h_source.html#l00070">70</a> of file <a class="el" href="radio__params_8h_source.html">radio_params.h</a>.</p>
 
 </div>
 </div>
@@ -224,7 +255,7 @@ RocioRojas <a href="#" onclick="location.href='mai'+'lto:'+'roc'+'io'+'roj'+'as'
 </div><div class="memdoc">
 <p>Min Tx_power value from the driver </p>
 
-<p class="definition">Definition at line <a class="el" href="radio__params_8h_source.html#l00082">82</a> of file <a class="el" href="radio__params_8h_source.html">radio_params.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="radio__params_8h_source.html#l00074">74</a> of file <a class="el" href="radio__params_8h_source.html">radio_params.h</a>.</p>
 
 </div>
 </div>
@@ -236,7 +267,7 @@ RocioRojas <a href="#" onclick="location.href='mai'+'lto:'+'roc'+'io'+'roj'+'as'
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_398e48b4c725ee316dc32d6213e0ce70.html">radio</a></li><li class="navelem"><a class="el" href="dir_b96ff864e8352457c992907288d93b13.html">include</a></li><li class="navelem"><a class="el" href="radio__params_8h.html">radio_params.h</a></li>
-    <li class="footer">Generated on Mon May 16 2022 20:05:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue May 17 2022 20:58:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

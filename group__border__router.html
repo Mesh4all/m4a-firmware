@@ -108,49 +108,49 @@ $(document).ready(function(){initNavTree('group__border__router.html',''); initR
 <div class="title">Border router<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__network.html">Network module</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<h3><a class="anchor" id="autotoc_md34"></a>
+<h3><a class="anchor" id="autotoc_md41"></a>
 What goes here?</h3>
 <p>This module is used to set up a border router using the USB CDC ECM. The module sets ipv6 address to host.</p>
-<p>Eg: This code setup address "2001:db8:1::2" to host. </p><div class="fragment"><div class="line">ipv6_addr_t address = {</div>
+<p>Eg: This code setup address "2001:db8:1::2" to host. </p><div class="fragment"><div class="line"><a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> address = {</div>
 <div class="line">        .u8 = {0},</div>
 <div class="line">    };</div>
 <div class="line">    ipv6_addr_from_str(&amp;address,<span class="stringliteral">&quot;2001:db8:1::2&quot;</span>);</div>
 <div class="line">    border_router_ipv6_config(<a class="code" href="border__router_8h.html#a98af7cc0b10f71bb7bb346504a3ee33bacc5669b5cfd491fa253ba42b019bd76a">_UNICAST</a>,&amp;address);</div>
 </div><!-- fragment --><p>TO DO: set ipv6 address to the node.</p>
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md42"></a>
 Network configuration for the border router</h1>
 <p>Shell commands are provided for a Linux based operating system. macOS should follow similar steps. </p><pre class="fragment">- Commands requiring administrative access are prefixed with #.
 - Commands that do not require administrative access are prefixed with $.
 - Commands that must be executed on a RIOT node are prefixed with &gt;.
-</pre><h3><a class="anchor" id="autotoc_md36"></a>
+</pre><h3><a class="anchor" id="autotoc_md43"></a>
 USB device</h3>
 <ul>
 <li>When plugging in The Border Router into the host, run the following command in sudo mode:</li>
 </ul>
 <div class="fragment"><div class="line"><span class="preprocessor"># dmesg</span></div>
-</div><!-- fragment --><p>It's important to obtain the cdc_ether name renamed from usb0. Eg: enx5eceb7480aa6: renamed from usb0, so &lt;usb0_renamed&gt; = enx5eceb7480aa6.</p>
-<h3><a class="anchor" id="autotoc_md37"></a>
+</div><!-- fragment --><p>It's important to obtain the cdc_ether name renamed from usb0. Eg: enx5eceb7480aa6: renamed from usb0, so name_of_usb_device = enx5eceb7480aa6.</p>
+<h3><a class="anchor" id="autotoc_md44"></a>
 Address configuration</h3>
 <ul>
 <li>Verify that the host side reports the network interface as UP or set it as UP if necessary:</li>
 </ul>
-<div class="fragment"><div class="line">$ ip link show &lt;usb0_renamed&gt;</div>
+<div class="fragment"><div class="line">$ ip link show name_of_usb_device</div>
 </div><!-- fragment --><p>If the shell shows <code>&lt;BROADCAST,MULTICAST&gt;</code></p>
 <ul>
 <li>Use <code>sudo su</code> and run the following command:</li>
 </ul>
-<div class="fragment"><div class="line"><span class="preprocessor"># ip link set up &lt;usb0_renamed&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor"># ip link set up name_of_usb_device</span></div>
 </div><!-- fragment --><ul>
 <li>To add an address on the host. Run in sudo mode:</li>
 </ul>
-<div class="fragment"><div class="line"><span class="preprocessor"># ip address add &lt;ipv6_address&gt; dev &lt;usb0_renamed&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor"># ip address add &lt;ipv6_address&gt; dev name_of_usb_device</span></div>
 </div><!-- fragment --><p>If setup was correct, host will connect a Wired Device.</p>
 <ul>
 <li>Add in to the main the following command to configuring ipv6 address to host:</li>
 </ul>
 <p>To test. Run from host:</p>
 <div class="fragment"><div class="line">$ ping6 &lt;ipv6_address&gt; -c3</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md38"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md45"></a>
 Network: added setting of wireless node to border router</h1>
 <p>Within the border_router_add_ipv6_node function, the border router is configured by adding the ipv6 in the wireless</p>
 <p>Note: The Node itself requires no configuration. All configuration happens on The Border Router.</p>
@@ -161,25 +161,26 @@ Network: added setting of wireless node to border router</h1>
 </ul>
 <p>Note: With these two actions, RPL is active on The Border Router and should transmit DODAG Information Objects.</p>
 <p>The Node should receive the DODAG Information Objects from The Border Router and should configure an address based on the prefix</p>
-<h2><a class="anchor" id="autotoc_md39"></a>
+<h2><a class="anchor" id="autotoc_md46"></a>
 Border router diagram</h2>
 <p>This diagram shows the struct connection between the border router and a RPL network.</p>
 <div class="image">
 <img src="border_router_diagram.png" alt="" width="40%"/>
 <div class="caption">
 Border router connection with RPL network </div></div>
-<h3><a class="anchor" id="autotoc_md40"></a>
+<h3><a class="anchor" id="autotoc_md47"></a>
 How this struct works?</h3>
 <p>The border router is connected to an external network (Host) which is connected to the internet. Through this connection it links the nodes using RPL protocol. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aborder__router_8h_html_a98af7cc0b10f71bb7bb346504a3ee33bacc5669b5cfd491fa253ba42b019bd76a"><div class="ttname"><a href="border__router_8h.html#a98af7cc0b10f71bb7bb346504a3ee33bacc5669b5cfd491fa253ba42b019bd76a">_UNICAST</a></div><div class="ttdeci">@ _UNICAST</div><div class="ttdef"><b>Definition:</b> <a href="border__router_8h_source.html#l00044">border_router.h:44</a></div></div>
+<div class="ttc" id="aunionipv6__addr__t_html"><div class="ttname"><a href="unionipv6__addr__t.html">ipv6_addr_t</a></div><div class="ttdoc">model of an ipv6 address</div><div class="ttdef"><b>Definition:</b> <a href="chamoc__msg_8h_source.html#l00050">chamoc_msg.h:50</a></div></div>
+<div class="ttc" id="aborder__router_8h_html_a98af7cc0b10f71bb7bb346504a3ee33bacc5669b5cfd491fa253ba42b019bd76a"><div class="ttname"><a href="border__router_8h.html#a98af7cc0b10f71bb7bb346504a3ee33bacc5669b5cfd491fa253ba42b019bd76a">_UNICAST</a></div><div class="ttdeci">@ _UNICAST</div><div class="ttdef"><b>Definition:</b> <a href="border__router_8h_source.html#l00045">border_router.h:45</a></div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon May 16 2022 20:05:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue May 17 2022 20:58:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

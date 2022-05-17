@@ -105,8 +105,7 @@ $(document).ready(function(){initNavTree('httpsclient_8h.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a>  </div>
   <div class="headertitle">
 <div class="title">httpsclient.h File Reference<div class="ingroups"><a class="el" href="group__wifi-subsys.html">WiFi Subsystem</a> &raquo; <a class="el" href="group__wifi-subusys-protocols.html">Protocols routines</a></div></div>  </div>
 </div><!--header-->
@@ -133,29 +132,25 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to save status, content_len, output.  <a href="structhttp__response__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhttp__request__t.html">http_request_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to make http request.  <a href="structhttp__request__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
+<tr class="memitem:a7332032cd2bf659b9f8c18d303d2b67b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a7332032cd2bf659b9f8c18d303d2b67b">MAX_HTTP_RECV_BUFFER</a>&#160;&#160;&#160;512</td></tr>
+<tr class="separator:a7332032cd2bf659b9f8c18d303d2b67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16e493bcc98c74ce4f6ee27cb676c5e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a16e493bcc98c74ce4f6ee27cb676c5e5">MAX_HTTP_OUTPUT_BUFFER</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="separator:a16e493bcc98c74ce4f6ee27cb676c5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1759ca6a9bd7b00efc8f7ed0a561c34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#ad1759ca6a9bd7b00efc8f7ed0a561c34">HTTPS_CONTENT_JSON</a>&#160;&#160;&#160;&quot;application/json&quot;</td></tr>
+<tr class="separator:ad1759ca6a9bd7b00efc8f7ed0a561c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac18276709129e726bc2144727223a0e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#ac18276709129e726bc2144727223a0e5">HTTPS_CONTENT_CBOR</a>&#160;&#160;&#160;&quot;application/cbor&quot;</td></tr>
+<tr class="separator:ac18276709129e726bc2144727223a0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87468ed0049e5ba4f653de7b00c3304c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a87468ed0049e5ba4f653de7b00c3304c">response_callback_t</a>) (<a class="el" href="structhttp__response__t.html">http_response_t</a> *)</td></tr>
+<tr class="memdesc:a87468ed0049e5ba4f653de7b00c3304c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for response_callback_t.  <a href="httpsclient_8h.html#a87468ed0049e5ba4f653de7b00c3304c">More...</a><br /></td></tr>
+<tr class="separator:a87468ed0049e5ba4f653de7b00c3304c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7c4f5057d30a650919c74c7f9e7d67c"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#ae7c4f5057d30a650919c74c7f9e7d67c">_http_event_handler</a> (esp_http_client_event_t *evt)</td></tr>
 <tr class="memdesc:ae7c4f5057d30a650919c74c7f9e7d67c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event handler of request.  <a href="httpsclient_8h.html#ae7c4f5057d30a650919c74c7f9e7d67c">More...</a><br /></td></tr>
 <tr class="separator:ae7c4f5057d30a650919c74c7f9e7d67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74e0632580d541aaf7250a0806bb2963"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a74e0632580d541aaf7250a0806bb2963">http_client</a> (<a class="el" href="structhttp__request__t.html">http_request_t</a> *http_request)</td></tr>
 <tr class="memdesc:a74e0632580d541aaf7250a0806bb2963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes https get/post request Note: To create certificate in console: openssl s_client -showcerts -connect [URL]:443 &lt;/dev/null.  <a href="httpsclient_8h.html#a74e0632580d541aaf7250a0806bb2963">More...</a><br /></td></tr>
 <tr class="separator:a74e0632580d541aaf7250a0806bb2963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7332032cd2bf659b9f8c18d303d2b67b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a7332032cd2bf659b9f8c18d303d2b67b">MAX_HTTP_RECV_BUFFER</a>&#160;&#160;&#160;512</td></tr>
-<tr class="separator:a7332032cd2bf659b9f8c18d303d2b67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16e493bcc98c74ce4f6ee27cb676c5e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a16e493bcc98c74ce4f6ee27cb676c5e5">MAX_HTTP_OUTPUT_BUFFER</a>&#160;&#160;&#160;1024</td></tr>
-<tr class="separator:a16e493bcc98c74ce4f6ee27cb676c5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1759ca6a9bd7b00efc8f7ed0a561c34"><td class="memItemLeft" align="right" valign="top"><a id="ad1759ca6a9bd7b00efc8f7ed0a561c34"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>HTTPS_CONTENT_JSON</b>&#160;&#160;&#160;&quot;application/json&quot;</td></tr>
-<tr class="separator:ad1759ca6a9bd7b00efc8f7ed0a561c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac18276709129e726bc2144727223a0e5"><td class="memItemLeft" align="right" valign="top"><a id="ac18276709129e726bc2144727223a0e5"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>HTTPS_CONTENT_CBOR</b>&#160;&#160;&#160;&quot;application/cbor&quot;</td></tr>
-<tr class="separator:ac18276709129e726bc2144727223a0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87468ed0049e5ba4f653de7b00c3304c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="httpsclient_8h.html#a87468ed0049e5ba4f653de7b00c3304c">response_callback_t</a>) (<a class="el" href="structhttp__response__t.html">http_response_t</a> *)</td></tr>
-<tr class="memdesc:a87468ed0049e5ba4f653de7b00c3304c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for response_callback_t.  <a href="httpsclient_8h.html#a87468ed0049e5ba4f653de7b00c3304c">More...</a><br /></td></tr>
-<tr class="separator:a87468ed0049e5ba4f653de7b00c3304c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Configure a https client to make a request. </p>
@@ -165,6 +160,40 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 
 <p class="definition">Definition in file <a class="el" href="httpsclient_8h_source.html">httpsclient.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ac18276709129e726bc2144727223a0e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac18276709129e726bc2144727223a0e5">&#9670;&nbsp;</a></span>HTTPS_CONTENT_CBOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HTTPS_CONTENT_CBOR&#160;&#160;&#160;&quot;application/cbor&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Support to content-type to CBOR format </p>
+
+<p class="definition">Definition at line <a class="el" href="httpsclient_8h_source.html#l00041">41</a> of file <a class="el" href="httpsclient_8h_source.html">httpsclient.h</a>.</p>
+
+</div>
+</div>
+<a id="ad1759ca6a9bd7b00efc8f7ed0a561c34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1759ca6a9bd7b00efc8f7ed0a561c34">&#9670;&nbsp;</a></span>HTTPS_CONTENT_JSON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HTTPS_CONTENT_JSON&#160;&#160;&#160;&quot;application/json&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Support to content-type to JSON format </p>
+
+<p class="definition">Definition at line <a class="el" href="httpsclient_8h_source.html#l00040">40</a> of file <a class="el" href="httpsclient_8h_source.html">httpsclient.h</a>.</p>
+
+</div>
+</div>
 <a id="a16e493bcc98c74ce4f6ee27cb676c5e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16e493bcc98c74ce4f6ee27cb676c5e5">&#9670;&nbsp;</a></span>MAX_HTTP_OUTPUT_BUFFER</h2>
 
@@ -238,7 +267,7 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 <p>Event handler of request. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">evt</td><td>[in] HTTP Client events data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">evt</td><td>HTTP Client events data. </td></tr>
   </table>
   </dd>
 </dl>
@@ -265,7 +294,7 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 <p>Makes https get/post request Note: To create certificate in console: openssl s_client -showcerts -connect [URL]:443 &lt;/dev/null. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">http_request</td><td>[in] Struct to make http request. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">http_request</td><td>Struct to make http request. </td></tr>
   </table>
   </dd>
 </dl>
@@ -280,7 +309,7 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_a514cfc3cbd1658d2b92cdf61218a183.html">wifi-subsys</a></li><li class="navelem"><a class="el" href="dir_9a60aabc363d2ca5a31892dabdbdbdc3.html">components</a></li><li class="navelem"><a class="el" href="dir_f2832d707f281a7c7b3c53d7da0afbb9.html">protocols</a></li><li class="navelem"><a class="el" href="dir_bfb441d127ce7d6b75efc9892433d2fb.html">src</a></li><li class="navelem"><a class="el" href="httpsclient_8h.html">httpsclient.h</a></li>
-    <li class="footer">Generated on Mon May 16 2022 20:05:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue May 17 2022 20:58:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

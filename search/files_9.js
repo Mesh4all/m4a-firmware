@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['periph_5fconf_2eh_345',['periph_conf.h',['../m4a-24g_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2periph__conf_8h.html',1,'(Global Namespace)']]],
-  ['protocol_5fsntp_2eh_346',['protocol_sntp.h',['../protocol__sntp_8h.html',1,'']]]
+  ['nib_2eh_380',['nib.h',['../nib_8h.html',1,'']]]
 ];

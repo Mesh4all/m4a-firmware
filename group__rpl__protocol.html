@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('group__rpl__protocol.html',''); initRe
 <tr class="memitem:ga97d2cb32692837fda8a6668ece2d794b"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl__protocol.html#ga97d2cb32692837fda8a6668ece2d794b">rpl_init</a> (kernel_pid_t iface_pid)</td></tr>
 <tr class="memdesc:ga97d2cb32692837fda8a6668ece2d794b"><td class="mdescLeft">&#160;</td><td class="mdescRight">this module content all functions of rpl  <a href="group__rpl__protocol.html#ga97d2cb32692837fda8a6668ece2d794b">More...</a><br /></td></tr>
 <tr class="separator:ga97d2cb32692837fda8a6668ece2d794b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4650598dee4caed930cd020ed7ed05f7"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7">gnrc_rpl_dodag_root</a> (uint8_t dodag_instance, ipv6_addr_t *root_address)</td></tr>
+<tr class="memitem:ga4650598dee4caed930cd020ed7ed05f7"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7">gnrc_rpl_dodag_root</a> (uint8_t dodag_instance, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> *root_address)</td></tr>
 <tr class="memdesc:ga4650598dee4caed930cd020ed7ed05f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">init the node like a dodag(master node)  <a href="group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7">More...</a><br /></td></tr>
 <tr class="separator:ga4650598dee4caed930cd020ed7ed05f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1c3b934c4e36a994805952d347b8d2f6"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl__protocol.html#ga1c3b934c4e36a994805952d347b8d2f6">rpl_dodag_remove</a> (uint8_t instance_id)</td></tr>
@@ -123,10 +123,10 @@ $(document).ready(function(){initNavTree('group__rpl__protocol.html',''); initRe
 <tr class="separator:ga2402969d8cef4d6826c92266587e26e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h3><a class="anchor" id="autotoc_md48"></a>
+<h3><a class="anchor" id="autotoc_md55"></a>
 What goes here?</h3>
 <p>In this module you will find the functions to start RPL and add a node dodag (Root) or dag (Slave) first RPL is initialized then it is verifies if the node is dodag or dag and they are started an ipv6 is added where the dodag will be hosted one Once the dodag is started, the DAG RIOT node is in charge of executing the entire routing process.</p>
-<h3><a class="anchor" id="autotoc_md49"></a>
+<h3><a class="anchor" id="autotoc_md56"></a>
 How's work RPL protocol</h3>
 <p>the RPL protocol is quite complex in this document we will try to explain it as simple to understand as possible.</p>
 <p>Routing protocol for Low-Power and Lossy Networks (RPL) protocol is a distance vector proactive routing protocol that creates a tree-like routing topology called the destination-oriented directed acyclic graph (DODAG), rooted towards one or more nodes called the root node or sink node. The directed acyclic graphs (DAGs) are created based on a user-specified specific objective function (OF). The OF defines the method to find the best-optimized route among the number of sensor devices.</p>
@@ -162,7 +162,7 @@ RPL messages </div></div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ipv6_addr_t *&#160;</td>
+          <td class="paramtype"><a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> *&#160;</td>
           <td class="paramname"><em>root_address</em>&#160;</td>
         </tr>
         <tr>
@@ -269,7 +269,7 @@ RPL messages </div></div>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon May 16 2022 20:05:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue May 17 2022 20:58:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

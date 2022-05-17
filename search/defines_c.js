@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['timer_5f0_5fisr_589',['TIMER_0_ISR',['../m4a-24g_2include_2periph__conf_8h.html#a4c490d334538c05373718609ca5fe2d4',1,'TIMER_0_ISR():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a4c490d334538c05373718609ca5fe2d4',1,'TIMER_0_ISR():&#160;periph_conf.h']]],
-  ['timer_5f0_5fmax_5fvalue_590',['TIMER_0_MAX_VALUE',['../m4a-24g_2include_2periph__conf_8h.html#ab43cbb6f07f99fddc0e0f6a710160654',1,'TIMER_0_MAX_VALUE():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ab43cbb6f07f99fddc0e0f6a710160654',1,'TIMER_0_MAX_VALUE():&#160;periph_conf.h']]],
-  ['timer_5f1_5fisr_591',['TIMER_1_ISR',['../m4a-24g_2include_2periph__conf_8h.html#ab1f8037bcb60d4669f508c471f92bc17',1,'TIMER_1_ISR():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ab1f8037bcb60d4669f508c471f92bc17',1,'TIMER_1_ISR():&#160;periph_conf.h']]],
-  ['timer_5fnumof_592',['TIMER_NUMOF',['../m4a-24g_2include_2periph__conf_8h.html#a6e2f66f5b6f5c835dd11f9766c4ed897',1,'TIMER_NUMOF():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a6e2f66f5b6f5c835dd11f9766c4ed897',1,'TIMER_NUMOF():&#160;periph_conf.h']]],
-  ['tx_5fpower_5fmax_593',['TX_POWER_MAX',['../radio__params_8h.html#a091eb86daafadcce09549f3d9827dd9d',1,'radio_params.h']]],
-  ['tx_5fpower_5fmin_594',['TX_POWER_MIN',['../radio__params_8h.html#aafe4e221d22e78a684bd1697a11cf719',1,'radio_params.h']]]
+  ['rfctl1_5fpin_642',['RFCTL1_PIN',['../m4a-24g_2include_2board_8h.html#a2364f376947112a08b6c534235a8f4fa',1,'board.h']]],
+  ['rfctl2_5fpin_643',['RFCTL2_PIN',['../m4a-24g_2include_2board_8h.html#a834d0ca9dc3c0d7e24ba2848ff6ddc1c',1,'board.h']]],
+  ['rfctl_5fantenna_5fdefault_644',['RFCTL_ANTENNA_DEFAULT',['../m4a-24g_2include_2board_8h.html#a8374c2ca3f70167aff3c6148a5e4ae62',1,'board.h']]],
+  ['rtt_5ffrequency_645',['RTT_FREQUENCY',['../m4a-24g_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h']]],
+  ['rtt_5fmin_5foffset_646',['RTT_MIN_OFFSET',['../m4a-24g_2include_2periph__conf_8h.html#ad34d7bc806339ce586e8a942913cdb6f',1,'periph_conf.h']]]
 ];

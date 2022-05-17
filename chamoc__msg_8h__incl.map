@@ -1,0 +1,9 @@
+<map id="dist/tools/chamoc/include/chamoc_msg.h" name="dist/tools/chamoc/include/chamoc_msg.h">
+<area shape="rect" id="node1" title="Message structures and functions under CHAMOS, refers all intercomunication, sending and receiving me..." alt="" coords="83,5,307,52"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,177,80,207"/>
+<area shape="rect" id="node3" title=" " alt="" coords="105,177,186,207"/>
+<area shape="rect" id="node4" title=" " alt="" coords="482,177,601,207"/>
+<area shape="rect" id="node5" href="$client_8h.html" title="CHAMOC client socket connection." alt="" coords="215,100,295,129"/>
+<area shape="rect" id="node6" title=" " alt="" coords="347,177,458,207"/>
+<area shape="rect" id="node7" title=" " alt="" coords="211,177,323,207"/>
+</map>
