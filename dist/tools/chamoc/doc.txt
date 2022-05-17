@@ -1,15 +1,16 @@
 /**
-@defgroup chamoc Chamoc
-@ingroup  network
+@defgroup chamoc Chamoc - Client tool
+@ingroup  dist-tools
+@brief   Client tool to connect via Linux host
 
 ## CHAMOC (Communication Handler for Addressing Management | Origin client)
 
 The module CHAMOC It's used for client-side communication for nib routing table.
 In this tools will be there an compiled program called CHAMOC.out that has a client
 interface with an m4a-24g board. The client node will be sending `chamoc_message_t` data.
-that contains an `[Type message]` tell to the system how process the message. (Nib_add or Nib_del),
-others field are the `[sequence number], [host ip address] to add as neighborh route,
-and the `[network lenght prefix] generally is /64.
+that contains an `[Type message]` tell to the system how process the message. `(NIB_ADD or NIB_DEL)`,
+others field are the `[sequence number]`, `[host ip address]` to add as neighborh route,
+and the `[network lenght prefix]` generally is /64.
 
 ### Steps to initialize the client socket
 
@@ -18,18 +19,19 @@ and the `[network lenght prefix] generally is /64.
 - Run the ./autoconfig.sh script
 - Wait that nib_request is accepted.
 
-### start_network.sh
+### Testing communication
 
-When you are running start_network.sh and add an ipv6 address like this:
+Open the tool chamoc located in `dist/tools/chamoc` and then run the autoconfigure script. this could receive an ipv6
+address as to parammeter.
+
 ```sh
-    ./start_network.sh 2001:db8::1/64
+cd dist/tools/chamoc
+./autoconfigure.sh
 ```
-you are assigning to the m4a-24g board (`usb-cdc element`) the global address to stablish the communication
-in the wired interface.
 
 ### Testing communication
 
-before to run the autoconfig.sh script you can do some pings to the m4a-24g board interface.
+when you have ran the autoconfig.sh script you can do some pings to the m4a-24g board interface.
 first follow these steps to locate, and do ping between both devices.
 
 - Locate your interface
@@ -45,18 +47,12 @@ using net-tools
         ether 5a:00:8d:f2:d5:6b  txqueuelen 1000  (Ethernet)
 ...
 
-```
-
-```sh
-    ifconfig
-```
-
 with ip address command.
 ```sh
     ip address show
     # Output
     22: enx5a008df2d56b: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel s
-    ...
+...
         valid_lft forever preferred_lft forever
     inet6 2001:db8::1/64 scope global
        valid_lft forever preferred_lft forever
@@ -80,9 +76,9 @@ with ip address command.
 
 Running the script you will has as result the compilation and execution to the client program CHAMOC.out
 This test automatically will be start sending the nib_add and nib_del request taking as parameters.
-`[Name of interface]``[ip address]``[prefix_len].
+`[Name of interface]``[ip address]``[prefix_len]`.
 
-``sh
+```sh
     ./autoconfigure.sh
     Waiting for network interface.
     Start sending a nib add request

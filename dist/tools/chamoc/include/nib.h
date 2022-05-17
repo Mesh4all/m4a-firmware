@@ -20,7 +20,7 @@
  */
 
 /**
- * @ingroup     CHAMOC CHAMOC NIB
+ * @ingroup     chamoc chamoc_NIB
  * @brief       Provide modes to generate an nib_add or nib_del request and send it to the server.
  *
  * @{
@@ -43,7 +43,7 @@ extern "C" {
 /**
  * @brief   Function gives the necessary settings to provide an socket a nib add or nib_del address
  * request.
- * @param[in] Iface refers to the name of an interface in the system. example enp2s0
+ * @param[in] iface refers to the name of an interface in the system. example enp2s0
  * @param[in] prefix the prefix of the Ipv6 address
  * @param[in] ip ipv6 address represented by a string
  * @param[in] msg_type Represent the message type (NIB_ADD or NIB_DEL)

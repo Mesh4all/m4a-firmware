@@ -68,3 +68,4 @@ int8_t rpl_setup(void);
 }
 #endif
 #endif /* RPL_PROTOCOL_H */
+/**@}*/

@@ -20,7 +20,7 @@
  */
 
 /**
- * @ingroup     Chamoc CHAMOC Messages
+ * @ingroup     chamoc CHAMOC Messages
  * @brief       Message structures and functions under CHAMOS, refers all intercomunication, sending
  * and receiving messages from the server
  *
@@ -54,15 +54,16 @@ typedef union {
 } ipv6_addr_t;
 
 /**
- * @brief Type of messages presents in CHAMOC and CHAMOS intercomunnication
- *
+ * @enum chamoc_type_message_t Type of messages presents in CHAMOC and CHAMOS intercomunnication
+ * @{
  */
-enum {
+enum chamoc_type_message_t {
     MSG_ACK = 0, /*!< Acknowledge message*/
     MSG_NACK,    /*!< Negative - Acknowledge message*/
     MSG_NIB_ADD, /*!< Neigborh information base add request message*/
     MSG_NIB_DEL, /*!< Neigborh information base del request message*/
 };
+/**@}*/
 
 /**
  * @brief Struct of a chamoc message, this contains the type of message, sequence number, ipv6

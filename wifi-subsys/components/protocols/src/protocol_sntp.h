@@ -55,6 +55,13 @@ esp_err_t init_sntp(void);
 
 void get_time_sntp(void *params);
 
+/**
+ * @brief main function that is working as task, this provides a sync with the sntp server
+ * Receives a callback as param:
+ * @param[in] callback_sntp function that will processed in the sntp task
+ *
+ */
+
 esp_err_t sntp_start(callback_time_t callback_sntp);
 
 #ifdef __cplusplus

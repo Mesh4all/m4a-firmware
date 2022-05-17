@@ -29,19 +29,22 @@
 #include "net/gnrc.h"
 #include "net/sock/udp.h"
 #include "net/ipv6/addr.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /**
- * @enum   CHAMOS message types
+ * @enum  chamos_msg_types_t Types of messages manage in the chamos server
+ * @{
  */
-enum chamos_msg_types_t{
-    MSG_ACK = 0,      /*!< Message acknowledged */
-    MSG_NACK = 1,     /*!< Message not acknowledged */
-    MSG_NIB_ADD = 2,  /*!< Add entry to NIB */
-    MSG_NIB_DEL = 3,  /*!< Delete entry from NIB */
+enum chamos_msg_types_t {
+    MSG_ACK = 0,     /*!< Message acknowledged */
+    MSG_NACK = 1,    /*!< Message not acknowledged */
+    MSG_NIB_ADD = 2, /*!< Add entry to NIB */
+    MSG_NIB_DEL = 3, /*!< Delete entry from NIB */
 };
+/**@}*/
 
 /**
  * @brief   CHAMOS message
@@ -56,9 +59,9 @@ typedef struct {
 /**
  * @brief this function is used to send ack
  *
- * @param msg       [in]      Frame
- * @param remote    [in]      sock udp
- * @param good_ack  [in]      bool
+ * @param [in] msg            Frame
+ * @param [in] remote         sock udp
+ * @param [in] flag_ack_val  bool
  * @return int
  */
 int server_send_ack(chamos_msg_t *msg, sock_udp_ep_t *remote, bool flag_ack_val);
@@ -66,8 +69,8 @@ int server_send_ack(chamos_msg_t *msg, sock_udp_ep_t *remote, bool flag_ack_val)
 /**
  * @brief this function is used to init the module
  *
- * @param netiface       netif
- * @param port     [in]  port
+ * @param  [in]  netiface
+ * @param  [in]  port
  * @return int
  */
 int chamos_init(uint16_t port, gnrc_netif_t *netiface);

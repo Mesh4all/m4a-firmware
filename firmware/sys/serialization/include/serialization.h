@@ -38,7 +38,7 @@ extern "C" {
 typedef struct {
     int16_t temperature; /*!< temperature value */
     int soil_moisture;   /*!< moisture value */
-    char id_node[64];
+    char id_node[64];    /*!< node id */
 } sensor_data;
 
 /**

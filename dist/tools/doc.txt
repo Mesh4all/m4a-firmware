@@ -1,0 +1,11 @@
+/**
+@defgroup dist-tools Distribution Tools
+
+# What goes here?
+
+All the distribution tools required to complement some test with
+the m4a-firmware. the tools could gives solution to check some
+statics-errors, generate simulations of an system or has an file template
+generator.
+
+*/

@@ -61,15 +61,7 @@ extern "C" {
 #define TX_POWER_MIN (-24)
 #endif
 
-#ifndef CONFIG_TX_POWER
-#define CONFIG_TX_POWER (0)
-#endif
-
-#ifndef CONFIG_RADIO_CHANNEL
-#define CONFIG_RADIO_CHANNEL (11)
-#endif
-
-/** @name Driver_Default_Params
+/** @name  Driver_Default_Params Tx_power_limits
  *  @note  Every param is empty when the device is unknown
  * @{
  */
@@ -84,17 +76,25 @@ extern "C" {
 
 /**@}*/
 
+/** @name  Driver_Default_Params Tx_power
+ *  @note  Every param is empty when the device is unknown
+ * @{
+ */
 #ifndef CONFIG_TX_POWER
-#define CONFIG_TX_POWER (0)
+#define CONFIG_TX_POWER (0)     /*!< Default system tx power \
+                                when the system starts running */
 #endif
 
 #ifndef CONFIG_RADIO_CHANNEL
-#define CONFIG_RADIO_CHANNEL (11)
+#define CONFIG_RADIO_CHANNEL (11)   /*!< Default start radio channel, \
+                                      This refers to the 2.4 GHz band */
 #endif
 
 #ifndef CONFIG_SUB_RADIO_CHANNEL
-#define CONFIG_SUB_RADIO_CHANNEL (0)
+#define CONFIG_SUB_RADIO_CHANNEL (0) /*!< Default start radio channel, \
+                                     this refers to under the 2.4 GHz band*/
 #endif
+/**@}*/
 
 #ifdef __cplusplus
 }

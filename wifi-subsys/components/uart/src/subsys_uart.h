@@ -58,15 +58,16 @@ void tx_send_loop();
  * @brief this function is executed when rx_receive function identify
  *  that the datos arrived were sensors values.
  *
- *  @param values [in] sensor values
+ * @param [in]  values sensor values
+ * @param [in]  len  size of buffer where is passed all values
  */
 void received_sensor_data(uint8_t *values, size_t len);
 
 /**
  * @brief this function is used to send data through uart
  *
- * @param logName [in] logName
- * @param data [in] data
+ * @param [in] logName
+ * @param [in] data
  */
 int sendData(const char *logName, char *data);
 
@@ -81,4 +82,4 @@ esp_err_t setting_uart();
 }
 #endif
 #endif /* SUBSYS_UART_H */
-/* @} */
+/** @} */
