@@ -1,2 +1,3 @@
 tests/**
 firmware/**
+dist/tools/chamoc/**

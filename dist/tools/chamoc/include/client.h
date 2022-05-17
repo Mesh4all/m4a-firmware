@@ -20,7 +20,7 @@
  */
 
 /**
- * @ingroup     Chamoc
+ * @ingroup     chamoc
  * @brief       CHAMOC client socket connection
  *
  * @{
@@ -39,6 +39,10 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 
+/**
+ * @brief MULTICAST ADDRESS is given to start communication to all nodes
+ *
+ */
 #define MULTICAST_ADDR "ff02::1"
 
 /**
@@ -56,17 +60,17 @@ extern "C" {
  *
  */
 typedef struct {
-    uint8_t seqno;
-    uint8_t *pending_acks;
-    int socket;
-    struct sockaddr_in6 csock;
+    uint8_t seqno;             /*!< Sequence number of a message*/
+    uint8_t *pending_acks;     /*!< Client pending Aknowledge messages*/
+    int socket;                /*!< Socket where it's installed the client*/
+    struct sockaddr_in6 csock; /*!< Elements and basic params of clietn socket*/
 } chamos_client_t;
 
 /**
  * @brief  Create an socket client under CHAMOS
  * @param[in] netif refers to the name of an interface in the system. example enp2s0
  */
-chamos_client_t new_client(char* netif);
+chamos_client_t new_client(char *netif);
 
 #ifdef __cplusplus
 }

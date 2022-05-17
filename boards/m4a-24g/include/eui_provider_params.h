@@ -42,9 +42,9 @@ static inline int _edbg_get_eui64(uint8_t index, eui64_t *addr)
  *          EUI-64 inside EDBG for the internal radio
  * @{
  */
-#define EUI64_PROVIDER_FUNC   _edbg_get_eui64
-#define EUI64_PROVIDER_TYPE   NETDEV_AT86RF2XX
-#define EUI64_PROVIDER_INDEX  0
+#define EUI64_PROVIDER_FUNC   _edbg_get_eui64    /*!< Macro to eui64 provide in edbg targets */
+#define EUI64_PROVIDER_TYPE   NETDEV_AT86RF2XX  /*!< Refers to network driver */
+#define EUI64_PROVIDER_INDEX  0                 /*!< EUI64 index */
 /** @} */
 
 #ifdef __cplusplus

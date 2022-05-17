@@ -35,15 +35,14 @@ Shell commands are provided for a Linux based operating system. macOS should fol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It's important to obtain the cdc_ether name renamed from usb0.
-Eg: enx5eceb7480aa6: renamed from usb0, so <usb0_renamed> = enx5eceb7480aa6.
-
+Eg: enx5eceb7480aa6: renamed from usb0, so name_of_usb_device = enx5eceb7480aa6.
 
 ### Address configuration
 
 - Verify that the host side reports the network interface as UP or set it as UP if necessary:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$ ip link show <usb0_renamed>
+$ ip link show name_of_usb_device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the shell shows ``` <BROADCAST,MULTICAST> ```
@@ -51,13 +50,13 @@ If the shell shows ``` <BROADCAST,MULTICAST> ```
 - Use ``` sudo su ``` and run the following command:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ip link set up <usb0_renamed>
+# ip link set up name_of_usb_device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - To add an address on the host. Run in sudo mode:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# ip address add <ipv6_address> dev <usb0_renamed>
+# ip address add <ipv6_address> dev name_of_usb_device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If setup was correct, host will connect a Wired Device.

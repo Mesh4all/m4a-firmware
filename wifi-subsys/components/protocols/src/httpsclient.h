@@ -37,8 +37,8 @@ extern "C" {
 #define MAX_HTTP_RECV_BUFFER 512    /*!< maximum size to receive */
 #define MAX_HTTP_OUTPUT_BUFFER 1024 /*!< maximum size to send */
 
-#define HTTPS_CONTENT_JSON "application/json"
-#define HTTPS_CONTENT_CBOR "application/cbor"
+#define HTTPS_CONTENT_JSON "application/json" /*!< Support to content-type to JSON format */
+#define HTTPS_CONTENT_CBOR "application/cbor" /*!< Support to content-type to CBOR format */
 
 /**
  * @brief Struct to save status, content_len, output.
@@ -57,22 +57,21 @@ typedef struct {
 typedef void (*response_callback_t)(http_response_t *);
 
 /**
- * @name Struct to make http request.
- * @{
+ * @brief Struct to make http request.
+ *
  */
 typedef struct {
     int method;                   /*!< Make a method get/post */
     char url[200];                /*!< Url used */
     char body[100];               /*!< body used with method post */
-    char *content_type; /*Content type field of http request*/
+    char *content_type;           /*!< Content type field of http request*/
     response_callback_t callback; /*!< callback executed when the serve response */
 } http_request_t;
-/** @}  */
 
 /**
  * @brief Event handler of request.
  *
- * @param evt [in]   HTTP Client events data.
+ * @param [in] evt HTTP Client events data.
  * @return esp_err_t ESP_OK: succeed, ESP_(others): fail
  */
 esp_err_t _http_event_handler(esp_http_client_event_t *evt);
@@ -82,7 +81,7 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt);
  * Note: To create certificate in console:
  * openssl s_client -showcerts -connect [URL]:443 </dev/null
  *
- * @param http_request [in]   Struct to make http request.
+ * @param [in] http_request Struct to make http request.
  */
 void http_client(http_request_t *http_request);
 #ifdef __cplusplus

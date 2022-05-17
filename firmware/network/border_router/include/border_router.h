@@ -37,7 +37,8 @@ extern "C" {
  */
 #define _IPV6_DEFAULT_PREFIX_LEN (64U)
 
-/* These enum sets the cast type to the function
+/**
+ * @brief List of cast types to the ipv6 address
  *
  */
 enum cast_t {
@@ -52,8 +53,8 @@ enum cast_t {
 /**
  * @brief This function it's set to border router to host.
  *
- * @param[in] cast_type cast_type you want to set
- * @param[in] adrr      ipv6 address
+ * @param [in] cast_type cast_type you want to set
+ * @param [in] addr       ipv6 address
  * @return int
  */
 int border_router_add_ipv6(int cast_type, ipv6_addr_t *addr);
@@ -62,7 +63,7 @@ int border_router_add_ipv6(int cast_type, ipv6_addr_t *addr);
  * @brief This function it's set to border router to node.
  *
  * @param[in] cast_type cast_type you want to set
- * @param[in] adrr      ipv6 address
+ * @param[in] addr      ipv6 address
  * @return int
  */
 int border_router_add_ipv6_node(int cast_type, ipv6_addr_t *addr);
