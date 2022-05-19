@@ -39,6 +39,7 @@
 #define PRIORITY (THREAD_PRIORITY_MAIN - 1)
 #define QUEUE_SIZE (8)
 #define WAIT_RESPONSE (10 * US_PER_SEC) // time in microseconds
+
 kernel_pid_t buff_thread_pid;
 char stack[THREAD_STACKSIZE_MAIN];
 uart_buffer_t uart_buffer = {
@@ -144,8 +145,8 @@ int cmd_at(int argc, char **argv) {
         flag_response = 1;
         uart_write(AT_UART, (uint8_t *)buff_at, strlen(buff_at) - 1);
         if (at_list[at_position].response) {
-            xtimer_set_msg64(&wait_timer, WAIT_RESPONSE, &msg_send, buff_thread_pid);
-            if (xtimer_msg_receive_timeout64(&msg_receive, WAIT_RESPONSE) < 0) { // dummy delay
+            xtimer_set_msg(&wait_timer, WAIT_RESPONSE, &msg_send, buff_thread_pid);
+            if (xtimer_msg_receive_timeout(&msg_receive, WAIT_RESPONSE) < 0) { // dummy delay
                 printf("\nTimer done\n");
             }
             flag_response = 0;
@@ -171,8 +172,8 @@ int cmd_at(int argc, char **argv) {
         flag_response = 1;
         uart_write(AT_UART, (uint8_t *)buff_at, strlen(buff_at) - 1);
         if (at_list[at_position].response) {
-            xtimer_set_msg64(&wait_timer, WAIT_RESPONSE, &msg_send, buff_thread_pid);
-            if (xtimer_msg_receive_timeout64(&msg_receive, WAIT_RESPONSE) < 0) { // dummy delay
+            xtimer_set_msg(&wait_timer, WAIT_RESPONSE, &msg_send, buff_thread_pid);
+            if (xtimer_msg_receive_timeout(&msg_receive, WAIT_RESPONSE) < 0) { // dummy delay
                 printf("\nTimer done\n");
             }
             flag_response = 0;

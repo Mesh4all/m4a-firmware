@@ -32,8 +32,8 @@
 #include "mtd.h"
 #include "storage.h"
 
-static mtd_dev_t _dev = MTD_FLASHPAGE_INIT_VAL(8);
-static mtd_dev_t *dev = &_dev;
+static mtd_flashpage_t _dev = MTD_FLASHPAGE_INIT_VAL(8);
+static mtd_dev_t *dev = &_dev.base;
 
 int mtd_start(void) {
     int ret = mtd_init(dev);
