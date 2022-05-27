@@ -3,3 +3,4 @@ USEMODULE += gnrc_rpl
 USEMODULE += auto_init_gnrc_rpl
 USEMODULE += radio
 USEMODULE += uniqueid
+USEMODULE += gnrc_ipv6_router_default

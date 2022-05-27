@@ -221,11 +221,13 @@ int8_t initial_radio_setup(void) {
     int16_t radio_tx = CONFIG_TX_POWER;
     int16_t radio_channel = CONFIG_RADIO_CHANNEL;
 
+#ifdef CONFIG_IS_DODAG
     err = set_global_ipv6_to_radio();
     if (err == -1) {
         printf("Error: Failed to add global address.\n");
         return err;
     }
+#endif
 
     err = set_netopt_tx_power(radio_tx);
     if (err == -1) {
