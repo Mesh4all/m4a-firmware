@@ -1,0 +1,8 @@
+menu "Border_Router_Example_Configs"
+
+    config RTR_IPV6
+    string "Router net ipv6"
+    default "2001:db8:1::1"
+
+    rsource "../../firmware/network/rpl_protocol/Kconfig"
+endmenu
