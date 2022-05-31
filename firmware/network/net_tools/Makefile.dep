@@ -1,0 +1,11 @@
+ifneq (,$(filter netdev_default,$(USEMODULE)))
+    USEMODULE += netdev_default
+endif
+
+ifeq (,$(filter auto_init_gnrc_netif,$(USEMODULE)))
+    USEMODULE +=  auto_init_gnrc_netif
+endif
+
+ifeq (,$(filter gnrc_ipv6_default,$(USEMODULE)))
+    USEMODULE +=  gnrc_ipv6_default
+endif

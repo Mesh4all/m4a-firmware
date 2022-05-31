@@ -41,8 +41,9 @@ void test_add_dodag_node(void) {
     };
 
     subnet_to_ipv6(&ipv6);
-
-    set_global_ipv6_to_radio();
+    uint8_t iface_index = get_ieee802154_iface();
+    gnrc_netif_ipv6_addr_add(gnrc_netif_get_by_pid(iface_index), &ipv6, 64,
+                                     GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID);
     int err = gnrc_rpl_dodag_root(DODAG_INSTANCE, &ipv6);
     TEST_ASSERT_EQUAL_INT(0, err);
 }

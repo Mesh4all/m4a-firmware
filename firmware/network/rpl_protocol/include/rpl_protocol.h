@@ -32,6 +32,18 @@
 extern "C" {
 #endif
 
+#ifndef CONFIG_IS_DODAG
+#define CONFIG_IS_DODAG (0)
+#endif
+
+/**
+ * @enum rpl_modes_t these are two acceptable modes DAG or DODAG
+ */
+enum rpl_modes_t {
+    DAG = 0, /*!<Value of DAG mode in RPL*/
+    DODAG    /*!<Value of DODAG mode in RPL*/
+};
+
 /**
  * @brief this function init rpl protocol
  *
@@ -57,12 +69,14 @@ int8_t gnrc_rpl_dodag_root(uint8_t dodag_instance, ipv6_addr_t *root_address);
  * @return uint8_t
  */
 int8_t rpl_dodag_remove(uint8_t instance_id);
+
 /**
  * @brief  this function executed all it need for the correct work of rpl
+ * @param  mode Only exists two possible cases to mode DAG(0) or DODAG(1)
  *
  * @return int8_t
  */
-int8_t rpl_setup(void);
+int8_t rpl_setup(uint8_t mode);
 
 #ifdef __cplusplus
 }

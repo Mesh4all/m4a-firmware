@@ -42,31 +42,34 @@ extern "C" {
  *
  */
 enum cast_t {
-       _UNICAST = 0,   /*!< Sets a process by which a packet is sent
-                         from one host to an individual host*/
-       _ANYCAST,       /*!< Sets a method forwards messages to a single
-                         device of a specific group of devices. */
-       _MULTICAST      /*!< Sets multicasting addresses messages for a
-                         specific group of devices in a network */
-       };
+    _UNICAST = 0, /*!< Sets a process by which a packet is sent
+                    from one host to an individual host*/
+    _ANYCAST,     /*!< Sets a method forwards messages to a single
+                    device of a specific group of devices. */
+    _MULTICAST    /*!< Sets multicasting addresses messages for a
+                    specific group of devices in a network */
+};
+
+/**
+ * @enum type_iface_t List of all types of Interface
+ * @{
+ *
+ */
+enum type_iface_t {
+    WIRED_INTERFACE = 0, /*!<Represents the type of interface is wired*/
+    WIRELESS_INTERFACE   /*!<Represents the type of interface is wireless*/
+};
+/**@}*/
 
 /**
  * @brief This function it's set to border router to host.
  *
  * @param [in] cast_type cast_type you want to set
  * @param [in] addr       ipv6 address
+ * @param [in] iface_type refers to if is used a WIRED or WIRELESS interface.
  * @return int
  */
-int border_router_add_ipv6(int cast_type, ipv6_addr_t *addr);
-
-/**
- * @brief This function it's set to border router to node.
- *
- * @param[in] cast_type cast_type you want to set
- * @param[in] addr      ipv6 address
- * @return int
- */
-int border_router_add_ipv6_node(int cast_type, ipv6_addr_t *addr);
+int border_router_add_ipv6(int cast_type, ipv6_addr_t *addr, uint8_t iface_type);
 
 #ifdef __cplusplus
 }
