@@ -36,6 +36,10 @@ extern "C" {
 #define CONFIG_IS_DODAG (0)
 #endif
 
+#ifndef CONFIG_DODAG_INSTANCE
+#define CONFIG_DODAG_INSTANCE (1)
+#endif
+
 /**
  * @enum rpl_modes_t these are two acceptable modes DAG or DODAG
  */
