@@ -16,11 +16,11 @@
 
 /**
  * @{
- * @ingroup     network
+ * @ingroup     border_router
  * @file        border_router.h
  * @brief       this module content all functions of Border Router
  * @author      RocioRojas <rociorojas391@gmail.com>
- *
+ * @author      eduazocar <eduazocarv@gmail.com>
  */
 
 #ifndef BORDER_ROUTER_H
@@ -32,23 +32,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-/**
- * @brief   The default IPv6 prefix length if not specified.
- */
-#define _IPV6_DEFAULT_PREFIX_LEN (64U)
-
-/**
- * @brief List of cast types to the ipv6 address
- *
- */
-enum cast_t {
-    _UNICAST = 0, /*!< Sets a process by which a packet is sent
-                    from one host to an individual host*/
-    _ANYCAST,     /*!< Sets a method forwards messages to a single
-                    device of a specific group of devices. */
-    _MULTICAST    /*!< Sets multicasting addresses messages for a
-                    specific group of devices in a network */
-};
 
 /**
  * @enum type_iface_t List of all types of Interface
@@ -62,14 +45,15 @@ enum type_iface_t {
 /**@}*/
 
 /**
- * @brief This function it's set to border router to host.
+ * @brief This function init the border router. sets ipv6 in an interface.
  *
- * @param [in] cast_type cast_type you want to set
- * @param [in] addr       ipv6 address
- * @param [in] iface_type refers to if is used a WIRED or WIRELESS interface.
- * @return int
+ * @param[in] addr       ipv6 address
+ * @param[in] iface_type refers to if is used a WIRED or WIRELESS interface.
+ *
+ * @retval 0 Setup Success
+ * @retval -1 Setup Failed
  */
-int border_router_add_ipv6(int cast_type, ipv6_addr_t *addr, uint8_t iface_type);
+int8_t border_router_setup(ipv6_addr_t addr, uint8_t iface_type);
 
 #ifdef __cplusplus
 }
