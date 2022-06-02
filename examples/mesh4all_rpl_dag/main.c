@@ -15,7 +15,7 @@
  */
 
 /**
- * @brief       Main firmware file
+ * @brief      Example RPL DAG
  *
  * @author      xkevin190 <kevinvelasco193@gmail.com>
  *
@@ -41,7 +41,7 @@ int main(void) {
     char line_buf[SHELL_DEFAULT_BUFSIZE];
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
 
-    rpl_setup();
+    rpl_setup(DAG);
 
     shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
 
