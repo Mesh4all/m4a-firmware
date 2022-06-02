@@ -21,9 +21,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "border_router.h"
-#include "rpl_protocol.h"
-
-static uint8_t radio_devices[] = {NETDEV_AT86RF215, NETDEV_AT86RF2XX, NETDEV_CC2538};
+#include "radio.h"
+#include "net_tools.h"
 
 int8_t get_wired_iface(void) {
     int max_ifaces = gnrc_netif_numof();
@@ -39,94 +38,51 @@ int8_t get_wired_iface(void) {
     return -1;
 }
 
-int8_t get_wireless_iface(void) {
-    int max_ifaces = gnrc_netif_numof();
-    if (max_ifaces > 0) {
-        gnrc_netif_t *iface;
-         for (uint8_t i = 0; i < ARRAY_SIZE(radio_devices); i++) {
-            iface = gnrc_netif_get_by_type(radio_devices[i], NETDEV_INDEX_ANY);
-            if (iface != NULL) {
-                break;
-            }
-        }
-        if (iface != NULL) {
-            return iface->pid;
-        } else {
-            return -1;
-        }
-    }
-    return -1;
-}
-
-int border_router_add_ipv6(int cast_type, ipv6_addr_t *addr) {
+int border_router_add_ipv6(int cast_type, ipv6_addr_t *addr, uint8_t iface_type) {
     uint16_t flags = GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID;
     uint8_t prefix_len = _IPV6_DEFAULT_PREFIX_LEN;
     netif_t *iface = NULL;
-    int index = get_wired_iface();
-    int16_t isWired;
+    ipv6_addr_t ip;
+    int8_t index;
+    if (iface_type == WIRED_INTERFACE) {
+        index = get_wired_iface();
+    } else if (iface_type == WIRELESS_INTERFACE) {
+        index = get_ieee802154_iface();
+    } else {
+        printf("Error: Type of Interface doesn't exists File: %s, line: %d\n", __FILE__, __LINE__);
+        return -1;
+    }
+    if (index == -1) {
+        printf("Error: Expected interface wasn't found. File: %s, line %d\n", __FILE__, __LINE__);
+        return -1;
+    }
+    if (get_ipv6_global(index, &ip) == 0) {
+        printf("Error: Already exists an ipv6 Address File: %s, line: %d\n", __FILE__, __LINE__);
+        return -1;
+    }
     iface = netif_get_by_id(index);
     if (cast_type == _ANYCAST || cast_type == _UNICAST || cast_type == _MULTICAST) {
-        if (netif_get_opt(iface, NETOPT_IS_WIRED, 0, &isWired, sizeof(isWired)) > 0) {
-            if (cast_type == _MULTICAST) {
-                if (ipv6_addr_is_multicast(addr)) {
-                    if (netif_set_opt(iface, NETOPT_IPV6_GROUP, 0, addr, sizeof(ipv6_addr_t)) < 0) {
-                        printf("error: unable to join IPv6 multicast group\n");
-                        return -1;
-                    }
-                } else {
+        if (cast_type == _MULTICAST) {
+            if (ipv6_addr_is_multicast(addr)) {
+                if (netif_set_opt(iface, NETOPT_IPV6_GROUP, 0, addr, sizeof(ipv6_addr_t)) < 0) {
+                    printf("error: unable to join IPv6 multicast group\n");
                     return -1;
                 }
             } else {
-                if (cast_type == _ANYCAST) {
-                    flags |= GNRC_NETIF_IPV6_ADDRS_FLAGS_ANYCAST;
-                }
-                flags |= (prefix_len << 8U);
-                if (netif_set_opt(iface, NETOPT_IPV6_ADDR, flags, addr, sizeof(ipv6_addr_t)) < 0) {
-                    printf("error: unable to add IPv6 address\n");
-                    return -1;
-                }
+                return -1;
             }
         } else {
-            return -1;
+            if (cast_type == _ANYCAST) {
+                flags |= GNRC_NETIF_IPV6_ADDRS_FLAGS_ANYCAST;
+            }
+            flags |= (prefix_len << 8U);
+            if (netif_set_opt(iface, NETOPT_IPV6_ADDR, flags, addr, sizeof(ipv6_addr_t)) < 0) {
+                printf("error: unable to add IPv6 address\n");
+                return -1;
+            }
         }
     } else {
         return -1;
     }
-    return 0;
-}
-
-int border_router_add_ipv6_node(int cast_type, ipv6_addr_t *addr) {
-    uint16_t flags = GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID;
-    uint8_t prefix_len = _IPV6_DEFAULT_PREFIX_LEN;
-    netif_t *iface = NULL;
-    int index = get_wireless_iface();
-    iface = netif_get_by_id(index);
-    if (cast_type == _ANYCAST || cast_type == _UNICAST || cast_type == _MULTICAST) {
-            if (cast_type == _MULTICAST) {
-                if (ipv6_addr_is_multicast(addr)) {
-                    if (netif_set_opt(iface, NETOPT_IPV6_GROUP, 0, addr, sizeof(ipv6_addr_t)) < 0) {
-                        printf("error: unable to join IPv6 multicast group\n");
-                        return -1;
-                    }
-                } else {
-                    return -1;
-                }
-            } else {
-                if (cast_type == _ANYCAST) {
-                    flags |= GNRC_NETIF_IPV6_ADDRS_FLAGS_ANYCAST;
-                }
-                flags |= (prefix_len << 8U);
-                if (netif_set_opt(iface, NETOPT_IPV6_ADDR, flags, addr, sizeof(ipv6_addr_t)) < 0) {
-                    printf("error: unable to add IPv6 address\n");
-                    return -1;
-                }
-            }
-    } else {
-        return -1;
-    }
-
-    rpl_init(index);
-
-    gnrc_rpl_dodag_root(CONFIG_DODAG_INSTANCE, addr);
     return 0;
 }

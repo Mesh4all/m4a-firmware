@@ -18,4 +18,8 @@ ifneq (,$(filter border_router,$(USEMODULE)))
   DIRS += border_router
 endif
 
+ifneq (,$(filter net_tools,$(USEMODULE)))
+  DIRS += net_tools
+endif
+
 include $(RIOTBASE)/Makefile.base

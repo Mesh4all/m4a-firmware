@@ -30,7 +30,7 @@ void test_border_router_add_ipv6(void) {
         .u8 = {0},
     };
     ipv6_addr_from_str(&address, "2001:db8:1::2");
-    int err = border_router_add_ipv6(_UNICAST,  &address);
+    int err = border_router_add_ipv6(_UNICAST,  &address, WIRED_INTERFACE);
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
@@ -39,7 +39,7 @@ void test_border_router_add_ipv6_node(void) {
         .u8 = {0},
     };
     ipv6_addr_from_str(&address, "2001:db8:1::2");
-    int err = border_router_add_ipv6_node(_UNICAST,  &address);
+    int err = border_router_add_ipv6(_UNICAST,  &address, WIRELESS_INTERFACE);
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 

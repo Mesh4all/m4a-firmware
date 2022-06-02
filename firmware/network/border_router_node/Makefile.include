@@ -1,2 +1,0 @@
-USEMODULE_INCLUDES_border_router_node := $(LAST_MAKEFILEDIR)/include
-USEMODULE_INCLUDES += $(USEMODULE_INCLUDES_border_router_node)

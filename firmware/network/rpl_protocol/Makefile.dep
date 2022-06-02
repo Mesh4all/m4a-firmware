@@ -1,6 +1,23 @@
+ifeq (,$(filter auto_init_gnrc_rpl,$(USEMODULE)))
+    USEMODULE +=  auto_init_gnrc_rpl
+endif
 
-USEMODULE += gnrc_rpl
-USEMODULE += auto_init_gnrc_rpl
-USEMODULE += radio
-USEMODULE += uniqueid
-USEMODULE += gnrc_ipv6_router_default
+ifeq (,$(filter gnrc_ipv6_router_default,$(USEMODULE)))
+    USEMODULE += gnrc_ipv6_router_default
+endif
+
+ifeq (,$(filter gnrc_rpl,$(USEMODULE)))
+    USEMODULE += gnrc_rpl
+endif
+
+ifeq (,$(filter radio,$(USEMODULE)))
+    USEMODULE += radio
+endif
+
+ifeq (,$(filter uniqueid,$(USEMODULE)))
+    USEMODULE += uniqueid
+endif
+
+ifeq (,$(filter net_tools,$(USEMODULE)))
+    USEMODULE += net_tools
+endif

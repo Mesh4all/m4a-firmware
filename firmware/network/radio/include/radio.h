@@ -51,13 +51,6 @@ extern "C" {
 int8_t get_ieee802154_iface(void);
 
 /**
- * @brief Set the global ipv6 to radio object
- *
- * @return int
- */
-int8_t set_global_ipv6_to_radio(void);
-
-/**
  * @brief this function is used to get data of tx power
  * @param[in] txpower channel you want to get
  */

@@ -38,6 +38,10 @@ ifneq (,$(filter gnrc_netif_ieee802154,$(USEMODULE)))
     USEMODULE += gnrc_netif_ieee802154
 endif
 
-ifeq (,$(filter rpl_protocol,$(USEMODULE)))
-    USEMODULE +=  rpl_protocol
+ifeq (,$(filter radio,$(USEMODULE)))
+    USEMODULE += radio
+endif
+
+ifeq (,$(filter net_tools,$(USEMODULE)))
+    USEMODULE += net_tools
 endif

@@ -2,10 +2,11 @@ menu "RPL settings"
 #comment "RPL settings"
     config IS_DODAG
     bool "dodag node"
-    default y
+    default n
 
     config DODAG_INSTANCE
     int "Default DODAG instance"
     default 1
+    range 1 256
 
 endmenu #RPL
