@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: firmware/network/border_router_node Directory Reference</title>
+    <title>Mesh4all: firmware/network/net_tools/include/net_tools.h File Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('dir_9fde933d5b319ebf7aa1ee39d2e6d2ad.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('net__tools_8h.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -104,23 +104,46 @@ $(document).ready(function(){initNavTree('dir_9fde933d5b319ebf7aa1ee39d2e6d2ad.h
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">border_router_node Directory Reference</div>  </div>
+<div class="title">net_tools.h File Reference<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__network.html">Network module</a> &raquo; <a class="el" href="group__net__tools.html">Net_tools</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;net/ipv6/addr.h&quot;</code><br />
+<code>#include &quot;net/gnrc/netif.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for net_tools.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="net__tools_8h__incl.svg" width="526" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="net__tools_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="subdirs"></a>
-Directories</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga13a40ea6a36e5a331c54cd72513328e8"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8">get_ipv6_global</a> (kernel_pid_t iface_pid, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> *addr)</td></tr>
+<tr class="memdesc:ga13a40ea6a36e5a331c54cd72513328e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check if exist an ipv6 global unicast.  <a href="group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8">More...</a><br /></td></tr>
+<tr class="separator:ga13a40ea6a36e5a331c54cd72513328e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'doa'+'zo'+'car'+'7@'+'gma'+'il'+'.co'+'m'; return false;">eduar<span style="display: none;">.nosp@m.</span>doaz<span style="display: none;">.nosp@m.</span>ocar7<span style="display: none;">.nosp@m.</span>@gma<span style="display: none;">.nosp@m.</span>il.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="net__tools_8h_source.html">net_tools.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_9fde933d5b319ebf7aa1ee39d2e6d2ad.html">border_router_node</a></li>
-    <li class="footer">Generated on Fri May 27 2022 03:03:29 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_3b7b4d98beba3e5575b74a42e3ca6ba8.html">net_tools</a></li><li class="navelem"><a class="el" href="dir_efe9328ce5bf8ce1f09ce3b2d5d96a25.html">include</a></li><li class="navelem"><a class="el" href="net__tools_8h.html">net_tools.h</a></li>
+    <li class="footer">Generated on Thu Jun 2 2022 02:23:41 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

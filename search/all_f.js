@@ -13,12 +13,13 @@ var searchData=
   ['rfctl_5fantenna_5fdefault_241',['RFCTL_ANTENNA_DEFAULT',['../m4a-24g_2include_2board_8h.html#a8374c2ca3f70167aff3c6148a5e4ae62',1,'board.h']]],
   ['rpl_5fdodag_5fremove_242',['rpl_dodag_remove',['../group__rpl__protocol.html#ga1c3b934c4e36a994805952d347b8d2f6',1,'rpl_protocol.h']]],
   ['rpl_5finit_243',['rpl_init',['../group__rpl__protocol.html#ga97d2cb32692837fda8a6668ece2d794b',1,'rpl_protocol.h']]],
-  ['rpl_20protocol_20module_244',['RPL protocol module',['../group__rpl__protocol.html',1,'']]],
-  ['rpl_5fsetup_245',['rpl_setup',['../group__rpl__protocol.html#ga2402969d8cef4d6826c92266587e26e4',1,'rpl_protocol.h']]],
-  ['rtt_5ffrequency_246',['RTT_FREQUENCY',['../m4a-24g_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h']]],
-  ['rtt_5fmin_5foffset_247',['RTT_MIN_OFFSET',['../m4a-24g_2include_2periph__conf_8h.html#ad34d7bc806339ce586e8a942913cdb6f',1,'periph_conf.h']]],
-  ['rx_5fbuf_248',['rx_buf',['../structuart__buffer__t.html#a16a7a829699460b12ff2f7636d422f24',1,'uart_buffer_t']]],
-  ['rx_5fcb_249',['rx_cb',['../at__client_8h.html#aff569acfc7324ba08009bd60ba737871',1,'at_client.h']]],
-  ['rx_5fmem_250',['rx_mem',['../structuart__buffer__t.html#af936a4e99939fc5e90dde6c7d45c482f',1,'uart_buffer_t']]],
-  ['rx_5freceive_251',['rx_receive',['../subsys__uart_8h.html#a7b4bff45259776e9b407e01bf9b3b5d9',1,'subsys_uart.h']]]
+  ['rpl_5fmodes_5ft_244',['rpl_modes_t',['../group__rpl__protocol.html#ga4446cca3982b2ec3e317b256479f4fa9',1,'rpl_protocol.h']]],
+  ['rpl_20protocol_20module_245',['RPL protocol module',['../group__rpl__protocol.html',1,'']]],
+  ['rpl_5fsetup_246',['rpl_setup',['../group__rpl__protocol.html#gad2ab2a891c42fbcdc17257e5c0536e32',1,'rpl_protocol.h']]],
+  ['rtt_5ffrequency_247',['RTT_FREQUENCY',['../m4a-24g_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99',1,'RTT_FREQUENCY():&#160;periph_conf.h']]],
+  ['rtt_5fmin_5foffset_248',['RTT_MIN_OFFSET',['../m4a-24g_2include_2periph__conf_8h.html#ad34d7bc806339ce586e8a942913cdb6f',1,'periph_conf.h']]],
+  ['rx_5fbuf_249',['rx_buf',['../structuart__buffer__t.html#a16a7a829699460b12ff2f7636d422f24',1,'uart_buffer_t']]],
+  ['rx_5fcb_250',['rx_cb',['../at__client_8h.html#aff569acfc7324ba08009bd60ba737871',1,'at_client.h']]],
+  ['rx_5fmem_251',['rx_mem',['../structuart__buffer__t.html#af936a4e99939fc5e90dde6c7d45c482f',1,'uart_buffer_t']]],
+  ['rx_5freceive_252',['rx_receive',['../subsys__uart_8h.html#a7b4bff45259776e9b407e01bf9b3b5d9',1,'subsys_uart.h']]]
 ];
