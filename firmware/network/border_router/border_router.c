@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 /**
- * @brief  Border Radio.
+ * @brief   Border Router Module
  *
  * @author  RocioRojas <rociorojas391@gmail.com>
+ * @author  eduazocar <eduazocarv@gmail.com>
  */
 #include <stdio.h>
 #include <string.h>
@@ -38,21 +39,21 @@ int8_t get_wired_iface(void) {
     return -1;
 }
 
-int border_router_add_ipv6(int cast_type, ipv6_addr_t *addr, uint8_t iface_type) {
-    uint16_t flags = GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID;
-    uint8_t prefix_len = _IPV6_DEFAULT_PREFIX_LEN;
-    netif_t *iface = NULL;
+int8_t border_router_setup(ipv6_addr_t addr, uint8_t iface_type) {
     ipv6_addr_t ip;
     int8_t index;
-    if (iface_type == WIRED_INTERFACE) {
+    switch (iface_type) {
+    case WIRED_INTERFACE:
         index = get_wired_iface();
-    } else if (iface_type == WIRELESS_INTERFACE) {
+        break;
+    case WIRELESS_INTERFACE:
         index = get_ieee802154_iface();
-    } else {
+        break;
+    default:
         printf("Error: Type of Interface doesn't exists File: %s, line: %d\n", __FILE__, __LINE__);
         return -1;
     }
-    if (index == -1) {
+    if (index < 0) {
         printf("Error: Expected interface wasn't found. File: %s, line %d\n", __FILE__, __LINE__);
         return -1;
     }
@@ -60,29 +61,19 @@ int border_router_add_ipv6(int cast_type, ipv6_addr_t *addr, uint8_t iface_type)
         printf("Error: Already exists an ipv6 Address File: %s, line: %d\n", __FILE__, __LINE__);
         return -1;
     }
-    iface = netif_get_by_id(index);
-    if (cast_type == _ANYCAST || cast_type == _UNICAST || cast_type == _MULTICAST) {
-        if (cast_type == _MULTICAST) {
-            if (ipv6_addr_is_multicast(addr)) {
-                if (netif_set_opt(iface, NETOPT_IPV6_GROUP, 0, addr, sizeof(ipv6_addr_t)) < 0) {
-                    printf("error: unable to join IPv6 multicast group\n");
-                    return -1;
-                }
-            } else {
-                return -1;
-            }
-        } else {
-            if (cast_type == _ANYCAST) {
-                flags |= GNRC_NETIF_IPV6_ADDRS_FLAGS_ANYCAST;
-            }
-            flags |= (prefix_len << 8U);
-            if (netif_set_opt(iface, NETOPT_IPV6_ADDR, flags, addr, sizeof(ipv6_addr_t)) < 0) {
-                printf("error: unable to add IPv6 address\n");
-                return -1;
-            }
+    if (ipv6_addr_is_global(&addr)) {
+        if (set_ipv6_global(index, addr) < 0) {
+            return -1;
         }
-    } else {
-        return -1;
+        return 0;
     }
-    return 0;
+    if (ipv6_addr_is_multicast(&addr)) {
+        if (set_ipv6_multicast(index, addr) < 0) {
+            return -1;
+        }
+        return 0;
+    }
+    printf("Error: Only can be processed Unicast and Multicast Addresses. File: %s, line: %d\n",
+           __FILE__, __LINE__);
+    return -1;
 }

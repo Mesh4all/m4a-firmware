@@ -20,7 +20,7 @@
  */
 
 /**
- * @defgroup    net_tools
+ * @defgroup    net_tools Network tools
  * @ingroup     network
  * @brief       group of generic functions that could be used in various modules
  *
@@ -50,10 +50,30 @@ extern "C" {
  * @param[in] iface_pid it's the id of an interface
  * @param[out] addr variable ipv6 where will be saved the found unicast global address
  *
- * @returns 0 if exist an ipv6 address and saves the located address in @p addr
- * @returns -1 when the interface doesn't have an unicast global address
+ * @retval 0 if exist an ipv6 address and saves the located address in @p addr
+ * @retval -1 when the interface doesn't have an unicast global address
  */
 int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr);
+
+/**
+ * @brief Function to set an ipv6 global address in an iface.
+ *
+ * @param[in] iface_index  index that will be save the ipv6 address.
+ * @param[in] ip Address ipv6 global to set
+ * @retval 0 Correctly set up of the @p ip in the interface
+ * @retval -1 Couldn't set the @p ip address in the interface
+ */
+int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip);
+
+/**
+ * @brief Function to set an ipv6 global address in an iface.
+ *
+ * @param[in] iface_index  index that will be save the ipv6 address.
+ * @param[in] ip Address ipv6 multicast to set
+ * @retval  0 Correctly set up of the @p ip in the interface.
+ * @retval -1 Couldn't set the @p ip address in the interface.
+ */
+int8_t set_ipv6_multicast(kernel_pid_t iface_index, ipv6_addr_t ip);
 
 #ifdef __cplusplus
 }
