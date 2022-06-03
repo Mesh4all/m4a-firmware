@@ -104,10 +104,20 @@ $(document).ready(function(){initNavTree('group__border__router.html',''); initR
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#files">Files</a>  </div>
   <div class="headertitle">
 <div class="title">Border router<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__network.html">Network module</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:border__router_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="border__router_8h.html">border_router.h</a></td></tr>
+<tr class="memdesc:border__router_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">this module content all functions of Border Router <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h3><a class="anchor" id="autotoc_md41"></a>
 What goes here?</h3>
 <p>This module is used to set up a border router using the USB CDC ECM. The module sets ipv6 address to host.</p>
@@ -115,7 +125,7 @@ What goes here?</h3>
 <div class="line">        .u8 = {0},</div>
 <div class="line">    };</div>
 <div class="line">    ipv6_addr_from_str(&amp;address,<span class="stringliteral">&quot;2001:db8:1::2&quot;</span>);</div>
-<div class="line">    border_router_ipv6_config(<a class="code" href="border__router_8h.html#a98af7cc0b10f71bb7bb346504a3ee33bacc5669b5cfd491fa253ba42b019bd76a">_UNICAST</a>,&amp;address);</div>
+<div class="line">    border_router_ipv6_config(_UNICAST,&amp;address);</div>
 </div><!-- fragment --><p>TO DO: set ipv6 address to the node.</p>
 <h1><a class="anchor" id="autotoc_md42"></a>
 Network configuration for the border router</h1>
@@ -174,13 +184,12 @@ How this struct works?</h3>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aunionipv6__addr__t_html"><div class="ttname"><a href="unionipv6__addr__t.html">ipv6_addr_t</a></div><div class="ttdoc">model of an ipv6 address</div><div class="ttdef"><b>Definition:</b> <a href="chamoc__msg_8h_source.html#l00050">chamoc_msg.h:50</a></div></div>
-<div class="ttc" id="aborder__router_8h_html_a98af7cc0b10f71bb7bb346504a3ee33bacc5669b5cfd491fa253ba42b019bd76a"><div class="ttname"><a href="border__router_8h.html#a98af7cc0b10f71bb7bb346504a3ee33bacc5669b5cfd491fa253ba42b019bd76a">_UNICAST</a></div><div class="ttdeci">@ _UNICAST</div><div class="ttdef"><b>Definition:</b> <a href="border__router_8h_source.html#l00045">border_router.h:45</a></div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Jun 2 2022 21:23:34 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Fri Jun 3 2022 16:37:58 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

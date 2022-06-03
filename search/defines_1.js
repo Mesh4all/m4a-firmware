@@ -1,16 +1,6 @@
 var searchData=
 [
-  ['adc_5fgain_5ffactor_5fdefault_586',['ADC_GAIN_FACTOR_DEFAULT',['../m4a-24g_2include_2periph__conf_8h.html#ac2819c67b7940e365ac1f605525fea9c',1,'ADC_GAIN_FACTOR_DEFAULT():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ac2819c67b7940e365ac1f605525fea9c',1,'ADC_GAIN_FACTOR_DEFAULT():&#160;periph_conf.h']]],
-  ['adc_5fneg_5finput_587',['ADC_NEG_INPUT',['../m4a-24g_2include_2periph__conf_8h.html#ab94948d940d2301dca517f9dd2f22589',1,'ADC_NEG_INPUT():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ab94948d940d2301dca517f9dd2f22589',1,'ADC_NEG_INPUT():&#160;periph_conf.h']]],
-  ['adc_5fnumof_588',['ADC_NUMOF',['../m4a-24g_2include_2periph__conf_8h.html#a2f0c741db24aa2ccded869ba53f6a302',1,'ADC_NUMOF():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a2f0c741db24aa2ccded869ba53f6a302',1,'ADC_NUMOF():&#160;periph_conf.h']]],
-  ['adc_5fprescaler_589',['ADC_PRESCALER',['../m4a-24g_2include_2periph__conf_8h.html#ab1d0703f6d84b37cbaa587a1a4515dd4',1,'ADC_PRESCALER():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#ab1d0703f6d84b37cbaa587a1a4515dd4',1,'ADC_PRESCALER():&#160;periph_conf.h']]],
-  ['adc_5fref_5fdefault_590',['ADC_REF_DEFAULT',['../m4a-24g_2include_2periph__conf_8h.html#a79a0008b0054fba5551f1a2f515cd21f',1,'ADC_REF_DEFAULT():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#a79a0008b0054fba5551f1a2f515cd21f',1,'ADC_REF_DEFAULT():&#160;periph_conf.h']]],
-  ['at86rf215_5fparam_5fcs_591',['AT86RF215_PARAM_CS',['../m4a-mb_2include_2board_8h.html#a7214d794b35dde0cfa89027a047e4e18',1,'board.h']]],
-  ['at86rf215_5fparam_5fint_592',['AT86RF215_PARAM_INT',['../m4a-mb_2include_2board_8h.html#ac92d64d839a69c4e2219b01bb6fe7b44',1,'board.h']]],
-  ['at86rf215_5fparam_5freset_593',['AT86RF215_PARAM_RESET',['../m4a-mb_2include_2board_8h.html#ab444639ac7bb9c4c50f19ded5dda9201',1,'board.h']]],
-  ['at86rf215_5fparam_5fspi_594',['AT86RF215_PARAM_SPI',['../m4a-mb_2include_2board_8h.html#ad4a9e6a8e2eff812e3a854d1959eaf08',1,'board.h']]],
-  ['at86rf2xx_5fparam_5fcs_595',['AT86RF2XX_PARAM_CS',['../m4a-24g_2include_2board_8h.html#a555f5ce4ea27f15da0ed318fd79704ee',1,'board.h']]],
-  ['at86rf2xx_5fparam_5fint_596',['AT86RF2XX_PARAM_INT',['../m4a-24g_2include_2board_8h.html#ab47f3ac0a872633fbef6ebe83d52883a',1,'board.h']]],
-  ['at86rf2xx_5fparam_5freset_597',['AT86RF2XX_PARAM_RESET',['../m4a-24g_2include_2board_8h.html#ae1083f9546ac5eaf9cd81065ae0ac5c6',1,'board.h']]],
-  ['at86rf2xx_5fparam_5fsleep_598',['AT86RF2XX_PARAM_SLEEP',['../m4a-24g_2include_2board_8h.html#ae453db88a26d1b28125182e50159c693',1,'board.h']]]
+  ['btn0_5fmode_593',['BTN0_MODE',['../m4a-24g_2include_2board_8h.html#a904884feea8e03c30c9a85ca6d7a8e5c',1,'BTN0_MODE():&#160;board.h'],['../m4a-mb_2include_2board_8h.html#a904884feea8e03c30c9a85ca6d7a8e5c',1,'BTN0_MODE():&#160;board.h']]],
+  ['btn0_5fpin_594',['BTN0_PIN',['../m4a-24g_2include_2board_8h.html#aab5c3eca54046333af52593b9e360270',1,'BTN0_PIN():&#160;board.h'],['../m4a-mb_2include_2board_8h.html#aab5c3eca54046333af52593b9e360270',1,'BTN0_PIN():&#160;board.h']]],
+  ['btn0_5fport_595',['BTN0_PORT',['../m4a-24g_2include_2board_8h.html#a9a61388c9e491aec2e44cc03956bb299',1,'BTN0_PORT():&#160;board.h'],['../m4a-mb_2include_2board_8h.html#a9a61388c9e491aec2e44cc03956bb299',1,'BTN0_PORT():&#160;board.h']]]
 ];

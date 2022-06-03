@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['https_5fcontent_5fcbor_621',['HTTPS_CONTENT_CBOR',['../httpsclient_8h.html#ac18276709129e726bc2144727223a0e5',1,'httpsclient.h']]],
-  ['https_5fcontent_5fjson_622',['HTTPS_CONTENT_JSON',['../httpsclient_8h.html#ad1759ca6a9bd7b00efc8f7ed0a561c34',1,'httpsclient.h']]]
+  ['i2c_5fnumof_617',['I2C_NUMOF',['../m4a-24g_2include_2periph__conf_8h.html#abce62e16a6e3b3205801fed93c51692d',1,'I2C_NUMOF():&#160;periph_conf.h'],['../m4a-mb_2include_2periph__conf_8h.html#abce62e16a6e3b3205801fed93c51692d',1,'I2C_NUMOF():&#160;periph_conf.h']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['dac_5fclock_615',['DAC_CLOCK',['../m4a-mb_2include_2periph__conf_8h.html#a3146b48b878b99f151de5239d3814793',1,'periph_conf.h']]],
-  ['dac_5fvref_616',['DAC_VREF',['../m4a-mb_2include_2periph__conf_8h.html#a5afd9690184542986af3376d1dd88957',1,'periph_conf.h']]]
+  ['eui64_5fprovider_5ffunc_611',['EUI64_PROVIDER_FUNC',['../eui__provider__params_8h.html#a50cd04ad19848f8741a1eace5b853ec0',1,'eui_provider_params.h']]],
+  ['eui64_5fprovider_5findex_612',['EUI64_PROVIDER_INDEX',['../eui__provider__params_8h.html#a338e315fe4b5d0767199ada5206c9492',1,'eui_provider_params.h']]],
+  ['eui64_5fprovider_5ftype_613',['EUI64_PROVIDER_TYPE',['../eui__provider__params_8h.html#ab7c0794264ef9ce6290b9ce9dc14279d',1,'eui_provider_params.h']]]
 ];
