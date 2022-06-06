@@ -1,4 +1,4 @@
-"""RIOT example application generator module."""
+"""Mesh4all example application generator module."""
 
 import click
 
