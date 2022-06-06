@@ -66,7 +66,7 @@ void *init_loop(void *args) {
         if (cbor_enconde_message(&payload, buffer, &len_cbor) < 0) {
             printf("error to encode payload with cbor");
         } else {
-            udp_send(&port, ADRESS_TO_SEND, buffer, &len_cbor);
+            udp_send(&port, ADDRESS_TO_SEND, buffer, &len_cbor);
         }
         xtimer_sleep(60);
     }
@@ -84,7 +84,7 @@ int main(void) {
     char line_buf[SHELL_DEFAULT_BUFSIZE];
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
 
-    rpl_setup();
+    rpl_setup(CONFIG_IS_DODAG);
 
 #if CONFIG_IS_DODAG == 0
 
