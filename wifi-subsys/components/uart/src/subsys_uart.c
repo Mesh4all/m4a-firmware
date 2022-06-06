@@ -20,6 +20,7 @@
  * @author xkevin190 <kevinvelasco193@gmail.com>
  */
 #include <string.h>
+#include <cJSON.h>
 
 #include "subsys_uart.h"
 #include "driver/gpio.h"
@@ -100,12 +101,16 @@ void received_sensor_data(uint8_t *values, size_t len) {
     decode(values, "temp", &val_received, len);
     ESP_LOGI(__func__, "%d ", val_received);
 
+    cJSON* root = cJSON_CreateObject();
+    cJSON_AddNumberToObject(root, "temp", val_received);
+    char* payload = cJSON_Print(root);
+
     http_request_t request;
     request.method = HTTP_METHOD_POST;
-    request.content_type = HTTPS_CONTENT_CBOR;
+    request.content_type = HTTPS_CONTENT_JSON;
     memcpy(request.url, "https://cloud.mesh4all.org",
            sizeof("https://cloud.mesh4all.org"));
-    memcpy(request.body, values, len);
+    memcpy(request.body, payload, strlen(payload) + 1);
     request.callback = &callback;
     http_client(&request);
 }
