@@ -1,4 +1,4 @@
-"""RIOT test generator module."""
+"""Mesh4all test generator module."""
 
 import os
 

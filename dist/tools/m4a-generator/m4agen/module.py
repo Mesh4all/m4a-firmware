@@ -1,4 +1,4 @@
-"""M4a-firmware application generator module."""
+"""Mesh4all application generator module."""
 
 import os
 import click
@@ -17,6 +17,8 @@ MODULE_PARAMS = {
 
 MODULE_FILES = {
     "module.c": "{name}.c",
+    "Makefile.include": None,
+    "Makefile.dep": None,
     "Makefile": None,
 }
 
