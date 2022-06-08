@@ -22,11 +22,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#include "shell.h"
-#include "shell_commands.h"
-#include "msg.h"
-
 #include "log.h"
 #include "board.h"
 #include "mtd.h"

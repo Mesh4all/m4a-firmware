@@ -28,7 +28,6 @@
 #include "msg.h"
 #include "periph/uart.h"
 #include "shell.h"
-#include "shell_commands.h"
 #include "thread.h"
 #include "timex.h"
 #include "xtimer.h"
