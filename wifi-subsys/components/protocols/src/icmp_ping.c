@@ -15,7 +15,7 @@
  */
 
 /**
- * @brief   Wifi module
+ * @brief   ICMP protocol component
  *
  * @author  xkevin190 <kevinvelasco193@gmail.com>
  */
@@ -115,8 +115,9 @@ esp_err_t initialize_ping() {
         freeaddrinfo(res);
         esp_ping_config_t ping_config = ESP_PING_DEFAULT_CONFIG();
         ping_config.target_addr = target_addr; // target IP address
-        err = nvs_get_uint32(stringlify(PING), stringlify(PING_RET),
-                            &ping_config.count); // ping in infinite mode, esp_ping_stop can stop it
+        err =
+            nvs_get_uint32(stringlify(PING), stringlify(PING_RET),
+                           &ping_config.count); // ping in infinite mode, esp_ping_stop can stop it
         if (err != ESP_OK) {
             ESP_LOGE(__func__, "error to get ping count the cause is %s", esp_err_to_name(err));
 
@@ -174,8 +175,8 @@ void ping_task(void *arg) {
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "error to get ping time the cause is %s", esp_err_to_name(err));
     } else {
-        xEventGroupWaitBits(s_icmp_event_group, CONNECTED_BIT | FAIL_BIT,
-                                               pdFALSE, pdFALSE, portMAX_DELAY);
+        xEventGroupWaitBits(s_icmp_event_group, CONNECTED_BIT | FAIL_BIT, pdFALSE, pdFALSE,
+                            portMAX_DELAY);
 
         callback(is_connected);
         vTaskDelete(manual_ping_task);

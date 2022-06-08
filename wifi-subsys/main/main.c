@@ -178,7 +178,6 @@ void app_main(void) {
     }
 #endif
 
-
     err = init_uart();
     if (err != ESP_OK) {
         ESP_LOGE(__func__, "Error: init uart failed %s", esp_err_to_name(err));
