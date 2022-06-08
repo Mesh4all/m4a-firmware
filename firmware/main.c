@@ -25,14 +25,10 @@
 #include <string.h>
 
 #include "shell.h"
-#include "shell_commands.h"
 #include "msg.h"
 
 #include "log.h"
 #include "board.h"
-
-static shell_command_t shell_extended_commands[] = {
-    {NULL, NULL, NULL}};
 
 int main(void)
 {
@@ -40,7 +36,7 @@ int main(void)
     /* Start shell */
     char line_buf[SHELL_DEFAULT_BUFSIZE];
 
-    shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
+    shell_run(NULL, line_buf, SHELL_DEFAULT_BUFSIZE);
 
     return 0;
 }
