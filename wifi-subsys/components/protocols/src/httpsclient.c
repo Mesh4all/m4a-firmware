@@ -15,7 +15,7 @@
  */
 
 /**
- * @brief   Configure a https client to make a request
+ * @brief   HTTPS protocol component
  *
  * @author  RocioRojas <RocioRojas391@gmail.com>
  */

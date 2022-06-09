@@ -14,6 +14,12 @@
  * limitations under the License.
  */
 
+/**
+ * @brief   Wifi module
+ *
+ * @author  xkevin190 <kevinvelasco193@gmail.com>
+ */
+
 #include "unity.h"
 #include "wifi.h"
 #include "storage.h"

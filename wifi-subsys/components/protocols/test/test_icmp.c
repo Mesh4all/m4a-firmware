@@ -13,6 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * @brief   Test ICMP
+ *
+ * @author  xkevin190 <kevinvelasco193@gmail.com>
+ */
+
 #include "default_params.h"
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"

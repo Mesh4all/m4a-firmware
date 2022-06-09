@@ -14,6 +14,12 @@
  * limitations under the License.
  */
 
+/**
+ * @brief   Test HTTPS
+ *
+ * @author  RocioRojas <RocioRojas391@gmail.com>
+ */
+
 #include "unity.h"
 #include "wifi.h"
 #include "storage.h"

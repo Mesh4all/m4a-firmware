@@ -15,7 +15,7 @@
  */
 
 /**
- * @brief   Non Volatile Storage
+ * @brief   Test Serialization
  *
  * @author  eduazocar <eduardo@turpialdev.com>
  */
