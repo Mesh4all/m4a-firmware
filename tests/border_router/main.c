@@ -17,36 +17,36 @@
  * @brief       border router test file
  *
  * @author      RocioRojas <Rociorojas391@gmail.com>
+ * @author      eduazocar <eduazocarv@gmail.com>
  */
 
 #include <string.h>
 #include <errno.h>
 #include "embUnit.h"
 #include "border_router.h"
-#include "rpl_protocol.h"
 
-void test_border_router_add_ipv6(void) {
-     ipv6_addr_t address = {
+void test_border_router_setup_wired(void) {
+    ipv6_addr_t address = {
         .u8 = {0},
     };
-    ipv6_addr_from_str(&address, "2001:db8:1::2");
-    int err = border_router_add_ipv6(_UNICAST,  &address, WIRED_INTERFACE);
+    ipv6_addr_from_str(&address, "2001:db8:2::1");
+    int err = border_router_setup(address, 64, WIRED_INTERFACE);
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
-void test_border_router_add_ipv6_node(void) {
-     ipv6_addr_t address = {
+void test_border_router_setup_wireless(void) {
+    ipv6_addr_t address = {
         .u8 = {0},
     };
     ipv6_addr_from_str(&address, "2001:db8:1::2");
-    int err = border_router_add_ipv6(_UNICAST,  &address, WIRELESS_INTERFACE);
+    int err = border_router_setup(address, 16, WIRELESS_INTERFACE);
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
 Test *tests_border_router(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
-        new_TestFixture(test_border_router_add_ipv6),
-        new_TestFixture(test_border_router_add_ipv6_node),
+        new_TestFixture(test_border_router_setup_wired),
+        new_TestFixture(test_border_router_setup_wireless),
     };
 
     EMB_UNIT_TESTCALLER(tests_border_router, NULL, NULL, fixtures);

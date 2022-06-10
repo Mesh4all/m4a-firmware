@@ -39,7 +39,7 @@ int8_t get_wired_iface(void) {
     return -1;
 }
 
-int8_t border_router_setup(ipv6_addr_t addr, uint8_t iface_type) {
+int8_t border_router_setup(ipv6_addr_t addr, uint8_t prefix, uint8_t iface_type) {
     ipv6_addr_t ip;
     int8_t index;
     switch (iface_type) {
@@ -62,13 +62,13 @@ int8_t border_router_setup(ipv6_addr_t addr, uint8_t iface_type) {
         return -1;
     }
     if (ipv6_addr_is_global(&addr)) {
-        if (set_ipv6_global(index, addr) < 0) {
+        if (set_ipv6_global(index, addr, prefix) < 0) {
             return -1;
         }
         return 0;
     }
     if (ipv6_addr_is_multicast(&addr)) {
-        if (set_ipv6_multicast(index, addr) < 0) {
+        if (set_ipv6_multicast(index, addr, prefix) < 0) {
             return -1;
         }
         return 0;
