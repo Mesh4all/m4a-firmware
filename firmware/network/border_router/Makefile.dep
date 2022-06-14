@@ -1,5 +1,3 @@
-
-
 USEMODULE += auto_init_gnrc_netif
 USEMODULE += auto_init_usbus
 USEMODULE += gnrc_icmpv6_echo

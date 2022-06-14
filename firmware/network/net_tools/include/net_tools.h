@@ -59,21 +59,23 @@ int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr);
  * @brief Function to set an ipv6 global address in an iface.
  *
  * @param[in] iface_index  index that will be save the ipv6 address.
- * @param[in] ip Address ipv6 global to set
- * @retval 0 Correctly set up of the @p ip in the interface
- * @retval -1 Couldn't set the @p ip address in the interface
+ * @param[in] ip Address ipv6 global to set.
+ * @param[in] prefix Networks prefix,express the subnet size.
+ * @retval 0 Correctly set up of the @p ip in the interface.
+ * @retval -1 Couldn't set the @p ip address in the interface.
  */
-int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip);
+int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix);
 
 /**
  * @brief Function to set an ipv6 global address in an iface.
  *
  * @param[in] iface_index  index that will be save the ipv6 address.
  * @param[in] ip Address ipv6 multicast to set
+ * @param[in] prefix Networks prefix,express the subnet size.
  * @retval  0 Correctly set up of the @p ip in the interface.
  * @retval -1 Couldn't set the @p ip address in the interface.
  */
-int8_t set_ipv6_multicast(kernel_pid_t iface_index, ipv6_addr_t ip);
+int8_t set_ipv6_multicast(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix);
 
 #ifdef __cplusplus
 }

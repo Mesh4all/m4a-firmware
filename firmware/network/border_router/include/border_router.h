@@ -49,11 +49,11 @@ enum type_iface_t {
  *
  * @param[in] addr       ipv6 address
  * @param[in] iface_type refers to if is used a WIRED or WIRELESS interface.
- *
+ * @param[in] prefix Networks prefix,express the subnet size.
  * @retval 0 Setup Success
  * @retval -1 Setup Failed
  */
-int8_t border_router_setup(ipv6_addr_t addr, uint8_t iface_type);
+int8_t border_router_setup(ipv6_addr_t addr, uint8_t prefix, uint8_t iface_type);
 
 #ifdef __cplusplus
 }
