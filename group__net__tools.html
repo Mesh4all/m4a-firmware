@@ -125,12 +125,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga13a40ea6a36e5a331c54cd72513328e8"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8">get_ipv6_global</a> (kernel_pid_t iface_pid, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> *addr)</td></tr>
 <tr class="memdesc:ga13a40ea6a36e5a331c54cd72513328e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check if exist an ipv6 global unicast.  <a href="group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8">More...</a><br /></td></tr>
 <tr class="separator:ga13a40ea6a36e5a331c54cd72513328e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga786c1a8a5b98cd6ce97217e39848b68b"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#ga786c1a8a5b98cd6ce97217e39848b68b">set_ipv6_global</a> (kernel_pid_t iface_index, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip)</td></tr>
-<tr class="memdesc:ga786c1a8a5b98cd6ce97217e39848b68b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set an ipv6 global address in an iface.  <a href="group__net__tools.html#ga786c1a8a5b98cd6ce97217e39848b68b">More...</a><br /></td></tr>
-<tr class="separator:ga786c1a8a5b98cd6ce97217e39848b68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaac88fbbd81eba916ba9d35d1ee901cd3"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#gaac88fbbd81eba916ba9d35d1ee901cd3">set_ipv6_multicast</a> (kernel_pid_t iface_index, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip)</td></tr>
-<tr class="memdesc:gaac88fbbd81eba916ba9d35d1ee901cd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set an ipv6 global address in an iface.  <a href="group__net__tools.html#gaac88fbbd81eba916ba9d35d1ee901cd3">More...</a><br /></td></tr>
-<tr class="separator:gaac88fbbd81eba916ba9d35d1ee901cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace20d8761a85d3c00ddd6676f49fccd6"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6">set_ipv6_global</a> (kernel_pid_t iface_index, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip, uint8_t prefix)</td></tr>
+<tr class="memdesc:gace20d8761a85d3c00ddd6676f49fccd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set an ipv6 global address in an iface.  <a href="group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6">More...</a><br /></td></tr>
+<tr class="separator:gace20d8761a85d3c00ddd6676f49fccd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a5033ddeef102884053fcf3f8083735"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">set_ipv6_multicast</a> (kernel_pid_t iface_index, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip, uint8_t prefix)</td></tr>
+<tr class="memdesc:ga7a5033ddeef102884053fcf3f8083735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set an ipv6 global address in an iface.  <a href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">More...</a><br /></td></tr>
+<tr class="separator:ga7a5033ddeef102884053fcf3f8083735"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>group of generic functions that could be used in various modules </p>
@@ -179,8 +179,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga786c1a8a5b98cd6ce97217e39848b68b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga786c1a8a5b98cd6ce97217e39848b68b">&#9670;&nbsp;</a></span>set_ipv6_global()</h2>
+<a id="gace20d8761a85d3c00ddd6676f49fccd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace20d8761a85d3c00ddd6676f49fccd6">&#9670;&nbsp;</a></span>set_ipv6_global()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,7 +195,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a>&#160;</td>
-          <td class="paramname"><em>ip</em>&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>prefix</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -209,22 +215,23 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">iface_index</td><td>index that will be save the ipv6 address. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>Address ipv6 global to set </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>Address ipv6 global to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Networks prefix,express the subnet size. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">0</td><td>Correctly set up of the <code>ip</code> in the interface </td></tr>
-    <tr><td class="paramname">-1</td><td>Couldn't set the <code>ip</code> address in the interface </td></tr>
+    <tr><td class="paramname">0</td><td>Correctly set up of the <code>ip</code> in the interface. </td></tr>
+    <tr><td class="paramname">-1</td><td>Couldn't set the <code>ip</code> address in the interface. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="gaac88fbbd81eba916ba9d35d1ee901cd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaac88fbbd81eba916ba9d35d1ee901cd3">&#9670;&nbsp;</a></span>set_ipv6_multicast()</h2>
+<a id="ga7a5033ddeef102884053fcf3f8083735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7a5033ddeef102884053fcf3f8083735">&#9670;&nbsp;</a></span>set_ipv6_multicast()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,7 +246,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a>&#160;</td>
-          <td class="paramname"><em>ip</em>&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>prefix</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -254,6 +267,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">iface_index</td><td>index that will be save the ipv6 address. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>Address ipv6 multicast to set </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Networks prefix,express the subnet size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -274,7 +288,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Jun 9 2022 21:31:09 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue Jun 14 2022 12:51:57 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

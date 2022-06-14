@@ -6,7 +6,7 @@ var searchData=
   ['body_35',['body',['../structhttp__request__t.html#ae588222819f30f56bd2ecdcfb09eb4cc',1,'http_request_t']]],
   ['border_20router_36',['Border router',['../group__border__router.html',1,'']]],
   ['border_5frouter_2eh_37',['border_router.h',['../border__router_8h.html',1,'']]],
-  ['border_5frouter_5fsetup_38',['border_router_setup',['../border__router_8h.html#aa30d548662d8458161306ff86e9b8ca3',1,'border_router.h']]],
+  ['border_5frouter_5fsetup_38',['border_router_setup',['../border__router_8h.html#aad36bca4780c3314802500cc42d49345',1,'border_router.h']]],
   ['btn0_5fmode_39',['BTN0_MODE',['../m4a-24g_2include_2board_8h.html#a904884feea8e03c30c9a85ca6d7a8e5c',1,'BTN0_MODE():&#160;board.h'],['../m4a-mb_2include_2board_8h.html#a904884feea8e03c30c9a85ca6d7a8e5c',1,'BTN0_MODE():&#160;board.h']]],
   ['btn0_5fpin_40',['BTN0_PIN',['../m4a-24g_2include_2board_8h.html#aab5c3eca54046333af52593b9e360270',1,'BTN0_PIN():&#160;board.h'],['../m4a-mb_2include_2board_8h.html#aab5c3eca54046333af52593b9e360270',1,'BTN0_PIN():&#160;board.h']]],
   ['btn0_5fport_41',['BTN0_PORT',['../m4a-24g_2include_2board_8h.html#a9a61388c9e491aec2e44cc03956bb299',1,'BTN0_PORT():&#160;board.h'],['../m4a-mb_2include_2board_8h.html#a9a61388c9e491aec2e44cc03956bb299',1,'BTN0_PORT():&#160;board.h']]],

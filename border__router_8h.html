@@ -128,9 +128,9 @@ $(document).ready(function(){initNavTree('border__router_8h.html',''); initResiz
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa30d548662d8458161306ff86e9b8ca3"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="border__router_8h.html#aa30d548662d8458161306ff86e9b8ca3">border_router_setup</a> (<a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> addr, uint8_t iface_type)</td></tr>
-<tr class="memdesc:aa30d548662d8458161306ff86e9b8ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function init the border router.  <a href="border__router_8h.html#aa30d548662d8458161306ff86e9b8ca3">More...</a><br /></td></tr>
-<tr class="separator:aa30d548662d8458161306ff86e9b8ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad36bca4780c3314802500cc42d49345"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="border__router_8h.html#aad36bca4780c3314802500cc42d49345">border_router_setup</a> (<a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> addr, uint8_t prefix, uint8_t iface_type)</td></tr>
+<tr class="memdesc:aad36bca4780c3314802500cc42d49345"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function init the border router.  <a href="border__router_8h.html#aad36bca4780c3314802500cc42d49345">More...</a><br /></td></tr>
+<tr class="separator:aad36bca4780c3314802500cc42d49345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab65fb432d899c9369bad95c48875b667"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="border__router_8h.html#ab65fb432d899c9369bad95c48875b667">type_iface_t</a> { <a class="el" href="border__router_8h.html#ab65fb432d899c9369bad95c48875b667a6e43a6b7ef8ac56cf4f8d4eebf8b4f6b">WIRED_INTERFACE</a> = 0, 
 <a class="el" href="border__router_8h.html#ab65fb432d899c9369bad95c48875b667a946e162d83d7a3cc25134a12b96f606a">WIRELESS_INTERFACE</a>
  }</td></tr>
@@ -168,8 +168,8 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa30d548662d8458161306ff86e9b8ca3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa30d548662d8458161306ff86e9b8ca3">&#9670;&nbsp;</a></span>border_router_setup()</h2>
+<a id="aad36bca4780c3314802500cc42d49345"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad36bca4780c3314802500cc42d49345">&#9670;&nbsp;</a></span>border_router_setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,6 +179,12 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
           <td>(</td>
           <td class="paramtype"><a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a>&#160;</td>
           <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>prefix</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -199,7 +205,8 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>ipv6 address </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">iface_type</td><td>refers to if is used a WIRED or WIRELESS interface.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">iface_type</td><td>refers to if is used a WIRED or WIRELESS interface. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Networks prefix,express the subnet size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -221,7 +228,7 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_6959c24ee99bf4342b45a1be156369cb.html">border_router</a></li><li class="navelem"><a class="el" href="dir_65e48d3ce10046cbbe59efdcb9f11a13.html">include</a></li><li class="navelem"><a class="el" href="border__router_8h.html">border_router.h</a></li>
-    <li class="footer">Generated on Thu Jun 9 2022 21:31:09 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue Jun 14 2022 12:51:57 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
