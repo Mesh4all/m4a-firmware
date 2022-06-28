@@ -2,9 +2,25 @@
 @defgroup udp_client Udp Client
 @ingroup  network
 
-### What goes here?
+### Udp Client
+
+UDP is the abbreviation of User Datagram Protocol. UDP makes use of Internet Protocol of the TCP/IP suit.
+In communications using UDP, a client program sends a message packet to a destination server where in the
+destination server also runs on UDP.
+UDP is commonly used in time-sensitive communications where occasionally dropping packets is better than waiting.
+Voice and video traffic are sent using this protocol because they are both time-sensitive and designed to handle
+some level of loss. For example VOIP (voice over IP), which is used by many internet-based telephone services,
+operates over UDP. This is because a staticy phone conversation is preferable to one that is crystal clear but
+heavily delayed.
+
+An Udp client makes request to a server that works under UDP protocol, once the request is processed the server response to the client.
 
 This module is used to set an udp client. The function ``` udp_send ``` is used to send the sensors values specifying port,
-address to which the message will be sent, the message (parameter) and the size of the message.
+address to which the message will be sent, the message (parameter) and the size of the message. also could be used to send a string or byte array
+to process a group of data.
+
+An Udp client doesn't needs listen a response, an udp client could be a data collector. sending constantly times a group of data to the server Udp.
+
+@image html udp_client_image.drawio.png Udp Client model as a data collector width=70%
 
 */

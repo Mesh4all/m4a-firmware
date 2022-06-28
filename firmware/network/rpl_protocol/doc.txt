@@ -2,14 +2,14 @@
 @defgroup rpl_protocol RPL protocol module
 @ingroup  network
 
-### What goes here?
+### RPL (Routing Protocol in Low Power and Lossy Networks)
 
 In this module you will find the functions to start RPL and add a node dodag (Root)
 or dag (Slave) first RPL is initialized then it is verifies if the node is dodag or dag and
 they are started an ipv6 is added where the dodag will be hosted one Once the dodag is started,
 the DAG RIOT node is in charge of executing the entire routing process.
 
-### How's work RPL protocol
+### How's work RPL protocol?
 
 the RPL protocol is quite complex in this document we will try to explain it as simple to understand as possible.
 

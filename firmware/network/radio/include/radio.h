@@ -16,7 +16,7 @@
 
 /**
  * @{
- * @ingroup     network
+ * @ingroup     radio_module
  * @file        radio.h
  * @brief       this module content all functions of radio
  * @author      xkevin190 <kevinvelasco193@gmail.com.com>
@@ -35,13 +35,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-/* These Params should be Set in IEEE802154.H
- *
- * Take a list to every specific radio driver to check
- * hardware limitations to change TX_POWER
- *
- */
 
 /**
  * @brief This function it's to get index of an IEEE802.15.4 interface

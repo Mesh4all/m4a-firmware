@@ -16,7 +16,7 @@
 
 /**
  * @{
- * @ingroup     network
+ * @ingroup     radio_module
  * @file        radio_params.h
  * @brief       this module content all params to set the radio
  * @author      xkevin190 <kevinvelasco193@gmail.com.com>
@@ -35,16 +35,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-/**
- * @brief  Drivers Params List
- *
- * | Driver    |TX_POWER_MIN (dBm) | TX_POWER_MAX (dBm)|
- * |:---------:|:-----------------:|:-----------------:|
- * | at86rf215 |       -28         |         +3        |
- * | at86rf233 |       -17         |         +4        |
- * | cc2538    |       -24         |         +7        |
- */
 
 #ifdef MODULE_AT86RF233
 #define TX_POWER_MAX (4)

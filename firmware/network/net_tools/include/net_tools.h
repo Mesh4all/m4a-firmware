@@ -20,8 +20,8 @@
  */
 
 /**
- * @defgroup    net_tools Network tools
- * @ingroup     network
+ * @defgroup    net_tools net_tools
+ * @ingroup     network_net_tools
  * @brief       group of generic functions that could be used in various modules
  *
  * @{
@@ -43,6 +43,14 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+/**
+ * @brief Function to check if exist a wired interface
+ *
+ * @retval returns the index of the network interface.
+ * @retval -1 when the interface doesn't exist
+ */
+int8_t get_wired_iface(void);
 
 /**
  * @brief Function to check if exist an ipv6 global unicast

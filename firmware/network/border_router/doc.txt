@@ -2,21 +2,23 @@
 @defgroup border_router Border router
 @ingroup  network
 
-### What goes here?
+### Border Router
 
 This module is used to set up a border router using the USB CDC ECM. The module
-sets ipv6 address to host.
+sets an ipv6 address in a wireless or wired interface.
 
 Eg: This code setup address "2001:db8:1::2" to host.
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ipv6_addr_t address = {
         .u8 = {0},
     };
     ipv6_addr_from_str(&address,"2001:db8:1::2");
-    border_router_ipv6_config(_UNICAST,&address);
+    border_router_setup(address, 64. WIRED_INTERFACE)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TO DO: set ipv6 address to the node.
+@note: the param prefix (in the example is 64) is to known the prefix of the network,
+This could be useful to subnet in ipv6 generally it's a prefix length between 128 and 64
 
 # Network configuration for the border router
 
@@ -68,24 +70,6 @@ To test. Run from host:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ ping6 <ipv6_address> -c3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# Network: added setting of wireless node to border router
-
-Within the border_router_add_ipv6_node function, the border router is configured
-by adding the ipv6 in the wireless
-
-Note: The Node itself requires no configuration. All configuration happens on The Border Router.
-
-- The first step is add an IPv6 address to the wireless interface of The Border Router.
-
-- The second step to take is to initialize the RPL routing protocol to enable multi-hop networking with the
-rpl_protocol using the function ``` rpl_init ```.
-
-- In the next step, the following command added new RPL DODAG ``` gnrc_rpl_dodag_root ```, with the instance ID = CONFIG_DODAG_INSTANCE.
-
-Note: With these two actions, RPL is active on The Border Router and should transmit DODAG Information Objects.
-
-The Node should receive the DODAG Information Objects from The Border Router and should configure an address based on the prefix
 
 ## Border router diagram
 
