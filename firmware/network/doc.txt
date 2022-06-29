@@ -2,16 +2,31 @@
 @defgroup network Network module
 @ingroup  m4a-firmware
 
-### What goes here?
-Specific documentation for our reference network;
-In the next module you can find:
+### Network Modules group
 
-### udp_client
+Here it's all modules and components required to manage and connect all device to the network.
+Here could be found all relationated with settings of internet protocols under ipv6, the propose
+to works under ipv6 is extend a big group of device in various mesh networks. this capacity is not
+completed supported in ipv4.
+The network group has all required functions to manage the network options, and the routing params
+to create a network.
 
-In this module is used to send the sensors values.
+Here's some modules from this group:
 
-### udp_server
+- @ref border_router : Establish a connection between a host device and the wireless nodes in a network, Also a device could be its
+wired interface connected to internet an provided it to others wireless nodes.
 
-In this module is used to get the sensor values.
+- @ref Chamos : It's an integration of an udp server, with the propose to works as a network protocol.
+
+- @ref net_tools : Group of elements required to get an specify interface and set the ipv6 address in a device.
+
+- @ref radio_module : Contains all params to set the wireless devices that works with IEEE802.15.4 standards, zigbee and 6lowpan.
+
+- @ref rpl_protocol : Module dedicated to manage the routing protocol to Low compsuption devices.
+
+- @ref udp_client : module to connect a device as an udp_client to an udp_server, This could sends data and wait or not a response
+
+- @ref udp_server : module to establish a device as udp server, this could recolect data or attends request from various clients, that's will
+depends to the offered service.
 
 */

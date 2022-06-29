@@ -23,10 +23,9 @@
 #include <stdio.h>
 #include "net/sock/udp.h"
 #include "net/ipv6/addr.h"
-#include "thread.h"
 #include "udp_client.h"
 
-int udp_send(int *port, char *address, uint8_t *message, size_t *payload_len) {
+int udp_send(const int port, char *address, uint8_t *message, size_t *payload_len) {
     int res;
     sock_udp_ep_t remote = {.family = AF_INET6};
 
@@ -39,7 +38,7 @@ int udp_send(int *port, char *address, uint8_t *message, size_t *payload_len) {
         gnrc_netif_t *netif = gnrc_netif_iter(NULL);
         remote.netif = (uint16_t)netif->pid;
     }
-    remote.port = *port;
+    remote.port = port;
     if ((res = sock_udp_send(NULL, message, *payload_len, &remote)) < 0) {
         puts("could not send");
     } else {

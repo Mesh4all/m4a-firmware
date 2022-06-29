@@ -25,20 +25,6 @@
 #include "radio.h"
 #include "net_tools.h"
 
-int8_t get_wired_iface(void) {
-    int max_ifaces = gnrc_netif_numof();
-    if (max_ifaces > 0) {
-        gnrc_netif_t *iface;
-        iface = gnrc_netif_get_by_type(NETDEV_ANY, NETDEV_INDEX_ANY);
-        if (iface != NULL) {
-            return iface->pid;
-        } else {
-            return -1;
-        }
-    }
-    return -1;
-}
-
 int8_t border_router_setup(ipv6_addr_t addr, uint8_t prefix, uint8_t iface_type) {
     ipv6_addr_t ip;
     int8_t index;

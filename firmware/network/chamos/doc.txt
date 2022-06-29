@@ -2,7 +2,7 @@
 @defgroup Chamos Chamos
 @ingroup  network
 
-## What goes here?
+## CHAMOS
 
 The module CHAMOS (Communication Handler for Addressing Management | Origin Server) It's used for server-side communication for nib routing table.
 This module also works with the \ref chamoc . this will let you generate a `MSG_NIB_ADD` or `MSG_NIB_DEL` request via local host (Linux) and
@@ -10,7 +10,7 @@ start an intercommunication between a pc and the m4a-24g board.
 
 ### This module contains:
 
-- Turning on UDP socked.
+- Turning on UDP socket.
 - Receive the message.
 - Process the message and adding it to NIB.
 - Send the ack and the nack message to the client.

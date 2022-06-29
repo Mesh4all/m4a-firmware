@@ -37,6 +37,20 @@
 #include "net/ipv6/addr.h"
 #include "net/gnrc/netif.h"
 
+int8_t get_wired_iface(void) {
+    int max_ifaces = gnrc_netif_numof();
+    if (max_ifaces > 0) {
+        gnrc_netif_t *iface;
+        iface = gnrc_netif_get_by_type(NETDEV_ANY, NETDEV_INDEX_ANY);
+        if (iface != NULL) {
+            return iface->pid;
+        } else {
+            return -1;
+        }
+    }
+    return -1;
+}
+
 int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr) {
     ipv6_addr_t ipv6[CONFIG_GNRC_NETIF_IPV6_ADDRS_NUMOF];
     netif_t *iface = netif_get_by_id(iface_pid);
@@ -101,5 +115,3 @@ int8_t set_ipv6_multicast(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t pref
     }
     return 0;
 }
-
-/* Implementation of the module */

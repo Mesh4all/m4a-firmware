@@ -1,0 +1,60 @@
+/**
+
+@defgroup radio_module Radio Module
+@ingroup  network
+
+### Radio
+
+In this module are all low power and low consumption wireless device,
+it can find devices based on the zigbee and 6lowpan protocols,
+In addition to that, these devices can follow the guidelines established in
+the IEEE802.14.5 standard.
+
+The module works in the physical layer of the 802.15.4, to manage all settings
+as the power transmission, the channel of the wireless networks that is upper to 2.4 GHz
+it's between the range of 11 to 26 and in the case of the radio device is multiband.
+you could works in the band under to 2.4GHz these channels are between 0 and 10.
+
+The functionalities of the radio module allow to obtain and configure the characteristics of
+the wireless networkInterface. This allows knowing the current state of the physical
+configuration and manipulating it to obtain the better optimization.
+
+The radio module includes a kconfig setup, this means to could be obtained an statically setup
+of any device, also the kconfig, and the module it's adjusted to the specified device. this features
+are provided by the following table:
+
+ | Driver    |TX_POWER_MIN (dBm) | TX_POWER_MAX (dBm)|Dual band | channel range ||
+ |:---------:|:-----------------:|:-----------------:|:--------:|:-------------:|:------:|
+ |           |                   |                   |          |Sub 2.4 GHz    | 2.4GHz |
+ | at86rf215 |       -28         |         +3        |yes       |0 - 10         | 11 -26 |
+ | at86rf233 |       -17         |         +4        |no        |xxxxxxx        | ^      |
+ | cc2538    |       -24         |         +7        |no        |xxxxxxx        | ^      |
+
+### getting an specify interface
+
+when you needs know what wireless interface require to get o set its features
+you need use `get_ieee802154_iface(void)` this returns the index of an radio
+device, an example is the at86rf233.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.c}
+get_ieee802154_iface(void)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@note When it's used the at86rf215 you could has two network device.
+
+### Getting and setting transmission power
+Basic setup to get and set the transmission power of a radio device.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.c}
+get_netopt_tx_power(int16_t txpower) // get the current TX_POWER of the radio device
+set_netopt_tx_power(int16_t txpower) // set TX_POWER within of the radio device TX_POWER limits
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+### Getting and setting band channel
+Basic setup to get and set the band channel of a radio device.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.c}
+get_netopt_channel(int16_t channel) // get the current operative channel
+set_netopt_channel(int16_t channel) /* sets the operative channel upper or under of 2.4 GHz
+band, depending to the radio device if is multiband or not.*/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*/
