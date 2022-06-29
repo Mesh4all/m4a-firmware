@@ -35,10 +35,10 @@ int main(void) {
     while (1) {
         get_temperature_value(&temp);
         printf("Temperature: ");
-        if (temp < 0) {
-            printf("- ");
+        if ((temp < 0) && (temp > -100)) {
+            printf("-");
         }
-        printf("%d,%d °C\n", temp / 100, temp % 100);
+        printf("%d,%d °C\n", temp / 100, (uint16_t)temp % 100);
         if (temp > 2600) {
             gpio_write(LED0_PIN, 0);
         } else {
