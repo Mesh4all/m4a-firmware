@@ -119,14 +119,15 @@ Files</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h3><a class="anchor" id="autotoc_md41"></a>
-What goes here?</h3>
-<p>This module is used to set up a border router using the USB CDC ECM. The module sets ipv6 address to host.</p>
-<p>Eg: This code setup address "2001:db8:1::2" to host. </p><div class="fragment"><div class="line"><a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> address = {</div>
+Border Router</h3>
+<p>This module is used to set up a border router using the USB CDC ECM. The module sets an ipv6 address in a wireless or wired interface.</p>
+<p>Eg: This code setup address "2001:db8:1::2" to host.</p>
+<div class="fragment"><div class="line"><a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> address = {</div>
 <div class="line">        .u8 = {0},</div>
 <div class="line">    };</div>
 <div class="line">    ipv6_addr_from_str(&amp;address,<span class="stringliteral">&quot;2001:db8:1::2&quot;</span>);</div>
-<div class="line">    border_router_ipv6_config(_UNICAST,&amp;address);</div>
-</div><!-- fragment --><p>TO DO: set ipv6 address to the node.</p>
+<div class="line">    <a class="code" href="border__router_8h.html#aad36bca4780c3314802500cc42d49345">border_router_setup</a>(address, 64. <a class="code" href="border__router_8h.html#ab65fb432d899c9369bad95c48875b667a6e43a6b7ef8ac56cf4f8d4eebf8b4f6b">WIRED_INTERFACE</a>)</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>: the param prefix (in the example is 64) is to known the prefix of the network, This could be useful to subnet in ipv6 generally it's a prefix length between 128 and 64</dd></dl>
 <h1><a class="anchor" id="autotoc_md42"></a>
 Network configuration for the border router</h1>
 <p>Shell commands are provided for a Linux based operating system. macOS should follow similar steps. </p><pre class="fragment">- Commands requiring administrative access are prefixed with #.
@@ -160,36 +161,27 @@ Address configuration</h3>
 </ul>
 <p>To test. Run from host:</p>
 <div class="fragment"><div class="line">$ ping6 &lt;ipv6_address&gt; -c3</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md45"></a>
-Network: added setting of wireless node to border router</h1>
-<p>Within the border_router_add_ipv6_node function, the border router is configured by adding the ipv6 in the wireless</p>
-<p>Note: The Node itself requires no configuration. All configuration happens on The Border Router.</p>
-<ul>
-<li>The first step is add an IPv6 address to the wireless interface of The Border Router.</li>
-<li>The second step to take is to initialize the RPL routing protocol to enable multi-hop networking with the rpl_protocol using the function <code>rpl_init</code>.</li>
-<li>In the next step, the following command added new RPL DODAG <code>gnrc_rpl_dodag_root</code>, with the instance ID = CONFIG_DODAG_INSTANCE.</li>
-</ul>
-<p>Note: With these two actions, RPL is active on The Border Router and should transmit DODAG Information Objects.</p>
-<p>The Node should receive the DODAG Information Objects from The Border Router and should configure an address based on the prefix</p>
-<h2><a class="anchor" id="autotoc_md46"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md45"></a>
 Border router diagram</h2>
 <p>This diagram shows the struct connection between the border router and a RPL network.</p>
 <div class="image">
 <img src="border_router_diagram.png" alt="" width="40%"/>
 <div class="caption">
 Border router connection with RPL network </div></div>
-<h3><a class="anchor" id="autotoc_md47"></a>
+<h3><a class="anchor" id="autotoc_md46"></a>
 How this struct works?</h3>
 <p>The border router is connected to an external network (Host) which is connected to the internet. Through this connection it links the nodes using RPL protocol. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aunionipv6__addr__t_html"><div class="ttname"><a href="unionipv6__addr__t.html">ipv6_addr_t</a></div><div class="ttdoc">model of an ipv6 address</div><div class="ttdef"><b>Definition:</b> <a href="chamoc__msg_8h_source.html#l00050">chamoc_msg.h:50</a></div></div>
+<div class="ttc" id="aborder__router_8h_html_aad36bca4780c3314802500cc42d49345"><div class="ttname"><a href="border__router_8h.html#aad36bca4780c3314802500cc42d49345">border_router_setup</a></div><div class="ttdeci">int8_t border_router_setup(ipv6_addr_t addr, uint8_t prefix, uint8_t iface_type)</div><div class="ttdoc">This function init the border router.</div></div>
+<div class="ttc" id="aborder__router_8h_html_ab65fb432d899c9369bad95c48875b667a6e43a6b7ef8ac56cf4f8d4eebf8b4f6b"><div class="ttname"><a href="border__router_8h.html#ab65fb432d899c9369bad95c48875b667a6e43a6b7ef8ac56cf4f8d4eebf8b4f6b">WIRED_INTERFACE</a></div><div class="ttdeci">@ WIRED_INTERFACE</div><div class="ttdef"><b>Definition:</b> <a href="border__router_8h_source.html#l00042">border_router.h:42</a></div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 14 2022 12:51:57 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Jun 29 2022 04:19:50 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

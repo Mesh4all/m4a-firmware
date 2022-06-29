@@ -105,8 +105,7 @@ $(document).ready(function(){initNavTree('group__network.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a> &#124;
-<a href="#files">Files</a>  </div>
+<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
 <div class="title">Network module<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a></div></div>  </div>
 </div><!--header-->
@@ -118,35 +117,31 @@ Modules</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:group__Chamos"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Chamos.html">Chamos</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:group__net__tools"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html">Network tools</a></td></tr>
-<tr class="memdesc:group__net__tools"><td class="mdescLeft">&#160;</td><td class="mdescRight">group of generic functions that could be used in various modules <br /></td></tr>
+<tr class="memitem:group__network__net__tools"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__network__net__tools.html">Network Tools</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:group__rpl__protocol"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rpl__protocol.html">RPL protocol module</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__radio__module"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radio__module.html">Radio Module</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:group__udp__client"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__udp__client.html">Udp Client</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:group__udp__server"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__udp__server.html">Udp server</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:radio_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="radio_8h.html">radio.h</a></td></tr>
-<tr class="memdesc:radio_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">this module content all functions of radio <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:radio__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="radio__params_8h.html">radio_params.h</a></td></tr>
-<tr class="memdesc:radio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">this module content all params to set the radio <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h3><a class="anchor" id="autotoc_md51"></a>
-What goes here?</h3>
-<p>Specific documentation for our reference network; In the next module you can find:</p>
-<h3><a class="anchor" id="autotoc_md52"></a>
-udp_client</h3>
-<p>In this module is used to send the sensors values.</p>
-<h3><a class="anchor" id="autotoc_md53"></a>
-udp_server</h3>
-<p>In this module is used to get the sensor values. </p>
+<h3><a class="anchor" id="autotoc_md50"></a>
+Network Modules group</h3>
+<p>Here it's all modules and components required to manage and connect all device to the network. Here could be found all relationated with settings of internet protocols under ipv6, the propose to works under ipv6 is extend a big group of device in various mesh networks. this capacity is not completed supported in ipv4. The network group has all required functions to manage the network options, and the routing params to create a network.</p>
+<p>Here's some modules from this group:</p>
+<ul>
+<li><a class="el" href="group__border__router.html">Border router</a> : Establish a connection between a host device and the wireless nodes in a network, Also a device could be its wired interface connected to internet an provided it to others wireless nodes.</li>
+<li><a class="el" href="group__Chamos.html">Chamos</a> : It's an integration of an udp server, with the propose to works as a network protocol.</li>
+<li><a class="el" href="group__net__tools.html">net_tools</a> : Group of elements required to get an specify interface and set the ipv6 address in a device.</li>
+<li><a class="el" href="group__radio__module.html">Radio Module</a> : Contains all params to set the wireless devices that works with IEEE802.15.4 standards, zigbee and 6lowpan.</li>
+<li><a class="el" href="group__rpl__protocol.html">RPL protocol module</a> : Module dedicated to manage the routing protocol to Low compsuption devices.</li>
+<li><a class="el" href="group__udp__client.html">Udp Client</a> : module to connect a device as an udp_client to an udp_server, This could sends data and wait or not a response</li>
+<li><a class="el" href="group__udp__server.html">Udp server</a> : module to establish a device as udp server, this could recolect data or attends request from various clients, that's will depends to the offered service. </li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
@@ -154,7 +149,7 @@ udp_server</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 14 2022 12:51:57 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Jun 29 2022 04:19:50 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

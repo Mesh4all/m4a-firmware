@@ -14,8 +14,9 @@ var searchData=
   ['get_5fwap_5fpass_115',['GET_WAP_PASS',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a96a7069e64c5572b6dfbb789e6ecf088',1,'at_client.h']]],
   ['get_5fwap_5fssid_116',['GET_WAP_SSID',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217af1c81ad5b69d925bcba3c3f19e538ccb',1,'at_client.h']]],
   ['get_5fwifi_5fmode_117',['GET_WIFI_MODE',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217ac99c3404291d58786be0ea20d961a976',1,'at_client.h']]],
-  ['get_5fwsta_5fpass_118',['GET_WSTA_PASS',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217af0226899deae74826aa531874d90f844',1,'at_client.h']]],
-  ['get_5fwsta_5fssid_119',['GET_WSTA_SSID',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a9c1a8da150f697e0e066dad26b508123',1,'at_client.h']]],
-  ['gnrc_5frpl_5fdodag_5froot_120',['gnrc_rpl_dodag_root',['../group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7',1,'rpl_protocol.h']]],
-  ['gpio_5fparams_2eh_121',['gpio_params.h',['../m4a-24g_2include_2gpio__params_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2gpio__params_8h.html',1,'(Global Namespace)']]]
+  ['get_5fwired_5fiface_118',['get_wired_iface',['../group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac',1,'net_tools.h']]],
+  ['get_5fwsta_5fpass_119',['GET_WSTA_PASS',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217af0226899deae74826aa531874d90f844',1,'at_client.h']]],
+  ['get_5fwsta_5fssid_120',['GET_WSTA_SSID',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a9c1a8da150f697e0e066dad26b508123',1,'at_client.h']]],
+  ['gnrc_5frpl_5fdodag_5froot_121',['gnrc_rpl_dodag_root',['../group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7',1,'rpl_protocol.h']]],
+  ['gpio_5fparams_2eh_122',['gpio_params.h',['../m4a-24g_2include_2gpio__params_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2gpio__params_8h.html',1,'(Global Namespace)']]]
 ];

@@ -135,36 +135,29 @@ $(document).ready(function(){initNavTree('radio_8h_source.html',''); initResizab
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/* These Params should be Set in IEEE802154.H</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * Take a list to every specific radio driver to check</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * hardware limitations to change TX_POWER</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;int8_t <a class="code" href="radio_8h.html#a8f65fd87e59ef58e93e938a0457212d2">get_ieee802154_iface</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;int8_t <a class="code" href="radio_8h.html#a8f65fd87e59ef58e93e938a0457212d2">get_ieee802154_iface</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;int8_t <a class="code" href="radio_8h.html#a907834f2e7b62365d4157dceb87a6921">get_netopt_tx_power</a>(int16_t txpower);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;int8_t <a class="code" href="radio_8h.html#a9a36bee0f42f69363673f6beb6d9543f">get_netopt_channel</a>(int16_t channel);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;int8_t <a class="code" href="radio_8h.html#a9e854649463b645972ceb24bfc547fa4">set_netopt_channel</a>(int16_t channel);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;int8_t <a class="code" href="radio_8h.html#abb304f7a0a65383b7f118537bd7d4e86">set_netopt_tx_power</a>(int16_t txpower);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;int8_t <a class="code" href="radio_8h.html#acdadebd93fa810375ab2917ab18ece5b">initial_radio_setup</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;int8_t <a class="code" href="radio_8h.html#a8a2341e339a4ae5338c4c2f648ef6abc">set_sleep_interface</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;int8_t <a class="code" href="radio_8h.html#a59970ec02b8d3c93ecb6892ccf17c120">set_awake_interface</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="radio_8h.html#a19f78651c860b0ba873b530876f75875">identify_multiple_radio_interface</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RADIO_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;int8_t <a class="code" href="radio_8h.html#a907834f2e7b62365d4157dceb87a6921">get_netopt_tx_power</a>(int16_t txpower);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;int8_t <a class="code" href="radio_8h.html#a9a36bee0f42f69363673f6beb6d9543f">get_netopt_channel</a>(int16_t channel);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;int8_t <a class="code" href="radio_8h.html#a9e854649463b645972ceb24bfc547fa4">set_netopt_channel</a>(int16_t channel);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;int8_t <a class="code" href="radio_8h.html#abb304f7a0a65383b7f118537bd7d4e86">set_netopt_tx_power</a>(int16_t txpower);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;int8_t <a class="code" href="radio_8h.html#acdadebd93fa810375ab2917ab18ece5b">initial_radio_setup</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;int8_t <a class="code" href="radio_8h.html#a8a2341e339a4ae5338c4c2f648ef6abc">set_sleep_interface</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;int8_t <a class="code" href="radio_8h.html#a59970ec02b8d3c93ecb6892ccf17c120">set_awake_interface</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="radio_8h.html#a19f78651c860b0ba873b530876f75875">identify_multiple_radio_interface</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* RADIO_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aradio_8h_html_a8f65fd87e59ef58e93e938a0457212d2"><div class="ttname"><a href="radio_8h.html#a8f65fd87e59ef58e93e938a0457212d2">get_ieee802154_iface</a></div><div class="ttdeci">int8_t get_ieee802154_iface(void)</div><div class="ttdoc">This function it's to get index of an IEEE802.15.4 interface.</div></div>
@@ -183,7 +176,7 @@ $(document).ready(function(){initNavTree('radio_8h_source.html',''); initResizab
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_398e48b4c725ee316dc32d6213e0ce70.html">radio</a></li><li class="navelem"><a class="el" href="dir_b96ff864e8352457c992907288d93b13.html">include</a></li><li class="navelem"><a class="el" href="radio_8h.html">radio.h</a></li>
-    <li class="footer">Generated on Tue Jun 14 2022 12:51:57 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Jun 29 2022 04:19:50 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

@@ -142,22 +142,25 @@ $(document).ready(function(){initNavTree('net__tools_8h_source.html',''); initRe
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;int8_t <a class="code" href="group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8">get_ipv6_global</a>(kernel_pid_t iface_pid, <a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> *addr);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;int8_t <a class="code" href="group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6">set_ipv6_global</a>(kernel_pid_t iface_index, <a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip, uint8_t prefix);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;int8_t <a class="code" href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">set_ipv6_multicast</a>(kernel_pid_t iface_index, <a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip, uint8_t prefix);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* NET_TOOLS_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;int8_t <a class="code" href="group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac">get_wired_iface</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;int8_t <a class="code" href="group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8">get_ipv6_global</a>(kernel_pid_t iface_pid, <a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> *addr);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;int8_t <a class="code" href="group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6">set_ipv6_global</a>(kernel_pid_t iface_index, <a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip, uint8_t prefix);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;int8_t <a class="code" href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">set_ipv6_multicast</a>(kernel_pid_t iface_index, <a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip, uint8_t prefix);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* NET_TOOLS_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aunionipv6__addr__t_html"><div class="ttname"><a href="unionipv6__addr__t.html">ipv6_addr_t</a></div><div class="ttdoc">model of an ipv6 address</div><div class="ttdef"><b>Definition:</b> <a href="chamoc__msg_8h_source.html#l00050">chamoc_msg.h:50</a></div></div>
 <div class="ttc" id="agroup__net__tools_html_gace20d8761a85d3c00ddd6676f49fccd6"><div class="ttname"><a href="group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6">set_ipv6_global</a></div><div class="ttdeci">int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix)</div><div class="ttdoc">Function to set an ipv6 global address in an iface.</div></div>
+<div class="ttc" id="agroup__net__tools_html_gaae4a447cac40d71c1acb8c62cf76b9ac"><div class="ttname"><a href="group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac">get_wired_iface</a></div><div class="ttdeci">int8_t get_wired_iface(void)</div><div class="ttdoc">Function to check if exist a wired interface.</div></div>
 <div class="ttc" id="agroup__net__tools_html_ga13a40ea6a36e5a331c54cd72513328e8"><div class="ttname"><a href="group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8">get_ipv6_global</a></div><div class="ttdeci">int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr)</div><div class="ttdoc">Function to check if exist an ipv6 global unicast.</div></div>
 <div class="ttc" id="agroup__net__tools_html_ga7a5033ddeef102884053fcf3f8083735"><div class="ttname"><a href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">set_ipv6_multicast</a></div><div class="ttdeci">int8_t set_ipv6_multicast(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix)</div><div class="ttdoc">Function to set an ipv6 global address in an iface.</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
@@ -166,7 +169,7 @@ $(document).ready(function(){initNavTree('net__tools_8h_source.html',''); initRe
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_3b7b4d98beba3e5575b74a42e3ca6ba8.html">net_tools</a></li><li class="navelem"><a class="el" href="dir_efe9328ce5bf8ce1f09ce3b2d5d96a25.html">include</a></li><li class="navelem"><a class="el" href="net__tools_8h.html">net_tools.h</a></li>
-    <li class="footer">Generated on Tue Jun 14 2022 12:51:57 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Jun 29 2022 04:19:50 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

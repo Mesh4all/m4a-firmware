@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"group__wifi__component.html#ga31d0fb01150610898c219b4830b5cf06":[3,5,3,10],
+"group__wifi__component.html#ga3ed63af70f933fc84a48a117e8b18a2b":[3,5,3,20],
+"group__wifi__component.html#ga3f8d68538fee1a7197fef3e2950c13b5":[3,5,3,21],
+"group__wifi__component.html#ga57185cea2eafd10769f6e9c2601ad10c":[3,5,3,5],
 "group__wifi__component.html#ga62dd61f1998b38a9290d07e1fd1f4736":[3,5,3,14],
 "group__wifi__component.html#ga6fb2514844e644b2be3ec4dc01b8051d":[3,5,3,12],
 "group__wifi__component.html#ga74a201f88597a59e4c3b42210febad34":[3,5,3,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "structchamos__msg__t.html#ad679b6e8a74fa283c723bb81f22d59d5":[4,0,4,3],
 "structhttp__request__t.html":[4,0,5],
 "structhttp__request__t.html#a7fefa3ee0e4eeadc81726ff076bded96":[4,0,5,4],
-"structhttp__request__t.html#a961bd4658a3f1488bd69a9e383fb6cab":[4,0,5,2],
-"structhttp__request__t.html#ac890b2253f17bbbe698cab1aa0c18ecb":[4,0,5,1],
-"structhttp__request__t.html#adf8e2dd4010ba498cffd3bb9c7fd1bab":[4,0,5,3],
-"structhttp__request__t.html#ae588222819f30f56bd2ecdcfb09eb4cc":[4,0,5,0],
-"structhttp__response__t.html":[4,0,6]
+"structhttp__request__t.html#a961bd4658a3f1488bd69a9e383fb6cab":[4,0,5,2]
 };

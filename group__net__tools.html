@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: Network tools</title>
+    <title>Mesh4all: net_tools</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('group__net__tools.html',''); initResiz
 <a href="#files">Files</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Network tools<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__network.html">Network module</a></div></div>  </div>
+<div class="title">net_tools<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__network.html">Network module</a> &raquo; <a class="el" href="group__network__net__tools.html">Network Tools</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -122,6 +122,9 @@ Files</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gaae4a447cac40d71c1acb8c62cf76b9ac"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac">get_wired_iface</a> (void)</td></tr>
+<tr class="memdesc:gaae4a447cac40d71c1acb8c62cf76b9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check if exist a wired interface.  <a href="group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac">More...</a><br /></td></tr>
+<tr class="separator:gaae4a447cac40d71c1acb8c62cf76b9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga13a40ea6a36e5a331c54cd72513328e8"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8">get_ipv6_global</a> (kernel_pid_t iface_pid, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> *addr)</td></tr>
 <tr class="memdesc:ga13a40ea6a36e5a331c54cd72513328e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check if exist an ipv6 global unicast.  <a href="group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8">More...</a><br /></td></tr>
 <tr class="separator:ga13a40ea6a36e5a331c54cd72513328e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,6 +176,33 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname">0</td><td>if exist an ipv6 address and saves the located address in <code>addr</code> </td></tr>
     <tr><td class="paramname">-1</td><td>when the interface doesn't have an unicast global address </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaae4a447cac40d71c1acb8c62cf76b9ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaae4a447cac40d71c1acb8c62cf76b9ac">&#9670;&nbsp;</a></span>get_wired_iface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t get_wired_iface </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to check if exist a wired interface. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">returns</td><td>the index of the network interface. </td></tr>
+    <tr><td class="paramname">-1</td><td>when the interface doesn't exist </td></tr>
   </table>
   </dd>
 </dl>
@@ -288,7 +318,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 14 2022 12:51:57 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Jun 29 2022 04:19:50 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
