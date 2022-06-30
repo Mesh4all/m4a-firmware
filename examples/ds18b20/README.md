@@ -9,7 +9,7 @@ Follow the next steps:
 ### Go to the example folder
 
 ```sh
-cd examples/esp-wroom32/ds18b20
+cd examples/ds18b20
 ```
 
 ### Compile your code and flash it

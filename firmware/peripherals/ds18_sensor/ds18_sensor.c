@@ -24,8 +24,6 @@
 #include "board.h"
 
 ds18_t thermo;
-int error_count = 0;
-int max_errors = 10;
 
 int init_temperature_sensor (int pin)
 {
