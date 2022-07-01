@@ -2,16 +2,28 @@
 @defgroup    serialization Serialization
 @ingroup     sys
 
-### What goes here?
+### Serialization
 
-Serialization implementation for this will use tinycbor.
+Serialization implementation use a library tinycbor to get and decode a data of the sensors arrived from udp server
+and decodes the message before sending it to udp client.
 
 ### Tinycbor
 
-TinyCBOR is a CBOR encoder and decoder.
+TinyCBOR is a CBOR encoder and decoder library.
+
+The Consice Binary Object Representation (CBOR) is a binary data serialization format.
 
 ### Serialization documentation
 
-This module has a struct used to save the data of the sensor and has two functions: the first one decodes the message
-arrived from udp and the second one decodes the message before sending it to udp client.
+This module has a struct used to save the sensor data with two functions:
+
+- The first one decodes the message arrived from udp server.
+- The second one decodes the message before sending it to udp client.
+
+The data that is considered for this version is:
+
+- Moisture measure
+- Temperature measure
+- Node ID
+
 */

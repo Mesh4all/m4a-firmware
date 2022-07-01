@@ -2,23 +2,32 @@
 @defgroup sys Sys
 @ingroup  m4a-firmware
 
-### What goes here?
-Specific documentation for our reference sys;
-In the next module you can find:
+### Sys
 
-### uniqueid
+In this group you can find:
 
-In this module you can get cpuid address in format IPV6.
+### Uniqueid
 
-### storage
+CPUID address in IPV6 format. You have 3 options to get the unique IPV6 address:
 
-Serialization implementation for this will use tinycbor.
+    - Static
+    - Random
+    - Custom
 
-### serialization
+### Serialization
 
-This module handles udp data.
+Serialization implementation for this will use tinycbor to encode or decode data, this module save data of:
+    - Moisture sensor
+    - Temperature sensor
+    - Node id
 
-### at_client
+### Storage
+
+This module saves data in the flash memory in pages that we can write.
+
+Note: The data could not be greater than 64 bytes.
+
+### At_client
 
 AT command handler to communicate with wifi module.
 
