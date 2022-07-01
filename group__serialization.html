@@ -119,14 +119,25 @@ Files</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h3><a class="anchor" id="autotoc_md74"></a>
-What goes here?</h3>
-<p>Serialization implementation for this will use tinycbor.</p>
+Serialization</h3>
+<p>Serialization implementation use a library tinycbor to get and decode a data of the sensors arrived from udp server and decodes the message before sending it to udp client.</p>
 <h3><a class="anchor" id="autotoc_md75"></a>
 Tinycbor</h3>
-<p>TinyCBOR is a CBOR encoder and decoder.</p>
+<p>TinyCBOR is a CBOR encoder and decoder library.</p>
+<p>The Consice Binary Object Representation (CBOR) is a binary data serialization format.</p>
 <h3><a class="anchor" id="autotoc_md76"></a>
 Serialization documentation</h3>
-<p>This module has a struct used to save the data of the sensor and has two functions: the first one decodes the message arrived from udp and the second one decodes the message before sending it to udp client. </p>
+<p>This module has a struct used to save the sensor data with two functions:</p>
+<ul>
+<li>The first one decodes the message arrived from udp server.</li>
+<li>The second one decodes the message before sending it to udp client.</li>
+</ul>
+<p>The data that is considered for this version is:</p>
+<ul>
+<li>Moisture measure</li>
+<li>Temperature measure</li>
+<li>Node ID </li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
@@ -134,7 +145,7 @@ Serialization documentation</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Jun 30 2022 23:49:14 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Fri Jul 1 2022 18:45:31 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
