@@ -1,0 +1,18 @@
+choice
+    prompt "ADC_VREF"
+
+config ADC_VREF_DEFAULT
+    bool "Default ADC Reference Voltage - 1V"
+
+config ADC_VREF_INTVCC0
+    bool "ADC Reference Voltage - 1/1.48 VDDANA"
+
+config ADC_VREF_INTVCC1
+    bool "ADC Reference Voltage - 1/2 VDDANA"
+
+config ADC_VREF_EXT1
+    bool "External Voltage ADC ref 1"
+
+config ADC_VREF_EXT2
+    bool "External Voltage ADC ref 2"
+endchoice

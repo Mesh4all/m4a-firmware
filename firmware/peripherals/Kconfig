@@ -1,4 +1,9 @@
 menu "Peripherals"
+menu "Hardware Periph Setup"
+if BOARD_M4A_24G
+rsource "../../boards/m4a-24g/Kconfig.periph"
+endif
+endmenu
 rsource "ds18_sensor/Kconfig"
 rsource "moisture_sensor/Kconfig"
 endmenu

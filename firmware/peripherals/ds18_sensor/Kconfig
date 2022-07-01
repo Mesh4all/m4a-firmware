@@ -1,5 +1,5 @@
 menu "ds18 for soil"
-# Set if the ds18 for soil is connectd
+# Set if the ds18 for soil is connected
 config DS18_SOIL_CONNECTED
     bool "Set if it's connected"
     default y
