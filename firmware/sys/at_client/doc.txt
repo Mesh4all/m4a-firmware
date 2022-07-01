@@ -2,7 +2,7 @@
 @defgroup at_client  At client
 @ingroup     sys
 
-### What goes here?
+### At client
 
 You have at command handler, which can be send with the shell, the following list has the command options:
 

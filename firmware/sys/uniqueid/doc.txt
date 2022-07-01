@@ -2,7 +2,7 @@
 @defgroup uniqueid Unique id
 @ingroup     sys
 
-### What goes here?
+### Unique Id
 You have 3 options to get the unique ipv6 address, which can be edited in the config menu:
 
 1) Static: It is make with the cpu id and it is the same between reboots,

@@ -2,9 +2,15 @@
 @defgroup    storage_module Storage
 @ingroup     sys
 
-# What goes here?
+# Storage
 
-This module saves data in the flash memory.
+This module saves data in the flash memory in pages that we can write and read.
 
-Note: the data could not be greater than 64 bytes. Data formats allowed are string and uint8.
+Notes:
+
+- The max size to save in the page is 16
+- The data could not be greater than 64 bytes
+- Data formats allowed are string and uint8
+- the functions mtd_write_string and mtd_write_uint8 is not recommended to use it directly, use the functions in library
+
 */
