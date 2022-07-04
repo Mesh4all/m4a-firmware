@@ -39,7 +39,7 @@ extern "C" {
  * @param payload_len [int]     size of the message
  * @return int
  */
-int udp_send(int *port, char *address, uint8_t *message, size_t *payload_len);
+int udp_send(const uint16_t port, char *address, uint8_t *message, size_t *payload_len);
 
 #ifdef __cplusplus
 }
