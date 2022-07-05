@@ -24,7 +24,37 @@
 #include <string.h>
 #include "uniqueid.h"
 #include "random.h"
-#include "xtimer.h"
+#include "net/netdev/ieee802154.h"
+#include "net/gnrc.h"
+
+#ifdef CONFIG_MODE_RANDOM
+static uint8_t radio_devices[] = {NETDEV_AT86RF215, NETDEV_AT86RF2XX, NETDEV_CC2538};
+
+#ifdef CONFIG_MODE_SUB_24GHZ
+int8_t subtract_to_interface_radio = 1;
+#else
+int8_t subtract_to_interface_radio = 0;
+#endif
+
+int8_t get_ieee802154_iface_radio(void) {
+    int max_ifaces = gnrc_netif_numof();
+    if (max_ifaces > 0) {
+        gnrc_netif_t *iface;
+        for (uint8_t i = 0; i < ARRAY_SIZE(radio_devices); i++) {
+            iface = gnrc_netif_get_by_type(radio_devices[i], NETDEV_INDEX_ANY);
+            if (iface != NULL) {
+                break;
+            }
+        }
+        if (iface != NULL) {
+            return iface->pid - subtract_to_interface_radio;
+        } else {
+            return -1;
+        }
+    }
+    return -1;
+}
+#endif
 
 void subnet_to_ipv6(ipv6_addr_t *addr) {
 
@@ -44,14 +74,14 @@ void subnet_to_ipv6(ipv6_addr_t *addr) {
     ipv6_addr_t header = {
         .u8 = {0},
     };
+    uint32_t test = 0;
+    int index = get_ieee802154_iface_radio();
+    netif_t *iface = netif_get_by_id(index);
     ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
     memcpy((char *)addr->u8, (char *)header.u8, 4);
     union random_buff random_number;
-    #ifdef  CONFIG_SEED_XTIMER
-    int seed = _xtimer_now(); // TO DO: This is not cryptographically secure (default)
-    #else
-    int seed = 0; // TO DO: this is an example, here put a seed cryptographically secure
-    #endif
+    netif_get_opt(iface, NETOPT_RANDOM, 0, &test, sizeof(test));
+    int seed = test;
     random_init(seed);
     random_number.u32 = random_uint32();
     (void)random_number.u32;
