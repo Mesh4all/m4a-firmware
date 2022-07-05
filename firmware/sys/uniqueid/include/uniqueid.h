@@ -33,6 +33,15 @@
 extern "C" {
 #endif
 /**
+  * @brief  Get the CPU unique ID of this platform
+  * This function gets base cpu address using cpuid_get
+  *
+  * @param  id  pointer to char array with CPUID_LEN size.
+  *
+  */
+#define CPUID(id)  cpuid_get(id);
+
+/**
  * @brief  union to get 32 bit random number and convert to a byte array.
  */
 
