@@ -25,7 +25,7 @@
 #include "net/ipv6/addr.h"
 #include "udp_client.h"
 
-int udp_send(const int port, char *address, uint8_t *message, size_t *payload_len) {
+int udp_send(const uint16_t port, char *address, uint8_t *message, size_t *payload_len) {
     int res;
     sock_udp_ep_t remote = {.family = AF_INET6};
 
