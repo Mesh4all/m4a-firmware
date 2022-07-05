@@ -30,7 +30,7 @@ var NAVTREEINDEX2 =
 "subsys__uart_8h.html#aebe5ee521298dc5519a1b3615f73e2ab":[5,0,5,0,4,0,1,0],
 "subsys__uart_8h_source.html":[5,0,5,0,4,0,1],
 "udp__client_8h.html":[5,0,3,0,5,0,0],
-"udp__client_8h.html#aa3493cbef904175c2868a533394fbca8":[5,0,3,0,5,0,0,0],
+"udp__client_8h.html#aeaefcdba0c4c311a99daf4d1341d4b67":[5,0,3,0,5,0,0,0],
 "udp__client_8h_source.html":[5,0,3,0,5,0,0],
 "udp__server_8h.html":[5,0,3,0,6,0,0],
 "udp__server_8h.html#a2860ecf7c6cfc426a578ac98e7c7aa1b":[5,0,3,0,6,0,0,1],
