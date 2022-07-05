@@ -49,7 +49,7 @@ static void start_udp(void) {
 void send_udp_message_to_ipv6(void) {
     char message[] = "hello world";
     size_t len = strlen(message) + 1;
-    int err = udp_send(&port, "::1", (uint8_t *)message, &len);
+    int err = udp_send(port, "::1", (uint8_t *)message, &len);
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 

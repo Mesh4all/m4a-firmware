@@ -17,6 +17,7 @@
  * @brief This function gets ipv6 address (mode: static (default), random, manual)
  *
  * @author  RocioRojas <rociorojas391@gmail.com>
+ * @author  eduazocar <eduazocarv@gmail.com>
  */
 
 #include <stdio.h>
@@ -24,8 +25,13 @@
 #include <string.h>
 #include "uniqueid.h"
 #include "random.h"
-#include "xtimer.h"
-
+#include "net/netdev/ieee802154.h"
+#include "net/gnrc.h"
+#if MODULE_AT86RF2XX || MODULE_AT86RF215
+#include "radio.h"
+#else
+#include "periph/hwrng.h"
+#endif
 void subnet_to_ipv6(ipv6_addr_t *addr) {
 
 #ifdef CONFIG_MODE_STATIC
@@ -44,19 +50,20 @@ void subnet_to_ipv6(ipv6_addr_t *addr) {
     ipv6_addr_t header = {
         .u8 = {0},
     };
+    union random_buff random_number;
     ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
     memcpy((char *)addr->u8, (char *)header.u8, 4);
-    union random_buff random_number;
-    #ifdef  CONFIG_SEED_XTIMER
-    int seed = _xtimer_now(); // TO DO: This is not cryptographically secure (default)
-    #else
-    int seed = 0; // TO DO: this is an example, here put a seed cryptographically secure
-    #endif
-    random_init(seed);
+#if (MODULE_AT86RF2XX || MODULE_AT86RF215)
+    int index = get_ieee802154_iface();
+    netif_t *iface = netif_get_by_id(index);
+    netif_get_opt(iface, NETOPT_RANDOM, 0, &random_number, sizeof(random_number));
+#else
+    hwrng_init();
+    hwrng_read(&random_number, sizeof(random_number));
+#endif
+    random_init(random_number.u32);
     random_number.u32 = random_uint32();
-    (void)random_number.u32;
     strncat((char *)addr->u8, (char *)random_number.u8, 4);
-
 #endif
 
 #ifdef CONFIG_MODE_MANUAL

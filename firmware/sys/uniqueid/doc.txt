@@ -3,20 +3,15 @@
 @ingroup     sys
 
 ### Unique Id
-You have 3 options to get the unique ipv6 address, which can be edited in the config menu:
 
-1) Static: It is make with the cpu id and it is the same between reboots,
-unique for each device.
-2) Random: A random address that is generated with the same fixed header
-as the first option.
-3) Custom: This option allows you to edit both the header and the default
-address is "1111:2222".
+In this module you get a specific Id for each device and you have three options to get an unique IPV6 address,
+which can be edited in the config menu:
+
+1) Static: It is made with the cpu id and it is the same between reboots and unique for each device.
+2) Random: A random address that is generated with the same fixed header. This option has a seed
+cryptographically secure using NETOPT_RANDOM.
+3) Custom: This option allows you to edit both the header and the address. The default address is "1111:2222".
 
 Note: The default header is "2001:db8".
 
-
-### TO DO:
-Use of ``` _xtimer_now ``` as seed is not cryptographically secure.
-
-Use of ``` seed = 0``` as seed is not cryptographically secure.
 */

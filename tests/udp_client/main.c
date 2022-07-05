@@ -46,21 +46,13 @@ static void setup(void) {
 void send_udp_message_to_ipv6(void) {
     char message[] = "hello world";
     size_t len = strlen(message) + 1;
-    int err = udp_send(&port, "::1", (uint8_t *)message, &len);
+    int err = udp_send(port, "::1", (uint8_t *)message, &len);
     TEST_ASSERT_EQUAL_INT(0, err);
-}
-
-void send_udp_message_to_ipv4(void) {
-    char message[] = "hello world";
-    size_t len = strlen(message) + 1;
-    int err = udp_send(&port, "192.168.1.2", (uint8_t *)message, &len);
-    TEST_ASSERT_EQUAL_INT(1, err);
 }
 
 Test *tests_udp_client(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
         new_TestFixture(send_udp_message_to_ipv6),
-        new_TestFixture(send_udp_message_to_ipv4),
     };
 
     EMB_UNIT_TESTCALLER(tests_udp_client, NULL, NULL, fixtures);

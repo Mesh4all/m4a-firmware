@@ -1,18 +1,47 @@
 /**
 @defgroup m4a-firmware  Reference firmware
 
-### What goes here?
-Specific documentation for our reference firmware ; m4a-firmware
+### Firmware
 
-You can find specific documentation for the sys, peripherals, and network folders.
+This is the core of Mesh4All, you can find specific documentation for the sys, peripherals, and network folders.
 
+### Network
 
-### network
-UDP client, UDP server.
+This section has modules like:
 
-### peripherals
-Humidity and temperature sensors.
+    - UDP client: Make use of Internet Protocol of the TCP/IP suit.
 
-### sys
-AT commands, udp serialization, storage, ipv6 address.
+    - UDP server: Process all request sent by an udp client device.
+
+    - RPL protocol: The functions to start RPL and add a node dodag (Root)
+or dag (Slave).
+
+    - Radio: Module that handles all low power and low consumption wireless devices.
+
+    - Net tools: Contains all about networks tools.
+
+    - Chamos (Communication Handler for Addressing Management | Origin Server): It's used for
+server-side communication.
+
+    - Border Router: The module sets an IPV6 address in a wireless or wired interface.
+
+### Peripherals
+
+    - Moisture sensor: Gets humidity and temperature data of a certain environment.
+
+    - Temperature sensor (DS18): Get the data of the temperature sensor.
+
+### Sys
+
+    - AT commands: Establish a connection with a wifi-subsystem, which handles AT commands
+sent through the shell.
+
+    - Serialization:  Get and decode a data of the sensors arrived from udp server and decodes
+the message before sending it to udp client. This implementation uses a library tinycbor.
+
+    - Storage: Saves data in the flash memory in pages that we can write and read, the max size
+to save is 16 page.
+
+    - Unique_id: Get a specific id for each device and you have three options to get an unique
+IPV6 address (static, random, custom).
 */

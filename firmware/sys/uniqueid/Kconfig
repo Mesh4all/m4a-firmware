@@ -33,10 +33,5 @@ menu "Subnet"
     default "1111:2222"
     depends on MODE_MANUAL
 
-    config SEED_XTIMER
-    bool "Using xtimer to seed"
-    default  y
-    depends on MODE_RANDOM
-
 endmenu # Prefix
 endmenu

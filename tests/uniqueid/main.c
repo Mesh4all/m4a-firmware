@@ -15,17 +15,21 @@
  */
 
 /**
- * @brief       storage file
+ * @brief       uniqueid file
  *
- * @author      xkevin190 <kevinvelasco193@gmail.com>
+ * @author  xkevin190 <kevinvelasco193@gmail.com>
+ * @author  RocioRojas <rociorojas391@gmail.com>
+ * @author  eduazocar <eduazocarv@gmail.com>
  */
+#include <stdio.h>
 #include <string.h>
 #include <errno.h>
 
 #include "embUnit.h"
 #include "uniqueid.h"
+#include "unique_random.h"
 
-void get_unique_since_mac(ipv6_addr_t *output) {
+void get_unique_from_mac(ipv6_addr_t *output) {
     ipv6_addr_t header = {
         .u8 = {0},
     };
@@ -34,21 +38,41 @@ void get_unique_since_mac(ipv6_addr_t *output) {
     ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
     memcpy((char *)output->u8, (char *)header.u8, 4);
     strncat((char *)output->u8, addr_cpu, 4);
+    ipv6_addr_print(output);
 }
 
 void test_get_ipv6Address(void) {
     ipv6_addr_t ipv6 = {
         .u8 = {0},
     };
-    subnet_to_ipv6(&ipv6);
 
+    subnet_to_ipv6(&ipv6);
 #ifdef CONFIG_MODE_STATIC
     ipv6_addr_t output = {
         .u8 = {0},
     };
     ipv6_addr_print(&ipv6);
-    get_unique_since_mac(&output);
+    get_unique_from_mac(&output);
     TEST_ASSERT_EQUAL_INT(1, ipv6_addr_equal(&ipv6, &output));
+#endif
+
+#ifdef CONFIG_MODE_RANDOM
+    ipv6_addr_t output1 = {
+        .u8 = {0},
+    };
+    ipv6_addr_t output2 = {
+        .u8 = {0},
+    };
+
+    subnet_to_ipv6(&output1);
+    subnet_to_ipv6(&output2);
+    printf("\nFirst random IPv6\n");
+    ipv6_addr_print(&output1);
+    printf("\nSecond random IPv6\n");
+    ipv6_addr_print(&output2);
+    TEST_ASSERT_EQUAL_INT(0, ipv6_addr_equal(&output1, &output2));
+    printf("\n\nBinary data printed\n");
+    random_generator(64);
 #endif
 }
 

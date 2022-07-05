@@ -15,34 +15,43 @@
  */
 
 /**
- * @ingroup     udp_client
+ * @ingroup     tests
  * @{
- * @file
- * @brief       udp client lib used to send the sensor values
- * @author      xkevin190 <kevinvelasco190@gmail.com.com>
  *
+ * @file
+ * @brief   Randomizer to obtain values hex in binary
+ *
+ * @author  eduazocar <eduazocarv@gmail.com>
  */
+#ifndef UNIQUE_RANDOM_H
+#define UNIQUE_RANDOM_H
 
-#ifndef UDP_CLIENT_H
-#define UDP_CLIENT_H
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /**
- * @brief this function is used to send the sensors values
+ * @brief   Random Generator to gets a block of random values
  *
- * @param port  [in]            port to which the message will be sent
- * @param address [int]         address to which the message will be sent
- * @param message [int]         in this parameter the sensor data will be sent
- * @param payload_len [int]     size of the message
- * @return int
+ * @param bit_ref this is a reference to create a matrix of the reads
+ * e.g bit_ref = 9 -> 9x9 (This mean that could obtain 9 measures of 9
+ * random bits generated )
  */
-int udp_send(const uint16_t port, char *address, uint8_t *message, size_t *payload_len);
+void random_generator(uint8_t bit_ref);
+
+/**
+ * @brief   Printer to random values
+ *
+ * @param val Any input value in the range of 32 bits
+ * @param len length of the bits int @p val
+ */
+void print_binary(uint32_t val, uint8_t len);
 
 #ifdef __cplusplus
 }
 #endif
-#endif /* UDP_CLIENT_H */
+
+#endif /* UNIQUE_RANDOM_H */
 /** @} */
