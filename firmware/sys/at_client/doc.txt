@@ -4,7 +4,7 @@
 
 ### At client
 
-You have at command handler, which can be send with the shell, the following list has the command options:
+You have AT commands handler, which can be send with the shell, the following list has the command options:
 
 ### Shell commands
 

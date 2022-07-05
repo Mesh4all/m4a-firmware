@@ -5,7 +5,7 @@
 
 ### Radio
 
-In this module are all low power and low consumption wireless device,
+In this module are all low power and low consumption wireless devices,
 it can find devices based on the zigbee and 6lowpan protocols,
 In addition to that, these devices can follow the guidelines established in
 the IEEE802.14.5 standard.
@@ -16,11 +16,11 @@ it's between the range of 11 to 26 and in the case of the radio device is multib
 you could works in the band under to 2.4GHz these channels are between 0 and 10.
 
 The functionalities of the radio module allow to obtain and configure the characteristics of
-the wireless networkInterface. This allows knowing the current state of the physical
+the wireless network interface. This allows knowing the current state of the physical
 configuration and manipulating it to obtain the better optimization.
 
 The radio module includes a kconfig setup, this means to could be obtained an statically setup
-of any device, also the kconfig, and the module it's adjusted to the specified device. this features
+of any device, also the kconfig, and the module it's adjusted to the specified device. These features
 are provided by the following table:
 
  | Driver    |TX_POWER_MIN (dBm) | TX_POWER_MAX (dBm)|Dual band | channel range ||
