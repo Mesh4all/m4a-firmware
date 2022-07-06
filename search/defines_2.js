@@ -12,5 +12,5 @@ var searchData=
   ['config_5fztimer_5fusec_5fdev_609',['CONFIG_ZTIMER_USEC_DEV',['../m4a-24g_2include_2board_8h.html#a2378d153069150591eb7fa2082f573d9',1,'board.h']]],
   ['config_5fztimer_5fusec_5fmin_610',['CONFIG_ZTIMER_USEC_MIN',['../m4a-24g_2include_2board_8h.html#a0da89da11cd4268db8298bae9fbe1d85',1,'board.h']]],
   ['config_5fztimer_5fusec_5ftype_611',['CONFIG_ZTIMER_USEC_TYPE',['../m4a-24g_2include_2board_8h.html#ae3245610b3181dbfab13ae3e5fae7e37',1,'board.h']]],
-  ['cpuid_612',['CPUID',['../m4a-24g_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'CPUID():&#160;board.h'],['../m4a-mb_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'CPUID():&#160;board.h']]]
+  ['cpuid_612',['CPUID',['../uniqueid_8h.html#a5cbb30009266fcb97959001bd91f9a8e',1,'uniqueid.h']]]
 ];

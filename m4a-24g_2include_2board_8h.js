@@ -10,7 +10,6 @@ var m4a_24g_2include_2board_8h =
     [ "CONFIG_ZTIMER_USEC_DEV", "m4a-24g_2include_2board_8h.html#a2378d153069150591eb7fa2082f573d9", null ],
     [ "CONFIG_ZTIMER_USEC_MIN", "m4a-24g_2include_2board_8h.html#a0da89da11cd4268db8298bae9fbe1d85", null ],
     [ "CONFIG_ZTIMER_USEC_TYPE", "m4a-24g_2include_2board_8h.html#ae3245610b3181dbfab13ae3e5fae7e37", null ],
-    [ "CPUID", "m4a-24g_2include_2board_8h.html#a5cbb30009266fcb97959001bd91f9a8e", null ],
     [ "LED0_MASK", "m4a-24g_2include_2board_8h.html#abfabde35a3e8b7ab50146a5e223bfead", null ],
     [ "LED0_OFF", "m4a-24g_2include_2board_8h.html#aef2e39b9fd343d0e437fac0463f3e02d", null ],
     [ "LED0_ON", "m4a-24g_2include_2board_8h.html#a1e48dc02333bfc2e6ad3e5bd466eecd4", null ],

@@ -1,8 +1,7 @@
 <map id="boards/m4a&#45;24g/include/board.h" name="boards/m4a&#45;24g/include/board.h">
-<area shape="rect" id="node1" title="Board specific definitions for the M4A&#45;24G board." alt="" coords="85,5,299,52"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,177,72,207"/>
-<area shape="rect" id="node3" href="$m4a-24g_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the m4a&#45;24g board." alt="" coords="77,100,206,129"/>
-<area shape="rect" id="node5" title=" " alt="" coords="203,177,328,207"/>
-<area shape="rect" id="node6" title=" " alt="" coords="281,100,417,129"/>
-<area shape="rect" id="node4" title=" " alt="" coords="97,177,178,207"/>
+<area shape="rect" id="node1" title="Board specific definitions for the M4A&#45;24G board." alt="" coords="5,5,220,52"/>
+<area shape="rect" id="node2" title=" " alt="" coords="30,177,97,207"/>
+<area shape="rect" id="node3" href="$m4a-24g_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the m4a&#45;24g board." alt="" coords="100,100,229,129"/>
+<area shape="rect" id="node4" title=" " alt="" coords="123,177,204,207"/>
+<area shape="rect" id="node5" title=" " alt="" coords="229,177,354,207"/>
 </map>

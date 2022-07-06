@@ -1,8 +1,7 @@
 <map id="boards/m4a&#45;mb/include/board.h" name="boards/m4a&#45;mb/include/board.h">
-<area shape="rect" id="node1" title="Board specific definitions for the M4A&#45;MB." alt="" coords="87,5,297,52"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,177,72,207"/>
-<area shape="rect" id="node3" href="$m4a-mb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for m4a_mb board." alt="" coords="77,100,206,129"/>
-<area shape="rect" id="node5" title=" " alt="" coords="203,177,328,207"/>
-<area shape="rect" id="node6" title=" " alt="" coords="281,100,417,129"/>
-<area shape="rect" id="node4" title=" " alt="" coords="97,177,178,207"/>
+<area shape="rect" id="node1" title="Board specific definitions for the M4A&#45;MB." alt="" coords="5,5,216,52"/>
+<area shape="rect" id="node2" title=" " alt="" coords="28,177,95,207"/>
+<area shape="rect" id="node3" href="$m4a-mb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for m4a_mb board." alt="" coords="98,100,227,129"/>
+<area shape="rect" id="node4" title=" " alt="" coords="121,177,202,207"/>
+<area shape="rect" id="node5" title=" " alt="" coords="227,177,352,207"/>
 </map>
