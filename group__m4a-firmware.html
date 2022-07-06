@@ -122,18 +122,33 @@ Modules</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h3><a class="anchor" id="autotoc_md37"></a>
-What goes here?</h3>
-<p>Specific documentation for our reference firmware ; m4a-firmware</p>
-<p>You can find specific documentation for the sys, peripherals, and network folders.</p>
+Firmware</h3>
+<p>This is the core of Mesh4All, you can find specific documentation for the sys, peripherals, and network folders.</p>
 <h3><a class="anchor" id="autotoc_md38"></a>
-network</h3>
-<p>UDP client, UDP server.</p>
-<h3><a class="anchor" id="autotoc_md39"></a>
-peripherals</h3>
-<p>Humidity and temperature sensors.</p>
-<h3><a class="anchor" id="autotoc_md40"></a>
-sys</h3>
-<p>AT commands, udp serialization, storage, ipv6 address. </p>
+Network</h3>
+<p>This section has modules like: </p><pre class="fragment">- UDP client: Make use of Internet Protocol of the TCP/IP suit.
+
+- UDP server: Process all request sent by an udp client device.
+
+- RPL protocol: The functions to start RPL and add a node dodag (Root)
+</pre><p> or dag (Slave). </p><pre class="fragment">- Radio: Module that handles all low power and low consumption wireless devices.
+
+- Net tools: Contains all about networks tools.
+
+- Chamos (Communication Handler for Addressing Management | Origin Server): It's used for
+</pre><p> server-side communication. </p><pre class="fragment">- Border Router: The module sets an IPV6 address in a wireless or wired interface.
+</pre><h3><a class="anchor" id="autotoc_md39"></a>
+Peripherals</h3>
+<pre class="fragment">- Moisture sensor: Gets humidity and temperature data of a certain environment.
+
+- Temperature sensor (DS18): Get the data of the temperature sensor.
+</pre><h3><a class="anchor" id="autotoc_md40"></a>
+Sys</h3>
+<pre class="fragment">- AT commands: Establish a connection with a wifi-subsystem, which handles AT commands
+</pre><p> sent through the shell. </p><pre class="fragment">- Serialization:  Get and decode a data of the sensors arrived from udp server and decodes
+</pre><p> the message before sending it to udp client. This implementation uses a library tinycbor. </p><pre class="fragment">- Storage: Saves data in the flash memory in pages that we can write and read, the max size
+</pre><p> to save is 16 page. </p><pre class="fragment">- Unique_id: Get a specific id for each device and you have three options to get an unique
+</pre><p> IPV6 address (static, random, custom). </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
@@ -141,7 +156,7 @@ sys</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Jul 6 2022 17:23:52 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Jul 6 2022 19:26:20 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
