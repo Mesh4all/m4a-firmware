@@ -120,14 +120,31 @@ Modules</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h3><a class="anchor" id="autotoc_md62"></a>
-What goes here?</h3>
+Peripherals</h3>
 <p>Specific documentation for our reference peripherals; In the next module you can find:</p>
 <h3><a class="anchor" id="autotoc_md63"></a>
-ds18_sensor</h3>
-<p>Module to get temperature data.</p>
+Kconfig Setup</h3>
+<p>The peripherals has an effect in each board. a property of the board is periph_conf where is all specifications of each communication protocol used, converters analog to digital, and PWM parameters. So, peripherals actually provides support to manage de VREF of ADC channels, This will give more precision with the measurements.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Macro of the periph_conf </th><th class="markdownTableHeadCenter">Voltage Referenced </th><th class="markdownTableHeadCenter">type  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">CONFIG_ADC_VREF_DEFAULT </td><td class="markdownTableBodyCenter">1.0V </td><td class="markdownTableBodyCenter">Internal  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">CONFIG_ADC_VREF_INTVCC0 </td><td class="markdownTableBodyCenter">1/1.48 VDDANA </td><td class="markdownTableBodyCenter">Internal  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">CONFIG_ADC_VREF_INTVCC1 </td><td class="markdownTableBodyCenter">1/2 VDDANA (only for VDDANA &gt; 2.0V) </td><td class="markdownTableBodyCenter">Internal  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">CONFIG_ADC_VREF_EXT1 </td><td class="markdownTableBodyCenter">External reference #1 </td><td class="markdownTableBodyCenter">External  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">CONFIG_ADC_VREF_EXT2 </td><td class="markdownTableBodyCenter">External reference #2 </td><td class="markdownTableBodyCenter">External  </td></tr>
+</table>
 <h3><a class="anchor" id="autotoc_md64"></a>
-moisture_sensor</h3>
-<p>Module to get moisture data. </p>
+Ds18_sensor</h3>
+<p>This is a soil temperature sensor that could provide the current measurement in degrees centigrades "°C". this works with any digital pin, but needs to use the one wire protocol to obtain the data from itself.</p>
+<h3><a class="anchor" id="autotoc_md65"></a>
+Moisture_sensor</h3>
+<p>A peripheral that could read through adc pins, getting an analog measurement, this works with a 10-bit resolution, and it's adjustable to work with 3.3V (in low consumption) and 5V for more information about the peripheral see <a class="el" href="group__moisture__sensor.html">Moisture sensor</a> module </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
@@ -135,7 +152,7 @@ moisture_sensor</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Jul 6 2022 17:09:50 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Jul 6 2022 17:23:52 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

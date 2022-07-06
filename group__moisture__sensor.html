@@ -118,18 +118,27 @@ Files</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h3><a class="anchor" id="autotoc_md66"></a>
-What goes here?</h3>
-<p>This module gets the data of the moisture sensor.</p>
-<p>Note: This is an adc device, for the correct functioning of this module you have to use 3.3V and 10bits resolution. </p>
-</div><!-- contents -->
+<h3><a class="anchor" id="autotoc_md68"></a>
+Analog Capacitive Moisture sensor V1.2</h3>
+<p>This module contains all about the manage the read data from the Moisture sensor. It's an Analog sensor that operates betwwen 3.3V and 5.0V, has three pins VCC (Red wire), GND (Black wire), DATA (Yellow Wire), There is a fixed frequency oscillator that is built with a 555 Timer IC. The square wave generated is then fed to the sensor like a capacitor. To a square wave signal that capacitor, however, has a certain reactance, or for argument’s sake a resistance that forms a voltage divider with a pure ohm type resistor (the 10k one on pin 3). The greater is the soil moisture, the higher the capacitance of the sensor. Consequently, there is a smaller reactance to the square wave, thus lowering the voltage on the signal line. The voltage on the Analog signalpin can be measured by an analog pin of a MCU.</p>
+<div class="image">
+<img src="Electronic-sheme-analog_moisture_sensor.png" alt="" width="40%"/>
+<div class="caption">
+Fig. 1.1 Electronical scheme of the Analog Capacitive Moisture Sensor V1.2 </div></div>
+<dl class="section note"><dt>Note</dt><dd>The resolution supported is 10 bit.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>There a line drawn on the analog sensor, this represent the operating zone to get the humidity from the soil and the circuit zone of the device (This limits could affect the sensor and its functionality).</dd></dl>
+<div class="image">
+<img src="Analog_moisture_sensor_001.jpeg" alt="" width="20%"/>
+<div class="caption">
+Fig. 1.2 Representation of limits to use the moisture sensor. </div></div>
+ </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Jul 6 2022 17:09:50 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Jul 6 2022 17:23:52 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
