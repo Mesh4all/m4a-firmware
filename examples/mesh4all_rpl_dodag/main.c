@@ -25,7 +25,6 @@
 #include <string.h>
 
 #include "shell.h"
-#include "shell_commands.h"
 #include "log.h"
 
 #include "rpl_protocol.h"

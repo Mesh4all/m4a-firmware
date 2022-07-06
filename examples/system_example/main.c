@@ -25,7 +25,6 @@
 #include <string.h>
 
 #include "shell.h"
-#include "shell_commands.h"
 #include "msg.h"
 #include "log.h"
 #include "board.h"
@@ -34,6 +33,7 @@
 #include "rpl_protocol.h"
 #include "ds18_sensor.h"
 #include "serialization.h"
+#include "uniqueid.h"
 #include "udp_client.h"
 #include "udp_server.h"
 #include "at_client.h"
@@ -66,7 +66,7 @@ void *init_loop(void *args) {
         if (cbor_enconde_message(&payload, buffer, &len_cbor) < 0) {
             printf("error to encode payload with cbor");
         } else {
-            udp_send(&port, ADDRESS_TO_SEND, buffer, &len_cbor);
+            udp_send(port, ADDRESS_TO_SEND, buffer, &len_cbor);
         }
         xtimer_sleep(60);
     }

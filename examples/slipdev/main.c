@@ -26,7 +26,6 @@
 
 #include "xtimer.h"
 #include "shell.h"
-#include "shell_commands.h"
 #include "msg.h"
 
 #define MAIN_QUEUE_SIZE     (8)
