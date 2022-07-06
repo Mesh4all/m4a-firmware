@@ -5,4 +5,5 @@ rsource "rpl_protocol/Kconfig"
 rsource "udp_client/Kconfig"
 rsource "udp_server/Kconfig"
 rsource "net_tools/Kconfig"
+rsource "border_router/Kconfig"
 endmenu

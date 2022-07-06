@@ -1,11 +1,1 @@
-menu "PHY settings"
-#comment "PHY settings"
-    config TX_POWER
-    int "Default TX Power"
-    default 0
-
-    config RADIO_CHANNEL
-    int "Default Radio Channel"
-    default 11
-
-endmenu #Phy
+rsource "../../firmware/network/rpl_protocol/Kconfig"
