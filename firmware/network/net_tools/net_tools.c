@@ -27,6 +27,7 @@
  * @brief       Group of generic functions that could be used in various modules implementation
  *
  * @author      eduazocar <eduardoazocar7@gmail.com>
+ * @author      RocioRojas <Rociorojas391@gmail.com>
  *
  * @}
  */
@@ -76,7 +77,8 @@ int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix)
                "File: %s, Function: %s, Line: %d\n",
                __FILE__, __func__, __LINE__);
     }
-    uint16_t flags = GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID | (prefix << 8U);
+    uint16_t flags = GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID |
+(prefix << CONFIG_PREFIX_DISPLACEMENT);
     netif_t *iface = netif_get_by_id(iface_index);
     if (!ipv6_addr_is_global(&ip)) {
         printf("The ipv6 address isn't a ipv6 global address format accepted\n"
@@ -84,7 +86,8 @@ int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix)
                __FILE__, __func__, __LINE__);
         return -1;
     }
-    if (netif_set_opt(iface, NETOPT_IPV6_ADDR, flags, &ip, sizeof(ipv6_addr_t)) < 0) {
+    if (netif_set_opt(iface, NETOPT_IPV6_ADDR, flags, &ip,
+sizeof(ipv6_addr_t)) < CONFIG_PREFIX_DISPLACEMENT) {
         printf("error: unable to add IPv6 address\n"
                "File: %s, Function: %s, Line: %d\n",
                __FILE__, __func__, __LINE__);
@@ -99,7 +102,8 @@ int8_t set_ipv6_multicast(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t pref
                "File: %s, Function: %s, Line: %d\n",
                __FILE__, __func__, __LINE__);
     }
-    uint16_t flags = GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID | (prefix << 8U);
+    uint16_t flags = GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID |
+(prefix << CONFIG_PREFIX_DISPLACEMENT);
     netif_t *iface = netif_get_by_id(iface_index);
     if (!ipv6_addr_is_multicast(&ip)) {
         printf("The ipv6 address isn't a ipv6 multicast address format accepted\n"

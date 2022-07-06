@@ -1,0 +1,6 @@
+menu "Net tools"
+    config PREFIX_DISPLACEMENT
+        int "Prefix displacement"
+        default 8
+        range 4  9
+endmenu
