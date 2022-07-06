@@ -2,11 +2,23 @@
 @defgroup moisture_sensor Moisture sensor
 @ingroup  peripherals
 
-### What goes here?
+### Analog Capacitive Moisture sensor V1.2
 
-This module gets the data of the moisture sensor.
+This module contains all about the manage the read data from the Moisture sensor. It's an Analog
+sensor that operates betwwen 3.3V and 5.0V, has three pins VCC (Red wire), GND (Black wire), DATA (Yellow Wire),
+There is a fixed frequency oscillator that is built with a 555 Timer IC. The square wave generated is then fed
+to the sensor like a capacitor. To a square wave signal that capacitor, however, has a certain reactance, or
+for argument’s sake a resistance that forms a voltage divider with a pure ohm type resistor (the 10k one on pin 3).
+The greater is the soil moisture, the higher the capacitance of the sensor. Consequently, there is a smaller reactance
+to the square wave, thus lowering the voltage on the signal line. The voltage on the Analog signalpin can be measured by
+an analog pin of a MCU.
 
-Note:  This is an adc device, for the correct functioning of this module you have to use 3.3V
-and 10bits resolution.
+@image html Electronic-sheme-analog_moisture_sensor.png Fig. 1.1 Electronical scheme of the Analog Capacitive Moisture Sensor V1.2 width=40%
 
+@note The resolution supported is 10 bit.
+
+@warning There a line drawn on the analog sensor, this represent the operating zone to get the humidity from the soil and
+the circuit zone of the device (This limits could affect the sensor and its functionality).
+
+@image html Analog_moisture_sensor_001.jpeg Fig. 1.2 Representation of limits to use the moisture sensor. width=20%
 */

@@ -2,10 +2,29 @@
 @defgroup ds18_sensor Ds18 sensor
 @ingroup  peripherals
 
-### What goes here?
+### Ds18 soil sensor
 
-This module is used to get the data of the temperature sensor. The function
-``` init_temperature_sensor ```initialize the sensor and the function
-``` get_temperature_value ``` gets the values.
+The ds18b20 is a temperature sensor with a range between -55 °C and 125 °C, its operative
+voltage is 3V or 5V respectively, only needs a data pin to transfer data an a MCU using one-wire communication.
+Has an acurracy of 0.5 °C. The output resolution is programmable between 9 - 12 bits, conversion time of 750 ms
+at 12-bit resolution.
+
+### Pinout scheme
+
+\image html DS18B20-Sensor-Pinout.jpg Ds18b20 Pinout scheme width=40%
+
+This module works with the ds18b20 peripheral, this implement two steps,
+`init_temperature_sensor()` and `get_temperature_value()`. the first function checks
+if the peripheral is connected to a designed pin. when the initialization it's successfully returns `DS18_OK`
+in case that the peripheral was not found returns a `DS18_ERROR`.
+
+To the function `get_temperature_value()` needs receive a int16_t variable as parameter (Signed Integer variable), because the
+peripheral could operates with positive and negative values. when you are reading the received data it could be observed
+in this way:
+
+ | Value read  |Integer part       | Decimal part      | Temp read in °C |
+ |:-----------:|:-----------------:|:-----------------:|:---------------:|
+ |    1517     |      15           |         17        |  15.17 °C       |
+ |    -1517    |      -15          |         17        | -15.17 °C       |
 
 */
