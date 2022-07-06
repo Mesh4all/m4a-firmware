@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 /**
- * @brief   CHAMOS Communication Handler for Addressing Management | Origin Server
+ * @brief   CHAMOS  Communication Handler for Addressing Management | Origin Server
  *
  * @author  RocioRojas <Rociorojas391@gmail.com>
  */
@@ -27,7 +27,7 @@
 #include "xtimer.h"
 
 #define CHAMOS_MSG_QUEUE_SIZE (8)
-#define SERVER_BUFFER_SIZE (20)
+#define SERVER_BUFFER_SIZE (CONFIG_SERVER_BUFFER_SIZE)
 
 /**
  * @brief   GNRC netif
