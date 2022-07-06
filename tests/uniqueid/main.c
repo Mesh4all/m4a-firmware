@@ -19,12 +19,15 @@
  *
  * @author  xkevin190 <kevinvelasco193@gmail.com>
  * @author  RocioRojas <rociorojas391@gmail.com>
+ * @author  eduazocar <eduazocarv@gmail.com>
  */
+#include <stdio.h>
 #include <string.h>
 #include <errno.h>
 
 #include "embUnit.h"
 #include "uniqueid.h"
+#include "unique_random.h"
 
 void get_unique_from_mac(ipv6_addr_t *output) {
     ipv6_addr_t header = {
@@ -68,6 +71,8 @@ void test_get_ipv6Address(void) {
     printf("\nSecond random IPv6\n");
     ipv6_addr_print(&output2);
     TEST_ASSERT_EQUAL_INT(0, ipv6_addr_equal(&output1, &output2));
+    printf("\n\nBinary data printed\n");
+    random_generator(64);
 #endif
 }
 
