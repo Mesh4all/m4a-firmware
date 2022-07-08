@@ -113,10 +113,11 @@ var NAVTREEINDEX0 =
 "dir_bd83e08e558c24023f0ac825556d8fac.html":[5,0,3,1,1,0],
 "dir_bda79e4367ee96b38d88fe77dfd73e41.html":[5,0,3,2,1],
 "dir_bfb441d127ce7d6b75efc9892433d2fb.html":[5,0,5,0,1,0],
-"dir_c32ba0cba12b1f5d707fdfff76dc88b2.html":[5,0,4,1],
+"dir_c32ba0cba12b1f5d707fdfff76dc88b2.html":[5,0,4,2],
 "dir_c3e47024a331dd6d4b575c331cc3e901.html":[5,0,3,0,4],
 "dir_c3efe5b63a9e1b06e3e3617cef8178e9.html":[5,0,3,0,6,0],
 "dir_c50348ff11db40bc726d434f6292bf29.html":[5,0,3,0,5],
+"dir_cf25ca94f79f47e3a82fceb115152a87.html":[5,0,4,1],
 "dir_d01016bb61a4f5980b4d33e6f34984fd.html":[5,0,3,1,1],
 "dir_d1a3ede2a7053dc6fcf75f473f49af84.html":[5,0,3,2,3],
 "dir_d28a4824dc47e487b107a5db32ef43c4.html":[5,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "group__wifi-subusys-protocols.html":[3,5,1],
 "group__wifi__component.html":[3,5,3],
 "group__wifi__component.html#ga0f1d3a76020083d4ec351087dff3b1b9":[3,5,3,15],
-"group__wifi__component.html#ga139ed802ea1b1d4829e52a58eb6151d9":[3,5,3,0],
-"group__wifi__component.html#ga1894da45456a14c348667e8a44373583":[3,5,3,19]
+"group__wifi__component.html#ga139ed802ea1b1d4829e52a58eb6151d9":[3,5,3,0]
 };

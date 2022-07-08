@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"group__wifi__component.html#ga1894da45456a14c348667e8a44373583":[3,5,3,19],
 "group__wifi__component.html#ga31d0fb01150610898c219b4830b5cf06":[3,5,3,10],
 "group__wifi__component.html#ga3ed63af70f933fc84a48a117e8b18a2b":[3,5,3,20],
 "group__wifi__component.html#ga3f8d68538fee1a7197fef3e2950c13b5":[3,5,3,21],
@@ -176,7 +177,7 @@ var NAVTREEINDEX1 =
 "m4a-mb_2include_2periph__conf_8h.html#afdfcd079b784102f3ceb94a04d9c9250":[5,0,0,1,0,2,26],
 "m4a-mb_2include_2periph__conf_8h.html#afec7c948b8c70db3c9394fc3dc145a99":[5,0,0,1,0,2,18],
 "m4a-mb_2include_2periph__conf_8h_source.html":[5,0,0,1,0,2],
-"map_8h_source.html":[5,0,4,1,0],
+"map_8h_source.html":[5,0,4,2,0],
 "md_tests_README.html":[1],
 "md_wifi-subsys_README.html":[2],
 "modules.html":[3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "structhttp__request__t.html":[4,0,5],
 "structhttp__request__t.html#a7fefa3ee0e4eeadc81726ff076bded96":[4,0,5,4],
 "structhttp__request__t.html#a961bd4658a3f1488bd69a9e383fb6cab":[4,0,5,2],
-"structhttp__request__t.html#ac890b2253f17bbbe698cab1aa0c18ecb":[4,0,5,1],
-"structhttp__request__t.html#adf8e2dd4010ba498cffd3bb9c7fd1bab":[4,0,5,3]
+"structhttp__request__t.html#ac890b2253f17bbbe698cab1aa0c18ecb":[4,0,5,1]
 };
