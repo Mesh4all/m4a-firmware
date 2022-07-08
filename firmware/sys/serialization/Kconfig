@@ -1,3 +1,5 @@
 menu "Serialization"
-# TO DO
+    config SERIALIZATION_BUFF_SIZE
+    int "Default buff size"
+    default 100
 endmenu
