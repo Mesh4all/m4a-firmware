@@ -18,6 +18,7 @@
  * @brief       storage file
  *
  * @author      xkevin190 <kevinvelasco193@gmail.com>
+ * @author      eduazocar <eduazocarv@gmail.com>
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,8 +27,9 @@
 #include "board.h"
 #include "mtd.h"
 #include "storage.h"
+#include "mtd_flashpage.h"
 
-static mtd_flashpage_t _dev = MTD_FLASHPAGE_INIT_VAL(8);
+static mtd_flashpage_t _dev = MTD_FLASHPAGE_INIT_VAL(FLASHPAGE_PAGES_PER_ROW);
 static mtd_dev_t *dev = &_dev.base;
 
 int mtd_start(void) {
@@ -39,8 +41,7 @@ int mtd_start(void) {
 }
 
 int mtd_save(uint32_t key, void *value) {
-    uint8_t buf[16];
-
+    uint8_t buf[MAX_SIZE_STORAGE];
     memset(buf, 0, sizeof(buf));
     memcpy(buf, value, sizeof(buf));
     int ret = mtd_write(dev, buf, key, sizeof(buf));
@@ -50,6 +51,57 @@ int mtd_save(uint32_t key, void *value) {
     }
 
     return ret;
+}
+
+int mtd_save_compress(void *value, uint16_t len) {
+    uint8_t *ptr = value;
+    uint8_t buf[MAX_SIZE_STORAGE];
+    uint8_t diff_size = MAX_SIZE_STORAGE;
+    uint16_t num_pages = len / MAX_SIZE_STORAGE;
+    uint8_t res_bits = len % MAX_SIZE_STORAGE;
+    int8_t ret = 0;
+    if (num_pages < 1 || res_bits != 0) {
+        num_pages++;
+    }
+    if (num_pages >= MAX_NUMOF_FLASHPAGES) {
+        printf("error: Unavailable Memory to save the required data, file: %s, line %d, "
+               "function: %s",
+               __FILE__, __LINE__, __FUNCTION__);
+        return -1;
+    }
+    for (uint8_t i = 0; i < num_pages; i++) {
+        if ((i == num_pages - 1) && (res_bits != 0)) {
+            diff_size = res_bits;
+        }
+        memset(buf, 0, sizeof(buf));
+        memcpy(buf, ptr, sizeof(buf));
+        ret = mtd_write_page(dev, buf, LAST_AVAILABLE_PAGE - i, 0, diff_size);
+        ptr += MAX_SIZE_STORAGE;
+    }
+    return ret;
+}
+
+int mtd_load(void *value, uint16_t len) {
+    uint8_t *ptr = value;
+    uint8_t diff_size = MAX_SIZE_STORAGE;
+    uint16_t num_pages = len / MAX_SIZE_STORAGE;
+    uint8_t res_bits = len % MAX_SIZE_STORAGE;
+    if ((num_pages < 1) || (res_bits != 0)) {
+        num_pages++;
+    }
+    if (num_pages >= MAX_NUMOF_FLASHPAGES) {
+        printf("error: Overload Memory size, file: %s, line %d, function: %s", __FILE__, __LINE__,
+               __FUNCTION__);
+        return -1;
+    }
+    for (uint8_t i = 0; i < num_pages; i++) {
+        if ((i == num_pages - 1) && (res_bits != 0)) {
+            diff_size = len % MAX_SIZE_STORAGE;
+        }
+        mtd_read_page(dev, ptr, LAST_AVAILABLE_PAGE - i, 0, diff_size);
+        ptr += MAX_SIZE_STORAGE;
+    }
+    return 0;
 }
 
 int mtd_read_u8(uint32_t key, uint8_t *output) {
