@@ -1,10 +1,5 @@
 menu "ds18 for soil"
-# Set if the ds18 for soil is connected
-config DS18_SOIL_CONNECTED
-    bool "Set if it's connected"
-    default y
-# Set the GPIO where it's connected
-config DS18_SOIL_GPIO
-    int "GPIO where the ds18 is attached"
-    default 0
+    config PIN_TEMP_SENSOR
+    int "Pin to connect temperature sensor"
+    default 5
 endmenu

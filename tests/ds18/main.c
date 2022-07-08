@@ -26,7 +26,7 @@
 #include "ds18_sensor.h"
 
 void test_init_ds18(void) {
-    int err = init_temperature_sensor(5);
+    int err = init_temperature_sensor(CONFIG_PIN_TEMP_SENSOR);
 
     TEST_ASSERT_EQUAL_INT(0, err);
 }

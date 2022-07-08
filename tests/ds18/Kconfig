@@ -1,0 +1,1 @@
+rsource "../../firmware/peripherals/ds18_sensor/Kconfig"

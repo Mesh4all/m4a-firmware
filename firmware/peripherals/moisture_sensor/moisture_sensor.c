@@ -24,7 +24,7 @@
 
 #define DEFAULT_MIN 356
 #define DEFAULT_MAX 880
-#define RES ADC_RES_10BIT
+#define RES (CONFIG_ADC_RES)
 
 int init_moisture (void)
 {
