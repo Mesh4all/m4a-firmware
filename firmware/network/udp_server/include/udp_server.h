@@ -34,7 +34,7 @@ extern "C" {
  * @brief this is a struct used to init udp server
  */
 typedef struct {
-    char *port;                                     /*!< port where will listen udp server */
+    int port;                                     /*!< port where will listen udp server */
     void (*callback)(uint8_t *message, size_t len); /*!< this is a callback this function will
                                                     be executed when arrive new values */
 } udpf_payload;

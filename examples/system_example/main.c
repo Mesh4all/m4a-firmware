@@ -101,7 +101,7 @@ int main(void) {
     }
 #else
     udpf_payload payload;
-    payload.port = "3000";
+    payload.port = 3000;
     payload.callback = &udp_callback;
     udp_server(&payload);
     config_at();

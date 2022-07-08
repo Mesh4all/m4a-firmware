@@ -1,3 +1,5 @@
 menu "UDP Client"
-# TO DO
+    config UDP_CLIENT_PORT
+    int "Default port"
+    default 3000
 endmenu

@@ -1,0 +1,1 @@
+rsource "../../firmware/network/udp_server/Kconfig"

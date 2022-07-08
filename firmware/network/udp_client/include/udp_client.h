@@ -31,12 +31,12 @@ extern "C" {
 #endif
 
 /**
- * @brief this function is used to send the sensors values
+ * @brief This function is used to send the sensors values.
  *
- * @param port  [in]            port to which the message will be sent
- * @param address [int]         address to which the message will be sent
- * @param message [int]         in this parameter the sensor data will be sent
- * @param payload_len [int]     size of the message
+ * @param port  [in]           Port to which the message will be sent.
+ * @param address [in]         Address to which the message will be sent.
+ * @param message [in]         In this parameter the sensor data will be sent.
+ * @param payload_len [in]     Size of the message.
  * @return int
  */
 int udp_send(const uint16_t port, char *address, uint8_t *message, size_t *payload_len);
