@@ -1,0 +1,55 @@
+/**
+@defgroup    boards_meshme MeshMe CC2538 +20dBm PA
+@ingroup     boards
+@brief       Mesh4All 2.4 GHz board + 20dBm PA
+
+# Overview
+MeshMe is a complete communications system based on TI's CC2538 system on chip (SoC) and
+the CC2592 front end, featuring an ARM Cortex-M3 with 512KiB flash, 32KiB RAM and 2.4 GHz RF interface.
+
+## Hardware
+
+### Brain and RF, CC2538SF53
+
+The CC2538 SoC combines an ARM Cortex-M3 microcontroller with an IEEE802.15.4 radio
+plus a bunch of peripherals as you can see in the following table.
+
+| MCU               | CC2538SF53                |
+|:----------------- |:------------------------- |
+| Family            | ARM Cortex-M3             |
+| Vendor            | Texas Instruments         |
+| RAM               | 32KiB                     |
+| Flash             | 512KiB                    |
+| Frequency         | 32MHz                     |
+| FPU               | no                        |
+| Timers            | 4                         |
+| ADCs              | 1x 12-bit (8 channels)    |
+| UARTs             | 2                         |
+| SPIs              | 2                         |
+| I2Cs              | 1                         |
+| Vcc               | 2V - 3.6V                 |
+| Datasheet         | [Datasheet](http://www.ti.com/lit/gpn/cc2538) (pdf file) |
+| Reference Manual  | [Reference Manual](http://www.ti.com/lit/pdf/swru319)    |
+
+### Power Amplifier, CC2592
+
+The TI's CC2592 is front end (FE) designed for the CC25XX family, it contains PA, LNA, switches, RF-matching, and balun.
+
+| CC2592            | Min      | Max       |
+|:------------------|:--------:|:---------:|
+| Vcc               | 2V       | 3.7V      |
+| Frequency range   | 2400MHz  | 2483.5MHz |
+| Output power (PA) |          | 22 dBm    |
+| LNA Gain          | 6 dB     | 11 dB     |
+| Datasheet         | [Datasheet](https://www.ti.com/lit/ds/symlink/cc2592.pdf) (pdf file) |
+
+The device is controlled by three digital terminals, PA_EN, LNA_EN, and HGM.
+The control logic is shown in the following table:
+
+| PA_EN | LNA_EN | HGM | Mode of operation |
+|:-----:|:------:|:---:|:------------------|
+| 0     | 0      | X   | Power down        |
+| X     | 1      | 0   | Rx mode Low Gain  |
+| X     | 1      | 1   | Rx mode High Gain |
+| 1     | 0      | X   | Tx mode           |
+*/
