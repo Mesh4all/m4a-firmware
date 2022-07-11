@@ -1,3 +1,6 @@
 menu "AT Client"
-# TO DO
+    config WAIT_RESPONSE
+    int "SECONDS TO WAIT RESPONSE"
+    default 10
+    range 10 20
 endmenu

@@ -37,7 +37,7 @@
 
 #define PRIORITY (THREAD_PRIORITY_MAIN - 1)
 #define QUEUE_SIZE (8)
-#define WAIT_RESPONSE (10 * US_PER_SEC) // time in microseconds
+#define WAIT_RESPONSE (US_PER_SEC * CONFIG_WAIT_RESPONSE) // time in microseconds
 
 kernel_pid_t buff_thread_pid;
 char stack[THREAD_STACKSIZE_MAIN];
