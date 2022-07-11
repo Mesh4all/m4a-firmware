@@ -38,7 +38,7 @@ msg_t server_msg_queue[SERVER_MSG_QUEUE_SIZE];
 
 void *_udp_serverf(void *args) {
     udpf_payload *castPayload = (udpf_payload *)args;
-    sock_udp_ep_t server = {.port = atoi(castPayload->port), .family = AF_INET6};
+    sock_udp_ep_t server = {.port = castPayload->port, .family = AF_INET6};
     msg_init_queue(server_msg_queue, SERVER_MSG_QUEUE_SIZE);
 
     if (sock_udp_create(&sock, &server, NULL, 0) < 0) {

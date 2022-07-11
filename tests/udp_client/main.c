@@ -27,7 +27,7 @@
 #include "udp_client.h"
 #include "udp_server.h"
 
-int port = 3000;
+int port = CONFIG_UDP_CLIENT_PORT;
 
 void udp_callback(uint8_t *message, size_t len) {
     (void)len;
@@ -37,7 +37,7 @@ void udp_callback(uint8_t *message, size_t len) {
 static void setup(void) {
 
     udpf_payload payload;
-    payload.port = "3000";
+    payload.port = CONFIG_UDP_CLIENT_PORT;
     payload.callback = &udp_callback;
 
     udp_server(&payload);

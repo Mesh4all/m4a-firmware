@@ -28,7 +28,7 @@
 #include "udp_server.h"
 #include "xtimer.h"
 
-int port = 3000;
+int port = CONFIG_UDP_SERVER_PORT;
 
 void udp_callback(uint8_t *message, size_t len) {
     (void)len;
@@ -39,7 +39,7 @@ void udp_callback(uint8_t *message, size_t len) {
 static void start_udp(void) {
 
     udpf_payload payload;
-    payload.port = "3000";
+    payload.port = CONFIG_UDP_SERVER_PORT;
     payload.callback = &udp_callback;
 
     int err = udp_server(&payload);
