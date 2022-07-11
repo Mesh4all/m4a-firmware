@@ -118,7 +118,7 @@ Files</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h3><a class="anchor" id="autotoc_md41"></a>
+<h3><a class="anchor" id="autotoc_md45"></a>
 Border Router</h3>
 <p>This module is used to set up a border router using the USB CDC ECM. The module sets an ipv6 address in a wireless or wired interface.</p>
 <p>Eg: This code setup address "2001:db8:1::2" to host.</p>
@@ -128,19 +128,19 @@ Border Router</h3>
 <div class="line">    ipv6_addr_from_str(&amp;address,<span class="stringliteral">&quot;2001:db8:1::2&quot;</span>);</div>
 <div class="line">    <a class="code" href="border__router_8h.html#aad36bca4780c3314802500cc42d49345">border_router_setup</a>(address, 64. <a class="code" href="border__router_8h.html#ab65fb432d899c9369bad95c48875b667a6e43a6b7ef8ac56cf4f8d4eebf8b4f6b">WIRED_INTERFACE</a>)</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>: the param prefix (in the example is 64) is to known the prefix of the network, This could be useful to subnet in ipv6 generally it's a prefix length between 128 and 64</dd></dl>
-<h1><a class="anchor" id="autotoc_md42"></a>
+<h1><a class="anchor" id="autotoc_md46"></a>
 Network configuration for the border router</h1>
 <p>Shell commands are provided for a Linux based operating system. macOS should follow similar steps. </p><pre class="fragment">- Commands requiring administrative access are prefixed with #.
 - Commands that do not require administrative access are prefixed with $.
 - Commands that must be executed on a RIOT node are prefixed with &gt;.
-</pre><h3><a class="anchor" id="autotoc_md43"></a>
+</pre><h3><a class="anchor" id="autotoc_md47"></a>
 USB device</h3>
 <ul>
 <li>When plugging in The Border Router into the host, run the following command in sudo mode:</li>
 </ul>
 <div class="fragment"><div class="line"><span class="preprocessor"># dmesg</span></div>
 </div><!-- fragment --><p>It's important to obtain the cdc_ether name renamed from usb0. Eg: enx5eceb7480aa6: renamed from usb0, so name_of_usb_device = enx5eceb7480aa6.</p>
-<h3><a class="anchor" id="autotoc_md44"></a>
+<h3><a class="anchor" id="autotoc_md48"></a>
 Address configuration</h3>
 <ul>
 <li>Verify that the host side reports the network interface as UP or set it as UP if necessary:</li>
@@ -161,14 +161,14 @@ Address configuration</h3>
 </ul>
 <p>To test. Run from host:</p>
 <div class="fragment"><div class="line">$ ping6 &lt;ipv6_address&gt; -c3</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md45"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md49"></a>
 Border router diagram</h2>
 <p>This diagram shows the struct connection between the border router and a RPL network.</p>
 <div class="image">
 <img src="border_router_diagram.png" alt="" width="40%"/>
 <div class="caption">
 Border router connection with RPL network </div></div>
-<h3><a class="anchor" id="autotoc_md46"></a>
+<h3><a class="anchor" id="autotoc_md50"></a>
 How this struct works?</h3>
 <p>The border router is connected to an external network (Host) which is connected to the internet. Through this connection it links the nodes using RPL protocol. </p>
 </div><!-- contents -->
@@ -181,7 +181,7 @@ How this struct works?</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jul 8 2022 18:38:11 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Jul 11 2022 09:20:21 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

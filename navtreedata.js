@@ -52,8 +52,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__wifi__component.html#ga1894da45456a14c348667e8a44373583",
-"structhttp__request__t.html#adf8e2dd4010ba498cffd3bb9c7fd1bab"
+"group__wifi__component.html",
+"radio_8h.html#a907834f2e7b62365d4157dceb87a6921"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

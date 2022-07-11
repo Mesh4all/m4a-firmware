@@ -121,7 +121,7 @@ Files</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h3><a class="anchor" id="autotoc_md54"></a>
+<h3><a class="anchor" id="autotoc_md58"></a>
 Radio</h3>
 <p>In this module are all low power and low consumption wireless devices, it can find devices based on the zigbee and 6lowpan protocols, In addition to that, these devices can follow the guidelines established in the IEEE802.14.5 standard.</p>
 <p>The module works in the physical layer of the 802.15.4, to manage all settings as the power transmission, the channel of the wireless networks that is upper to 2.4 GHz it's between the range of 11 to 26 and in the case of the radio device is multiband. you could works in the band under to 2.4GHz these channels are between 0 and 10.</p>
@@ -139,16 +139,16 @@ Radio</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">cc2538 </td><td class="markdownTableBodyCenter">-24 </td><td class="markdownTableBodyCenter">+7 </td><td class="markdownTableBodyCenter">no </td><td class="markdownTableBodyCenter">xxxxxxx  </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md55"></a>
+<h3><a class="anchor" id="autotoc_md59"></a>
 getting an specify interface</h3>
 <p>when you needs know what wireless interface require to get o set its features you need use <code><a class="el" href="radio_8h.html#a8f65fd87e59ef58e93e938a0457212d2" title="This function it&#39;s to get index of an IEEE802.15.4 interface.">get_ieee802154_iface(void)</a></code> this returns the index of an radio device, an example is the at86rf233.</p>
 <div class="fragment"><div class="line"><a class="code" href="radio_8h.html#a8f65fd87e59ef58e93e938a0457212d2">get_ieee802154_iface</a>(<span class="keywordtype">void</span>)</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>When it's used the at86rf215 you could has two network device.</dd></dl>
-<h3><a class="anchor" id="autotoc_md56"></a>
+<h3><a class="anchor" id="autotoc_md60"></a>
 Getting and setting transmission power</h3>
 <p>Basic setup to get and set the transmission power of a radio device. </p><div class="fragment"><div class="line"><a class="code" href="radio_8h.html#a907834f2e7b62365d4157dceb87a6921">get_netopt_tx_power</a>(int16_t txpower) <span class="comment">// get the current TX_POWER of the radio device</span></div>
 <div class="line"><a class="code" href="radio_8h.html#abb304f7a0a65383b7f118537bd7d4e86">set_netopt_tx_power</a>(int16_t txpower) <span class="comment">// set TX_POWER within of the radio device TX_POWER limits</span></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md57"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md61"></a>
 Getting and setting band channel</h3>
 <p>Basic setup to get and set the band channel of a radio device. </p><div class="fragment"><div class="line"><a class="code" href="radio_8h.html#a9a36bee0f42f69363673f6beb6d9543f">get_netopt_channel</a>(int16_t channel) <span class="comment">// get the current operative channel</span></div>
 <div class="line"><a class="code" href="radio_8h.html#a9e854649463b645972ceb24bfc547fa4">set_netopt_channel</a>(int16_t channel) <span class="comment">/* sets the operative channel upper or under of 2.4 GHz</span></div>
@@ -165,7 +165,7 @@ Getting and setting band channel</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jul 8 2022 18:38:11 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Jul 11 2022 09:20:21 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
