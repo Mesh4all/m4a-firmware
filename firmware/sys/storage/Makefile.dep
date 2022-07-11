@@ -1,4 +1,5 @@
 USEMODULE += mtd_flashpage
+USEMODULE += mtd_write_page
 
 ifneq (,$(filter storage,$(USEMODULE)))
   FEATURES_REQUIRED += periph_flashpage
