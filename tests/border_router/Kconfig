@@ -1,1 +1,1 @@
-rsource "../../firmware/network/rpl_protocol/Kconfig"
+rsource "../../firmware/network/net_tools/Kconfig"
