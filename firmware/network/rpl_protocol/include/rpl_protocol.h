@@ -32,10 +32,18 @@
 extern "C" {
 #endif
 
+/**
+ * @brief Configuration to set "DAG" or "DODAG" mode
+ *
+ */
 #ifndef CONFIG_IS_DODAG
 #define CONFIG_IS_DODAG (0)
 #endif
 
+/**
+ * @brief DODAG instance by Kconfig
+ *
+ */
 #ifndef CONFIG_DODAG_INSTANCE
 #define CONFIG_DODAG_INSTANCE (1)
 #endif

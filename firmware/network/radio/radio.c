@@ -27,7 +27,6 @@
 #include "net/netif.h"
 #include "net/netdev/ieee802154.h"
 #include "net/gnrc.h"
-#include "uniqueid.h"
 #include "net/netdev.h"
 #include "radio.h"
 

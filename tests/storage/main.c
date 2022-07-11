@@ -24,7 +24,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
-
+#include "default_params.h"
 #include "embUnit.h"
 
 #include "storage.h"
@@ -75,6 +75,66 @@ void test_load_data(void) {
     }
     printf("\n");
 }
+
+void test_save_firm_data(void) {
+    int ret = 0;
+    storage_data_t storage_test = {
+        .amount_sensors = 2,
+        .wifi_subsys = 0,
+        .uniqueid_mode = 0,
+        .sensors =
+            {
+                {
+                    .class_sensor = 0,
+                    .pin = 5,
+                    .sensor_type = 0,
+                },
+                {
+                    .class_sensor = 1,
+                    .pin = 1,
+                    .sensor_type = 1,
+                },
+            },
+#ifdef MODULE_RADIO
+        .radio_tx_power = -30,
+        .subghz = true,
+        .channel = 11,
+#endif
+#ifdef MODULE_RPL_PROTOCOL
+        .rpl_mode = 0,
+#endif
+    };
+    ret = mtd_save_compress(&storage_test, sizeof(storage_test));
+    TEST_ASSERT_EQUAL_INT(0, ret);
+}
+
+void test_load_firm_data(void) {
+    storage_data_t load_storage;
+    printf("\n\nLoading Firmware default data:\n\n");
+    mtd_load(&load_storage, sizeof(load_storage));
+#ifdef MODULE_RADIO
+    printf("Tx_power:  %d\n", load_storage.radio_tx_power);
+    printf("Sub_GHz:  %s\n", load_storage.subghz ? "YES" : "NO");
+    printf("Channel: %u\n", load_storage.channel);
+#endif
+#ifdef MODULE_RPL_PROTOCOL
+    printf("\nRouting\n\nRpl_mode: %s\n", load_storage.rpl_mode ? "DODAG" : "DAG");
+    printf("RPL instance: %d\n", load_storage.rpl_instance);
+    printf("\nRouting\n\nRpl_mode: %d\n ", load_storage.pan_id);
+
+#endif
+    printf("Wifi-subsys: %s\n", load_storage.wifi_subsys ? "YES" : "NO");
+    printf("Amount of sensors %d\n", load_storage.amount_sensors);
+    for (uint8_t i = 0; i < load_storage.amount_sensors; i++) {
+        printf("\nSensor Id %d \n", i + 1);
+        printf("Class of Sensor: %s SENSOR\n",
+               load_storage.sensors[i].class_sensor ? "TEMPERATURE" : "MOISTURE");
+        printf("Application Type of Sensor: %s SENSOR\n",
+               load_storage.sensors[i].sensor_type ? "AIR" : "SOIL");
+        printf("Input pin: %d\n", load_storage.sensors[i].pin);
+    }
+    printf("\n\n");
+}
 void test_write_string(void) {
     int ret = mtd_write_string(ADDRESS, data);
     TEST_ASSERT_EQUAL_INT(0, ret);
@@ -111,10 +171,11 @@ void test_erase_address(void) {
 
 Test *tests_mtd_flashpage_tests(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
-        new_TestFixture(test_init_mtd),    new_TestFixture(test_save_data),
-        new_TestFixture(test_load_data),   new_TestFixture(test_write_string),
-        new_TestFixture(test_read_string), new_TestFixture(test_write_u8),
-        new_TestFixture(test_read_u8),     new_TestFixture(test_erase_address),
+        new_TestFixture(test_init_mtd),       new_TestFixture(test_save_data),
+        new_TestFixture(test_load_data),      new_TestFixture(test_save_firm_data),
+        new_TestFixture(test_load_firm_data), new_TestFixture(test_write_string),
+        new_TestFixture(test_read_string),    new_TestFixture(test_write_u8),
+        new_TestFixture(test_read_u8),        new_TestFixture(test_erase_address),
     };
 
     EMB_UNIT_TESTCALLER(mtd_flashpage_tests, NULL, NULL, fixtures);
