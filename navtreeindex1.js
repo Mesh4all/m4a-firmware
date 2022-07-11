@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"group__wifi-subsys.html":[3,5],
+"group__wifi-subsys.html#ga8e493bff2a09a1207b527071e4cff06e":[3,5,5],
+"group__wifi-subusys-protocols.html":[3,5,1],
 "group__wifi__component.html":[3,5,3],
 "group__wifi__component.html#ga0f1d3a76020083d4ec351087dff3b1b9":[3,5,3,15],
 "group__wifi__component.html#ga139ed802ea1b1d4829e52a58eb6151d9":[3,5,3,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3":[5,0,5,0,1,0,2,0],
 "protocol__sntp_8h_source.html":[5,0,5,0,1,0,2],
 "radio_8h.html":[5,0,3,0,3,0,0],
-"radio_8h.html#a19f78651c860b0ba873b530876f75875":[5,0,3,0,3,0,0,3],
-"radio_8h.html#a59970ec02b8d3c93ecb6892ccf17c120":[5,0,3,0,3,0,0,5],
-"radio_8h.html#a8a2341e339a4ae5338c4c2f648ef6abc":[5,0,3,0,3,0,0,8],
-"radio_8h.html#a8f65fd87e59ef58e93e938a0457212d2":[5,0,3,0,3,0,0,0]
+"radio_8h.html#a19f78651c860b0ba873b530876f75875":[5,0,3,0,3,0,0,3]
 };
