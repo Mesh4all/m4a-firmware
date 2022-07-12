@@ -1,0 +1,4 @@
+menu "Test Kconfig Storage"
+rsource "../../firmware/sys/uniqueid/Kconfig"
+rsource "../../firmware/network/net_tools/Kconfig"
+endmenu
