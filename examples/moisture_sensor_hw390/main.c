@@ -26,7 +26,7 @@
 #include "periph/adc.h"
 #include "ztimer.h"
 
-#define RES             ADC_RES_10BIT
+#define RES             CONFIG_ADC_RES
 #define DELAY_MS        5000U
 
 int main (void) {

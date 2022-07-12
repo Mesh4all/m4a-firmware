@@ -1,3 +1,34 @@
 menu "Moisture sensor setup"
+choice ADC_RES
+    prompt "ADC_BITS_RESOLUTION"
+    default ADC_RES_10BIT
 
+config ADC_RES_6BIT
+    bool "ADC resolution: 6 bit"
+
+config ADC_RES_8BIT
+    bool "ADC resolution: 8 bit"
+
+config ADC_RES_10BIT
+    bool "ADC resolution: 10 bit"
+
+config ADC_RES_12BIT
+    bool "ADC resolution: 12 bit"
+
+config ADC_RES_14BIT
+    bool "ADC resolution: 14 bit"
+
+config ADC_RES_1B6IT
+    bool "ADC resolution: 16 bit"
+endchoice
+
+config ADC_RES
+int
+
+default 255 if ADC_RES_6BIT
+default 48 if ADC_RES_8BIT
+default 32 if ADC_RES_10BIT
+default 0 if ADC_RES_12BIT
+default 254 if ADC_RES_14BIT
+default 253 if ADC_RES_16BIT
 endmenu
