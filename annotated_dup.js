@@ -10,7 +10,9 @@ var annotated_dup =
     [ "ipv6_addr_t", "unionipv6__addr__t.html", "unionipv6__addr__t" ],
     [ "random_buff", "unionrandom__buff.html", "unionrandom__buff" ],
     [ "sensor_data", "structsensor__data.html", "structsensor__data" ],
+    [ "sensors_t", "structsensors__t.html", "structsensors__t" ],
     [ "some_struct_var", "structsome__struct__var.html", "structsome__struct__var" ],
+    [ "storage_data_t", "structstorage__data__t.html", "structstorage__data__t" ],
     [ "uart_buffer_t", "structuart__buffer__t.html", "structuart__buffer__t" ],
     [ "udpf_payload", "structudpf__payload.html", "structudpf__payload" ]
 ];
