@@ -2,4 +2,9 @@ menu "Chamos server"
     config HEADER_ADDRESS_MULTICAST
         string "MULTICAST IPV6 HEADER"
         default "ff02::1"
+
+    config SERVER_BUFFER_SIZE
+        int "Default server buffer size"
+        default 20
+        range 20  100
 endmenu
