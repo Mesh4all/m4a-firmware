@@ -56,5 +56,5 @@
 "Platform: native":
   - "boards/native/**/*"
 
- "Platform: vs203":
+"Platform: vs203":
   - "boards/vs203/**/*"
