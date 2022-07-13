@@ -54,7 +54,7 @@
   - "boards/meshme/**/*"
 
 "Platform: native":
- - "boards/native/**/*"
+  - "boards/native/**/*"
 
  "Platform: vs203":
- - "boards/vs203/**/*"
+  - "boards/vs203/**/*"
