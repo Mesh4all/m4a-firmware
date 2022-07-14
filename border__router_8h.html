@@ -104,8 +104,6 @@ $(document).ready(function(){initNavTree('border__router_8h.html',''); initResiz
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">border_router.h File Reference<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__network.html">Network module</a> &raquo; <a class="el" href="group__border__router.html">Border router</a></div></div>  </div>
 </div><!--header-->
@@ -126,15 +124,9 @@ $(document).ready(function(){initNavTree('border__router_8h.html',''); initResiz
 </div>
 <p><a href="border__router_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
 <tr class="memitem:aad36bca4780c3314802500cc42d49345"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="border__router_8h.html#aad36bca4780c3314802500cc42d49345">border_router_setup</a> (<a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> addr, uint8_t prefix, uint8_t iface_type)</td></tr>
 <tr class="memdesc:aad36bca4780c3314802500cc42d49345"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function init the border router.  <a href="border__router_8h.html#aad36bca4780c3314802500cc42d49345">More...</a><br /></td></tr>
 <tr class="separator:aad36bca4780c3314802500cc42d49345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab65fb432d899c9369bad95c48875b667"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="border__router_8h.html#ab65fb432d899c9369bad95c48875b667">type_iface_t</a> { <a class="el" href="border__router_8h.html#ab65fb432d899c9369bad95c48875b667a6e43a6b7ef8ac56cf4f8d4eebf8b4f6b">WIRED_INTERFACE</a> = 0, 
-<a class="el" href="border__router_8h.html#ab65fb432d899c9369bad95c48875b667a946e162d83d7a3cc25134a12b96f606a">WIRELESS_INTERFACE</a>
- }</td></tr>
-<tr class="separator:ab65fb432d899c9369bad95c48875b667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>this module content all functions of Border Router </p>
@@ -143,31 +135,7 @@ Functions</h2></td></tr>
 eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+'@gm'+'ai'+'l.c'+'om'; return false;">eduaz<span style="display: none;">.nosp@m.</span>ocar<span style="display: none;">.nosp@m.</span>v@gma<span style="display: none;">.nosp@m.</span>il.c<span style="display: none;">.nosp@m.</span>om</a> </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="border__router_8h_source.html">border_router.h</a>.</p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ab65fb432d899c9369bad95c48875b667"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab65fb432d899c9369bad95c48875b667">&#9670;&nbsp;</a></span>type_iface_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="border__router_8h.html#ab65fb432d899c9369bad95c48875b667">type_iface_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>List of all types of Interface </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab65fb432d899c9369bad95c48875b667a6e43a6b7ef8ac56cf4f8d4eebf8b4f6b"></a>WIRED_INTERFACE&#160;</td><td class="fielddoc"><p>Represents the type of interface is wired </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab65fb432d899c9369bad95c48875b667a946e162d83d7a3cc25134a12b96f606a"></a>WIRELESS_INTERFACE&#160;</td><td class="fielddoc"><p>Represents the type of interface is wireless </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="border__router_8h_source.html#l00041">41</a> of file <a class="el" href="border__router_8h_source.html">border_router.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="aad36bca4780c3314802500cc42d49345"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aad36bca4780c3314802500cc42d49345">&#9670;&nbsp;</a></span>border_router_setup()</h2>
 
@@ -204,7 +172,7 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 <p>sets ipv6 in an interface.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>ipv6 address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>ipv6 address. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">iface_type</td><td>refers to if is used a WIRED or WIRELESS interface. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Networks prefix,express the subnet size. </td></tr>
   </table>
@@ -228,7 +196,7 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_6959c24ee99bf4342b45a1be156369cb.html">border_router</a></li><li class="navelem"><a class="el" href="dir_65e48d3ce10046cbbe59efdcb9f11a13.html">include</a></li><li class="navelem"><a class="el" href="border__router_8h.html">border_router.h</a></li>
-    <li class="footer">Generated on Wed Jul 13 2022 08:12:24 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Thu Jul 14 2022 12:05:24 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

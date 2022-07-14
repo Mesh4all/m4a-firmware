@@ -12,6 +12,5 @@ var searchData=
   ['tx_5fpower_5fmax_340',['TX_POWER_MAX',['../radio__params_8h.html#a091eb86daafadcce09549f3d9827dd9d',1,'radio_params.h']]],
   ['tx_5fpower_5fmin_341',['TX_POWER_MIN',['../radio__params_8h.html#aafe4e221d22e78a684bd1697a11cf719',1,'radio_params.h']]],
   ['tx_5fsend_5floop_342',['tx_send_loop',['../subsys__uart_8h.html#a7a41e001b98cba8e3a6b462ec148c9f7',1,'subsys_uart.h']]],
-  ['type_5fiface_5ft_343',['type_iface_t',['../border__router_8h.html#ab65fb432d899c9369bad95c48875b667',1,'border_router.h']]],
-  ['tools_344',['Tools',['../group__wifi-subsys-tools.html',1,'']]]
+  ['tools_343',['Tools',['../group__wifi-subsys-tools.html',1,'']]]
 ];

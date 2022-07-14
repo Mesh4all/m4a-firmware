@@ -35,10 +35,7 @@ var NAVTREEINDEX0 =
 "at__client_8h_source.html":[5,0,3,2,0,0,0],
 "at__handler_8h_source.html":[5,0,5,0,4,0,0],
 "border__router_8h.html":[5,0,3,0,0,0,0],
-"border__router_8h.html#aad36bca4780c3314802500cc42d49345":[5,0,3,0,0,0,0,1],
-"border__router_8h.html#ab65fb432d899c9369bad95c48875b667":[5,0,3,0,0,0,0,0],
-"border__router_8h.html#ab65fb432d899c9369bad95c48875b667a6e43a6b7ef8ac56cf4f8d4eebf8b4f6b":[5,0,3,0,0,0,0,0,0],
-"border__router_8h.html#ab65fb432d899c9369bad95c48875b667a946e162d83d7a3cc25134a12b96f606a":[5,0,3,0,0,0,0,0,1],
+"border__router_8h.html#aad36bca4780c3314802500cc42d49345":[5,0,3,0,0,0,0,0],
 "border__router_8h_source.html":[5,0,3,0,0,0,0],
 "chamoc__msg_8h.html":[5,0,1,0,0,0,0],
 "chamoc__msg_8h.html#a0fe83fa720ae4baa509464be658cea15":[5,0,1,0,0,0,0,2],
@@ -249,5 +246,8 @@ var NAVTREEINDEX0 =
 "group__test__group.html":[3,4],
 "group__test__template.html":[3,4,2],
 "group__tmp__uart.html":[3,1,4],
-"group__udp__client.html":[3,2,0,5]
+"group__udp__client.html":[3,2,0,5],
+"group__udp__client__test.html":[3,4,3],
+"group__udp__server.html":[3,2,0,6],
+"group__udp__server__test.html":[3,4,4]
 };

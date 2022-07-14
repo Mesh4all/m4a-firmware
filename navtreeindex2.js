@@ -1,8 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"protocol__sntp_8h.html#ac27e89590a236e8f2b654813b055a830":[5,0,5,0,1,0,2,3],
-"protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3":[5,0,5,0,1,0,2,0],
-"protocol__sntp_8h_source.html":[5,0,5,0,1,0,2],
 "radio_8h.html":[5,0,3,0,3,0,0],
 "radio_8h.html#a19f78651c860b0ba873b530876f75875":[5,0,3,0,3,0,0,3],
 "radio_8h.html#a59970ec02b8d3c93ecb6892ccf17c120":[5,0,3,0,3,0,0,5],
