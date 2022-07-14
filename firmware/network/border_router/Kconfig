@@ -1,0 +1,39 @@
+menu "Border Router"
+
+            config WIRED_INTERFACE
+
+                int "WIRED"
+                default 0
+                range 0 1
+
+            config WIRELESS_INTERFACE
+
+                int "WIRELESS"
+                default 2
+                range 2 3
+
+    config ADDR_IPV6_WIRELESS
+        bool "Edit IPV6 Wireless"
+        default n
+
+        menu "Change Wireless IPV6"
+        visible if ADDR_IPV6_WIRELESS
+            config ADDRESS_IPV6_WIRELESS
+                string "Wireless address IPV6"
+                default "2001:db8:2::1"
+
+        endmenu # Change wireless IPV6
+
+    config ADDR_IPV6_WIRED
+        bool "Edit IPV6 Wired"
+        default n
+        menu "Change Wired IPV6"
+        visible if ADDR_IPV6_WIRED
+
+        config ADDRESS_IPV6_WIRED
+            string "Wired address IPV6"
+            default "2001:db8:1::1"
+
+endmenu # Change wired IPV6
+
+endmenu

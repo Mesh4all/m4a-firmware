@@ -29,17 +29,16 @@ void test_border_router_setup_wired(void) {
     ipv6_addr_t address = {
         .u8 = {0},
     };
-    ipv6_addr_from_str(&address, "2001:db8:2::1");
-    int err = border_router_setup(address, 64, WIRED_INTERFACE);
+    ipv6_addr_from_str(&address, CONFIG_ADDRESS_IPV6_WIRED);
+    int err = border_router_setup(address, 64, CONFIG_WIRED_INTERFACE);
     TEST_ASSERT_EQUAL_INT(0, err);
 }
-
 void test_border_router_setup_wireless(void) {
     ipv6_addr_t address = {
         .u8 = {0},
     };
-    ipv6_addr_from_str(&address, "2001:db8:1::2");
-    int err = border_router_setup(address, 16, WIRELESS_INTERFACE);
+    ipv6_addr_from_str(&address, CONFIG_ADDRESS_IPV6_WIRELESS);
+    int err = border_router_setup(address, 16, CONFIG_WIRELESS_INTERFACE);
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 

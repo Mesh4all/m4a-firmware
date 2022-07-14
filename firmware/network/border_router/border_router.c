@@ -28,17 +28,19 @@
 int8_t border_router_setup(ipv6_addr_t addr, uint8_t prefix, uint8_t iface_type) {
     ipv6_addr_t ip;
     int8_t index;
+
     switch (iface_type) {
-    case WIRED_INTERFACE:
+    case CONFIG_WIRED_INTERFACE:
         index = get_wired_iface();
         break;
-    case WIRELESS_INTERFACE:
+    case CONFIG_WIRELESS_INTERFACE:
         index = get_ieee802154_iface();
         break;
     default:
         printf("Error: Type of Interface doesn't exists File: %s, line: %d\n", __FILE__, __LINE__);
         return -1;
     }
+
     if (index < 0) {
         printf("Error: Expected interface wasn't found. File: %s, line %d\n", __FILE__, __LINE__);
         return -1;
@@ -59,6 +61,7 @@ int8_t border_router_setup(ipv6_addr_t addr, uint8_t prefix, uint8_t iface_type)
         }
         return 0;
     }
+
     printf("Error: Only can be processed Unicast and Multicast Addresses. File: %s, line: %d\n",
            __FILE__, __LINE__);
     return -1;

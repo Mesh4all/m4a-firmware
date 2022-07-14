@@ -34,22 +34,11 @@ extern "C" {
 #endif
 
 /**
- * @enum type_iface_t List of all types of Interface
- * @{
- *
- */
-enum type_iface_t {
-    WIRED_INTERFACE = 0, /*!<Represents the type of interface is wired*/
-    WIRELESS_INTERFACE   /*!<Represents the type of interface is wireless*/
-};
-/**@}*/
-
-/**
  * @brief This function init the border router. sets ipv6 in an interface.
  *
- * @param[in] addr       ipv6 address
+ * @param[in] addr       ipv6 address.
  * @param[in] iface_type refers to if is used a WIRED or WIRELESS interface.
- * @param[in] prefix Networks prefix,express the subnet size.
+ * @param[in] prefix     Networks prefix,express the subnet size.
  * @retval 0 Setup Success
  * @retval -1 Setup Failed
  */
