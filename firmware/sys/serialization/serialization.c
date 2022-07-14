@@ -92,7 +92,7 @@ int cbor_decode_message(uint8_t *buffer, sensor_data *data, size_t length) {
 }
 
 int cbor_enconde_message(sensor_data *data, uint8_t *output, size_t *len_output) {
-    uint8_t buffer[100];
+    uint8_t buffer[CONFIG_SERIALIZATION_BUFF_SIZE];
     CborEncoder encoder;
     cbor_encoder_init(&encoder, buffer, sizeof(buffer), 0);
 
