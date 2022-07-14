@@ -18,5 +18,5 @@ var searchData=
   ['get_5fwsta_5fpass_136',['GET_WSTA_PASS',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217af0226899deae74826aa531874d90f844',1,'at_client.h']]],
   ['get_5fwsta_5fssid_137',['GET_WSTA_SSID',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a9c1a8da150f697e0e066dad26b508123',1,'at_client.h']]],
   ['gnrc_5frpl_5fdodag_5froot_138',['gnrc_rpl_dodag_root',['../group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7',1,'rpl_protocol.h']]],
-  ['gpio_5fparams_2eh_139',['gpio_params.h',['../m4a-24g_2include_2gpio__params_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2gpio__params_8h.html',1,'(Global Namespace)'],['../meshme_2include_2gpio__params_8h.html',1,'(Global Namespace)']]]
+  ['gpio_5fparams_2eh_139',['gpio_params.h',['../m4a-24g_2include_2gpio__params_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2gpio__params_8h.html',1,'(Global Namespace)'],['../meshme_2include_2gpio__params_8h.html',1,'(Global Namespace)'],['../vs203_2include_2gpio__params_8h.html',1,'(Global Namespace)']]]
 ];

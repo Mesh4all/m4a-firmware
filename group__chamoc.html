@@ -128,10 +128,10 @@ Files</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Client tool to connect via Linux host. </p>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 CHAMOC (Communication Handler for Addressing Management | Origin client)</h2>
 <p>The module CHAMOC It's used for client-side communication for nib routing table. In this tools will be there an compiled program called CHAMOC.out that has a client interface with an m4a-24g board. The client node will be sending <code><a class="el" href="structchamoc__message__t.html" title="Struct of a chamoc message, this contains the type of message, sequence number, ipv6 address and its ...">chamoc_message_t</a></code> data. that contains an <code>[Type message]</code> tell to the system how process the message. <code>(NIB_ADD or NIB_DEL)</code>, others field are the <code>[sequence number]</code>, <code>[host ip address]</code> to add as neighborh route, and the <code>[network lenght prefix]</code> generally is /64.</p>
-<h3><a class="anchor" id="autotoc_md33"></a>
+<h3><a class="anchor" id="autotoc_md37"></a>
 Steps to initialize the client socket</h3>
 <ul>
 <li>You should has the chamos_server in your m4a-24g board (Also, could run the chamoc_server inside to the test directory)</li>
@@ -139,12 +139,12 @@ Steps to initialize the client socket</h3>
 <li>Run the ./autoconfig.sh script</li>
 <li>Wait that nib_request is accepted.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md34"></a>
+<h3><a class="anchor" id="autotoc_md38"></a>
 Testing communication</h3>
 <p>Open the tool chamoc located in <code>dist/tools/chamoc</code> and then run the autoconfigure script. this could receive an ipv6 address as to parammeter.</p>
 <div class="fragment"><div class="line">cd dist/tools/chamoc</div>
 <div class="line">./autoconfigure.sh</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md35"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md39"></a>
 Testing communication</h3>
 <p>when you have ran the autoconfig.sh script you can do some pings to the m4a-24g board interface. first follow these steps to locate, and do ping between both devices.</p>
 <ul>
@@ -180,7 +180,7 @@ Testing communication</h3>
 <div class="line">64 bytes from 2001:db8::2: icmp_seq=3 ttl=64 time=1.01 ms</div>
 </div><!-- fragment --></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md36"></a>
+<h3><a class="anchor" id="autotoc_md40"></a>
 autoconfigure:</h3>
 <p>Running the script you will has as result the compilation and execution to the client program CHAMOC.out This test automatically will be start sending the nib_add and nib_del request taking as parameters. <code>[Name of interface]</code><code>[ip address]</code><code>[prefix_len]</code>.</p>
 <div class="fragment"><div class="line">./autoconfigure.sh</div>
@@ -191,7 +191,7 @@ autoconfigure:</h3>
 <div class="line">Start sending a nib delete request</div>
 <div class="line">Request Confirmed</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>: the chamoc intercomunnication has five attempts to wait a response from the server</dd></dl>
-<h3><a class="anchor" id="autotoc_md37"></a>
+<h3><a class="anchor" id="autotoc_md41"></a>
 Running with chamoc_server</h3>
 <p>in the folder /test, there are an example of chamoc_server running. this will be waiting and MSG_NIB_ADD or MSG_NIB_DEL, if these are received correctly response with a MSG_ACK, in case that the message was wrong received, the server will send an MSG_NACK. To start this server only has to run the script in the test_folder. </p>
 </div><!-- contents -->
@@ -201,7 +201,7 @@ Running with chamoc_server</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Jul 14 2022 12:05:40 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Thu Jul 14 2022 12:16:15 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

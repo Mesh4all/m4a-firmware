@@ -2,7 +2,7 @@ var searchData=
 [
   ['pan_5fid_242',['pan_id',['../structstorage__data__t.html#a49ab075dbbe2289b254c1fc77156746a',1,'storage_data_t']]],
   ['pending_5facks_243',['pending_acks',['../structchamos__client__t.html#a63d6cde3a0ccc7a753f0cec175057ca2',1,'chamos_client_t']]],
-  ['periph_5fconf_2eh_244',['periph_conf.h',['../m4a-24g_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../meshme_2include_2periph__conf_8h.html',1,'(Global Namespace)']]],
+  ['periph_5fconf_2eh_244',['periph_conf.h',['../m4a-24g_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../m4a-mb_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../meshme_2include_2periph__conf_8h.html',1,'(Global Namespace)'],['../vs203_2include_2periph__conf_8h.html',1,'(Global Namespace)']]],
   ['peripherals_245',['Peripherals',['../group__peripherals.html',1,'']]],
   ['pin_246',['pin',['../structsensors__t.html#a877c7042f6dc151aaf2cddff76498ef2',1,'sensors_t']]],
   ['port_247',['port',['../structudpf__payload.html#ae14717c06166b1af9be4365b48690d24',1,'udpf_payload']]],

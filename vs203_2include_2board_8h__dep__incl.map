@@ -1,0 +1,5 @@
+<map id="boards/vs203/include/board.h" name="boards/vs203/include/board.h">
+<area shape="rect" id="node1" title="Board specific definitions for the VS203 board." alt="" coords="113,5,304,52"/>
+<area shape="rect" id="node2" href="$vs203_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs." alt="" coords="5,100,196,147"/>
+<area shape="rect" id="node3" href="$uniqueid_8h.html" title="IPV6 address." alt="" coords="220,100,416,147"/>
+</map>

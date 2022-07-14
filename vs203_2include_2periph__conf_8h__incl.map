@@ -1,0 +1,9 @@
+<map id="boards/vs203/include/periph_conf.h" name="boards/vs203/include/periph_conf.h">
+<area shape="rect" id="node1" title="Peripheral MCU configuration for the VS203 board." alt="" coords="247,5,437,52"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,100,87,129"/>
+<area shape="rect" id="node3" title=" " alt="" coords="111,100,178,129"/>
+<area shape="rect" id="node4" title=" " alt="" coords="202,100,327,129"/>
+<area shape="rect" id="node5" title=" " alt="" coords="351,100,487,129"/>
+<area shape="rect" id="node6" title=" " alt="" coords="512,100,668,129"/>
+<area shape="rect" id="node7" title=" " alt="" coords="692,100,869,129"/>
+</map>

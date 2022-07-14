@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"group__udp__client__test.html":[3,4,3],
+"group__udp__server.html":[3,2,0,6],
+"group__udp__server__test.html":[3,4,4],
 "group__uniqueid.html":[3,2,2,3],
 "group__wifi-subsys-tools.html":[3,5,2],
 "group__wifi-subsys.html":[3,5],
@@ -49,7 +52,7 @@ var NAVTREEINDEX1 =
 "icmp__ping_8h_source.html":[5,0,5,0,1,0,1],
 "index.html":[],
 "index.html":[0],
-"index.html#autotoc_md39":[0],
+"index.html#autotoc_md43":[0],
 "m4a-24g_2include_2board_8h.html":[5,0,0,0,0,0],
 "m4a-24g_2include_2board_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba4b6858ed945b6f53ed54233eae52e95b":[5,0,0,0,0,0,21],
 "m4a-24g_2include_2board_8h.html#a06fc87d81c62e9abb8790b6e5713c55baff881ea099f99d8f1c19adb02a51e7a3":[5,0,0,0,0,0,22],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "pages.html":[],
 "protocol__sntp_8h.html":[5,0,5,0,1,0,2],
 "protocol__sntp_8h.html#a6d274b4f24915a4804e94fec6608f2c8":[5,0,5,0,1,0,2,2],
-"protocol__sntp_8h.html#abc2f86dcd641a25da830f55cf4b3a7d4":[5,0,5,0,1,0,2,1],
-"protocol__sntp_8h.html#ac27e89590a236e8f2b654813b055a830":[5,0,5,0,1,0,2,3],
-"protocol__sntp_8h.html#af196cd141f388f8ac0f7796b5bec30a3":[5,0,5,0,1,0,2,0],
-"protocol__sntp_8h_source.html":[5,0,5,0,1,0,2]
+"protocol__sntp_8h.html#abc2f86dcd641a25da830f55cf4b3a7d4":[5,0,5,0,1,0,2,1]
 };

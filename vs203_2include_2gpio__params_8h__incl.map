@@ -1,0 +1,8 @@
+<map id="boards/vs203/include/gpio_params.h" name="boards/vs203/include/gpio_params.h">
+<area shape="rect" id="node1" title="Board specific configuration of direct mapped GPIOs." alt="" coords="129,5,319,52"/>
+<area shape="rect" id="node2" href="$vs203_2include_2board_8h.html" title="Board specific definitions for the VS203 board." alt="" coords="119,100,201,129"/>
+<area shape="rect" id="node6" title=" " alt="" coords="225,100,351,129"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,177,72,207"/>
+<area shape="rect" id="node4" title=" " alt="" coords="97,177,223,207"/>
+<area shape="rect" id="node5" title=" " alt="" coords="247,177,443,207"/>
+</map>
