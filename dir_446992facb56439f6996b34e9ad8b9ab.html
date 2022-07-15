@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: Network Tools</title>
+    <title>Mesh4all: tests/periph_adc Directory Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('group__network__net__tools.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('dir_446992facb56439f6996b34e9ad8b9ab.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -104,47 +104,18 @@ $(document).ready(function(){initNavTree('group__network__net__tools.html',''); 
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#groups">Modules</a>  </div>
   <div class="headertitle">
-<div class="title">Network Tools<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__network.html">Network module</a></div></div>  </div>
+<div class="title">periph_adc Directory Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:group__net__tools"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html">net_tools</a></td></tr>
-<tr class="memdesc:group__net__tools"><td class="mdescLeft">&#160;</td><td class="mdescRight">group of generic functions that could be used in various modules <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h3><a class="anchor" id="autotoc_md59"></a>
-Net_tools</h3>
-<p>Contains all about networks tools that could be used in others modules, this will be a general settings options as the settings of ipv6 address as the gets an specified interface (wired or wireless).</p>
-<p>The main propose of the network tools is bring to an user manage all network options to get the wished configuration. So the most protocols could be require do changes in the ipv6 address or needs to manually call a specified interface to manage physical configurations.</p>
-<div class="fragment"><div class="line">int8_t index;</div>
-<div class="line">index = <a class="code" href="group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac">get_wired_iface</a>(<span class="keywordtype">void</span>);</div>
-<div class="line">printf(<span class="stringliteral">&quot;The interface index is : %d&quot;</span>, index); <span class="comment">// should be any number if it&#39;s -1</span></div>
-<div class="line">the <span class="keyword">interface </span>doesn&#39;t exist.</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md60"></a>
-Getting an specified interface</h3>
-<p>currently the module only could check the wired interface, this should be ETHOS, SLIP or USB_CDC_ECM, this function will return the index of the network interface.</p>
-<h3><a class="anchor" id="autotoc_md61"></a>
-Ipv6 settings</h3>
-<p>If you want to set an ipv6 address global o multicast, you could use:</p>
-<div class="fragment"><div class="line"><a class="code" href="group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6">set_ipv6_global</a>(iface_index, ip, prefix); <span class="comment">// To global address</span></div>
-<div class="line"><span class="comment">/* or */</span></div>
-<div class="line"><a class="code" href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">set_ipv6_multicast</a>(iface_index,ip, prefix); <span class="comment">// To multicast address</span></div>
-</div><!-- fragment --> </div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="agroup__net__tools_html_gace20d8761a85d3c00ddd6676f49fccd6"><div class="ttname"><a href="group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6">set_ipv6_global</a></div><div class="ttdeci">int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix)</div><div class="ttdoc">Function to set an ipv6 global address in an iface.</div></div>
-<div class="ttc" id="agroup__net__tools_html_gaae4a447cac40d71c1acb8c62cf76b9ac"><div class="ttname"><a href="group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac">get_wired_iface</a></div><div class="ttdeci">int8_t get_wired_iface(void)</div><div class="ttdoc">Function to check if exist a wired interface.</div></div>
-<div class="ttc" id="agroup__net__tools_html_ga7a5033ddeef102884053fcf3f8083735"><div class="ttname"><a href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">set_ipv6_multicast</a></div><div class="ttdeci">int8_t set_ipv6_multicast(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix)</div><div class="ttdoc">Function to set an ipv6 global address in an iface.</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a class="el" href="dir_446992facb56439f6996b34e9ad8b9ab.html">periph_adc</a></li>
     <li class="footer">Generated on Fri Jul 15 2022 19:29:36 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>

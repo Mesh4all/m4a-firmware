@@ -1,9 +1,8 @@
 <map id="boards/meshme/include/periph_conf.h" name="boards/meshme/include/periph_conf.h">
-<area shape="rect" id="node1" title="Peripheral MCU configuration for the MeshMe board." alt="" coords="235,5,449,52"/>
+<area shape="rect" id="node1" title="Peripheral MCU configuration for the Meshme board." alt="" coords="158,5,371,52"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,100,87,129"/>
 <area shape="rect" id="node3" title=" " alt="" coords="111,100,178,129"/>
 <area shape="rect" id="node4" title=" " alt="" coords="202,100,327,129"/>
-<area shape="rect" id="node5" title=" " alt="" coords="351,100,487,129"/>
-<area shape="rect" id="node6" title=" " alt="" coords="512,100,668,129"/>
-<area shape="rect" id="node7" title=" " alt="" coords="692,100,869,129"/>
+<area shape="rect" id="node5" title=" " alt="" coords="352,100,508,129"/>
+<area shape="rect" id="node6" title=" " alt="" coords="532,100,709,129"/>
 </map>

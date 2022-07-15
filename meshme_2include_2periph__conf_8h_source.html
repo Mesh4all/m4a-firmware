@@ -117,52 +117,61 @@ $(document).ready(function(){initNavTree('meshme_2include_2periph__conf_8h_sourc
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * details.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef PERIPH_CONF_H</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define PERIPH_CONF_H</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;cpu.h&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;periph_cpu.h&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;periph/cpuid.h&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;cfg_clk_default.h&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;cfg_timer_default.h&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="meshme_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5">   50</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> uart_conf_t <a class="code" href="meshme_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5">uart_config</a>[] = {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        .dev = UART0_BASEADDR,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        .rx_pin = GPIO_PIN(PORT_A, 0),</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        .tx_pin = GPIO_PIN(PORT_A, 1),</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifdef MODULE_PERIPH_UART_HW_FC</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        .cts_pin = GPIO_UNDEF,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        .rts_pin = GPIO_UNDEF,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    },</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="meshme_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb">   62</a></span>&#160;<span class="preprocessor">#define UART_0_ISR isr_uart0               </span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="meshme_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230">   63</a></span>&#160;<span class="preprocessor">#define UART_NUMOF ARRAY_SIZE(uart_config) </span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PERIPH_CONF_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef PERIPH_CONF_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define PERIPH_CONF_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;cpu.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;periph_cpu.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;cfg_clk_default.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;cfg_timer_default.h&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="meshme_2include_2periph__conf_8h.html#a8622110f4312bd12718d9969714501e8">   52</a></span>&#160;<span class="preprocessor">#define SOC_ADC_ADCCON3_EREF SOC_ADC_ADCCON3_EREF_AVDD5</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="meshme_2include_2periph__conf_8h.html#a274a2c123e3c7373d02a1f3c868790ae">   67</a></span>&#160;<span class="preprocessor">#define SOC_ADC_RES ADC_RES_12BIT</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="meshme_2include_2periph__conf_8h.html#a160c7b1c3bc13c7cb5ac4ed375f4e21d">   72</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> adc_conf_t <a class="code" href="meshme_2include_2periph__conf_8h.html#a160c7b1c3bc13c7cb5ac4ed375f4e21d">adc_config</a>[] = {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    GPIO_PIN(PORT_A, 6), </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    GPIO_PIN(PORT_A, 7), </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="meshme_2include_2periph__conf_8h.html#a2f0c741db24aa2ccded869ba53f6a302">   77</a></span>&#160;<span class="preprocessor">#define ADC_NUMOF ARRAY_SIZE(adc_config) </span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">static const uart_conf_t uart_config[] = {</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        .dev = UART0_BASEADDR,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        .rx_pin = GPIO_PIN(PORT_A, 0),</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        .tx_pin = GPIO_PIN(PORT_A, 1),</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#ifdef MODULE_PERIPH_UART_HW_FC</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        .cts_pin = GPIO_UNDEF,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        .rts_pin = GPIO_UNDEF,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    },</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="meshme_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb">  102</a></span>&#160;<span class="preprocessor">#define UART_0_ISR isr_uart0               </span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="meshme_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230">  103</a></span>&#160;<span class="preprocessor">#define UART_NUMOF ARRAY_SIZE(uart_config) </span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PERIPH_CONF_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="ameshme_2include_2periph__conf_8h_html_a1643cfc64589407fb96b4cbf908689a5"><div class="ttname"><a href="meshme_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5">uart_config</a></div><div class="ttdeci">static const uart_conf_t uart_config[]</div><div class="ttdoc">List of available UART ports, pins are mapped as follows:</div><div class="ttdef"><b>Definition:</b> <a href="meshme_2include_2periph__conf_8h_source.html#l00050">periph_conf.h:50</a></div></div>
+<div class="ttc" id="ameshme_2include_2periph__conf_8h_html_a160c7b1c3bc13c7cb5ac4ed375f4e21d"><div class="ttname"><a href="meshme_2include_2periph__conf_8h.html#a160c7b1c3bc13c7cb5ac4ed375f4e21d">adc_config</a></div><div class="ttdeci">static const adc_conf_t adc_config[]</div><div class="ttdoc">Available ADC lines.</div><div class="ttdef"><b>Definition:</b> <a href="meshme_2include_2periph__conf_8h_source.html#l00072">periph_conf.h:72</a></div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_8cf941a114892b7d92f3c3fa3e962fa6.html">meshme</a></li><li class="navelem"><a class="el" href="dir_b07892869a7d00c6f4ea89d6473456f1.html">include</a></li><li class="navelem"><a class="el" href="meshme_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Fri Jul 15 2022 18:48:06 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Fri Jul 15 2022 19:29:36 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

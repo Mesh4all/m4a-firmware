@@ -234,9 +234,13 @@ var NAVTREEINDEX1 =
 "meshme_2include_2gpio__params_8h.html#a5442106fb6a31a0cc477a93d79701765":[6,0,0,2,0,1,0],
 "meshme_2include_2gpio__params_8h_source.html":[6,0,0,2,0,1],
 "meshme_2include_2periph__conf_8h.html":[6,0,0,2,0,2],
-"meshme_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5":[6,0,0,2,0,2,2],
-"meshme_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb":[6,0,0,2,0,2,0],
-"meshme_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230":[6,0,0,2,0,2,1],
+"meshme_2include_2periph__conf_8h.html#a160c7b1c3bc13c7cb5ac4ed375f4e21d":[6,0,0,2,0,2,5],
+"meshme_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5":[6,0,0,2,0,2,6],
+"meshme_2include_2periph__conf_8h.html#a274a2c123e3c7373d02a1f3c868790ae":[6,0,0,2,0,2,2],
+"meshme_2include_2periph__conf_8h.html#a2f0c741db24aa2ccded869ba53f6a302":[6,0,0,2,0,2,0],
+"meshme_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb":[6,0,0,2,0,2,3],
+"meshme_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230":[6,0,0,2,0,2,4],
+"meshme_2include_2periph__conf_8h.html#a8622110f4312bd12718d9969714501e8":[6,0,0,2,0,2,1],
 "meshme_2include_2periph__conf_8h_source.html":[6,0,0,2,0,2],
 "modules.html":[4],
 "moisture__sensor_8h.html":[6,0,3,1,1,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "moisture__sensor_8h_source.html":[6,0,3,1,1,0,0],
 "net__tools_8h.html":[6,0,3,0,2,0,0],
 "net__tools_8h_source.html":[6,0,3,0,2,0,0],
-"nib_8h.html":[6,0,1,0,0,0,2],
-"nib_8h.html#a598c582b791e0b434234167837d64e50":[6,0,1,0,0,0,2,0],
-"nib_8h_source.html":[6,0,1,0,0,0,2],
-"pages.html":[],
-"protocol__sntp_8h.html":[6,0,5,0,1,0,2]
+"nib_8h.html":[6,0,1,0,0,0,2]
 };

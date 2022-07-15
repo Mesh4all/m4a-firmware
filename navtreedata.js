@@ -56,7 +56,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "group__udp__client__test.html",
-"protocol__sntp_8h.html#a6d274b4f24915a4804e94fec6608f2c8"
+"nib_8h.html#a598c582b791e0b434234167837d64e50"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
