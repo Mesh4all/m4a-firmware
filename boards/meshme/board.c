@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Mesh4all <mesh4all.org>
+ * Copyright (c) 2022 Mesh4all mesh4all.org
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  */
 
 /**
- * @file
+ * @file            board.c
  * @brief           Board specific implementations for the MeshMe board
- * @copyright       Copyright (c) 2022 Mesh for All (Mesh4all)
+ * @copyright       Copyright (c) 2022 Mesh4All hello@mesh4all.org
  */
 #include "board.h"
 #include "cpu.h"

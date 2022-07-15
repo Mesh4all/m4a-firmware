@@ -11,11 +11,10 @@
  * @ingroup     boards_meshme
  * @{
  *
- * @file
- * @brief       Peripheral MCU configuration for the MeshMe board
- *
+ * @file        periph_conf.h
+ * @brief       Peripheral MCU configuration for the Meshme board
  * @author      Anon Mall <anon.mall@gt-arc.com>
- * @author      luisan00 <luisan00@hotmail.com>
+ * @author      Luis A. Ruiz <luisan00@hotmail.com>
  */
 
 #ifndef PERIPH_CONF_H
@@ -29,17 +28,59 @@ extern "C" {
 
 #include "cpu.h"
 #include "periph_cpu.h"
-#include "periph/cpuid.h"
+//#include "periph/cpuid.h"
 
 #include "cfg_clk_default.h"
 #include "cfg_timer_default.h"
 
 /**
- * @name    UART configuration
+ * @name    [A]nalog to [D]igital [C]onverter configuration
  * @{
  */
+/**
+ * @brief   Selected [default] voltage reference is [SOC_ADC_ADCCON3_EREF_EXT],
+ *          this can be changed according to the following table:
+ *
+ * | Register                   | Description                    |
+ * |:---------------------------|:-------------------------------|
+ * | SOC_ADC_ADCCON3_EREF_INT   | Internal reference             |
+ * | SOC_ADC_ADCCON3_EREF_EXT   | External reference on AIN7 pin |
+ * | SOC_ADC_ADCCON3_EREF_AVDD5 | AVDD5 pin                      |
+ * | SOC_ADC_ADCCON3_EREF_DIFF  | External reference on AIN6-AIN7 differential input |
+ *
+ * @note default is [SOC_ADC_ADCCON3_EREF_EXT]
+ */
+#define SOC_ADC_ADCCON3_EREF SOC_ADC_ADCCON3_EREF_AVDD5
 
 /**
+ * @brief   Selected default resolution is [ADC_RES_12BIT]
+ *          but it can be changed according the next table:
+ *
+ * | Register      | Description                  |
+ * |:--------------|:-----------------------------|
+ * | ADC_RES_7BIT  | 7 bits per sample resolution |
+ * | ADC_RES_9BIT  | 9 bits per sample    ""      |
+ * | ADC_RES_10BIT | 10 bits per sample   ""      |
+ * | ADC_RES_12BIT | 12 bits per sample   ""      |
+ *
+ * @note default is [ADC_RES_12BIT]
+ */
+#define SOC_ADC_RES ADC_RES_12BIT
+
+/**
+ * @brief Available ADC lines
+ */
+static const adc_conf_t adc_config[] = { 
+    GPIO_PIN(PORT_A, 6), /*!< GPIO_PA6 as ADC input */
+    GPIO_PIN(PORT_A, 7), /*!< GPIO_PA7 as ADC input */
+};
+
+#define ADC_NUMOF ARRAY_SIZE(adc_config) /*!< Number of available adc lines */
+/** @} */
+
+/**
+ * @name    UART configuration
+ * @{
  * @brief   List of available UART ports, pins are mapped as follows:
  *
  * | UART Dev | TX pin | RX pin | CTS pin| RTS pin |
