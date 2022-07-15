@@ -37,11 +37,8 @@ void board_init(void) {
     // initialize the on-board LED 3
     gpio_init(LED3_PIN, GPIO_OUT);
 
-    // initialize the on-board user-button SW0
+    // initialize the on-board user button SW0
     gpio_init(BTN0_PIN, BTN0_MODE);
-
-    // initialize the on-board user-button SW0
-    gpio_init(BTN1_PIN, BTN1_MODE);
 
     if (IS_USED(MODULE_CC2538_RF)) {
         gpio_init(HGM_PIN, GPIO_OUT);
