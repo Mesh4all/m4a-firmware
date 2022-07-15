@@ -1,0 +1,15 @@
+/**
+@defgroup      periph_adc
+@ingroup       test_group
+@{
+
+## Test the [A]nalog to [D]igital [C]onverter peripheral
+
+To test the code in automatic mode:
+
+```c
+make flash test
+```
+
+@}
+ */

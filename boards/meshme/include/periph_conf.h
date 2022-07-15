@@ -28,7 +28,6 @@ extern "C" {
 
 #include "cpu.h"
 #include "periph_cpu.h"
-//#include "periph/cpuid.h"
 
 #include "cfg_clk_default.h"
 #include "cfg_timer_default.h"
@@ -70,7 +69,7 @@ extern "C" {
 /**
  * @brief Available ADC lines
  */
-static const adc_conf_t adc_config[] = { 
+static const adc_conf_t adc_config[] = {
     GPIO_PIN(PORT_A, 6), /*!< GPIO_PA6 as ADC input */
     GPIO_PIN(PORT_A, 7), /*!< GPIO_PA7 as ADC input */
 };
