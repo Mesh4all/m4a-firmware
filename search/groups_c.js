@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wifi_20subsystem_798',['WiFi Subsystem',['../group__wifi-subsys.html',1,'']]],
-  ['wifi_20routines_20for_20the_20wifi_20subsystem_799',['Wifi routines for the WiFi subsystem',['../group__wifi__component.html',1,'']]],
-  ['wifi_2dsubsys_20uart_20module_800',['Wifi-subsys Uart Module',['../group__wifi__subsys__uart.html',1,'']]]
+  ['wifi_20subsystem_799',['WiFi Subsystem',['../group__wifi-subsys.html',1,'']]],
+  ['wifi_20routines_20for_20the_20wifi_20subsystem_800',['Wifi routines for the WiFi subsystem',['../group__wifi__component.html',1,'']]],
+  ['wifi_2dsubsys_20uart_20module_801',['Wifi-subsys Uart Module',['../group__wifi__subsys__uart.html',1,'']]]
 ];
