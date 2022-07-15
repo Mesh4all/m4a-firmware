@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2017 DAI Labor Technische Universität Berlin
- * Copyright (C) 2022 Mesh4all <contact@mesh4all.org>
+ * Copyright (C) 2022 Mesh4all mesh4all.org
  *
  * This file is subject to the terms and conditions of the GNU Lesser
  * General Public License v2.1. See the file LICENSE in the top level
@@ -10,11 +10,11 @@
 /**
  * @ingroup   boards_meshme
  * @{
- *
- * @file
+ * @file      gpio_params.h
  * @brief     Board specific configuration of direct mapped GPIOs
  *
  * @author    Anon Mall <anon.mall@gt-arc.com>
+ * @author    Luis A. Ruiz <luisan00@hotmail.com>
  */
 
 #ifndef GPIO_PARAMS_H
