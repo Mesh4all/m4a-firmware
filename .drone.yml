@@ -29,3 +29,35 @@ trigger:
   event:
     - push
     - pull_request
+
+---
+kind: pipeline
+type: docker
+name: meshme
+steps:
+  - name: build
+    image: luisan00/m4abuild-base:latest
+    commands:
+      - git submodule update --init --recursive
+      - make -C firmware BOARD=meshme
+
+trigger:
+  event:
+    - push
+    - pull_request
+
+---
+kind: pipeline
+type: docker
+name: vs203
+steps:
+  - name: build
+    image: luisan00/m4abuild-base:latest
+    commands:
+      - git submodule update --init --recursive
+      - make -C firmware BOARD=vs203
+
+trigger:
+  event:
+    - push
+    - pull_request
