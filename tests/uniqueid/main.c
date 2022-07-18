@@ -42,18 +42,23 @@ void get_unique_from_mac(ipv6_addr_t *output) {
 }
 
 void test_get_ipv6Address(void) {
+#if CONFIG_MODE_STATIC || CONFIG_MODE_MANUAL
     ipv6_addr_t ipv6 = {
         .u8 = {0},
     };
-
-    subnet_to_ipv6(&ipv6);
-#ifdef CONFIG_MODE_STATIC
     ipv6_addr_t output = {
         .u8 = {0},
     };
+    printf("\n");
+    subnet_to_ipv6(&ipv6);
     ipv6_addr_print(&ipv6);
+    printf("\n");
     get_unique_from_mac(&output);
+#if CONFIG_MODE_STATIC
     TEST_ASSERT_EQUAL_INT(1, ipv6_addr_equal(&ipv6, &output));
+#elif CONFIG_MODE_MANUAL
+    TEST_ASSERT_EQUAL_INT(1, !ipv6_addr_equal(&ipv6, &output));
+#endif
 #endif
 
 #ifdef CONFIG_MODE_RANDOM
@@ -63,7 +68,6 @@ void test_get_ipv6Address(void) {
     ipv6_addr_t output2 = {
         .u8 = {0},
     };
-
     subnet_to_ipv6(&output1);
     subnet_to_ipv6(&output2);
     printf("\nFirst random IPv6\n");
