@@ -1,11 +1,14 @@
 /**
-* @defgroup      periph_i2c   Get I2C available devices
-* @ingroup       tests
+* @defgroup      test_group_periph_i2c   Get I2C available ports and scan for devices
+* @ingroup       test_group
 * @{
 *
-* ## Test the I2C peripheral
+* ## Low level test for I2C peripherals
 *
-* This test gets the list of I2C devices available.
+* This test will try:
+*
+* - Return the number of I2C available ports.
+* - Scan for connected devices on the available I2C ports.
 *
 * ### Compile, flash and test
 *
@@ -22,7 +25,6 @@
 * ```
 *
 * And start the tests by typing [S]
-*
 *
 * **Also** you can run the test in **auto mode** with:
 *

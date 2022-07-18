@@ -48,6 +48,7 @@ extern "C" {
  * | SOC_ADC_ADCCON3_EREF_DIFF  | External reference on AIN6-AIN7 differential input |
  *
  * @note default is [SOC_ADC_ADCCON3_EREF_EXT]
+ * @see  periph_adc
  */
 #define SOC_ADC_ADCCON3_EREF SOC_ADC_ADCCON3_EREF_AVDD5
 
@@ -78,13 +79,16 @@ static const adc_conf_t adc_config[] = {
 /** @} */
 
 /**
- * @name    UART configuration
+ * @name    [U]niversal [A]synchronous [R]eceiver [T]ransmitter peripheral.
  * @{
- * @brief   List of available UART ports, pins are mapped as follows:
+ */
+/**
+ * @brief   Two available UART ports but only one is set as follows:
  *
  * | UART Dev | TX pin | RX pin | CTS pin| RTS pin |
- * |----------|--------|--------|--------|---------|
- * | 0        | PA0    | PA1    | Undef. | Undef.  |
+ * |:--------:|:------:|:------:|:------:|:-------:|
+ * | 0        | PA0    | PA1    | Undef  | Undef   |
+ * | ---      | ---    | ---    | ---    | ---     |
  *
  */
 static const uart_conf_t uart_config[] = {
@@ -101,6 +105,60 @@ static const uart_conf_t uart_config[] = {
 
 #define UART_0_ISR isr_uart0               /*!< interrupt function name mapping */
 #define UART_NUMOF ARRAY_SIZE(uart_config) /*!< Number of UARTs */
+/** @} */
+
+/**
+ * @name I2C Settings
+ * @{
+ */
+#define I2C_IRQ_PRIO 1 /*!< i2c IRQ priority */
+
+/**
+ * @brief   There are 2 I2C ports available but only one is set as follows:
+ *
+ * | \#  | SCL | SDA | Speed |
+ * |:---:|:---:|:---:|:-----:|
+ * | 0   | PB0 | PB1 | Fast  |
+ * | --- | --- | --- | ---   |
+ *
+ *  @note   I2C speed can be one of two modes available:
+ * - Standard 100 kbps
+ * - Fast 400 kbps
+ */
+static const i2c_conf_t i2c_config[] = {
+    {
+        .speed = I2C_SPEED_FAST,
+        .scl_pin = GPIO_PIN(PORT_B, 0),
+        .sda_pin = GPIO_PIN(PORT_B, 1),
+    },
+};
+#define I2C_NUMOF ARRAY_SIZE(i2c_config) /*!< Available i2c ports */
+/** @} */
+
+/**
+ * @name    SPI configuration
+ * @{
+ */
+
+/**
+ * @brief There are 2 SPI ports available but only one is set as follows:
+ *
+ * | Num | MOSI | MISO | SCK | CS  |
+ * |:---:|:----:|:----:|:---:|:---:|
+ * | 0   | PB4  | PB5  | PB6 | PB7 |
+ * | --- | ---  | ---  | --- | --- |
+ */
+static const spi_conf_t spi_config[] = {
+    {
+        .num = 0,
+        .mosi_pin = GPIO_PIN(PORT_B, 4),
+        .miso_pin = GPIO_PIN(PORT_B, 5),
+        .sck_pin = GPIO_PIN(PORT_B, 6),
+        .cs_pin = GPIO_PIN(PORT_B, 7),
+    },
+};
+
+#define SPI_NUMOF ARRAY_SIZE(spi_config) /*!< Available SPI ports */
 /** @} */
 
 #ifdef __cplusplus

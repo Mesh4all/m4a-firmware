@@ -1,5 +1,5 @@
 /**
-@defgroup tests Test
+@defgroup test_group Test
 
 ## Test documentation
 
