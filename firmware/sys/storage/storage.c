@@ -29,7 +29,7 @@
 #include "storage.h"
 #include "mtd_flashpage.h"
 
-static mtd_flashpage_t _dev = MTD_FLASHPAGE_INIT_VAL(FLASHPAGE_PAGES_PER_ROW);
+static mtd_flashpage_t _dev = MTD_FLASHPAGE_INIT_VAL(8);
 static mtd_dev_t *dev = &_dev.base;
 
 int mtd_start(void) {
@@ -56,7 +56,7 @@ int mtd_save(uint32_t key, void *value) {
 int mtd_save_compress(void *value, uint16_t len) {
     uint8_t *ptr = value;
     uint8_t buf[MAX_SIZE_STORAGE];
-    uint8_t diff_size = MAX_SIZE_STORAGE;
+    uint16_t diff_size = MAX_SIZE_STORAGE;
     uint16_t num_pages = len / MAX_SIZE_STORAGE;
     uint8_t res_bits = len % MAX_SIZE_STORAGE;
     int8_t ret = 0;
@@ -83,7 +83,7 @@ int mtd_save_compress(void *value, uint16_t len) {
 
 int mtd_load(void *value, uint16_t len) {
     uint8_t *ptr = value;
-    uint8_t diff_size = MAX_SIZE_STORAGE;
+    uint16_t diff_size = MAX_SIZE_STORAGE;
     uint16_t num_pages = len / MAX_SIZE_STORAGE;
     uint8_t res_bits = len % MAX_SIZE_STORAGE;
     if ((num_pages < 1) || (res_bits != 0)) {

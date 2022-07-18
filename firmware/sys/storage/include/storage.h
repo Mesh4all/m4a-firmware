@@ -36,9 +36,8 @@
 extern "C" {
 #endif
 #define LAST_AVAILABLE_PAGE (FLASHPAGE_NUMOF - 1) /*!< Last position in the block EEPROM*/
-#define MAX_SIZE_STORAGE (FLASH_PAGE_SIZE)        /*!< max size to save in the page */
-#define MAX_NUMOF_FLASHPAGES                                                                       \
-    (FLASHPAGE_PAGES_PER_ROW * FLASH_PAGE_SIZE) /*!< max num of pages that can be manipulated */
+#define MAX_SIZE_STORAGE (FLASHPAGE_SIZE)           /*!< max size to save in the page */
+#define MAX_NUMOF_FLASHPAGES FLASHPAGE_NUMOF      /*!< max num of pages that can be manipulated */
 /** @note The storage EEPROM section page could be resize with the bootloader block size
  *  @warning Always the block EEPROM and BOOTLOADER are affected between them.
  */
