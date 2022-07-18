@@ -134,34 +134,33 @@ $(document).ready(function(){initNavTree('firmware_2sys_2storage_2include_2stora
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="firmware_2sys_2storage_2include_2storage_8h.html#a1f6aa012a967f33fb5ec3cdeae1c6e22">   38</a></span>&#160;<span class="preprocessor">#define LAST_AVAILABLE_PAGE (FLASHPAGE_NUMOF - 1) </span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="firmware_2sys_2storage_2include_2storage_8h.html#af6ba1f9f4063e60617dab3349aaba7c9">   39</a></span>&#160;<span class="preprocessor">#define MAX_SIZE_STORAGE (FLASH_PAGE_SIZE)        </span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="firmware_2sys_2storage_2include_2storage_8h.html#a401d65355970abcbfcd4b7b05d96a3ef">   40</a></span>&#160;<span class="preprocessor">#define MAX_NUMOF_FLASHPAGES                                                                       \</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">    (FLASHPAGE_PAGES_PER_ROW * FLASH_PAGE_SIZE) </span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">int mtd_start(void);</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#ae4d6ee70023524b0324b3fd3a4e9f701">mtd_save</a>(uint32_t key, <span class="keywordtype">void</span> *value);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#ac21081b8f0bde9f04a9ae6ed02e8cfb9">mtd_save_compress</a>(<span class="keywordtype">void</span> *value, uint16_t len);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#a866d650782cce79bebf0a89118eea4bd">mtd_load</a>(<span class="keywordtype">void</span> *value, uint16_t len);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#a649b3998bcdac66d32fb29962da6822b">mtd_read_string</a>(uint32_t key, <span class="keywordtype">char</span> *output, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#a9e74c490990fc259d0bd449c8e9f097a">mtd_read_u8</a>(uint32_t key, uint8_t *output);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#ac112225f440598e3c1a8297fa3909366">mtd_erase_flashpage</a>(uint32_t key);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#a5cbab32f90d7b8179b7c4182e87135f7">mtd_write_string</a>(uint32_t key, <span class="keywordtype">char</span> *value);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#abc92c4881252e20efaf2b73591a73649">mtd_write_uint8</a>(uint32_t key, uint8_t *value);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#aec3e7e482208da868fc19270db0b0f21">mtd_get_string_len</a>(uint32_t key);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* STORAGE_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="firmware_2sys_2storage_2include_2storage_8h.html#af6ba1f9f4063e60617dab3349aaba7c9">   39</a></span>&#160;<span class="preprocessor">#define MAX_SIZE_STORAGE (FLASHPAGE_SIZE)           </span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="firmware_2sys_2storage_2include_2storage_8h.html#a401d65355970abcbfcd4b7b05d96a3ef">   40</a></span>&#160;<span class="preprocessor">#define MAX_NUMOF_FLASHPAGES FLASHPAGE_NUMOF      </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">int mtd_start(void);</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#ae4d6ee70023524b0324b3fd3a4e9f701">mtd_save</a>(uint32_t key, <span class="keywordtype">void</span> *value);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#ac21081b8f0bde9f04a9ae6ed02e8cfb9">mtd_save_compress</a>(<span class="keywordtype">void</span> *value, uint16_t len);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#a866d650782cce79bebf0a89118eea4bd">mtd_load</a>(<span class="keywordtype">void</span> *value, uint16_t len);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#a649b3998bcdac66d32fb29962da6822b">mtd_read_string</a>(uint32_t key, <span class="keywordtype">char</span> *output, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#a9e74c490990fc259d0bd449c8e9f097a">mtd_read_u8</a>(uint32_t key, uint8_t *output);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#ac112225f440598e3c1a8297fa3909366">mtd_erase_flashpage</a>(uint32_t key);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#a5cbab32f90d7b8179b7c4182e87135f7">mtd_write_string</a>(uint32_t key, <span class="keywordtype">char</span> *value);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#abc92c4881252e20efaf2b73591a73649">mtd_write_uint8</a>(uint32_t key, uint8_t *value);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keywordtype">int</span> <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#aec3e7e482208da868fc19270db0b0f21">mtd_get_string_len</a>(uint32_t key);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* STORAGE_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="afirmware_2sys_2storage_2include_2storage_8h_html_ac21081b8f0bde9f04a9ae6ed02e8cfb9"><div class="ttname"><a href="firmware_2sys_2storage_2include_2storage_8h.html#ac21081b8f0bde9f04a9ae6ed02e8cfb9">mtd_save_compress</a></div><div class="ttdeci">int mtd_save_compress(void *value, uint16_t len)</div><div class="ttdoc">This function is executed to save any data type or any strutc, The function saves all the information...</div></div>
@@ -179,7 +178,7 @@ $(document).ready(function(){initNavTree('firmware_2sys_2storage_2include_2stora
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_38d8769b7982536a1592307dd4ec982e.html">sys</a></li><li class="navelem"><a class="el" href="dir_043460d05e9e7dca5d95591e249199d5.html">storage</a></li><li class="navelem"><a class="el" href="dir_f0a8256c4133cdb78380b910bfbaa910.html">include</a></li><li class="navelem"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html">storage.h</a></li>
-    <li class="footer">Generated on Sat Jul 16 2022 10:12:49 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Jul 18 2022 12:50:16 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
