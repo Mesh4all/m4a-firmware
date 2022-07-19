@@ -35,6 +35,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 #define LAST_AVAILABLE_PAGE (FLASHPAGE_NUMOF - 1) /*!< Last position in the block EEPROM*/
 #define MAX_SIZE_STORAGE (FLASHPAGE_SIZE)           /*!< max size to save in the page */
 #define MAX_NUMOF_FLASHPAGES FLASHPAGE_NUMOF      /*!< max num of pages that can be manipulated */

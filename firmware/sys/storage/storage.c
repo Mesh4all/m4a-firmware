@@ -29,13 +29,21 @@
 #include "storage.h"
 #include "mtd_flashpage.h"
 
+#define ENABLE_DEBUG 0
+
+#include "debug.h"
+
 static mtd_flashpage_t _dev = MTD_FLASHPAGE_INIT_VAL(8);
 static mtd_dev_t *dev = &_dev.base;
+
+static void locate_addr(uint32_t *addr, const uint32_t idx_page) {
+    *addr = (uint32_t)flashpage_addr(LAST_AVAILABLE_PAGE - idx_page);
+}
 
 int mtd_start(void) {
     int ret = mtd_init(dev);
     if (ret < 0) {
-        printf("Error to the init mtd \n");
+        DEBUG("Error to the init mtd \n");
     }
     return ret;
 }
@@ -47,59 +55,72 @@ int mtd_save(uint32_t key, void *value) {
     int ret = mtd_write(dev, buf, key, sizeof(buf));
 
     if (ret < 0) {
-        printf("Error to the write in mtd %d \n", ret);
+        DEBUG("Error to the write in mtd %d \n", ret);
     }
 
     return ret;
 }
 
 int mtd_save_compress(void *value, uint16_t len) {
-    uint8_t *ptr = value;
-    uint8_t buf[MAX_SIZE_STORAGE];
-    uint16_t diff_size = MAX_SIZE_STORAGE;
     uint16_t num_pages = len / MAX_SIZE_STORAGE;
     uint8_t res_bits = len % MAX_SIZE_STORAGE;
     int8_t ret = 0;
+    uint32_t storage_addr = 0;
     if (num_pages < 1 || res_bits != 0) {
         num_pages++;
     }
+    DEBUG("numpages : %u\n", num_pages);
     if (num_pages >= MAX_NUMOF_FLASHPAGES) {
-        printf("error: Unavailable Memory to save the required data, file: %s, line %d, "
-               "function: %s",
+        DEBUG("error: Unavailable Memory to save the required data, file: %s, line: %d, "
+               "function: %s\n",
                __FILE__, __LINE__, __FUNCTION__);
+        return -1;
+    }
+    for (uint16_t i = 0; i < num_pages; i++) {
+        locate_addr(&storage_addr, i);
+        ret = mtd_erase_flashpage(storage_addr);
+        if (ret != 0) {
+            DEBUG("error: Failed erasing data: file: %s, line: %d, function: %s\n", __FILE__,
+                   __LINE__, __FUNCTION__);
+            return ret;
+        }
+    }
+    for (uint16_t i = 0; i < num_pages; i++) {
+        locate_addr(&storage_addr, i);
+        ret = mtd_write(dev, value, storage_addr, MAX_SIZE_STORAGE);
+        if (ret != 0) {
+            DEBUG("FAILED SAVING DATA\n");
+            return ret;
+        }
+        /* cppcheck-suppress arithOperationsOnVoidPointer
+         * (reason: variable size reference to move the pointer */
+        value += MAX_SIZE_STORAGE;
+    }
+    return ret;
+}
+
+int mtd_load(void *value, uint16_t len) {
+    uint16_t diff_size = MAX_SIZE_STORAGE;
+    uint16_t num_pages = len / MAX_SIZE_STORAGE;
+    uint8_t res_bits = len % MAX_SIZE_STORAGE;
+    uint32_t storage_addr = 0;
+    if ((num_pages < 1) || (res_bits != 0)) {
+        num_pages++;
+    }
+    if (num_pages >= MAX_NUMOF_FLASHPAGES) {
+        DEBUG("error: Overload Memory size, file: %s, line %d, function: %s", __FILE__, __LINE__,
+               __FUNCTION__);
         return -1;
     }
     for (uint8_t i = 0; i < num_pages; i++) {
         if ((i == num_pages - 1) && (res_bits != 0)) {
             diff_size = res_bits;
         }
-        memset(buf, 0, sizeof(buf));
-        memcpy(buf, ptr, sizeof(buf));
-        ret = mtd_write_page(dev, buf, LAST_AVAILABLE_PAGE - i, 0, diff_size);
-        ptr += MAX_SIZE_STORAGE;
-    }
-    return ret;
-}
-
-int mtd_load(void *value, uint16_t len) {
-    uint8_t *ptr = value;
-    uint16_t diff_size = MAX_SIZE_STORAGE;
-    uint16_t num_pages = len / MAX_SIZE_STORAGE;
-    uint8_t res_bits = len % MAX_SIZE_STORAGE;
-    if ((num_pages < 1) || (res_bits != 0)) {
-        num_pages++;
-    }
-    if (num_pages >= MAX_NUMOF_FLASHPAGES) {
-        printf("error: Overload Memory size, file: %s, line %d, function: %s", __FILE__, __LINE__,
-               __FUNCTION__);
-        return -1;
-    }
-    for (uint8_t i = 0; i < num_pages; i++) {
-        if ((i == num_pages - 1) && (res_bits != 0)) {
-            diff_size = len % MAX_SIZE_STORAGE;
-        }
-        mtd_read_page(dev, ptr, LAST_AVAILABLE_PAGE - i, 0, diff_size);
-        ptr += MAX_SIZE_STORAGE;
+        locate_addr(&storage_addr, i);
+        mtd_read(dev, value, storage_addr, diff_size);
+        /* cppcheck-suppress arithOperationsOnVoidPointer
+         * (reason: variable size reference to move the pointer */
+        value += MAX_SIZE_STORAGE;
     }
     return 0;
 }
@@ -111,7 +132,7 @@ int mtd_read_u8(uint32_t key, uint8_t *output) {
 
     int ret = mtd_read(dev, buf_read, key, sizeof(buf_read));
     if (ret < 0) {
-        printf("Error to read in mtd \n");
+        DEBUG("Error to read in mtd \n");
     }
 
     *output = buf_read[0];
@@ -126,17 +147,17 @@ int mtd_get_string_len(uint32_t key) {
 
     int ret = mtd_read(dev, buf_read, key, sizeof(buf_read));
     if (ret < 0) {
-        printf("Error to read in mtd \n");
+        DEBUG("Error to read in mtd \n");
         return 0;
     }
     int count = 0;
     for (size_t i = 0; i < len; i++) {
-        printf("%x ", buf_read[i]);
+        DEBUG("%x ", buf_read[i]);
         if (buf_read[i] == 0 && count == 0) {
             count = i;
         }
     }
-    printf("\n ");
+    DEBUG("\n ");
     return count + 1;
 }
 
@@ -148,7 +169,7 @@ int mtd_read_string(uint32_t key, char *output, size_t len) {
 
     int ret = mtd_read(dev, buf_read, key, sizeof(buf_read));
     if (ret < 0) {
-        printf("Error to read in mtd \n");
+        DEBUG("Error to read in mtd \n");
     }
     int count = 0;
     for (size_t i = 0; i < len; i++) {
@@ -166,7 +187,7 @@ int mtd_erase_flashpage(uint32_t key) {
     /* Erase last sector */
     int ret = mtd_erase(dev, key, FLASHPAGE_SIZE);
     if (ret < 0) {
-        printf("Error to the erase the address \n");
+        DEBUG("Error to the erase the address \n");
     }
 
     return ret;
@@ -175,13 +196,13 @@ int mtd_erase_flashpage(uint32_t key) {
 int mtd_write_string(uint32_t key, char *value) {
     int err = mtd_erase_flashpage(key);
     if (err < 0) {
-        printf("Error to the erase the address \n");
+        DEBUG("Error to the erase the address \n");
         return err;
     }
 
     err = mtd_save(key, value);
     if (err < 0) {
-        printf("Error to the erase the address \n");
+        DEBUG("Error to the erase the address \n");
         return err;
     }
 
@@ -191,13 +212,13 @@ int mtd_write_string(uint32_t key, char *value) {
 int mtd_write_uint8(uint32_t key, uint8_t *value) {
     int err = mtd_erase_flashpage(key);
     if (err < 0) {
-        printf("Error to the erase the address \n");
+        DEBUG("Error to the erase the address \n");
         return err;
     }
 
     err = mtd_save(key, value);
     if (err < 0) {
-        printf("Error to the erase the address \n");
+        DEBUG("Error to the erase the address \n");
         return err;
     }
 
