@@ -48,20 +48,20 @@ void test_decode_message(void) {
     TEST_ASSERT_EQUAL_INT(payload.soil_moisture, output.soil_moisture);
 }
 
-Test *tests_mtd_flashpage_tests(void) {
+Test *tests_serialization(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
         new_TestFixture(test_enconde_message),
         new_TestFixture(test_decode_message),
     };
 
-    EMB_UNIT_TESTCALLER(mtd_flashpage_tests, NULL, NULL, fixtures);
+    EMB_UNIT_TESTCALLER(serialization_tests, NULL, NULL, fixtures);
 
-    return (Test *)&mtd_flashpage_tests;
+    return (Test *)&serialization_tests;
 }
 
 int main(void) {
     TESTS_START();
-    TESTS_RUN(tests_mtd_flashpage_tests());
+    TESTS_RUN(tests_serialization());
     TESTS_END();
     return 0;
 }
