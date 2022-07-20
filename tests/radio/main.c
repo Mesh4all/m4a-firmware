@@ -45,7 +45,7 @@ void test_initial_radio_setup(void) {
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
-Test *tests_mtd_flashpage_tests(void) {
+Test *tests_radio_module(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
         new_TestFixture(test_get_ieee802154_iface),
         new_TestFixture(test_get_netopt_tx_power),
@@ -53,14 +53,14 @@ Test *tests_mtd_flashpage_tests(void) {
         new_TestFixture(test_initial_radio_setup),
     };
 
-    EMB_UNIT_TESTCALLER(mtd_flashpage_tests, NULL, NULL, fixtures);
+    EMB_UNIT_TESTCALLER(radio_tests, NULL, NULL, fixtures);
 
-    return (Test *)&mtd_flashpage_tests;
+    return (Test *)&radio_tests;
 }
 
 int main(void) {
     TESTS_START();
-    TESTS_RUN(tests_mtd_flashpage_tests());
+    TESTS_RUN(tests_radio_module());
     TESTS_END();
     return 0;
 }
