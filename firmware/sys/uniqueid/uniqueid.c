@@ -29,7 +29,7 @@
 #include "net/gnrc.h"
 #if MODULE_AT86RF2XX || MODULE_AT86RF215
 #include "radio.h"
-#else
+#elif MODULE_PERIPH_HWRNG
 #include "periph/hwrng.h"
 #endif
 void subnet_to_ipv6(ipv6_addr_t *addr) {

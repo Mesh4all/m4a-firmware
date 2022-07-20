@@ -20,8 +20,10 @@ menu "Subnet"
         config MODE_STATIC
             bool "STATIC"
 
+        if USEMODULE_AT86RF2XX || USEMODULE_AT86RF215 || USEMODULE_PERIPH_HWRNG
         config MODE_RANDOM
             bool "RANDOM"
+        endif
 
         config MODE_MANUAL
             bool "MANUAL"
