@@ -28,6 +28,8 @@
 #include "embUnit.h"
 
 #include "storage.h"
+#define ENABLE_DEBUG 0
+#include "debug.h"
 
 #define ADDRESS (uint32_t) flashpage_addr(LAST_AVAILABLE_PAGE - 5)
 
@@ -38,7 +40,7 @@ struct val {
     uint8_t var[6];
     uint32_t var2[6];
     char str[28];
-    int32_t var3[5];
+    int32_t var3[50];
 };
 
 void test_init_mtd(void) {
@@ -51,29 +53,30 @@ void test_save_data(void) {
     struct val test_save = {.var = {2, 5, 6, 7, 8, 9},
                             .var2 = {1555, 2556, 477, 8975, 987, 414},
                             .str = "Welcome to mesh storage!!!",
-                            .var3 = {1550, 5544, -698, -789, -97852}};
+                            .var3 = {1550, 5544, -698, -789, -97852, [49] = 2556}};
     printf("\nSaving data:\n");
-    mtd_save_compress(&test_save, sizeof(test_save));
+    ret = mtd_save_compress(&test_save, sizeof(test_save));
     TEST_ASSERT_EQUAL_INT(0, ret);
 }
 
 void test_load_data(void) {
     struct val test_load;
-    printf("\n\nLoading data:\n\n");
+    printf("\n\nLoading data:");
+    DEBUG("\n\n");
     mtd_load(&test_load, sizeof(test_load));
     for (uint16_t i = 0; i < ARRAY_SIZE(test_load.var); i++) {
-        printf("varui8_attr1 [%d]: %d\n", i + 1, test_load.var[i]);
+        DEBUG("varui8_attr1 [%d]: %d\n", i + 1, test_load.var[i]);
     }
-    printf("\n");
+    DEBUG("\n");
     for (uint16_t i = 0; i < ARRAY_SIZE(test_load.var2); i++) {
-        printf("varui32_attr2 [%d]: %" PRId32 "\n", i + 1, test_load.var2[i]);
+        DEBUG("varui32_attr2 [%d]: %" PRId32 "\n", i + 1, test_load.var2[i]);
     }
-    printf("\n");
-    printf("varstr_attr3: %s\n\n", test_load.str);
+    DEBUG("\nvarstr_attr3: %s\n\n", test_load.str);
     for (uint16_t i = 0; i < ARRAY_SIZE(test_load.var3); i++) {
-        printf("vari32_attr4 [%d]: %" PRId32 "\n", i + 1, test_load.var3[i]);
+        DEBUG("vari32_attr4 [%d]: %" PRId32 "\n", i + 1, test_load.var3[i]);
     }
-    printf("\n");
+    DEBUG("\n");
+    printf("\nLoad successfully\n");
 }
 
 void test_save_firm_data(void) {
@@ -102,6 +105,7 @@ void test_save_firm_data(void) {
 #endif
 #ifdef MODULE_RPL_PROTOCOL
         .rpl_mode = 0,
+        .pan_id = 0x20,
 #endif
     };
     ret = mtd_save_compress(&storage_test, sizeof(storage_test));
@@ -120,7 +124,7 @@ void test_load_firm_data(void) {
 #ifdef MODULE_RPL_PROTOCOL
     printf("\nRouting\n\nRpl_mode: %s\n", load_storage.rpl_mode ? "DODAG" : "DAG");
     printf("RPL instance: %d\n", load_storage.rpl_instance);
-    printf("\nRouting\n\nRpl_mode: %d\n ", load_storage.pan_id);
+    printf("pan_id: 0x%X\n", load_storage.pan_id);
 
 #endif
     printf("Wifi-subsys: %s\n", load_storage.wifi_subsys ? "YES" : "NO");
@@ -133,7 +137,6 @@ void test_load_firm_data(void) {
                load_storage.sensors[i].sensor_type ? "AIR" : "SOIL");
         printf("Input pin: %d\n", load_storage.sensors[i].pin);
     }
-    printf("\n\n");
 }
 void test_write_string(void) {
     int ret = mtd_write_string(ADDRESS, data);
@@ -173,9 +176,10 @@ Test *tests_mtd_flashpage_tests(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
         new_TestFixture(test_init_mtd),       new_TestFixture(test_save_data),
         new_TestFixture(test_load_data),      new_TestFixture(test_save_firm_data),
-        new_TestFixture(test_load_firm_data), new_TestFixture(test_write_string),
-        new_TestFixture(test_read_string),    new_TestFixture(test_write_u8),
-        new_TestFixture(test_read_u8),        new_TestFixture(test_erase_address),
+        new_TestFixture(test_load_firm_data),
+        // new_TestFixture(test_write_string),
+        // new_TestFixture(test_read_string),    new_TestFixture(test_write_u8),
+        // new_TestFixture(test_read_u8),        new_TestFixture(test_erase_address),
     };
 
     EMB_UNIT_TESTCALLER(mtd_flashpage_tests, NULL, NULL, fixtures);
