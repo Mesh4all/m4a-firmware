@@ -1,5 +1,6 @@
-@defgroup border_router_test border router test module
-@ingroup     test_group
+/**
+@defgroup    tests_border_router Application to test the border router initialization
+@ingroup     tests
 @{
 
 ## Test Border Router module

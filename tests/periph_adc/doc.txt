@@ -1,6 +1,7 @@
 /**
-@defgroup      periph_adc   Read values using ADC peripheral
+@defgroup      tests_periph_adc   Read values using ADC peripheral
 @ingroup       tests
+
 @{
 
 ## Test the [A]nalog to [D]igital [C]onverter peripheral

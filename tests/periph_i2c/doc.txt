@@ -1,6 +1,6 @@
 /**
-* @defgroup      test_group_periph_i2c   Get I2C available ports and scan for devices
-* @ingroup       test_group
+* @defgroup      tests_periph_i2c Gets I2C available ports and scan for devices.
+* @ingroup       tests
 * @{
 *
 * ## Low level test for I2C peripherals

@@ -1,6 +1,7 @@
 /**
-@defgroup udp_client_test UDP client test
-@ingroup     test_group
+@defgroup    test_udp_client Send UDP messages to an UDP server
+@ingroup     tests
+
 @{
 
 ## Test documentation

@@ -7,7 +7,7 @@
  */
 
 /**
- @defgroup    slipdev Slipdev
+ @defgroup    examples_slipdev Sample Application to provide a internet via UART (SLIP)
  @ingroup     examples
  @brief       Slipdev example to use with m4a-wroom board
 
@@ -70,7 +70,7 @@ USEMODULE += netstats_ipv6
 If you want to upload the example to your board, needs to compile first, additional to this you could initialize the terminal to
 open directly the shell and make a ping or check de interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-make -C examples/esp32-wroom-32/slipdev flash term
+make -C examples/slipdev flash term
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 [Back to table of contents](#m4a_slipdev_toc)

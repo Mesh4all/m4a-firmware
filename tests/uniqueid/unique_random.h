@@ -15,7 +15,7 @@
  */
 
 /**
- * @ingroup     tests
+ * @ingroup  tests_uniqueid
  * @{
  *
  * @file
@@ -33,7 +33,7 @@ extern "C" {
 #endif
 
 /**
- * @brief   Random Generator to gets a block of random values
+ * @brief   Random to gets a block of random values
  *
  * @param bit_ref this is a reference to create a matrix of the reads
  * e.g bit_ref = 9 -> 9x9 (This mean that could obtain 9 measures of 9

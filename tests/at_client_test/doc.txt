@@ -15,10 +15,10 @@
  */
 
 /**
- * @defgroup test_at_client at_client test module
- * @ingroup  test_group
+ * @defgroup tests_at_client Send and receive AT commands via UART
+ * @ingroup  tests
 
-## Test AT_CLIENT
+## Test AT CLIENT
 
 This unit tests are performed on the at_client module.
 To perform a successful test when a command at is sent correctly

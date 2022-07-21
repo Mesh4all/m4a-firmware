@@ -1,7 +1,10 @@
 /**
-* @defgroup      test_group_driver_bme280   Application test for bme280
-* @ingroup       test_group
+* @defgroup      tests_driver_bme280  Application test for bme280
+* @ingroup       tests
+*
 * @{
 *
 * ## Test bme driver
 *
+* @}
+*/

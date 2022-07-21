@@ -15,8 +15,8 @@
  */
 
 /**
- * @defgroup    test_template Test template
- * @ingroup     test_group
+ * @defgroup    tests_template Test template
+ * @ingroup     tests
  * @brief       A simple guide to build a test from a Template
 
 # Test Template

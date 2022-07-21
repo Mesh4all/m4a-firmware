@@ -7,20 +7,20 @@
  */
 
 /**
- * @defgroup    external-led External-led blink
+ * @defgroup    examples_blinking Blinking
  * @ingroup     examples
- * @brief       This is a external led blink example to known about gpio/periph.h
+ * @brief       This is a led blink example to known about gpio/periph.h
  * @author      xkevin190 <kevinvelasco190@gmail.com>
 
 \section led External Led Blink
 
-## Table of Contents {#external_led_blink_toc}
+## Table of Contents {#blinking_toc}
 
-1. [Hardware](#external_led_blink_hardware)
-2. [Getting Started](#external_led_blink_basic)
-3. [Flashing the Device](#external_led_blink_flashing)
+1. [Hardware](#blinking_hardware)
+2. [Getting Started](#blinking_basic)
+3. [Flashing the Device](#blinking_flashing)
 
-## Hardware {#external_led_blink_hardware}
+## Hardware {#blinking_hardware}
 
 This section shows, which pin is used in this example.
 
@@ -30,7 +30,7 @@ Function        | GPIOs  | Remarks |
 LED_PIN | GPIO(PA , 19)| Pin to blink control of led |
 
 </center>
-## Getting Started {#external_led_blink_basic}
+## Getting Started {#blinking_basic}
 
 To understand how to make a gpio_pin use digital Output. Import the periph/gpio.h library.
 You could use two functions to set digital output 1 or 0.
@@ -51,12 +51,12 @@ changes the value of current state. (means if is HIGH, when applied this functio
 
 another aspect to be take into account is add the xtimer and ztimer headers files, to use temporizers in our code.
 
-## Flashing {#external_led_blink_flashing}
+## Flashing {#blinking_flashing}
 
 If you want to upload the example to your board, needs to compile first, additional to this you could initialize the terminal and watch the results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-make -C examples/esp32-wroom-32/external_led flash term
+make -C examples/blinking flash term
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[Back to table of contents](#external_led_blink_toc)
+[Back to table of contents](#blinking_toc)
  */

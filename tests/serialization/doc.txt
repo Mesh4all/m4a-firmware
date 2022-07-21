@@ -1,7 +1,8 @@
 
 /**
-@defgroup serialization18_test Serialization test module
-@ingroup     test_group
+@defgroup   tests_serialization Encode and decode via CBOR format.
+@ingroup    tests
+
 @{
 
 ## Test Serialization sensor

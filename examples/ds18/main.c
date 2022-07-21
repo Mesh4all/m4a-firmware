@@ -15,7 +15,7 @@
  */
 
 /**
- * @ingroup     ds18b20
+ * @ingroup     examples_ds18
  *
  * @brief       This is a example to understand how tu works the ds18b20
  *

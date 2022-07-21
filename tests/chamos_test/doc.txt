@@ -1,5 +1,5 @@
-@defgroup chamos_test chamos test module
-@ingroup     test_group
+@defgroup    tests_chamos Starts a Chamos and Chamoc Communication.
+@ingroup     tests
 @{
 
 ## Test Chamos module
