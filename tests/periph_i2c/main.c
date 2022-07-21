@@ -15,9 +15,13 @@
  */
 
 /**
+ * @ingroup     test_group_periph_i2c
+ * @{
+ * @file
  * @brief       I2C low level test
  *
  * @author      Luis A. Ruiz <luisan00@hotmail.com>
+ * @}
  */
 #include <string.h>
 #include <stdio.h>
@@ -28,7 +32,6 @@
 #include "periph/gpio.h"
 #include "periph/i2c.h"
 
-#include "ztimer.h"
 #include "embUnit.h"
 
 uint16_t i2c_scan_dev(i2c_t dev) {

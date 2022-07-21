@@ -7,9 +7,5 @@ CONFIG_MODULE_PERIPH_I2C=y
 # Enable I2C scan
 CONFIG_MODULE_I2C_SCAN=y
 
-# Enable xtimer to wake up periodically
-CONFIG_MODULE_ZTIMER=y
-CONFIG_MODULE_ZTIMER_MSEC=y
-
 # Enable stuffs related to tests
 CONFIG_MODULE_EMBUNIT=y
