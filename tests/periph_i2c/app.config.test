@@ -1,0 +1,11 @@
+# this file enables modules defined in Kconfig. Do not use this file for
+# application configuration. This is only needed during migration.
+
+# Enable I2C peripheral driver
+CONFIG_MODULE_PERIPH_I2C=y
+
+# Enable I2C scan
+CONFIG_MODULE_I2C_SCAN=y
+
+# Enable stuffs related to tests
+CONFIG_MODULE_EMBUNIT=y

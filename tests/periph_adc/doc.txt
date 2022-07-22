@@ -1,15 +1,36 @@
 /**
-@defgroup      periph_adc
-@ingroup       test_group
+@defgroup      periph_adc   Read values using ADC peripheral
+@ingroup       tests
 @{
 
 ## Test the [A]nalog to [D]igital [C]onverter peripheral
 
-To test the code in automatic mode:
+This test gets the list of ADC pins available and read their values.
 
-```c
-make flash test
+### Compile, flash and test
+
+You can compile and flash by executing:
+
+```sh
+make BOARD=<your_board> flash
 ```
 
+Then open a terminal with:
+
+```sh
+make BOARD=<your_board> term
+```
+
+And start the tests by typing [S]
+
+
+* **Also** you can run the test in **auto mode** with:
+*
+* ```sh
+* make <your_board> flash test
+* ```
+
+@note \<your_board> must be changed by one of @ref boards
+
 @}
- */
+*/
