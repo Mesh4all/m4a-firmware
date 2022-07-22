@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['reference_20firmware_786',['Reference firmware',['../group__m4a-firmware.html',1,'']]],
-  ['radio_20module_787',['Radio Module',['../group__radio__module.html',1,'']]],
-  ['rpl_20protocol_20module_788',['RPL protocol module',['../group__rpl__protocol.html',1,'']]]
+  ['peripherals_789',['Peripherals',['../group__peripherals.html',1,'']]],
+  ['protocols_20routines_790',['Protocols routines',['../group__wifi-subusys-protocols.html',1,'']]]
 ];

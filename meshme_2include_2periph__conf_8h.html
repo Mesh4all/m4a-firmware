@@ -142,21 +142,32 @@ $(document).ready(function(){initNavTree('meshme_2include_2periph__conf_8h.html'
 <tr class="separator:a160c7b1c3bc13c7cb5ac4ed375f4e21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
-UART configuration</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp407a5b3e285fd5f1acd0d75745831cfa"></a>List of available UART ports, pins are mapped as follows:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">UART Dev </th><th class="markdownTableHeadNone">TX pin </th><th class="markdownTableHeadNone">RX pin </th><th class="markdownTableHeadNone">CTS pin </th><th class="markdownTableHeadNone">RTS pin  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">PA0 </td><td class="markdownTableBodyNone">PA1 </td><td class="markdownTableBodyNone">Undef. </td><td class="markdownTableBodyNone">Undef.  </td></tr>
-</table>
-</td></tr>
+[U]niversal [A]synchronous [R]eceiver [T]ransmitter peripheral.</h2></td></tr>
 <tr class="memitem:a713e03d19734d793baee3d1cc25c2dbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="meshme_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb">UART_0_ISR</a>&#160;&#160;&#160;isr_uart0</td></tr>
 <tr class="separator:a713e03d19734d793baee3d1cc25c2dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a850405f2aaa352ad264346531f0e6230"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="meshme_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230">UART_NUMOF</a>&#160;&#160;&#160;ARRAY_SIZE(<a class="el" href="vs203_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5">uart_config</a>)</td></tr>
 <tr class="separator:a850405f2aaa352ad264346531f0e6230"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1643cfc64589407fb96b4cbf908689a5"><td class="memItemLeft" align="right" valign="top">static const uart_conf_t&#160;</td><td class="memItemRight" valign="bottom"><b>uart_config</b> []</td></tr>
+<tr class="memitem:a1643cfc64589407fb96b4cbf908689a5"><td class="memItemLeft" align="right" valign="top">static const uart_conf_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="meshme_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5">uart_config</a> []</td></tr>
+<tr class="memdesc:a1643cfc64589407fb96b4cbf908689a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Two available UART ports but only one is set as follows:  <a href="meshme_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5">More...</a><br /></td></tr>
 <tr class="separator:a1643cfc64589407fb96b4cbf908689a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+I2C Settings</h2></td></tr>
+<tr class="memitem:a7a0bc389843ed85946f608482ee17929"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="meshme_2include_2periph__conf_8h.html#a7a0bc389843ed85946f608482ee17929">I2C_IRQ_PRIO</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a7a0bc389843ed85946f608482ee17929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abce62e16a6e3b3205801fed93c51692d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="meshme_2include_2periph__conf_8h.html#abce62e16a6e3b3205801fed93c51692d">I2C_NUMOF</a>&#160;&#160;&#160;ARRAY_SIZE(<a class="el" href="meshme_2include_2periph__conf_8h.html#aa9dcbfbe7aa5baf027d834e5bca62a47">i2c_config</a>)</td></tr>
+<tr class="separator:abce62e16a6e3b3205801fed93c51692d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9dcbfbe7aa5baf027d834e5bca62a47"><td class="memItemLeft" align="right" valign="top">static const i2c_conf_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="meshme_2include_2periph__conf_8h.html#aa9dcbfbe7aa5baf027d834e5bca62a47">i2c_config</a> []</td></tr>
+<tr class="memdesc:aa9dcbfbe7aa5baf027d834e5bca62a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">There are 2 I2C ports available but only one is set as follows:  <a href="meshme_2include_2periph__conf_8h.html#aa9dcbfbe7aa5baf027d834e5bca62a47">More...</a><br /></td></tr>
+<tr class="separator:aa9dcbfbe7aa5baf027d834e5bca62a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+SPI configuration</h2></td></tr>
+<tr class="memitem:ab35a2b79568128efef74adf1ba1910a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="meshme_2include_2periph__conf_8h.html#ab35a2b79568128efef74adf1ba1910a8">SPI_NUMOF</a>&#160;&#160;&#160;ARRAY_SIZE(<a class="el" href="meshme_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c">spi_config</a>)</td></tr>
+<tr class="separator:ab35a2b79568128efef74adf1ba1910a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a873188d7292e07499dcde9674b1e849c"><td class="memItemLeft" align="right" valign="top">static const spi_conf_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="meshme_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c">spi_config</a> []</td></tr>
+<tr class="memdesc:a873188d7292e07499dcde9674b1e849c"><td class="mdescLeft">&#160;</td><td class="mdescRight">There are 2 SPI ports available but only one is set as follows:  <a href="meshme_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c">More...</a><br /></td></tr>
+<tr class="separator:a873188d7292e07499dcde9674b1e849c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Peripheral MCU configuration for the Meshme board. </p>
@@ -179,7 +190,41 @@ Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@
 </div><div class="memdoc">
 <p>Number of available adc lines </p>
 
-<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00077">77</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00078">78</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+
+</div>
+</div>
+<a id="a7a0bc389843ed85946f608482ee17929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a0bc389843ed85946f608482ee17929">&#9670;&nbsp;</a></span>I2C_IRQ_PRIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IRQ_PRIO&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>i2c IRQ priority </p>
+
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00114">114</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+
+</div>
+</div>
+<a id="abce62e16a6e3b3205801fed93c51692d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce62e16a6e3b3205801fed93c51692d">&#9670;&nbsp;</a></span>I2C_NUMOF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_NUMOF&#160;&#160;&#160;ARRAY_SIZE(<a class="el" href="meshme_2include_2periph__conf_8h.html#aa9dcbfbe7aa5baf027d834e5bca62a47">i2c_config</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Available i2c ports </p>
+
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00135">135</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
 
 </div>
 </div>
@@ -209,8 +254,9 @@ Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@
 <td class="markdownTableBodyLeft">SOC_ADC_ADCCON3_EREF_DIFF </td><td class="markdownTableBodyLeft">External reference on AIN6-AIN7 differential input  </td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>default is [SOC_ADC_ADCCON3_EREF_EXT] </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__periph__adc.html">Read values using ADC peripheral</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00052">52</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00053">53</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
 
 </div>
 </div>
@@ -241,7 +287,24 @@ Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@
 </table>
 <dl class="section note"><dt>Note</dt><dd>default is [ADC_RES_12BIT] </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00067">67</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00068">68</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+
+</div>
+</div>
+<a id="ab35a2b79568128efef74adf1ba1910a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35a2b79568128efef74adf1ba1910a8">&#9670;&nbsp;</a></span>SPI_NUMOF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_NUMOF&#160;&#160;&#160;ARRAY_SIZE(<a class="el" href="meshme_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c">spi_config</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Available SPI ports </p>
+
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00161">161</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
 
 </div>
 </div>
@@ -258,7 +321,7 @@ Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@
 </div><div class="memdoc">
 <p>interrupt function name mapping </p>
 
-<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00102">102</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00106">106</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
 
 </div>
 </div>
@@ -275,7 +338,7 @@ Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@
 </div><div class="memdoc">
 <p>Number of UARTs </p>
 
-<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00103">103</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00107">107</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
 
 </div>
 </div>
@@ -306,7 +369,96 @@ Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@
 </div><!-- fragment -->
 <p>Available ADC lines. </p>
 
-<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00072">72</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00073">73</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+
+</div>
+</div>
+<a id="aa9dcbfbe7aa5baf027d834e5bca62a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9dcbfbe7aa5baf027d834e5bca62a47">&#9670;&nbsp;</a></span>i2c_config</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const i2c_conf_t i2c_config[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {</div>
+<div class="line">        .speed = I2C_SPEED_FAST,</div>
+<div class="line">        .scl_pin = GPIO_PIN(PORT_B, 0),</div>
+<div class="line">        .sda_pin = GPIO_PIN(PORT_B, 1),</div>
+<div class="line">    },</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>There are 2 I2C ports available but only one is set as follows: </p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter"># </th><th class="markdownTableHeadCenter">SCL </th><th class="markdownTableHeadCenter">SDA </th><th class="markdownTableHeadCenter">Speed  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0 </td><td class="markdownTableBodyCenter">PB0 </td><td class="markdownTableBodyCenter">PB1 </td><td class="markdownTableBodyCenter">Fast  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash;  </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>I2C speed can be one of two modes available:<ul>
+<li>Standard 100 kbps</li>
+<li>Fast 400 kbps </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00128">128</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+
+</div>
+</div>
+<a id="a873188d7292e07499dcde9674b1e849c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a873188d7292e07499dcde9674b1e849c">&#9670;&nbsp;</a></span>spi_config</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const spi_conf_t spi_config[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {</div>
+<div class="line">        .num = 0,</div>
+<div class="line">        .mosi_pin = GPIO_PIN(PORT_B, 4),</div>
+<div class="line">        .miso_pin = GPIO_PIN(PORT_B, 5),</div>
+<div class="line">        .sck_pin = GPIO_PIN(PORT_B, 6),</div>
+<div class="line">        .cs_pin = GPIO_PIN(PORT_B, 7),</div>
+<div class="line">    },</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>There are 2 SPI ports available but only one is set as follows: </p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Num </th><th class="markdownTableHeadCenter">MOSI </th><th class="markdownTableHeadCenter">MISO </th><th class="markdownTableHeadCenter">SCK </th><th class="markdownTableHeadCenter">CS  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0 </td><td class="markdownTableBodyCenter">PB4 </td><td class="markdownTableBodyCenter">PB5 </td><td class="markdownTableBodyCenter">PB6 </td><td class="markdownTableBodyCenter">PB7  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash;  </td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00151">151</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
 
 </div>
 </div>
@@ -341,7 +493,17 @@ Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@
 <div class="line">    },</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00090">90</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+<p>Two available UART ports but only one is set as follows: </p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">UART Dev </th><th class="markdownTableHeadCenter">TX pin </th><th class="markdownTableHeadCenter">RX pin </th><th class="markdownTableHeadCenter">CTS pin </th><th class="markdownTableHeadCenter">RTS pin  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0 </td><td class="markdownTableBodyCenter">PA0 </td><td class="markdownTableBodyCenter">PA1 </td><td class="markdownTableBodyCenter">Undef </td><td class="markdownTableBodyCenter">Undef  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash; </td><td class="markdownTableBodyCenter">&mdash;  </td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="meshme_2include_2periph__conf_8h_source.html#l00094">94</a> of file <a class="el" href="meshme_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
 
 </div>
 </div>
@@ -353,7 +515,7 @@ Luis A. Ruiz <a href="#" onclick="location.href='mai'+'lto:'+'lui'+'sa'+'n00'+'@
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6c8313236d9db5b969ca7d150fe527de.html">boards</a></li><li class="navelem"><a class="el" href="dir_8cf941a114892b7d92f3c3fa3e962fa6.html">meshme</a></li><li class="navelem"><a class="el" href="dir_b07892869a7d00c6f4ea89d6473456f1.html">include</a></li><li class="navelem"><a class="el" href="meshme_2include_2periph__conf_8h.html">periph_conf.h</a></li>
-    <li class="footer">Generated on Thu Jul 21 2022 13:47:08 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Fri Jul 22 2022 12:31:31 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

@@ -26,7 +26,7 @@ var NAVTREE =
     [ "m4a reference firmware", "index.html", null ],
     [ "Unit-testing", "md_tests_README.html", null ],
     [ "RIOT bootloader test", "md_tests_riotboot_README.html", [
-      [ "Automatic test", "md_tests_riotboot_README.html#autotoc_md93", null ]
+      [ "Automatic test", "md_tests_riotboot_README.html#autotoc_md97", null ]
     ] ],
     [ "WiFi subsystem", "md_wifi-subsys_README.html", null ],
     [ "Modules", "modules.html", "modules" ],
@@ -55,8 +55,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__udp__client__test.html",
-"nib_8h.html#a598c582b791e0b434234167837d64e50"
+"group__tmp__uart.html",
+"moisture__sensor_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

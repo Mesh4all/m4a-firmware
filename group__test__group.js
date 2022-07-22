@@ -1,6 +1,7 @@
 var group__test__group =
 [
     [ "Ds18 sensor test module", "group__ds18__test.html", null ],
+    [ "Get I2C available ports and scan for devices", "group__test__group__periph__i2c.html", null ],
     [ "Serialization test module", "group__serialization18__test.html", null ],
     [ "Test template", "group__test__template.html", "group__test__template" ],
     [ "UDP client test", "group__udp__client__test.html", null ],

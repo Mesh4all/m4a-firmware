@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['mesh4all_202_2e4_20ghz_20band_20board_775',['Mesh4All 2.4 GHz band board',['../group__boards__m4a-24g.html',1,'']]],
-  ['mesh4all_20multi_2dband_20board_776',['Mesh4All multi-band board',['../group__boards__m4a-mb.html',1,'']]],
-  ['meshme_20cc2538_20_2b20dbm_20pa_777',['MeshMe CC2538 +20dBm PA',['../group__boards__meshme.html',1,'']]],
-  ['mesh4all_20examples_778',['Mesh4all Examples',['../group__examples.html',1,'']]],
-  ['moisture_20sensor_779',['Moisture sensor',['../group__moisture__sensor.html',1,'']]]
+  ['get_20i2c_20available_20ports_20and_20scan_20for_20devices_779',['Get I2C available ports and scan for devices',['../group__test__group__periph__i2c.html',1,'']]]
 ];
