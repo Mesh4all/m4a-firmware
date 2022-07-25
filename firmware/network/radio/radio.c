@@ -39,10 +39,10 @@ int8_t subtract_to_interface = 0;
 #endif
 
 bool identify_multiple_radio_interface(void) {
-    int8_t index = get_ieee802154_iface() + subtract_to_interface;
-    gnrc_netif_t *iface_mult = gnrc_netif_get_by_pid(index);
+    int8_t index = get_ieee802154_iface();
+    gnrc_netif_t *iface_mult = gnrc_netif_get_by_pid(index + 1);
     if (index != -1) {
-        if (gnrc_netif_get_by_type(iface_mult->dev->type, index - 1) != NULL) {
+        if (iface_mult != NULL) {
             return true;
         }
     }
@@ -52,7 +52,7 @@ bool identify_multiple_radio_interface(void) {
 int8_t get_ieee802154_iface(void) {
     int max_ifaces = gnrc_netif_numof();
     if (max_ifaces > 0) {
-        gnrc_netif_t *iface;
+        gnrc_netif_t *iface = NULL;
         for (uint8_t i = 0; i < ARRAY_SIZE(radio_devices); i++) {
             iface = gnrc_netif_get_by_type(radio_devices[i], NETDEV_INDEX_ANY);
             if (iface != NULL) {
@@ -65,12 +65,17 @@ int8_t get_ieee802154_iface(void) {
             return -1;
         }
     }
+    printf("Error: Radio interface doesn't exist, File:%s line:%d function: %s\n", __FILE__,
+           __LINE__, __func__);
     return -1;
 }
 
 int8_t get_netopt_tx_power(int16_t txpower) {
     int res;
     int index = get_ieee802154_iface();
+    if (index < 0) {
+        return -1;
+    }
     netif_t *iface = netif_get_by_id(index);
 
     res = netif_get_opt(iface, NETOPT_TX_POWER, 0, &txpower, sizeof(txpower));
@@ -86,6 +91,9 @@ int8_t get_netopt_tx_power(int16_t txpower) {
 int8_t get_netopt_channel(int16_t channel) {
     int res;
     int index = get_ieee802154_iface();
+    if (index < 0) {
+        return -1;
+    }
     netif_t *iface = netif_get_by_id(index);
 
     res = netif_get_opt(iface, NETOPT_CHANNEL, 0, &channel, sizeof(channel));
@@ -101,6 +109,9 @@ int8_t get_netopt_channel(int16_t channel) {
 int8_t set_netopt_tx_power(int16_t txpower) {
     int res;
     int index = get_ieee802154_iface();
+    if (index < 0) {
+        return -1;
+    }
     netif_t *iface = netif_get_by_id(index);
     if (txpower < TX_POWER_MIN || txpower > TX_POWER_MAX) {
         printf("Error: the txPower must be between %d dbm and %d dbm \n", TX_POWER_MIN,
@@ -121,6 +132,9 @@ int8_t set_netopt_tx_power(int16_t txpower) {
 int8_t set_netopt_channel(int16_t channel) {
     int res;
     int index = get_ieee802154_iface();
+    if (index < 0) {
+        return -1;
+    }
     netif_t *iface = netif_get_by_id(index);
 #ifdef CONFIG_MODE_SUB_24GHZ
     if (channel < 0 || channel > 10) {
