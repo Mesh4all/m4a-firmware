@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: examples/external_led Directory Reference</title>
+    <title>Mesh4all: Gets Temperature values from Ds18 sensor</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('dir_2aee19f724fc2e5ace69db83837f6505.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__tests__ds18.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -105,18 +105,26 @@ $(document).ready(function(){initNavTree('dir_2aee19f724fc2e5ace69db83837f6505.h
 
 <div class="header">
   <div class="headertitle">
-<div class="title">external_led Directory Reference</div>  </div>
+<div class="title">Gets Temperature values from Ds18 sensor<div class="ingroups"><a class="el" href="group__tests.html">Application tests to each Module and driver</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<h2><a class="anchor" id="autotoc_md93"></a>
+Test DS18 sensor</h2>
+<p>Here unit tests are performed on the ds18_sensor module. To perform a successful test you must connect the ds18 temperature sensor to your board.</p>
+<p>you must also add the gpio where your board will be connected in the test init. Run first menuconfig and add the pin number where is connected the sensor.</p>
+<div class="fragment"><div class="line">make menuconfig all</div>
+</div><!-- fragment --><p>You take a look in the main.c </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> err = <a class="code" href="ds18__sensor_8h.html#afd1968312478887124a3678bed0d1cab">init_temperature_sensor</a>(CONFIG_PIN_TEMP_SENSOR);</div>
+</div><!-- fragment --><p>You could see that the CONFIG_PIN_TEMP_SENSOR is a reference to the configurate pin set in the menuconfig. To test the code in automatic mode:</p>
+<div class="fragment"><div class="line">make flash test</div>
+</div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="ads18__sensor_8h_html_afd1968312478887124a3678bed0d1cab"><div class="ttname"><a href="ds18__sensor_8h.html#afd1968312478887124a3678bed0d1cab">init_temperature_sensor</a></div><div class="ttdeci">int init_temperature_sensor(int pin)</div><div class="ttdoc">This function initializes the temperature sensor.</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_2aee19f724fc2e5ace69db83837f6505.html">external_led</a></li>
-    <li class="footer">Generated on Fri Jul 22 2022 12:31:31 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Jul 25 2022 20:16:36 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

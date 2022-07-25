@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: Get I2C available ports and scan for devices</title>
+    <title>Mesh4all: Read values using ADC peripheral</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('group__test__group__periph__i2c.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__tests__periph__adc.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -105,16 +105,12 @@ $(document).ready(function(){initNavTree('group__test__group__periph__i2c.html',
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Get I2C available ports and scan for devices<div class="ingroups"><a class="el" href="group__test__group.html">Test</a></div></div>  </div>
+<div class="title">Read values using ADC peripheral<div class="ingroups"><a class="el" href="group__tests.html">Application tests to each Module and driver</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <h2><a class="anchor" id="autotoc_md94"></a>
-Low level test for I2C peripherals</h2>
-<p>This test will try:</p>
-<ul>
-<li>Return the number of I2C available ports.</li>
-<li>Scan for connected devices on the available I2C ports.</li>
-</ul>
+Test the [A]nalog to [D]igital [C]onverter peripheral</h2>
+<p>This test gets the list of ADC pins available and read their values.</p>
 <h3><a class="anchor" id="autotoc_md95"></a>
 Compile, flash and test</h3>
 <p>You can compile and flash by executing:</p>
@@ -132,7 +128,7 @@ Compile, flash and test</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jul 22 2022 12:31:31 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Jul 25 2022 20:16:36 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

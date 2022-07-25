@@ -1,8 +1,8 @@
 var group__examples =
 [
-    [ "Analog capacitive moisture sensor", "group__moisture__sensor__example.html", null ],
-    [ "Ds18b20", "group__ds18b20.html", null ],
-    [ "External-led blink", "group__external-led.html", null ],
-    [ "Slipdev", "group__slipdev.html", "group__slipdev" ],
-    [ "Uart", "group__tmp__uart.html", null ]
+    [ "Application to run a Rpl DAG node", "group__examples__rpl__dag.html", null ],
+    [ "Blinking", "group__examples__blinking.html", null ],
+    [ "Sample Application to provide a internet via UART (SLIP)", "group__examples__slipdev.html", null ],
+    [ "Sample Application using an Analog capacitive moisture sensor", "group__examples__moisture__sensor.html", null ],
+    [ "Sample application of Ds18 sensor", "group__examples__ds18.html", null ]
 ];

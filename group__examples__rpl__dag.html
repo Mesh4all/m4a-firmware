@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: Read values using ADC peripheral</title>
+    <title>Mesh4all: Application to run a Rpl DAG node</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('group__periph__adc.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__examples__rpl__dag.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -105,22 +105,51 @@ $(document).ready(function(){initNavTree('group__periph__adc.html',''); initResi
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Read values using ADC peripheral</div>  </div>
+<div class="title">Application to run a Rpl DAG node<div class="ingroups"><a class="el" href="group__examples.html">Sample applications running on Mesh4all-boards</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<h2><a class="anchor" id="autotoc_md92"></a>
-Test the [A]nalog to [D]igital [C]onverter peripheral</h2>
-<p>This test gets the list of ADC pins available and read their values.</p>
-<h3><a class="anchor" id="autotoc_md93"></a>
-Compile, flash and test</h3>
-<p>You can compile and flash by executing:</p>
-<div class="fragment"><div class="line">make BOARD=&lt;your_board&gt; flash</div>
-</div><!-- fragment --><p>Then open a terminal with:</p>
-<div class="fragment"><div class="line">make BOARD=&lt;your_board&gt; term</div>
-</div><!-- fragment --><p>And start the tests by typing [S]</p>
-<p><b>Also</b> you can run the test in <b>auto mode</b> with:</p>
-<div class="fragment"><div class="line">make &lt;your_board&gt; flash test</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>&lt;your_board&gt; must be changed by one of <a class="el" href="group__boards.html">Supported Boards</a> </dd></dl>
+
+<p>This is an example of a node in DAG mode under RPL protocol.  
+<a href="#details">More...</a></p>
+<p>This is an example of a node in DAG mode under RPL protocol. </p>
+<dl class="section author"><dt>Author</dt><dd>eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'ar'+'doa'+'zo'+'car'+'7@'+'gma'+'il'+'.co'+'m'; return false;">eduar<span style="display: none;">.nosp@m.</span>doaz<span style="display: none;">.nosp@m.</span>ocar7<span style="display: none;">.nosp@m.</span>@gma<span style="display: none;">.nosp@m.</span>il.co<span style="display: none;">.nosp@m.</span>m</a></dd></dl>
+<h1><a class="anchor" id="sect1_RPL_dag"></a>
+RPL DAG</h1>
+<h2><a class="anchor" id="rpl_dag_toc"></a>
+Table of Contents</h2>
+<ol type="1">
+<li><a href="#rpl_dag_requirements">Requirements</a></li>
+<li><a href="#rpl_dag_flashing">Flashing the Device</a></li>
+<li><a href="#rpl_dag_basic">Getting Started</a></li>
+</ol>
+<h2><a class="anchor" id="rpl_dag_requirements"></a>
+Requirements</h2>
+<p>TO run RPL protocol you need a board with radio module incorporated. because rpl runs to all Zigbee and IEEE802.15.4 devices.</p><ul>
+<li>Use 2 radio devices to stablish connections.</li>
+<li>the second board must has the <code>mesh4all_rpl_dodag</code> example flashed</li>
+</ul>
+<h2><a class="anchor" id="rpl_dag_flashing"></a>
+Build and flashing</h2>
+<p>Starts flashing the board and see the building process to be completed. </p><div class="fragment"><div class="line">make -C examples/mesh4all_rpl_dag flash term</div>
+</div><!-- fragment --><h2><a class="anchor" id="rpl_dag_basic"></a>
+Getting Started</h2>
+<p>First start building and flashing this example in a m4a-24g Board. (if you have connected the secondary board running in <code>DODAG</code> mode, disconnect it, until to last step). The DAG mode in rpl is a passive node that should receive an ipv6 address when it's connected in the radio network. So when your run <code>ifconfig</code> command of the shell. you could see that you don´t has an ipv6 global address until the secondary board it's active in rpl <code>DODAG</code> mode.</p>
+<div class="fragment"><div class="line">2022-07-21 12:41:39,960 # ifconfig</div>
+<div class="line">2022-07-21 12:41:39,967 # Iface  4  HWaddr: 48:FC  Channel: 11  Page: 0  NID: 0x23  PHY: O-QPSK</div>
+<div class="line">2022-07-21 12:41:39,968 #</div>
+<div class="line">2022-07-21 12:41:39,972 #           Long HWaddr: 00:04:25:19:18:01:C8:FC</div>
+<div class="line">2022-07-21 12:41:39,980 #            TX-Power: 0dBm  State: IDLE  max. Retrans.: 3  CSMA Retries: 4</div>
+<div class="line">2022-07-21 12:41:39,987 #           AUTOACK  ACK_REQ  CSMA  L2-PDU:102  MTU:1280  HL:64  RTR</div>
+<div class="line">2022-07-21 12:41:39,989 #           6LO  IPHC</div>
+<div class="line">2022-07-21 12:41:39,992 #           Source address length: 8</div>
+<div class="line">2022-07-21 12:41:39,995 #           Link type: wireless</div>
+<div class="line">2022-07-21 12:41:40,001 #           inet6 addr: fe80::204:2519:1801:c8fc  scope: link  VAL</div>
+<div class="line">2022-07-21 12:41:40,003 #           inet6 group: ff02::2</div>
+<div class="line">2022-07-21 12:41:40,006 #           inet6 group: ff02::1</div>
+</div><!-- fragment --><ul>
+<li>Now, connect your DODAG board and see how the device will be inside the radio network</li>
+</ul>
+<p><a href="#rpl_dag_toc">Back to table of contents</a> </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
@@ -128,7 +157,7 @@ Compile, flash and test</h3>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jul 22 2022 12:31:31 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Jul 25 2022 20:16:36 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

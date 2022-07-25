@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: Slipdev</title>
+    <title>Mesh4all: Send and receive AT commands via UART</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('group__slipdev.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__tests__at__client.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -104,75 +104,62 @@ $(document).ready(function(){initNavTree('group__slipdev.html',''); initResizabl
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#files">Files</a>  </div>
   <div class="headertitle">
-<div class="title">Slipdev<div class="ingroups"><a class="el" href="group__examples.html">Mesh4all Examples</a></div></div>  </div>
+<div class="title">Send and receive AT commands via UART<div class="ingroups"><a class="el" href="group__tests.html">Application tests to each Module and driver</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Slipdev example to use with m4a-wroom board.  
-<a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:slipdev__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="slipdev__params_8h.html">slipdev_params.h</a></td></tr>
-<tr class="memdesc:slipdev__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">slip parameters example, used by auto_init_gnrc_netif <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Slipdev example to use with m4a-wroom board. </p>
-<h1><a class="anchor" id="slipdev"></a>
-slipdev</h1>
-<h2><a class="anchor" id="m4a_slipdev_toc"></a>
-Table of Contents</h2>
-<ol type="1">
-<li><a href="#m4a_slipdev_hardware">Hardware</a></li>
-<li><a href="#m4a_slipdev_basic_conf">Basic and Default configuration</a></li>
-<li><a href="#m4a_slipdev_flashing">Flashing the Device</a></li>
-</ol>
-<h2><a class="anchor" id="m4a_slipdev_hardware"></a>
-Hardware</h2>
-<p>This section shows, which pins are used to make a bridge of communication to the SLIP protocol. using only an UART</p>
-<center> <table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Function </th><th class="markdownTableHeadLeft">GPIOs </th><th class="markdownTableHeadLeft">Remarks  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">UART_DEV(2):RxD </td><td class="markdownTableBodyLeft">GPIO16 </td><td class="markdownTableBodyLeft">Slipdev_UART_RXD Serial communication  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">UART_DEV(2):TxD </td><td class="markdownTableBodyLeft">GPIO17 </td><td class="markdownTableBodyLeft">Slipdev_UART TXD Serial communication  </td></tr>
-</table>
-</center><center></center><p>Take others params before to compiling.It could be define previously some Slipdev params, like is the UART to use and its baudrate.</p>
-<h2><a class="anchor" id="m4a_slipdev_basic_conf"></a>
-Basic and Default configuration</h2>
-<p>To start with slipdev it's necessary do some changes in the makefile document, for example: take three main modules. first needs auto_init_gnrc_netif, this module let initialize the interface taking all variables in <a class="el" href="slipdev__params_8h.html" title="slip parameters example, used by auto_init_gnrc_netif">slipdev_params.h</a> second, it's necessary make a mention to itś using a slip Device and that it's necessary take a link local address, cause this, apply the slipdev_l2addr module, to define an eui-64 address </p><div class="fragment"><div class="line">#necessary modules</div>
-<div class="line">USEMODULE += auto_init_gnrc_netif</div>
-<div class="line">USEMODULE += slipdev</div>
-<div class="line">USEMODULE += slipdev_l2addr</div>
+<h2><a class="anchor" id="autotoc_md89"></a>
+Test AT CLIENT</h2>
+<p>This unit tests are performed on the at_client module. To perform a successful test when a command at is sent correctly</p>
+<p>Note: the test only verifies if command response has right format because the answer to simulate ESP it's located in a different UART.</p>
+<p>In main.c you find the principal function of at_client, this initialize the module </p><div class="fragment"><div class="line"><a class="code" href="at__client_8h.html#ac0a6042dd96ee2e9f41435d22a75b98e">config_at</a>();</div>
+</div><!-- fragment --><p>To test the code from python, you can find the list of commands AT and it's expected answer from SAMR21:</p>
+<div class="fragment"><div class="line">PROMPT = <span class="stringliteral">&#39;&gt; &#39;</span></div>
 <div class="line"> </div>
-<div class="line">#slipdev_params</div>
-<div class="line">SLIP_UART ?= 2</div>
-<div class="line">SLIP_BAUDRATE ?= 115200</div>
-</div><!-- fragment --><p>Add some icmpv6 modules and netstats to take a view of packets transfer using ping.</p>
-<div class="fragment"><div class="line">#Additional modules</div>
-<div class="line">USEMODULE += gnrc_icmpv6_error</div>
-<div class="line">USEMODULE += gnrc_ipv6</div>
-<div class="line">USEMODULE += gnrc_icmpv6_echo</div>
-<div class="line">USEMODULE += netstats_l2</div>
-<div class="line">USEMODULE += netstats_ipv6</div>
-</div><!-- fragment --><p><a href="#m4a_slipdev_toc">Back to table of contents</a></p>
-<h2><a class="anchor" id="m4a_slipdev_flashing"></a>
-Flashing</h2>
-<p>If you want to upload the example to your board, needs to compile first, additional to this you could initialize the terminal to open directly the shell and make a ping or check de interface </p><div class="fragment"><div class="line">make -C examples/esp32-wroom-32/slipdev flash term</div>
-</div><!-- fragment --><p><a href="#m4a_slipdev_toc">Back to table of contents</a> </p>
-</div><!-- contents -->
+<div class="line">CMDS = (</div>
+<div class="line">    (<span class="stringliteral">&#39;at ath&#39;</span>, <span class="stringliteral">&#39;ATH&#39;</span>),</div>
+<div class="line">    (<span class="stringliteral">&#39;at at&#39;</span>, <span class="stringliteral">&#39;AT&#39;</span>),</div>
+<div class="line">    (<span class="stringliteral">&#39;at wsta_ssid TestTest&#39;</span>, <span class="stringliteral">&#39;AT+WSTA_SSID=TestTest&#39;</span>),</div>
+<div class="line">    (<span class="stringliteral">&#39;at ath0&#39;</span>, <span class="stringliteral">&#39;ATH0&#39;</span>),</div>
+<div class="line">)</div>
+<div class="line"> </div>
+<div class="line">CMDS_REGEX = {<span class="stringliteral">&#39;ps&#39;</span>}</div>
+<div class="line"> </div>
+<div class="line">def check_cmd(child, cmd, expected):</div>
+<div class="line"> </div>
+<div class="line">    regex = cmd in CMDS_REGEX</div>
+<div class="line">    child.expect(PROMPT)</div>
+<div class="line">    child.sendline(cmd)</div>
+<div class="line">    rxBuf = []</div>
+<div class="line">    for line in expected:</div>
+<div class="line">        if regex:</div>
+<div class="line">            child.expect(line)</div>
+<div class="line">        else:</div>
+<div class="line">            child.expect_exact(line)</div>
+<div class="line">            rxBuf.append(child.match)</div>
+<div class="line">            recv = <span class="stringliteral">&#39;&#39;</span>.join(rxBuf)</div>
+<div class="line">    if(expected == recv):</div>
+<div class="line">        print(<span class="stringliteral">&quot;\nTest &#39;&quot;</span> + cmd + <span class="stringliteral">&quot;&#39; OK\n&quot;</span>)</div>
+<div class="line">    else:</div>
+<div class="line">        print(<span class="stringliteral">&quot;\nTest &#39;&quot;</span> + cmd + <span class="stringliteral">&quot;&#39; FAILED\n&quot;</span>)</div>
+<div class="line"> </div>
+<div class="line">def testfunc(child):</div>
+<div class="line">    for cmd, expected in CMDS:</div>
+<div class="line">        check_cmd(child, cmd, expected)</div>
+<div class="line"> </div>
+<div class="line">if __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line">    sys.exit(run(testfunc,timeout=40))</div>
+</div><!-- fragment --><p>to test only C code:</p>
+<div class="fragment"><div class="line">make BOARD=<span class="stringliteral">&quot;your_board&quot;</span> flash test</div>
+</div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aat__client_8h_html_ac0a6042dd96ee2e9f41435d22a75b98e"><div class="ttname"><a href="at__client_8h.html#ac0a6042dd96ee2e9f41435d22a75b98e">config_at</a></div><div class="ttdeci">int config_at(void)</div><div class="ttdoc">Init uart, ring buffer, shell commands.</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jul 22 2022 12:31:31 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Jul 25 2022 20:16:36 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['external_2dled_20blink_778',['External-led blink',['../group__external-led.html',1,'']]]
+  ['encode_20and_20decode_20via_20cbor_20format_2e_786',['Encode and decode via CBOR format.',['../group__tests__serialization.html',1,'']]]
 ];
