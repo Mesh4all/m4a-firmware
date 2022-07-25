@@ -15,7 +15,7 @@
  */
 
 /**
- * @ingroup     examples_esp32-wrover
+ * @ingroup     examples_blinking
  *
  * @file
  * @brief       this is an example of external_led_blink

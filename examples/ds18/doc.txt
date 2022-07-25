@@ -7,19 +7,19 @@
  */
 
 /**
- * @defgroup    ds18b20 Ds18b20
+ * @defgroup    examples_ds18 Sample application of Ds18 sensor
  * @ingroup     examples
- * @brief       ds18b20 sensor example to use with m4a-wroom board
+ * @brief       Sample application using a ds18 temperature sensor
  * @author      Eduardo Azócar <eduardo@turpialdev.com>
 
-\section ds18b20
-## Table of Contents {#m4a_ds18b20_toc}
+\section ds18
+## Table of Contents {#m4a_ds18_toc}
 
-1. [Hardware](#m4a_ds18b20_hardware)
-2. [Basic and Default configuration](#m4a_ds18b20_basic_conf)
-3. [Flashing the Device](#m4a_ds18b20_flashing)
+1. [Hardware](#m4a_ds18_hardware)
+2. [Basic and Default configuration](#m4a_ds18_basic_conf)
+3. [Flashing the Device](#m4a_ds18_flashing)
 
-## Hardware {#m4a_ds18b20_hardware}
+## Hardware {#m4a_ds18_hardware}
 
 This section shows, which pin is used to receive the sensor data.
 
@@ -30,16 +30,16 @@ DS18B20_PIN | GPIO_PIN(PA, 5)| This is data pin to receive the reads.
 
 </center>
 
-You could change the ds18b20 params to get another gpio controller.
+You could change the ds18 params to get another gpio controller.
 
-## Basic and Default configuration {#m4a_ds18b20_basic_conf}
+## Basic and Default configuration {#m4a_ds18_basic_conf}
 
-## Flashing {#m4a_ds18b20_flashing}
+## Flashing {#m4a_ds18_flashing}
 
 If you want to upload the example to your board, needs to compile first, additional to this you could initialize the terminal and watch the results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-make -C examples/esp32-wroom-32/test_ds18b20 flash term
+make -C examples/ds18 flash term
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[Back to table of contents](#m4a_ds18b20_toc)
+[Back to table of contents](#m4a_ds18_toc)
  */

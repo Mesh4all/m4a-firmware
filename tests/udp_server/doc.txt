@@ -1,6 +1,7 @@
 /**
-@defgroup udp_server_test UDP server test
-@ingroup     test_group
+@defgroup tests_udp_server Wait and listen to UDP message
+@ingroup  tests
+
 @{
 
 ## Test documentation

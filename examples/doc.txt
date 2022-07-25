@@ -1,5 +1,5 @@
 /**
-@defgroup examples Mesh4all Examples
+@defgroup examples Sample applications running on Mesh4all-boards
 
 ## This is example-doc
 

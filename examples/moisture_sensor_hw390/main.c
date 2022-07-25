@@ -15,7 +15,7 @@
  */
 
 /**
- * @ingroup     moisture_sensor
+ * @ingroup     examples_moisture_sensor
  *
  * @file
  * @brief       Moisture sensor test

@@ -1,5 +1,8 @@
-@defgroup Radio_test Radio test module
-@ingroup     test_group
+/**
+
+@defgroup   tests_radio Application test to set parameters of a radio interface.
+@ingroup    tests
+
 @{
 
 ## Test Radio module

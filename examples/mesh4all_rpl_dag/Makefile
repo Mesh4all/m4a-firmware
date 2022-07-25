@@ -30,7 +30,6 @@ USEMODULE += ps
 USEMODULE += rpl_protocol
 USEMODULE += radio
 USEMODULE += gnrc_icmpv6_echo
-USEMODULE += at_client
 
 EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/peripherals
 EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/network

@@ -15,7 +15,7 @@
  */
 
 /**
- * @ingroup     slipdev
+ * @ingroup     examples_slipdev
  *
  * @brief       A basic demo how works the slipdev
  *
