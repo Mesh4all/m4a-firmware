@@ -71,6 +71,25 @@ int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr) {
     return -1;
 }
 
+int8_t get_ipv6_local(kernel_pid_t iface_pid, ipv6_addr_t *addr) {
+    ipv6_addr_t ipv6[CONFIG_GNRC_NETIF_IPV6_ADDRS_NUMOF];
+    netif_t *iface = netif_get_by_id(iface_pid);
+    int8_t num_of_addr = netif_get_opt(iface, NETOPT_IPV6_ADDR, 0, ipv6,
+                                       CONFIG_GNRC_NETIF_IPV6_ADDRS_NUMOF * sizeof(ipv6_addr_t));
+    if (num_of_addr < 0) {
+        printf("Error: Not ipv6 address found. File: %s,  Function: %s, Line: %d\n", __FILE__,
+               __func__, __LINE__);
+        return -1;
+    }
+    for (unsigned i = 0; i < (num_of_addr / sizeof(ipv6_addr_t)); i++) {
+        if (ipv6_addr_is_link_local(&ipv6[i])) {
+            *addr = ipv6[i];
+            return 0;
+        }
+    }
+    return -1;
+}
+
 int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix) {
     if (prefix > 128) {
         printf("Wrong prefix length\n"

@@ -1,0 +1,4 @@
+menu    "Border-Router Example configuration"
+    rsource "../../firmware/network/border_router/Kconfig"
+    rsource "../../firmware/network/rpl_protocol/Kconfig"
+endmenu

@@ -76,7 +76,7 @@ extern "C" {
 #endif
 
 #ifndef CONFIG_RADIO_CHANNEL
-#define CONFIG_RADIO_CHANNEL (11)   /*!< Default start radio channel, \
+#define CONFIG_RADIO_CHANNEL (26)   /*!< Default start radio channel, \
                                       This refers to the 2.4 GHz band */
 #endif
 
