@@ -27,8 +27,7 @@
 #include "riotboot/slot.h"
 #include "shell.h"
 
-static int cmd_show_slot_nr(int argc, char **argv)
-{
+static int cmd_show_slot_nr(int argc, char **argv) {
     (void)argc;
     (void)argv;
 
@@ -36,8 +35,7 @@ static int cmd_show_slot_nr(int argc, char **argv)
     return 0;
 }
 
-static int cmd_show_slot_hdr(int argc, char **argv)
-{
+static int cmd_show_slot_hdr(int argc, char **argv) {
     (void)argc;
     (void)argv;
 
@@ -46,18 +44,20 @@ static int cmd_show_slot_hdr(int argc, char **argv)
     return 0;
 }
 
-static int cmd_show_slot_addr(int argc, char **argv)
-{
+static int cmd_show_slot_addr(int argc, char **argv) {
     (void)argc;
 
-    int reqslot=atoi(argv[1]);
-    printf("Slot %d address=0x%08" PRIx32 "\n",
-           reqslot, riotboot_slot_get_image_startaddr(reqslot));
+    uint8_t reqslot = atoi(argv[1]);
+    if (reqslot >= riotboot_slot_numof) {
+        printf("The slot doesn't exist.\n");
+        return -1;
+    }
+    printf("Slot %d address=0x%08" PRIx32 "\n", reqslot,
+           riotboot_slot_get_image_startaddr(reqslot));
     return 0;
 }
 
-static int cmd_dumpaddrs(int argc, char **argv)
-{
+static int cmd_dumpaddrs(int argc, char **argv) {
     (void)argc;
     (void)argv;
 
@@ -66,15 +66,13 @@ static int cmd_dumpaddrs(int argc, char **argv)
 }
 
 static const shell_command_t shell_commands[] = {
-    { "showslot", "Print current slot number", cmd_show_slot_nr },
-    { "showhdr", "Print current slot header", cmd_show_slot_hdr },
-    { "showslotaddr", "Print address of requested slot", cmd_show_slot_addr },
-    { "dumpaddrs", "Prints all slot data in header", cmd_dumpaddrs },
-    { NULL, NULL, NULL }
-};
+    {"showslot", "Print current slot number", cmd_show_slot_nr},
+    {"showhdr", "Print current slot header", cmd_show_slot_hdr},
+    {"showslotaddr", "Print address of requested slot", cmd_show_slot_addr},
+    {"dumpaddrs", "Prints all slot data in header", cmd_dumpaddrs},
+    {NULL, NULL, NULL}};
 
-int main(void)
-{
+int main(void) {
     int current_slot;
 
     puts("Hello Mesh-boot!");
@@ -87,8 +85,7 @@ int main(void)
     if (current_slot != -1) {
         printf("riotboot_test: running from slot %d\n", current_slot);
         riotboot_slot_print_hdr(current_slot);
-    }
-    else {
+    } else {
         printf("[FAILED] You're not running riotboot\n");
     }
 
