@@ -1,0 +1,67 @@
+/*
+ * Copyright (C) 2022 Mesh4all.org <mesh4all.org>
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+
+ *   http://www.apache.org/licenses/LICENSE-2.0
+
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+/**
+ * @ingroup     examples
+ * @{
+ *
+ * @file
+ * @brief       This is application to create a device working as a border router in a radio network
+ *
+ * @author      eduazocar <eduazocarv@gmail.com>
+ *
+ * @}
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "msg.h"
+#include "shell.h"
+#include "border_router.h"
+#include "rpl_protocol.h"
+#define MAIN_QUEUE_SIZE (8)
+
+msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
+shell_command_t shell_extended_commands[] = {{NULL, NULL, NULL}};
+
+int setup(void) {
+    ipv6_addr_t addr;
+#if (CONFIG_IS_DODAG)
+    ipv6_addr_from_str(&addr, CONFIG_ADDRESS_IPV6_WIRELESS);
+    border_router_setup(addr, 64, CONFIG_WIRELESS_INTERFACE);
+#endif
+    ipv6_addr_from_str(&addr, CONFIG_ADDRESS_IPV6_WIRED);
+    border_router_setup(addr, 64, CONFIG_WIRED_INTERFACE);
+    rpl_setup(CONFIG_IS_DODAG);
+    return 0;
+}
+
+int main(void) {
+    /* Start shell */
+    char line_buf[SHELL_DEFAULT_BUFSIZE];
+    setup();
+    msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
+    shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
+    puts("Generated Mesh4all application: 'border_router'");
+    return 0;
+}

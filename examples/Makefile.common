@@ -3,3 +3,5 @@ QUIET ?= 1
 RIOTBASE ?= $(CURDIR)/../../RIOT
 EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
 EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/peripherals
+EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/network
+EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/sys
