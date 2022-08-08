@@ -18,6 +18,10 @@ ifneq (,$(filter border_router,$(USEMODULE)))
   DIRS += border_router
 endif
 
+ifneq (,$(filter chamos,$(USEMODULE)))
+  DIRS += chamos
+endif
+
 ifneq (,$(filter net_tools,$(USEMODULE)))
   DIRS += net_tools
 endif

@@ -91,7 +91,7 @@ int serialize(chamoc_message_t msg, char *buffer, uint8_t len);
  * @param[inout] buffer  Can return the last response of the server
  * @param[in] len size of the buffer
  */
-int connect_chamos(chamos_client_t client, char *buffer, uint8_t len);
+int connect_chamos(char* iface, chamos_client_t client, char *buffer, uint8_t len);
 
 /**
  * @brief  increment sequence number of an client;

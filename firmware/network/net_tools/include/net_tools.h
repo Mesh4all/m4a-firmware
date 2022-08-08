@@ -64,6 +64,17 @@ int8_t get_wired_iface(void);
 int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr);
 
 /**
+ * @brief Function to check if exist an ipv6 link-local
+ *
+ * @param[in] iface_pid it's the id of an interface
+ * @param[out] addr variable ipv6 where will be saved the found link-local address
+ *
+ * @retval 0 if exist an ipv6 address and saves the located address in @p addr
+ * @retval -1 when the interface doesn't have an unicast global address
+ */
+int8_t get_ipv6_local(kernel_pid_t iface_pid, ipv6_addr_t *addr);
+
+/**
  * @brief Function to set an ipv6 global address in an iface.
  *
  * @param[in] iface_index  index that will be save the ipv6 address.
@@ -72,6 +83,7 @@ int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr);
  * @retval 0 Correctly set up of the @p ip in the interface.
  * @retval -1 Couldn't set the @p ip address in the interface.
  */
+
 int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix);
 
 /**
