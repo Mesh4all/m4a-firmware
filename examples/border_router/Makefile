@@ -3,6 +3,7 @@ APPLICATION = border_router
 
 include $(CURDIR)/../Makefile.common
 
+USEMODULE += stdio_cdc_acm
 USEMODULE += shell
 USEMODULE += shell_commands
 USEMODULE += ps
