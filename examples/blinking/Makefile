@@ -1,4 +1,4 @@
-APPLICATION = external_led
+APPLICATION = blinking
 
 include ../Makefile.common
 
