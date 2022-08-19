@@ -39,16 +39,13 @@ extern "C" {
  * @{
  */
 enum chamos_msg_types_t {
-    MSG_ACK = 0,     /*!< Message acknowledged */
-    MSG_NACK = 1,    /*!< Message not acknowledged */
-    MSG_NIB_ADD = 2, /*!< Add entry to NIB */
-    MSG_NIB_DEL = 3, /*!< Delete entry from NIB */
+    MSG_ACK = 0, /*!< Message acknowledged */
+    MSG_NACK,    /*!< Message not acknowledged */
+    MSG_NIB_ADD, /*!< Add entry to NIB */
+    MSG_NIB_DEL  /*!< Delete entry from NIB */
 };
 /**@}*/
 
-/**
- * @brief   CHAMOS message
- */
 typedef struct {
     uint8_t msg_type; /*!< Message type */
     uint8_t seqno;    /*!< Sequence number */

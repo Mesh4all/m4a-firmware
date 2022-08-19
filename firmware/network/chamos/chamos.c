@@ -22,6 +22,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "net_tools.h"
 #include "chamos.h"
 #include "net/gnrc/ipv6/nib/ft.h"
 #include "xtimer.h"
@@ -29,22 +30,20 @@
 #define CHAMOS_MSG_QUEUE_SIZE (8)
 #define SERVER_BUFFER_SIZE (CONFIG_SERVER_BUFFER_SIZE)
 
-/**
- * @brief   GNRC netif
- */
 gnrc_netif_t *_netif;
 sock_udp_t chamos_sock = {};
 char chamos_stack[THREAD_STACKSIZE_DEFAULT];
 
 int server_send_ack(chamos_msg_t *msg, sock_udp_ep_t *remote, bool flag_ack_val) {
-    uint8_t buf[2];
     if (flag_ack_val) {
-        buf[0] = MSG_ACK;
+        msg->msg_type = MSG_ACK;
     } else {
-        buf[0] = MSG_NACK;
+        msg->msg_type = MSG_NACK;
     }
-    buf[1] = msg->seqno;
-    return sock_udp_send(&chamos_sock, buf, sizeof(buf), remote);
+    int8_t iface = get_wired_iface();
+    memset(&msg->ip, 0, sizeof(ipv6_addr_t));
+    get_ipv6_local(iface, &msg->ip);
+    return sock_udp_send(&chamos_sock, msg, sizeof(chamos_msg_t), remote);
 }
 
 int msg_process(chamos_msg_t *msg) {
@@ -52,22 +51,17 @@ int msg_process(chamos_msg_t *msg) {
     switch (msg->msg_type) {
     case MSG_NIB_ADD:
         printf("Adding NIB entry\n");
-        ipv6_addr_t next_hop = {.u8 = {0xfe, 0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
-        res = gnrc_ipv6_nib_ft_add(&msg->ip, msg->ip_len, &next_hop, _netif->pid,
-                                   0);
+        res = gnrc_ipv6_nib_ft_add(&msg->ip, msg->ip_len, 0, _netif->pid, 0);
         if (res == -EINVAL) {
             printf("Chamos: Error invalid argument.\n");
             return -EINVAL;
-        }
-        else if (res == -ENOMEM) {
+        } else if (res == -ENOMEM) {
             printf("Chamos: Error Out of memory.\n");
             return -ENOMEM;
-        }
-        else if (res == -ENOTSUP) {
+        } else if (res == -ENOTSUP) {
             printf("Chamos: Error Operation not supported on transport endpoint.\n");
             return -ENOTSUP;
-        }
-        else {
+        } else {
             printf("Added NIB correctly.\n");
         }
         break;

@@ -40,7 +40,7 @@ int serialize(chamoc_message_t msg, char *buffer, uint8_t len) {
     return 1;
 }
 
-int connect_chamos(chamos_client_t client, char *buffer, uint8_t len) {
+int connect_chamos(char *iface, chamos_client_t client, char *buffer, uint8_t len) {
     struct timeval tv;
     tv.tv_sec = 2;
     tv.tv_usec = 0;
@@ -54,7 +54,13 @@ int connect_chamos(chamos_client_t client, char *buffer, uint8_t len) {
         send_message(&client, (uint8_t *)buffer, len);
         recv(client.socket, buffer, len, 0);
         if (buffer[0] == MSG_ACK) {
+            char link_ipv6[40] = {0};
             printf("Request Confirmed\n");
+            printf("Confirmed from %s\n",
+                   inet_ntop(AF_INET6, &buffer[3], link_ipv6, sizeof(client.csock)));
+            char cmd[120];
+            sprintf(cmd, "sudo ip route a ::/0 via %s dev %s", link_ipv6, iface);
+            system(cmd);
             break;
         } else {
             tries++;

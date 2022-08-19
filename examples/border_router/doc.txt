@@ -1,0 +1,162 @@
+/*
+ * Copyright (C) 2022 Mesh4all <mesh4all.org>
+ *
+ * This file is subject to the terms and conditions of the GNU Lesser
+ * General Public License v2.1. See the file LICENSE in the top level
+ * directory for more details.
+ */
+
+/**
+ * @defgroup    examples_border_router Sample application Host intercommunication (Using Border Router)
+ * @ingroup     examples
+ * @brief       Sample application Host intercommunication using two Border routers.
+ * @author      Eduardo Azócar <eduazocarv@gmail.com>
+
+\section Border router intercommunication
+## Table of Contents {#border_router_toc}
+
+1. [Network Model](#border_router_network_model)
+2. [Pre-configurations](#border_router_pre_config)
+    1. [Border Router 1 configuration](#border_router1_config)
+    2. [Border Router 2 configuration](#border_router2_config)
+3. [Routing tables modification](#Border_router_route_modify)
+
+## Network Model {#border_router_network_model}
+
+This section shows how is distributed an radio and wired interfaces.
+
+\image html border_router_network_model.jpg Border router networks model width=90%
+
+Here we can see three networks ipv6, there are networks that could contain a account of
+devices, for example, when the prefix len is `/128` only exist an address in that network. so correctly the
+right way to manipulate a connection between a host and a border router is when the wired interface, only has
+one via to send and receive packets.
+
+## Pre-configurations {#border_router_pre_config}
+
+To start with the border router, you need to set the basic configurations,
+to set the usb_interface ipv6 address, and set the main conditions to assign a
+rpl `DODAG` or `DAG` node. The DODAG node is the unique interface that could set
+an ipv6 address.
+@note Remember that the wireless network has not the same network group than the
+wired interface.
+
+<center>
+Device             | Wired interface  | Wireless interface |
+:-----------------:|:----------------:|:------------------:|
+Host 1             | 2001:db8::1/128  | xxxxxxxxxxxxxxxxxx
+border_router 1    | 2001:db8::2/64   | 2001:db8:2::1/64
+Host 2             | 2001:db9::1/128  | xxxxxxxxxxxxxxxxxx
+border_router 2    | 2001:db9::2/64   | (Given by the RPL DODAG node)
+
+</center>
+
+### Starting configurations
+
+#### Border Router 1 {#border_router1_config}
+
+- First step, enter to Kconfig parameters.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.sh}
+make menuconfig all
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+set the BR as a DODAG node in rpl settings, and assign a ipv6 Address in the wired and wireless
+interfaces. set the following.
+interface          | Global ipv6      |
+:-----------------:|:----------------:|
+Wired              | 2001:db8::2
+Wireless           | 2001:db8:2::1
+
+- Start Flashing, open terminal and define the environment variable `HOST_IPV6` (This will define
+the ipv6 address from the hosr interface,, in this case will be `2001:db8::1`).
+
+```
+make flash term HOST_IPV6=2001:db8::1
+```
+
+Then that build process is finished do a ping to test the correctly
+connection between usb_interface and the host interface.
+
+### Ping from Linux host 1 to border_router 1:
+```
+$ ping 2001:db8::2
+```
+### Ping from border_router 1 to Linux host 1:
+```
+> ping 2001:db8::1
+```
+
+#### Border Router 2 {#border_router2_config}
+
+- First step, enter to Kconfig parameters.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.sh}
+make menuconfig all
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+set the BR as a DAG node in rpl settings, only assign ipv6 address to wired interface
+
+interface          | Global ipv6      |
+:-----------------:|:----------------:|
+Wired              | 2001:db9::2
+
+- Start Flashing, open terminal and define the environment variable `HOST_IPV6` (This will define
+the ipv6 address from the hosr interface,, in this case will be `2001:db9::1`).
+
+```
+make flash term HOST_IPV6=2001:db9::1
+```
+
+Then that build process is finished do a ping to test the correctly
+connection between usb_interface and the host interface.
+
+#### Ping from Linux host 1 to border_router 1:
+```
+$ ping 2001:db9::2
+```
+#### Ping from border_router 1 to Linux host 1:
+```
+> ping 2001:db9::1
+```
+
+in Both host to border router connection exist communication, but, when you try
+do ping from host_2 to the ipv6 address of border_router 1, could fails the communication
+because is necessary modify the routing table of both border_routers.
+
+### Routing table modification {#Border_router_route_modify}
+
+in the border_router 1 nib you need to define a default route,
+when start the example demonstration the nib route table is:
+```
+> nib route
+2022-08-02 01:19:56,196 # 2001:db8:2::/64 dev #6
+2022-08-02 01:19:56,198 # 2001:db8::/64 dev #7
+2022-08-02 01:19:56,205 # 2001:db8:2:0:204:2519:1801:cad4/128 via fe80::204:2519:1801:cad4 dev #6
+```
+
+you need to add the default ipv6 route to find a path to the
+network `2001:db9::1/64`
+
+```
+2022-08-02 01:19:56,194 # nib route
+2022-08-02 01:19:56,196 # 2001:db8:2::/64 dev #6
+2022-08-02 01:19:56,198 # 2001:db8::/64 dev #7
+2022-08-02 01:19:56,205 # 2001:db8:2:0:204:2519:1801:cad4/128 via fe80::204:2519:1801:cad4 dev #6
+```
+
+using the local ipv6 address obtained by the reference to DAG node, define the next hop.
+```
+> nib route add 6 ::/0 fe80::204:2519:1801:cad4
+```
+
+Well, in border_router 2 you should see the following routing table:
+```
+2022-08-02 01:18:21,903 # nib route
+2022-08-02 01:18:21,905 # 2001:db9::/64 dev #7
+2022-08-02 01:18:21,907 # 2001:db8:2::/64 dev #6
+2022-08-02 01:18:21,911 # default* via fe80::204:2519:1801:c8fc dev #6
+```
+
+in this point you could try do ping from host 1 to host 2, and you will receive
+a response.
+
+*/

@@ -1,5 +1,4 @@
 USEMODULE += auto_init_gnrc_netif
-USEMODULE += auto_init_usbus
 USEMODULE += gnrc_icmpv6_echo
 USEMODULE += gnrc_icmpv6_error
 USEMODULE += gnrc_netif_ieee802154
@@ -8,4 +7,3 @@ USEMODULE += gnrc_udp
 USEMODULE += net_tools
 USEMODULE += netdev_default
 USEMODULE += radio
-USEMODULE += usbus_cdc_ecm

@@ -44,7 +44,7 @@ int nib_req(char *iface, char *ip, uint8_t prefix, uint8_t msg_type) {
             return -1;
         };
         serialize(message, buff, sizeof(buff));
-        connect_chamos(client, buff, sizeof(buff));
+        connect_chamos(iface, client, buff, sizeof(buff));
         close(client.socket);
         return 1;
     } else {
