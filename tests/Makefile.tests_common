@@ -14,7 +14,9 @@ ifneq (,$(filter tests_driver_%,$(APPLICATION)))
   BOARD ?= m4a-24g
 endif
 
+APPBASE ?= $(CURDIR)
 BOARD ?= m4a-24g
+MESHBASE ?= $(RIOTBASE)/..
 QUIET ?= 1
 RIOTBASE ?= $(CURDIR)/../../RIOT
 EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
@@ -29,3 +31,5 @@ CFLAGS += "-DSLIPDEV_PARAM_UART=UART_DEV($(SLIP_UART))"
 
 # DEVELHELP enabled by default for all tests, set 0 to disable
 DEVELHELP ?= 1
+
+-include $(MESHBASE)/makefiles/tools/firmupdater.mk
