@@ -28,6 +28,9 @@ var NAVTREE =
     [ "RIOT bootloader test", "md_tests_riotboot_README.html", [
       [ "Automatic test", "md_tests_riotboot_README.html#autotoc_md100", null ]
     ] ],
+    [ "Riotboot_dfu", "md_tests_riotboot_dfu_README.html", [
+      [ "Usage", "md_tests_riotboot_dfu_README.html#autotoc_md101", null ]
+    ] ],
     [ "WiFi subsystem", "md_wifi-subsys_README.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
@@ -56,7 +59,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "group__tests__periph__adc.html",
-"meshme_2include_2periph__conf_8h.html#a873188d7292e07499dcde9674b1e849c"
+"meshme_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
