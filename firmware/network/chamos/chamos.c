@@ -78,47 +78,12 @@ int msg_process(chamos_msg_t *msg) {
 }
 
 int chamos_parse_buff(chamos_msg_t *chamos_msg, uint8_t *buffer, size_t len) {
+    if (len < sizeof(chamos_msg_t)) {
+        printf("Chamos: NIB ADD invalid message size! \n");
+        return -EINVAL;
+    }
     memset(chamos_msg, 0, sizeof(chamos_msg_t));
-    if (len < 3) {
-        printf("Chamos: invalid message size! \n");
-        return -EINVAL;
-    }
-    uint8_t type = buffer[0];
-    uint8_t seqno = buffer[1];
-    uint8_t ip_len = buffer[2];
-    switch (type) {
-    case MSG_NIB_ADD:
-        if (len < sizeof(chamos_msg_t)) {
-            printf("Chamos: NIB ADD invalid message size! \n");
-            return -EINVAL;
-        }
-        chamos_msg->msg_type = type;
-        chamos_msg->seqno = seqno;
-        chamos_msg->ip_len = ip_len;
-        if (memcmp(&buffer[3], &chamos_msg->ip, sizeof(ipv6_addr_t)) == 0) {
-            printf("Chamos: Invalid IPV6 address.\n");
-            return -EINVAL;
-        }
-        memcpy(&chamos_msg->ip, &buffer[3], sizeof(ipv6_addr_t));
-        break;
-    case MSG_NIB_DEL:
-        if (len < sizeof(chamos_msg_t)) {
-            printf("Chamos: NIB DEL invalid message size! \n");
-            return -EINVAL;
-        }
-        chamos_msg->msg_type = type;
-        chamos_msg->seqno = seqno;
-        chamos_msg->ip_len = ip_len;
-        if (memcmp(&buffer[3], &chamos_msg->ip, sizeof(ipv6_addr_t)) == 0) {
-            printf("Chamos: Invalid IPV6 address.\n");
-            return -EINVAL;
-        }
-        memcpy(&chamos_msg->ip, &buffer[3], sizeof(ipv6_addr_t));
-        break;
-    default:
-        printf("Chamos: Invalid message type \n");
-        return -EINVAL;
-    }
+    memcpy(chamos_msg, buffer, sizeof(chamos_msg_t));
     return 0;
 }
 

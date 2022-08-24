@@ -53,10 +53,10 @@ int setup(void) {
     border_router_setup(addr, 64, CONFIG_WIRELESS_INTERFACE);
 #endif
     (void) addr;
-    /* This is to use the global address in Wired Interface
+    // This is to use the global address in Wired Interface
     ipv6_addr_from_str(&addr, CONFIG_ADDRESS_IPV6_WIRED);
     border_router_setup(addr, 64, CONFIG_WIRED_INTERFACE);
-    */
+    //
     rpl_setup(CONFIG_IS_DODAG);
     return 0;
 }
@@ -64,12 +64,10 @@ int setup(void) {
 int main(void) {
     /* Start shell */
     char line_buf[SHELL_DEFAULT_BUFSIZE];
-        puts("Generated Mesh4all application: 'border_router'");
-#ifdef ISP
-    printf("expect to connect with a provider\n");
-#endif
+    puts("Generated Mesh4all application: 'border_router'");
     gnrc_netif_t *iface = gnrc_netif_get_by_type(NETDEV_ANY, NETDEV_INDEX_ANY);
     chamos_init(6977, iface);
+    chamos_routing();
     setup();
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
     shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);

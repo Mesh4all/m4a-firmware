@@ -34,6 +34,8 @@
 extern "C" {
 #endif
 
+#define CHAMOS_ROUTING_PORT (7000)
+#define ROUTING_TIMEOUT_SEQ (1 * 60000000) // check the routes per minute //
 /**
  * @enum  chamos_msg_types_t Types of messages manage in the chamos server
  * @{
@@ -42,7 +44,9 @@ enum chamos_msg_types_t {
     MSG_ACK = 0, /*!< Message acknowledged */
     MSG_NACK,    /*!< Message not acknowledged */
     MSG_NIB_ADD, /*!< Add entry to NIB */
-    MSG_NIB_DEL  /*!< Delete entry from NIB */
+    MSG_NIB_DEL,  /*!< Delete entry from NIB */
+    MSG_RS,
+    MSG_ROFFLINE,
 };
 /**@}*/
 
@@ -53,15 +57,6 @@ typedef struct {
     ipv6_addr_t ip;   /*!< IP address */
 } chamos_msg_t;
 
-/**
- * @brief this function is used to send ack
- *
- * @param [in] msg            Frame
- * @param [in] remote         sock udp
- * @param [in] flag_ack_val  bool
- * @return int
- */
-int server_send_ack(chamos_msg_t *msg, sock_udp_ep_t *remote, bool flag_ack_val);
 
 /**
  * @brief this function is used to init the module
@@ -72,6 +67,14 @@ int server_send_ack(chamos_msg_t *msg, sock_udp_ep_t *remote, bool flag_ack_val)
  */
 int chamos_init(uint16_t port, gnrc_netif_t *netiface);
 
+/**
+ * @brief this function is used to init the module
+ *
+ * @param  [in]  netiface
+ * @param  [in]  port
+ * @return int
+ */
+int chamos_routing(void);
 #ifdef __cplusplus
 }
 #endif
