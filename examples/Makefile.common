@@ -1,7 +1,11 @@
+APPBASE ?= $(CURDIR)
 BOARD ?= m4a-24g
 QUIET ?= 1
 RIOTBASE ?= $(CURDIR)/../../RIOT
+MESHBASE ?= $(RIOTBASE)/..
 EXTERNAL_BOARD_DIRS ?= $(CURDIR)/../../boards
 EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/peripherals
 EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/network
 EXTERNAL_MODULE_DIRS += $(CURDIR)/../../firmware/sys
+
+-include $(MESHBASE)/makefiles/tools/firmupdater.mk

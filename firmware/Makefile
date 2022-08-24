@@ -45,4 +45,5 @@ CFLAGS += "-DSLIPDEV_PARAM_UART=UART_DEV($(SLIP_UART))"
 # LOG_ALL;     print everything
 CFLAGS += -DLOG_LEVEL=LOG_ALL
 
-include $(RIOTBASE)/Makefile.include
+-include ../makefiles/tools/firmupdater.mk
+-include $(RIOTBASE)/Makefile.include
