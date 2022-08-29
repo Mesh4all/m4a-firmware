@@ -34,8 +34,6 @@
 extern "C" {
 #endif
 
-#define CHAMOS_ROUTING_PORT (7000)
-#define ROUTING_TIMEOUT_SEQ (1 * 60000000) // check the routes per minute //
 /**
  * @enum  chamos_msg_types_t Types of messages manage in the chamos server
  * @{
@@ -45,8 +43,6 @@ enum chamos_msg_types_t {
     MSG_NACK,    /*!< Message not acknowledged */
     MSG_NIB_ADD, /*!< Add entry to NIB */
     MSG_NIB_DEL,  /*!< Delete entry from NIB */
-    MSG_RS,
-    MSG_ROFFLINE,
 };
 /**@}*/
 

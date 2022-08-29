@@ -38,6 +38,7 @@
 #include "msg.h"
 #include "shell.h"
 #include "border_router.h"
+#include "radio.h"
 #include "rpl_protocol.h"
 #include "chamos.h"
 
@@ -45,6 +46,7 @@
 
 msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
 shell_command_t shell_extended_commands[] = {{NULL, NULL, NULL}};
+int packet_dump_init(void);
 
 int setup(void) {
     ipv6_addr_t addr  = {.u8 ={0}};
@@ -67,9 +69,11 @@ int main(void) {
     puts("Generated Mesh4all application: 'border_router'");
     gnrc_netif_t *iface = gnrc_netif_get_by_type(NETDEV_ANY, NETDEV_INDEX_ANY);
     chamos_init(6977, iface);
-    chamos_routing();
     setup();
+    gnrc_pktsnip_t *pkt = NULL;
+    uint8_t wireless_iface = get_ieee802154_iface();
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
+    radv_pkt_send(wireless_iface, pkt);
     shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
     return 0;
 }

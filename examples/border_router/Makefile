@@ -8,6 +8,8 @@ USEMODULE += shell
 USEMODULE += shell_commands
 USEMODULE += ps
 
+USEMODULE += fmt
+USEMODULE += gnrc
 USEMODULE += border_router
 USEMODULE += chamos
 USEMODULE += rpl_protocol
@@ -37,7 +39,6 @@ ifeq (${IFTYPE},ETHOS)
 	TERMPROG ?= $(ETHOS_TOOL)/ethos
 	TERMFLAGS ?= ${TAP} ${PORT} ${ETHOS_BAUDRATE}
 else ifeq (USB,${IFTYPE})
-	USEMODULE += stdio_cdc_acm
 	USEMODULE += usbus_cdc_ecm
 	USEMODULE += auto_init_usbus
 endif

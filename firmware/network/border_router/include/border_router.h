@@ -33,6 +33,24 @@
 extern "C" {
 #endif
 
+#define BR_ROUTING_PORT_SERVER (7000)
+#define BR_ROUTING_PORT_CLIENT (6999)
+#define ROUTING_TIMEOUT_SEQ (1 * 60000000) // check the routes per minute //
+
+enum br_msg_types_t { MSG_RS = 199 };
+
+typedef struct {
+    uint8_t type;   /*!< Message type */
+    uint8_t seqno;  /*!< Sequence number */
+    uint8_t prefix; /*!< IP address pfx_len */
+    ipv6_addr_t ip; /*!< IP address */
+} br_msg_t;
+
+typedef struct __attribute__((packed)) {
+    ipv6_addr_t dest_route;
+    uint8_t prefix;
+} br_radv_t;
+
 /**
  * @brief This function init the border router. sets ipv6 in an interface.
  *
@@ -42,8 +60,9 @@ extern "C" {
  * @retval 0 Setup Success
  * @retval -1 Setup Failed
  */
-int8_t border_router_setup(ipv6_addr_t addr, uint8_t prefix, uint8_t iface_type);
-
+int8_t
+border_router_setup(ipv6_addr_t addr, uint8_t prefix, uint8_t iface_type);
+void radv_pkt_send(uint8_t iface_idx, gnrc_pktsnip_t *ext_pkt);
 #ifdef __cplusplus
 }
 #endif

@@ -2,4 +2,3 @@ USEMODULE += gnrc_sock
 USEMODULE += gnrc_sock_udp
 USEMODULE += gnrc_ipv6_default
 USEMODULE += netdev_default
-USEMODULE += radio
