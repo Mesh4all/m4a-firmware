@@ -53,7 +53,6 @@ typedef struct {
     ipv6_addr_t ip;   /*!< IP address */
 } chamos_msg_t;
 
-
 /**
  * @brief this function is used to init the module
  *

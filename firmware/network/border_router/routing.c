@@ -79,7 +79,6 @@ void radv_pkt_send(uint8_t iface_idx, gnrc_pktsnip_t *ext_pkt);
 //     return gnrc_pkt_prepend(iphdr, l2hdr);
 // }
 
-
 gnrc_pktsnip_t *radv_buld_pkt(ipv6_addr_t *located_route, uint8_t prefix, gnrc_pktsnip_t *next) {
     assert(located_route != NULL);
     assert(!ipv6_addr_is_link_local(located_route) && !ipv6_addr_is_multicast(located_route));
@@ -111,4 +110,3 @@ void radv_pkt_send(uint8_t iface_idx, gnrc_pktsnip_t *ext_pkt) {
         DEBUG("auto_subnets: Options empty, not sending RA\n");
     }
 }
-
