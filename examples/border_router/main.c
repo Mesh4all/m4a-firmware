@@ -74,6 +74,7 @@ int main(void) {
     uint8_t wireless_iface = get_ieee802154_iface();
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
     radv_pkt_send(wireless_iface, pkt);
+    init_br_routing();
     shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
     return 0;
 }
