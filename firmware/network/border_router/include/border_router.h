@@ -60,11 +60,10 @@ typedef struct __attribute__((packed)) {
  * @retval 0 Setup Success
  * @retval -1 Setup Failed
  */
-int8_t
-border_router_setup(ipv6_addr_t addr, uint8_t prefix, uint8_t iface_type);
+int8_t border_router_setup(ipv6_addr_t addr, uint8_t prefix, uint8_t iface_type);
 void radv_pkt_send(uint8_t iface_idx, gnrc_pktsnip_t *ext_pkt);
 
-kernel_pid_t init_br_routing(void);
+int8_t init_br_routing(void);
 #ifdef __cplusplus
 }
 #endif

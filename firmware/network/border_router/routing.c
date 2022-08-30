@@ -44,7 +44,9 @@
 
 #define BORDER_ROUTER_MSG_QUEUE_SIZE    (8)
 static char _stack[THREAD_STACKSIZE_DEFAULT];
-// static msg_t _msg[BORDER_ROUTER_MSG_QUEUE_SIZE];
+static msg_t _msg[BORDER_ROUTER_MSG_QUEUE_SIZE];
+kernel_pid_t brr_pid = KERNEL_PID_UNDEF;
+static gnrc_netreg_entry_t me_reg;
 
 void radv_pkt_send(uint8_t iface_idx, gnrc_pktsnip_t *ext_pkt);
 // static kernel_pid_t routing;
@@ -107,25 +109,45 @@ void radv_pkt_send(uint8_t iface_idx, gnrc_pktsnip_t *ext_pkt) {
     void *state = NULL;
     gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable);
     pkt = radv_buld_pkt(&rtable.dst, rtable.dst_len, ext_pkt);
-    ext_pkt = pkt;
-    if (ext_pkt) {
+    if (pkt) {
         gnrc_ndp_rtr_adv_send(radio_if, NULL, NULL, true, ext_pkt);
     } else {
         DEBUG("auto_subnets: Options empty, not sending RA\n");
     }
 }
 
+static void _receive(gnrc_pktsnip_t *pkt){
+    gnrc_pktsnip_t *ipv6 = NULL;
+    br_radv_t *radv_msg = pkt->data;
+    ipv6_hdr_t *ipv6_hdr;
+    void *state = NULL;
+    gnrc_ipv6_nib_ft_t rtable;
+    ipv6 = gnrc_pktsnip_search_type(pkt, GNRC_NETTYPE_IPV6);
+    assert(ipv6 != NULL);
+    ipv6_hdr = (ipv6_hdr_t *)ipv6->data;
+    uint8_t wireless_idx = get_ieee802154_iface();
+    while(gnrc_ipv6_nib_ft_iter(NULL, wireless_idx, &state, &rtable)){
+        if((memcmp(&rtable.dst, &radv_msg->dest_route, sizeof(ipv6_addr_t)) == 0) && (rtable.dst_len == radv_msg->prefix)){
+            DEBUG("Route already exist\n");
+            return;
+        }
+    }
+    gnrc_ipv6_nib_ft_add(&radv_msg->dest_route, radv_msg->prefix, &ipv6_hdr->src, wireless_idx, 0);
+}
+
 static void *_event_loop(void *args)
 {
     (void)args;
     msg_t msg;
+    msg_init_queue(_msg, BORDER_ROUTER_MSG_QUEUE_SIZE);
     /* start event loop */
     while (1) {
         DEBUG("RPL: waiting for incoming message.\n");
         msg_receive(&msg);
         switch (msg.type) {
             case GNRC_NETAPI_MSG_TYPE_RCV:
-                DEBUG("RPL: GNRC_NETAPI_MSG_TYPE_RCV received\n");
+                DEBUG("RTR advertisement receives\n");
+                _receive(msg.content.ptr);
                 break;
             default:
                 break;
@@ -134,10 +156,19 @@ static void *_event_loop(void *args)
     return NULL;
 }
 
-kernel_pid_t init_br_routing(void){
-    thread_create(_stack, sizeof(_stack), 6,
+
+
+int8_t init_br_routing(void){
+    if(brr_pid != KERNEL_PID_UNDEF){
+        DEBUG("Border Router Routing Protocol is active\n");
+        return -1;
+    }
+    brr_pid = thread_create(_stack, sizeof(_stack), 6,
                                      THREAD_CREATE_STACKTEST,
                                      _event_loop, NULL,
                                      "routing_br");
+    me_reg.demux_ctx = ICMPV6_RTR_ADV;
+    me_reg.target.pid = brr_pid;
+    gnrc_netreg_register(GNRC_NETTYPE_ICMPV6, &me_reg);
     return 0;
 }
