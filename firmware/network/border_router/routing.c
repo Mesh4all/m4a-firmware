@@ -89,15 +89,12 @@ gnrc_pktsnip_t *radv_buld_pkt(ipv6_addr_t *located_route, uint8_t prefix, gnrc_p
     assert(located_route != NULL);
     assert(!ipv6_addr_is_link_local(located_route) && !ipv6_addr_is_multicast(located_route));
     assert(prefix <= 128);
-    uint8_t adv_flags = 0;
-    gnrc_pktsnip_t *pkt = gnrc_ndp_nbr_adv_build(located_route, adv_flags, next);
-    if (pkt != NULL) {
-        br_radv_t *radv_msg = pkt->data;
-        radv_msg->dest_route = *located_route;
-        radv_msg->prefix = prefix;
-    } else {
-        DEBUG("ndp: NA not created due to no space in packet buffer\n");
-    }
+    // uint8_t adv_flags = 0;
+    gnrc_pktsnip_t *pkt =  gnrc_ndp_opt_ri_build(located_route, prefix, NDP_OPT_PI_VALID_LTIME_INF,
+                                    NDP_OPT_RI_FLAGS_PRF_ZERO, next);
+    // else {
+    //     DEBUG("ndp: NA not created due to no space in packet buffer\n");
+    // }
     return pkt;
 }
 
@@ -110,7 +107,7 @@ void radv_pkt_send(uint8_t iface_idx, gnrc_pktsnip_t *ext_pkt) {
     gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable);
     pkt = radv_buld_pkt(&rtable.dst, rtable.dst_len, ext_pkt);
     if (pkt) {
-        gnrc_ndp_rtr_adv_send(radio_if, NULL, NULL, true, ext_pkt);
+        gnrc_ndp_rtr_adv_send(radio_if, NULL, NULL, true, pkt);
     } else {
         DEBUG("auto_subnets: Options empty, not sending RA\n");
     }
