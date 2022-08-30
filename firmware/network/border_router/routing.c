@@ -78,6 +78,27 @@ void radv_pkt_send(void) {
     }
 }
 
+// static void _receive(gnrc_pktsnip_t *pkt){
+//     gnrc_pktsnip_t *ipv6 = NULL;
+//     br_radv_t *radv_msg = pkt->data;
+//     ipv6_hdr_t *ipv6_hdr;
+//     void *state = NULL;
+//     gnrc_ipv6_nib_ft_t rtable;
+//     ipv6 = gnrc_pktsnip_search_type(pkt, GNRC_NETTYPE_IPV6);
+//     assert(ipv6 != NULL);
+//     ipv6_hdr = (ipv6_hdr_t *)ipv6->data;
+//     uint8_t wireless_idx = get_ieee802154_iface();
+//     while(gnrc_ipv6_nib_ft_iter(NULL, wireless_idx, &state, &rtable)){
+//         if((memcmp(&rtable.dst, &radv_msg->dest_route, sizeof(ipv6_addr_t)) == 0) &&
+//         (rtable.dst_len == radv_msg->prefix)){
+//             DEBUG("Route already exist\n");
+//             return;
+//         }
+//     }
+//     gnrc_ipv6_nib_ft_add(&radv_msg->dest_route, radv_msg->prefix, &ipv6_hdr->src, wireless_idx,
+//     0);
+// }
+
 static void *_event_loop(void *args) {
     (void)args;
     msg_t msg;
@@ -92,6 +113,8 @@ static void *_event_loop(void *args) {
             switch (msg.type) {
             case GNRC_NETAPI_MSG_TYPE_RCV:
                 DEBUG("RTR advertisement receives\n");
+                ztimer_sleep(ZTIMER_USEC, 200);
+                radv_pkt_send();
                 break;
             default:
                 break;
