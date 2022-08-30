@@ -70,10 +70,7 @@ int main(void) {
     gnrc_netif_t *iface = gnrc_netif_get_by_type(NETDEV_ANY, NETDEV_INDEX_ANY);
     chamos_init(6977, iface);
     setup();
-    gnrc_pktsnip_t *pkt = NULL;
-    uint8_t wireless_iface = get_ieee802154_iface();
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
-    radv_pkt_send(wireless_iface, pkt);
     init_br_routing();
     shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
     return 0;
