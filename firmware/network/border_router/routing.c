@@ -40,7 +40,7 @@
 #include "timex.h"
 #include "ztimer.h"
 
-#define ENABLE_DEBUG 1
+#define ENABLE_DEBUG 0
 #include "debug.h"
 
 #define BORDER_ROUTER_MSG_QUEUE_SIZE (8)
@@ -69,12 +69,15 @@ void radv_pkt_send(void) {
     gnrc_netif_t *radio_if = gnrc_netif_get_by_pid(wireless_idx);
     gnrc_ipv6_nib_ft_t rtable;
     void *state = NULL;
-    gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable);
+    if (!gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable)){
+        return;
+    }
     pkt = radv_build_pkt(&rtable.dst, rtable.dst_len, ext_pkt);
     if (pkt != NULL) {
         gnrc_ndp_rtr_adv_send(radio_if, NULL, NULL, true, pkt);
     } else {
         DEBUG("auto_subnets: Options empty, not sending RA\n");
+        gnrc_pktbuf_release(pkt);
     }
 }
 
