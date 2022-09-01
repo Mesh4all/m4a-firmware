@@ -108,7 +108,7 @@ static void *_event_loop(void *args) {
     /* start event loop */
     while (1) {
         DEBUG("RPL: waiting for incoming message.\n");
-        if (ztimer_msg_receive_timeout(ZTIMER_SEC, &msg, rand()%period) == -ETIME) {
+        if (ztimer_msg_receive_timeout(ZTIMER_SEC, &msg, period) == -ETIME) {
             radv_pkt_send();
             times++;
             if(times > 5){
