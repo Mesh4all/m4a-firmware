@@ -20,6 +20,7 @@
  */
 
 #include <assert.h>
+#include <stdlib.h>
 #include <string.h>
 #include <inttypes.h>
 
@@ -57,6 +58,7 @@ gnrc_pktsnip_t *radv_build_pkt(ipv6_addr_t located_route, uint8_t prefix, gnrc_p
                                                 NDP_OPT_RI_FLAGS_PRF_ZERO, next);
     if (pkt == NULL) {
         DEBUG("ndp: NA not created due to no space in packet buffer\n");
+        gnrc_pktbuf_release(pkt);
     }
     return pkt;
 }
@@ -77,7 +79,6 @@ void radv_pkt_send(void) {
         gnrc_ndp_rtr_adv_send(radio_if, NULL, NULL, true, pkt);
     } else {
         DEBUG("Router Advertisement Failed\n");
-        gnrc_pktbuf_release(pkt);
     }
 }
 
@@ -102,11 +103,24 @@ static void *_event_loop(void *args) {
     (void)args;
     msg_t msg;
     msg_init_queue(_msg, BORDER_ROUTER_MSG_QUEUE_SIZE);
+    uint16_t period = 3;
+    uint8_t times = 0;
     /* start event loop */
     while (1) {
         DEBUG("RPL: waiting for incoming message.\n");
-        if (ztimer_msg_receive_timeout(ZTIMER_SEC, &msg, 5) == -ETIME) {
+        if (ztimer_msg_receive_timeout(ZTIMER_SEC, &msg, rand()%period) == -ETIME) {
             radv_pkt_send();
+            times++;
+            if(times > 5){
+                if(period < 60){
+                    period*=20;
+                }
+                if (period >= 60)
+                {
+                    period/=20;
+                }
+                times=0;
+            }
         } else {
             switch (msg.type) {
             case GNRC_NETAPI_MSG_TYPE_RCV:
