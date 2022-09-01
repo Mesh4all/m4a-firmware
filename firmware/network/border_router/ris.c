@@ -49,11 +49,11 @@ static msg_t _msg[BORDER_ROUTER_MSG_QUEUE_SIZE];
 kernel_pid_t brr_pid = KERNEL_PID_UNDEF;
 static gnrc_netreg_entry_t me_reg;
 
-gnrc_pktsnip_t *radv_build_pkt(ipv6_addr_t *located_route, uint8_t prefix, gnrc_pktsnip_t *next) {
-    assert(located_route != NULL);
-    assert(!ipv6_addr_is_link_local(located_route) && !ipv6_addr_is_multicast(located_route));
+gnrc_pktsnip_t *radv_build_pkt(ipv6_addr_t located_route, uint8_t prefix, gnrc_pktsnip_t *next) {
+    assert(&located_route != NULL);
+    assert(!ipv6_addr_is_link_local(&located_route) && !ipv6_addr_is_multicast(&located_route));
     assert(prefix <= 128);
-    gnrc_pktsnip_t *pkt = gnrc_ndp_opt_ri_build(located_route, prefix, NDP_OPT_PI_VALID_LTIME_INF,
+    gnrc_pktsnip_t *pkt = gnrc_ndp_opt_ri_build(&located_route, prefix, 300,
                                                 NDP_OPT_RI_FLAGS_PRF_ZERO, next);
     if (pkt == NULL) {
         DEBUG("ndp: NA not created due to no space in packet buffer\n");
@@ -69,43 +69,38 @@ void radv_pkt_send(void) {
     gnrc_netif_t *radio_if = gnrc_netif_get_by_pid(wireless_idx);
     gnrc_ipv6_nib_ft_t rtable;
     void *state = NULL;
-    if (!gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable)){
+    if (!gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable)) {
         return;
     }
-    pkt = radv_build_pkt(&rtable.dst, rtable.dst_len, ext_pkt);
+    pkt = radv_build_pkt(rtable.dst, rtable.dst_len, ext_pkt);
     if (pkt != NULL) {
         gnrc_ndp_rtr_adv_send(radio_if, NULL, NULL, true, pkt);
     } else {
-        DEBUG("auto_subnets: Options empty, not sending RA\n");
+        DEBUG("Router Advertisement Failed\n");
         gnrc_pktbuf_release(pkt);
     }
 }
 
-// static void _receive(gnrc_pktsnip_t *pkt){
-//     gnrc_pktsnip_t *ipv6 = NULL;
-//     br_radv_t *radv_msg = pkt->data;
-//     ipv6_hdr_t *ipv6_hdr;
-//     void *state = NULL;
-//     gnrc_ipv6_nib_ft_t rtable;
-//     ipv6 = gnrc_pktsnip_search_type(pkt, GNRC_NETTYPE_IPV6);
-//     assert(ipv6 != NULL);
-//     ipv6_hdr = (ipv6_hdr_t *)ipv6->data;
-//     uint8_t wireless_idx = get_ieee802154_iface();
-//     while(gnrc_ipv6_nib_ft_iter(NULL, wireless_idx, &state, &rtable)){
-//         if((memcmp(&rtable.dst, &radv_msg->dest_route, sizeof(ipv6_addr_t)) == 0) &&
-//         (rtable.dst_len == radv_msg->prefix)){
-//             DEBUG("Route already exist\n");
-//             return;
-//         }
+// gnrc_pktsnip_t *rsol_build_pkt(gnrc_pktsnip_t *next) {
+//     assert(located_route != NULL);
+//     assert(!ipv6_addr_is_link_local(located_route) && !ipv6_addr_is_multicast(located_route));
+//     assert(prefix <= 128);
+//     gnrc_pktsnip_t *pkt = gnrc_ndp_opt_ri_build(located_route, prefix,
+//     NDP_OPT_PI_VALID_LTIME_INF,
+//                                                 NDP_OPT_RI_FLAGS_PRF_ZERO, next);
+//     if (pkt == NULL) {
+//         DEBUG("ndp: NA not created due to no space in packet buffer\n");
 //     }
-//     gnrc_ipv6_nib_ft_add(&radv_msg->dest_route, radv_msg->prefix, &ipv6_hdr->src, wireless_idx,
-//     0);
+//     return pkt;
+// }
+
+// void rsol_pkt_send(void){
+
 // }
 
 static void *_event_loop(void *args) {
     (void)args;
     msg_t msg;
-    // ztimer_t timer = {.callback = radv_pkt_send};
     msg_init_queue(_msg, BORDER_ROUTER_MSG_QUEUE_SIZE);
     /* start event loop */
     while (1) {

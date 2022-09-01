@@ -12,3 +12,4 @@ USEMODULE += net_tools
 USEMODULE += netdev_default
 USEMODULE += radio
 USEMODULE += ztimer_sec
+USEMODULE += random

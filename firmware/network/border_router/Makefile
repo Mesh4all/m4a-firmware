@@ -1,3 +1,3 @@
-SRC := border_router.c routing.c
+SRC := border_router.c ris.c
 
 include $(RIOTBASE)/Makefile.base
