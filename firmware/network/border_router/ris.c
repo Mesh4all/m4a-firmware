@@ -41,9 +41,10 @@
 #include "timex.h"
 #include "ztimer.h"
 
-#define ENABLE_DEBUG 0
+#define ENABLE_DEBUG 1
 #include "debug.h"
 
+#define BRADV_PACKET_TYPE (210)
 #define BORDER_ROUTER_MSG_QUEUE_SIZE (8)
 static char _stack[THREAD_STACKSIZE_DEFAULT];
 static msg_t _msg[BORDER_ROUTER_MSG_QUEUE_SIZE];
@@ -51,24 +52,46 @@ kernel_pid_t brr_pid = KERNEL_PID_UNDEF;
 static gnrc_netreg_entry_t me_reg;
 
 gnrc_pktsnip_t *radv_build_pkt(ipv6_addr_t located_route, uint8_t prefix, gnrc_pktsnip_t *next) {
+    (void) next;
     assert(&located_route != NULL);
     assert(!ipv6_addr_is_link_local(&located_route) && !ipv6_addr_is_multicast(&located_route));
     assert(prefix <= 128);
-    gnrc_pktsnip_t *pkt = gnrc_ndp_opt_ri_build(&located_route, prefix, 300,
-                                                NDP_OPT_RI_FLAGS_PRF_ZERO, next);
-    if (pkt == NULL) {
-        DEBUG("ndp: NA not created due to no space in packet buffer\n");
-        gnrc_pktbuf_release(pkt);
+    uint8_t wireless_iface = get_ieee802154_iface();
+    gnrc_netif_t *wiface = gnrc_netif_get_by_pid(wireless_iface);
+    gnrc_pktsnip_t *rpacket = NULL;
+    br_msg_t msg;
+    msg.ip = located_route;
+    msg.prefix = prefix;
+    gnrc_pktsnip_t *payload = gnrc_pktbuf_add(NULL, &msg, sizeof(br_msg_t), GNRC_NETTYPE_UNDEF);
+    if (payload == NULL) {
+        DEBUG("auto_subnets: unable to copy data to packet buffer\n");
     }
-    return pkt;
+    rpacket =
+        gnrc_icmpv6_build(payload, BRADV_PACKET_TYPE, 0, sizeof(icmpv6_hdr_t));
+    gnrc_pktsnip_t *ip = gnrc_ipv6_hdr_build(rpacket, NULL, &ipv6_addr_all_nodes_link_local);
+    if (ip == NULL) {
+        DEBUG("auto_subnets: unable to allocate IPv6 header\n");
+        gnrc_pktbuf_release(ip);
+    }
+    if (wiface != NULL) {
+        gnrc_pktsnip_t *wiface_hdr = gnrc_netif_hdr_build(NULL, 0, NULL, 0);
+        if (wiface == NULL) {
+            DEBUG("auto_subnets: unable to allocate netif header\n");
+            gnrc_pktbuf_release(ip);
+        }
+
+        gnrc_netif_hdr_set_netif(wiface_hdr->data, wiface);
+        ip = gnrc_pkt_prepend(ip, wiface_hdr);
+    }
+    return ip;
 }
 
 void radv_pkt_send(void) {
     gnrc_pktsnip_t *ext_pkt = NULL;
     gnrc_pktsnip_t *pkt = NULL;
     uint8_t wire_idx = get_wired_iface();
-    uint8_t wireless_idx = get_ieee802154_iface();
-    gnrc_netif_t *radio_if = gnrc_netif_get_by_pid(wireless_idx);
+    // uint8_t wireless_idx = get_ieee802154_iface();
+    // gnrc_netif_t *radio_if = gnrc_netif_get_by_pid(wireless_idx);
     gnrc_ipv6_nib_ft_t rtable;
     void *state = NULL;
     if (!gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable)) {
@@ -76,7 +99,10 @@ void radv_pkt_send(void) {
     }
     pkt = radv_build_pkt(rtable.dst, rtable.dst_len, ext_pkt);
     if (pkt != NULL) {
-        gnrc_ndp_rtr_adv_send(radio_if, NULL, NULL, true, pkt);
+        if (!gnrc_netapi_dispatch_send(GNRC_NETTYPE_NDP, GNRC_NETREG_DEMUX_CTX_ALL, pkt)) {
+            DEBUG("ndp: unable to send router solicitation\n");
+            return;
+        }
     } else {
         DEBUG("Router Advertisement Failed\n");
     }
@@ -105,21 +131,21 @@ static void *_event_loop(void *args) {
     msg_init_queue(_msg, BORDER_ROUTER_MSG_QUEUE_SIZE);
     uint16_t period = 3;
     uint8_t times = 0;
+    // uint8_t wired_iface = get_wired_iface();
+    // ipv6_addr_t addr;
     /* start event loop */
     while (1) {
         DEBUG("RPL: waiting for incoming message.\n");
-        if (ztimer_msg_receive_timeout(ZTIMER_SEC, &msg, period) == -ETIME) {
+        if ((ztimer_msg_receive_timeout(ZTIMER_SEC, &msg, (uint32_t)period) == -ETIME)) {
             radv_pkt_send();
             times++;
-            if(times > 5){
-                if(period < 60){
-                    period*=20;
+            if (times > 2) {
+                if (period < 180) {
+                    period *= 180;
+                } else if (period >= 180) {
+                    period /= 180;
                 }
-                if (period >= 60)
-                {
-                    period/=20;
-                }
-                times=0;
+                times = 0;
             }
         } else {
             switch (msg.type) {

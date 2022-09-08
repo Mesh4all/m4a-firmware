@@ -39,9 +39,7 @@ extern "C" {
 
 enum br_msg_types_t { MSG_RS = 199 };
 
-typedef struct {
-    uint8_t type;   /*!< Message type */
-    uint8_t seqno;  /*!< Sequence number */
+typedef struct __attribute__((packed)) {
     uint8_t prefix; /*!< IP address pfx_len */
     ipv6_addr_t ip; /*!< IP address */
 } br_msg_t;

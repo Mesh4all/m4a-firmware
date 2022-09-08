@@ -41,6 +41,7 @@
 #include "radio.h"
 #include "rpl_protocol.h"
 #include "chamos.h"
+#include "net/gnrc/ipv6/nib/ft.h"
 
 #define MAIN_QUEUE_SIZE (8)
 
