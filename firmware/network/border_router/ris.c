@@ -69,15 +69,16 @@ gnrc_pktsnip_t *radv_build_pkt(ipv6_addr_t located_route, uint8_t prefix, gnrc_p
 void radv_pkt_send(void) {
     gnrc_pktsnip_t *ext_pkt = NULL;
     gnrc_pktsnip_t *pkt = NULL;
-    uint8_t wire_idx = get_wired_iface();
+    // uint8_t wire_idx = get_wired_iface();
     uint8_t wireless_idx = get_ieee802154_iface();
     gnrc_netif_t *radio_if = gnrc_netif_get_by_pid(wireless_idx);
     gnrc_ipv6_nib_ft_t rtable;
     void *state = NULL;
-    if (!gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable)) {
-        return;
+    while(gnrc_ipv6_nib_ft_iter(NULL, 0, &state, &rtable)) {
+        pkt = radv_build_pkt(rtable.dst, rtable.dst_len, ext_pkt);
+        ext_pkt = pkt;
     }
-    pkt = radv_build_pkt(rtable.dst, rtable.dst_len, ext_pkt);
+    
     if (pkt != NULL) {
         gnrc_ndp_rtr_adv_send(radio_if, NULL, &ipv6_addr_all_routers_link_local, true, pkt);
     } else {
