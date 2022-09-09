@@ -31,6 +31,7 @@
 #include "net/gnrc/netif/internal.h"
 #include "net_tools.h"
 #include "radio.h"
+#include "random.h"
 #ifdef MODULE_GNRC_SIXLOWPAN_ND
 #include "net/gnrc/sixlowpan/nd.h"
 #endif
@@ -49,6 +50,8 @@ static char _stack[THREAD_STACKSIZE_DEFAULT];
 static msg_t _msg[BORDER_ROUTER_MSG_QUEUE_SIZE];
 kernel_pid_t brr_pid = KERNEL_PID_UNDEF;
 static gnrc_netreg_entry_t me_reg;
+
+static int8_t check_routes_wired_if(void);
 
 gnrc_pktsnip_t *radv_build_pkt(ipv6_addr_t located_route, uint8_t prefix, gnrc_pktsnip_t *next) {
     assert(&located_route != NULL);
@@ -76,57 +79,43 @@ void radv_pkt_send(void) {
     }
     pkt = radv_build_pkt(rtable.dst, rtable.dst_len, ext_pkt);
     if (pkt != NULL) {
-        gnrc_ndp_rtr_adv_send(radio_if, NULL, NULL, true, pkt);
+        gnrc_ndp_rtr_adv_send(radio_if, NULL, &ipv6_addr_all_routers_link_local, true, pkt);
     } else {
         DEBUG("Router Advertisement Failed\n");
     }
 }
 
-// gnrc_pktsnip_t *rsol_build_pkt(gnrc_pktsnip_t *next) {
-//     assert(located_route != NULL);
-//     assert(!ipv6_addr_is_link_local(located_route) && !ipv6_addr_is_multicast(located_route));
-//     assert(prefix <= 128);
-//     gnrc_pktsnip_t *pkt = gnrc_ndp_opt_ri_build(located_route, prefix,
-//     NDP_OPT_PI_VALID_LTIME_INF,
-//                                                 NDP_OPT_RI_FLAGS_PRF_ZERO, next);
-//     if (pkt == NULL) {
-//         DEBUG("ndp: NA not created due to no space in packet buffer\n");
-//     }
-//     return pkt;
-// }
-
-// void rsol_pkt_send(void){
-
-// }
-
 static void *_event_loop(void *args) {
     (void)args;
     msg_t msg;
     msg_init_queue(_msg, BORDER_ROUTER_MSG_QUEUE_SIZE);
-    uint16_t period = 3;
+    uint32_t period = 3;
     uint8_t times = 0;
+    bool rand_send = true;
     /* start event loop */
+    uint8_t wire_idx = get_wired_iface();
     while (1) {
         DEBUG("RPL: waiting for incoming message.\n");
-        if (ztimer_msg_receive_timeout(ZTIMER_SEC, &msg, period) == -ETIME) {
+
+        if ((ztimer_msg_receive_timeout(ZTIMER_SEC, &msg, rand_send? random_uint32() % period : period) == -ETIME) && (check_routes_wired_if())) {
             radv_pkt_send();
             times++;
-            if(times > 5){
-                if(period < 60){
-                    period*=20;
+            if (times > 3) {
+                if (period < 60) {
+                    period *= 20;
+                    rand_send = false;
                 }
-                if (period >= 60)
-                {
-                    period/=20;
+                else if (period >= 60) {
+                    period /= 20;
+                    rand_send = true;
                 }
-                times=0;
+                times = 0;
             }
         } else {
             switch (msg.type) {
             case GNRC_NETAPI_MSG_TYPE_RCV:
                 DEBUG("RTR advertisement receives\n");
-                ztimer_sleep(ZTIMER_USEC, 200);
-                radv_pkt_send();
+                gnrc_ipv6_nib_change_rtr_adv_iface(gnrc_netif_get_by_pid(wire_idx), false);
                 break;
             default:
                 break;
@@ -134,6 +123,19 @@ static void *_event_loop(void *args) {
         }
     }
     return NULL;
+}
+
+static int8_t check_routes_wired_if(void) {
+    gnrc_ipv6_nib_ft_t rtable;
+    void *state = NULL;
+    uint8_t wire_idx = get_wired_iface();
+    if (!gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable)) {
+        return 0;
+    }
+    // if (memcmp(&rtable.dst, &ipv6_addr_unspecified, sizeof(ipv6_addr_t))){
+    //     return -1;
+    // }
+    return -1;
 }
 
 int8_t init_br_routing(void) {
