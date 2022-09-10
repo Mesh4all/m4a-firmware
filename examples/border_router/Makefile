@@ -1,6 +1,6 @@
 # name of the application
 APPLICATION = border_router
-
+RIOTBASE = ../../RIOT
 include $(CURDIR)/../Makefile.common
 
 
