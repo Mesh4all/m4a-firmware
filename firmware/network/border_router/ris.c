@@ -51,7 +51,7 @@ static msg_t _msg[BORDER_ROUTER_MSG_QUEUE_SIZE];
 kernel_pid_t brr_pid = KERNEL_PID_UNDEF;
 static gnrc_netreg_entry_t me_reg;
 
-static int8_t check_routes_wired_if(void);
+// static int8_t check_routes_wired_if(void);
 
 gnrc_pktsnip_t *radv_build_pkt(ipv6_addr_t located_route, uint8_t prefix, gnrc_pktsnip_t *next) {
     assert(&located_route != NULL);
@@ -94,20 +94,22 @@ static void *_event_loop(void *args) {
     uint8_t times = 0;
     bool rand_send = true;
     /* start event loop */
+    // uint8_t wireless_idx = get_ieee802154_iface();
+    // gnrc_netif_t *wless_iface = gnrc_netif_get_by_pid(wireless_idx);
     uint8_t wire_idx = get_wired_iface();
     while (1) {
         DEBUG("RPL: waiting for incoming message.\n");
 
-        if ((ztimer_msg_receive_timeout(ZTIMER_SEC, &msg, rand_send? random_uint32() % period : period) == -ETIME) && (check_routes_wired_if())) {
+        if ((ztimer_msg_receive_timeout(ZTIMER_SEC, &msg, rand_send? random_uint32() % period : period) == -ETIME)) {
             radv_pkt_send();
             times++;
             if (times > 3) {
-                if (period < 60) {
-                    period *= 20;
+                if (period < 30) {
+                    period *= 10;
                     rand_send = false;
                 }
-                else if (period >= 60) {
-                    period /= 20;
+                else if (period >= 30) {
+                    period /= 10;
                     rand_send = true;
                 }
                 times = 0;
@@ -126,18 +128,18 @@ static void *_event_loop(void *args) {
     return NULL;
 }
 
-static int8_t check_routes_wired_if(void) {
-    gnrc_ipv6_nib_ft_t rtable;
-    void *state = NULL;
-    uint8_t wire_idx = get_wired_iface();
-    if (!gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable)) {
-        return 0;
-    }
-    // if (memcmp(&rtable.dst, &ipv6_addr_unspecified, sizeof(ipv6_addr_t))){
-    //     return -1;
-    // }
-    return -1;
-}
+// static int8_t check_routes_wired_if(void) {
+//     gnrc_ipv6_nib_ft_t rtable;
+//     void *state = NULL;
+//     uint8_t wire_idx = get_wired_iface();
+//     if (!gnrc_ipv6_nib_ft_iter(NULL, wire_idx, &state, &rtable)) {
+//         return 0;
+//     }
+//     // if (memcmp(&rtable.dst, &ipv6_addr_unspecified, sizeof(ipv6_addr_t))){
+//     //     return -1;
+//     // }
+//     return -1;
+// }
 
 int8_t init_br_routing(void) {
     if (brr_pid != KERNEL_PID_UNDEF) {
