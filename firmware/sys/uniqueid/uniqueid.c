@@ -45,7 +45,7 @@
 #include "debug.h"
 
 void subnet_to_ipv6(ipv6_addr_t *addr) {
-
+    (void)addr;
 #ifdef CONFIG_MODE_STATIC
     ipv6_addr_t header = {
         .u8 = {0},
@@ -89,6 +89,5 @@ void subnet_to_ipv6(ipv6_addr_t *addr) {
     ipv6_addr_from_str(&subnet, CONFIG_SUBNET_ADDRESS_ID);
     memcpy((char *)addr->u8, (char *)header.u8, 4);
     memcpy((char *)addr->u8 + 4, (char *)subnet.u8, 4);
-
 #endif
 }

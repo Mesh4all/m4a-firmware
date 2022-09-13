@@ -44,6 +44,8 @@
 extern "C" {
 #endif
 
+#define PREFIX_LSHIFTTED_BITS   (8)
+
 /**
  * @brief Function to check if exist a wired interface
  *

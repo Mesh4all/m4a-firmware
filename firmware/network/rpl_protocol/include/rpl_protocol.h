@@ -27,6 +27,7 @@
 #define RPL_PROTOCOL_H
 
 #include "net/ipv6/addr.h"
+#include "sched.h"
 
 #ifdef __cplusplus
 extern "C" {

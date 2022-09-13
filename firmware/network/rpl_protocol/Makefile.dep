@@ -5,10 +5,6 @@ USEMODULE += uniqueid
 USEMODULE += gnrc_ipv6_router_default
 USEMODULE += net_tools
 
-ifeq (,$(filter auto_init_gnrc_rpl,$(USEMODULE)))
-    USEMODULE +=  auto_init_gnrc_rpl
-endif
-
 ifneq (,$(filter 6lpan_node,$(USEMODULE)))
      USEMODULE += gnrc_sixlowpan_router_default
 endif

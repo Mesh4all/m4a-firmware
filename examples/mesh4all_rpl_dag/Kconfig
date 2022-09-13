@@ -1,7 +1,0 @@
-menu "RPL settings"
-#comment "RPL settings"
-    config IS_DODAG
-    bool "dodag node"
-    default n
-
-endmenu #RPL

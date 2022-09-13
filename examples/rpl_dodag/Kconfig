@@ -8,4 +8,8 @@ menu "RPL settings"
     int "Default DODAG instance"
     default 1
 
+    config DODAG_IPV6_ADDRESS
+    string "Wireless Address of DODAG"
+    default "2001:db8::1"
+
 endmenu #RPL
