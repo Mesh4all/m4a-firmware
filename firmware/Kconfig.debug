@@ -1,0 +1,79 @@
+menu "Debug mode"
+
+    menu "Network"
+        config DEBUG_BORDER_ROUTER
+            bool "Debugging Border Router module"
+
+            default n
+            depends on USEMODULE_BORDER_ROUTER
+
+        config DEBUG_CHAMOS
+            bool "Debugging chamos module"
+            default n
+            depends on USEMODULE_CHAMOS
+
+        config DEBUG_NET_TOOLS
+            bool "Debugging net_tools module"
+            default n
+            depends on USEMODULE_NET_TOOLS
+
+        config DEBUG_RADIO
+            bool "Debugging radio module"
+            default n
+            depends on USEMODULE_RADIO
+
+        config DEBUG_RPL_PROTOCOL
+            bool "Debugging RPL protocol module"
+            default n
+            depends on USEMODULE_RPL_PROTOCOL
+
+        config DEBUG_UDP_CLIENT
+            bool "Debugging udp_client module"
+            default n
+            depends on USEMODULE_UDP_CLIENT
+
+        config DEBUG_UDP_SERVER
+            bool "Debugging udp_server module"
+            default n
+            depends on USEMODULE_UDP_SERVER
+
+    endmenu # network modules
+
+    menu "Peripherals"
+
+        config DEBUG_DS18_SENSOR
+            bool "Debugging ds18_sensor module"
+            default n
+            depends on USEMODULE_DS18_SENSOR
+
+        config DEBUG_MOISTURE_SENSOR
+            bool "Debugging moisture_sensor module"
+            default n
+            depends on USEMODULE_MOISTURE_SENSOR
+
+    endmenu # peripherals
+
+    menu "Sys"
+
+    config DEBUG_AT_CLIENT
+            bool "Debugging AT_client module"
+            default n
+            depends on USEMODULE_AT_CLIENT
+
+    config DEBUG_SERIALIZATION
+            bool "Debugging serialization module"
+            default n
+            depends on USEMODULE_SERIALIZATION
+
+    config DEBUG_STORAGE
+            bool "Debugging storage module"
+            default n
+            depends on USEMODULE_STORAGE
+
+    config DEBUG_UNIQUEID
+            bool "Debugging uniqueid module"
+            default n
+            depends on USEMODULE_UNIQUEID
+
+    endmenu
+endmenu # Debug mode

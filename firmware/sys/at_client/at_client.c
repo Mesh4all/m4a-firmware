@@ -32,6 +32,18 @@
 #include "timex.h"
 #include "xtimer.h"
 
+#if (CONFIG_DEBUG_AT_CLIENT) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_AT_CLIENT
+#else
+#define ENABLE_DEBUG 0
+#endif
+
+#include "debug.h"
+
 #define AT_UART UART_DEV(1)
 #define AT_BAUDRATE 115200
 
@@ -89,15 +101,15 @@ void *buff_handler(void *arg) {
     msg_init_queue(msg_queue, QUEUE_SIZE);
     while (1) {
         msg_receive(&msg);
-        printf("RX: ");
+        DEBUG("RX: ");
         if (ringbuffer_empty(&(uart_buffer.rx_buf)) == 0) {
             do {
                 byte = (int)ringbuffer_get_one(&(uart_buffer.rx_buf));
                 uart_buffer.count -= 1;
                 if (byte >= ' ' && byte <= '~') {
-                    printf("%c", byte);
+                    DEBUG("%c", byte);
                 } else {
-                    printf("x%02x", (unsigned char)byte);
+                    DEBUG("x%02x", (unsigned char)byte);
                 }
             } while (uart_buffer.count > 0 && byte != 0);
             memset(uart_buffer.rx_mem, 0, UART_BUFSIZE); // clean residual buffer
@@ -121,13 +133,13 @@ int cmd_at(int argc, char **argv) {
     xtimer_t wait_timer;
     char buff_at[50] = {0};
     if (argc < 2) {
-        printf("Use command \"at help\" for more info.\n");
+        DEBUG("Use command \"at help\" for more info.\n");
         return -1;
     }
     if (strcmp("help", argv[1]) == 0) {
-        printf("Valid commands are: \n\n");
+        DEBUG("Valid commands are: \n\n");
         for (int i = 0; i < MAX_AT; i++) {
-            printf("%s %s \n", at_list[i].shell_cmd, at_list[i].value_desc);
+            DEBUG("%s %s \n", at_list[i].shell_cmd, at_list[i].value_desc);
         }
         return 0;
     }
@@ -140,13 +152,13 @@ int cmd_at(int argc, char **argv) {
             return -1;
         }
         sprintf(buff_at, "%s\r", at_list[at_position].at_cmd);
-        printf("%s\n", buff_at);
+        DEBUG("%s\n", buff_at);
         flag_response = 1;
         uart_write(AT_UART, (uint8_t *)buff_at, strlen(buff_at) - 1);
         if (at_list[at_position].response) {
             xtimer_set_msg(&wait_timer, WAIT_RESPONSE, &msg_send, buff_thread_pid);
             if (xtimer_msg_receive_timeout(&msg_receive, WAIT_RESPONSE) < 0) { // dummy delay
-                printf("\nTimer done\n");
+                DEBUG("\nTimer done\n");
             }
             flag_response = 0;
         } else {
@@ -167,13 +179,13 @@ int cmd_at(int argc, char **argv) {
             return -1;
         }
         sprintf(buff_at, "%s%s\r", at_list[at_position].at_cmd, aux_buf);
-        printf("%s\n", buff_at);
+        DEBUG("%s\n", buff_at);
         flag_response = 1;
         uart_write(AT_UART, (uint8_t *)buff_at, strlen(buff_at) - 1);
         if (at_list[at_position].response) {
             xtimer_set_msg(&wait_timer, WAIT_RESPONSE, &msg_send, buff_thread_pid);
             if (xtimer_msg_receive_timeout(&msg_receive, WAIT_RESPONSE) < 0) { // dummy delay
-                printf("\nTimer done\n");
+                DEBUG("\nTimer done\n");
             }
             flag_response = 0;
         } else {
@@ -191,7 +203,7 @@ int config_at(void) {
 
     int res = uart_init(AT_UART, AT_BAUDRATE, rx_cb, NULL);
     if (res != UART_OK) {
-        printf("Error: Unable to initialize UART device\n");
+        DEBUG("Error: Unable to initialize UART device\n");
         return res;
     }
     ringbuffer_init(&(uart_buffer.rx_buf), uart_buffer.rx_mem,

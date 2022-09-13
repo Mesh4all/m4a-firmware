@@ -38,6 +38,18 @@
 #include "net/ipv6/addr.h"
 #include "net/gnrc/netif.h"
 
+#if (CONFIG_DEBUG_NET_TOOLS) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_NET_TOOLS
+#else
+#define ENABLE_DEBUG 0
+#endif
+
+#include "debug.h"
+
 int8_t get_wired_iface(void) {
     int max_ifaces = gnrc_netif_numof();
     if (max_ifaces > 0) {
@@ -58,8 +70,8 @@ int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr) {
     int8_t num_of_addr = netif_get_opt(iface, NETOPT_IPV6_ADDR, 0, ipv6,
                                        CONFIG_GNRC_NETIF_IPV6_ADDRS_NUMOF * sizeof(ipv6_addr_t));
     if (num_of_addr < 0) {
-        printf("Error: Not ipv6 address found. File: %s,  Function: %s, Line: %d\n", __FILE__,
-               __func__, __LINE__);
+        DEBUG("Error: Not ipv6 address found. File: %s,  Function: %s, Line: %d\n", __FILE__,
+              __func__, __LINE__);
         return -1;
     }
     for (unsigned i = 0; i < (num_of_addr / sizeof(ipv6_addr_t)); i++) {
@@ -73,24 +85,24 @@ int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr) {
 
 int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix) {
     if (prefix > 128) {
-        printf("Wrong prefix length\n"
-               "File: %s, Function: %s, Line: %d\n",
-               __FILE__, __func__, __LINE__);
+        DEBUG("Wrong prefix length\n"
+              "File: %s, Function: %s, Line: %d\n",
+              __FILE__, __func__, __LINE__);
     }
-    uint16_t flags = GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID |
-(prefix << CONFIG_PREFIX_DISPLACEMENT);
+    uint16_t flags =
+        GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID | (prefix << CONFIG_PREFIX_DISPLACEMENT);
     netif_t *iface = netif_get_by_id(iface_index);
     if (!ipv6_addr_is_global(&ip)) {
-        printf("The ipv6 address isn't a ipv6 global address format accepted\n"
-               "File: %s, Function: %s, Line: %d\n",
-               __FILE__, __func__, __LINE__);
+        DEBUG("The ipv6 address isn't a ipv6 global address format accepted\n"
+              "File: %s, Function: %s, Line: %d\n",
+              __FILE__, __func__, __LINE__);
         return -1;
     }
-    if (netif_set_opt(iface, NETOPT_IPV6_ADDR, flags, &ip,
-sizeof(ipv6_addr_t)) < CONFIG_PREFIX_DISPLACEMENT) {
-        printf("error: unable to add IPv6 address\n"
-               "File: %s, Function: %s, Line: %d\n",
-               __FILE__, __func__, __LINE__);
+    if (netif_set_opt(iface, NETOPT_IPV6_ADDR, flags, &ip, sizeof(ipv6_addr_t)) <
+        CONFIG_PREFIX_DISPLACEMENT) {
+        DEBUG("error: unable to add IPv6 address\n"
+              "File: %s, Function: %s, Line: %d\n",
+              __FILE__, __func__, __LINE__);
         return -1;
     }
     return 0;
@@ -98,23 +110,23 @@ sizeof(ipv6_addr_t)) < CONFIG_PREFIX_DISPLACEMENT) {
 
 int8_t set_ipv6_multicast(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix) {
     if (prefix > 128) {
-        printf("Wrong prefix length\n"
-               "File: %s, Function: %s, Line: %d\n",
-               __FILE__, __func__, __LINE__);
+        DEBUG("Wrong prefix length\n"
+              "File: %s, Function: %s, Line: %d\n",
+              __FILE__, __func__, __LINE__);
     }
-    uint16_t flags = GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID |
-(prefix << CONFIG_PREFIX_DISPLACEMENT);
+    uint16_t flags =
+        GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID | (prefix << CONFIG_PREFIX_DISPLACEMENT);
     netif_t *iface = netif_get_by_id(iface_index);
     if (!ipv6_addr_is_multicast(&ip)) {
-        printf("The ipv6 address isn't a ipv6 multicast address format accepted\n"
-               "File: %s, Function: %s, Line: %d\n",
-               __FILE__, __func__, __LINE__);
+        DEBUG("The ipv6 address isn't a ipv6 multicast address format accepted\n"
+              "File: %s, Function: %s, Line: %d\n",
+              __FILE__, __func__, __LINE__);
         return -1;
     }
     if (netif_set_opt(iface, NETOPT_IPV6_GROUP, flags, &ip, sizeof(ipv6_addr_t)) < 0) {
-        printf("error: unable to join IPv6 multicast group\n"
-               "File: %s, Function: %s, Line: %d\n",
-               __FILE__, __func__, __LINE__);
+        DEBUG("error: unable to join IPv6 multicast group\n"
+              "File: %s, Function: %s, Line: %d\n",
+              __FILE__, __func__, __LINE__);
         return -1;
     }
     return 0;

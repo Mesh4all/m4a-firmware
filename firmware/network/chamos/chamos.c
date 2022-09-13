@@ -26,12 +26,21 @@
 #include "net/gnrc/ipv6/nib/ft.h"
 #include "xtimer.h"
 
+#if (CONFIG_DEBUG_CHAMOS) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_CHAMOS
+#else
+#define ENABLE_DEBUG 0
+#endif
+
+#include "debug.h"
+
 #define CHAMOS_MSG_QUEUE_SIZE (8)
 #define SERVER_BUFFER_SIZE (CONFIG_SERVER_BUFFER_SIZE)
 
-/**
- * @brief   GNRC netif
- */
 gnrc_netif_t *_netif;
 sock_udp_t chamos_sock = {};
 char chamos_stack[THREAD_STACKSIZE_DEFAULT];
@@ -51,33 +60,29 @@ int msg_process(chamos_msg_t *msg) {
     int res;
     switch (msg->msg_type) {
     case MSG_NIB_ADD:
-        printf("Adding NIB entry\n");
+        DEBUG("Adding NIB entry\n");
         ipv6_addr_t next_hop = {.u8 = {0xfe, 0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}};
-        res = gnrc_ipv6_nib_ft_add(&msg->ip, msg->ip_len, &next_hop, _netif->pid,
-                                   0);
+        res = gnrc_ipv6_nib_ft_add(&msg->ip, msg->ip_len, &next_hop, _netif->pid, 0);
         if (res == -EINVAL) {
-            printf("Chamos: Error invalid argument.\n");
+            DEBUG("Chamos: Error invalid argument.\n");
             return -EINVAL;
-        }
-        else if (res == -ENOMEM) {
-            printf("Chamos: Error Out of memory.\n");
+        } else if (res == -ENOMEM) {
+            DEBUG("Chamos: Error Out of memory.\n");
             return -ENOMEM;
-        }
-        else if (res == -ENOTSUP) {
-            printf("Chamos: Error Operation not supported on transport endpoint.\n");
+        } else if (res == -ENOTSUP) {
+            DEBUG("Chamos: Error Operation not supported on transport endpoint.\n");
             return -ENOTSUP;
-        }
-        else {
-            printf("Added NIB correctly.\n");
+        } else {
+            DEBUG("Added NIB correctly.\n");
         }
         break;
     case MSG_NIB_DEL:
-        printf("Deleting NIB entry\n");
+        DEBUG("Deleting NIB entry\n");
         gnrc_ipv6_nib_ft_del(&msg->ip, msg->ip_len);
         break;
 
     default:
-        printf("Chamos: Error invalid argument");
+        DEBUG("Chamos: Error invalid argument");
         return -EINVAL;
     }
     return 0;
@@ -86,7 +91,7 @@ int msg_process(chamos_msg_t *msg) {
 int chamos_parse_buff(chamos_msg_t *chamos_msg, uint8_t *buffer, size_t len) {
     memset(chamos_msg, 0, sizeof(chamos_msg_t));
     if (len < 3) {
-        printf("Chamos: invalid message size! \n");
+        DEBUG("Chamos: invalid message size! \n");
         return -EINVAL;
     }
     uint8_t type = buffer[0];
@@ -95,34 +100,34 @@ int chamos_parse_buff(chamos_msg_t *chamos_msg, uint8_t *buffer, size_t len) {
     switch (type) {
     case MSG_NIB_ADD:
         if (len < sizeof(chamos_msg_t)) {
-            printf("Chamos: NIB ADD invalid message size! \n");
+            DEBUG("Chamos: NIB ADD invalid message size! \n");
             return -EINVAL;
         }
         chamos_msg->msg_type = type;
         chamos_msg->seqno = seqno;
         chamos_msg->ip_len = ip_len;
         if (memcmp(&buffer[3], &chamos_msg->ip, sizeof(ipv6_addr_t)) == 0) {
-            printf("Chamos: Invalid IPV6 address.\n");
+            DEBUG("Chamos: Invalid IPV6 address.\n");
             return -EINVAL;
         }
         memcpy(&chamos_msg->ip, &buffer[3], sizeof(ipv6_addr_t));
         break;
     case MSG_NIB_DEL:
         if (len < sizeof(chamos_msg_t)) {
-            printf("Chamos: NIB DEL invalid message size! \n");
+            DEBUG("Chamos: NIB DEL invalid message size! \n");
             return -EINVAL;
         }
         chamos_msg->msg_type = type;
         chamos_msg->seqno = seqno;
         chamos_msg->ip_len = ip_len;
         if (memcmp(&buffer[3], &chamos_msg->ip, sizeof(ipv6_addr_t)) == 0) {
-            printf("Chamos: Invalid IPV6 address.\n");
+            DEBUG("Chamos: Invalid IPV6 address.\n");
             return -EINVAL;
         }
         memcpy(&chamos_msg->ip, &buffer[3], sizeof(ipv6_addr_t));
         break;
     default:
-        printf("Chamos: Invalid message type \n");
+        DEBUG("Chamos: Invalid message type \n");
         return -EINVAL;
     }
     return 0;
@@ -139,36 +144,36 @@ void *chamos_thread(void *arg) {
                                    SOCK_NO_TIMEOUT, &remote);
         if (err_rx < 0) {
             if (err_rx == -EADDRINUSE) {
-                printf("Chamos: address is already used \n");
+                DEBUG("Chamos: address is already used \n");
             }
             if (err_rx == -EAFNOSUPPORT) {
-                printf("Chamos: endpoint is not supported.\n");
+                DEBUG("Chamos: endpoint is not supported.\n");
             }
             if (err_rx == -EINVAL) {
-                printf(
+                DEBUG(
                     "Chamos: remote has an invalid address or does not have a valid interface.\n");
             }
             if (err_rx == -ENOMEM) {
-                printf("Chamos: not enough resources can be provided for `chamos_sock` to be "
-                       "created \n");
+                DEBUG("Chamos: not enough resources can be provided for `chamos_sock` to be "
+                      "created \n");
             }
             continue;
         }
         if (err_rx == 0) {
-            printf("Chamos: packet doesn't have a payload, dropping \n");
+            DEBUG("Chamos: packet doesn't have a payload, dropping \n");
             continue;
         }
         if (chamos_parse_buff(&msg, chamos_buffer, err_rx) < 0) {
-            printf("Chamos: Couldn't parse received message.\n");
+            DEBUG("Chamos: Couldn't parse received message.\n");
         } else {
             flag_ack = true;
             if (msg_process(&msg) < 0) {
-                printf("Chamos: Couldn't process message.\n");
+                DEBUG("Chamos: Couldn't process message.\n");
                 flag_ack = false;
             }
         }
         if (server_send_ack(&msg, &remote, flag_ack) < 0) {
-            printf("Chamos: Couldn't send the ACK!\n");
+            DEBUG("Chamos: Couldn't send the ACK!\n");
         }
     }
     return NULL;
@@ -183,20 +188,20 @@ int chamos_init(uint16_t port, gnrc_netif_t *netiface) {
     ipv6_addr_t group;
     msg_init_queue(chamos_msg_queue, CHAMOS_MSG_QUEUE_SIZE);
     if (ipv6_addr_from_str(&group, CONFIG_HEADER_ADDRESS_MULTICAST) == NULL) {
-        printf("Invalid IPv6 group address");
+        DEBUG("Invalid IPv6 group address");
         return -EINVAL;
     }
     if (gnrc_netif_ipv6_group_join(netiface, &group) < 0) {
-        printf("Couldn't join IPv6 group");
+        DEBUG("Couldn't join IPv6 group");
         return -1;
     }
     if (sock_udp_create(&chamos_sock, &server, NULL, 0) < 0) {
-        printf("Couldn't create UDP socket");
+        DEBUG("Couldn't create UDP socket");
         return -1;
     }
     memcpy(&server.addr, &group, sizeof(ipv6_addr_t));
     _netif = netiface;
-    printf("Success: started UDP server on port %u\n", server.port);
+    DEBUG("Success: started UDP server on port %u\n", server.port);
     thread_create(chamos_stack, sizeof(chamos_stack), THREAD_PRIORITY_MAIN - 1,
                   THREAD_CREATE_STACKTEST, chamos_thread, NULL, "chamos");
     return 0;

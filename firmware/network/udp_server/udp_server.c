@@ -27,6 +27,18 @@
 #include "thread.h"
 #include "udp_server.h"
 
+#if (CONFIG_DEBUG_UDP_SERVER) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_UDP_SERVER
+#else
+#define ENABLE_DEBUG 0
+#endif
+
+#include "debug.h"
+
 #define SERVER_MSG_QUEUE_SIZE (8)
 #define SERVER_BUFFER_SIZE (100)
 
@@ -46,7 +58,7 @@ void *_udp_serverf(void *args) {
     }
 
     server_running = true;
-    printf("Success: started UDP server on port %u\n", server.port);
+    DEBUG("Success: started UDP server on port %u\n", server.port);
     while (1) {
         int res =
             sock_udp_recv(&sock, server_buffer, sizeof(server_buffer) - 1, SOCK_NO_TIMEOUT, NULL);

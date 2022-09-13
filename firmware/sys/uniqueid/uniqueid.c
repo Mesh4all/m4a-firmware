@@ -32,6 +32,18 @@
 #elif MODULE_PERIPH_HWRNG
 #include "periph/hwrng.h"
 #endif
+
+#if (CONFIG_DEBUG_UNIQUEID) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_UNIQUEID
+#else
+#define ENABLE_DEBUG 0
+#endif
+#include "debug.h"
+
 void subnet_to_ipv6(ipv6_addr_t *addr) {
 
 #ifdef CONFIG_MODE_STATIC

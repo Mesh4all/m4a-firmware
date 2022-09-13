@@ -30,6 +30,18 @@
 #include "net/netdev.h"
 #include "radio.h"
 
+#if (CONFIG_DEBUG_RADIO) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_RADIO
+#else
+#define ENABLE_DEBUG 0
+#endif
+
+#include "debug.h"
+
 static uint8_t radio_devices[] = {NETDEV_AT86RF215, NETDEV_AT86RF2XX, NETDEV_CC2538};
 
 #ifdef CONFIG_MODE_SUB_24GHZ
@@ -65,8 +77,8 @@ int8_t get_ieee802154_iface(void) {
             return -1;
         }
     }
-    printf("Error: Radio interface doesn't exist, File:%s line:%d function: %s\n", __FILE__,
-           __LINE__, __func__);
+    DEBUG("Error: Radio interface doesn't exist, File:%s line:%d function: %s\n", __FILE__,
+          __LINE__, __func__);
     return -1;
 }
 
@@ -80,7 +92,7 @@ int8_t get_netopt_tx_power(int16_t txpower) {
 
     res = netif_get_opt(iface, NETOPT_TX_POWER, 0, &txpower, sizeof(txpower));
     if (res >= 0) {
-        printf("TX-Power: %" PRIi16 "dBm \n", txpower);
+        DEBUG("TX-Power: %" PRIi16 "dBm \n", txpower);
     } else {
         return -1;
     }
@@ -98,7 +110,7 @@ int8_t get_netopt_channel(int16_t channel) {
 
     res = netif_get_opt(iface, NETOPT_CHANNEL, 0, &channel, sizeof(channel));
     if (res >= 0) {
-        printf("Channel: %" PRIi16 " \n", channel);
+        DEBUG("Channel: %" PRIi16 " \n", channel);
     } else {
         return -1;
     }
@@ -114,14 +126,14 @@ int8_t set_netopt_tx_power(int16_t txpower) {
     }
     netif_t *iface = netif_get_by_id(index);
     if (txpower < TX_POWER_MIN || txpower > TX_POWER_MAX) {
-        printf("Error: the txPower must be between %d dbm and %d dbm \n", TX_POWER_MIN,
-               TX_POWER_MAX);
+        DEBUG("Error: the txPower must be between %d dbm and %d dbm \n", TX_POWER_MIN,
+              TX_POWER_MAX);
         return -1;
     }
 
     res = netif_set_opt(iface, NETOPT_TX_POWER, 0, &txpower, sizeof(txpower));
     if (res >= 0) {
-        printf(" TX-Power: %" PRIi16 "dBm \n", txpower);
+        DEBUG(" TX-Power: %" PRIi16 "dBm \n", txpower);
     } else {
         return -1;
     }
@@ -138,18 +150,18 @@ int8_t set_netopt_channel(int16_t channel) {
     netif_t *iface = netif_get_by_id(index);
 #ifdef CONFIG_MODE_SUB_24GHZ
     if (channel < 0 || channel > 10) {
-        printf("Error: the channels must be between 0 and  10 \n");
+        DEBUG("Error: the channels must be between 0 and  10 \n");
         return -1;
     }
 #else
     if (channel < 11 || channel > 26) {
-        printf("Error: the channels must be between 11 and  26 \n");
+        DEBUG("Error: the channels must be between 11 and  26 \n");
         return -1;
     }
 #endif
     res = netif_set_opt(iface, NETOPT_CHANNEL, 0, &channel, sizeof(channel));
     if (res >= 0) {
-        printf(" channel: %" PRIi16 " \n", channel);
+        DEBUG(" channel: %" PRIi16 " \n", channel);
     } else {
         return -1;
     }
@@ -161,14 +173,14 @@ int8_t set_sleep_interface(void) {
     int ieee802154_iface = get_ieee802154_iface();
     netopt_state_t state = NETOPT_STATE_SLEEP;
     if (ieee802154_iface == -1) {
-        printf("Error: could not get the iface.\n");
+        DEBUG("Error: could not get the iface.\n");
         return -1;
     }
 
     netif_t *netif = netif_get_by_id(ieee802154_iface);
     int err = netif_set_opt(netif, NETOPT_STATE, 0, &state, sizeof(netopt_state_t));
     if (err < 0) {
-        printf("Error: failed to the change status interface.\n");
+        DEBUG("Error: failed to the change status interface.\n");
         return -1;
     }
     return 0;
@@ -178,7 +190,7 @@ int8_t set_awake_interface(void) {
     int ieee802154_iface = get_ieee802154_iface();
     netopt_state_t state = NETOPT_STATE_IDLE;
     if (ieee802154_iface == -1) {
-        printf("Error: could not get the iface.\n");
+        DEBUG("Error: could not get the iface.\n");
         return -1;
     }
 
@@ -186,7 +198,7 @@ int8_t set_awake_interface(void) {
     int err = netif_set_opt(netif, NETOPT_STATE, 0, &state, sizeof(netopt_state_t));
 
     if (err < 0) {
-        printf("Error: failed to the change status interface.\n");
+        DEBUG("Error: failed to the change status interface.\n");
         return -1;
     }
     return 0;
@@ -208,13 +220,13 @@ int8_t initial_radio_setup(void) {
 
     err = set_netopt_tx_power(radio_tx);
     if (err == -1) {
-        printf("Error: Failed to add TX_power.\n");
+        DEBUG("Error: Failed to add TX_power.\n");
         return err;
     }
 
     err = set_netopt_channel(radio_channel);
     if (err == -1) {
-        printf("Error: Failed to add CHANNEL.\n");
+        DEBUG("Error: Failed to add CHANNEL.\n");
         return err;
     }
 

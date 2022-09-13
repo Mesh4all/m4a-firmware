@@ -25,12 +25,24 @@
 #include "net/ipv6/addr.h"
 #include "udp_client.h"
 
+#if (CONFIG_DEBUG_UDP_CLIENT) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_UDP_CLIENT
+#else
+#define ENABLE_DEBUG 0
+#endif
+
+#include "debug.h"
+
 int udp_send(const uint16_t port, char *address, uint8_t *message, size_t *payload_len) {
     int res;
     sock_udp_ep_t remote = {.family = AF_INET6};
 
     if (ipv6_addr_from_str((ipv6_addr_t *)&remote.addr, address) == NULL) {
-        puts("Error: unable to parse destination address");
+        DEBUG("Error: unable to parse destination address");
         return 1;
     }
     if (ipv6_addr_is_link_local((ipv6_addr_t *)&remote.addr)) {
@@ -40,9 +52,9 @@ int udp_send(const uint16_t port, char *address, uint8_t *message, size_t *paylo
     }
     remote.port = port;
     if ((res = sock_udp_send(NULL, message, *payload_len, &remote)) < 0) {
-        puts("could not send");
+        DEBUG("could not send");
     } else {
-        printf("Success: send %u bytes  from %s \n", (unsigned)res, address);
+        DEBUG("Success: send %u bytes  from %s \n", (unsigned)res, address);
     }
     return 0;
 }

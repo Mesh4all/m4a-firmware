@@ -29,8 +29,15 @@
 #include "storage.h"
 #include "mtd_flashpage.h"
 
+#if (CONFIG_DEBUG_STORAGE) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_STORAGE
+#else
 #define ENABLE_DEBUG 0
-
+#endif
 #include "debug.h"
 
 static mtd_flashpage_t _dev = MTD_FLASHPAGE_INIT_VAL(8);
@@ -72,8 +79,8 @@ int mtd_save_compress(void *value, uint16_t len) {
     DEBUG("numpages : %u\n", num_pages);
     if (num_pages >= MAX_NUMOF_FLASHPAGES) {
         DEBUG("error: Unavailable Memory to save the required data, file: %s, line: %d, "
-               "function: %s\n",
-               __FILE__, __LINE__, __FUNCTION__);
+              "function: %s\n",
+              __FILE__, __LINE__, __FUNCTION__);
         return -1;
     }
     for (uint16_t i = 0; i < num_pages; i++) {
@@ -81,7 +88,7 @@ int mtd_save_compress(void *value, uint16_t len) {
         ret = mtd_erase_flashpage(storage_addr);
         if (ret != 0) {
             DEBUG("error: Failed erasing data: file: %s, line: %d, function: %s\n", __FILE__,
-                   __LINE__, __FUNCTION__);
+                  __LINE__, __FUNCTION__);
             return ret;
         }
     }
@@ -109,7 +116,7 @@ int mtd_load(void *value, uint16_t len) {
     }
     if (num_pages >= MAX_NUMOF_FLASHPAGES) {
         DEBUG("error: Overload Memory size, file: %s, line %d, function: %s", __FILE__, __LINE__,
-               __FUNCTION__);
+              __FUNCTION__);
         return -1;
     }
     for (uint8_t i = 0; i < num_pages; i++) {

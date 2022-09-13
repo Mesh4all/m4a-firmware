@@ -23,6 +23,18 @@
 #include "net_tools.h"
 #include "uniqueid.h"
 
+#if (CONFIG_DEBUG_RPL_PROTOCOL) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_RPL_PROTOCOL
+#else
+#define ENABLE_DEBUG 0
+#endif
+
+#include "debug.h"
+
 int8_t rpl_init(kernel_pid_t iface_pid) {
     if (gnrc_netif_get_by_pid(iface_pid) == NULL) {
         puts("unknown interface specified");
@@ -30,7 +42,7 @@ int8_t rpl_init(kernel_pid_t iface_pid) {
     }
 
     gnrc_rpl_init(iface_pid);
-    printf("successfully initialized RPL on interface %d\n", iface_pid);
+    DEBUG("successfully initialized RPL on interface %d\n", iface_pid);
     return 0;
 }
 
@@ -39,12 +51,12 @@ int8_t gnrc_rpl_dodag_root(uint8_t dodag_instance, ipv6_addr_t *root_address) {
     gnrc_rpl_instance_t *inst = gnrc_rpl_root_init(dodag_instance, root_address, false, false);
     if (inst == NULL) {
         char addr_str[IPV6_ADDR_MAX_STR_LEN];
-        printf("error: could not add DODAG (%s) to instance (%d)\n",
-               ipv6_addr_to_str(addr_str, root_address, sizeof(addr_str)), dodag_instance);
+        DEBUG("error: could not add DODAG (%s) to instance (%d)\n",
+              ipv6_addr_to_str(addr_str, root_address, sizeof(addr_str)), dodag_instance);
         return -1;
     }
 
-    printf("successfully added a new RPL DODAG\n");
+    DEBUG("successfully added a new RPL DODAG\n");
     return 0;
 }
 
@@ -52,16 +64,16 @@ int8_t rpl_dodag_remove(uint8_t instance_id) {
     gnrc_rpl_instance_t *inst;
 
     if ((inst = gnrc_rpl_instance_get(instance_id)) == NULL) {
-        printf("error: could not find the instance (%d)\n", instance_id);
+        DEBUG("error: could not find the instance (%d)\n", instance_id);
         return -1;
     }
 
     if (gnrc_rpl_instance_remove(inst) == false) {
-        printf("error: could not remove instance (%d)\n", instance_id);
+        DEBUG("error: could not remove instance (%d)\n", instance_id);
         return -1;
     }
 
-    printf("success: removed instance (%d)\n", instance_id);
+    DEBUG("success: removed instance (%d)\n", instance_id);
     return 0;
 }
 
@@ -69,21 +81,21 @@ int8_t rpl_setup(uint8_t mode) {
     int8_t err = 0;
     ipv6_addr_t ip;
     if (mode > 1) {
-        printf("Error: Rpl mode not accepted\n");
+        DEBUG("Error: Rpl mode not accepted\n");
     }
     err = initial_radio_setup();
     if (err != 0) {
-        printf("Error: couldn't init the radio module .\n");
+        DEBUG("Error: couldn't init the radio module .\n");
         return -1;
     }
     kernel_pid_t iface_index = get_ieee802154_iface();
     if (iface_index == -1) {
-        printf("Error: could not get the iface.\n");
+        DEBUG("Error: could not get the iface.\n");
         return -1;
     }
     err = rpl_init(iface_index);
     if (err != 0) {
-        printf("Error: couldn't init the RPL .\n");
+        DEBUG("Error: couldn't init the RPL .\n");
         return -1;
     }
     if (mode == DODAG || CONFIG_IS_DODAG == DODAG) {
@@ -92,15 +104,14 @@ int8_t rpl_setup(uint8_t mode) {
             subnet_to_ipv6(&ip);
             if (gnrc_netif_ipv6_addr_add(gnrc_netif_get_by_pid(iface_index), &ip, 64,
                                          GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID) < 0) {
-                printf("Error: Couldn't add IPv6 global address\n");
+                DEBUG("Error: Couldn't add IPv6 global address\n");
                 return -1;
             }
         }
         err = gnrc_rpl_dodag_root(CONFIG_DODAG_INSTANCE, &ip);
         if (err < 0) {
-            printf(
-                "Error: Rpl root node ipv6 couldn't set ipv6 global address, File: %s line: %d\n",
-                __FILE__, __LINE__);
+            DEBUG("Error: Rpl root node ipv6 couldn't set ipv6 global address, File: %s line: %d\n",
+                  __FILE__, __LINE__);
             return -1;
         }
     }
