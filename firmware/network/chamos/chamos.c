@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /**
  * @brief   CHAMOS  Communication Handler for Addressing Management | Origin Server
  *
@@ -31,7 +32,7 @@
 #define SERVER_BUFFER_SIZE (CONFIG_SERVER_BUFFER_SIZE)
 
 gnrc_netif_t *_netif;
-sock_udp_t chamos_sock = {};
+sock_udp_t chamos_sock;
 char chamos_stack[THREAD_STACKSIZE_DEFAULT];
 
 int server_send_ack(chamos_msg_t *msg, sock_udp_ep_t *remote, bool flag_ack_val) {

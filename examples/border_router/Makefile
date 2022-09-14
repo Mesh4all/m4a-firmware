@@ -23,23 +23,28 @@ DEVELHELP ?= 1
 QUIET ?= 1
 
 HOST_IPV6 ?= 2001:db8::1
-IFTYPE ?= USB
+IFTYPE ?= ETHOS
 
 CHAMOC_DIR ?= ../../dist/tools/chamoc
 ETHOS_TOOL ?= $(RIOTBASE)/dist/tools/ethos
+ETHOS_BAUDRATE ?= 115200
 
-ifeq (${IFTYPE},ETHOS)
-	TAP := tap0
-	USEMODULE += stdio_ethos
-	ETHOS_BAUDRATE ?= 115200
-	FEATURES_REQUIRED += periph_uart
-	CFLAGS += -DETHOS_BAUDRATE=$(ETHOS_BAUDRATE)
-	TERMPROG ?= $(ETHOS_TOOL)/ethos
-	TERMFLAGS ?= ${TAP} ${PORT} ${ETHOS_BAUDRATE}
-else ifeq (USB,${IFTYPE})
-	USEMODULE += stdio_cdc_acm
-	USEMODULE += usbus_cdc_ecm
-	USEMODULE += auto_init_usbus
+ifneq (,$(filter native,$(BOARD)))
+	ZEP_DEVICES ?= 1
+	include $(CURDIR)/Makefile.native.conf
+else
+	ifeq (${IFTYPE},ETHOS)
+		TAP ?= tap0
+		USEMODULE += stdio_ethos
+		FEATURES_REQUIRED += periph_uart
+		CFLAGS += -DETHOS_BAUDRATE=$(ETHOS_BAUDRATE)
+		TERMPROG ?= $(ETHOS_TOOL)/ethos
+		TERMFLAGS ?= ${TAP} ${PORT} ${ETHOS_BAUDRATE}
+	else ifeq (USB,${IFTYPE})
+		USEMODULE += stdio_cdc_acm
+		USEMODULE += usbus_cdc_ecm
+		USEMODULE += auto_init_usbus
+	endif
 endif
 
 install:
