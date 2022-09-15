@@ -48,11 +48,11 @@ using net-tools
 ...
 
 with ip address command.
-```sh
+
     ip address show
     # Output
     22: enx5a008df2d56b: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel s
-...
+
         valid_lft forever preferred_lft forever
     inet6 2001:db8::1/64 scope global
        valid_lft forever preferred_lft forever

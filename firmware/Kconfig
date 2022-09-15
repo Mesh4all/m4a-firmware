@@ -14,3 +14,5 @@ config IEEE_802154
     default n
 endmenu #interface
 endmenu
+
+rsource "Kconfig.debug"

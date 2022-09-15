@@ -23,38 +23,46 @@
 #include "ds18.h"
 #include "board.h"
 
+#if (CONFIG_DEBUG_DS18_SENSOR) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_DS18_SENSOR
+#else
+#define ENABLE_DEBUG 0
+#endif
+
+#include "debug.h"
+
 ds18_t thermo;
 
-int init_temperature_sensor (int pin)
-{
+int init_temperature_sensor(int pin) {
     thermo.params.pin = GPIO_PIN(0, pin);
     thermo.params.out_mode = GPIO_OD_PU;
 
     // initialize the device
     int res = ds18_init(&thermo, &thermo.params);
 
-    if (res == DS18_ERROR)
-    {
-        printf("DS18 not initialized\n");
+    if (res == DS18_ERROR) {
+        DEBUG("DS18 not initialized\n");
         return DS18_ERROR;
     } else {
-         printf("DS18 initialized\n");
+        DEBUG("DS18 initialized\n");
     }
 
     return 0;
 };
 
-int get_temperature_value (int16_t* output)
-{
+int get_temperature_value(int16_t *output) {
     int16_t temp;
 
     int res = ds18_get_temperature(&thermo, &temp);
 
-    if (res == DS18_OK)
-    {
+    if (res == DS18_OK) {
         *output = temp;
     } else {
-        printf("Program halted, review configuration and try again\n");
+        DEBUG("Program halted, review configuration and try again\n");
         return DS18_ERROR;
     }
 
