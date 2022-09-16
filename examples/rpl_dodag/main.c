@@ -15,7 +15,7 @@
  */
 
 /**
- * @brief      Example RPL DAG
+ * @brief       Example RPL DODAG
  *
  * @author      xkevin190 <kevinvelasco193@gmail.com>
  *
@@ -26,23 +26,28 @@
 
 #include "shell.h"
 #include "log.h"
-
 #include "rpl_protocol.h"
+#include "net_tools.h"
+#include "radio.h"
 
 #define MAIN_QUEUE_SIZE (8)
+#ifndef CONFIG_DODAG_IPV6_ADDRESS
+#define CONFIG_DODAG_IPV6_ADDRESS "2001:db8::1"
+#endif
 
 msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
-shell_command_t shell_extended_commands[] = {{NULL, NULL, NULL}};
 
 int main(void) {
     LOG_INFO("~~ Welcome to rpl exam ~~\n");
     /* Start shell */
     char line_buf[SHELL_DEFAULT_BUFSIZE];
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
-
-    rpl_setup(DAG);
-
-    shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
+    ipv6_addr_t addr;
+    ipv6_addr_from_str(&addr, CONFIG_DODAG_IPV6_ADDRESS);
+    int8_t iface_idx = get_ieee802154_iface();
+    set_ipv6_global(iface_idx, addr, 64);
+    rpl_setup(DODAG);
+    shell_run(NULL, line_buf, SHELL_DEFAULT_BUFSIZE);
 
     return 0;
 }

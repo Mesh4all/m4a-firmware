@@ -15,7 +15,7 @@
  */
 
 /**
- * @brief       Example RPL DODAG
+ * @brief      Example RPL DAG
  *
  * @author      xkevin190 <kevinvelasco193@gmail.com>
  *
@@ -24,6 +24,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "msg.h"
 #include "shell.h"
 #include "log.h"
 
@@ -32,7 +33,6 @@
 #define MAIN_QUEUE_SIZE (8)
 
 msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
-shell_command_t shell_extended_commands[] = {{NULL, NULL, NULL}};
 
 int main(void) {
     LOG_INFO("~~ Welcome to rpl exam ~~\n");
@@ -40,9 +40,9 @@ int main(void) {
     char line_buf[SHELL_DEFAULT_BUFSIZE];
     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
 
-    rpl_setup(DODAG);
+    rpl_setup(DAG);
 
-    shell_run(shell_extended_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
+    shell_run(NULL, line_buf, SHELL_DEFAULT_BUFSIZE);
 
     return 0;
 }
