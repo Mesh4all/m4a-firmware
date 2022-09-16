@@ -30,7 +30,8 @@
 #include "net/netdev.h"
 #include "radio.h"
 
-static uint8_t radio_devices[] = {NETDEV_AT86RF215, NETDEV_AT86RF2XX, NETDEV_CC2538};
+static uint8_t radio_devices[] = {NETDEV_AT86RF215, NETDEV_AT86RF2XX, NETDEV_CC2538,
+                                  NETDEV_SOCKET_ZEP};
 
 #ifdef CONFIG_MODE_SUB_24GHZ
 int8_t subtract_to_interface = 1;
