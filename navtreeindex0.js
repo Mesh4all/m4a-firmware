@@ -214,13 +214,14 @@ var NAVTREEINDEX0 =
 "group__moisture__sensor.html":[5,2,1,1],
 "group__net__tools.html":[5,2,0,2,0],
 "group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8":[5,2,0,2,0,1],
-"group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8":[7,0,3,0,2,0,0,0],
+"group__net__tools.html#ga13a40ea6a36e5a331c54cd72513328e8":[7,0,3,0,2,0,0,1],
+"group__net__tools.html#ga304e490020ee6959af1938ca1a68837e":[7,0,3,0,2,0,0,0],
 "group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735":[5,2,0,2,0,4],
-"group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735":[7,0,3,0,2,0,0,3],
+"group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735":[7,0,3,0,2,0,0,4],
 "group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac":[5,2,0,2,0,2],
-"group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac":[7,0,3,0,2,0,0,1],
+"group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac":[7,0,3,0,2,0,0,2],
 "group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6":[5,2,0,2,0,3],
-"group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6":[7,0,3,0,2,0,0,2],
+"group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6":[7,0,3,0,2,0,0,3],
 "group__network.html":[5,2,0],
 "group__network__net__tools.html":[5,2,0,2],
 "group__peripherals.html":[5,2,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "group__tests.html":[5,0],
 "group__tests__at__client.html":[5,0,12],
 "group__tests__border__router.html":[5,0,3],
-"group__tests__driver__bme280.html":[5,0,1],
-"group__tests__ds18.html":[5,0,7]
+"group__tests__driver__bme280.html":[5,0,1]
 };
