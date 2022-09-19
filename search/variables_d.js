@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['value_627',['value',['../structat__request__t.html#a800eee200c88df1b9867f7da6c0a0bee',1,'at_request_t']]],
-  ['value_5fdesc_628',['value_desc',['../structat__list__t.html#a465fbb985ea922846539241520bb58cf',1,'at_list_t']]],
-  ['var1_629',['var1',['../structsome__struct__var.html#a41acfabcd0c9353b8dd139b162d69ef4',1,'some_struct_var']]],
-  ['var2_630',['var2',['../structsome__struct__var.html#a62ca43ef4c688405ff4c04e25fd794e8',1,'some_struct_var']]]
+  ['radio_5ftx_5fpower_612',['radio_tx_power',['../structstorage__data__t.html#a03a1163f53415c1a98577117de053d8b',1,'storage_data_t']]],
+  ['read_5for_5fwrite_613',['read_or_write',['../structat__request__t.html#a4515ec9f9852889561c6d320b07516a5',1,'at_request_t']]],
+  ['response_614',['response',['../structat__list__t.html#a3693aaf27c25d0ac59fe58d4ed6af3be',1,'at_list_t']]],
+  ['rpl_5finstance_615',['rpl_instance',['../structstorage__data__t.html#a0b95dd453b5a0b1401c5285ae90c2068',1,'storage_data_t']]],
+  ['rpl_5fmode_616',['rpl_mode',['../structstorage__data__t.html#a87d863f4e36aab745a5950648ae929f4',1,'storage_data_t']]],
+  ['rx_5fbuf_617',['rx_buf',['../structuart__buffer__t.html#a16a7a829699460b12ff2f7636d422f24',1,'uart_buffer_t']]],
+  ['rx_5fmem_618',['rx_mem',['../structuart__buffer__t.html#af936a4e99939fc5e90dde6c7d45c482f',1,'uart_buffer_t']]]
 ];

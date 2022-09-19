@@ -13,6 +13,7 @@ var annotated_dup =
     [ "sensors_t", "structsensors__t.html", "structsensors__t" ],
     [ "some_struct_var", "structsome__struct__var.html", "structsome__struct__var" ],
     [ "storage_data_t", "structstorage__data__t.html", "structstorage__data__t" ],
+    [ "topology_t", "structtopology__t.html", "structtopology__t" ],
     [ "uart_buffer_t", "structuart__buffer__t.html", "structuart__buffer__t" ],
     [ "udpf_payload", "structudpf__payload.html", "structudpf__payload" ]
 ];

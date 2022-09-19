@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"group__tests__driver__bme280.html":[5,0,1],
 "group__tests__ds18.html":[5,0,7],
 "group__tests__periph__adc.html":[5,0,8],
 "group__tests__periph__i2c.html":[5,0,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "meshme_2include_2periph__conf_8h.html#a160c7b1c3bc13c7cb5ac4ed375f4e21d":[7,0,0,2,0,2,8],
 "meshme_2include_2periph__conf_8h.html#a1643cfc64589407fb96b4cbf908689a5":[7,0,0,2,0,2,11],
 "meshme_2include_2periph__conf_8h.html#a274a2c123e3c7373d02a1f3c868790ae":[7,0,0,2,0,2,4],
-"meshme_2include_2periph__conf_8h.html#a2f0c741db24aa2ccded869ba53f6a302":[7,0,0,2,0,2,0],
-"meshme_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb":[7,0,0,2,0,2,6]
+"meshme_2include_2periph__conf_8h.html#a2f0c741db24aa2ccded869ba53f6a302":[7,0,0,2,0,2,0]
 };
