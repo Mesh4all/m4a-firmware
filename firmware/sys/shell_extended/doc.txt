@@ -1,0 +1,7 @@
+/**
+ * @defgroup sys_shell_extended Extends shell functionality
+ * @ingroup sys
+ *
+ * ## Shell extended
+ * ToDo
+ */
