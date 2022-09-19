@@ -1,0 +1,21 @@
+# MAC Addresses
+A := C3:20:D8:BF:73:D0:F6:69
+B := A6:5A:49:45:82:62:C3:F2
+C := 23:19:A4:BD:C2:1E:55:77
+D := 2A:3A:AC:FA:9A:EF:48:5E
+E := 10:A0:9E:04:71:15:6D:18
+
+# seed = 1663393381
+# Connections
+B	C	0.99
+C	D	0.87
+C	E	0.79
+A	E	0.47
+A	B	0.99
+
+# Node	X	Y	range	color
+# A	29	50	27	0x3af3bf81
+# B	69	93	25	0x1d79dfc0
+# C	64	63	37	0x3af3bf81
+# D	94	47	22	0x1d79dfc0
+# E	52	54	26	0x3af3bf81
