@@ -93,7 +93,10 @@ int8_t rpl_setup(uint8_t mode) {
         DEBUG("Error: could not get the iface.\n");
         return -1;
     }
-    err = rpl_init(iface_index);
+    if (mode == DAG)
+    {
+        err = rpl_init(iface_index);
+    }
     if (err != 0) {
         DEBUG("Error: couldn't init the RPL .\n");
         return -1;
@@ -101,7 +104,7 @@ int8_t rpl_setup(uint8_t mode) {
     if (mode == DODAG || CONFIG_IS_DODAG == DODAG) {
         err = get_ipv6_global(iface_index, &ip);
         if (err < 0) {
-            subnet_to_ipv6(&ip);
+            get_uid_ipv6(&ip, KCONFIG_UID_OPTION || UNIQUEID_STATIC_MODE);
             if (gnrc_netif_ipv6_addr_add(gnrc_netif_get_by_pid(iface_index), &ip, 64,
                                          GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID) < 0) {
                 DEBUG("Error: Couldn't add IPv6 global address\n");

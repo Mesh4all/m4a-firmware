@@ -44,50 +44,45 @@
 #endif
 #include "debug.h"
 
-void subnet_to_ipv6(ipv6_addr_t *addr) {
-    (void)addr;
-#ifdef CONFIG_MODE_STATIC
+void get_uid_ipv6(ipv6_addr_t *addr, uniqueid_mode_t mode) {
     ipv6_addr_t header = {
         .u8 = {0},
     };
-    char addr_cpu[CPUID_LEN] = {0};
-    CPUID(addr_cpu);
-    ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
-    memcpy((char *)addr->u8, (char *)header.u8, 4);
-    strncat((char *)addr->u8, addr_cpu, 4);
+    switch (mode) {
+    case UNIQUEID_STATIC_MODE:
+        ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
+        memcpy(addr->u8, header.u8, 8);
+        char addr_cpu[CPUID_LEN];
+        CPUID(addr_cpu);
+        memcpy(addr->u8 + LAST_OCTECTS, addr_cpu, CPUID_LEN <= 8? CPUID_LEN : OCTETS_BYTE_SIZE );
+        break;
+    case UNIQUEID_RANDOM_MODE:
+        ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
+        memcpy(addr->u8, header.u8, OCTETS_BYTE_SIZE);
+        union random_buff random_number = {0};
+        get_uid_seed(&random_number, OCTETS_BYTE_SIZE);
+        memcpy(addr->u8 + LAST_OCTECTS, random_number.u8, OCTETS_BYTE_SIZE);
+        break;
+    default:
+        break;
+    }
+}
 
-#endif
-
-#ifdef CONFIG_MODE_RANDOM
-    ipv6_addr_t header = {
-        .u8 = {0},
-    };
-    union random_buff random_number;
-    ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
-    memcpy((char *)addr->u8, (char *)header.u8, 4);
+uint32_t get_uid_seed(void *val, const uint8_t len) {
+    uint32_t rval;
 #if (MODULE_AT86RF2XX || MODULE_AT86RF215)
     int index = get_ieee802154_iface();
     netif_t *iface = netif_get_by_id(index);
-    netif_get_opt(iface, NETOPT_RANDOM, 0, &random_number, sizeof(random_number));
+    netif_get_opt(iface, NETOPT_RANDOM, 0, &rval, sizeof(uint32_t));
 #else
     hwrng_init();
-    hwrng_read(&random_number, sizeof(random_number));
+    hwrng_read(&rval, sizeof(rval));
 #endif
-    random_init(random_number.u32);
-    random_number.u32 = random_uint32();
-    strncat((char *)addr->u8, (char *)random_number.u8, 4);
-#endif
+    for (uint8_t i = 0; i < len; i++) {
+        random_init(rval);
+        rval = random_uint32();
+        memcpy(((uint8_t*)val + i), &rval, sizeof(uint8_t));
+    }
 
-#ifdef CONFIG_MODE_MANUAL
-    ipv6_addr_t header = {
-        .u8 = {0},
-    };
-    ipv6_addr_t subnet = {
-        .u8 = {0},
-    };
-    ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
-    ipv6_addr_from_str(&subnet, CONFIG_SUBNET_ADDRESS_ID);
-    memcpy((char *)addr->u8, (char *)header.u8, 4);
-    memcpy((char *)addr->u8 + 4, (char *)subnet.u8, 4);
-#endif
+    return 0;
 }

@@ -29,60 +29,28 @@
 #include "uniqueid.h"
 #include "unique_random.h"
 
-void get_unique_from_mac(ipv6_addr_t *output) {
-    ipv6_addr_t header = {
-        .u8 = {0},
-    };
-    char addr_cpu[CPUID_LEN] = {0};
-    CPUID(addr_cpu);
-    ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
-    memcpy((char *)output->u8, (char *)header.u8, 4);
-    strncat((char *)output->u8, addr_cpu, 4);
-    ipv6_addr_print(output);
+ipv6_addr_t addr;
+
+void test_get_ipv6_static(void){
+    get_uid_ipv6(&addr, UNIQUEID_STATIC_MODE);
+    ipv6_addr_print(&addr);
+    printf("\n");
 }
 
-void test_get_ipv6Address(void) {
-#if CONFIG_MODE_STATIC || CONFIG_MODE_MANUAL
-    ipv6_addr_t ipv6 = {
-        .u8 = {0},
-    };
-    ipv6_addr_t output = {
-        .u8 = {0},
-    };
+void test_get_ipv6_random(void){
+    get_uid_ipv6(&addr, UNIQUEID_RANDOM_MODE);
+    ipv6_addr_print(&addr);
     printf("\n");
-    subnet_to_ipv6(&ipv6);
-    ipv6_addr_print(&ipv6);
-    printf("\n");
-    get_unique_from_mac(&output);
-#if CONFIG_MODE_STATIC
-    TEST_ASSERT_EQUAL_INT(1, ipv6_addr_equal(&ipv6, &output));
-#elif CONFIG_MODE_MANUAL
-    TEST_ASSERT_EQUAL_INT(1, !ipv6_addr_equal(&ipv6, &output));
-#endif
-#endif
+}
 
-#ifdef CONFIG_MODE_RANDOM
-    ipv6_addr_t output1 = {
-        .u8 = {0},
-    };
-    ipv6_addr_t output2 = {
-        .u8 = {0},
-    };
-    subnet_to_ipv6(&output1);
-    subnet_to_ipv6(&output2);
-    printf("\nFirst random IPv6\n");
-    ipv6_addr_print(&output1);
-    printf("\nSecond random IPv6\n");
-    ipv6_addr_print(&output2);
-    TEST_ASSERT_EQUAL_INT(0, ipv6_addr_equal(&output1, &output2));
-    printf("\n\nBinary data printed\n");
+void test_uid_random_blocks(void){
     random_generator(64);
-#endif
 }
 
 Test *tests_get_unique_id(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
-        new_TestFixture(test_get_ipv6Address),
+        new_TestFixture(test_get_ipv6_static),
+        new_TestFixture(test_get_ipv6_random),
     };
 
     EMB_UNIT_TESTCALLER(tests_get_unique_id, NULL, NULL, fixtures);

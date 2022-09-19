@@ -32,29 +32,52 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#define LAST_OCTECTS (8)
+#define OCTETS_BYTE_SIZE (8)
+
+#ifdef CONFIG_MODE_STATIC
+#define KCONFIG_UID_OPTION (UNIQUEID_STATIC_MODE)
+#endif
+#ifdef CONFIG_MODE_RANDOM
+#define KCONFIG_UID_OPTION (UNIQUEID_RANDOM_MODE)
+#endif
+
 /**
-  * @brief  Get the CPU unique ID of this platform
-  * This function gets base cpu address using cpuid_get
-  *
-  * @param  id  pointer to char array with CPUID_LEN size.
-  *
-  */
-#define CPUID(id)  cpuid_get(id);
+ * @name Uniqueid modes
+ * @{
+ */
+typedef enum {
+    UNIQUEID_STATIC_MODE = 0,
+    UNIQUEID_RANDOM_MODE,
+} uniqueid_mode_t;
+
+/**@}*/
+
+/**
+ * @brief  Get the CPU unique ID of this platform
+ * This function gets base cpu address using cpuid_get
+ *
+ * @param  id  pointer to char array with CPUID_LEN size.
+ *
+ */
+#define CPUID(id) cpuid_get(id)
 
 /**
  * @brief  union to get 32 bit random number and convert to a byte array.
  */
 
 union random_buff {
-    uint8_t u8[4];   /*!< unint8 buff*/
-    uint32_t u32;    /*!< uint32 address*/
+    uint8_t u8[8];   /*!< unint8 buff*/
+    uint32_t u32[2]; /*!< uint32 address*/
 };
 /**
  * @brief This function get ipv6 address (mode: static (default), random, manual)
  * @param [out] addr Address in ipv6 format
  */
-void subnet_to_ipv6(ipv6_addr_t *addr);
+void get_uid_ipv6(ipv6_addr_t *addr, uniqueid_mode_t mode);
 
+uint32_t get_uid_seed(void *val, const uint8_t len);
 #ifdef __cplusplus
 }
 #endif
