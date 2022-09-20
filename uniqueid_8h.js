@@ -2,5 +2,12 @@ var uniqueid_8h =
 [
     [ "random_buff", "unionrandom__buff.html", "unionrandom__buff" ],
     [ "CPUID", "uniqueid_8h.html#a5cbb30009266fcb97959001bd91f9a8e", null ],
-    [ "subnet_to_ipv6", "uniqueid_8h.html#aa9cca7607c3704ae2651e221d1ab1fc3", null ]
+    [ "LAST_OCTECTS", "uniqueid_8h.html#ae18541d7ecd5cb4d922fc0b8d2ba07c8", null ],
+    [ "OCTETS_BYTE_SIZE", "uniqueid_8h.html#a5a8bf1dded6316fa15fa02e906ca4732", null ],
+    [ "uniqueid_mode_t", "uniqueid_8h.html#a363acb2470e2c1c921f6534fd71334c6", [
+      [ "UNIQUEID_STATIC_MODE", "uniqueid_8h.html#a363acb2470e2c1c921f6534fd71334c6ac1df61bcbb6c147e919a911d1966e1c9", null ],
+      [ "UNIQUEID_RANDOM_MODE", "uniqueid_8h.html#a363acb2470e2c1c921f6534fd71334c6af2bb0d9a392e5f8dd84ebf9df2fb73db", null ]
+    ] ],
+    [ "get_uid_ipv6", "uniqueid_8h.html#a2c94de66b1de75fddb67bf90e5c0e581", null ],
+    [ "get_uid_seed", "uniqueid_8h.html#a254c59fdfc9fd0c392ac499d774b8971", null ]
 ];

@@ -8,6 +8,7 @@ var searchData=
   ['get_5fnetopt_5ftx_5fpower_496',['get_netopt_tx_power',['../radio_8h.html#a907834f2e7b62365d4157dceb87a6921',1,'radio.h']]],
   ['get_5ftemperature_5fvalue_497',['get_temperature_value',['../ds18__sensor_8h.html#a2221ee0e3051d5d6ce49d845b8f181f8',1,'ds18_sensor.h']]],
   ['get_5ftime_5fsntp_498',['get_time_sntp',['../protocol__sntp_8h.html#abc2f86dcd641a25da830f55cf4b3a7d4',1,'protocol_sntp.h']]],
-  ['get_5fwired_5fiface_499',['get_wired_iface',['../group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac',1,'net_tools.h']]],
-  ['gnrc_5frpl_5fdodag_5froot_500',['gnrc_rpl_dodag_root',['../group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7',1,'rpl_protocol.h']]]
+  ['get_5fuid_5fipv6_499',['get_uid_ipv6',['../uniqueid_8h.html#a2c94de66b1de75fddb67bf90e5c0e581',1,'uniqueid.h']]],
+  ['get_5fwired_5fiface_500',['get_wired_iface',['../group__net__tools.html#gaae4a447cac40d71c1acb8c62cf76b9ac',1,'net_tools.h']]],
+  ['gnrc_5frpl_5fdodag_5froot_501',['gnrc_rpl_dodag_root',['../group__rpl__protocol.html#ga4650598dee4caed930cd020ed7ed05f7',1,'rpl_protocol.h']]]
 ];

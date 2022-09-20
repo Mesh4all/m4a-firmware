@@ -1,5 +1,5 @@
 var unionrandom__buff =
 [
-    [ "u32", "unionrandom__buff.html#a505a71c9f807fe3b8e7db7f34b76c579", null ],
-    [ "u8", "unionrandom__buff.html#abaa8b50912f10ad06bfb296e71d6ed8a", null ]
+    [ "u32", "unionrandom__buff.html#ab8bc104b642540e5732c8a45ffec31ab", null ],
+    [ "u8", "unionrandom__buff.html#afeaf5cb8bcc585d754cc9174e55dd4b6", null ]
 ];
