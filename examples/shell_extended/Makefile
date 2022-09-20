@@ -1,10 +1,11 @@
 APPLICATION ?= shell_extended
 
 include ../Makefile.common
-# include desired modules:
-USEMODULE += radio
-# include the shell:
+
+# Include the shell extended module, shell and shell commands modules
+# will be implicitly included.
 USEMODULE += shell_extended
-USEMODULE += xtimer
+# Include desired modules where shell extended is enabled.
+USEMODULE += uniqueid
 
 include $(RIOTBASE)/Makefile.include

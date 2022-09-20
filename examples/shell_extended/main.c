@@ -15,9 +15,9 @@
  */
 /**
  * @ingroup     examples_shell_extended
- *
- * @brief       shows some uses of **shell_tools** module
- * @author      luisan00    <luisan00@hotmail.com>
+ * @brief       shows some uses of **shell-extended** module
+ * @author      Luis A. Ruiz    <luisan00@hotmail.com>
+ * @author      Eduardo Azócar  <eduazocarv@gmail.com>
  */
 
 #include <stdio.h>
@@ -26,7 +26,7 @@
 #include "shell_extended.h"
 
 #define MAIN_QUEUE_SIZE (8)
-static msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
+msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
 
 int main(void) {
     puts("Shell extended example\n");

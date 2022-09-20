@@ -1,0 +1,10 @@
+/**
+@defgroup   tests_shell_extended Shell-Extended unit tests
+@ingroup    tests
+@{
+
+## Shell Extended Tests.
+
+@}
+
+ */

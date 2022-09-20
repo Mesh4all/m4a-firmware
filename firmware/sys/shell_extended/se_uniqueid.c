@@ -14,21 +14,35 @@
  * limitations under the License.
  */
 /**
- * @brief   Extends functionality on the shell for uniqueid
+ * @brief   Extends the shell functionality for uniqueid
  * @author  Luis A. Ruiz    <luisan00@hotmail.com>
  * @author  Eduardo Azócar  <eduazocarv@gmail.com>
  */
 
-#include "shell_extended.h"
-#include "kernel_defines.h"
+#include <stdio.h>
+#include <string.h>
+#include "uniqueid.h"
 
-#if IS_USED(MODULE_UNIQUEID)
-int uid_cmd(int argc, char **argv);
-#endif
+void uid_usage(void) {
+    puts("Uniqueid Tool");
+    puts("Usage: uid [static|rand]");
+    puts("");
+}
 
-const shell_command_t shell_extended_commands[] = {
-#if IS_USED(MODULE_UNIQUEID)
-    {"uid", "uniqueid commands", uid_cmd},
-#endif
-    {NULL, NULL, NULL},
-};
+int uid_cmd(int argc, char **argv) {
+    (void)argc;
+    (void)argv;
+
+    if ((argc < 2) || (argc > 2) || (strcmp(argv[1], "help") == 0)) {
+        uid_usage();
+        return 0;
+    }
+
+    if (strcmp(argv[1], "static") == 0) {
+        puts("ToDo: return static id (cpu-based)");
+    } else if (strcmp(argv[1], "random") == 0) {
+        puts("Todo: return random id");
+    }
+
+    return 0;
+}

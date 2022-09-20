@@ -13,26 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /**
- * @brief   Extends functionality on the shell for uniqueid
- * @author  luisan00    <luisan00@hotmail.com>
+ * @brief
+ *
+ * @author      Luis A. Ruiz <luisan00@hotmail.com>
+ * @author      Eduardo Azócar  <eduazocarv@gmail.com>
+ *
  */
-
-#include <stdio.h>
-#include "radio.h"
-
-int radio_usage(int argc, char **argv) {
-    (void) argc;
-    (void) argv;
-    puts("Low level routines for radio module");
-    puts("usage: uniqueid <command> [arguments]");
-    puts("commands:");
-    puts("\tiface_identify");
-    puts("\tget_iface");
-    puts("\tget_channel");
-    puts("\tget_power");
-    puts("\tset_channel [channel_number]");
-    puts("\tset_power   [power_value]");
-    puts("");
-    return 0;
-}

@@ -19,7 +19,8 @@
  * @{
  * @file
  * @brief       Extends shell functionality
- * @author      luisan00 <luisan00@hotmail.com>
+ * @author      Luis A. Ruiz <luisan00@hotmail.com>
+ * @author      Eduardo Azócar  <eduazocarv@gmail.com>
  *
  */
 #ifndef SHELL_EXTENDED_H
