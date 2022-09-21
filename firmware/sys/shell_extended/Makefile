@@ -6,4 +6,8 @@ ifneq (,$(filter uniqueid,$(USEMODULE)))
   SRC += se_uniqueid.c
 endif
 
+ifneq (,$(filter storage,$(USEMODULE)))
+  SRC += se_storage.c
+endif
+
 include $(RIOTBASE)/Makefile.base
