@@ -44,7 +44,8 @@
 extern "C" {
 #endif
 
-#define PREFIX_LSHIFTTED_BITS   (8)
+#define BITS_IN_A_BYTE        (8)
+#define PREFIX_LSHIFTTED_BITS (8)
 
 /**
  * @brief Function to check if exist a wired interface
@@ -70,7 +71,7 @@ int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr);
  *
  * @param[in] iface_index  index that will be save the ipv6 address.
  * @param[in] ip Address ipv6 global to set.
- * @param[in] prefix Networks prefix,express the subnet size.
+ * @param[in] prefix Networks prefix represent the subnet size.
  * @retval 0 Correctly set up of the @p ip in the interface.
  * @retval -1 Couldn't set the @p ip address in the interface.
  */
@@ -81,12 +82,27 @@ int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix)
  *
  * @param[in] iface_index  index that will be save the ipv6 address.
  * @param[in] ip Address ipv6 multicast to set
- * @param[in] prefix Networks prefix,express the subnet size.
+ * @param[in] prefix Networks prefix represent the subnet size.
  * @retval  0 Correctly set up of the @p ip in the interface.
  * @retval -1 Couldn't set the @p ip address in the interface.
  */
 int8_t set_ipv6_multicast(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix);
 
+#if (MODULE_UNIQUEID) || (DOXYGEN)
+/**
+ * @brief Function to set an ipv6 global address in an iface.
+ *
+ * @param[in] iface_index  index that will be save the ipv6 address.
+ * @param[inout] ip Address ipv6 to set. the octets of the required IPv6 address should be
+ * previously defined (depending on the network prefixes)
+ * @param[in] prefix Networks prefix represent the subnet size.
+ * @param uid_mode define if the uniqueid generate random or static ipv6 address
+ * @retval  0 Correctly set up of the @p ip in the interface.
+ * @retval -1 Couldn't set the @p ip address in the interface.
+ */
+int8_t set_ipv6_by_uid(const kernel_pid_t iface_index, ipv6_addr_t *ip, const uint8_t prefix,
+                       const uint8_t uid_mode);
+#endif
 #ifdef __cplusplus
 }
 #endif

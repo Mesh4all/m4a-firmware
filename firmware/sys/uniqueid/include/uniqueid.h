@@ -77,7 +77,7 @@ union random_buff {
  */
 void get_uid_ipv6(ipv6_addr_t *addr, uniqueid_mode_t mode);
 
-uint32_t get_uid_seed(void *val, const uint8_t len);
+uint32_t get_uid_seed(void *val, uint8_t len, uint8_t uid_mode);
 #ifdef __cplusplus
 }
 #endif

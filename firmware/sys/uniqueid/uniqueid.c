@@ -27,9 +27,7 @@
 #include "random.h"
 #include "net/netdev/ieee802154.h"
 #include "net/gnrc.h"
-#if MODULE_AT86RF2XX || MODULE_AT86RF215
-#include "radio.h"
-#elif MODULE_PERIPH_HWRNG
+#if MODULE_PERIPH_HWRNG
 #include "periph/hwrng.h"
 #endif
 
@@ -44,44 +42,44 @@
 #endif
 #include "debug.h"
 
-void get_uid_ipv6(ipv6_addr_t *addr, uniqueid_mode_t mode) {
-    ipv6_addr_t header = {
-        .u8 = {0},
-    };
-    switch (mode) {
+uint32_t get_uid_seed(void *val, uint8_t len, uint8_t uid_mode) {
+    uint32_t rval;
+    uint8_t cpuid_bytes = CPUID_LEN / 2;
+    char addr_cpu[CPUID_LEN];
+    CPUID(addr_cpu);
+    switch (uid_mode) {
     case UNIQUEID_STATIC_MODE:
-        ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
-        memcpy(addr->u8, header.u8, 8);
-        char addr_cpu[CPUID_LEN];
-        CPUID(addr_cpu);
-        memcpy(addr->u8 + LAST_OCTECTS, addr_cpu, CPUID_LEN <= 8? CPUID_LEN : OCTETS_BYTE_SIZE );
-        break;
+        if (len > cpuid_bytes) {
+            memcpy(val, addr_cpu, cpuid_bytes);
+            len = len - cpuid_bytes;
+            return get_uid_seed((uint8_t *)val + cpuid_bytes, len, UNIQUEID_RANDOM_MODE);
+        } else {
+            memcpy(val, addr_cpu, len);
+            break;
+        }
     case UNIQUEID_RANDOM_MODE:
-        ipv6_addr_from_str(&header, CONFIG_HEADER_ADDRESS_ID);
-        memcpy(addr->u8, header.u8, OCTETS_BYTE_SIZE);
-        union random_buff random_number = {0};
-        get_uid_seed(&random_number, OCTETS_BYTE_SIZE);
-        memcpy(addr->u8 + LAST_OCTECTS, random_number.u8, OCTETS_BYTE_SIZE);
+        DEBUG("rand mode\n");
+#if (MODULE_AT86RF2XX || MODULE_AT86RF215)
+        netdev_type_t at_ifaces[] = {NETDEV_AT86RF2XX, NETDEV_AT86RF215};
+        gnrc_netif_t *iface = NULL;
+        for (uint8_t i = 0; i < sizeof(at_ifaces); i++) {
+            if ((iface = gnrc_netif_get_by_type(at_ifaces[i], NETDEV_INDEX_ANY)) != NULL) {
+                break;
+            }
+        }
+        netif_get_opt(&iface->netif, NETOPT_RANDOM, 0, &rval, sizeof(uint32_t));
+#else
+        hwrng_init();
+        hwrng_read(&rval, sizeof(rval));
+#endif
+        for (uint8_t i = 0; i < len; i++) {
+            random_init(rval);
+            rval = random_uint32();
+            memcpy(((uint8_t *)val + i), &rval, sizeof(uint8_t));
+        }
         break;
     default:
         break;
-    }
-}
-
-uint32_t get_uid_seed(void *val, const uint8_t len) {
-    uint32_t rval;
-#if (MODULE_AT86RF2XX || MODULE_AT86RF215)
-    int index = get_ieee802154_iface();
-    netif_t *iface = netif_get_by_id(index);
-    netif_get_opt(iface, NETOPT_RANDOM, 0, &rval, sizeof(uint32_t));
-#else
-    hwrng_init();
-    hwrng_read(&rval, sizeof(rval));
-#endif
-    for (uint8_t i = 0; i < len; i++) {
-        random_init(rval);
-        rval = random_uint32();
-        memcpy(((uint8_t*)val + i), &rval, sizeof(uint8_t));
     }
 
     return 0;

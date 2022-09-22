@@ -3,11 +3,3 @@ USEMODULE += ipv6_addr
 USEMODULE += netdev_default
 USEMODULE += gnrc_ipv6_default
 USEMODULE += auto_init_gnrc_netif
-
-ifneq (,$(filter at86rf2xx at86rf215,$(USEMODULE)))
-    USEMODULE += radio
-else
-    ifneq (,$(filter periph_hwrng,$(HAS_PERIPH_HWRNG)))
-        USEMODULE += periph_hwrng
-    endif
-endif
