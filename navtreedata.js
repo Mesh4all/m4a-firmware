@@ -26,10 +26,10 @@ var NAVTREE =
     [ "m4a reference firmware", "index.html", null ],
     [ "Unit-testing", "md_tests_README.html", null ],
     [ "RIOT bootloader test", "md_tests_riotboot_README.html", [
-      [ "Automatic test", "md_tests_riotboot_README.html#autotoc_md102", null ]
+      [ "Automatic test", "md_tests_riotboot_README.html#autotoc_md104", null ]
     ] ],
     [ "Riotboot_dfu", "md_tests_riotboot_dfu_README.html", [
-      [ "Usage", "md_tests_riotboot_dfu_README.html#autotoc_md103", null ]
+      [ "Usage", "md_tests_riotboot_dfu_README.html#autotoc_md105", null ]
     ] ],
     [ "WiFi subsystem", "md_wifi-subsys_README.html", null ],
     [ "Modules", "modules.html", "modules" ],

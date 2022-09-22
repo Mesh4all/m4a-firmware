@@ -1,4 +1,4 @@
-<map id="tests/uniqueid/unique_random.h" name="tests/uniqueid/unique_random.h">
-<area shape="rect" id="node1" title="Randomizer to obtain values hex in binary." alt="" coords="5,5,197,52"/>
-<area shape="rect" id="node2" title=" " alt="" coords="61,100,142,129"/>
+<map id="tests/system_uniqueid/unique_random.h" name="tests/system_uniqueid/unique_random.h">
+<area shape="rect" id="node1" title="Randomizer to obtain values hex in binary." alt="" coords="5,5,204,52"/>
+<area shape="rect" id="node2" title=" " alt="" coords="64,100,145,129"/>
 </map>
