@@ -33,8 +33,9 @@ var searchData=
   ['ath_34',['ATH',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217a1ddbb366badfd3927bfcbfa67f3820a7',1,'at_client.h']]],
   ['ath0_35',['ATH0',['../at__client_8h.html#af14de5236b2168340b04ef3db3829217aff3ae73482bfa26a356b1b0d73a49223',1,'at_client.h']]],
   ['application_20to_20run_20a_20rpl_20dag_20node_36',['Application to run a Rpl DAG node',['../group__examples__rpl__dag.html',1,'']]],
-  ['application_20tests_20to_20each_20module_20and_20driver_37',['Application tests to each Module and driver',['../group__tests.html',1,'']]],
-  ['application_20to_20test_20the_20border_20router_20initialization_38',['Application to test the border router initialization',['../group__tests__border__router.html',1,'']]],
-  ['application_20test_20for_20bme280_39',['Application test for bme280',['../group__tests__driver__bme280.html',1,'']]],
-  ['application_20test_20to_20set_20parameters_20of_20a_20radio_20interface_2e_40',['Application test to set parameters of a radio interface.',['../group__tests__radio.html',1,'']]]
+  ['application_20example_20for_20the_20shell_20extended_20module_37',['Application example for the shell extended module',['../group__examples__shell__extended.html',1,'']]],
+  ['application_20tests_20to_20each_20module_20and_20driver_38',['Application tests to each Module and driver',['../group__tests.html',1,'']]],
+  ['application_20to_20test_20the_20border_20router_20initialization_39',['Application to test the border router initialization',['../group__tests__border__router.html',1,'']]],
+  ['application_20test_20for_20bme280_40',['Application test for bme280',['../group__tests__driver__bme280.html',1,'']]],
+  ['application_20test_20to_20set_20parameters_20of_20a_20radio_20interface_2e_41',['Application test to set parameters of a radio interface.',['../group__tests__radio.html',1,'']]]
 ];

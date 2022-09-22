@@ -26,10 +26,10 @@ var NAVTREE =
     [ "m4a reference firmware", "index.html", null ],
     [ "Unit-testing", "md_tests_README.html", null ],
     [ "RIOT bootloader test", "md_tests_riotboot_README.html", [
-      [ "Automatic test", "md_tests_riotboot_README.html#autotoc_md100", null ]
+      [ "Automatic test", "md_tests_riotboot_README.html#autotoc_md102", null ]
     ] ],
     [ "Riotboot_dfu", "md_tests_riotboot_dfu_README.html", [
-      [ "Usage", "md_tests_riotboot_dfu_README.html#autotoc_md101", null ]
+      [ "Usage", "md_tests_riotboot_dfu_README.html#autotoc_md103", null ]
     ] ],
     [ "WiFi subsystem", "md_wifi-subsys_README.html", null ],
     [ "Modules", "modules.html", "modules" ],
@@ -58,8 +58,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__tests__driver__bme280.html",
-"meshme_2include_2periph__conf_8h.html#a713e03d19734d793baee3d1cc25c2dbb"
+"group__test__udp__client.html",
+"meshme_2include_2periph__conf_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

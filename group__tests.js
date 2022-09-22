@@ -13,6 +13,7 @@ var group__tests =
     [ "Save and Load Data from the Flash memory", "group__tests__storage.html", null ],
     [ "Send UDP messages to an UDP server", "group__test__udp__client.html", null ],
     [ "Send and receive AT commands via UART", "group__tests__at__client.html", null ],
+    [ "Shell-Extended unit tests", "group__tests__shell__extended.html", null ],
     [ "Test template", "group__tests__template.html", null ],
     [ "Wait and listen to UDP message", "group__tests__udp__server.html", null ]
 ];

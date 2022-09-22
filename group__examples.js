@@ -1,5 +1,6 @@
 var group__examples =
 [
+    [ "Application example for the shell extended module", "group__examples__shell__extended.html", null ],
     [ "Application to run a Rpl DAG node", "group__examples__rpl__dag.html", null ],
     [ "Blinking", "group__examples__blinking.html", null ],
     [ "Sample Application to provide a internet via UART (SLIP)", "group__examples__slipdev.html", null ],
