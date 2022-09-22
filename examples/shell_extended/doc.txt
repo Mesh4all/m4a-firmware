@@ -1,0 +1,18 @@
+/*
+ * Copyright (C) 2022 Mesh4all <mesh4all.org>
+ *
+ * This file is subject to the terms and conditions of the GNU Lesser
+ * General Public License v2.1. See the file LICENSE in the top level
+ * directory for more details.
+ */
+
+/**
+ * @defgroup    examples_shell_extended Application example for the shell extended module
+ * @ingroup     examples
+ * @author      Luis A. Ruiz    <luisan00@hotmail.com>
+ * @author      Eduardo Azócar  <eduazocarv@gmail.com>
+ *
+ * ## How does it works?
+ *
+ * **ToDo**
+ */
