@@ -100,16 +100,18 @@ int8_t set_ipv6_by_uid(const kernel_pid_t iface_index, ipv6_addr_t *ip, const ui
     case UNIQUEID_STATIC_MODE:
         DEBUG("Setting ipv6 via uniqueid static mode\n");
         get_uid_seed(ip->u8 + pfx_pos, pfx_bytes, uid_mode);
-        set_ipv6_global(iface_index, *ip, prefix);
-        return 0;
+        break;
     case UNIQUEID_RANDOM_MODE:
         DEBUG("Setting ipv6 via uniqueid random mode\n");
         get_uid_seed(ip->u8 + pfx_pos, pfx_bytes, uid_mode);
-        return 0;
-    default:
         break;
+    default:
+        return -1;
     }
-    return -1;
+    if (set_ipv6_global(iface_index, *ip, prefix) < 0) {
+        return -1;
+    }
+    return 0;
 }
 #endif
 int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix) {

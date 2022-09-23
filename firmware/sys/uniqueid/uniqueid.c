@@ -25,8 +25,10 @@
 #include <string.h>
 #include "uniqueid.h"
 #include "random.h"
+#if (MODULE_AT86RF2XX || MODULE_AT86RF215)
 #include "net/netdev/ieee802154.h"
 #include "net/gnrc.h"
+#endif
 #if MODULE_PERIPH_HWRNG
 #include "periph/hwrng.h"
 #endif
@@ -42,7 +44,7 @@
 #endif
 #include "debug.h"
 
-uint32_t get_uid_seed(void *val, uint8_t len, uint8_t uid_mode) {
+void get_uid_seed(void *val, uint8_t len, uint8_t uid_mode) {
     uint32_t rval;
     uint8_t cpuid_bytes = CPUID_LEN / 2;
     char addr_cpu[CPUID_LEN];
@@ -81,6 +83,5 @@ uint32_t get_uid_seed(void *val, uint8_t len, uint8_t uid_mode) {
     default:
         break;
     }
-
-    return 0;
+    return;
 }

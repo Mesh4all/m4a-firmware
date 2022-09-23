@@ -25,30 +25,28 @@
 #include "embUnit.h"
 #include "uniqueid.h"
 #include "rpl_protocol.h"
+#include "net_tools.h"
 #include "radio.h"
 
 #define IFACE_ID 4
 #define DODAG_INSTANCE 1
 
 void test_init_rpl(void) {
-   int err = rpl_init(IFACE_ID);
-   TEST_ASSERT_EQUAL_INT(0, err);
+    int err = rpl_init(IFACE_ID);
+    TEST_ASSERT_EQUAL_INT(0, err);
 }
 
 void test_add_dodag_node(void) {
     ipv6_addr_t ipv6 = {
-        .u8 = {0},
+        .u8 = {0x20, 0x01, 0x0d, 0xb8, 0x00, 0x02, 0x00, 0x01},
     };
-
-    subnet_to_ipv6(&ipv6);
     uint8_t iface_index = get_ieee802154_iface();
-    gnrc_netif_ipv6_addr_add(gnrc_netif_get_by_pid(iface_index), &ipv6, 64,
-                                     GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID);
+    set_ipv6_by_uid(iface_index, &ipv6, 64, UNIQUEID_STATIC_MODE);
     int err = gnrc_rpl_dodag_root(DODAG_INSTANCE, &ipv6);
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
-void test_remove_dodag_node (void) {
+void test_remove_dodag_node(void) {
     int err = rpl_dodag_remove(DODAG_INSTANCE);
     TEST_ASSERT_EQUAL_INT(0, err);
 }

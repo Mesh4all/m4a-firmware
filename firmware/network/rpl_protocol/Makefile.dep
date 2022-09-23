@@ -1,9 +1,7 @@
 USEMODULE += radio
 USEMODULE += gnrc_rpl
 USEMODULE += auto_init_gnrc_rpl
-USEMODULE += uniqueid
 USEMODULE += gnrc_ipv6_router_default
-USEMODULE += net_tools
 
 ifneq (,$(filter 6lpan_node,$(USEMODULE)))
      USEMODULE += gnrc_sixlowpan_router_default
