@@ -6,4 +6,8 @@ ifneq (,$(filter uniqueid,$(USEMODULE)))
   SRC += se_uniqueid.c
 endif
 
+ifneq (,$(filter net_tools,$(USEMODULE)))
+  SRC += se_net_tools.c
+endif
+
 include $(RIOTBASE)/Makefile.base

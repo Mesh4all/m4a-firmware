@@ -14,30 +14,35 @@
  * limitations under the License.
  */
 /**
- * @brief   Extends functionality on the shell for uniqueid
+ * @brief   Extends the shell functionality for uniqueid
  * @author  Luis A. Ruiz    <luisan00@hotmail.com>
  * @author  Eduardo Azócar  <eduazocarv@gmail.com>
  */
 
-#include "shell_extended.h"
-#include "kernel_defines.h"
+#include <stdio.h>
+#include <string.h>
+#include "net_tools.h"
 
-/* important: please keep the used modules alphabetically sorted */
-#if IS_USED(MODULE_NET_TOOLS)
-int net_tools_cmd(int argc, char **argv);
-#endif
+void net_tools_usage(void) {
+    puts("net-tools usage:");
+    puts("\t ToDo: list-of-commands");
+    puts("\t ToDo: example-of-use");
+    puts("");
+}
 
-#if IS_USED(MODULE_UNIQUEID)
-int uid_cmd(int argc, char **argv);
-#endif
+int net_tools_cmd(int argc, char **argv) {
+    (void)argc;
+    (void)argv;
 
-const shell_command_t shell_extended_commands[] = {
-/* important: please keep the used modules alphabetically sorted */
-#if IS_USED(MODULE_NET_TOOLS)
-    {"net_tools", "net_tools commands", net_tools_cmd},
-#endif
-#if IS_USED(MODULE_UNIQUEID)
-    {"uid", "uniqueid commands", uid_cmd},
-#endif
-    {NULL, NULL, NULL},
-};
+    if ((argc < 2) || (argc > 2)) {
+        puts("net-tools command needs at least one argument");
+        net_tools_usage();
+        return 1;
+    }
+
+    if ((strcmp(argv[1], "help") == 0)) {
+        net_tools_usage();
+        return 0;
+    }
+    return 0;
+}
