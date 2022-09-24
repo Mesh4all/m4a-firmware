@@ -8,6 +8,5 @@ var uniqueid_8h =
       [ "UNIQUEID_STATIC_MODE", "uniqueid_8h.html#a363acb2470e2c1c921f6534fd71334c6ac1df61bcbb6c147e919a911d1966e1c9", null ],
       [ "UNIQUEID_RANDOM_MODE", "uniqueid_8h.html#a363acb2470e2c1c921f6534fd71334c6af2bb0d9a392e5f8dd84ebf9df2fb73db", null ]
     ] ],
-    [ "get_uid_ipv6", "uniqueid_8h.html#a2c94de66b1de75fddb67bf90e5c0e581", null ],
-    [ "get_uid_seed", "uniqueid_8h.html#a254c59fdfc9fd0c392ac499d774b8971", null ]
+    [ "get_uid_seed", "uniqueid_8h.html#ae2c9fde27160fcb3424dd56af3e325ea", null ]
 ];

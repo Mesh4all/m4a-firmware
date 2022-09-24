@@ -58,8 +58,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__test__udp__client.html",
-"meshme_2include_2periph__conf_8h.html"
+"group__storage__module.html",
+"meshme_2include_2gpio__params_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

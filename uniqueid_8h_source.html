@@ -155,20 +155,18 @@ $(document).ready(function(){initNavTree('uniqueid_8h_source.html',''); initResi
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="unionrandom__buff.html#afeaf5cb8bcc585d754cc9174e55dd4b6">   71</a></span>&#160;    uint8_t <a class="code" href="unionrandom__buff.html#afeaf5cb8bcc585d754cc9174e55dd4b6">u8</a>[8];   </div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="unionrandom__buff.html#ab8bc104b642540e5732c8a45ffec31ab">   72</a></span>&#160;    uint32_t <a class="code" href="unionrandom__buff.html#ab8bc104b642540e5732c8a45ffec31ab">u32</a>[2]; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">void</span> <a class="code" href="uniqueid_8h.html#a2c94de66b1de75fddb67bf90e5c0e581">get_uid_ipv6</a>(<a class="code" href="unionipv6__addr__t.html">ipv6_addr_t</a> *addr, uniqueid_mode_t mode);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;uint32_t get_uid_seed(<span class="keywordtype">void</span> *val, <span class="keyword">const</span> uint8_t len);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UNIQUEID_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> <a class="code" href="uniqueid_8h.html#ae2c9fde27160fcb3424dd56af3e325ea">get_uid_seed</a>(<span class="keywordtype">void</span> *val, uint8_t len, uint8_t uid_mode);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UNIQUEID_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aunionrandom__buff_html_afeaf5cb8bcc585d754cc9174e55dd4b6"><div class="ttname"><a href="unionrandom__buff.html#afeaf5cb8bcc585d754cc9174e55dd4b6">random_buff::u8</a></div><div class="ttdeci">uint8_t u8[8]</div><div class="ttdef"><b>Definition:</b> <a href="uniqueid_8h_source.html#l00071">uniqueid.h:71</a></div></div>
-<div class="ttc" id="aunionipv6__addr__t_html"><div class="ttname"><a href="unionipv6__addr__t.html">ipv6_addr_t</a></div><div class="ttdoc">model of an ipv6 address</div><div class="ttdef"><b>Definition:</b> <a href="chamoc__msg_8h_source.html#l00050">chamoc_msg.h:50</a></div></div>
 <div class="ttc" id="aunionrandom__buff_html_ab8bc104b642540e5732c8a45ffec31ab"><div class="ttname"><a href="unionrandom__buff.html#ab8bc104b642540e5732c8a45ffec31ab">random_buff::u32</a></div><div class="ttdeci">uint32_t u32[2]</div><div class="ttdef"><b>Definition:</b> <a href="uniqueid_8h_source.html#l00072">uniqueid.h:72</a></div></div>
-<div class="ttc" id="auniqueid_8h_html_a2c94de66b1de75fddb67bf90e5c0e581"><div class="ttname"><a href="uniqueid_8h.html#a2c94de66b1de75fddb67bf90e5c0e581">get_uid_ipv6</a></div><div class="ttdeci">void get_uid_ipv6(ipv6_addr_t *addr, uniqueid_mode_t mode)</div><div class="ttdoc">This function get ipv6 address (mode: static (default), random, manual)</div></div>
+<div class="ttc" id="auniqueid_8h_html_ae2c9fde27160fcb3424dd56af3e325ea"><div class="ttname"><a href="uniqueid_8h.html#ae2c9fde27160fcb3424dd56af3e325ea">get_uid_seed</a></div><div class="ttdeci">void get_uid_seed(void *val, uint8_t len, uint8_t uid_mode)</div><div class="ttdoc">This function get ipv6 address (mode: static (default), random, manual)</div></div>
 <div class="ttc" id="aunionrandom__buff_html"><div class="ttname"><a href="unionrandom__buff.html">random_buff</a></div><div class="ttdoc">union to get 32 bit random number and convert to a byte array.</div><div class="ttdef"><b>Definition:</b> <a href="uniqueid_8h_source.html#l00070">uniqueid.h:70</a></div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
@@ -176,7 +174,7 @@ $(document).ready(function(){initNavTree('uniqueid_8h_source.html',''); initResi
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_38d8769b7982536a1592307dd4ec982e.html">sys</a></li><li class="navelem"><a class="el" href="dir_d1a3ede2a7053dc6fcf75f473f49af84.html">uniqueid</a></li><li class="navelem"><a class="el" href="dir_23081fd1662f83bbc675cfa0b63f22a3.html">include</a></li><li class="navelem"><a class="el" href="uniqueid_8h.html">uniqueid.h</a></li>
-    <li class="footer">Generated on Thu Sep 22 2022 15:23:47 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Sat Sep 24 2022 08:07:34 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

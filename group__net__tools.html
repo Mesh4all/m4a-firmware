@@ -123,6 +123,9 @@ Files</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:gae3710cdfde4705f0eafe00a2a67e2033"><td class="memItemLeft" align="right" valign="top"><a id="gae3710cdfde4705f0eafe00a2a67e2033"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BITS_IN_A_BYTE</b>&#160;&#160;&#160;(8)</td></tr>
+<tr class="separator:gae3710cdfde4705f0eafe00a2a67e2033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga304e490020ee6959af1938ca1a68837e"><td class="memItemLeft" align="right" valign="top"><a id="ga304e490020ee6959af1938ca1a68837e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PREFIX_LSHIFTTED_BITS</b>&#160;&#160;&#160;(8)</td></tr>
 <tr class="separator:ga304e490020ee6959af1938ca1a68837e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,6 +144,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga7a5033ddeef102884053fcf3f8083735"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">set_ipv6_multicast</a> (kernel_pid_t iface_index, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip, uint8_t prefix)</td></tr>
 <tr class="memdesc:ga7a5033ddeef102884053fcf3f8083735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set an ipv6 global address in an iface.  <a href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">More...</a><br /></td></tr>
 <tr class="separator:ga7a5033ddeef102884053fcf3f8083735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga147e00591ef94cb152365275b4b8dbb1"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#ga147e00591ef94cb152365275b4b8dbb1">set_ipv6_by_uid</a> (const kernel_pid_t iface_index, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> *ip, const uint8_t prefix, const uint8_t uid_mode)</td></tr>
+<tr class="memdesc:ga147e00591ef94cb152365275b4b8dbb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set an ipv6 global address in an iface.  <a href="group__net__tools.html#ga147e00591ef94cb152365275b4b8dbb1">More...</a><br /></td></tr>
+<tr class="separator:ga147e00591ef94cb152365275b4b8dbb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>group of generic functions that could be used in various modules </p>
@@ -216,6 +222,64 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga147e00591ef94cb152365275b4b8dbb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga147e00591ef94cb152365275b4b8dbb1">&#9670;&nbsp;</a></span>set_ipv6_by_uid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t set_ipv6_by_uid </td>
+          <td>(</td>
+          <td class="paramtype">const kernel_pid_t&#160;</td>
+          <td class="paramname"><em>iface_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> *&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>prefix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>uid_mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to set an ipv6 global address in an iface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">iface_index</td><td>index that will be save the ipv6 address. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ip</td><td>Address ipv6 to set. the octets of the required IPv6 address should be previously defined (depending on the network prefixes) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Networks prefix represent the subnet size. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">uid_mode</td><td>define if the uniqueid generate random or static ipv6 address </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Correctly set up of the <code>ip</code> in the interface. </td></tr>
+    <tr><td class="paramname">-1</td><td>Couldn't set the <code>ip</code> address in the interface. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gace20d8761a85d3c00ddd6676f49fccd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gace20d8761a85d3c00ddd6676f49fccd6">&#9670;&nbsp;</a></span>set_ipv6_global()</h2>
 
@@ -253,7 +317,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">iface_index</td><td>index that will be save the ipv6 address. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>Address ipv6 global to set. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Networks prefix,express the subnet size. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Networks prefix represent the subnet size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -304,7 +368,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">iface_index</td><td>index that will be save the ipv6 address. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>Address ipv6 multicast to set </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Networks prefix,express the subnet size. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Networks prefix represent the subnet size. </td></tr>
   </table>
   </dd>
 </dl>
@@ -325,7 +389,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Sep 22 2022 15:23:47 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Sat Sep 24 2022 08:07:34 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
