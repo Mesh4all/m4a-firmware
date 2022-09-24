@@ -26,17 +26,9 @@
 #include "random.h"
 #include "unique_random.h"
 
-#if (MODULE_AT86RF2XX || MODULE_AT86RF215)
-#include "radio.h"
-#endif
 #define BIT_ON_MASK (0x01)
 
 void random_generator(uint8_t bit_ref) {
-
-#if (MODULE_AT86RF2XX || MODULE_AT86RF215)
-    int index = get_ieee802154_iface();
-    netif_t *iface = netif_get_by_id(index);
-#endif
     uint8_t avg_bit32 = bit_ref / 32;
     if (bit_ref % 32 != 0) {
         avg_bit32++;
@@ -45,12 +37,8 @@ void random_generator(uint8_t bit_ref) {
     for (uint8_t i = 0; i < bit_ref; i++) {
         printf("ref %u", (uint8_t)(i + 1));
         for (uint8_t j = 0; j < avg_bit32; j++) {
-#if (MODULE_AT86RF2XX || MODULE_AT86RF215)
-            netif_get_opt(iface, NETOPT_RANDOM, 0, &random_byte_block, sizeof(uint32_t));
-#endif
-            random_init(random_byte_block);
-            random_byte_block = random_uint32();
-            printf(" Block: %d\t%" PRIx32 " \t", j, random_byte_block);
+            get_uid_seed(&random_byte_block, sizeof(random_byte_block), UNIQUEID_RANDOM_MODE);
+            printf(" Block: %d\t 0x%" PRIx32 " \t", j, random_byte_block);
             print_binary(random_byte_block, bit_ref / avg_bit32);
             printf("\t");
         }

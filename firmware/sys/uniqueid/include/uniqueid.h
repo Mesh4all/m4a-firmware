@@ -73,11 +73,13 @@ union random_buff {
 };
 /**
  * @brief This function get ipv6 address (mode: static (default), random, manual)
- * @param [out] addr Address in ipv6 format
+ * @param [out] val any value type where will saved the seed.
+ * @param [in] len  size in number of bytes of @p val.
+ * @param [in] uid_mode defines the uniqueid mode, refers random or static mode.
+ *
  */
-void get_uid_ipv6(ipv6_addr_t *addr, uniqueid_mode_t mode);
+void get_uid_seed(void *val, uint8_t len, uint8_t uid_mode);
 
-uint32_t get_uid_seed(void *val, const uint8_t len);
 #ifdef __cplusplus
 }
 #endif

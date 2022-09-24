@@ -20,8 +20,6 @@
 #include "net/gnrc/rpl.h"
 #include "rpl_protocol.h"
 #include "radio.h"
-#include "net_tools.h"
-#include "uniqueid.h"
 
 #if (CONFIG_DEBUG_RPL_PROTOCOL) || (DOXYGEN)
 /**
@@ -102,15 +100,6 @@ int8_t rpl_setup(uint8_t mode) {
         return -1;
     }
     if (mode == DODAG || CONFIG_IS_DODAG == DODAG) {
-        err = get_ipv6_global(iface_index, &ip);
-        if (err < 0) {
-            get_uid_ipv6(&ip, KCONFIG_UID_OPTION || UNIQUEID_STATIC_MODE);
-            if (gnrc_netif_ipv6_addr_add(gnrc_netif_get_by_pid(iface_index), &ip, 64,
-                                         GNRC_NETIF_IPV6_ADDRS_FLAGS_STATE_VALID) < 0) {
-                DEBUG("Error: Couldn't add IPv6 global address\n");
-                return -1;
-            }
-        }
         err = gnrc_rpl_dodag_root(CONFIG_DODAG_INSTANCE, &ip);
         if (err < 0) {
             DEBUG("Error: Rpl root node ipv6 couldn't set ipv6 global address, File: %s line: %d\n",
