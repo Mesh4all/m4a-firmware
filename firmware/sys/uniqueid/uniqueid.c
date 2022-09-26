@@ -44,7 +44,7 @@
 #endif
 #include "debug.h"
 
-void get_uid_seed(void *val, uint8_t len, uint8_t uid_mode) {
+int8_t get_uid_seed(void *val, uint8_t len, uint8_t uid_mode) {
     uint32_t rval;
     uint8_t cpuid_bytes = CPUID_LEN / 2;
     char addr_cpu[CPUID_LEN];
@@ -57,7 +57,7 @@ void get_uid_seed(void *val, uint8_t len, uint8_t uid_mode) {
             return get_uid_seed((uint8_t *)val + cpuid_bytes, len, UNIQUEID_RANDOM_MODE);
         } else {
             memcpy(val, addr_cpu, len);
-            break;
+            return 0;
         }
     case UNIQUEID_RANDOM_MODE:
         DEBUG("rand mode\n");
@@ -79,9 +79,9 @@ void get_uid_seed(void *val, uint8_t len, uint8_t uid_mode) {
             rval = random_uint32();
             memcpy(((uint8_t *)val + i), &rval, sizeof(uint8_t));
         }
-        break;
+        return 0;
     default:
         break;
     }
-    return;
+    return -1;
 }

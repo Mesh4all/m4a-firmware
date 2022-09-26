@@ -44,7 +44,7 @@
 extern "C" {
 #endif
 
-#define BITS_IN_A_BYTE        (8)
+#define BITS_IN_A_BYTE (8)
 #define PREFIX_LSHIFTTED_BITS (8)
 
 /**
@@ -76,7 +76,14 @@ int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr);
  * @retval -1 Couldn't set the @p ip address in the interface.
  */
 int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix);
-
+/**
+ * @brief Remove the current global ipv6 in an interface.
+ *
+ * @param iface_idx interface index to removes the global ipv6 address.
+ * @retval 0 address removed successful.
+ * @retval -1 Doesn't exist a global ipv6 address.
+ */
+int8_t rm_ipv6_global(kernel_pid_t iface_idx);
 /**
  * @brief Function to set an ipv6 global address in an iface.
  *

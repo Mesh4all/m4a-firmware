@@ -138,6 +138,21 @@ int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix)
     return 0;
 }
 
+int8_t rm_ipv6_global(kernel_pid_t iface_idx) {
+    ipv6_addr_t ip;
+    if (get_ipv6_global(iface_idx, &ip) < 0) {
+        DEBUG("ip address no found \n");
+        return -1;
+    }
+    netif_t *iface = netif_get_by_id(iface_idx);
+    if (netif_set_opt(iface, NETOPT_IPV6_ADDR_REMOVE, 0, &ip, sizeof(ipv6_addr_t)) < 0) {
+        DEBUG("error: unable to join IPv6 multicast group\n"
+              "File: %s, Function: %s, Line: %d\n",
+              __FILE__, __func__, __LINE__);
+        return -1;
+    }
+    return 0;
+}
 int8_t set_ipv6_multicast(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix) {
     if (prefix > 128) {
         DEBUG("Wrong prefix length\n"

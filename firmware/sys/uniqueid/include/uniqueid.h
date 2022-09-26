@@ -25,6 +25,7 @@
 #ifndef UNIQUEID_H
 #define UNIQUEID_H
 
+#include <stdint.h>
 #include "periph/cpuid.h"
 #include "board.h"
 #include "net/ipv6/addr.h"
@@ -78,7 +79,7 @@ union random_buff {
  * @param [in] uid_mode defines the uniqueid mode, refers random or static mode.
  *
  */
-void get_uid_seed(void *val, uint8_t len, uint8_t uid_mode);
+int8_t get_uid_seed(void *val, uint8_t len, uint8_t uid_mode);
 
 #ifdef __cplusplus
 }
