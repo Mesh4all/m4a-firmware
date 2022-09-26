@@ -34,7 +34,7 @@ int uid_cmd(int argc, char **argv);
 const shell_command_t shell_extended_commands[] = {
 /* important: please keep the used modules alphabetically sorted */
 #if IS_USED(MODULE_NET_TOOLS)
-    {"net_tools", "net_tools commands", net_tools_cmd},
+    {"if", "net_tools commands", net_tools_cmd},
 #endif
 #if IS_USED(MODULE_UNIQUEID)
     {"uid", "uniqueid commands", uid_cmd},
