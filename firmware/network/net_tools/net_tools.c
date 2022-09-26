@@ -37,6 +37,9 @@
 #include "net_tools.h"
 #include "net/ipv6/addr.h"
 #include "net/gnrc/netif.h"
+#if MODULE_UNIQUEID
+#include "uniqueid.h"
+#endif
 
 #if (CONFIG_DEBUG_NET_TOOLS) || (DOXYGEN)
 /**
@@ -83,6 +86,34 @@ int8_t get_ipv6_global(kernel_pid_t iface_pid, ipv6_addr_t *addr) {
     return -1;
 }
 
+#if MODULE_UNIQUEID
+int8_t set_ipv6_by_uid(const kernel_pid_t iface_index, ipv6_addr_t *ip, const uint8_t prefix,
+                       const uint8_t uid_mode) {
+    uint8_t pfx_pos = prefix / BITS_IN_A_BYTE;
+    uint8_t pfx_bytes = sizeof(ipv6_addr_t) - pfx_pos;
+    if (prefix > 128) {
+        DEBUG("Wrong prefix length\n"
+              "File: %s, Function: %s, Line: %d\n",
+              __FILE__, __func__, __LINE__);
+    }
+    switch (uid_mode) {
+    case UNIQUEID_STATIC_MODE:
+        DEBUG("Setting ipv6 via uniqueid static mode\n");
+        get_uid_seed(ip->u8 + pfx_pos, pfx_bytes, uid_mode);
+        break;
+    case UNIQUEID_RANDOM_MODE:
+        DEBUG("Setting ipv6 via uniqueid random mode\n");
+        get_uid_seed(ip->u8 + pfx_pos, pfx_bytes, uid_mode);
+        break;
+    default:
+        return -1;
+    }
+    if (set_ipv6_global(iface_index, *ip, prefix) < 0) {
+        return -1;
+    }
+    return 0;
+}
+#endif
 int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix) {
     if (prefix > 128) {
         DEBUG("Wrong prefix length\n"
@@ -100,8 +131,8 @@ int8_t set_ipv6_global(kernel_pid_t iface_index, ipv6_addr_t ip, uint8_t prefix)
     if (netif_set_opt(iface, NETOPT_IPV6_ADDR, flags, &ip, sizeof(ipv6_addr_t)) <
         PREFIX_LSHIFTTED_BITS) {
         DEBUG("error: unable to add IPv6 address\n"
-               "File: %s, Function: %s, Line: %d\n",
-               __FILE__, __func__, __LINE__);
+              "File: %s, Function: %s, Line: %d\n",
+              __FILE__, __func__, __LINE__);
         return -1;
     }
     return 0;
