@@ -29,6 +29,7 @@
 #define ENABLE_DEBUG 0
 #include "debug.h"
 
+void show_iface_info(kernel_pid_t iface_idx);
 void check_inp_addr(char *addr, ipv6_addr_t *ip, uint8_t *pfx);
 
 void net_tools_usage(void) {
@@ -82,6 +83,15 @@ int net_tools_cmd(int argc, char **argv) {
         DEBUG("ipv6 address: %s\n", ipv6_addr_to_str(ip, &addr, sizeof(ip)));
         return 0;
     }
+    if (strcmp(argv[2], "show") == 0) {
+        uint8_t if_idx = atoi(argv[1]);
+        if ((netif_get_by_id(if_idx)) == NULL) {
+            puts("Interface doesn't exist");
+            return -1;
+        }
+        show_iface_info(if_idx);
+        return 0;
+    }
 
     if ((argc < 5) || (argc > 5)) {
         puts("net-tools command needs at least one argument");
@@ -89,6 +99,14 @@ int net_tools_cmd(int argc, char **argv) {
         return 1;
     }
     return 0;
+}
+
+void show_iface_info(kernel_pid_t iface_idx) {
+    /*ToDo show of an interface its specifications -> Physical info*/
+    printf("ToDo: Show an interface\n");
+    if (iface_idx == 0) {
+        /*ToDo show all interfaces and their physical features.*/
+    }
 }
 
 void check_inp_addr(char *addr, ipv6_addr_t *ip, uint8_t *pfx) {
