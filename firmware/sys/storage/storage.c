@@ -80,7 +80,7 @@ int mtd_save_compress(void *value, uint16_t len) {
     if (num_pages >= MAX_NUMOF_FLASHPAGES) {
         DEBUG("error: Unavailable Memory to save the required data, file: %s, line: %d, "
               "function: %s\n",
-              __FILE__, __LINE__, __FUNCTION__);
+              __FILE__, __LINE__, __func__);
         return -1;
     }
     for (uint16_t i = 0; i < num_pages; i++) {
@@ -88,7 +88,7 @@ int mtd_save_compress(void *value, uint16_t len) {
         ret = mtd_erase_flashpage(storage_addr);
         if (ret != 0) {
             DEBUG("error: Failed erasing data: file: %s, line: %d, function: %s\n", __FILE__,
-                  __LINE__, __FUNCTION__);
+                  __LINE__, __func__);
             return ret;
         }
     }
@@ -99,9 +99,7 @@ int mtd_save_compress(void *value, uint16_t len) {
             DEBUG("FAILED SAVING DATA\n");
             return ret;
         }
-        /* cppcheck-suppress arithOperationsOnVoidPointer
-         * (reason: variable size reference to move the pointer */
-        value += MAX_SIZE_STORAGE;
+        value = (uint8_t*)value +MAX_SIZE_STORAGE;
     }
     return ret;
 }
@@ -116,7 +114,7 @@ int mtd_load(void *value, uint16_t len) {
     }
     if (num_pages >= MAX_NUMOF_FLASHPAGES) {
         DEBUG("error: Overload Memory size, file: %s, line %d, function: %s", __FILE__, __LINE__,
-              __FUNCTION__);
+              __func__);
         return -1;
     }
     for (uint8_t i = 0; i < num_pages; i++) {
@@ -125,9 +123,44 @@ int mtd_load(void *value, uint16_t len) {
         }
         locate_addr(&storage_addr, i);
         mtd_read(dev, value, storage_addr, diff_size);
-        /* cppcheck-suppress arithOperationsOnVoidPointer
-         * (reason: variable size reference to move the pointer */
-        value += MAX_SIZE_STORAGE;
+        value = (uint8_t*)value +MAX_SIZE_STORAGE;
+    }
+    return 0;
+}
+
+int mtd_erase_all(void) {
+    uint32_t storage_addr = 0;
+    for (uint16_t i = 0; i < MAX_NUMOF_FLASHPAGES; i++) {
+        locate_addr(&storage_addr, i);
+        mtd_erase(dev, storage_addr, MAX_SIZE_STORAGE);
+    }
+    return 0;
+}
+
+int mtd_dump(void) {
+    uint32_t storage_addr = 0;
+    uint8_t value[MAX_SIZE_STORAGE];
+    uint32_t erased_bytes = 0;
+    uint32_t total_size = MAX_NUMOF_FLASHPAGES * MAX_SIZE_STORAGE;
+    DEBUG("Total Flashpáges available for storage: %d\n", MAX_NUMOF_FLASHPAGES);
+    for (uint16_t i = 0; i < MAX_NUMOF_FLASHPAGES; i++) {
+        int err;
+        locate_addr(&storage_addr, i);
+        err = mtd_read(dev, value, storage_addr, MAX_SIZE_STORAGE);
+        if (err < 0) {
+            return err;
+        }
+        DEBUG("FLASHPAGE #%d:\t", i);
+        for (uint16_t j = 0; j < MAX_SIZE_STORAGE; j++) {
+            DEBUG("%02X ", value[j]);
+            if (value[j] == 255) {
+                erased_bytes++;
+            }
+        }
+        DEBUG("\n");
+    }
+    if (total_size == erased_bytes) {
+        return -1;
     }
     return 0;
 }

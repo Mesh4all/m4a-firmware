@@ -99,12 +99,12 @@ void test_save_firm_data(void) {
                 },
             },
 #ifdef MODULE_RADIO
-        .radio_tx_power = -30,
+        .radio_tx_power = 4,
         .subghz = true,
         .channel = 11,
 #endif
 #ifdef MODULE_RPL_PROTOCOL
-        .rpl_mode = 0,
+        .rpl_mode = 1,
         .pan_id = 0x20,
 #endif
     };
@@ -122,7 +122,7 @@ void test_load_firm_data(void) {
     printf("Channel: %u\n", load_storage.channel);
 #endif
 #ifdef MODULE_RPL_PROTOCOL
-    printf("\nRouting\n\nRpl_mode: %s\n", load_storage.rpl_mode ? "DODAG" : "DAG");
+    printf("\nRouting\n\nRpl_mode: %s\n", load_storage.rpl_mode ? "DAG" : "DODAG");
     printf("RPL instance: %d\n", load_storage.rpl_instance);
     printf("pan_id: 0x%X\n", load_storage.pan_id);
 
@@ -172,14 +172,29 @@ void test_erase_address(void) {
     TEST_ASSERT_EQUAL_INT(0, ret);
 }
 
+void test_erase_all(void){
+    int ret = mtd_erase_all();
+    TEST_ASSERT_EQUAL_INT(0, ret);
+}
+
+void test_load_post_erased_data(void){
+    int ret = mtd_dump();
+    TEST_ASSERT_EQUAL_INT(-1, ret);
+}
 Test *tests_mtd_flashpage_tests(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
-        new_TestFixture(test_init_mtd),       new_TestFixture(test_save_data),
-        new_TestFixture(test_load_data),      new_TestFixture(test_save_firm_data),
+        new_TestFixture(test_init_mtd),
+        new_TestFixture(test_save_data),
+        new_TestFixture(test_load_data),
+        new_TestFixture(test_save_firm_data),
         new_TestFixture(test_load_firm_data),
-        // new_TestFixture(test_write_string),
-        // new_TestFixture(test_read_string),    new_TestFixture(test_write_u8),
-        // new_TestFixture(test_read_u8),        new_TestFixture(test_erase_address),
+        new_TestFixture(test_erase_all),
+        new_TestFixture(test_load_post_erased_data),
+        new_TestFixture(test_write_string),
+        new_TestFixture(test_read_string),
+        new_TestFixture(test_write_u8),
+        new_TestFixture(test_read_u8),
+        new_TestFixture(test_erase_address),
     };
 
     EMB_UNIT_TESTCALLER(mtd_flashpage_tests, NULL, NULL, fixtures);

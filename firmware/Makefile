@@ -26,6 +26,7 @@ USEMODULE += ps
 # Custom modules
 # Note: this code is hardware independent but "COULD BE" configurable for a
 #	target board
+USEMODULE += storage
 USEMODULE += rpl_protocol
 PSEUDOMODULES += 6lpan_node
 

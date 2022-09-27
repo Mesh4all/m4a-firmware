@@ -33,7 +33,17 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 /**
+ * @brief Function to get all params saved inside the mtd storage.
+ * This will read and process all saved data to set a mesh device
+ * to the last configuration.
+ *
+ */
+void load_settings(void);
+
+/**
+ *
  * @brief  Data type to get a brew description of the sensors
  */
 typedef struct {
@@ -47,17 +57,16 @@ typedef struct {
  */
 typedef struct {
 #if ((MODULE_RADIO) || (DOXYGEN))
-    int16_t radio_tx_power : 6; /*!< The transmit power from a radio interface*/
-    uint16_t subghz : 1;        /*!< Represent if the interface is active in 2.4 sub-GHZ mode*/
-    uint16_t channel : 5;       /*!< Channel of the radio */
+    uint8_t radio_tx_power : 6; /*!< The transmit power from a radio interface*/
+    uint8_t subghz : 1;         /*!< Represent if the interface is active in 2.4 sub-GHZ mode*/
+    uint8_t : 1;                /*!< Empty bit  */
+    uint8_t channel : 5;        /*!< Channel of the radio */
+    uint8_t : 3;                /*!< Empty bits*/
 
 #if ((MODULE_RPL_PROTOCOL) || (DOXYGEN))
-    uint16_t rpl_mode : 1; /*!< If the system has an RPL in mode `DAG` or `DODAG`*/
-    uint8_t rpl_instance;  /*!< Number of instance of DODAG*/
-    uint16_t pan_id;       /*!< The Personal Area Network where is located the RPL network*/
-    int16_t : 1;           /*!< Empty bit (Boolean Expression Could be used)*/
-#else
-    int16_t : 2;
+    uint8_t rpl_mode;     /*!< If the system has an RPL in mode `DAG` or `DODAG`*/
+    uint8_t rpl_instance; /*!< Number of instance of DODAG*/
+    uint16_t pan_id;      /*!< The Personal Area Network where is located the RPL network*/
 #endif
 #endif
     /* peripherals */

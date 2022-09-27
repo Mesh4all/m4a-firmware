@@ -37,8 +37,16 @@ extern "C" {
 #endif
 
 #define LAST_AVAILABLE_PAGE (FLASHPAGE_NUMOF - 1) /*!< Last position in the block EEPROM*/
-#define MAX_SIZE_STORAGE (FLASHPAGE_SIZE)           /*!< max size to save in the page */
-#define MAX_NUMOF_FLASHPAGES FLASHPAGE_NUMOF      /*!< max num of pages that can be manipulated */
+#define MAX_SIZE_STORAGE (FLASHPAGE_SIZE)         /*!< max size to save in the page */
+
+#define MAX_NUMOF_FLASHPAGES (FLASHPAGE_NUMOF) /*!< max num of pages that can be manipulated */
+
+#if CPU_SAMD21A
+#undef MAX_NUMOF_FLASHPAGES
+#define EEPROM_SIZE (FLASHPAGE_SIZE * FLASHPAGE_PAGES_PER_ROW * 64)
+#define MAX_NUMOF_FLASHPAGES (EEPROM_SIZE / FLASHPAGE_SIZE)
+#endif
+
 /** @note The storage EEPROM section page could be resize with the bootloader block size
  *  @warning Always the block EEPROM and BOOTLOADER are affected between them.
  */
@@ -85,6 +93,29 @@ int mtd_save_compress(void *value, uint16_t len);
  * @retval  -1 Failed result
  */
 int mtd_load(void *value, uint16_t len);
+
+/**
+ * @brief Removes all saved data in mtd_storage. This will erase all until the
+ * last page since to available flash page to write eeprom.
+ *
+ * @warning The mtd storage needs to define a flashpage limit after base program
+ * memory allocation
+ *
+ * @retval 0 Erased data success
+ * @retval -1 Erased Fail.
+ */
+int mtd_erase_all(void);
+
+/**
+ * @brief Dump all data inside mtd storage
+ *
+ * @warning The mtd storage needs to define a flashpage limit after base program
+ * memory allocation
+ *
+ * @retval 0 Exists data inside of mtd storage.
+ * @retval -1 All data inside of mtd is erased.
+ */
+int mtd_dump(void);
 
 /**
  * @brief Function used to get the strings already saved
