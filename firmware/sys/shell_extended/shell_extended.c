@@ -30,6 +30,9 @@ int net_tools_cmd(int argc, char **argv);
 #if IS_USED(MODULE_UNIQUEID)
 int uid_cmd(int argc, char **argv);
 #endif
+#if IS_USED(MODULE_STORAGE)
+int storage_cmd(int argc, char **argv);
+#endif
 
 const shell_command_t shell_extended_commands[] = {
 /* important: please keep the used modules alphabetically sorted */
@@ -38,6 +41,9 @@ const shell_command_t shell_extended_commands[] = {
 #endif
 #if IS_USED(MODULE_UNIQUEID)
     {"uid", "uniqueid commands", uid_cmd},
+#endif
+#if IS_USED(MODULE_STORAGE)
+    {"stg", "Storage commands", storage_cmd},
 #endif
     {NULL, NULL, NULL},
 };

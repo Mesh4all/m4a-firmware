@@ -21,37 +21,37 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "uniqueid.h"
+#include "storage.h"
 
-void uid_usage(void) {
-    puts("Uniqueid Tool");
-    puts("Usage: uid [static|rand]");
+#if MODULE_RADIO
+#include "radio.h"
+#endif
+#if MODULE_RPL_PROTOCOL
+#include "rpl_protocol.h"
+#endif
+
+void storage_usage(void) {
+    puts("Storage tool");
+    puts("Usage:  stg [save|load|show]");
     puts("");
 }
 
-int uid_cmd(int argc, char **argv) {
+int storage_cmd(int argc, char **argv) {
     (void)argc;
     (void)argv;
 
     if ((argc < 2) || (argc > 2) || (strcmp(argv[1], "help") == 0)) {
-        uid_usage();
-        return 1;
+        void storage_usage(void);
+        return 0;
     }
 
-    if (strcmp(argv[1], "static") == 0) {
-        uint8_t val[CPUID_LEN / 2];
-        get_uid_seed(val, sizeof(val), UNIQUEID_STATIC_MODE);
-        for (uint8_t i = 0; i < sizeof(val); i++) {
-            printf("%02X", val[i]);
-        }
-        printf("\n");
-    } else if (strcmp(argv[1], "random") == 0) {
-        uint32_t val = 0;
-        get_uid_seed(&val, sizeof(val), UNIQUEID_RANDOM_MODE);
-        for (uint8_t i = sizeof(val); i > 0; i--) {
-            printf("%02X", (uint8_t)((val >> (i - 1) * 8)));
-        }
-        printf("\n");
+    if (strcmp(argv[1], "save") == 0) {
+        puts("ToDo: Save all firmware params in mtd storage");
+    } else if (strcmp(argv[1], "load") == 0) {
+        puts("Todo: Load firmware params from mtd storage and are processed");
+    } else if (strcmp(argv[1], "show") == 0) {
+        puts("Todo:  show all firmware params saved in mtd storage");
     }
+
     return 0;
 }
