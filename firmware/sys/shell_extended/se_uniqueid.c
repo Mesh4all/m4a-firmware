@@ -35,14 +35,23 @@ int uid_cmd(int argc, char **argv) {
 
     if ((argc < 2) || (argc > 2) || (strcmp(argv[1], "help") == 0)) {
         uid_usage();
-        return 0;
+        return 1;
     }
 
     if (strcmp(argv[1], "static") == 0) {
-        puts("ToDo: return static id (cpu-based)");
+        uint8_t val[CPUID_LEN / 2];
+        get_uid_seed(val, sizeof(val), UNIQUEID_STATIC_MODE);
+        for (uint8_t i = 0; i < sizeof(val); i++) {
+            printf("%02X", val[i]);
+        }
+        printf("\n");
     } else if (strcmp(argv[1], "random") == 0) {
-        puts("Todo: return random id");
+        uint32_t val = 0;
+        get_uid_seed(&val, sizeof(val), UNIQUEID_RANDOM_MODE);
+        for (uint8_t i = sizeof(val); i > 0; i--) {
+            printf("%02X", (uint8_t)((val >> (i - 1) * 8)));
+        }
+        printf("\n");
     }
-
     return 0;
 }
