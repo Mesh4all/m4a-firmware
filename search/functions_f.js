@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['udp_5fsend_569',['udp_send',['../udp__client_8h.html#aeaefcdba0c4c311a99daf4d1341d4b67',1,'udp_client.h']]],
-  ['udp_5fserver_570',['udp_server',['../udp__server_8h.html#a3e54c501a23f62be7f12c4905cf06343',1,'udp_server.h']]]
+  ['test_5ffunction_574',['test_function',['../depends__params_8h.html#a2f3b6a4d4225afe5bc4e0b2a827ba507',1,'depends_params.h']]],
+  ['tx_5fsend_5floop_575',['tx_send_loop',['../subsys__uart_8h.html#a7a41e001b98cba8e3a6b462ec148c9f7',1,'subsys_uart.h']]]
 ];

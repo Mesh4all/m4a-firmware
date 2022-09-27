@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('firmware_2sys_2storage_2include_2stora
 <tr class="separator:a1f6aa012a967f33fb5ec3cdeae1c6e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6ba1f9f4063e60617dab3349aaba7c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#af6ba1f9f4063e60617dab3349aaba7c9">MAX_SIZE_STORAGE</a>&#160;&#160;&#160;(FLASHPAGE_SIZE)</td></tr>
 <tr class="separator:af6ba1f9f4063e60617dab3349aaba7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a401d65355970abcbfcd4b7b05d96a3ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a401d65355970abcbfcd4b7b05d96a3ef">MAX_NUMOF_FLASHPAGES</a>&#160;&#160;&#160;FLASHPAGE_NUMOF</td></tr>
+<tr class="memitem:a401d65355970abcbfcd4b7b05d96a3ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a401d65355970abcbfcd4b7b05d96a3ef">MAX_NUMOF_FLASHPAGES</a>&#160;&#160;&#160;(FLASHPAGE_NUMOF)</td></tr>
 <tr class="separator:a401d65355970abcbfcd4b7b05d96a3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa5dd4e1cac5278e5133b6a6bd76d5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a6aa5dd4e1cac5278e5133b6a6bd76d5e">mtd_start</a> (void)</td></tr>
 <tr class="memdesc:a6aa5dd4e1cac5278e5133b6a6bd76d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function initializes all components needed to start and to save the data.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a6aa5dd4e1cac5278e5133b6a6bd76d5e">More...</a><br /></td></tr>
@@ -142,6 +142,12 @@ $(document).ready(function(){initNavTree('firmware_2sys_2storage_2include_2stora
 <tr class="memitem:a866d650782cce79bebf0a89118eea4bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a866d650782cce79bebf0a89118eea4bd">mtd_load</a> (void *value, uint16_t len)</td></tr>
 <tr class="memdesc:a866d650782cce79bebf0a89118eea4bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">load all data in the storage, depending of the number of bytes ( <code>len</code> ) required to read from the storage block in the mtd device.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a866d650782cce79bebf0a89118eea4bd">More...</a><br /></td></tr>
 <tr class="separator:a866d650782cce79bebf0a89118eea4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f94567fc6fd02cfef3d45f92c26eba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#aa1f94567fc6fd02cfef3d45f92c26eba">mtd_erase_all</a> (void)</td></tr>
+<tr class="memdesc:aa1f94567fc6fd02cfef3d45f92c26eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all saved data in mtd_storage.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#aa1f94567fc6fd02cfef3d45f92c26eba">More...</a><br /></td></tr>
+<tr class="separator:aa1f94567fc6fd02cfef3d45f92c26eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a76965212018f3b428cd26aa0a637e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a22a76965212018f3b428cd26aa0a637e">mtd_dump</a> (void)</td></tr>
+<tr class="memdesc:a22a76965212018f3b428cd26aa0a637e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump all data inside mtd storage.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a22a76965212018f3b428cd26aa0a637e">More...</a><br /></td></tr>
+<tr class="separator:a22a76965212018f3b428cd26aa0a637e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a649b3998bcdac66d32fb29962da6822b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a649b3998bcdac66d32fb29962da6822b">mtd_read_string</a> (uint32_t key, char *output, size_t len)</td></tr>
 <tr class="memdesc:a649b3998bcdac66d32fb29962da6822b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to get the strings already saved.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a649b3998bcdac66d32fb29962da6822b">More...</a><br /></td></tr>
 <tr class="separator:a649b3998bcdac66d32fb29962da6822b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,13 +199,13 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_NUMOF_FLASHPAGES&#160;&#160;&#160;FLASHPAGE_NUMOF</td>
+          <td class="memname">#define MAX_NUMOF_FLASHPAGES&#160;&#160;&#160;(FLASHPAGE_NUMOF)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>max num of pages that can be manipulated </p>
 
-<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00041">41</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00042">42</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
 
 </div>
 </div>
@@ -221,6 +227,63 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a22a76965212018f3b428cd26aa0a637e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22a76965212018f3b428cd26aa0a637e">&#9670;&nbsp;</a></span>mtd_dump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mtd_dump </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dump all data inside mtd storage. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The mtd storage needs to define a flashpage limit after base program memory allocation</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Exists data inside of mtd storage. </td></tr>
+    <tr><td class="paramname">-1</td><td>All data inside of mtd is erased. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa1f94567fc6fd02cfef3d45f92c26eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1f94567fc6fd02cfef3d45f92c26eba">&#9670;&nbsp;</a></span>mtd_erase_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mtd_erase_all </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes all saved data in mtd_storage. </p>
+<p>This will erase all until the last page since to available flash page to write eeprom.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The mtd storage needs to define a flashpage limit after base program memory allocation</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Erased data success </td></tr>
+    <tr><td class="paramname">-1</td><td>Erased Fail. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac112225f440598e3c1a8297fa3909366"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac112225f440598e3c1a8297fa3909366">&#9670;&nbsp;</a></span>mtd_erase_flashpage()</h2>
 
@@ -599,7 +662,7 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_38d8769b7982536a1592307dd4ec982e.html">sys</a></li><li class="navelem"><a class="el" href="dir_043460d05e9e7dca5d95591e249199d5.html">storage</a></li><li class="navelem"><a class="el" href="dir_f0a8256c4133cdb78380b910bfbaa910.html">include</a></li><li class="navelem"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html">storage.h</a></li>
-    <li class="footer">Generated on Tue Sep 27 2022 10:20:21 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Tue Sep 27 2022 15:34:08 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

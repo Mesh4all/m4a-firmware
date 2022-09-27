@@ -3,6 +3,8 @@ var firmware_2sys_2storage_2include_2storage_8h =
     [ "LAST_AVAILABLE_PAGE", "firmware_2sys_2storage_2include_2storage_8h.html#a1f6aa012a967f33fb5ec3cdeae1c6e22", null ],
     [ "MAX_NUMOF_FLASHPAGES", "firmware_2sys_2storage_2include_2storage_8h.html#a401d65355970abcbfcd4b7b05d96a3ef", null ],
     [ "MAX_SIZE_STORAGE", "firmware_2sys_2storage_2include_2storage_8h.html#af6ba1f9f4063e60617dab3349aaba7c9", null ],
+    [ "mtd_dump", "firmware_2sys_2storage_2include_2storage_8h.html#a22a76965212018f3b428cd26aa0a637e", null ],
+    [ "mtd_erase_all", "firmware_2sys_2storage_2include_2storage_8h.html#aa1f94567fc6fd02cfef3d45f92c26eba", null ],
     [ "mtd_erase_flashpage", "firmware_2sys_2storage_2include_2storage_8h.html#ac112225f440598e3c1a8297fa3909366", null ],
     [ "mtd_get_string_len", "firmware_2sys_2storage_2include_2storage_8h.html#aec3e7e482208da868fc19270db0b0f21", null ],
     [ "mtd_load", "firmware_2sys_2storage_2include_2storage_8h.html#a866d650782cce79bebf0a89118eea4bd", null ],
