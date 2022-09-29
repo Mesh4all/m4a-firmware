@@ -29,7 +29,6 @@
 #ifndef STORAGE_H
 #define STORAGE_H
 
-#include <stdio.h>
 #include "mtd_flashpage.h"
 
 #ifdef __cplusplus
@@ -37,15 +36,25 @@ extern "C" {
 #endif
 
 #define LAST_AVAILABLE_PAGE (FLASHPAGE_NUMOF - 1) /*!< Last position in the block EEPROM*/
-#define MAX_SIZE_STORAGE (FLASHPAGE_SIZE)         /*!< max size to save in the page */
+#define MAX_SIZE_STORAGE (4096)                   /*!< max size of mtd_storage, only writeable 4K */
+#define MAX_NUMOF_FLASHPAGES                                                                       \
+    (MAX_SIZE_STORAGE / FLASHPAGE_SIZE) /*!< max num of pages that can be manipulated */
 
-#define MAX_NUMOF_FLASHPAGES (FLASHPAGE_NUMOF) /*!< max num of pages that can be manipulated */
+#define MTD_START_ADDR                                                                             \
+    ((uint32_t)(flashpage_addr(LAST_AVAILABLE_PAGE)) -                                             \
+     MAX_SIZE_STORAGE) /*!< Reference to the first address writeable*/
+#define MTD_LAST_ADDR                                                                              \
+    (uint32_t)(flashpage_addr(LAST_AVAILABLE_PAGE)) /*!< Reference to the last address writeable*/
+#define MTD_REGISTER_INDEX_LIMIT (512) /*!< Reference to max number of bytes to add an register*/
 
-#if CPU_SAMD21A
-#undef MAX_NUMOF_FLASHPAGES
-#define EEPROM_SIZE (FLASHPAGE_SIZE * FLASHPAGE_PAGES_PER_ROW * 64)
-#define MAX_NUMOF_FLASHPAGES (EEPROM_SIZE / FLASHPAGE_SIZE)
-#endif
+typedef struct {
+    uint16_t size;
+    uint8_t key[25];
+    uint8_t rwp;
+    uint32_t ptr_content;
+} mtd_register_t;
+
+#define MTD_REG_IDX_NUMOF (MTD_REGISTER_INDEX_LIMIT / sizeof(mtd_register_t)) /*!<  */
 
 /** @note The storage EEPROM section page could be resize with the bootloader block size
  *  @warning Always the block EEPROM and BOOTLOADER are affected between them.
@@ -56,43 +65,50 @@ extern "C" {
  * @return  0 Satisfactory result
  *          -1 Failed result
  */
-int mtd_start(void);
+int8_t mtd_start(void);
 
 /**
- * @brief This function is executed by mtd write_string and mtd_write_uint8 internally. It is not
- * recommended to use it directly, use the functions mentioned
+ * @brief Saves any value in any position of mtd_storage.
  *
- * @param [in] key  this is the address where will be saved the data in the memory
- * @param [out] value value to save
- * @retval 0 Satisfactory result
- * @retval -1 Failed result
+ * @param [in] value Any type of value.
+ * @param [in] len  size of @p value that will be saved.
+ * @param [in] offset reference to an position in mtd_storage.
+ * @return int8_t
  */
-int mtd_save(uint32_t key, void *value);
+int mtd_save(void *value, uint32_t len, uint32_t offset);
 
 /**
- * @brief This function is executed to save any data type or any strutc, The function saves all the
- * information compressed in EEPROM/FLASH_MEMORY. The data is stored in each page of the
- * EEPROM/MEMORY_FLASH section.
- * @warning: The EEPROM/FLASH_MEMORY section size depends of itself hardware.
+ * @brief Loads any value in any position of mtd_storage.
  *
- * @param [in]  value The input value given could be any datatype or data struct
- * @param [in]  len  size of the all elements in the container of @p value
- * @retval  0 Satisfactory result
- * @retval  -1 Failed result
+ * @param [out] value Any type of value.
+ * @param [in] len size of @p value that will be loaded.
+ * @param [in] offset reference to an position in mtd_storage.
+ * @return int8_t
  */
-int mtd_save_compress(void *value, uint16_t len);
+int mtd_load(void *value, uint16_t len, uint32_t offset);
 
 /**
- * @brief load all data in the storage, depending of the number of bytes ( @p len ) required to read
- * from the storage block in the mtd device.
+ * @brief Saves data using a key as identifier to localize a group of bytes.
  *
- * @param [out]  value pointer to an struct or variable where will be loaded the data of the
- * storage.
- * @param [in]  len  size of the struct or variable @p value
- * @retval  0 Satisfactory result
- * @retval  -1 Failed result
+ * @param [in] value Any type of value.
+ * @param [in] key Identifier to set/get a specified value.
+ * @param [in] len size of @p value that will be saved.
+ * @return int8_t
  */
-int mtd_load(void *value, uint16_t len);
+int mtd_save_reg(void *value, uint8_t *key, uint16_t len);
+
+/**
+ * @brief Load data from mtd_storage localizating with its knew key and saves in @p value the data.
+ *
+ * @param [out] value Any type of value.
+ * @param [in] key   Identifier to set/get a specified value.
+ * @param [in] len  size of data that will be saved in @p value .
+ *
+ * @note @p size is used to check with the data saved in mtd_storage and won't be overflowed the @p
+ * value parameter.
+ * @return int8_t
+ */
+int mtd_load_reg(void *value, uint8_t *key, uint16_t len);
 
 /**
  * @brief Removes all saved data in mtd_storage. This will erase all until the
@@ -104,7 +120,14 @@ int mtd_load(void *value, uint16_t len);
  * @retval 0 Erased data success
  * @retval -1 Erased Fail.
  */
-int mtd_erase_all(void);
+int8_t mtd_erase_all(void);
+
+/**
+ * @brief Check the available registers, to write/save data.
+ *
+ * @return int8_t
+ */
+int8_t mtd_available_idx(void);
 
 /**
  * @brief Dump all data inside mtd storage
@@ -115,67 +138,15 @@ int mtd_erase_all(void);
  * @retval 0 Exists data inside of mtd storage.
  * @retval -1 All data inside of mtd is erased.
  */
-int mtd_dump(void);
+int8_t mtd_dump(void);
 
 /**
- * @brief Function used to get the strings already saved
+ * @brief Dump all data inside an flshpage from mtd_storage
  *
- * @param [in]  key    This is the address where will be saved the data in the memory
- * @param [in]  len    Length of the data
- * @param [out] output Output to save
- * @return  0 Satisfactory result
- *          -1 Failed result
+ * @param page
+ * @return int8_t
  */
-int mtd_read_string(uint32_t key, char *output, size_t len);
-
-/**
- * @brief Function used to get the uint8 values already saved
- *
- * @param [in]  key    This is the address where will be saved the data in the memory
- * @param [out] output Output to save
- * @return  0 Satisfactory result
- *          -1 Failed result
- */
-int mtd_read_u8(uint32_t key, uint8_t *output);
-
-/**
- * @brief This function deletes the saved data
- *
- * @param key This is the address where will be removed the data in the memory
- * @return  0 Satisfactory result
- *          -1 Failed result
- */
-int mtd_erase_flashpage(uint32_t key);
-
-/**
- * @brief This function is used to write only strings.
- * If they are greater than 64 bytes your string will be
- * cut and will save only 64 bytes
- *
- * @param [in] key  This is the address where will be saved the data in the memory
- * @param [out] value Value to save
- * @return  0 Satisfactory result
- *          -1 Failed result
- */
-int mtd_write_string(uint32_t key, char *value);
-
-/**
- * @brief Function used to write only uint8_t
- *
- * @param [in] key  This is the address where will be saved the data in the memory
- * @param [out] value Value to save
- * @return  0 Satisfactory result
- *          -1 Failed result
- */
-int mtd_write_uint8(uint32_t key, uint8_t *value);
-
-/**
- * @brief Function used to get the length of strings
- *
- * @param [in] key  This is the address of memory
- *
- */
-int mtd_get_string_len(uint32_t key);
+int8_t mtd_dump_flashpage(uint16_t page);
 
 #ifdef __cplusplus
 }

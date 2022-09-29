@@ -1,1 +1,6 @@
 rsource "../../firmware/sys/storage/Kconfig"
+rsource "../../firmware/Kconfig.debug"
+
+menu "Test Debug"
+
+endmenu
