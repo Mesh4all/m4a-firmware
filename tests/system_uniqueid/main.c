@@ -54,22 +54,6 @@ void test_get_uid_seed_random(void) {
     printf("random seed in uint32: %" PRIu32 "\n", val);
 }
 
-void test_get_ipv6_static(void) {
-    uint8_t iface = get_wired_iface();
-    ipv6_addr_from_str(&addr, "2001:db8:2:1::");
-    set_ipv6_by_uid(iface, &addr, 64, UNIQUEID_STATIC_MODE);
-    ipv6_addr_print(&addr);
-    printf("\n");
-}
-
-void test_get_ipv6_random(void) {
-    uint8_t iface = get_wired_iface();
-    ipv6_addr_from_str(&addr, "2001:db8:2:1::");
-    set_ipv6_by_uid(iface, &addr, 64, UNIQUEID_RANDOM_MODE);
-    ipv6_addr_print(&addr);
-    printf("\n");
-}
-
 void test_randomblocks(void) { random_generator(8); }
 
 void test_uid_random_blocks(void) { random_generator(64); }
