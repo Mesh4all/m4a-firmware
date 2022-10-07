@@ -22,6 +22,11 @@
 #include "shell_extended.h"
 #include "kernel_defines.h"
 
+/* important: please keep the used modules alphabetically sorted */
+#if IS_USED(MODULE_NET_TOOLS)
+int net_tools_cmd(int argc, char **argv);
+#endif
+
 #if IS_USED(MODULE_UNIQUEID)
 int uid_cmd(int argc, char **argv);
 #endif
@@ -30,6 +35,10 @@ int storage_cmd(int argc, char **argv);
 #endif
 
 const shell_command_t shell_extended_commands[] = {
+/* important: please keep the used modules alphabetically sorted */
+#if IS_USED(MODULE_NET_TOOLS)
+    {"if", "net_tools commands", net_tools_cmd},
+#endif
 #if IS_USED(MODULE_UNIQUEID)
     {"uid", "uniqueid commands", uid_cmd},
 #endif
