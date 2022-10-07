@@ -141,6 +141,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gace20d8761a85d3c00ddd6676f49fccd6"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6">set_ipv6_global</a> (kernel_pid_t iface_index, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip, uint8_t prefix)</td></tr>
 <tr class="memdesc:gace20d8761a85d3c00ddd6676f49fccd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set an ipv6 global address in an iface.  <a href="group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6">More...</a><br /></td></tr>
 <tr class="separator:gace20d8761a85d3c00ddd6676f49fccd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfe9a9f9f85d6723052629d536c45e46"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#gabfe9a9f9f85d6723052629d536c45e46">rm_ipv6_global</a> (kernel_pid_t iface_idx)</td></tr>
+<tr class="memdesc:gabfe9a9f9f85d6723052629d536c45e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the current global ipv6 in an interface.  <a href="group__net__tools.html#gabfe9a9f9f85d6723052629d536c45e46">More...</a><br /></td></tr>
+<tr class="separator:gabfe9a9f9f85d6723052629d536c45e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7a5033ddeef102884053fcf3f8083735"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">set_ipv6_multicast</a> (kernel_pid_t iface_index, <a class="el" href="unionipv6__addr__t.html">ipv6_addr_t</a> ip, uint8_t prefix)</td></tr>
 <tr class="memdesc:ga7a5033ddeef102884053fcf3f8083735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to set an ipv6 global address in an iface.  <a href="group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735">More...</a><br /></td></tr>
 <tr class="separator:ga7a5033ddeef102884053fcf3f8083735"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,6 +219,39 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname">returns</td><td>the index of the network interface. </td></tr>
     <tr><td class="paramname">-1</td><td>when the interface doesn't exist </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gabfe9a9f9f85d6723052629d536c45e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfe9a9f9f85d6723052629d536c45e46">&#9670;&nbsp;</a></span>rm_ipv6_global()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t rm_ipv6_global </td>
+          <td>(</td>
+          <td class="paramtype">kernel_pid_t&#160;</td>
+          <td class="paramname"><em>iface_idx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove the current global ipv6 in an interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iface_idx</td><td>interface index to removes the global ipv6 address. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>address removed successful. </td></tr>
+    <tr><td class="paramname">-1</td><td>Doesn't exist a global ipv6 address. </td></tr>
   </table>
   </dd>
 </dl>
@@ -389,7 +425,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 27 2022 15:34:08 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Fri Oct 7 2022 14:06:37 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

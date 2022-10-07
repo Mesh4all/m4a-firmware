@@ -1,6 +1,7 @@
 <map id="firmware/sys/uniqueid/include/uniqueid.h" name="firmware/sys/uniqueid/include/uniqueid.h">
-<area shape="rect" id="node1" title="IPV6 address." alt="" coords="109,5,305,52"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,100,141,129"/>
-<area shape="rect" id="node3" title=" " alt="" coords="165,100,248,129"/>
-<area shape="rect" id="node4" title=" " alt="" coords="272,100,413,129"/>
+<area shape="rect" id="node1" title="IPV6 address." alt="" coords="148,5,344,52"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,100,87,129"/>
+<area shape="rect" id="node3" title=" " alt="" coords="111,100,247,129"/>
+<area shape="rect" id="node4" title=" " alt="" coords="271,100,354,129"/>
+<area shape="rect" id="node5" title=" " alt="" coords="378,100,519,129"/>
 </map>

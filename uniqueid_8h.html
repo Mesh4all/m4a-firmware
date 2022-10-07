@@ -115,7 +115,8 @@ $(document).ready(function(){initNavTree('uniqueid_8h.html',''); initResizable()
 
 <p>IPV6 address.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;periph/cpuid.h&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;periph/cpuid.h&quot;</code><br />
 <code>#include &quot;board.h&quot;</code><br />
 <code>#include &quot;net/ipv6/addr.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -123,7 +124,7 @@ $(document).ready(function(){initNavTree('uniqueid_8h.html',''); initResizable()
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="uniqueid_8h__incl.svg" width="419" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="uniqueid_8h__incl.svg" width="526" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -143,9 +144,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae2c9fde27160fcb3424dd56af3e325ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uniqueid_8h.html#ae2c9fde27160fcb3424dd56af3e325ea">get_uid_seed</a> (void *val, uint8_t len, uint8_t uid_mode)</td></tr>
-<tr class="memdesc:ae2c9fde27160fcb3424dd56af3e325ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function get ipv6 address (mode: static (default), random, manual)  <a href="uniqueid_8h.html#ae2c9fde27160fcb3424dd56af3e325ea">More...</a><br /></td></tr>
-<tr class="separator:ae2c9fde27160fcb3424dd56af3e325ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b09b47c93a9137790e2146f329964c9"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uniqueid_8h.html#a8b09b47c93a9137790e2146f329964c9">get_uid_seed</a> (void *val, uint8_t len, uint8_t uid_mode)</td></tr>
+<tr class="memdesc:a8b09b47c93a9137790e2146f329964c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function get ipv6 address (mode: static (default), random, manual)  <a href="uniqueid_8h.html#a8b09b47c93a9137790e2146f329964c9">More...</a><br /></td></tr>
+<tr class="separator:a8b09b47c93a9137790e2146f329964c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae18541d7ecd5cb4d922fc0b8d2ba07c8"><td class="memItemLeft" align="right" valign="top"><a id="ae18541d7ecd5cb4d922fc0b8d2ba07c8"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>LAST_OCTECTS</b>&#160;&#160;&#160;(8)</td></tr>
 <tr class="separator:ae18541d7ecd5cb4d922fc0b8d2ba07c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,19 +191,19 @@ Uniqueid modes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="uniqueid_8h_source.html#l00064">64</a> of file <a class="el" href="uniqueid_8h_source.html">uniqueid.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uniqueid_8h_source.html#l00065">65</a> of file <a class="el" href="uniqueid_8h_source.html">uniqueid.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae2c9fde27160fcb3424dd56af3e325ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2c9fde27160fcb3424dd56af3e325ea">&#9670;&nbsp;</a></span>get_uid_seed()</h2>
+<a id="a8b09b47c93a9137790e2146f329964c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b09b47c93a9137790e2146f329964c9">&#9670;&nbsp;</a></span>get_uid_seed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void get_uid_seed </td>
+          <td class="memname">int8_t get_uid_seed </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>val</em>, </td>
@@ -247,7 +248,7 @@ Uniqueid modes</h2></td></tr>
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_38d8769b7982536a1592307dd4ec982e.html">sys</a></li><li class="navelem"><a class="el" href="dir_d1a3ede2a7053dc6fcf75f473f49af84.html">uniqueid</a></li><li class="navelem"><a class="el" href="dir_23081fd1662f83bbc675cfa0b63f22a3.html">include</a></li><li class="navelem"><a class="el" href="uniqueid_8h.html">uniqueid.h</a></li>
-    <li class="footer">Generated on Tue Sep 27 2022 15:34:08 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Fri Oct 7 2022 14:06:37 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
