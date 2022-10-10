@@ -8,6 +8,7 @@ var annotated_dup =
     [ "http_request_t", "structhttp__request__t.html", "structhttp__request__t" ],
     [ "http_response_t", "structhttp__response__t.html", "structhttp__response__t" ],
     [ "ipv6_addr_t", "unionipv6__addr__t.html", "unionipv6__addr__t" ],
+    [ "mtd_register_t", "structmtd__register__t.html", "structmtd__register__t" ],
     [ "random_buff", "unionrandom__buff.html", "unionrandom__buff" ],
     [ "sensor_data", "structsensor__data.html", "structsensor__data" ],
     [ "sensors_t", "structsensors__t.html", "structsensors__t" ],

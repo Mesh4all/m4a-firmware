@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('firmware_2sys_2storage_2include_2stora
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
   <div class="headertitle">
 <div class="title">storage.h File Reference<div class="ingroups"><a class="el" href="group__m4a-firmware.html">Reference firmware</a> &raquo; <a class="el" href="group__sys.html">Sys</a> &raquo; <a class="el" href="group__storage__module.html">Storage</a></div></div>  </div>
 </div><!--header-->
@@ -111,61 +113,64 @@ $(document).ready(function(){initNavTree('firmware_2sys_2storage_2include_2stora
 
 <p>This is the storage module where you can save data in the flash memory. This data should not be greater than 64 bytes. Data formats allowed are string and uint8.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;mtd_flashpage.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;mtd_flashpage.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for storage.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="firmware_2sys_2storage_2include_2storage_8h__incl.svg" width="264" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="firmware_2sys_2storage_2include_2storage_8h__incl.svg" width="200" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
 <p><a href="firmware_2sys_2storage_2include_2storage_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtd__register__t.html">mtd_register_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f6aa012a967f33fb5ec3cdeae1c6e22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a1f6aa012a967f33fb5ec3cdeae1c6e22">LAST_AVAILABLE_PAGE</a>&#160;&#160;&#160;(FLASHPAGE_NUMOF - 1)</td></tr>
 <tr class="separator:a1f6aa012a967f33fb5ec3cdeae1c6e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6ba1f9f4063e60617dab3349aaba7c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#af6ba1f9f4063e60617dab3349aaba7c9">MAX_SIZE_STORAGE</a>&#160;&#160;&#160;(FLASHPAGE_SIZE)</td></tr>
+<tr class="memitem:af6ba1f9f4063e60617dab3349aaba7c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#af6ba1f9f4063e60617dab3349aaba7c9">MAX_SIZE_STORAGE</a>&#160;&#160;&#160;(4096)</td></tr>
 <tr class="separator:af6ba1f9f4063e60617dab3349aaba7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a401d65355970abcbfcd4b7b05d96a3ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a401d65355970abcbfcd4b7b05d96a3ef">MAX_NUMOF_FLASHPAGES</a>&#160;&#160;&#160;(FLASHPAGE_NUMOF)</td></tr>
+<tr class="memitem:a401d65355970abcbfcd4b7b05d96a3ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a401d65355970abcbfcd4b7b05d96a3ef">MAX_NUMOF_FLASHPAGES</a>&#160;&#160;&#160;(<a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#af6ba1f9f4063e60617dab3349aaba7c9">MAX_SIZE_STORAGE</a> / FLASHPAGE_SIZE)</td></tr>
 <tr class="separator:a401d65355970abcbfcd4b7b05d96a3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6aa5dd4e1cac5278e5133b6a6bd76d5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a6aa5dd4e1cac5278e5133b6a6bd76d5e">mtd_start</a> (void)</td></tr>
-<tr class="memdesc:a6aa5dd4e1cac5278e5133b6a6bd76d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function initializes all components needed to start and to save the data.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a6aa5dd4e1cac5278e5133b6a6bd76d5e">More...</a><br /></td></tr>
-<tr class="separator:a6aa5dd4e1cac5278e5133b6a6bd76d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4d6ee70023524b0324b3fd3a4e9f701"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#ae4d6ee70023524b0324b3fd3a4e9f701">mtd_save</a> (uint32_t key, void *value)</td></tr>
-<tr class="memdesc:ae4d6ee70023524b0324b3fd3a4e9f701"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed by mtd write_string and mtd_write_uint8 internally.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#ae4d6ee70023524b0324b3fd3a4e9f701">More...</a><br /></td></tr>
-<tr class="separator:ae4d6ee70023524b0324b3fd3a4e9f701"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac21081b8f0bde9f04a9ae6ed02e8cfb9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#ac21081b8f0bde9f04a9ae6ed02e8cfb9">mtd_save_compress</a> (void *value, uint16_t len)</td></tr>
-<tr class="memdesc:ac21081b8f0bde9f04a9ae6ed02e8cfb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed to save any data type or any strutc, The function saves all the information compressed in EEPROM/FLASH_MEMORY.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#ac21081b8f0bde9f04a9ae6ed02e8cfb9">More...</a><br /></td></tr>
-<tr class="separator:ac21081b8f0bde9f04a9ae6ed02e8cfb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a866d650782cce79bebf0a89118eea4bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a866d650782cce79bebf0a89118eea4bd">mtd_load</a> (void *value, uint16_t len)</td></tr>
-<tr class="memdesc:a866d650782cce79bebf0a89118eea4bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">load all data in the storage, depending of the number of bytes ( <code>len</code> ) required to read from the storage block in the mtd device.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a866d650782cce79bebf0a89118eea4bd">More...</a><br /></td></tr>
-<tr class="separator:a866d650782cce79bebf0a89118eea4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1f94567fc6fd02cfef3d45f92c26eba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#aa1f94567fc6fd02cfef3d45f92c26eba">mtd_erase_all</a> (void)</td></tr>
-<tr class="memdesc:aa1f94567fc6fd02cfef3d45f92c26eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all saved data in mtd_storage.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#aa1f94567fc6fd02cfef3d45f92c26eba">More...</a><br /></td></tr>
-<tr class="separator:aa1f94567fc6fd02cfef3d45f92c26eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22a76965212018f3b428cd26aa0a637e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a22a76965212018f3b428cd26aa0a637e">mtd_dump</a> (void)</td></tr>
-<tr class="memdesc:a22a76965212018f3b428cd26aa0a637e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump all data inside mtd storage.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a22a76965212018f3b428cd26aa0a637e">More...</a><br /></td></tr>
-<tr class="separator:a22a76965212018f3b428cd26aa0a637e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a649b3998bcdac66d32fb29962da6822b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a649b3998bcdac66d32fb29962da6822b">mtd_read_string</a> (uint32_t key, char *output, size_t len)</td></tr>
-<tr class="memdesc:a649b3998bcdac66d32fb29962da6822b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to get the strings already saved.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a649b3998bcdac66d32fb29962da6822b">More...</a><br /></td></tr>
-<tr class="separator:a649b3998bcdac66d32fb29962da6822b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e74c490990fc259d0bd449c8e9f097a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a9e74c490990fc259d0bd449c8e9f097a">mtd_read_u8</a> (uint32_t key, uint8_t *output)</td></tr>
-<tr class="memdesc:a9e74c490990fc259d0bd449c8e9f097a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to get the uint8 values already saved.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a9e74c490990fc259d0bd449c8e9f097a">More...</a><br /></td></tr>
-<tr class="separator:a9e74c490990fc259d0bd449c8e9f097a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac112225f440598e3c1a8297fa3909366"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#ac112225f440598e3c1a8297fa3909366">mtd_erase_flashpage</a> (uint32_t key)</td></tr>
-<tr class="memdesc:ac112225f440598e3c1a8297fa3909366"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function deletes the saved data.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#ac112225f440598e3c1a8297fa3909366">More...</a><br /></td></tr>
-<tr class="separator:ac112225f440598e3c1a8297fa3909366"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cbab32f90d7b8179b7c4182e87135f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a5cbab32f90d7b8179b7c4182e87135f7">mtd_write_string</a> (uint32_t key, char *value)</td></tr>
-<tr class="memdesc:a5cbab32f90d7b8179b7c4182e87135f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to write only strings.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a5cbab32f90d7b8179b7c4182e87135f7">More...</a><br /></td></tr>
-<tr class="separator:a5cbab32f90d7b8179b7c4182e87135f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc92c4881252e20efaf2b73591a73649"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#abc92c4881252e20efaf2b73591a73649">mtd_write_uint8</a> (uint32_t key, uint8_t *value)</td></tr>
-<tr class="memdesc:abc92c4881252e20efaf2b73591a73649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to write only uint8_t.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#abc92c4881252e20efaf2b73591a73649">More...</a><br /></td></tr>
-<tr class="separator:abc92c4881252e20efaf2b73591a73649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec3e7e482208da868fc19270db0b0f21"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#aec3e7e482208da868fc19270db0b0f21">mtd_get_string_len</a> (uint32_t key)</td></tr>
-<tr class="memdesc:aec3e7e482208da868fc19270db0b0f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to get the length of strings.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#aec3e7e482208da868fc19270db0b0f21">More...</a><br /></td></tr>
-<tr class="separator:aec3e7e482208da868fc19270db0b0f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a778637ff7b034e27b6b35a2f0d785606"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a778637ff7b034e27b6b35a2f0d785606">MTD_START_ADDR</a></td></tr>
+<tr class="separator:a778637ff7b034e27b6b35a2f0d785606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca5cd2fbe98a992768cb95e12751ea2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a3ca5cd2fbe98a992768cb95e12751ea2">MTD_LAST_ADDR</a>&#160;&#160;&#160;(uint32_t)(flashpage_addr(<a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a1f6aa012a967f33fb5ec3cdeae1c6e22">LAST_AVAILABLE_PAGE</a>))</td></tr>
+<tr class="separator:a3ca5cd2fbe98a992768cb95e12751ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af661bd788e62ad96860f3094b38114"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a3af661bd788e62ad96860f3094b38114">MTD_REGISTER_INDEX_LIMIT</a>&#160;&#160;&#160;(512)</td></tr>
+<tr class="separator:a3af661bd788e62ad96860f3094b38114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b38f11f6304ccf48028426408b34361"><td class="memItemLeft" align="right" valign="top"><a id="a6b38f11f6304ccf48028426408b34361"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MTD_REG_IDX_NUMOF</b>&#160;&#160;&#160;(<a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a3af661bd788e62ad96860f3094b38114">MTD_REGISTER_INDEX_LIMIT</a> / sizeof(<a class="el" href="structmtd__register__t.html">mtd_register_t</a>))</td></tr>
+<tr class="separator:a6b38f11f6304ccf48028426408b34361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2b906494510ba1d711c732142e8c11"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#abe2b906494510ba1d711c732142e8c11">mtd_start</a> (void)</td></tr>
+<tr class="memdesc:abe2b906494510ba1d711c732142e8c11"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function initializes all components needed to start and to save the data.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#abe2b906494510ba1d711c732142e8c11">More...</a><br /></td></tr>
+<tr class="separator:abe2b906494510ba1d711c732142e8c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8b03ce4d6b401e032a908706799162c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#aa8b03ce4d6b401e032a908706799162c">mtd_save</a> (void *value, uint32_t len, uint32_t offset)</td></tr>
+<tr class="memdesc:aa8b03ce4d6b401e032a908706799162c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves any value in any position of mtd_storage.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#aa8b03ce4d6b401e032a908706799162c">More...</a><br /></td></tr>
+<tr class="separator:aa8b03ce4d6b401e032a908706799162c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0541ed59748c5fb985a6967126975a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a8a0541ed59748c5fb985a6967126975a">mtd_load</a> (void *value, uint16_t len, uint32_t offset)</td></tr>
+<tr class="memdesc:a8a0541ed59748c5fb985a6967126975a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads any value in any position of mtd_storage.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a8a0541ed59748c5fb985a6967126975a">More...</a><br /></td></tr>
+<tr class="separator:a8a0541ed59748c5fb985a6967126975a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29029fcf2eeccdcc402687ce6d1834a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a29029fcf2eeccdcc402687ce6d1834a7">mtd_save_reg</a> (void *value, uint8_t *key, uint16_t len)</td></tr>
+<tr class="memdesc:a29029fcf2eeccdcc402687ce6d1834a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves data using a key as identifier to localize a group of bytes.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a29029fcf2eeccdcc402687ce6d1834a7">More...</a><br /></td></tr>
+<tr class="separator:a29029fcf2eeccdcc402687ce6d1834a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f8ab0d2d6cfe8870b7f889dae0e4c3f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a0f8ab0d2d6cfe8870b7f889dae0e4c3f">mtd_load_reg</a> (void *value, uint8_t *key, uint16_t len)</td></tr>
+<tr class="memdesc:a0f8ab0d2d6cfe8870b7f889dae0e4c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load data from mtd_storage localizating with its knew key and saves in <code>value</code> the data.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a0f8ab0d2d6cfe8870b7f889dae0e4c3f">More...</a><br /></td></tr>
+<tr class="separator:a0f8ab0d2d6cfe8870b7f889dae0e4c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc9b247d11cfcde9f583e4b254a012be"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#acc9b247d11cfcde9f583e4b254a012be">mtd_erase_all</a> (void)</td></tr>
+<tr class="memdesc:acc9b247d11cfcde9f583e4b254a012be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all saved data in mtd_storage.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#acc9b247d11cfcde9f583e4b254a012be">More...</a><br /></td></tr>
+<tr class="separator:acc9b247d11cfcde9f583e4b254a012be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e535e4d862a5c66a8d3e1bd13d055d8"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a0e535e4d862a5c66a8d3e1bd13d055d8">mtd_available_idx</a> (void)</td></tr>
+<tr class="memdesc:a0e535e4d862a5c66a8d3e1bd13d055d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the available registers, to write/save data.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#a0e535e4d862a5c66a8d3e1bd13d055d8">More...</a><br /></td></tr>
+<tr class="separator:a0e535e4d862a5c66a8d3e1bd13d055d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9ca55f7466e0dce5943f3e1e2bf65de"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#ac9ca55f7466e0dce5943f3e1e2bf65de">mtd_dump</a> (void)</td></tr>
+<tr class="memdesc:ac9ca55f7466e0dce5943f3e1e2bf65de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump all data inside mtd storage.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#ac9ca55f7466e0dce5943f3e1e2bf65de">More...</a><br /></td></tr>
+<tr class="separator:ac9ca55f7466e0dce5943f3e1e2bf65de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2f89ea6c134e9dce2d9436c5f7b062"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#afa2f89ea6c134e9dce2d9436c5f7b062">mtd_dump_flashpage</a> (uint16_t page)</td></tr>
+<tr class="memdesc:afa2f89ea6c134e9dce2d9436c5f7b062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump all data inside an flshpage from mtd_storage.  <a href="firmware_2sys_2storage_2include_2storage_8h.html#afa2f89ea6c134e9dce2d9436c5f7b062">More...</a><br /></td></tr>
+<tr class="separator:afa2f89ea6c134e9dce2d9436c5f7b062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is the storage module where you can save data in the flash memory. This data should not be greater than 64 bytes. Data formats allowed are string and uint8. </p>
@@ -188,7 +193,7 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 </div><div class="memdoc">
 <p>Last position in the block EEPROM </p>
 
-<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00039">39</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00038">38</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
 
 </div>
 </div>
@@ -199,13 +204,13 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_NUMOF_FLASHPAGES&#160;&#160;&#160;(FLASHPAGE_NUMOF)</td>
+          <td class="memname">#define MAX_NUMOF_FLASHPAGES&#160;&#160;&#160;(<a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#af6ba1f9f4063e60617dab3349aaba7c9">MAX_SIZE_STORAGE</a> / FLASHPAGE_SIZE)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>max num of pages that can be manipulated </p>
 
-<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00042">42</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00040">40</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
 
 </div>
 </div>
@@ -216,25 +221,99 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_SIZE_STORAGE&#160;&#160;&#160;(FLASHPAGE_SIZE)</td>
+          <td class="memname">#define MAX_SIZE_STORAGE&#160;&#160;&#160;(4096)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>max size to save in the page </p>
+<p>max size of mtd_storage, only writeable 4K </p>
 
-<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00040">40</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00039">39</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a22a76965212018f3b428cd26aa0a637e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22a76965212018f3b428cd26aa0a637e">&#9670;&nbsp;</a></span>mtd_dump()</h2>
+<a id="a3ca5cd2fbe98a992768cb95e12751ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca5cd2fbe98a992768cb95e12751ea2">&#9670;&nbsp;</a></span>MTD_LAST_ADDR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int mtd_dump </td>
+          <td class="memname">#define MTD_LAST_ADDR&#160;&#160;&#160;(uint32_t)(flashpage_addr(<a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html#a1f6aa012a967f33fb5ec3cdeae1c6e22">LAST_AVAILABLE_PAGE</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reference to the last address writeable </p>
+
+<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00046">46</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="a3af661bd788e62ad96860f3094b38114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af661bd788e62ad96860f3094b38114">&#9670;&nbsp;</a></span>MTD_REGISTER_INDEX_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MTD_REGISTER_INDEX_LIMIT&#160;&#160;&#160;(512)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reference to max number of bytes to add an register </p>
+
+<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00048">48</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="a778637ff7b034e27b6b35a2f0d785606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a778637ff7b034e27b6b35a2f0d785606">&#9670;&nbsp;</a></span>MTD_START_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MTD_START_ADDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ((uint32_t)(flashpage_addr(<a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#a1f6aa012a967f33fb5ec3cdeae1c6e22">LAST_AVAILABLE_PAGE</a>)) -                                             \</div>
+<div class="line">     <a class="code" href="firmware_2sys_2storage_2include_2storage_8h.html#af6ba1f9f4063e60617dab3349aaba7c9">MAX_SIZE_STORAGE</a>)</div>
+</div><!-- fragment --><p>Reference to the first address writeable </p>
+
+<p class="definition">Definition at line <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00043">43</a> of file <a class="el" href="firmware_2sys_2storage_2include_2storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a0e535e4d862a5c66a8d3e1bd13d055d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e535e4d862a5c66a8d3e1bd13d055d8">&#9670;&nbsp;</a></span>mtd_available_idx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t mtd_available_idx </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check the available registers, to write/save data. </p>
+<dl class="section return"><dt>Returns</dt><dd>int8_t </dd></dl>
+
+</div>
+</div>
+<a id="ac9ca55f7466e0dce5943f3e1e2bf65de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9ca55f7466e0dce5943f3e1e2bf65de">&#9670;&nbsp;</a></span>mtd_dump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t mtd_dump </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -255,14 +334,41 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 
 </div>
 </div>
-<a id="aa1f94567fc6fd02cfef3d45f92c26eba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1f94567fc6fd02cfef3d45f92c26eba">&#9670;&nbsp;</a></span>mtd_erase_all()</h2>
+<a id="afa2f89ea6c134e9dce2d9436c5f7b062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa2f89ea6c134e9dce2d9436c5f7b062">&#9670;&nbsp;</a></span>mtd_dump_flashpage()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int mtd_erase_all </td>
+          <td class="memname">int8_t mtd_dump_flashpage </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>page</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dump all data inside an flshpage from mtd_storage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">page</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int8_t </dd></dl>
+
+</div>
+</div>
+<a id="acc9b247d11cfcde9f583e4b254a012be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc9b247d11cfcde9f583e4b254a012be">&#9670;&nbsp;</a></span>mtd_erase_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t mtd_erase_all </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -284,61 +390,8 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 
 </div>
 </div>
-<a id="ac112225f440598e3c1a8297fa3909366"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac112225f440598e3c1a8297fa3909366">&#9670;&nbsp;</a></span>mtd_erase_flashpage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mtd_erase_flashpage </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function deletes the saved data. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td>This is the address where will be removed the data in the memory </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 Satisfactory result -1 Failed result </dd></dl>
-
-</div>
-</div>
-<a id="aec3e7e482208da868fc19270db0b0f21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec3e7e482208da868fc19270db0b0f21">&#9670;&nbsp;</a></span>mtd_get_string_len()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mtd_get_string_len </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function used to get the length of strings. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>This is the address of memory </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a866d650782cce79bebf0a89118eea4bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a866d650782cce79bebf0a89118eea4bd">&#9670;&nbsp;</a></span>mtd_load()</h2>
+<a id="a8a0541ed59748c5fb985a6967126975a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a0541ed59748c5fb985a6967126975a">&#9670;&nbsp;</a></span>mtd_load()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -353,7 +406,13 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -363,163 +422,36 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
       </table>
 </div><div class="memdoc">
 
-<p>load all data in the storage, depending of the number of bytes ( <code>len</code> ) required to read from the storage block in the mtd device. </p>
+<p>Loads any value in any position of mtd_storage. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>pointer to an struct or variable where will be loaded the data of the storage. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>size of the struct or variable <code>value</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Any type of value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>size of <code>value</code> that will be loaded. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>reference to an position in mtd_storage. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0</td><td>Satisfactory result </td></tr>
-    <tr><td class="paramname">-1</td><td>Failed result </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>int8_t </dd></dl>
 
 </div>
 </div>
-<a id="a649b3998bcdac66d32fb29962da6822b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a649b3998bcdac66d32fb29962da6822b">&#9670;&nbsp;</a></span>mtd_read_string()</h2>
+<a id="a0f8ab0d2d6cfe8870b7f889dae0e4c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f8ab0d2d6cfe8870b7f889dae0e4c3f">&#9670;&nbsp;</a></span>mtd_load_reg()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int mtd_read_string </td>
+          <td class="memname">int mtd_load_reg </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>output</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function used to get the strings already saved. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>This is the address where will be saved the data in the memory </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>Length of the data </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>Output to save </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 Satisfactory result -1 Failed result </dd></dl>
-
-</div>
-</div>
-<a id="a9e74c490990fc259d0bd449c8e9f097a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e74c490990fc259d0bd449c8e9f097a">&#9670;&nbsp;</a></span>mtd_read_u8()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mtd_read_u8 </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>output</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function used to get the uint8 values already saved. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>This is the address where will be saved the data in the memory </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>Output to save </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 Satisfactory result -1 Failed result </dd></dl>
-
-</div>
-</div>
-<a id="ae4d6ee70023524b0324b3fd3a4e9f701"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4d6ee70023524b0324b3fd3a4e9f701">&#9670;&nbsp;</a></span>mtd_save()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mtd_save </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function is executed by mtd write_string and mtd_write_uint8 internally. </p>
-<p>It is not recommended to use it directly, use the functions mentioned</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>this is the address where will be saved the data in the memory </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>value to save </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0</td><td>Satisfactory result </td></tr>
-    <tr><td class="paramname">-1</td><td>Failed result </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ac21081b8f0bde9f04a9ae6ed02e8cfb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac21081b8f0bde9f04a9ae6ed02e8cfb9">&#9670;&nbsp;</a></span>mtd_save_compress()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mtd_save_compress </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -535,33 +467,118 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
       </table>
 </div><div class="memdoc">
 
-<p>This function is executed to save any data type or any strutc, The function saves all the information compressed in EEPROM/FLASH_MEMORY. </p>
-<p>The data is stored in each page of the EEPROM/MEMORY_FLASH section. </p><dl class="section warning"><dt>Warning</dt><dd>: The EEPROM/FLASH_MEMORY section size depends of itself hardware.</dd></dl>
+<p>Load data from mtd_storage localizating with its knew key and saves in <code>value</code> the data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The input value given could be any datatype or data struct </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>size of the all elements in the container of <code>value</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Any type of value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Identifier to set/get a specified value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>size of data that will be saved in <code>value</code> .</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0</td><td>Satisfactory result </td></tr>
-    <tr><td class="paramname">-1</td><td>Failed result </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section note"><dt>Note</dt><dd><code>size</code> is used to check with the data saved in mtd_storage and won't be overflowed the <code>value</code> parameter. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int8_t </dd></dl>
 
 </div>
 </div>
-<a id="a6aa5dd4e1cac5278e5133b6a6bd76d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6aa5dd4e1cac5278e5133b6a6bd76d5e">&#9670;&nbsp;</a></span>mtd_start()</h2>
+<a id="aa8b03ce4d6b401e032a908706799162c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8b03ce4d6b401e032a908706799162c">&#9670;&nbsp;</a></span>mtd_save()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int mtd_start </td>
+          <td class="memname">int mtd_save </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Saves any value in any position of mtd_storage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Any type of value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>size of <code>value</code> that will be saved. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>reference to an position in mtd_storage. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int8_t </dd></dl>
+
+</div>
+</div>
+<a id="a29029fcf2eeccdcc402687ce6d1834a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29029fcf2eeccdcc402687ce6d1834a7">&#9670;&nbsp;</a></span>mtd_save_reg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mtd_save_reg </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Saves data using a key as identifier to localize a group of bytes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Any type of value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Identifier to set/get a specified value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>size of <code>value</code> that will be saved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int8_t </dd></dl>
+
+</div>
+</div>
+<a id="abe2b906494510ba1d711c732142e8c11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe2b906494510ba1d711c732142e8c11">&#9670;&nbsp;</a></span>mtd_start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t mtd_start </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -577,92 +594,17 @@ eduazocar <a href="#" onclick="location.href='mai'+'lto:'+'edu'+'az'+'oca'+'rv'+
 
 </div>
 </div>
-<a id="a5cbab32f90d7b8179b7c4182e87135f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cbab32f90d7b8179b7c4182e87135f7">&#9670;&nbsp;</a></span>mtd_write_string()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mtd_write_string </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function is used to write only strings. </p>
-<p>If they are greater than 64 bytes your string will be cut and will save only 64 bytes</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>This is the address where will be saved the data in the memory </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Value to save </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 Satisfactory result -1 Failed result </dd></dl>
-
-</div>
-</div>
-<a id="abc92c4881252e20efaf2b73591a73649"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc92c4881252e20efaf2b73591a73649">&#9670;&nbsp;</a></span>mtd_write_uint8()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mtd_write_uint8 </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function used to write only uint8_t. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>This is the address where will be saved the data in the memory </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Value to save </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 Satisfactory result -1 Failed result </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="afirmware_2sys_2storage_2include_2storage_8h_html_af6ba1f9f4063e60617dab3349aaba7c9"><div class="ttname"><a href="firmware_2sys_2storage_2include_2storage_8h.html#af6ba1f9f4063e60617dab3349aaba7c9">MAX_SIZE_STORAGE</a></div><div class="ttdeci">#define MAX_SIZE_STORAGE</div><div class="ttdef"><b>Definition:</b> <a href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00039">storage.h:39</a></div></div>
+<div class="ttc" id="afirmware_2sys_2storage_2include_2storage_8h_html_a1f6aa012a967f33fb5ec3cdeae1c6e22"><div class="ttname"><a href="firmware_2sys_2storage_2include_2storage_8h.html#a1f6aa012a967f33fb5ec3cdeae1c6e22">LAST_AVAILABLE_PAGE</a></div><div class="ttdeci">#define LAST_AVAILABLE_PAGE</div><div class="ttdef"><b>Definition:</b> <a href="firmware_2sys_2storage_2include_2storage_8h_source.html#l00038">storage.h:38</a></div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_38d8769b7982536a1592307dd4ec982e.html">sys</a></li><li class="navelem"><a class="el" href="dir_043460d05e9e7dca5d95591e249199d5.html">storage</a></li><li class="navelem"><a class="el" href="dir_f0a8256c4133cdb78380b910bfbaa910.html">include</a></li><li class="navelem"><a class="el" href="firmware_2sys_2storage_2include_2storage_8h.html">storage.h</a></li>
-    <li class="footer">Generated on Fri Oct 7 2022 14:07:54 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Mon Oct 10 2022 13:09:17 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
