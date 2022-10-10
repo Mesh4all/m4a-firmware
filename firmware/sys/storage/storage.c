@@ -54,7 +54,7 @@ int8_t mtd_start(void) {
     return ret;
 }
 
-int mtd_write_block(void *val, uint32_t addr, uint8_t size, uint8_t offset) {
+int mtd_write_block(const void *val, uint32_t addr, uint8_t size, uint8_t offset) {
     uint8_t buf[dev->write_size];
     int8_t ret = 0;
     ret = mtd_read(dev, buf, addr, sizeof(buf));
@@ -80,11 +80,11 @@ int mtd_read_block(void *value, uint32_t addr, uint8_t size, uint8_t offset) {
         DEBUG("Err: Reading a Block\n");
         return ret;
     }
-    memcpy(value, buf + offset, size);
+    memcpy(value, buf + offset, size - offset);
     return 0;
 }
 
-int mtd_save(void *value, uint32_t len, uint32_t addr) {
+int mtd_save(const void *value, uint32_t len, uint32_t addr) {
     uint8_t block_offset = addr % dev->write_size;
     uint8_t last_size = MTD_LAST_BLOCK_RES(len, block_offset);
     uint32_t storage_addr = MTD_START_ADDR + MTD_WR_BLOCK_POS(addr) * dev->write_size;
@@ -136,11 +136,7 @@ int mtd_load(void *value, uint16_t len, uint32_t addr) {
 
 int8_t idx_reg_is_empty(mtd_register_t reg) {
     uint8_t empty_reg[sizeof(mtd_register_t)];
-#ifdef BOARD_NATIVE
-    memset(empty_reg, 0x00, sizeof(empty_reg));
-#else
-    memset(empty_reg, 0xFF, sizeof(empty_reg));
-#endif
+    memset(empty_reg, FLASHPAGE_ERASE_STATE, sizeof(empty_reg));
     if (memcmp(&reg, empty_reg, sizeof(reg.size) + sizeof(reg.key)) == 0) {
         return 0;
     }
@@ -157,7 +153,7 @@ int8_t check_idx_reg(mtd_register_t reg, mtd_register_t buffer) {
     return -1;
 }
 
-int mtd_save_reg(void *value, uint8_t *key, uint16_t len) {
+int mtd_save_reg(const void *value, const uint8_t *key, uint16_t len) {
     mtd_register_t buff, mtd_reg = {.size = len};
     memcpy(mtd_reg.key, key, sizeof(mtd_reg.key));
     uint8_t reg_count = 0;
@@ -204,7 +200,7 @@ int mtd_save_reg(void *value, uint8_t *key, uint16_t len) {
     return -1;
 }
 
-int mtd_load_reg(void *value, uint8_t *key, uint16_t len) {
+int mtd_load_reg(void *value, const uint8_t *key, uint16_t len) {
     mtd_register_t buff, mtd_reg = {.size = len};
     memcpy(mtd_reg.key, key, sizeof(mtd_reg.key));
     uint8_t reg_count = 0;
@@ -229,13 +225,71 @@ int mtd_load_reg(void *value, uint8_t *key, uint16_t len) {
             }
 
             uint8_t out[mtd_reg.size];
-            mtd_load(out, mtd_reg.size, mtd_reg.ptr_content);
+            if (mtd_load(out, mtd_reg.size, mtd_reg.ptr_content) < 0) {
+                return -1;
+            }
             memcpy(value, out, len);
             return 0;
         }
         reg_count++;
     }
     return -1;
+}
+
+int mtd_put_u8(const uint8_t value, const uint8_t *key) {
+    return mtd_save_reg(&value, key, sizeof(uint8_t));
+}
+
+int mtd_put_u16(const uint16_t value, const uint8_t *key) {
+    return mtd_save_reg(&value, key, sizeof(uint16_t));
+}
+
+int mtd_put_u32(const uint32_t value, const uint8_t *key) {
+    return mtd_save_reg(&value, key, sizeof(uint32_t));
+}
+
+int mtd_get_u8(uint8_t *value, const uint8_t *key) {
+    return mtd_load_reg(value, key, sizeof(uint8_t));
+}
+
+int mtd_get_u16(uint16_t *value, const uint8_t *key) {
+    return mtd_load_reg(value, key, sizeof(uint16_t));
+}
+
+int mtd_get_u32(uint32_t *value, const uint8_t *key) {
+    return mtd_load_reg(value, key, sizeof(uint32_t));
+}
+
+int mtd_put_i8(const int8_t value, const uint8_t *key) {
+    return mtd_save_reg(&value, key, sizeof(int8_t));
+}
+
+int mtd_put_i16(const int16_t value, const uint8_t *key) {
+    return mtd_save_reg(&value, key, sizeof(int16_t));
+}
+
+int mtd_put_i32(const int32_t value, const uint8_t *key) {
+    return mtd_save_reg(&value, key, sizeof(int32_t));
+}
+
+int mtd_get_i8(int8_t *value, const uint8_t *key) {
+    return mtd_load_reg(value, key, sizeof(int8_t));
+}
+
+int mtd_get_i16(int16_t *value, const uint8_t *key) {
+    return mtd_load_reg(value, key, sizeof(int16_t));
+}
+
+int mtd_get_i32(int32_t *value, const uint8_t *key) {
+    return mtd_load_reg(value, key, sizeof(int32_t));
+}
+
+int mtd_put_str(const char *value, const uint8_t *key, uint8_t len) {
+    return mtd_save_reg(value, key, len);
+}
+
+int mtd_get_str(char *value, const uint8_t *key, uint8_t len) {
+    return mtd_load_reg(value, key, len);
 }
 
 int8_t mtd_available_idx(void) {
@@ -245,17 +299,17 @@ int8_t mtd_available_idx(void) {
     for (size_t i = 0; i < MTD_REG_IDX_NUMOF; i++) {
         uint32_t idx_storage = MTD_START_ADDR + i * sizeof(mtd_register_t);
         mtd_load(&buff, sizeof(buff), idx_storage);
-        if (idx_reg_is_empty(buff)) {
-            printf("Available index: 0x%" PRIX32 "\n", idx_storage);
+        if (idx_reg_is_empty(buff) == 0) {
+            DEBUG("Available index: 0x%" PRIX32 "\n", idx_storage);
             available_reg++;
         }
     }
     if (available_reg == 0) {
-        printf("It's not available register for write\n");
+        DEBUG("It's not available register for write\n");
         return -1;
     }
 
-    printf("Number of available registers: %u\n\n", available_reg);
+    DEBUG("Number of available registers: %u\n\n", available_reg);
     return 0;
 }
 

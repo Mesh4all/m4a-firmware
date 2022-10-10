@@ -75,7 +75,7 @@ int8_t mtd_start(void);
  * @param [in] offset reference to an position in mtd_storage.
  * @return int8_t
  */
-int mtd_save(void *value, uint32_t len, uint32_t offset);
+int mtd_save(const void *value, uint32_t len, uint32_t offset);
 
 /**
  * @brief Loads any value in any position of mtd_storage.
@@ -95,7 +95,7 @@ int mtd_load(void *value, uint16_t len, uint32_t offset);
  * @param [in] len size of @p value that will be saved.
  * @return int8_t
  */
-int mtd_save_reg(void *value, uint8_t *key, uint16_t len);
+int mtd_save_reg(const void *value, const uint8_t *key, uint16_t len);
 
 /**
  * @brief Load data from mtd_storage localizating with its knew key and saves in @p value the data.
@@ -108,7 +108,7 @@ int mtd_save_reg(void *value, uint8_t *key, uint16_t len);
  * value parameter.
  * @return int8_t
  */
-int mtd_load_reg(void *value, uint8_t *key, uint16_t len);
+int mtd_load_reg(void *value, const uint8_t *key, uint16_t len);
 
 /**
  * @brief Removes all saved data in mtd_storage. This will erase all until the
@@ -147,6 +147,130 @@ int8_t mtd_dump(void);
  * @return int8_t
  */
 int8_t mtd_dump_flashpage(uint16_t page);
+
+/* Unsigned int put/get operations */
+
+/**
+ * @brief Saves an unsigned int 8 bits data type in the mtd_storage.
+ *
+ * @param [in] value uint8_t data.
+ * @param [in] key An unique identifier string for the uint8_t data @p value.
+ * @return int
+ */
+int mtd_put_u8(const uint8_t value, const uint8_t *key);
+/**
+ * @brief Saves an unsigned int 16 bits data type in the mtd_storage.
+ *
+ * @param [in] value uint16_t data.
+ * @param [in] key An unique identifier string for the uint16_t data @p value.
+ * @return int
+ */
+int mtd_put_u16(const uint16_t value, const uint8_t *key);
+/**
+ * @brief Saves an unsigned int 32 bits data type in the mtd_storage.
+ *
+ * @param [in] value uint32_t data.
+ * @param [in] key An unique identifier string for the uint32_t data @p value.
+ * @return int
+ */
+int mtd_put_u32(const uint32_t value, const uint8_t *key);
+/**
+ * @brief Load an unsigned int 8 bits data type in the mtd_storage
+ *
+ * @param [out] value uint8_t data variable that will load the value from mtd_storage
+ * @param [in] key An unique identifier string for the uint8_t data @p value.
+ * @return int
+ */
+int mtd_get_u8(uint8_t *value, const uint8_t *key);
+/**
+ * @brief Load an unsigned int 16 bits data type in the mtd_storage
+ *
+ * @param [out] value uint16_t data variable that will load the value from mtd_storage
+ * @param [in] key An unique identifier string for the uint16_t data @p value.
+ * @return int
+ */
+int mtd_get_u16(uint16_t *value, const uint8_t *key);
+/**
+ * @brief Load an unsigned int 32 bits data type in the mtd_storage
+ *
+ * @param [out] value uint32_t data variable that will load the value from mtd_storage
+ * @param [in] key An unique identifier string for the uint32_t data @p value.
+ * @return int
+ */
+int mtd_get_u32(uint32_t *value, const uint8_t *key);
+
+/* Int put/set operations */
+
+/**
+ * @brief Saves a signed int 8 bits data type in the mtd_storage.
+ *
+ * @param [in] value int8_t data.
+ * @param [in] key An unique identifier string for the int8_t data @p value.
+ * @return int
+ */
+int mtd_put_i8(const int8_t value, const uint8_t *key);
+/**
+ * @brief Saves an signed int 16 bits data type in the mtd_storage.
+ *
+ * @param [in] value uint16_t data.
+ * @param [in] key An unique identifier string for the uint16_t data @p value.
+ * @return int
+ */
+int mtd_put_i16(const int16_t value, const uint8_t *key);
+/**
+ * @brief Saves an signed int 32 bits data type in the mtd_storage.
+ *
+ * @param [in] value uint32_t data.
+ * @param [in] key An unique identifier string for the uint32_t data @p value.
+ * @return int
+ */
+int mtd_put_i32(const int32_t value, const uint8_t *key);
+/**
+ * @brief Load an signed int 8 bits data type in the mtd_storage
+ *
+ * @param [out] value int8_t data variable that will load the value from mtd_storage
+ * @param [in] key An unique identifier string for the int8_t data @p value.
+ * @return int
+ */
+int mtd_get_i8(int8_t *value, const uint8_t *key);
+/**
+ * @brief Load an unsigned int 16 bits data type in the mtd_storage
+ *
+ * @param [out] value int16_t data variable that will load the value from mtd_storage
+ * @param [in] key An unique identifier string for the int16_t data @p value.
+ * @return int
+ */
+int mtd_get_i16(int16_t *value, const uint8_t *key);
+/**
+ * @brief Load an unsigned int 32 bits data type in the mtd_storage
+ *
+ * @param [out] value uint32_t data variable that will load the value from mtd_storage
+ * @param [in] key An unique identifier string for the uint32_t data @p value.
+ * @return int
+ */
+int mtd_get_i32(int32_t *value, const uint8_t *key);
+
+/* String put/set operations */
+
+/**
+ * @brief Saves a string with its identifier.
+ * @note it needs to specify the data string length.
+ *
+ * @param [in] value pointer to a string, points to a data string
+ * @param [in] key An unique identifier string for the string data @p value.
+ * @param [in] len size of @p value string.
+ * @return int
+ */
+int mtd_put_str(const char *value, const uint8_t *key, uint8_t len);
+/**
+ * @brief Loads a string using its identifier.
+ *
+ * @param [out] value pointer to a string, points to a data string
+ * @param [in] key An unique identifier string for the string data @p value.
+ * @param [in] len size of @p value string.
+ * @return int
+ */
+int mtd_get_str(char *value, const uint8_t *key, uint8_t len);
 
 #ifdef __cplusplus
 }

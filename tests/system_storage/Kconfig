@@ -2,5 +2,7 @@ rsource "../../firmware/sys/storage/Kconfig"
 rsource "../../firmware/Kconfig.debug"
 
 menu "Test Debug"
-
+    config DEBUG_TEST_STORAGE
+            bool "Debugging storage Test"
+            default n
 endmenu
