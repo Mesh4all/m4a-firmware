@@ -28,7 +28,17 @@
 
 #include "storage.h"
 #include "mtd.h"
+
+#if (CONFIG_DEBUG_TEST_STORAGE) || (DOXYGEN)
+/**
+ * @brief KCONFIG_PARAMETER TO SET DEBUG MODE
+ *
+ */
+#define ENABLE_DEBUG CONFIG_DEBUG_TEST_STORAGE
+#else
 #define ENABLE_DEBUG 0
+#endif
+
 #include "debug.h"
 
 struct val {
@@ -101,26 +111,45 @@ void test_saving_reg(void) {
     char str[28] = {"Everyone in the mesh!!!"};
     char str2[20] = {"Contributor: CW"};
     uint8_t age = 24;
+    uint16_t port = 4094;
     uint32_t u32_val = 155556;
+    int8_t i8val = -123;
+    int16_t i16val = -3258;
+    int32_t i32val = -9000;
 
-    ret = mtd_save_reg(str, (uint8_t *)"KEY0", sizeof(str));
+    ret = mtd_put_str(str, (uint8_t *)"KEY0", sizeof(str));
     if (ret < 0) {
         DEBUG("Failed Saving data");
     }
     printf("\n");
-    ret = mtd_save_reg(str2, (uint8_t *)"KEY1", sizeof(str2));
+    ret = mtd_put_str(str2, (uint8_t *)"KEY1", sizeof(str2));
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
-    ret = mtd_save_reg(str, (uint8_t *)"KEY0", sizeof(str));
+    ret = mtd_put_u8(age, (uint8_t *)"KEY2");
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
-    ret = mtd_save_reg(&age, (uint8_t *)"KEY2", sizeof(age));
+    ret = mtd_put_u16(port, (uint8_t *)"KEY3");
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
-    ret = mtd_save_reg(&u32_val, (uint8_t *)"KEY3", sizeof(u32_val));
+    ret = mtd_put_u32(u32_val, (uint8_t *)"KEY4");
+    if (ret < 0) {
+        DEBUG("Failed Saving data\n");
+    }
+    ret = mtd_put_i8(i8val, (uint8_t *)"KEY5");
+    if (ret < 0) {
+        DEBUG("Failed Saving data\n");
+    }
+    ret = mtd_put_i16(i16val, (uint8_t *)"KEY6");
+    if (ret < 0) {
+        DEBUG("Failed Saving data\n");
+    }
+    ret = mtd_put_i32(i32val, (uint8_t *)"KEY7");
+    if (ret < 0) {
+        DEBUG("Failed Saving data\n");
+    }
     mtd_available_idx();
     TEST_ASSERT_EQUAL_INT(0, ret);
     mtd_dump();
@@ -130,13 +159,13 @@ void test_loading_reg(void) {
     int ret = 0;
     char str[28];
     char str2[20];
-    uint32_t u32_val;
     uint8_t age;
-    ret = mtd_load_reg(str, (uint8_t *)"KEY0", sizeof(str));
-    if (ret < 0) {
-        DEBUG("Failed Loading data");
-    }
-    ret = mtd_load_reg(&u32_val, (uint8_t *)"KEY3", sizeof(u32_val));
+    uint16_t port;
+    uint32_t u32_val;
+    int8_t i8val;
+    int16_t i16val;
+    int32_t i32val;
+    ret = mtd_get_str(str, (uint8_t *)"KEY0", sizeof(str));
     if (ret < 0) {
         DEBUG("Failed Loading data");
     }
@@ -144,13 +173,36 @@ void test_loading_reg(void) {
     if (ret < 0) {
         DEBUG("Failed Loading data");
     }
-    ret = mtd_load_reg(&age, (uint8_t *)"KEY2", sizeof(age));
+    ret = mtd_get_u8(&age, (uint8_t *)"KEY2");
+    if (ret < 0) {
+        DEBUG("Failed Loading data");
+    }
+    ret = mtd_get_u16(&port, (uint8_t *)"KEY3");
+    if (ret < 0) {
+        DEBUG("Failed Loading data");
+    }
+    ret = mtd_get_u32(&u32_val, (uint8_t *)"KEY4");
+    if (ret < 0) {
+        DEBUG("Failed Loading data");
+    }
+    ret = mtd_get_i8(&i8val, (uint8_t *)"KEY5");
+    if (ret < 0) {
+        DEBUG("Failed Loading data");
+    }
+    ret = mtd_get_i16(&i16val, (uint8_t *)"KEY6");
+    if (ret < 0) {
+        DEBUG("Failed Loading data");
+    }
+    ret = mtd_get_i32(&i32val, (uint8_t *)"KEY7");
 
-    printf("String#1 loaded: %s\n", str);
-    printf("String#2 loaded: %s\n", str2);
-    printf("Uint32_t loaded: %" PRIu32 "\n", u32_val);
-    printf("Uint8_t loaded: %d\n", age);
-
+    printf("string#1 loaded: %s\n", str);
+    printf("string#2 loaded: %s\n", str2);
+    printf("uint8_t loaded: %d\n", age);
+    printf("uint16_t loaded: %" PRIu16 "\n", port);
+    printf("uint32_t loaded: %" PRIu32 "\n", u32_val);
+    printf("int8_t loaded: %d\n", i8val);
+    printf("int16_t loaded: %" PRId16 " \n", i16val);
+    printf("int32_t loaded: %" PRId32 " \n", i32val);
     TEST_ASSERT_EQUAL_INT(0, ret);
 }
 
