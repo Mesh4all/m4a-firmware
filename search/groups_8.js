@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['peripherals_834',['Peripherals',['../group__peripherals.html',1,'']]],
-  ['protocols_20routines_835',['Protocols routines',['../group__wifi-subusys-protocols.html',1,'']]]
+  ['peripherals_862',['Peripherals',['../group__peripherals.html',1,'']]],
+  ['protocols_20routines_863',['Protocols routines',['../group__wifi-subusys-protocols.html',1,'']]]
 ];
