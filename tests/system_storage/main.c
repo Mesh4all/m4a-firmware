@@ -27,6 +27,9 @@
 #include "embUnit.h"
 
 #include "storage.h"
+#include "storage_register.h"
+#include "storage_internal.h"
+
 #include "mtd.h"
 
 #if (CONFIG_DEBUG_TEST_STORAGE) || (DOXYGEN)
@@ -63,6 +66,7 @@ void test_save_data(void) {
         .var3 = {1550, 5544, -698, -789, -97852, [19] = -25, [48] = 39, [49] = 2556}};
     printf("\nSaving data:\n");
     ret = mtd_save(&test_save, sizeof(test_save), MTD_START_ADDR);
+    mtd_dump();
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
@@ -106,8 +110,8 @@ void test_load_pointed(void) {
 }
 
 void test_saving_reg(void) {
+    mtd_clear_all_regs();
     int ret = 0;
-    mtd_erase_all();
     char str[28] = {"Everyone in the mesh!!!"};
     char str2[20] = {"Contributor: CW"};
     uint8_t age = 24;
@@ -116,7 +120,7 @@ void test_saving_reg(void) {
     int8_t i8val = -123;
     int16_t i16val = -3258;
     int32_t i32val = -9000;
-
+    uint8_t index, numreg;
     ret = mtd_put_str(str, (uint8_t *)"KEY0", sizeof(str));
     if (ret < 0) {
         DEBUG("Failed Saving data");
@@ -150,7 +154,7 @@ void test_saving_reg(void) {
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
-    mtd_available_idx();
+    mtd_available_idx(&index, &numreg);
     TEST_ASSERT_EQUAL_INT(0, ret);
     mtd_dump();
 }
@@ -194,7 +198,7 @@ void test_loading_reg(void) {
         DEBUG("Failed Loading data");
     }
     ret = mtd_get_i32(&i32val, (uint8_t *)"KEY7");
-
+    mtd_reg_del((uint8_t*)"KEY2", sizeof(uint8_t));
     printf("string#1 loaded: %s\n", str);
     printf("string#2 loaded: %s\n", str2);
     printf("uint8_t loaded: %d\n", age);
@@ -203,6 +207,7 @@ void test_loading_reg(void) {
     printf("int8_t loaded: %d\n", i8val);
     printf("int16_t loaded: %" PRId16 " \n", i16val);
     printf("int32_t loaded: %" PRId32 " \n", i32val);
+    mtd_dump();
     TEST_ASSERT_EQUAL_INT(0, ret);
 }
 
