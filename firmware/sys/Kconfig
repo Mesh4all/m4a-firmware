@@ -1,3 +1,6 @@
+
+rsource "../../firmware/Kconfig.debug"
+
 menu "System"
 rsource "uniqueid/Kconfig"
 rsource "serialization/Kconfig"

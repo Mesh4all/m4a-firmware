@@ -63,7 +63,7 @@ typedef struct {
     uint16_t freq;
 } settings_ifaces_t;
 
-#define IF_KEY ("IFKEY")
+#define IF_KEY (uint8_t*)("IFKEY")
 
 /**
  * @name storage address this address will be the storage keys
