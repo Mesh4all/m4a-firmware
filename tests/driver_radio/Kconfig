@@ -1,1 +1,2 @@
+rsource "../../firmware/Kconfig.debug"
 rsource "../../firmware/network/radio/Kconfig"
