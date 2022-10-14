@@ -12,8 +12,8 @@ var annotated_dup =
     [ "random_buff", "unionrandom__buff.html", "unionrandom__buff" ],
     [ "sensor_data", "structsensor__data.html", "structsensor__data" ],
     [ "sensors_t", "structsensors__t.html", "structsensors__t" ],
+    [ "settings_ifaces_t", "structsettings__ifaces__t.html", "structsettings__ifaces__t" ],
     [ "some_struct_var", "structsome__struct__var.html", "structsome__struct__var" ],
-    [ "storage_data_t", "structstorage__data__t.html", "structstorage__data__t" ],
     [ "topology_t", "structtopology__t.html", "structtopology__t" ],
     [ "uart_buffer_t", "structuart__buffer__t.html", "structuart__buffer__t" ],
     [ "udpf_payload", "structudpf__payload.html", "structudpf__payload" ]

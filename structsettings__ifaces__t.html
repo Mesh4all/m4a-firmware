@@ -20,7 +20,7 @@
     <meta name="twitter:description"
         content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
     <!-- END twitter metadata -->
-    <title>Mesh4all: firmware/network/net_tools/include Directory Reference</title>
+    <title>Mesh4all: settings_ifaces_t Struct Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('dir_efe9328ce5bf8ce1f09ce3b2d5d96a25.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('structsettings__ifaces__t.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -104,16 +104,76 @@ $(document).ready(function(){initNavTree('dir_efe9328ce5bf8ce1f09ce3b2d5d96a25.h
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">include Directory Reference</div>  </div>
+<div class="title">settings_ifaces_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>struct to save interface data settings.  
+ <a href="structsettings__ifaces__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="firmware_2default__params_8h_source.html">default_params.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:net__tools_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="net__tools_8h.html">net_tools.h</a> <a href="net__tools_8h_source.html">[code]</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aa9afe18388308cbecf97d912693abb14"><td class="memItemLeft" align="right" valign="top"><a id="aa9afe18388308cbecf97d912693abb14"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="separator:aa9afe18388308cbecf97d912693abb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a286ec929140da35f562cb36958e111db"><td class="memItemLeft" align="right" valign="top"><a id="a286ec929140da35f562cb36958e111db"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="separator:a286ec929140da35f562cb36958e111db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a56d8e9e8eb6f2a2ccb4e0063be4b7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsettings__ifaces__t.html#af3a56d8e9e8eb6f2a2ccb4e0063be4b7">channel</a></td></tr>
+<tr class="separator:af3a56d8e9e8eb6f2a2ccb4e0063be4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29becda23b11854d1b0bcbd9cdb1d422"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsettings__ifaces__t.html#a29becda23b11854d1b0bcbd9cdb1d422">tx_power</a></td></tr>
+<tr class="separator:a29becda23b11854d1b0bcbd9cdb1d422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a301ff5a467274863b2c80a38bf174acb"><td class="memItemLeft" align="right" valign="top"><a id="a301ff5a467274863b2c80a38bf174acb"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>freq</b></td></tr>
+<tr class="separator:a301ff5a467274863b2c80a38bf174acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>struct to save interface data settings. </p>
+
+<p class="definition">Definition at line <a class="el" href="firmware_2default__params_8h_source.html#l00058">58</a> of file <a class="el" href="firmware_2default__params_8h_source.html">default_params.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="af3a56d8e9e8eb6f2a2ccb4e0063be4b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a56d8e9e8eb6f2a2ccb4e0063be4b7">&#9670;&nbsp;</a></span>channel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t settings_ifaces_t::channel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Channel of the radio </p>
+
+<p class="definition">Definition at line <a class="el" href="firmware_2default__params_8h_source.html#l00061">61</a> of file <a class="el" href="firmware_2default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a29becda23b11854d1b0bcbd9cdb1d422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29becda23b11854d1b0bcbd9cdb1d422">&#9670;&nbsp;</a></span>tx_power</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t settings_ifaces_t::tx_power</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The transmit power from a radio interface </p>
+
+<p class="definition">Definition at line <a class="el" href="firmware_2default__params_8h_source.html#l00062">62</a> of file <a class="el" href="firmware_2default__params_8h_source.html">default_params.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>firmware/<a class="el" href="firmware_2default__params_8h_source.html">default_params.h</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.9.1-->
@@ -121,7 +181,7 @@ Files</h2></td></tr>
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_3b7b4d98beba3e5575b74a42e3ca6ba8.html">net_tools</a></li><li class="navelem"><a class="el" href="dir_efe9328ce5bf8ce1f09ce3b2d5d96a25.html">include</a></li>
+    <li class="navelem"><a class="el" href="structsettings__ifaces__t.html">settings_ifaces_t</a></li>
     <li class="footer">Generated on Fri Oct 14 2022 15:42:58 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
