@@ -53,29 +53,17 @@ typedef struct {
 } sensors_t;
 
 /**
- * @brief  struct to save all data of the firmware Mesh4all
+ * @brief  struct to save interface data settings.
  */
 typedef struct {
-#if ((MODULE_RADIO) || (DOXYGEN))
-    uint8_t radio_tx_power : 6; /*!< The transmit power from a radio interface*/
-    uint8_t subghz : 1;         /*!< Represent if the interface is active in 2.4 sub-GHZ mode*/
-    uint8_t : 1;                /*!< Empty bit  */
-    uint8_t channel : 5;        /*!< Channel of the radio */
-    uint8_t : 3;                /*!< Empty bits*/
+    uint8_t id;
+    uint8_t type;
+    uint16_t channel; /*!< Channel of the radio */
+    int16_t tx_power; /*!< The transmit power from a radio interface*/
+    uint16_t freq;
+} settings_ifaces_t;
 
-#if ((MODULE_RPL_PROTOCOL) || (DOXYGEN))
-    uint8_t rpl_mode;     /*!< If the system has an RPL in mode `DAG` or `DODAG`*/
-    uint8_t rpl_instance; /*!< Number of instance of DODAG*/
-    uint16_t pan_id;      /*!< The Personal Area Network where is located the RPL network*/
-#endif
-#endif
-    /* peripherals */
-    uint8_t amount_sensors : 5; /*!< Amount of sensors referenced with the number of pins
-                                (64 pins)*/
-    uint8_t wifi_subsys : 1;    /*!< The Wifi-subsystem is connected*/
-    uint8_t uniqueid_mode : 2;  /*!< The unique id mode STATIC(0), RANDOM(1), MANUAL(2)*/
-    sensors_t sensors[2];       /*!< Sensor set in the firmware*/
-} storage_data_t;
+#define IF_KEY ("IFKEY")
 
 /**
  * @name storage address this address will be the storage keys
