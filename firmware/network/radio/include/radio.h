@@ -47,13 +47,13 @@ int8_t get_ieee802154_iface(void);
  * @brief this function is used to get data of tx power
  * @param[in] txpower channel you want to get
  */
-int8_t get_netopt_tx_power(int16_t txpower);
+int8_t get_netopt_tx_power(int16_t *txpower);
 
 /**
  * @brief this function is used to get data of channel
  * @param[in] channel channel you want to get
  */
-int8_t get_netopt_channel(int16_t channel);
+int8_t get_netopt_channel(uint16_t *channel);
 
 /**
  * @brief this function is used to set the channel
@@ -61,7 +61,7 @@ int8_t get_netopt_channel(int16_t channel);
  * @param[in] channel channel you want to set
  * @note the device has channels between 11 to 26
  */
-int8_t set_netopt_channel(int16_t channel);
+int8_t set_netopt_channel(uint16_t channel);
 
 /**
  * @brief this function is used to set the tx power

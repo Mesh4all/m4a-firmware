@@ -17,9 +17,12 @@
  * @brief       Radio file
  *
  * @author      RocioRojas <rociorojas391@gmail.com>
+ * @author      eduazocar <eduazocarv@gmail.com>
  */
+#include <stdio.h>
 #include <string.h>
 #include <errno.h>
+#include "xtimer.h"
 #include "embUnit.h"
 #include "radio.h"
 
@@ -28,15 +31,29 @@ void test_get_ieee802154_iface(void) {
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
+void test_set_netopt_tx_power(void) {
+    int16_t txpower = 4;
+    int8_t err =  set_netopt_tx_power(txpower);
+    TEST_ASSERT_EQUAL_INT(0, err);
+}
+
 void test_get_netopt_tx_power(void) {
     int16_t txpower=0;
-    int8_t err =  get_netopt_tx_power(txpower);
+    int8_t err =  get_netopt_tx_power(&txpower);
+    printf("Tx Power: %"PRId16"\n", txpower);
+    TEST_ASSERT_EQUAL_INT(0, err);
+}
+
+void test_set_netopt_channel(void) {
+    uint16_t channel= 22;
+    int8_t err = set_netopt_channel(channel);
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
 void test_get_netopt_channel(void) {
-    int16_t channel=0;
-    int8_t err = get_netopt_channel(channel);
+    uint16_t channel=0;
+    int8_t err = get_netopt_channel(&channel);
+    printf("Channel: %"PRIu16"\n", channel);
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
@@ -45,10 +62,12 @@ void test_initial_radio_setup(void) {
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
-Test *tests_radio_module(void) {
+Test *radio_tests(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
         new_TestFixture(test_get_ieee802154_iface),
+        new_TestFixture(test_set_netopt_tx_power),
         new_TestFixture(test_get_netopt_tx_power),
+        new_TestFixture(test_set_netopt_channel),
         new_TestFixture(test_get_netopt_channel),
         new_TestFixture(test_initial_radio_setup),
     };
@@ -60,7 +79,7 @@ Test *tests_radio_module(void) {
 
 int main(void) {
     TESTS_START();
-    TESTS_RUN(tests_radio_module());
+    TESTS_RUN(radio_tests());
     TESTS_END();
     return 0;
 }

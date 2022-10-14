@@ -83,17 +83,16 @@ int8_t get_ieee802154_iface(void) {
     return -1;
 }
 
-int8_t get_netopt_tx_power(int16_t txpower) {
-    int res;
+int8_t get_netopt_tx_power(int16_t *txpower) {
     int index = get_ieee802154_iface();
     if (index < 0) {
         return -1;
     }
     netif_t *iface = netif_get_by_id(index);
 
-    res = netif_get_opt(iface, NETOPT_TX_POWER, 0, &txpower, sizeof(txpower));
+    int res = netif_get_opt(iface, NETOPT_TX_POWER, 0, txpower, sizeof(int16_t));
     if (res >= 0) {
-        DEBUG("TX-Power: %" PRIi16 "dBm \n", txpower);
+        DEBUG("TX-Power: %" PRIi16 "dBm \n", *txpower);
     } else {
         return -1;
     }
@@ -101,17 +100,16 @@ int8_t get_netopt_tx_power(int16_t txpower) {
     return 0;
 }
 
-int8_t get_netopt_channel(int16_t channel) {
-    int res;
+int8_t get_netopt_channel(uint16_t *channel) {
     int index = get_ieee802154_iface();
     if (index < 0) {
         return -1;
     }
     netif_t *iface = netif_get_by_id(index);
 
-    res = netif_get_opt(iface, NETOPT_CHANNEL, 0, &channel, sizeof(channel));
+    int res = netif_get_opt(iface, NETOPT_CHANNEL, 0, channel, sizeof(uint16_t));
     if (res >= 0) {
-        DEBUG("Channel: %" PRIi16 " \n", channel);
+        DEBUG("Channel: %" PRIi16 " \n", *channel);
     } else {
         return -1;
     }
@@ -120,8 +118,8 @@ int8_t get_netopt_channel(int16_t channel) {
 }
 
 int8_t set_netopt_tx_power(int16_t txpower) {
-    int res;
     int index = get_ieee802154_iface();
+    uint16_t channel = 0;
     if (index < 0) {
         return -1;
     }
@@ -131,8 +129,14 @@ int8_t set_netopt_tx_power(int16_t txpower) {
               TX_POWER_MAX);
         return -1;
     }
-
-    res = netif_set_opt(iface, NETOPT_TX_POWER, 0, &txpower, sizeof(txpower));
+    if (get_netopt_channel(&channel) < 0) {
+        return -1;
+    }
+    int res = netif_set_opt(iface, NETOPT_TX_POWER, 0, &txpower, sizeof(int16_t));
+    if (res < 0) {
+        return -1;
+    }
+    res = set_netopt_channel(channel);
     if (res >= 0) {
         DEBUG(" TX-Power: %" PRIi16 "dBm \n", txpower);
     } else {
@@ -142,15 +146,14 @@ int8_t set_netopt_tx_power(int16_t txpower) {
     return 0;
 }
 
-int8_t set_netopt_channel(int16_t channel) {
-    int res;
+int8_t set_netopt_channel(uint16_t channel) {
     int index = get_ieee802154_iface();
     if (index < 0) {
         return -1;
     }
     netif_t *iface = netif_get_by_id(index);
 #ifdef CONFIG_MODE_SUB_24GHZ
-    if (channel < 0 || channel > 10) {
+    if (channel > 10) {
         DEBUG("Error: the channels must be between 0 and  10 \n");
         return -1;
     }
@@ -160,7 +163,7 @@ int8_t set_netopt_channel(int16_t channel) {
         return -1;
     }
 #endif
-    res = netif_set_opt(iface, NETOPT_CHANNEL, 0, &channel, sizeof(channel));
+    int res = netif_set_opt(iface, NETOPT_CHANNEL, 0, &channel, sizeof(uint16_t));
     if (res >= 0) {
         DEBUG(" channel: %" PRIi16 " \n", channel);
     } else {
@@ -215,11 +218,10 @@ int8_t initial_radio_setup(void) {
         subtract_to_interface = 0;
 #endif
     }
-    int err;
     int16_t radio_tx = CONFIG_TX_POWER;
     int16_t radio_channel = CONFIG_RADIO_CHANNEL;
 
-    err = set_netopt_tx_power(radio_tx);
+    int err = set_netopt_tx_power(radio_tx);
     if (err == -1) {
         DEBUG("Error: Failed to add TX_power.\n");
         return err;
