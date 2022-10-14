@@ -27,7 +27,6 @@
 #include "mtd.h"
 #include "storage_internal.h"
 
-
 #if (CONFIG_DEBUG_STORAGE) || (DOXYGEN)
 /**
  * @brief KCONFIG_PARAMETER TO SET DEBUG MODE

@@ -1,1 +1,1 @@
-rsource "../../firmware/sys/Kconfig"
+rsource "../../firmware/Kconfig.debug"

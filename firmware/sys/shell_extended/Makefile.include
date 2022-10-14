@@ -1,2 +1,5 @@
 USEMODULE_INCLUDES_shell_extended := $(LAST_MAKEFILEDIR)/include
 USEMODULE_INCLUDES += $(USEMODULE_INCLUDES_shell_extended)
+ifneq (,$(filter storage,$(USEMODULE)))
+  USEMODULE_INCLUDES += $(RIOTBASE)/../firmware
+endif

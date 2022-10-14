@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 /**
- * @brief   Extends the shell functionality for uniqueid
+ * @brief   Extends the shell functionality for net_tools
  * @author  Luis A. Ruiz    <luisan00@hotmail.com>
  * @author  Eduardo Azócar  <eduazocarv@gmail.com>
  */
@@ -46,11 +46,11 @@ void net_tools_usage(void) {
 int net_tools_cmd(int argc, char **argv) {
     (void)argc;
     (void)argv;
-
-    if ((strcmp(argv[1], "help") == 0)) {
+    if ((argc < 3) || (argc > 6) || (strcmp(argv[1], "help") == 0)) {
         net_tools_usage();
         return 0;
     }
+
     if ((strcmp(argv[2], "add") == 0)) {
         int if_idx = atoi(argv[1]);
         char ip[40] = "";
@@ -62,13 +62,16 @@ int net_tools_cmd(int argc, char **argv) {
         }
 #if MODULE_UNIQUEID
         if (strcmp(argv[3], "ipuid") == 0) {
+            if (argc < 6) {
+                net_tools_usage();
+                return -1;
+            }
             check_inp_addr(argv[4], &addr, &prefix);
             if ((strcmp(argv[5], "static") == 0)) {
                 set_ipv6_by_uid(if_idx, &addr, prefix, UNIQUEID_STATIC_MODE);
                 DEBUG("ipv6 address: %s\n", ipv6_addr_to_str(ip, &addr, sizeof(ip)));
                 return 0;
-            }
-            if ((strcmp(argv[5], "random") == 0)) {
+            } else if ((strcmp(argv[5], "random") == 0)) {
                 set_ipv6_by_uid(if_idx, &addr, prefix, UNIQUEID_RANDOM_MODE);
                 DEBUG("ipv6 address: %s\n", ipv6_addr_to_str(ip, &addr, sizeof(ip)));
                 return 0;
@@ -91,14 +94,10 @@ int net_tools_cmd(int argc, char **argv) {
         }
         show_iface_info(if_idx);
         return 0;
-    }
-
-    if ((argc < 5) || (argc > 5)) {
-        puts("net-tools command needs at least one argument");
+    } else {
         net_tools_usage();
-        return 1;
+        return 0;
     }
-    return 0;
 }
 
 void show_iface_info(kernel_pid_t iface_idx) {

@@ -39,6 +39,7 @@ void test_set_netopt_tx_power(void) {
 
 void test_get_netopt_tx_power(void) {
     int16_t txpower=0;
+    xtimer_sleep(5);
     int8_t err =  get_netopt_tx_power(&txpower);
     printf("Tx Power: %"PRId16"\n", txpower);
     TEST_ASSERT_EQUAL_INT(0, err);

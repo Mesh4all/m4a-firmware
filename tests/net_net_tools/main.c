@@ -77,7 +77,7 @@ void test_rm_global_addr(void) {
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
-test_set_ipv6(void) {
+void test_set_ipv6(void) {
     ipv6_addr_t ip;
     int err = 0;
     uint8_t iface = get_wired_iface();
