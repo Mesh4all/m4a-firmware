@@ -11,7 +11,7 @@ var searchData=
   ['set_5fipv6_5fby_5fuid_603',['set_ipv6_by_uid',['../group__net__tools.html#ga147e00591ef94cb152365275b4b8dbb1',1,'net_tools.h']]],
   ['set_5fipv6_5fglobal_604',['set_ipv6_global',['../group__net__tools.html#gace20d8761a85d3c00ddd6676f49fccd6',1,'net_tools.h']]],
   ['set_5fipv6_5fmulticast_605',['set_ipv6_multicast',['../group__net__tools.html#ga7a5033ddeef102884053fcf3f8083735',1,'net_tools.h']]],
-  ['set_5fnetopt_5fchannel_606',['set_netopt_channel',['../radio_8h.html#a9e854649463b645972ceb24bfc547fa4',1,'radio.h']]],
+  ['set_5fnetopt_5fchannel_606',['set_netopt_channel',['../radio_8h.html#a43435e039cecd3fd431f58992d981a6a',1,'radio.h']]],
   ['set_5fnetopt_5ftx_5fpower_607',['set_netopt_tx_power',['../radio_8h.html#abb304f7a0a65383b7f118537bd7d4e86',1,'radio.h']]],
   ['set_5fsleep_5finterface_608',['set_sleep_interface',['../radio_8h.html#a8a2341e339a4ae5338c4c2f648ef6abc',1,'radio.h']]],
   ['set_5fwifi_5fmode_609',['set_wifi_mode',['../group__wifi__component.html#ga62dd61f1998b38a9290d07e1fd1f4736',1,'wifi.h']]],

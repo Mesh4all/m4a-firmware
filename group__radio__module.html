@@ -146,26 +146,26 @@ getting an specify interface</h3>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>When it's used the at86rf215 you could has two network device.</dd></dl>
 <h3><a class="anchor" id="autotoc_md65"></a>
 Getting and setting transmission power</h3>
-<p>Basic setup to get and set the transmission power of a radio device. </p><div class="fragment"><div class="line"><a class="code" href="radio_8h.html#a907834f2e7b62365d4157dceb87a6921">get_netopt_tx_power</a>(int16_t txpower) <span class="comment">// get the current TX_POWER of the radio device</span></div>
+<p>Basic setup to get and set the transmission power of a radio device. </p><div class="fragment"><div class="line"><a class="code" href="radio_8h.html#a8871b73fad963657da9ec5eca9d871a8">get_netopt_tx_power</a>(int16_t txpower) <span class="comment">// get the current TX_POWER of the radio device</span></div>
 <div class="line"><a class="code" href="radio_8h.html#abb304f7a0a65383b7f118537bd7d4e86">set_netopt_tx_power</a>(int16_t txpower) <span class="comment">// set TX_POWER within of the radio device TX_POWER limits</span></div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md66"></a>
 Getting and setting band channel</h3>
-<p>Basic setup to get and set the band channel of a radio device. </p><div class="fragment"><div class="line"><a class="code" href="radio_8h.html#a9a36bee0f42f69363673f6beb6d9543f">get_netopt_channel</a>(int16_t channel) <span class="comment">// get the current operative channel</span></div>
-<div class="line"><a class="code" href="radio_8h.html#a9e854649463b645972ceb24bfc547fa4">set_netopt_channel</a>(int16_t channel) <span class="comment">/* sets the operative channel upper or under of 2.4 GHz</span></div>
+<p>Basic setup to get and set the band channel of a radio device. </p><div class="fragment"><div class="line"><a class="code" href="radio_8h.html#a37afe899fb82a2f53e74369b2be554c3">get_netopt_channel</a>(int16_t channel) <span class="comment">// get the current operative channel</span></div>
+<div class="line"><a class="code" href="radio_8h.html#a43435e039cecd3fd431f58992d981a6a">set_netopt_channel</a>(int16_t channel) <span class="comment">/* sets the operative channel upper or under of 2.4 GHz</span></div>
 <div class="line"><span class="comment">band, depending to the radio device if is multiband or not.*/</span></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aradio_8h_html_a8f65fd87e59ef58e93e938a0457212d2"><div class="ttname"><a href="radio_8h.html#a8f65fd87e59ef58e93e938a0457212d2">get_ieee802154_iface</a></div><div class="ttdeci">int8_t get_ieee802154_iface(void)</div><div class="ttdoc">This function it's to get index of an IEEE802.15.4 interface.</div></div>
 <div class="ttc" id="aradio_8h_html_abb304f7a0a65383b7f118537bd7d4e86"><div class="ttname"><a href="radio_8h.html#abb304f7a0a65383b7f118537bd7d4e86">set_netopt_tx_power</a></div><div class="ttdeci">int8_t set_netopt_tx_power(int16_t txpower)</div><div class="ttdoc">this function is used to set the tx power</div></div>
-<div class="ttc" id="aradio_8h_html_a907834f2e7b62365d4157dceb87a6921"><div class="ttname"><a href="radio_8h.html#a907834f2e7b62365d4157dceb87a6921">get_netopt_tx_power</a></div><div class="ttdeci">int8_t get_netopt_tx_power(int16_t txpower)</div><div class="ttdoc">this function is used to get data of tx power</div></div>
-<div class="ttc" id="aradio_8h_html_a9a36bee0f42f69363673f6beb6d9543f"><div class="ttname"><a href="radio_8h.html#a9a36bee0f42f69363673f6beb6d9543f">get_netopt_channel</a></div><div class="ttdeci">int8_t get_netopt_channel(int16_t channel)</div><div class="ttdoc">this function is used to get data of channel</div></div>
-<div class="ttc" id="aradio_8h_html_a9e854649463b645972ceb24bfc547fa4"><div class="ttname"><a href="radio_8h.html#a9e854649463b645972ceb24bfc547fa4">set_netopt_channel</a></div><div class="ttdeci">int8_t set_netopt_channel(int16_t channel)</div><div class="ttdoc">this function is used to set the channel</div></div>
+<div class="ttc" id="aradio_8h_html_a8871b73fad963657da9ec5eca9d871a8"><div class="ttname"><a href="radio_8h.html#a8871b73fad963657da9ec5eca9d871a8">get_netopt_tx_power</a></div><div class="ttdeci">int8_t get_netopt_tx_power(int16_t *txpower)</div><div class="ttdoc">this function is used to get data of tx power</div></div>
+<div class="ttc" id="aradio_8h_html_a37afe899fb82a2f53e74369b2be554c3"><div class="ttname"><a href="radio_8h.html#a37afe899fb82a2f53e74369b2be554c3">get_netopt_channel</a></div><div class="ttdeci">int8_t get_netopt_channel(uint16_t *channel)</div><div class="ttdoc">this function is used to get data of channel</div></div>
+<div class="ttc" id="aradio_8h_html_a43435e039cecd3fd431f58992d981a6a"><div class="ttname"><a href="radio_8h.html#a43435e039cecd3fd431f58992d981a6a">set_netopt_channel</a></div><div class="ttdeci">int8_t set_netopt_channel(uint16_t channel)</div><div class="ttdoc">this function is used to set the channel</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 12 2022 17:43:36 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Fri Oct 14 2022 15:42:21 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>

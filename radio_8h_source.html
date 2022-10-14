@@ -137,11 +137,11 @@ $(document).ready(function(){initNavTree('radio_8h_source.html',''); initResizab
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;int8_t <a class="code" href="radio_8h.html#a8f65fd87e59ef58e93e938a0457212d2">get_ieee802154_iface</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;int8_t <a class="code" href="radio_8h.html#a907834f2e7b62365d4157dceb87a6921">get_netopt_tx_power</a>(int16_t txpower);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;int8_t <a class="code" href="radio_8h.html#a8871b73fad963657da9ec5eca9d871a8">get_netopt_tx_power</a>(int16_t *txpower);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;int8_t <a class="code" href="radio_8h.html#a9a36bee0f42f69363673f6beb6d9543f">get_netopt_channel</a>(int16_t channel);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;int8_t <a class="code" href="radio_8h.html#a37afe899fb82a2f53e74369b2be554c3">get_netopt_channel</a>(uint16_t *channel);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;int8_t <a class="code" href="radio_8h.html#a9e854649463b645972ceb24bfc547fa4">set_netopt_channel</a>(int16_t channel);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;int8_t <a class="code" href="radio_8h.html#a43435e039cecd3fd431f58992d981a6a">set_netopt_channel</a>(uint16_t channel);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;int8_t <a class="code" href="radio_8h.html#abb304f7a0a65383b7f118537bd7d4e86">set_netopt_tx_power</a>(int16_t txpower);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
@@ -163,20 +163,20 @@ $(document).ready(function(){initNavTree('radio_8h_source.html',''); initResizab
 <div class="ttc" id="aradio_8h_html_a8f65fd87e59ef58e93e938a0457212d2"><div class="ttname"><a href="radio_8h.html#a8f65fd87e59ef58e93e938a0457212d2">get_ieee802154_iface</a></div><div class="ttdeci">int8_t get_ieee802154_iface(void)</div><div class="ttdoc">This function it's to get index of an IEEE802.15.4 interface.</div></div>
 <div class="ttc" id="aradio_8h_html_abb304f7a0a65383b7f118537bd7d4e86"><div class="ttname"><a href="radio_8h.html#abb304f7a0a65383b7f118537bd7d4e86">set_netopt_tx_power</a></div><div class="ttdeci">int8_t set_netopt_tx_power(int16_t txpower)</div><div class="ttdoc">this function is used to set the tx power</div></div>
 <div class="ttc" id="aradio_8h_html_a59970ec02b8d3c93ecb6892ccf17c120"><div class="ttname"><a href="radio_8h.html#a59970ec02b8d3c93ecb6892ccf17c120">set_awake_interface</a></div><div class="ttdeci">int8_t set_awake_interface(void)</div><div class="ttdoc">function used to change the status of the interface to awake</div></div>
-<div class="ttc" id="aradio_8h_html_a907834f2e7b62365d4157dceb87a6921"><div class="ttname"><a href="radio_8h.html#a907834f2e7b62365d4157dceb87a6921">get_netopt_tx_power</a></div><div class="ttdeci">int8_t get_netopt_tx_power(int16_t txpower)</div><div class="ttdoc">this function is used to get data of tx power</div></div>
 <div class="ttc" id="aradio_8h_html_a19f78651c860b0ba873b530876f75875"><div class="ttname"><a href="radio_8h.html#a19f78651c860b0ba873b530876f75875">identify_multiple_radio_interface</a></div><div class="ttdeci">bool identify_multiple_radio_interface(void)</div><div class="ttdoc">function used to determinate if there is a radio multiband interface</div></div>
 <div class="ttc" id="aradio_8h_html_acdadebd93fa810375ab2917ab18ece5b"><div class="ttname"><a href="radio_8h.html#acdadebd93fa810375ab2917ab18ece5b">initial_radio_setup</a></div><div class="ttdeci">int8_t initial_radio_setup(void)</div><div class="ttdoc">initiates the necessary functions for the correct operation of the radio.</div></div>
 <div class="ttc" id="aradio__params_8h_html"><div class="ttname"><a href="radio__params_8h.html">radio_params.h</a></div><div class="ttdoc">this module content all params to set the radio</div></div>
+<div class="ttc" id="aradio_8h_html_a8871b73fad963657da9ec5eca9d871a8"><div class="ttname"><a href="radio_8h.html#a8871b73fad963657da9ec5eca9d871a8">get_netopt_tx_power</a></div><div class="ttdeci">int8_t get_netopt_tx_power(int16_t *txpower)</div><div class="ttdoc">this function is used to get data of tx power</div></div>
 <div class="ttc" id="aradio_8h_html_a8a2341e339a4ae5338c4c2f648ef6abc"><div class="ttname"><a href="radio_8h.html#a8a2341e339a4ae5338c4c2f648ef6abc">set_sleep_interface</a></div><div class="ttdeci">int8_t set_sleep_interface(void)</div><div class="ttdoc">function used to change the status of the interface to sleep</div></div>
-<div class="ttc" id="aradio_8h_html_a9a36bee0f42f69363673f6beb6d9543f"><div class="ttname"><a href="radio_8h.html#a9a36bee0f42f69363673f6beb6d9543f">get_netopt_channel</a></div><div class="ttdeci">int8_t get_netopt_channel(int16_t channel)</div><div class="ttdoc">this function is used to get data of channel</div></div>
-<div class="ttc" id="aradio_8h_html_a9e854649463b645972ceb24bfc547fa4"><div class="ttname"><a href="radio_8h.html#a9e854649463b645972ceb24bfc547fa4">set_netopt_channel</a></div><div class="ttdeci">int8_t set_netopt_channel(int16_t channel)</div><div class="ttdoc">this function is used to set the channel</div></div>
+<div class="ttc" id="aradio_8h_html_a37afe899fb82a2f53e74369b2be554c3"><div class="ttname"><a href="radio_8h.html#a37afe899fb82a2f53e74369b2be554c3">get_netopt_channel</a></div><div class="ttdeci">int8_t get_netopt_channel(uint16_t *channel)</div><div class="ttdoc">this function is used to get data of channel</div></div>
+<div class="ttc" id="aradio_8h_html_a43435e039cecd3fd431f58992d981a6a"><div class="ttname"><a href="radio_8h.html#a43435e039cecd3fd431f58992d981a6a">set_netopt_channel</a></div><div class="ttdeci">int8_t set_netopt_channel(uint16_t channel)</div><div class="ttdoc">this function is used to set the channel</div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_fced8688c5e7dba07aa6cc147e059f1c.html">network</a></li><li class="navelem"><a class="el" href="dir_398e48b4c725ee316dc32d6213e0ce70.html">radio</a></li><li class="navelem"><a class="el" href="dir_b96ff864e8352457c992907288d93b13.html">include</a></li><li class="navelem"><a class="el" href="radio_8h.html">radio.h</a></li>
-    <li class="footer">Generated on Wed Oct 12 2022 17:43:36 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Fri Oct 14 2022 15:42:21 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
