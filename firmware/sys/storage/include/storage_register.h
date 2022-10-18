@@ -37,10 +37,10 @@ extern "C" {
 #define RWP_WRITE_BITMASK (0x80) /*!< Read/Write protection bit mask to set Writeable register*/
 #define RWP_READ_BITMASK (0x00)  /*!< Read/Write protection bit mask to set only-read register*/
 typedef struct {
-    uint16_t size;
-    uint8_t key[25];
-    uint8_t rwp;
-    uint32_t ptr_content;
+    uint16_t size;        /*!< saved data size*/
+    char key[25];         /*!< name or identifier assigned a register where there is a saved dara */
+    uint8_t rwp;          /*!< Read and write protection bit */
+    uint32_t ptr_content; /*!< pointer to the content of a register */
 } mtd_register_t;
 
 #define MTD_REG_IDX_NUMOF                                                                          \
@@ -55,7 +55,7 @@ typedef struct {
  * @param [in] len size of @p value that will be saved.
  * @return int8_t
  */
-int mtd_save_reg(const void *value, const uint8_t *key, uint16_t len);
+int mtd_save_reg(const void *value, const char *key, uint16_t len);
 
 /**
  * @brief Load data from mtd_storage localizating with its knew key and saves in @p value the data.
@@ -68,7 +68,7 @@ int mtd_save_reg(const void *value, const uint8_t *key, uint16_t len);
  * value parameter.
  * @return int8_t
  */
-int mtd_load_reg(void *value, const uint8_t *key, uint16_t len);
+int mtd_load_reg(void *value, const char *key, uint16_t len);
 
 /**
  * @brief Removes all saved data in mtd_storage. This will erase all until the
@@ -80,7 +80,7 @@ int mtd_load_reg(void *value, const uint8_t *key, uint16_t len);
  * @retval 0 Erased data success
  * @retval -1 Erased Fail.
  */
-int8_t mtd_reg_del(uint8_t *key, uint16_t size);
+int8_t mtd_reg_del(char *key, uint16_t size);
 
 /**
  * @brief

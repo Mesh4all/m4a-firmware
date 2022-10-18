@@ -121,36 +121,36 @@ void test_saving_reg(void) {
     int16_t i16val = -3258;
     int32_t i32val = -9000;
     uint8_t index, numreg;
-    ret = mtd_put_str(str, (uint8_t *)"KEY0", sizeof(str));
+    ret = mtd_put_str(str, "KEY0", sizeof(str));
     if (ret < 0) {
         DEBUG("Failed Saving data");
     }
     printf("\n");
-    ret = mtd_put_str(str2, (uint8_t *)"KEY1", sizeof(str2));
+    ret = mtd_put_str(str2, "KEY1", sizeof(str2));
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
-    ret = mtd_put_u8(age, (uint8_t *)"KEY2");
+    ret = mtd_put_u8(age, "KEY2");
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
-    ret = mtd_put_u16(port, (uint8_t *)"KEY3");
+    ret = mtd_put_u16(port, "KEY3");
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
-    ret = mtd_put_u32(u32_val, (uint8_t *)"KEY4");
+    ret = mtd_put_u32(u32_val, "KEY4");
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
-    ret = mtd_put_i8(i8val, (uint8_t *)"KEY5");
+    ret = mtd_put_i8(i8val, "KEY5");
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
-    ret = mtd_put_i16(i16val, (uint8_t *)"KEY6");
+    ret = mtd_put_i16(i16val, "KEY6");
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
-    ret = mtd_put_i32(i32val, (uint8_t *)"KEY7");
+    ret = mtd_put_i32(i32val, "KEY7");
     if (ret < 0) {
         DEBUG("Failed Saving data\n");
     }
@@ -169,36 +169,36 @@ void test_loading_reg(void) {
     int8_t i8val;
     int16_t i16val;
     int32_t i32val;
-    ret = mtd_get_str(str, (uint8_t *)"KEY0", sizeof(str));
+    ret = mtd_get_str(str, "KEY0", sizeof(str));
     if (ret < 0) {
         DEBUG("Failed Loading data");
     }
-    ret = mtd_load_reg(str2, (uint8_t *)"KEY1", sizeof(str2));
+    ret = mtd_load_reg(str2, "KEY1", sizeof(str2));
     if (ret < 0) {
         DEBUG("Failed Loading data");
     }
-    ret = mtd_get_u8(&age, (uint8_t *)"KEY2");
+    ret = mtd_get_u8(&age, "KEY2");
     if (ret < 0) {
         DEBUG("Failed Loading data");
     }
-    ret = mtd_get_u16(&port, (uint8_t *)"KEY3");
+    ret = mtd_get_u16(&port, "KEY3");
     if (ret < 0) {
         DEBUG("Failed Loading data");
     }
-    ret = mtd_get_u32(&u32_val, (uint8_t *)"KEY4");
+    ret = mtd_get_u32(&u32_val, "KEY4");
     if (ret < 0) {
         DEBUG("Failed Loading data");
     }
-    ret = mtd_get_i8(&i8val, (uint8_t *)"KEY5");
+    ret = mtd_get_i8(&i8val, "KEY5");
     if (ret < 0) {
         DEBUG("Failed Loading data");
     }
-    ret = mtd_get_i16(&i16val, (uint8_t *)"KEY6");
+    ret = mtd_get_i16(&i16val, "KEY6");
     if (ret < 0) {
         DEBUG("Failed Loading data");
     }
-    ret = mtd_get_i32(&i32val, (uint8_t *)"KEY7");
-    mtd_reg_del((uint8_t*)"KEY2", sizeof(uint8_t));
+    ret = mtd_get_i32(&i32val, "KEY7");
+    mtd_reg_del("KEY2", sizeof(uint8_t));
     printf("string#1 loaded: %s\n", str);
     printf("string#2 loaded: %s\n", str2);
     printf("uint8_t loaded: %d\n", age);

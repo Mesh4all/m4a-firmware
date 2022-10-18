@@ -49,12 +49,16 @@ int storage_cmd(int argc, char **argv) {
         return 0;
     }
     if (strcmp(argv[1], "save") == 0) {
+        /*ToDo: Create a group of options to manage network params*/
         stg_save_if_settings();
     } else if (strcmp(argv[1], "load") == 0) {
+        /*ToDo: Create a group of options to manage network params*/
         stg_load_if_settings();
     } else if (strcmp(argv[1], "show") == 0) {
+        /*ToDo: Create a group of options to manage network params*/
         puts("Todo:  show all firmware params saved in mtd storage");
     } else if (strcmp(argv[1], "del") == 0) {
+        /*ToDo: Create a group of options to manage network params*/
         stg_del_if_settings();
     }
     return 0;

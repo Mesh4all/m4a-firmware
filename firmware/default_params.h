@@ -20,6 +20,7 @@
  * @file
  * @name    Defaults params for the m4a firmware
  * @author  xkevin190 <kevinvelasco193@gmail.com>
+ * @author  eduazocar <eduardoazocar7@gmail.com>
  */
 
 #ifndef DEFAULT_PARAMS_H
@@ -52,18 +53,45 @@ typedef struct {
     uint8_t pin : 6;          /*!< Input pin -> Max pin 63*/
 } sensors_t;
 
+#if ((MODULE_RPL_PROTOCOL) || (DOXYGEN))
+/**
+ * @brief Data type to all network elements, here will saved protocols.
+ *
+ */
+typedef struct {
+    uint8_t mode : 1; /*!< Routing protocol rpl modes (DAG or DODAG)*/
+    uint8_t : 7;      /*!< Reserved bits */
+    uint8_t id;       /*!< Rpl instance id */
+} rpl_settings_t;
+#endif
+
+typedef struct {
+    uint8_t routing;        /*!< Routing Protocol in use*/
+#ifdef MODULE_RPL_PROTOCOL
+    rpl_settings_t rpl;
+#endif
+#ifdef MODULE_BORDER_ROUTER
+    uint8_t br_status : 1;
+    uint8_t : 7;
+#endif
+#ifdef MODULE_UNIQUEID
+    uint8_t uidmode : 1;
+    uint8_t : 7;
+#endif
+} settings_net_t;
+
 /**
  * @brief  struct to save interface data settings.
  */
 typedef struct {
-    uint8_t id;
-    uint8_t type;
+    uint8_t id;       /*!< Iface id*/
+    uint8_t type;     /*!< Type of interface */
     uint16_t channel; /*!< Channel of the radio */
     int16_t tx_power; /*!< The transmit power from a radio interface*/
-    uint16_t freq;
+    uint16_t freq;    /*!< Frequency of radio interface */
 } settings_ifaces_t;
 
-#define IF_KEY (uint8_t*)("IFKEY")
+#define IF_KEY ("IFKEY")
 
 /**
  * @name storage address this address will be the storage keys
