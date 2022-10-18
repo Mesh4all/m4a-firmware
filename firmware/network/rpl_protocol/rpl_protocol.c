@@ -32,6 +32,12 @@
 #endif
 
 #include "debug.h"
+static enum rpl_modes_t rpl_mode;
+static uint8_t rpl_inst_id = 0;
+
+int8_t get_rpl_mode_state(void) { return rpl_mode; }
+
+int8_t get_instance_id(void) { return rpl_inst_id; }
 
 int8_t rpl_init(kernel_pid_t iface_pid) {
     if (gnrc_netif_get_by_pid(iface_pid) == NULL) {
@@ -45,7 +51,6 @@ int8_t rpl_init(kernel_pid_t iface_pid) {
 }
 
 int8_t gnrc_rpl_dodag_root(uint8_t dodag_instance, ipv6_addr_t *root_address) {
-
     gnrc_rpl_instance_t *inst = gnrc_rpl_root_init(dodag_instance, root_address, false, false);
     if (inst == NULL) {
         char addr_str[IPV6_ADDR_MAX_STR_LEN];
@@ -53,14 +58,15 @@ int8_t gnrc_rpl_dodag_root(uint8_t dodag_instance, ipv6_addr_t *root_address) {
               ipv6_addr_to_str(addr_str, root_address, sizeof(addr_str)), dodag_instance);
         return -1;
     }
-
+    rpl_inst_id = dodag_instance;
+    rpl_mode = DODAG;
     DEBUG("successfully added a new RPL DODAG\n");
     return 0;
 }
 
 int8_t rpl_dodag_remove(uint8_t instance_id) {
     gnrc_rpl_instance_t *inst;
-
+    rpl_mode = DAG;
     if ((inst = gnrc_rpl_instance_get(instance_id)) == NULL) {
         DEBUG("error: could not find the instance (%d)\n", instance_id);
         return -1;
@@ -70,12 +76,12 @@ int8_t rpl_dodag_remove(uint8_t instance_id) {
         DEBUG("error: could not remove instance (%d)\n", instance_id);
         return -1;
     }
-
+    rpl_inst_id = RPL_NO_INSTANCEID;
     DEBUG("success: removed instance (%d)\n", instance_id);
     return 0;
 }
 
-int8_t rpl_setup(uint8_t mode) {
+int8_t rpl_setup(enum rpl_modes_t mode) {
     int8_t err = 0;
     ipv6_addr_t ip;
     if (mode > 1) {
@@ -91,8 +97,7 @@ int8_t rpl_setup(uint8_t mode) {
         DEBUG("Error: could not get the iface.\n");
         return -1;
     }
-    if (mode == DAG)
-    {
+    if (mode == DAG) {
         err = rpl_init(iface_index);
     }
     if (err != 0) {

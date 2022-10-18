@@ -33,6 +33,7 @@
 extern "C" {
 #endif
 
+#define RPL_NO_INSTANCEID  (0)
 /**
  * @brief Configuration to set "DAG" or "DODAG" mode
  *
@@ -57,6 +58,8 @@ enum rpl_modes_t {
     DODAG    /*!<Value of DODAG mode in RPL*/
 };
 
+int8_t get_rpl_mode_state(void);
+int8_t get_instance_id(void);
 /**
  * @brief this function init rpl protocol
  *

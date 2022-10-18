@@ -46,16 +46,36 @@ void test_add_dodag_node(void) {
     TEST_ASSERT_EQUAL_INT(0, err);
 }
 
+void test_node_state_dodag(void) {
+    int8_t rpl_mode;
+    int8_t rpl_inst;
+    rpl_inst = get_instance_id();
+    rpl_mode = get_rpl_mode_state();
+    printf("Node state %s, Instance Id %d\n", rpl_mode < 1? "DAG" : "DODAG", rpl_inst);
+    TEST_ASSERT_EQUAL_INT(DODAG, rpl_mode);
+}
+
 void test_remove_dodag_node(void) {
     int err = rpl_dodag_remove(DODAG_INSTANCE);
     TEST_ASSERT_EQUAL_INT(0, err);
+}
+
+void test_node_state_dag(void) {
+    int8_t rpl_mode;
+    int8_t rpl_inst;
+    rpl_inst = get_instance_id();
+    rpl_mode = get_rpl_mode_state();
+    printf("Node state %s, Instance Id %d\n", rpl_mode < 1? "DAG" : "DODAG", rpl_inst);
+    TEST_ASSERT_EQUAL_INT(DAG, rpl_mode);
 }
 
 Test *tests_rpl_protocol(void) {
     EMB_UNIT_TESTFIXTURES(fixtures){
         new_TestFixture(test_init_rpl),
         new_TestFixture(test_add_dodag_node),
+        new_TestFixture(test_node_state_dodag),
         new_TestFixture(test_remove_dodag_node),
+        new_TestFixture(test_node_state_dag),
     };
 
     EMB_UNIT_TESTCALLER(tests_rpl_protocol, NULL, NULL, fixtures);
