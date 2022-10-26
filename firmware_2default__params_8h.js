@@ -1,6 +1,8 @@
 var firmware_2default__params_8h =
 [
     [ "sensors_t", "structsensors__t.html", "structsensors__t" ],
+    [ "rpl_settings_t", "structrpl__settings__t.html", "structrpl__settings__t" ],
+    [ "settings_net_t", "structsettings__net__t.html", "structsettings__net__t" ],
     [ "settings_ifaces_t", "structsettings__ifaces__t.html", "structsettings__ifaces__t" ],
     [ "ADDRESS1", "firmware_2default__params_8h.html#a8a94db6770881cfefcd1c9cf8fe43e29", null ],
     [ "ADDRESS2", "firmware_2default__params_8h.html#a2c2ac78a60a065e1a52e3c686347d979", null ],

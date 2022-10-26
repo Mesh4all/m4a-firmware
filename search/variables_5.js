@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['has_5fsniffer_631',['has_sniffer',['../structtopology__t.html#a9b15c3a3da242526adbde743808db98a',1,'topology_t']]]
+  ['flat_646',['flat',['../structtopology__t.html#a4289eafc2d2ef97d2294355d79998e82',1,'topology_t']]],
+  ['freq_647',['freq',['../structsettings__ifaces__t.html#a301ff5a467274863b2c80a38bf174acb',1,'settings_ifaces_t']]]
 ];

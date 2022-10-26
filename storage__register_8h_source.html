@@ -137,20 +137,20 @@ $(document).ready(function(){initNavTree('storage__register_8h_source.html','');
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="storage__register_8h.html#ae8335f99f857b142da110b871034e533">   37</a></span>&#160;<span class="preprocessor">#define RWP_WRITE_BITMASK (0x80) </span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="storage__register_8h.html#a7510a93bc6e2de47c1af3b9ef985e318">   38</a></span>&#160;<span class="preprocessor">#define RWP_READ_BITMASK (0x00)  </span></div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structmtd__register__t.html">   39</a></span>&#160;<span class="preprocessor">typedef struct {</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    uint16_t size;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    uint8_t key[25];</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    uint8_t rwp;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    uint32_t ptr_content;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structmtd__register__t.html#a0854a92e41582d10786bf081e81bf7ff">   40</a></span>&#160;    uint16_t <a class="code" href="structmtd__register__t.html#a0854a92e41582d10786bf081e81bf7ff">size</a>;        </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structmtd__register__t.html#a25aaf65fa52c18081f880b0482b30396">   41</a></span>&#160;    <span class="keywordtype">char</span> key[25];         </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structmtd__register__t.html#a962be2cdd2ee6e303736c26bb8571031">   42</a></span>&#160;    uint8_t <a class="code" href="structmtd__register__t.html#a962be2cdd2ee6e303736c26bb8571031">rwp</a>;          </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structmtd__register__t.html#aa1dd81ef713971add321fddafbb0587b">   43</a></span>&#160;    uint32_t <a class="code" href="structmtd__register__t.html#aa1dd81ef713971add321fddafbb0587b">ptr_content</a>; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <a class="code" href="structmtd__register__t.html">mtd_register_t</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="storage__register_8h.html#a6b38f11f6304ccf48028426408b34361">   46</a></span>&#160;<span class="preprocessor">#define MTD_REG_IDX_NUMOF                                                                          \</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">    (MTD_REGISTER_INDEX_LIMIT /                                                                    \</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">     sizeof(mtd_register_t)) </span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">int mtd_save_reg(const void *value, const uint8_t *key, uint16_t len);</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">int mtd_save_reg(const void *value, const char *key, uint16_t len);</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">int</span> <a class="code" href="storage__register_8h.html#a0594d1f6041745df5000c4fb2f7fadd0">mtd_load_reg</a>(<span class="keywordtype">void</span> *value, <span class="keyword">const</span> uint8_t *key, uint16_t len);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">int</span> <a class="code" href="storage__register_8h.html#a02ba43ac7788b475a2e39e0dffb42ed1">mtd_load_reg</a>(<span class="keywordtype">void</span> *value, <span class="keyword">const</span> <span class="keywordtype">char</span> *key, uint16_t len);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;int8_t <a class="code" href="storage__register_8h.html#a4220655edd4d34efdf8213f7158c9905">mtd_reg_del</a>(uint8_t *key, uint16_t size);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;int8_t <a class="code" href="storage__register_8h.html#a1900fc8a32bcbb70756dacb084068e8b">mtd_reg_del</a>(<span class="keywordtype">char</span> *key, uint16_t size);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;int8_t <a class="code" href="storage__register_8h.html#a661e228d0e40d5ed1f532463523f0d5f">mtd_available_idx</a>(uint8_t *idx, uint8_t *count);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
@@ -163,18 +163,21 @@ $(document).ready(function(){initNavTree('storage__register_8h_source.html','');
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="astructmtd__register__t_html_a0854a92e41582d10786bf081e81bf7ff"><div class="ttname"><a href="structmtd__register__t.html#a0854a92e41582d10786bf081e81bf7ff">mtd_register_t::size</a></div><div class="ttdeci">uint16_t size</div><div class="ttdef"><b>Definition:</b> <a href="storage__register_8h_source.html#l00040">storage_register.h:40</a></div></div>
 <div class="ttc" id="astorage__register_8h_html_a661e228d0e40d5ed1f532463523f0d5f"><div class="ttname"><a href="storage__register_8h.html#a661e228d0e40d5ed1f532463523f0d5f">mtd_available_idx</a></div><div class="ttdeci">int8_t mtd_available_idx(uint8_t *idx, uint8_t *count)</div></div>
+<div class="ttc" id="astorage__register_8h_html_a1900fc8a32bcbb70756dacb084068e8b"><div class="ttname"><a href="storage__register_8h.html#a1900fc8a32bcbb70756dacb084068e8b">mtd_reg_del</a></div><div class="ttdeci">int8_t mtd_reg_del(char *key, uint16_t size)</div><div class="ttdoc">Removes all saved data in mtd_storage.</div></div>
 <div class="ttc" id="astructmtd__register__t_html"><div class="ttname"><a href="structmtd__register__t.html">mtd_register_t</a></div><div class="ttdef"><b>Definition:</b> <a href="storage__register_8h_source.html#l00039">storage_register.h:39</a></div></div>
-<div class="ttc" id="astorage__register_8h_html_a0594d1f6041745df5000c4fb2f7fadd0"><div class="ttname"><a href="storage__register_8h.html#a0594d1f6041745df5000c4fb2f7fadd0">mtd_load_reg</a></div><div class="ttdeci">int mtd_load_reg(void *value, const uint8_t *key, uint16_t len)</div><div class="ttdoc">Load data from mtd_storage localizating with its knew key and saves in value the data.</div></div>
-<div class="ttc" id="astorage__register_8h_html_a4220655edd4d34efdf8213f7158c9905"><div class="ttname"><a href="storage__register_8h.html#a4220655edd4d34efdf8213f7158c9905">mtd_reg_del</a></div><div class="ttdeci">int8_t mtd_reg_del(uint8_t *key, uint16_t size)</div><div class="ttdoc">Removes all saved data in mtd_storage.</div></div>
+<div class="ttc" id="astorage__register_8h_html_a02ba43ac7788b475a2e39e0dffb42ed1"><div class="ttname"><a href="storage__register_8h.html#a02ba43ac7788b475a2e39e0dffb42ed1">mtd_load_reg</a></div><div class="ttdeci">int mtd_load_reg(void *value, const char *key, uint16_t len)</div><div class="ttdoc">Load data from mtd_storage localizating with its knew key and saves in value the data.</div></div>
 <div class="ttc" id="astorage__register_8h_html_a487081ef9076c21f3def39e3928ba077"><div class="ttname"><a href="storage__register_8h.html#a487081ef9076c21f3def39e3928ba077">mtd_clear_all_regs</a></div><div class="ttdeci">int mtd_clear_all_regs(void)</div><div class="ttdoc">Removes all registers and set all their read/write protection bit, making that registers writeable.</div></div>
+<div class="ttc" id="astructmtd__register__t_html_aa1dd81ef713971add321fddafbb0587b"><div class="ttname"><a href="structmtd__register__t.html#aa1dd81ef713971add321fddafbb0587b">mtd_register_t::ptr_content</a></div><div class="ttdeci">uint32_t ptr_content</div><div class="ttdef"><b>Definition:</b> <a href="storage__register_8h_source.html#l00043">storage_register.h:43</a></div></div>
+<div class="ttc" id="astructmtd__register__t_html_a962be2cdd2ee6e303736c26bb8571031"><div class="ttname"><a href="structmtd__register__t.html#a962be2cdd2ee6e303736c26bb8571031">mtd_register_t::rwp</a></div><div class="ttdeci">uint8_t rwp</div><div class="ttdef"><b>Definition:</b> <a href="storage__register_8h_source.html#l00042">storage_register.h:42</a></div></div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath">
   <!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_38d8769b7982536a1592307dd4ec982e.html">sys</a></li><li class="navelem"><a class="el" href="dir_043460d05e9e7dca5d95591e249199d5.html">storage</a></li><li class="navelem"><a class="el" href="dir_f0a8256c4133cdb78380b910bfbaa910.html">include</a></li><li class="navelem"><a class="el" href="storage__register_8h.html">storage_register.h</a></li>
-    <li class="footer">Generated on Mon Oct 24 2022 11:26:40 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
+    <li class="footer">Generated on Wed Oct 26 2022 13:06:34 for Mesh4all by <a href="https://www.doxygen.org/index.html"><img class="footer"
           src="doxygen.png" width="104" height="auto" alt="doxygen" /></a> 1.8.17 </li>
   </ul>
 </div>
