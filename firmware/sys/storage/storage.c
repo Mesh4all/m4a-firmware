@@ -52,59 +52,59 @@ int8_t mtd_start(void) {
     return ret;
 }
 
-int mtd_put_u8(const uint8_t value, const uint8_t *key) {
+int mtd_put_u8(const uint8_t value, const char *key) {
     return mtd_save_reg(&value, key, sizeof(uint8_t));
 }
 
-int mtd_put_u16(const uint16_t value, const uint8_t *key) {
+int mtd_put_u16(const uint16_t value, const char *key) {
     return mtd_save_reg(&value, key, sizeof(uint16_t));
 }
 
-int mtd_put_u32(const uint32_t value, const uint8_t *key) {
+int mtd_put_u32(const uint32_t value, const char *key) {
     return mtd_save_reg(&value, key, sizeof(uint32_t));
 }
 
-int mtd_get_u8(uint8_t *value, const uint8_t *key) {
+int mtd_get_u8(uint8_t *value, const char *key) {
     return mtd_load_reg(value, key, sizeof(uint8_t));
 }
 
-int mtd_get_u16(uint16_t *value, const uint8_t *key) {
+int mtd_get_u16(uint16_t *value, const char *key) {
     return mtd_load_reg(value, key, sizeof(uint16_t));
 }
 
-int mtd_get_u32(uint32_t *value, const uint8_t *key) {
+int mtd_get_u32(uint32_t *value, const char *key) {
     return mtd_load_reg(value, key, sizeof(uint32_t));
 }
 
-int mtd_put_i8(const int8_t value, const uint8_t *key) {
+int mtd_put_i8(const int8_t value, const char *key) {
     return mtd_save_reg(&value, key, sizeof(int8_t));
 }
 
-int mtd_put_i16(const int16_t value, const uint8_t *key) {
+int mtd_put_i16(const int16_t value, const char *key) {
     return mtd_save_reg(&value, key, sizeof(int16_t));
 }
 
-int mtd_put_i32(const int32_t value, const uint8_t *key) {
+int mtd_put_i32(const int32_t value, const char *key) {
     return mtd_save_reg(&value, key, sizeof(int32_t));
 }
 
-int mtd_get_i8(int8_t *value, const uint8_t *key) {
+int mtd_get_i8(int8_t *value, const char *key) {
     return mtd_load_reg(value, key, sizeof(int8_t));
 }
 
-int mtd_get_i16(int16_t *value, const uint8_t *key) {
+int mtd_get_i16(int16_t *value, const char *key) {
     return mtd_load_reg(value, key, sizeof(int16_t));
 }
 
-int mtd_get_i32(int32_t *value, const uint8_t *key) {
+int mtd_get_i32(int32_t *value, const char *key) {
     return mtd_load_reg(value, key, sizeof(int32_t));
 }
 
-int mtd_put_str(const char *value, const uint8_t *key, uint8_t len) {
+int mtd_put_str(const char *value, const char *key, uint8_t len) {
     return mtd_save_reg(value, key, len);
 }
 
-int mtd_get_str(char *value, const uint8_t *key, uint8_t len) {
+int mtd_get_str(char *value, const char *key, uint8_t len) {
     return mtd_load_reg(value, key, len);
 }
 

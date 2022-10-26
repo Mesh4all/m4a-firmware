@@ -74,7 +74,7 @@ int mtd_clear_all_regs(void) {
     return 0;
 }
 
-int mtd_save_reg(const void *value, const uint8_t *key, uint16_t len) {
+int mtd_save_reg(const void *value, const char *key, uint16_t len) {
     mtd_register_t buff, mtd_reg = {.size = len};
     memcpy(mtd_reg.key, key, sizeof(mtd_reg.key));
     mtd_reg.rwp = 0xFF & RWP_READ_BITMASK;
@@ -122,7 +122,7 @@ int mtd_save_reg(const void *value, const uint8_t *key, uint16_t len) {
     return -1;
 }
 
-int mtd_load_reg(void *value, const uint8_t *key, uint16_t len) {
+int mtd_load_reg(void *value, const char *key, uint16_t len) {
     mtd_register_t buff, mtd_reg = {.size = len};
     memcpy(mtd_reg.key, key, sizeof(mtd_reg.key));
     uint8_t reg_count = 0;
@@ -181,7 +181,7 @@ int8_t mtd_available_idx(uint8_t *idx, uint8_t *count) {
     return 0;
 }
 
-int8_t mtd_reg_del(uint8_t *key, uint16_t size) {
+int8_t mtd_reg_del(char *key, uint16_t size) {
     mtd_register_t regs[MTD_REG_IDX_NUMOF], reg = {.size = size};
     memcpy(reg.key, key, sizeof(reg.key));
     uint8_t *content[MTD_REG_IDX_NUMOF];

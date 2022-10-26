@@ -130,7 +130,7 @@ int8_t mtd_dump(void) {
     uint32_t addr = MTD_START_ADDR;
     uint32_t erased_data = 0;
     for (uint32_t i = 0; i < MAX_SIZE_STORAGE / dev->write_size; i++) {
-        printf("0x%" PRIX32 " : ", addr);
+        DEBUG("0x%" PRIX32 " : ", addr);
         mtd_read_block(value, addr, dev->write_size, 0);
         for (uint8_t j = 0; j < dev->write_size; j++) {
             DEBUG("%02X ", value[j]);
