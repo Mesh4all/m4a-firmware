@@ -6,18 +6,12 @@
 
 <h1 align="center">M4a Firmware</h1>
 <div align="center">
-    <a href="https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml">
-        <img src="https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml/badge.svg">
-    </a>
-    <a href="https://mesh4all.github.io/m4a-firmware/">
-       <img src="https://img.shields.io/github/workflow/status/Mesh4all/m4a-firmware/build-docs/main?label=documentation&color=%23ff4411">
-    </a>
-    <a href="http://www.apache.org/licenses/LICENSE-2.0">
-        <img src="https://img.shields.io/badge/license-Apache_License_2.0-blue">
-    </a>
+
+[![Compile test](https://img.shields.io/github/actions/workflow/status/Mesh4all/m4a-firmware/compilation_check.yml?label=compile+Test&branch=main)](https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml)
+[![build-docs](https://img.shields.io/github/actions/workflow/status/Mesh4all/m4a-firmware/build-docs.yml?label=documentation&branch=main)](https://github.com/Mesh4all/m4a-firmware/actions/workflows/build-docs.yml)
+![License Apache](https://img.shields.io/badge/license-Apache_License_2.0-blue)
 </div>
 <br>
-
 
 <p align= "justify"> The firmware for connect everyone and everything around the world.
 Expand all your wireless network limits and join to the big mesh.</p>
