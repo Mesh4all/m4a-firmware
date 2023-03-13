@@ -21,8 +21,6 @@ var m4a_24g_2include_2board_8h =
     [ "RFCTL_ANTENNA_DEFAULT", "m4a-24g_2include_2board_8h.html#a8374c2ca3f70167aff3c6148a5e4ae62", null ],
     [ "XTIMER_CHAN", "m4a-24g_2include_2board_8h.html#a8b747b85d4d5f2e1be910cdbc72a01de", null ],
     [ "XTIMER_DEV", "m4a-24g_2include_2board_8h.html#a5e48bb301c732e044b08f336fb851d5e", null ],
-    [ "RFCTL_ANTENNA_BOARD", "m4a-24g_2include_2board_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba4b6858ed945b6f53ed54233eae52e95b", null ],
-    [ "RFCTL_ANTENNA_EXT", "m4a-24g_2include_2board_8h.html#a06fc87d81c62e9abb8790b6e5713c55baff881ea099f99d8f1c19adb02a51e7a3", null ],
     [ "board_antenna_config", "m4a-24g_2include_2board_8h.html#a6fa97fb22cd406ad1bcf804519ce3927", null ],
     [ "board_init", "m4a-24g_2include_2board_8h.html#a916f2adc2080b4fe88034086d107a8dc", null ]
 ];

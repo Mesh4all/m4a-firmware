@@ -1,4 +1,4 @@
 <map id="firmware/sys/storage/include/storage_internal.h" name="firmware/sys/storage/include/storage_internal.h">
-<area shape="rect" id="node1" title="This is the storage module where you can save data in the flash memory. This data should not be great..." alt="" coords="5,5,239,52"/>
+<area shape="rect" id="node1" title="This is the storage module where you can save data in the flash memory." alt="" coords="5,5,239,52"/>
 <area shape="rect" id="node2" title=" " alt="" coords="45,100,199,129"/>
 </map>
