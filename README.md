@@ -8,7 +8,7 @@
 <div align="center">
 
 [![Compile test](https://img.shields.io/github/actions/workflow/status/Mesh4all/m4a-firmware/compilation_check.yml?label=compile+Test&branch=main)](https://github.com/Mesh4all/m4a-firmware/actions/workflows/compilation_check.yml)
-[![build-docs](https://img.shields.io/github/actions/workflow/status/Mesh4all/m4a-firmware/build-docs.yml?label=documentation&branch=main)](https://github.com/Mesh4all/m4a-firmware/actions/workflows/build-docs.yml)
+[![build-docs](https://img.shields.io/github/actions/workflow/status/Mesh4all/m4a-firmware/build-docs.yml?label=documentation&branch=main)](https://mesh4all.github.io/m4a-firmware/)
 ![License Apache](https://img.shields.io/badge/license-Apache_License_2.0-blue)
 </div>
 <br>
