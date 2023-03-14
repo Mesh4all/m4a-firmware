@@ -4,7 +4,7 @@ type: docker
 name: m4a-24g
 steps:
   - name: build
-    image: luisan00/m4abuild-base:latest
+    image: luisan00/m4abuild-base:20.04
     commands:
       - git submodule update --init --recursive
       - make -C firmware BOARD=m4a-24g
@@ -20,7 +20,7 @@ type: docker
 name: m4a-mb
 steps:
   - name: build
-    image: luisan00/m4abuild-base:latest
+    image: luisan00/m4abuild-base:20.04
     commands:
       - git submodule update --init --recursive
       - make -C firmware BOARD=m4a-mb
@@ -36,7 +36,7 @@ type: docker
 name: meshme
 steps:
   - name: build
-    image: luisan00/m4abuild-base:latest
+    image: luisan00/m4abuild-base:20.04
     commands:
       - git submodule update --init --recursive
       - make -C firmware BOARD=meshme
@@ -52,7 +52,7 @@ type: docker
 name: vs203
 steps:
   - name: build
-    image: luisan00/m4abuild-base:latest
+    image: luisan00/m4abuild-base:20.04
     commands:
       - git submodule update --init --recursive
       - make -C firmware BOARD=vs203
