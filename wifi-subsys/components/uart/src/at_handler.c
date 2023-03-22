@@ -50,6 +50,8 @@ char *symbols[4] = {
     "=",
 };
 
+/* cppcheck-suppress constParameter
+     * (reason: <is necessary verify that this data is not null>) */
 int get_symbol(char *command, size_t len, char *output) {
     for (size_t i = 0; i < len; i++) {
         for (size_t j = 0; j < 4; j++) {
@@ -103,7 +105,7 @@ esp_err_t parse_at_message(uint8_t *at_command, at_request_t *output) {
         key2 = strtok(NULL, "+");
     }
 
-    /* cppcheck-suppress nullPointerRedundantCheck
+    /* cppcheck-suppress nullPointer
      * (reason: <is necessary verify that this data is not null>) */
     memcpy(output->key, key_value, strlen(key_value) + 1);
     if (value != NULL) {

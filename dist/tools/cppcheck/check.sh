@@ -8,7 +8,7 @@
 # General Public License v2.1. See the file LICENSE in the top level
 # directory for more details.
 
-: "${RIOTBASE:=$(cd $(dirname $0)/../../../; pwd)}"
+: "${RIOTBASE:="$(cd "$(dirname "$0")/../../../" || exit ; pwd)"}"
 cd $RIOTBASE
 
 : "${RIOTTOOLS:=${RIOTBASE}/dist/tools}"
@@ -24,7 +24,17 @@ else
     DEFAULT_SUPPRESSIONS=--suppress="unusedStructMember"
 fi
 
-FILES=""
+# These new changes allows process locally cppcheck tests.
+CODE_FOLDERS="${RIOTBASE}/firmware/    \
+              ${RIOTBASE}/boards/      \
+              ${RIOTBASE}/examples/    \
+              ${RIOTBASE}/tests/       \
+              ${RIOTBASE}/wifi-subsys/"\
+
+# If you want to check only with changed files
+# change this file with
+# FILES=""
+FILES="${CODE_FOLDERS}"
 CPPCHECK_OPTIONS=""
 IN_FILES_SECTION=false
 while [ $# -gt 0 ]; do
