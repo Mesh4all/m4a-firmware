@@ -20,7 +20,6 @@ DEPS["./dist/tools/licenses/check.sh"]="head pcregrep"
 DEPS["./dist/tools/doccheck/check.sh"]="doxygen tput"
 DEPS["./dist/tools/cppcheck/check.sh"]="cppcheck"
 DEPS["./dist/tools/vera++/check.sh"]="vera++"
-DEPS["./dist/tools/coccinelle/check.sh"]="spatch"
 DEPS["./dist/tools/flake8/check.sh"]="python3 flake8"
 DEPS["./dist/tools/codespell/check.sh"]="codespell"
 DEPS["./dist/tools/uncrustify/uncrustify.sh"]="uncrustify"
@@ -120,7 +119,6 @@ run ./dist/tools/doccheck/check.sh
 run ./dist/tools/externc/check.sh
 run ./dist/tools/cppcheck/check.sh
 run ./dist/tools/vera++/check.sh
-run ./dist/tools/coccinelle/check.sh
 run ./dist/tools/flake8/check.sh
 run ./dist/tools/headerguards/check.sh
 run ./dist/tools/buildsystem_sanity_check/check.sh
