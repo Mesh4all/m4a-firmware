@@ -86,7 +86,7 @@ check_providing_features_only_makefile_features() {
     patterns+=(-e '^[ ]*FEATURES_PROVIDED *+= *')
 
     pathspec+=("*Makefile\.*")
-    pathspec+=(':!dist/tools/m4a-generator/m4agen/templates/board/Makefile.features.j2')
+    pathspec+=(':!dist/tools/template_generator/m4agen/templates/board/Makefile.features.j2')
     pathspec+=(":!*Makefile.features")
 
     git -C "${RIOTBASE}" grep -n "${patterns[@]}" -- "${pathspec[@]}" \
@@ -219,7 +219,7 @@ check_cpu_cpu_model_defined_in_makefile_features() {
     patterns+=(-e '^ *\(export\)\? *CPU_MODEL \??\?=')
     pathspec+=(':!**.md')
     pathspec+=(':!boards/**/Makefile.features')
-    pathspec+=(':!dist/tools/m4a-generator/m4agen/templates/board/Makefile.features.j2')
+    pathspec+=(':!dist/tools/template_generator/m4agen/templates/board/Makefile.features.j2')
     pathspec+=(':!cpu/**/Makefile.features')
 
     git -C "${RIOTBASE}" grep -n "${patterns[@]}" -- "${pathspec[@]}" \
