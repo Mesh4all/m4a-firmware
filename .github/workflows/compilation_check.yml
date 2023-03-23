@@ -18,8 +18,8 @@ jobs:
       run: make -C firmware BOARD=m4a-mb
 
     - name: Build the examples
-      run: for dir in examples/*; do echo "$dir"; done
+      run: for dir in examples/*; do make -C "$dir"; done
 
     - name: Build the tests
-      run: for dir in tests/*; do echo "$dir"; done
+      run: for dir in tests/*; do make -C "$dir"; done
 
