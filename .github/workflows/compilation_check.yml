@@ -17,6 +17,5 @@ jobs:
     - name: Build the application
       run: make -C firmware BOARD=m4a-mb
 
-    - name: Build the tests
-      run: for dir in tests/*; do make -C "$dir"; done
-
+    - name: Build Test & Examples
+      run: make -C dist/tools/builder/
