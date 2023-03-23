@@ -16,3 +16,10 @@ jobs:
 
     - name: Build the application
       run: make -C firmware BOARD=m4a-mb
+
+    - name: Build the examples
+      run: for dir in examples/*; do echo "$dir"; done
+
+    - name: Build the tests
+    run: for dir in tests/*; do echo "$dir"; done
+
