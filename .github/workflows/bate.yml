@@ -1,0 +1,24 @@
+name: BATE - Build All Tests and Examples
+
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Install toolchain
+      id: toolchain
+      run: |
+        sudo apt update
+        sudo apt install gcc-arm-none-eabi
+
+    - name: Build Examples
+      run:  ./dist/tools/bate/build_examples.sh
+      shell: bash
+
+    - name: Build Tests
+      if: ${{ always() && steps.toolchain.conclusion == 'success'}}
+      run: ./dist/tools/bate/build_tests.sh
+      shell: bash
